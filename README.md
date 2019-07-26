@@ -1,1 +1,7 @@
-This is a minimal example of a book based on R Markdown and **bookdown** (https://github.com/rstudio/bookdown). Please see the page "Get Started" at https://bookdown.org/ for how to compile this example.
+# ALPHA
+
+This is a draft of GSS guidance. This is unpublished and **does not** represent the views of the **ONS** or the **GSS**. 
+
+## QA of Code
+
+This is guidance for the Quality Assurance of Code which is par tof the Quality Guidance published by the Quality Centre in BPI at the ONS. 
