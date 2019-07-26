@@ -1,0 +1,25 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1564131064534.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "CF504F5D",
+    "lastKnownWriteTime" : 1564131407,
+    "last_content_update" : 1564131407959,
+    "path" : "~/QA_Code/index.Rmd",
+    "project_path" : "index.Rmd",
+    "properties" : {
+        "cursorPosition" : "10,3",
+        "scrollLine" : "16"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 4,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}

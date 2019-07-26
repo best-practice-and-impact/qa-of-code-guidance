@@ -1,0 +1,97 @@
+# GIT 
+
+* What is GIT
+* What is VC
+* How to use GIT ( CLI or GUI)
+* Typical GIT workflow
+* Branching
+
+### Git Introduction 
+
+Git is a version control system, a tool that tracks changes to your code and shares those changes with others. Git is most useful when combined with GitHub, a website that allows you to share your code with the world, solicit improvements via pull requests and track issues.
+
+### About Version Control
+Version control is a system that records changes to a file or set of files over time so that you can recall specific versions later. This means that changes can be examined allowing a record to kept of who changed what. The changes can also be reversed, allowing your code to be rolled back to an earlier state. GIT is an immensely popular tool in the data science community for VC. 
+
+### What is GIT
+Git is a version control system, a tool that tracks changes to your code and shares those changes with others. To start a common mistake is to get Git and it's hosting services mixed up, Git is not GitHub or GitLab, they are websites for hosting projects using git. Git is a Distributed VC, meaning that you will have a local repository which has a special folder inside called .git. You will normally, but don't have too, have a remote, central repository where you and collaborators can contribute code, this could be on GitHub, GitLab or elsewhere. You and any collaborators have an exact clone of the repository on your local computer.  
+
+### How does GIT actually work
+
+You are probably familiar with the windows file system. Imagine a folder with some files/data in it. We can make the folder into a Git repository.
+When we do this Git will keep track of any changes you make to the files, and therefore allow you to see who has changed the files, work with other people on the files and undo any changes. Git thinks of the data as a series of snapshots of a mini file system (the folder). At any time you can take a snapshot, by saving or committing, and git will take a snapshot of what your files look like at that moment, and stores a reference to that snapshot. Git thinks about the data as a stream of snapshots.
+To actually run Git there are two methods
+
+* CLI Command Line Interface
+* GUI Graphical User Interface
+
+A GUI is effectively a program that will run git for you. However these only implement a subset of git commands and it is generally recommend to run Git on the command line. To do this you need to get a terminal and Git installed. This is easier than it sounds. A popular method is to get GitBash. This is a terminal interface with Git installed. If you are unfamiliar with running terminal commands there are alot of great online resources, and fundamentally you will only need a handful of commands to run what you need. If you don;t want to learn past that you won't need to.
+
+### Typical Git workflow 
+
+There are many ways to get a Git repository started. I will discuss turning your folder into a repository. 
+First we need to initialize Git, we can do that with the command 
+
+```
+git init 
+```
+All git command start with `git` followed by the command. This will set-up the folder as a git repository, easy! Git won;t actually track any of the files yet, as we haven't got any snapshots. We do this in two steps. First we add the files we want to be tracked to stage them to be committed. 
+```
+git add . 
+```
+This uses the command `add` to select the files we want to prepare to track, and `.` selects all files in the folder. Only do this if you want to track every file! Otherwise replace `.` with the `filename` you want such as ` git add data.csv` 
+Now the files are staged for the next commit, we want to take the snapshot. To commit we run
+```
+git commit -m "a helpful commit comment, anything you want!"
+```
+This runs the `commit` command which we take the snapshot. `-m` tells the commit that we want to leave a message and everything in "" is attached as a commit comment. Make this something informative and helpful, as you will want to later look back at these, and others will see them too. 
+That is the basic git workflow for working by yourself. You can then edit the files however you want, e.g in Microsoft word or using R studio, and when you next want to take a snapshot run the command again
+```
+git add .
+git commit -m "another informative comment"
+```
+We can also check on the status of our repository with
+```
+git status
+```
+### Remote Repostory
+Using Git just on your computer is useful for being able to roll back or reverse to previous commits, and for keeping track of what changes you made. But Git is really powerful when combined with a remote repository. This basically creates a clone or identical copy of your git repository (all the files in it) and hosts it on another computer, probably on a website such as GitHub or Gitlab. This allows others to also make a copy of the code, to modify and share there changes with you whilst git keeps track. This is a useful tool for peer review and collaborator coding. it is also a backup if your laptop dies or is lost, as the data is safely stored elsewhere too. 
+To do this is simple. First you need to setup a repository on a hosting site. Follow the instructions on GitHub or elsewhere on how to do this, it is not difficult. However make it an empty repository, no README file. Next we need to connect our git repository to the remote repository. Open a Shell and run: 
+```
+git remote add origin https://github.com/username/reponame 
+```
+This command is a bit more complex but you will only need to run it once. `remote add` is telling git to add a remote repository to the current git. `origin` will be the name of the remote repository. `https://github.com/username/reponame` is the URL of the repository. You will be able to on GitHub or gitlab copy and paste this into the terminal window. 
+Now we have a remote repository added we can push our code to it. The typical workflow is the same but with an added step. First we add our files to be staged, we then commit them taking a snapshot of what the current folder looks like, and then we push this snapshot to the remote repository.
+```
+git add . 
+git commit -m "helpful and informative commit comment"
+git push 
+```
+Now if you go to the website you will be able to see your code. If a collaborator now wants to get an exact copy of code they can clone the repository. The folder will be copied onto their computer. 
+
+```
+git clone https://github.com/username/reponame 
+```
+They run this command on their computer and they will now have the files and you can both work together by following the regular workflow. 
+At this stage there will be your repository, a remote repository on a website and a third repository on a collaborator laptop. 
+
+### Branching
+
+Branching and merging is what makes Git so powerful and for what it has been optimized for, being a distributed version control system (VCS). Branching is one of the key features of Git. It allows you to diverge from the main lien of development. You might want to do this to run an experiment which you are not sure will work, such as rewriting a section of the code, which you will incorporate only if it succeeds. Yo may create a branch for new features, which are siloed until they are ready to be incorporated. Branching allows you to control the layout of your project and it is a useful tool for working collaboratively as a project can be broken into sections which are worked on branches and incorporated when ready. You can switch back and forth to the original "master branch" or to any other branch whenever is needed.  
+
+When you work using Git you will always be on a branch. by default when you setup Git it automatically creates a "master" branch. If you want to develop a new feature or section you can easily create a new branch:
+
+```
+git branch new_branch_name
+git checkout new_branch_name
+```
+branch followed by a name will create a branch with that name and checkout followed by a name of an existing branch will switch to it. If you want to fold the code on a branch into another to combine the project onto branch this can be done by merging. To fold the code on the new branch into he master branch then you need to move onto the master branch and then merge.
+```
+git checkout master
+git merge new_branch_name
+```
+### Pull Request and issues
+
+Pull requests let you tell others about changes you've pushed to a branch in a repository on GitHub or GitLab. Once a pull request is opened, you can discuss and review the potential changes with collaborators and add follow-up commits before your changes are merged into the base branch. This is a powerful tool for managing a project and for peer review of code. Team members can work on code on a branch and when they are done open a pull request to merge the branch into the main master branch. Another team member will review this code and can either agree to merge, or post comments on potential improvements. This back and forth ensures errors are found early and in general improves the quality of the project code. This process ensures on high quality code makes it into production. 
+
+Issues are another method of discussing your code and are a great way to keep track of tasks, bugs or enchantments. For example if there is a section of messy, hard to read code then a issue could be left to rewrite that section. The issue could be general or assigned to an individual with a due date. This is another useful method for managing a coding project. 

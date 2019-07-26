@@ -1,0 +1,19 @@
+# RAP
+
+### Why make our work reproducible?
+Producing official statistics can be time-consuming and painstaking as we need to make sure that our outputs are both accurate and timely.  Reproducible analysis is about opening up the production process so that anybody can follow the steps we took and understand how we got to the results that we publish.  By making our analysis reproducible, we make it easier for others to quality assure, assess, critique and re-use our methods and results, and for colleagues to test and validate what we have done.
+
+In a reproducible workflow, we bring together the code and the data that we used to generate our results.  This lets us be fully open about the decisions we made as we generated our outputs so that other analysts can follow what we did and re-create them.  Reproducible analysis supports the requirements of the Code of Practice for Statistics around quality assurance and transparency, as, wherever possible, we share the code we used to build the outputs, along with enough data to allow for proper testing.
+
+### What is a reproducible analytical pipeline?
+Across government we aim to create effective and efficient statistical workflows which are repeatable over time and follow the principles of reproducible analysis. We call these Reproducible Analytically Pipelines (RAP).
+
+Producing statistics in a reproducible way is quite a new idea for government.  Many analysts still use proprietary (paid-for) analytical tools like SAS or SPSS in combination with programs like Excel, Word or Acrobat to create statistical products. The processes for creating statistics this way are usually manual or semi-manual.  Colleagues typically repeat parts of the process manually to quality assure the outputs.
+
+This way of working is time consuming and can be frustrating because the manual steps can be quite hard to replicate quickly.  Work flows are also prone to error, because the input data and the outputs are not connected directly, only through the analyst’s manual intervention.
+
+More recently, the tools and techniques available to analysts have evolved. Open-source tools like Python and R, coupled with the use of version control tools such as Git, used widely in software engineering to make it easier to collaborate, have made it possible to develop more automatic, streamlined processes, accompanied by a full audit trail.
+
+RAP was first piloted in the GSS in 2017 by analysts in the Department for Digital, Culture, Media & Sport (DCMS) and the Department for Education (DfE). They collaborated with data scientists from the Government Digital Service (GDS) to automate the production of statistical bulletins.
+
+To support the adoption of RAP across government, there is a network of RAP champions. Champions are responsible for promoting reproducible analysis and the use of reproducible analytical pipelines and supporting others who want to develop RAP in their own teams. More information on

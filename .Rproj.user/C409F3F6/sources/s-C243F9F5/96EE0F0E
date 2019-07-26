@@ -1,0 +1,23 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1564131064126.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "56475439",
+    "id" : "96EE0F0E",
+    "lastKnownWriteTime" : 1564131060,
+    "last_content_update" : 1564131060,
+    "path" : "~/QA_Code/_bookdown.yml",
+    "project_path" : "_bookdown.yml",
+    "properties" : {
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "yaml"
+}

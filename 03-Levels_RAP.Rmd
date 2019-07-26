@@ -1,0 +1,5 @@
+# Levels of RAP
+
+![](static/RAP_Levels.jpg)
+
+RAP can be viewed as a process, starting with a basic coding project and adding additional levels of enhancement to the project as you go. This process gives a framework for progressing and how far you get depends on the skill level within your team, the infrastructure available in your department and even how necessary the later steps are for your project. For one off pieces of work then the later steps might be time consuming with minimal benefit. However for regular work you are going to repeat then the more levels you can add the more secure you will be that your code is preforming as you expect it to. This process should be pragmatic and proportionate. You may think about a minimal level that you hope to achieve before the code is put into production, but this level will vary depending on your needs. This piece of guidance will go through many of the steps.

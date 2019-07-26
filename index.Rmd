@@ -1,0 +1,90 @@
+--- 
+title: "QA of Code"
+author: "Joshua Halls"
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+documentclass: book
+bibliography: [book.bib, packages.bib]
+biblio-style: apalike
+link-citations: yes
+description: "This is a draft of QA for Coding guidance"
+---
+ 
+# QA for Coding Struture
+  
+* RAP
+* Testing
+* Coding Guidelines
+* Documentation
+* GIT
+
+##  Pages
+* Aiming for roughly 10 pages
+* Each page should aim for around 300 - 400 words per page
+* Was thinking that it would be possible to produce this guidance in markdown? That way we could include code chunks, maybe hide them
+
+0. Introduction
+- Who is this for
+- it is for the QA of statistics code, in open source languages mainly
+1. RAP
+- Overview
+- Minimal RAP??
+  2. Level of RAP
+- Examples?
+  - One example, lower profile statistic, just long code scripts, basic git, no testing
+- Second example, higher profile, more advanced along RAP stages, uses more advanced git/branching, testing, functions etc
+- Rap QA process
+3. Testing
+- Why you should test your code
+- What you should you test
+- How do you know that your code is good without testing
+4. Testing Strategies
+- Unit Testing
+- Check list for standard things to test
+- Boundary Value Analysis
+- Examples!
+  5. Version Control with Git
+- Why use Git
+- Advantages of using Git
+- version control
+- Branching
+- Roll back
+- issues
+- pull requests
+- Peer review, share code
+- other benefits!
+  6. Peer Review
+- internal / external
+- other team members
+- access to data
+7. Documentation
+- Documenting code, inline documenting
+- Readme for projects
+- documenting function, in and out of packages
+- Markdown for desk notes
+- coding standards
+- documentation standards
+8. Environment- Making sure that reproducible code can actually be reproduced!!
+  - DATA- synthetic data, how peer review? produce dummy data?
+  - Docker
+- Packrat
+- Documentation
+9. Other Issues
+-	Staff leave? Need to train up new people, documentation makes it easier.
+-	Project need to be manageable for running in the long run
+- Code Standards
+- Link to resources
+- Role and responsibility
+- Terminology
+- Managers
+
+
+## Terminlogy
+
+* GIT
+* SHELL
+* VC
+* Repository
+* CLI
+* GUI
+* Unit Test

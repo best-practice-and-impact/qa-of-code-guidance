@@ -1,0 +1,24 @@
+# Testing Frameworks
+
+## What excatly is a test
+
+Testing is just checking that the expected result is the same as the actual result. Automated testing is moving from doing this in a informal ad-hoc way to an automated process which is repeatable.
+
+Tests should be
+
+* Fast
+* Independent
+* Repeatable (deterministic)
+* Self-validating (no manual steps)
+* Thorough (How much do you trust they cover everything?)
+
+### Unit Test
+
+### Intergration Tests
+
+### Test Driven Development
+
+## Refernces
+
+* [Testing Blog](http://www.tdda.info/test-driven-development-a-review)
+* [Testthat](http://r-pkgs.had.co.nz/tests.html)
