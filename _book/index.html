@@ -66,9 +66,10 @@
 <li><a href="./">QA of Code</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> QA for Coding Struture</a><ul>
-<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#pages"><i class="fa fa-check"></i><b>1.1</b> Pages</a></li>
-<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#terminlogy"><i class="fa fa-check"></i><b>1.2</b> Terminlogy</a></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> QA for Coding</a><ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#reason-for-the-guidance"><i class="fa fa-check"></i><b>1.1</b> Reason for the Guidance</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#who-is-this-for"><i class="fa fa-check"></i><b>1.2</b> Who is this for?</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#terminology"><i class="fa fa-check"></i><b>1.3</b> Terminology</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="rap.html"><a href="rap.html"><i class="fa fa-check"></i><b>2</b> RAP</a><ul>
 <li class="chapter" data-level="2.0.1" data-path="rap.html"><a href="rap.html#why-make-our-work-reproducible"><i class="fa fa-check"></i><b>2.0.1</b> Why make our work reproducible?</a></li>
@@ -99,9 +100,11 @@
 <li class="chapter" data-level="6.0.8" data-path="git.html"><a href="git.html#pull-request-and-issues"><i class="fa fa-check"></i><b>6.0.8</b> Pull Request and issues</a></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="coding-guidelines.html"><a href="coding-guidelines.html"><i class="fa fa-check"></i><b>7</b> Coding Guidelines</a><ul>
-<li class="chapter" data-level="7.1" data-path="coding-guidelines.html"><a href="coding-guidelines.html#why-useful"><i class="fa fa-check"></i><b>7.1</b> Why Useful</a></li>
-<li class="chapter" data-level="7.2" data-path="coding-guidelines.html"><a href="coding-guidelines.html#best-practices-to-follow"><i class="fa fa-check"></i><b>7.2</b> Best Practices to follow</a></li>
-<li class="chapter" data-level="7.3" data-path="coding-guidelines.html"><a href="coding-guidelines.html#principles"><i class="fa fa-check"></i><b>7.3</b> 9 Principles</a></li>
+<li class="chapter" data-level="7.1" data-path="coding-guidelines.html"><a href="coding-guidelines.html#why-useful"><i class="fa fa-check"></i><b>7.1</b> Why Useful</a><ul>
+<li class="chapter" data-level="7.1.1" data-path="coding-guidelines.html"><a href="coding-guidelines.html#peer-review"><i class="fa fa-check"></i><b>7.1.1</b> Peer Review</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="coding-guidelines.html"><a href="coding-guidelines.html#best-practices-to-follow-9-principles"><i class="fa fa-check"></i><b>7.2</b> Best Practices to follow 9 Principles</a></li>
+<li class="chapter" data-level="7.3" data-path="coding-guidelines.html"><a href="coding-guidelines.html#style-guides"><i class="fa fa-check"></i><b>7.3</b> Style Guides</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://gss.civilservice.gov.uk/policy-store/government-statistical-service-gss-quality-strategy/" target="blank">Government Statistical Service (GSS) Quality </a></li>
@@ -128,22 +131,21 @@
 <p class="author"><em>Joshua Halls</em></p>
 <p class="date"><em>2019-07-29</em></p>
 </div>
-<div id="qa-for-coding-struture" class="section level1">
-<h1><span class="header-section-number">Chapter 1</span> QA for Coding Struture</h1>
-<ul>
-<li>RAP</li>
-<li>Testing</li>
-<li>Coding Guidelines</li>
-<li>Documentation</li>
-<li>GIT</li>
-</ul>
-<div id="pages" class="section level2">
-<h2><span class="header-section-number">1.1</span> Pages</h2>
-<ul>
-<li>Aiming for roughly 10 pages</li>
-<li>Each page should aim for around 300 - 400 words per page</li>
-<li>Was thinking that it would be possible to produce this guidance in markdown? That way we could include code chunks, maybe hide them</li>
-</ul>
+<div id="qa-for-coding" class="section level1">
+<h1><span class="header-section-number">Chapter 1</span> QA for Coding</h1>
+<p>This guidance is published as part of the Quality guidance published by BPI in the ONS. This guidance has been created to support the Government Statistical Service.</p>
+<div id="reason-for-the-guidance" class="section level2">
+<h2><span class="header-section-number">1.1</span> Reason for the Guidance</h2>
+<p>There is an increasing move in the production of statistics from legacy systems to open source languages. This provides opp unities for using new tools and methods to enhance the quality of the systems used to produce statistics. Many producers of these systems are not data scientists but other analysts or non-analytical staff and may not be familar with best practice in software development. This guidance aims to introduce you to some of the major methods recommended to be implemented in a stiaiscal output.</p>
+</div>
+<div id="who-is-this-for" class="section level2">
+<h2><span class="header-section-number">1.2</span> Who is this for?</h2>
+<p>This is meant as an introduction to techiques and methods, not a compreheive learning resource. However, it is also not an introduction to coding, and you are likely to get more from this guidance if you are familar with coding principles, have used some script based language at some point, or currently use R/python for the production of statistics and are looking for how to increase the quality of your system. At the end of chapters there are links to resources which provide a more comprehive and indepth guide to the methods. These are not neccesarily the best or only learning resources.</p>
+<p>ignore this- internal developnent only
+## Pages
+* Aiming for roughly 10 pages
+* Each page should aim for around 300 - 400 words per page
+* Was thinking that it would be possible to produce this guidance in markdown? That way we could include code chunks, maybe hide them</p>
 <ol start="0" style="list-style-type: decimal">
 <li>Introduction</li>
 </ol>
@@ -219,7 +221,7 @@
 <ul>
 <li>DATA- synthetic data, how peer review? produce dummy data?</li>
 <li>Docker</li>
-<li>Packrat</li>
+<li>Pack rat</li>
 <li>Documentation</li>
 </ul>
 <ol start="9" style="list-style-type: decimal">
@@ -235,8 +237,8 @@
 <li>Managers</li>
 </ul>
 </div>
-<div id="terminlogy" class="section level2">
-<h2><span class="header-section-number">1.2</span> Terminlogy</h2>
+<div id="terminology" class="section level2">
+<h2><span class="header-section-number">1.3</span> Terminology</h2>
 <ul>
 <li>GIT</li>
 <li>SHELL</li>

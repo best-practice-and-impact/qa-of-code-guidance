@@ -16,9 +16,14 @@ This guidance is published as part of the Quality guidance published by BPI in t
 
 ## Reason for the Guidance
 
-There is an increasing move in the production of statistics from legacy systems to open source langauges 
+There is an increasing move in the production of statistics from legacy systems to open source languages. This provides opp unities for using new tools and methods to enhance the quality of the systems used to produce statistics. Many producers of these systems are not data scientists but other analysts or non-analytical staff and may not be familar with best practice in software development. This guidance aims to introduce you to some of the major methods recommended to be implemented in a stiaiscal output. 
+
+## Who is this for?
+
+This is meant as an introduction to techiques and methods, not a compreheive learning resource. However, it is also not an introduction to coding, and you are likely to get more from this guidance if you are familar with coding principles, have used some script based language at some point, or currently use R/python for the production of statistics and are looking for how to increase the quality of your system. At the end of chapters there are links to resources which provide a more comprehive and indepth guide to the methods. These are not neccesarily the best or only learning resources.  
 
 
+ignore this- internal developnent only
 ##  Pages
 * Aiming for roughly 10 pages
 * Each page should aim for around 300 - 400 words per page
@@ -68,7 +73,7 @@ There is an increasing move in the production of statistics from legacy systems 
 8. Environment- Making sure that reproducible code can actually be reproduced!!
   - DATA- synthetic data, how peer review? produce dummy data?
   - Docker
-- Packrat
+- Pack rat
 - Documentation
 9. Other Issues
 -	Staff leave? Need to train up new people, documentation makes it easier.
@@ -80,7 +85,7 @@ There is an increasing move in the production of statistics from legacy systems 
 - Managers
 
 
-## Terminlogy
+## Terminology
 
 * GIT
 * SHELL

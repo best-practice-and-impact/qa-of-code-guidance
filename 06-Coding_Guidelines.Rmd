@@ -5,12 +5,38 @@
 
 Best practices are more about what code you write than how you write it.
 For example, there are many ways to access databases, but one particular way might be considered ‘best practice’ 
-so that everyone in a team knows how it works and doesn’t have to learn other methods.
+so that everyone in a team knows how it works and doesn’t have to learn other methods. 
 
 ## Why Useful
 
-## Best Practices to follow
+### Peer Review
 
-## 9 Principles
+An important element of getting quality code is **peer review**. Showing people your code and getting it scrutized is an important part of ensuring that code is doing what it is supposed to and allows iteration, a process where the back and forth of reviewing code cleans and sharpens it. This process is made easier by coding standards. When code is written in a familar style it will be easier to quickly pick it up and understand what was your intention. Poorly written code may achieve the desired output but it may be diffuult for others to read leading to code that only you have seen which may contain errors or have unforseen side effects. Fundermentally using the same language is the first step to ensuring peer review. A business area which uses excel, R, SAS, SQL and python will struggle to ensure peer review. It is desarbile for others outside your team to review your code, but this is often challenging depending on systems and data sensitivity. However code is often not sensentive, as it only details what you do to the data which will probably be desclosed anyway. Using dummy data or sysnthetic data which has the same struture and patterns as the actual raw data but has been randomly generated can allow peer review from those who do not have access to the data. 
 
-[Best Practice in Programming for Data Scientists:](https://datasciencecampus.github.io/coffee-and-coding/20190611_clean_code/Best_Practice_in_Programming_for_Data_Scientists_python_and_R.html#2_names)
+## Best Practices to follow  9 Principles
+
+Specific and prescription coding guidelines ensure that all the code follows a similar style but can be diffucult to implement. However there are some principles which apply to all langauages and can be used to improve the quality of your code. 
+
+1. dddd
+2. dfdf
+
+## Style Guides
+There are many style guides out there. Here are some: 
+
+* [Best Practice in Programming for Data Scientists:](https://datasciencecampus.github.io/coffee-and-coding/20190611_clean_code/Best_Practice_in_Programming_for_Data_Scientists_python_and_R.html#2_names)
+
+* [Google’s R Style Guide](https://google.github.io/styleguide/Rguide.xml) 
+
+* [TidyVerse Style Guide](https://style.tidyverse.org/)
+
+* [The State of Naming Conventions in R](https://journal.r-project.org/archive/2012-2/RJournal_2012-2_Baaaath.pdf)
+
+* [PEP 8 -- Style Guide for Python Code](https://www.python.org/dev/peps/pep-0008/)
+
+* [Ministry of Justice Analytical Services Coding Standards](https://github.com/moj-analytical-services/our-coding-standards)
+
+* [Data Science Campus Coding Standards](https://datasciencecampus.github.io/coding-standards/)
+
+* [Health and Social Care Scotland R Resources](https://github.com/Health-SocialCare-Scotland/R-Resources/blob/master/PHI%20R%20style%20guide.md)
+
+

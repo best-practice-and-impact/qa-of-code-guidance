@@ -66,9 +66,11 @@
 <li><a href="./">QA of Code</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> QA for Coding Struture</a><ul>
-<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#pages"><i class="fa fa-check"></i><b>1.1</b> Pages</a></li>
-<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#terminlogy"><i class="fa fa-check"></i><b>1.2</b> Terminlogy</a></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> QA for Coding</a><ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#reason-for-the-guidance"><i class="fa fa-check"></i><b>1.1</b> Reason for the Guidance</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#who-is-this-for"><i class="fa fa-check"></i><b>1.2</b> Who is this for?</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#pages"><i class="fa fa-check"></i><b>1.3</b> Pages</a></li>
+<li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#terminology"><i class="fa fa-check"></i><b>1.4</b> Terminology</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="rap.html"><a href="rap.html"><i class="fa fa-check"></i><b>2</b> RAP</a><ul>
 <li class="chapter" data-level="2.0.1" data-path="rap.html"><a href="rap.html#why-make-our-work-reproducible"><i class="fa fa-check"></i><b>2.0.1</b> Why make our work reproducible?</a></li>
@@ -99,9 +101,11 @@
 <li class="chapter" data-level="6.0.8" data-path="git.html"><a href="git.html#pull-request-and-issues"><i class="fa fa-check"></i><b>6.0.8</b> Pull Request and issues</a></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="coding-guidelines.html"><a href="coding-guidelines.html"><i class="fa fa-check"></i><b>7</b> Coding Guidelines</a><ul>
-<li class="chapter" data-level="7.1" data-path="coding-guidelines.html"><a href="coding-guidelines.html#why-useful"><i class="fa fa-check"></i><b>7.1</b> Why Useful</a></li>
-<li class="chapter" data-level="7.2" data-path="coding-guidelines.html"><a href="coding-guidelines.html#best-practices-to-follow"><i class="fa fa-check"></i><b>7.2</b> Best Practices to follow</a></li>
-<li class="chapter" data-level="7.3" data-path="coding-guidelines.html"><a href="coding-guidelines.html#principles"><i class="fa fa-check"></i><b>7.3</b> 9 Principles</a></li>
+<li class="chapter" data-level="7.1" data-path="coding-guidelines.html"><a href="coding-guidelines.html#why-useful"><i class="fa fa-check"></i><b>7.1</b> Why Useful</a><ul>
+<li class="chapter" data-level="7.1.1" data-path="coding-guidelines.html"><a href="coding-guidelines.html#peer-review"><i class="fa fa-check"></i><b>7.1.1</b> Peer Review</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="coding-guidelines.html"><a href="coding-guidelines.html#best-practices-to-follow-9-principles"><i class="fa fa-check"></i><b>7.2</b> Best Practices to follow 9 Principles</a></li>
+<li class="chapter" data-level="7.3" data-path="coding-guidelines.html"><a href="coding-guidelines.html#style-guides"><i class="fa fa-check"></i><b>7.3</b> Style Guides</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://gss.civilservice.gov.uk/policy-store/government-statistical-service-gss-quality-strategy/" target="blank">Government Statistical Service (GSS) Quality </a></li>
@@ -134,13 +138,32 @@ For example, there are many ways to access databases, but one particular way mig
 so that everyone in a team knows how it works and doesn’t have to learn other methods.</p>
 <div id="why-useful" class="section level2">
 <h2><span class="header-section-number">7.1</span> Why Useful</h2>
+<div id="peer-review" class="section level3">
+<h3><span class="header-section-number">7.1.1</span> Peer Review</h3>
+<p>An important element of getting quality code is <strong>peer review</strong>. Showing people your code and getting it scrutized is an important part of ensuring that code is doing what it is supposed to and allows iteration, a process where the back and forth of reviewing code cleans and sharpens it. This process is made easier by coding standards. When code is written in a familar style it will be easier to quickly pick it up and understand what was your intention. Poorly written code may achieve the desired output but it may be diffuult for others to read leading to code that only you have seen which may contain errors or have unforseen side effects. Fundermentally using the same language is the first step to ensuring peer review. A business area which uses excel, R, SAS, SQL and python will struggle to ensure peer review. It is desarbile for others outside your team to review your code, but this is often challenging depending on systems and data sensitivity. However code is often not sensentive, as it only details what you do to the data which will probably be desclosed anyway. Using dummy data or sysnthetic data which has the same struture and patterns as the actual raw data but has been randomly generated can allow peer review from those who do not have access to the data.</p>
 </div>
-<div id="best-practices-to-follow" class="section level2">
-<h2><span class="header-section-number">7.2</span> Best Practices to follow</h2>
 </div>
-<div id="principles" class="section level2">
-<h2><span class="header-section-number">7.3</span> 9 Principles</h2>
-<p><a href="https://datasciencecampus.github.io/coffee-and-coding/20190611_clean_code/Best_Practice_in_Programming_for_Data_Scientists_python_and_R.html#2_names">Best Practice in Programming for Data Scientists:</a></p>
+<div id="best-practices-to-follow-9-principles" class="section level2">
+<h2><span class="header-section-number">7.2</span> Best Practices to follow 9 Principles</h2>
+<p>Specific and prescription coding guidelines ensure that all the code follows a similar style but can be diffucult to implement. However there are some principles which apply to all langauages and can be used to improve the quality of your code.</p>
+<ol style="list-style-type: decimal">
+<li>dddd</li>
+<li>dfdf</li>
+</ol>
+</div>
+<div id="style-guides" class="section level2">
+<h2><span class="header-section-number">7.3</span> Style Guides</h2>
+<p>There are many style guides out there. Here are some:</p>
+<ul>
+<li><p><a href="https://datasciencecampus.github.io/coffee-and-coding/20190611_clean_code/Best_Practice_in_Programming_for_Data_Scientists_python_and_R.html#2_names">Best Practice in Programming for Data Scientists:</a></p></li>
+<li><p><a href="https://google.github.io/styleguide/Rguide.xml">Google’s R Style Guide</a></p></li>
+<li><p><a href="https://style.tidyverse.org/">TidyVerse Style Guide</a></p></li>
+<li><p><a href="https://journal.r-project.org/archive/2012-2/RJournal_2012-2_Baaaath.pdf">The State of Naming Conventions in R</a></p></li>
+<li><p><a href="https://www.python.org/dev/peps/pep-0008/">PEP 8 – Style Guide for Python Code</a></p></li>
+<li><p><a href="https://github.com/moj-analytical-services/our-coding-standards">Ministry of Justice Analytical Services Coding Standards</a></p></li>
+<li><p><a href="https://datasciencecampus.github.io/coding-standards/">Data Science Campus Coding Standards</a></p></li>
+<li><p><a href="https://github.com/Health-SocialCare-Scotland/R-Resources/blob/master/PHI%20R%20style%20guide.md">Health and Social Care Scotland R Resources</a></p></li>
+</ul>
 
 </div>
 </div>
