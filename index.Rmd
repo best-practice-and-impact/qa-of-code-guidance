@@ -10,13 +10,14 @@ link-citations: yes
 description: "This is a draft of QA for Coding guidance"
 ---
  
-# QA for Coding Struture
+# QA for Coding 
   
-* RAP
-* Testing
-* Coding Guidelines
-* Documentation
-* GIT
+This guidance is published as part of the Quality guidance published by BPI in the ONS. This guidance has been created to support the Government Statistical Service. 
+
+## Reason for the Guidance
+
+There is an increasing move in the production of statistics from legacy systems to open source langauges 
+
 
 ##  Pages
 * Aiming for roughly 10 pages

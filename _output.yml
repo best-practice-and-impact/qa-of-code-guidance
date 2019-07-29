@@ -5,12 +5,6 @@ bookdown::gitbook:
       before: |
         <li><a href="./">QA of Code</a></li>
       after: |
-        <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+        <li><a href="https://gss.civilservice.gov.uk/policy-store/government-statistical-service-gss-quality-strategy/" target="blank">Government Statistical Service (GSS) Quality </a></li>
     download: ["pdf", "epub"]
-bookdown::pdf_book:
-  includes:
-    in_header: preamble.tex
-  latex_engine: xelatex
-  citation_package: natbib
-  keep_tex: yes
 bookdown::epub_book: default

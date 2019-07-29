@@ -4,4 +4,10 @@ This is a draft of GSS guidance. This is unpublished and **does not** represent 
 
 ## QA of Code
 
-This is guidance for the Quality Assurance of Code which is par tof the Quality Guidance published by the Quality Centre in BPI at the ONS. 
+This is guidance for the Quality Assurance of Code which is part of the Quality Guidance published by the Quality Centre in BPI at the ONS. 
+
+## Preview
+
+You can access this guidance as it is developed. Be aware that the live book may be behind the provided code. This guidance is still in development and any content presence is liable to change. Please forgive formatting error and spelling mistakes. The following URL is a demo of the guidance:
+
+https://bookdown.org/joshuah40/qa_code/
