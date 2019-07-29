@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 4 Testing | QA of Code</title>
+  <title>Chapter 7 Coding Guidelines | QA of Code</title>
   <meta name="description" content="This is a draft of QA for Coding guidance" />
   <meta name="generator" content="bookdown 0.11 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 4 Testing | QA of Code" />
+  <meta property="og:title" content="Chapter 7 Coding Guidelines | QA of Code" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 4 Testing | QA of Code" />
+  <meta name="twitter:title" content="Chapter 7 Coding Guidelines | QA of Code" />
   
   <meta name="twitter:description" content="This is a draft of QA for Coding guidance" />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="levels-of-rap.html">
-<link rel="next" href="testing-frameworks.html">
+<link rel="prev" href="git.html">
+<link rel="next" href="this-is-test.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -131,39 +131,24 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="testing" class="section level1">
-<h1><span class="header-section-number">Chapter 4</span> Testing</h1>
-<p>When you are working on a project how do you know that your code is doing what you expect it to do? You run it and look at the output. This is a manual test and it has it’s limitations.</p>
-<p>Hadley Wickham in <a href="https://rjournal.github.io/archive/2011-1/RJournal_2011-1.pdf#page=5">The R Journal</a></p>
+<div id="coding-guidelines" class="section level1">
+<h1><span class="header-section-number">Chapter 7</span> Coding Guidelines</h1>
 <blockquote>
-<p>it’s not that we don’t test our
-code, it’s that we don’t store our tests so they can be
-re-run automatically.</p>
+<p>Good coding style is like correct punctuation: you can manage without it, butitsuremakesthingseasiertoread.
+– <strong>The Tidyverse Style Guide by Hadley Wickham</strong></p>
 </blockquote>
-<p>Manual tests need to be constantly re-run. This is achievable when your code is small but when it becomes longer this is time consuming. When you come back to your code in the future you will have forgotten what tests you have run, any changes are then liable to break something. Fundamentally if you don’t test your code then how do you know that your code is doing what it is suppose to? Just as data validation in an important step in statistics to the the data is correct, code validation with testing is important to check that the process is correct.</p>
-<div id="advantages-of-testing-your-code" class="section level3">
-<h3><span class="header-section-number">4.0.1</span> Advantages of testing your code</h3>
-<ul>
-<li>Better Code Structure - Writing tests forces you to separate code into functions that are separate and isolated, reducing duplication in your code. This approach will make your code easier to test and also easier to understand and use.</li>
-<li>Less Bugs - Like double entry book keeping the behavior of your code is specified twice in the code and the test making it less error prone.</li>
-<li>More Robust Code - If all the major functions of your code have associated tests then you can change your code without worrying that you have broken something without realizing</li>
-<li>Decreased Frustration - Untested code is precarious, an making changes without knowing if you have broken a section is stress inducing. Being able to deploy code that you are confident will work because it is tested will make the process more productive.</li>
-</ul>
+<p>Best practices are more about what code you write than how you write it.
+For example, there are many ways to access databases, but one particular way might be considered ‘best practice’
+so that everyone in a team knows how it works and doesn’t have to learn other methods.</p>
+<div id="why-useful" class="section level2">
+<h2><span class="header-section-number">7.1</span> Why Useful</h2>
 </div>
-<div id="when-should-you-use-testing" class="section level3">
-<h3><span class="header-section-number">4.0.2</span> When should you use testing</h3>
-<ul>
-<li>In a Analytics pipeline. In general if you are going to reuse your code multiple times then it needs to be tested to ensure that it is working properly.</li>
-<li>In a Important piece of work such as a National Statistic. It is important that National Statistics are correct and that the public has confidence in the validity of published work, testing is important to ensure that the code is working as expected and prevents errors building confidence.</li>
-<li>When working in a team. Testing ensures that collaborators can alter the code without worrying about breaking the code without realizing.</li>
-</ul>
+<div id="best-practices-to-follow" class="section level2">
+<h2><span class="header-section-number">7.2</span> Best Practices to follow</h2>
 </div>
-<div id="when-should-you-not-use-testing" class="section level3">
-<h3><span class="header-section-number">4.0.3</span> When should you not use testing</h3>
-<ul>
-<li>One off pieces of work, the effort may not be worth the benefit</li>
-<li>Exploratory work. If you are experimenting and are not sure whether your work will be converted into permanent project then testing may not be appropriate. There would be a benefit to testing if a exploratory project turns into a permanent one, however the code may be changed so fundamentally that all the tests would have to be re written. Fundamentally it is a trade off.</li>
-</ul>
+<div id="principles" class="section level2">
+<h2><span class="header-section-number">7.3</span> 9 Principles</h2>
+<p><a href="https://datasciencecampus.github.io/coffee-and-coding/20190611_clean_code/Best_Practice_in_Programming_for_Data_Scientists_python_and_R.html#2_names">Best Practice in Programming for Data Scientists:</a></p>
 
 </div>
 </div>
@@ -172,8 +157,8 @@ re-run automatically.</p>
           </div>
         </div>
       </div>
-<a href="levels-of-rap.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="testing-frameworks.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="git.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="this-is-test.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
