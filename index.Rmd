@@ -10,79 +10,23 @@ link-citations: yes
 description: "This is a draft of QA for Coding guidance"
 ---
  
-# QA for Coding 
+# Introduction
   
 This guidance is published as part of the Quality guidance published by BPI in the ONS. This guidance has been created to support the Government Statistical Service. 
 
-## Reason for the Guidance
+## Who is this guidance for?
 
-There is an increasing move in the production of statistics from legacy systems to open source languages. This provides opp unities for using new tools and methods to enhance the quality of the systems used to produce statistics. Many producers of these systems are not data scientists but other analysts or non-analytical staff and may not be familar with best practice in software development. This guidance aims to introduce you to some of the major methods recommended to be implemented in a stiaiscal output. 
-
-## Who is this for?
+This guidance is for producers of official statistics who are using or want to use new method and techniques to improve and ensure that they use the best practice in the productrion of statistics.
 
 This is meant as an introduction to techiques and methods, not a compreheive learning resource. However, it is also not an introduction to coding, and you are likely to get more from this guidance if you are familar with coding principles, have used some script based language at some point, or currently use R/python for the production of statistics and are looking for how to increase the quality of your system. At the end of chapters there are links to resources which provide a more comprehive and indepth guide to the methods. These are not neccesarily the best or only learning resources.  
 
+## What is its aim?
 
-ignore this- internal developnent only
-##  Pages
-* Aiming for roughly 10 pages
-* Each page should aim for around 300 - 400 words per page
-* Was thinking that it would be possible to produce this guidance in markdown? That way we could include code chunks, maybe hide them
+There is an increasing move in the production of statistics from legacy systems to open source languages. This provides oppunities for using new tools and methods to enhance the quality of the systems used to produce statistics. Many producers of these systems are not data scientists but other analysts or non-analytical staff and may not be familar with best practice in software development. This guidance aims to introduce you to some of the major methods recommended to be implemented in a statistical output. 
 
-0. Introduction
-- Who is this for
-- it is for the QA of statistics code, in open source languages mainly
-1. RAP
-- Overview
-- Minimal RAP??
-  2. Level of RAP
-- Examples?
-  - One example, lower profile statistic, just long code scripts, basic git, no testing
-- Second example, higher profile, more advanced along RAP stages, uses more advanced git/branching, testing, functions etc
-- Rap QA process
-3. Testing
-- Why you should test your code
-- What you should you test
-- How do you know that your code is good without testing
-4. Testing Strategies
-- Unit Testing
-- Check list for standard things to test
-- Boundary Value Analysis
-- Examples!
-  5. Version Control with Git
-- Why use Git
-- Advantages of using Git
-- version control
-- Branching
-- Roll back
-- issues
-- pull requests
-- Peer review, share code
-- other benefits!
-  6. Peer Review
-- internal / external
-- other team members
-- access to data
-7. Documentation
-- Documenting code, inline documenting
-- Readme for projects
-- documenting function, in and out of packages
-- Markdown for desk notes
-- coding standards
-- documentation standards
-8. Environment- Making sure that reproducible code can actually be reproduced!!
-  - DATA- synthetic data, how peer review? produce dummy data?
-  - Docker
-- Pack rat
-- Documentation
-9. Other Issues
--	Staff leave? Need to train up new people, documentation makes it easier.
--	Project need to be manageable for running in the long run
-- Code Standards
-- Link to resources
-- Role and responsibility
-- Terminology
-- Managers
+## What does it cover?
+
+A number of departments have implemented code in their statistics to automate aspects of production. This may involve having a script whoch is run to achieve a part of production such as data valdiation or producing tables.     
 
 
 ## Terminology

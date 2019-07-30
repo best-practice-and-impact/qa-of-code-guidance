@@ -1,0 +1,12 @@
+# Documentation
+
+![](static/commenting.jpg)
+
+An important part of producing statistics is documenting the process. This process can be  
+
+instutionalional memory 
+
+- Documenting code, inline documenting
+- Readme for projects
+- documenting function, in and out of packages
+- Markdown for desk notes

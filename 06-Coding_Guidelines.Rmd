@@ -1,3 +1,7 @@
+# intro
+
+
+
 # Coding Guidelines
 
 > Good coding style is like correct punctuation: you can manage without it, butitsuremakesthingseasiertoread.
@@ -5,23 +9,48 @@
 
 Best practices are more about what code you write than how you write it.
 For example, there are many ways to access databases, but one particular way might be considered ‘best practice’ 
-so that everyone in a team knows how it works and doesn’t have to learn other methods. 
+so that everyone in a team knows how it works and doesn't’t have to learn other methods. 
 
 ## Why Useful
 
+Coding guidelines are helpful
+
+* Peer Review
+* Makes it easier to learn 
+  - Often people new to coding want soem guidelines as this makes it easier to learn. It is hard to know      what is best practice, some guidelines can be helpful.
+* Makes maintaining code easier
+  - Just as important as writing the code is maintaining in production, perhaps after the writers have left.  Maintainability is always an important consideration to make projects sustainable. 
+* Makes projects more coherent
+  - If code is written by a team then if everyone is writing in unique distinct styles then the project
+  will be harder to read when combined.
+
 ### Peer Review
 
-An important element of getting quality code is **peer review**. Showing people your code and getting it scrutized is an important part of ensuring that code is doing what it is supposed to and allows iteration, a process where the back and forth of reviewing code cleans and sharpens it. This process is made easier by coding standards. When code is written in a familar style it will be easier to quickly pick it up and understand what was your intention. Poorly written code may achieve the desired output but it may be diffuult for others to read leading to code that only you have seen which may contain errors or have unforseen side effects. Fundermentally using the same language is the first step to ensuring peer review. A business area which uses excel, R, SAS, SQL and python will struggle to ensure peer review. It is desarbile for others outside your team to review your code, but this is often challenging depending on systems and data sensitivity. However code is often not sensentive, as it only details what you do to the data which will probably be desclosed anyway. Using dummy data or sysnthetic data which has the same struture and patterns as the actual raw data but has been randomly generated can allow peer review from those who do not have access to the data. 
+![](static/code_review.jpg)
 
-## Best Practices to follow  9 Principles
+An important element of getting quality code is **peer review**. Showing people your code and getting it scrutinized is an important part of ensuring that code is doing what it is supposed to and allows iteration, a process where the back and forth of reviewing code cleans and sharpens it. This process is made easier by coding standards. When code is written in a familiar style it will be easier to quickly pick it up and understand what was your intention. Poorly written code may achieve the desired output but it may be difficult for others to read leading to code that only you have seen which may contain errors or have unforeseen side effects. Fundamentally using the same language is the first step to ensuring peer review. A business area which uses excel, R, SAS, SQL and python will struggle to ensure peer review. It is desirable for others outside your team to review your code, but this is often challenging depending on systems and data sensitivity. However code is often not sensitive, as it only details what you do to the data which will probably be disclosed anyway. Using dummy data or synthetic data which has the same structure and patterns as the actual raw data but has been randomly generated can allow peer review from those who do not have access to the data. 
 
-Specific and prescription coding guidelines ensure that all the code follows a similar style but can be diffucult to implement. However there are some principles which apply to all langauages and can be used to improve the quality of your code. 
+## Best Practice: Coding Principles
 
-1. dddd
-2. dfdf
+Specific and prescription coding guidelines ensure that all the code follows a similar style but can be difficult to implement. However there are some principles which apply to all languages and can be used to improve the quality of your code. 
+
+1. Naming 
+  -  The names of variables & functions need to be descriptive (intention-revealing), pronounceable and need to reflect what a function does and what the variables are.
+2. Short vs Readability 
+  - Being efficient with writing does not always lead to a code that is readable, don't sacrifice readability to make your code shorter. 
+3. Distinct (Ubiquitous language) 
+  - Make meaningful distinctions. Do not use the same name for two (or more) distinct items. Use the same term in the code, in the documents and when talking to customers.
+  - eg Do not use the cancer name for the Data and the model. Use cancerData and cancerModel for the Data and model respectively. The same is true for Dataframes and columns of the Dataframes.
+4. Code can be self-documenting.
+  - Put the effort to improve, organize and structure your code i.e. clean it. 
+5. Keep functions simple
+  - Keep as few arguments as possible when creating a function. A function should aim to do one thing well, if there are lots of arguments then maybe that is a sign you should think about separating the function into multiple functions. The idea it to keep the code together that can get damaged for the same reason of change, when changing something you want to impact as few things as possible.  
+6. Nesting. 
+  - You should always avoid nesting as it make the code harder to read and understand.
 
 ## Style Guides
-There are many style guides out there. Here are some: 
+There are many style guides out there. You may choose to adopt one or part of one. Your team or department could also write some guidelines tailored to your needs to encourage best pratice. 
+Here are some existing guidelines: 
 
 * [Best Practice in Programming for Data Scientists:](https://datasciencecampus.github.io/coffee-and-coding/20190611_clean_code/Best_Practice_in_Programming_for_Data_Scientists_python_and_R.html#2_names)
 
