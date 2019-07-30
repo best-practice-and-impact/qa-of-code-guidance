@@ -1,7 +1,3 @@
-# intro
-
-
-
 # Coding Guidelines
 
 > Good coding style is like correct punctuation: you can manage without it, butitsuremakesthingseasiertoread.
