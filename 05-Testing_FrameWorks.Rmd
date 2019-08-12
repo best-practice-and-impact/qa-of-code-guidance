@@ -13,6 +13,7 @@ Tests should be
 * Thorough (How much do you trust they cover everything?)
 
 There are common testing frameworks which make testing much simplier.
+
 * For R [Testthat](http://r-pkgs.had.co.nz/tests.html)
 * For python [pytest](https://docs.pytest.org/en/latest/)
 
@@ -31,7 +32,7 @@ There is a question about how much of your code should you test. This depends on
 
 ### Test Driven Development
 
-## Refernces
+## References 
 
 * [Testing Blog](http://www.tdda.info/test-driven-development-a-review)
 * [Testthat](http://r-pkgs.had.co.nz/tests.html)

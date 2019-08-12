@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 5 Testing Frameworks | QA of Code</title>
+  <title>Chapter 8 Documentation | QA of Code</title>
   <meta name="description" content="This is a draft of QA for Coding guidance" />
   <meta name="generator" content="bookdown 0.11 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 5 Testing Frameworks | QA of Code" />
+  <meta property="og:title" content="Chapter 8 Documentation | QA of Code" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 5 Testing Frameworks | QA of Code" />
+  <meta name="twitter:title" content="Chapter 8 Documentation | QA of Code" />
   
   <meta name="twitter:description" content="This is a draft of QA for Coding guidance" />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="Testing.html">
-<link rel="next" href="GIT.html">
+<link rel="prev" href="Coding-Guidelines.html">
+<link rel="next" href="other.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -136,45 +136,57 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="testing-frameworks" class="section level1">
-<h1><span class="header-section-number">Chapter 5</span> Testing Frameworks</h1>
-<div id="what-exactly-is-a-test" class="section level2">
-<h2><span class="header-section-number">5.1</span> What exactly is a test</h2>
-<p>Testing is just checking that the expected result is the same as the actual result. Automated testing is moving from doing this in a informal ad-hoc way to an automated process which is repeatable.</p>
-<p>Tests should be</p>
+<div id="documentation" class="section level1">
+<h1><span class="header-section-number">Chapter 8</span> Documentation</h1>
+<p><img src="static/commenting.jpg" /></p>
+<p>An important part of producing analysis is documenting the process. This can be done in many ways but a common issue is that documentation isn’t thorough enough. Understanding how a process was done in the past may rely on partial documentation or the expert knowledge of one or two individuals, which is very risky if they leave. New tools open up different avenues for collecting documentation in ways which might be easier and better. This is not a panacea, but my making documentation and code closely intertwined it encourages the process.</p>
+<div id="commenting" class="section level2">
+<h2><span class="header-section-number">8.1</span> Commenting</h2>
+<p>This is the process of in a code script putting comments or documentation in with the code. In R and Python this can be done by placing a #, and that line will now be a comment rather than active code. An example is the following function which is not clear what it does by looking.</p>
+<pre><code>even = function(x){
+     data =  x %% 2 == 0
+     sum(data)
+}
+</code></pre>
+<p>By applying good coding standards and commenting it is far clearer what the function does, however being more verbose can make the script more cluttered. The aim to is to make the script understandable to your future self and others, and comments are an important element along with good <a href="Coding_Guidelines">coding standards</a></p>
+<pre><code># A function that returns the number of even numbers in a list
+
+find_number_even &lt;- function(x){
+# Find the even numbers as TRUE or FALSE
+  find_evens &lt;- x %% 2 == 0
+# sum the list to find total number of even
+  sum(find_evens)
+}
+</code></pre>
+</div>
+<div id="readme" class="section level2">
+<h2><span class="header-section-number">8.2</span> README</h2>
+<p>This sections assumes you are using <a href="GIT.html#GIT">GIT</a>. Every project using Git should have a README file. This is a file that is displayed when people view your repository and it is often he first thing people see when they view your project. You can use it to tell people what your project is, what it can do and how people can use it. What you include in it might depend on what stage of development you are at. By summarising the project and including details in acts as a guide to the project for others to use. There are some standards of what to include such as <a href="https://docs.publishing.service.gov.uk/manual/readmes.html">READMEs for GOV.UK</a> and
+<a href="https://help.github.com/en/articles/about-readmes">GitHub Guide to README</a>.
+Some useful information to include is</p>
 <ul>
-<li>Fast</li>
-<li>Independent</li>
-<li>Repeatable (deterministic)</li>
-<li>Self-validating (no manual steps)</li>
-<li>Thorough (How much do you trust they cover everything?)</li>
+<li>What the project does</li>
+<li>Why the project is useful</li>
+<li>How users can get started with the project</li>
+<li>Where users can get help with your project</li>
+<li>Who maintains and contributes to the project</li>
 </ul>
-<p>There are common testing frameworks which make testing much simplier.</p>
-<ul>
-<li>For R <a href="http://r-pkgs.had.co.nz/tests.html">Testthat</a></li>
-<li>For python <a href="https://docs.pytest.org/en/latest/">pytest</a></li>
-</ul>
-<div id="unit-test" class="section level3">
-<h3><span class="header-section-number">5.1.1</span> Unit Test</h3>
-<p>Unit testing is the cornerstone of modern software development. The purpose is to validate that each unit of the software performs as designed. A unit is the smallest testable part, such as a function. A unit test might check that for a given input you get a certain output. This gives assurance that for the tested cases your function will preform as expected. This might be checking that your code preforms as expected when given a missing value, or a negative value.
-If all tests are passing then all of the cases that are tested for will work. This removes a lot of the burden of review.
-Unit testing increases confidence in maintaining or changing code. This is because a test which catch if a change has introduced an error quickly. This also encourages good practice as to make unit testing possible code will need to be modular making it easier to reuse.</p>
+<p>Departments might want to consider have a README template to standardize what is included across the department.</p>
 </div>
-<div id="integration-tests" class="section level3">
-<h3><span class="header-section-number">5.1.2</span> Integration Tests</h3>
-<p>Unit tests ensure that the units of code works as expected, intergration tests ensure that the units work together. An example is testing to ensure that a series of functions together do what is expected. In R and Python this can be achieved using the same framework as unit tests.
-There is a question about how much of your code should you test. This depends on the complexity of system and the importance. For statistics QAAD can be used asa framework to gauge the appropriate level of testing. For modeling the AQUA book gives a framework for the appropriate level of QA.</p>
+<div id="package-documentation" class="section level2">
+<h2><span class="header-section-number">8.3</span> Package Documentation</h2>
+<p>A package enshrines all the business knowledge used to create a piece of work in one place, including the code used to generate the output and the documentation. If you bundle your code into a package then functions and other aspects of the project can have associated documentation. This allows a package to be shared with the documentation of how to use the functions built into the package.</p>
+<pre><code># For R
+?your_package_function
+help(your_package_function)
+
+# For Python
+help()
+</code></pre>
 </div>
-<div id="test-driven-development" class="section level3">
-<h3><span class="header-section-number">5.1.3</span> Test Driven Development</h3>
-</div>
-</div>
-<div id="references" class="section level2">
-<h2><span class="header-section-number">5.2</span> References</h2>
-<ul>
-<li><a href="http://www.tdda.info/test-driven-development-a-review">Testing Blog</a></li>
-<li><a href="http://r-pkgs.had.co.nz/tests.html">Testthat</a></li>
-</ul>
+<div id="markdown-for-desk-notes" class="section level2">
+<h2><span class="header-section-number">8.4</span> Markdown for desk notes</h2>
+<p>In R and other languages markdown and variants can be used to write desk notes. These are documentation of what an analyst needs to do, such as produce a statistic or generate an output from a model. Rather than produce these in a text editor such as word these could be produced in R markdown or a Jupiter Notebook (both support many languages). This allows blocks of texts describing what, why and how next to live code that can be run to give an example. Documenting the work flow in this manner is another method of interweaving commentary and code together.</p>
 
 </div>
 </div>
@@ -183,8 +195,8 @@ There is a question about how much of your code should you test. This depends on
           </div>
         </div>
       </div>
-<a href="Testing.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="GIT.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="Coding-Guidelines.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="other.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

@@ -1,4 +1,4 @@
-# Testing
+# Testing {#Testing}
 
 When you are working on a project how do you know that your code is doing what you expect it to do? You run it and look at the output. This is a manual test and it has it's limitations.
 

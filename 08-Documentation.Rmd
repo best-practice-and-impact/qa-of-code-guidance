@@ -30,7 +30,7 @@ find_number_even <- function(x){
 ```
 ## README
 
-This sections assumes you are using [Git](GIT). Every project using Git should have a README file. This is a file that is displayed when people view your repository and it is often he first thing people see when they view your project. You can use it to tell people what your project is, what it can do and how people can use it. What you include in it might depend on what stage of development you are at. By summarising the project and including details in acts as a guide to the project for others to use. There are some standards of what to include such as [READMEs for GOV.UK](https://docs.publishing.service.gov.uk/manual/readmes.html) and
+This sections assumes you are using [GIT]. Every project using Git should have a README file. This is a file that is displayed when people view your repository and it is often he first thing people see when they view your project. You can use it to tell people what your project is, what it can do and how people can use it. What you include in it might depend on what stage of development you are at. By summarising the project and including details in acts as a guide to the project for others to use. There are some standards of what to include such as [READMEs for GOV.UK](https://docs.publishing.service.gov.uk/manual/readmes.html) and
 [GitHub Guide to README](https://help.github.com/en/articles/about-readmes).
 Some useful information to include is
 
