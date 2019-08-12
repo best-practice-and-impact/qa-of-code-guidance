@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 4 Page 3 Testing | Quality Assurance of Code</title>
+  <meta name="description" content="description" />
+  <meta name="generator" content="bookdown 0.10 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 4 Page 3 Testing | Quality Assurance of Code" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="description" />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 4 Page 3 Testing | Quality Assurance of Code" />
+  
+  <meta name="twitter:description" content="description" />
+  
+
+<meta name="author" content="Joshua Halls" />
+
+
+<meta name="date" content="2019-07-23" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="levels-of-rap.html">
+<link rel="next" href="testing-frameworks.html">
+<script src="assets/jquery-2.2.3/jquery.min.js"></script>
+<link href="assets/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="assets/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="assets/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="assets/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="assets/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="assets/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> QA for Coding Struture</a><ul>
+<li class="chapter" data-level="1.1" data-path="pages.html"><a href="pages.html"><i class="fa fa-check"></i><b>1.1</b> Pages</a></li>
+<li class="chapter" data-level="1.2" data-path="terminlogy.html"><a href="terminlogy.html"><i class="fa fa-check"></i><b>1.2</b> Terminlogy</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="rap.html"><a href="rap.html"><i class="fa fa-check"></i><b>2</b> RAP</a><ul>
+<li class="chapter" data-level="2.0.1" data-path="rap.html"><a href="rap.html#why-make-our-work-reproducible"><i class="fa fa-check"></i><b>2.0.1</b> Why make our work reproducible?</a></li>
+<li class="chapter" data-level="2.0.2" data-path="rap.html"><a href="rap.html#what-is-a-reproducible-analytical-pipeline"><i class="fa fa-check"></i><b>2.0.2</b> What is a reproducible analytical pipeline?</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="levels-of-rap.html"><a href="levels-of-rap.html"><i class="fa fa-check"></i><b>3</b> Levels of RAP</a></li>
+<li class="chapter" data-level="4" data-path="page-3-testing.html"><a href="page-3-testing.html"><i class="fa fa-check"></i><b>4</b> Page 3 Testing</a><ul>
+<li class="chapter" data-level="4.0.1" data-path="page-3-testing.html"><a href="page-3-testing.html#advatges-of-testing-your-code"><i class="fa fa-check"></i><b>4.0.1</b> Advatges of testing your code</a></li>
+<li class="chapter" data-level="4.0.2" data-path="page-3-testing.html"><a href="page-3-testing.html#when-should-you-use-testing"><i class="fa fa-check"></i><b>4.0.2</b> When should you use testing</a></li>
+<li class="chapter" data-level="4.0.3" data-path="page-3-testing.html"><a href="page-3-testing.html#when-should-you-not-use-testing"><i class="fa fa-check"></i><b>4.0.3</b> When should you not use testing</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="testing-frameworks.html"><a href="testing-frameworks.html"><i class="fa fa-check"></i><b>5</b> Testing Frameworks</a><ul>
+<li class="chapter" data-level="5.1" data-path="what-excatly-is-a-test.html"><a href="what-excatly-is-a-test.html"><i class="fa fa-check"></i><b>5.1</b> What excatly is a test</a><ul>
+<li class="chapter" data-level="5.1.1" data-path="what-excatly-is-a-test.html"><a href="what-excatly-is-a-test.html#unit-test"><i class="fa fa-check"></i><b>5.1.1</b> Unit Test</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="git.html"><a href="git.html"><i class="fa fa-check"></i><b>6</b> GIT</a><ul>
+<li class="chapter" data-level="6.0.1" data-path="git.html"><a href="git.html#git-introduction"><i class="fa fa-check"></i><b>6.0.1</b> Git Introduction</a></li>
+<li class="chapter" data-level="6.0.2" data-path="git.html"><a href="git.html#about-version-control"><i class="fa fa-check"></i><b>6.0.2</b> About Version Control</a></li>
+<li class="chapter" data-level="6.0.3" data-path="git.html"><a href="git.html#what-is-git"><i class="fa fa-check"></i><b>6.0.3</b> What is GIT</a></li>
+<li class="chapter" data-level="6.0.4" data-path="git.html"><a href="git.html#how-does-git-actually-work"><i class="fa fa-check"></i><b>6.0.4</b> How does GIT actually work</a></li>
+<li class="chapter" data-level="6.0.5" data-path="git.html"><a href="git.html#typical-git-workflow"><i class="fa fa-check"></i><b>6.0.5</b> Typical Git workflow</a></li>
+<li class="chapter" data-level="6.0.6" data-path="git.html"><a href="git.html#remote-repostory"><i class="fa fa-check"></i><b>6.0.6</b> Remote Repostory</a></li>
+<li class="chapter" data-level="6.0.7" data-path="git.html"><a href="git.html#branching"><i class="fa fa-check"></i><b>6.0.7</b> Branching</a></li>
+<li class="chapter" data-level="6.0.8" data-path="git.html"><a href="git.html#pull-request-and-issues"><i class="fa fa-check"></i><b>6.0.8</b> Pull Request and issues</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Quality Assurance of Code</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="page-3-testing" class="section level1">
+<h1><span class="header-section-number">Chapter 4</span> Page 3 Testing</h1>
+<p>When you are working on a project how do you know that your code is doing what you expect it to do? You run it and look at the output. This is a manual test and it has it’s limitations.</p>
+<p>Hadley Wickham in <a href="https://rjournal.github.io/archive/2011-1/RJournal_2011-1.pdf#page=5">The R Journal</a></p>
+<blockquote>
+<p>it’s not that we don’t test our code, it’s that we don’t store our tests so they can be re-run automatically.</p>
+</blockquote>
+<p>Manual tests need to be constantly re-run. This is achievable when your code is small but when it becomes longer this is time consuming. When you come back to your code in the future you will have forgotten what tests you have run, any changes are then liable to break something. Fundamentally if you don’t test your code then how do you know that your code is doing what it is suppose to? Just as data validation in an important step in statistics to the the data is correct, code validation with testing is important to check that the process is correct.</p>
+<div id="advatges-of-testing-your-code" class="section level3">
+<h3><span class="header-section-number">4.0.1</span> Advatges of testing your code</h3>
+<ul>
+<li>Better Code Structure - Writing tests forces you to separate code into functions that are separate and isolated, reducing duplication in your code. This approach will make your code easier to test and also easier to understand and use.</li>
+<li>Less Bugs - Like double entry book keeping the behavior of your code is specified twice in the code and the test making it less error prone.</li>
+<li>More Robust Code - If all the major functions of your code have associated tests then you can change your code without worrying that you have broken something without realizing</li>
+<li>Decreased Frustration - Untested code is precarious, an making changes without knowing if you have broken a section is stress inducing. Being able to deploy code that you are confident will work because it is tested will make the process more productive.</li>
+</ul>
+</div>
+<div id="when-should-you-use-testing" class="section level3">
+<h3><span class="header-section-number">4.0.2</span> When should you use testing</h3>
+<ul>
+<li>In a Analytics pipeline. In general if you are going to reuse your code multiple times then it needs to be tested to ensure that it is working properly.</li>
+<li>In a Important piece of work such as a National Statistic. It is important that National Statistics are correct and that the public has confidence in the validity of published work, testing is important to ensure that the code is working as expected and prevents errors building confidence.</li>
+<li>When working in a team. Testing ensures that collaborators can alter the code without worrying about breaking the code without realizing.</li>
+</ul>
+</div>
+<div id="when-should-you-not-use-testing" class="section level3">
+<h3><span class="header-section-number">4.0.3</span> When should you not use testing</h3>
+<ul>
+<li>One off pieces of work, the effort may not be worth the benefit</li>
+<li>Exploratory work. If you are experimenting and are not sure whether your work will be converted into permanent project then testing may not be appropriate. There would be a benefit to testing if a exploratory project turns into a permanent one, however the code may be changed so fundamentally that all the tests would have to be re written. Fundamentally it is a trade off.</li>
+</ul>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="levels-of-rap.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="testing-frameworks.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="assets/gitbook-2.6.7/js/app.min.js"></script>
+<script src="assets/gitbook-2.6.7/js/lunr.js"></script>
+<script src="assets/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="assets/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="assets/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="assets/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="assets/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+},
+"toolbar": {
+"position": "static"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

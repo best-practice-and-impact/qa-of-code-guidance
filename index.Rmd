@@ -1,40 +1,52 @@
---- 
+---
 title: "QA of Code"
 author: "Joshua Halls"
-date: "`r Sys.Date()`"
-site: bookdown::bookdown_site
+date: '`r Sys.Date()`'
+bibliography:
+- book.bib
+- packages.bib
+description: This is a draft of QA for Coding guidance
 documentclass: book
-bibliography: [book.bib, packages.bib]
-biblio-style: apalike
 link-citations: yes
-description: "This is a draft of QA for Coding guidance"
+site: bookdown::bookdown_site
+biblio-style: apalike
 ---
- 
+
 # Introduction
-  
-This guidance is published as part of the Quality guidance published by BPI in the ONS. This guidance has been created to support the Government Statistical Service. 
+
+This guidance is published as part of the Quality guidance published by the Best Practice and Impact team in the Office for National Statistics. This guidance has been created to support the Government Statistical Service, but has wider application across the analytical professions in government.
 
 ## Who is this guidance for?
 
-This guidance is for producers of official statistics who are using or want to use new method and techniques to improve and ensure that they use the best practice in the productrion of statistics.
+This guidance is for producers of official statistics who are using or want to use new methods and techniques to improve and ensure that they use best practice in the production of statistics.
 
-This is meant as an introduction to techiques and methods, not a compreheive learning resource. However, it is also not an introduction to coding, and you are likely to get more from this guidance if you are familar with coding principles, have used some script based language at some point, or currently use R/python for the production of statistics and are looking for how to increase the quality of your system. At the end of chapters there are links to resources which provide a more comprehive and indepth guide to the methods. These are not neccesarily the best or only learning resources.  
+The guidance is an introduction to techniques and methods, not a comprehensive learning resource. However, it is also not an introduction to coding.  You are likely to get the most from this guidance if you are familiar with coding principles, have used a script based language before, or currently use R or Python for the production of statistics. At the end of chapters there are links to resources which provide a more comprehensive and in-depth guide to the methods. These are not the only learning resources available, but we have tried to link to ones that are used widely.
+
 
 ## What is its aim?
 
-There is an increasing move in the production of statistics from legacy systems to open source languages. This provides oppunities for using new tools and methods to enhance the quality of the systems used to produce statistics. Many producers of these systems are not data scientists but other analysts or non-analytical staff and may not be familar with best practice in software development. This guidance aims to introduce you to some of the major methods recommended to be implemented in a statistical output. 
+Statistical production in government is moving away from legacy systems that are largely manual to workflows built using open source languages and tools that encourage rigorous documentation and a full audit trail. This trend, which builds on best practice in software engineering, provides opportunities for using new tools and methods to enhance the quality of the systems used to produce statistics. Many producers of such systems are not data scientists or coding experts, but other analysts or non-analytical staff who may not be familiar with these new approaches. This guidance aims to introduce some of the common practices that are recommended for implementing a statistical output in a transparent and fully auditable way.
 
 ## What does it cover?
 
-A number of departments have implemented code in their statistics to automate aspects of production. This may involve having a script whoch is run to achieve a part of production such as data valdiation or producing tables.     
+A number of departments have implemented code to automate aspects of statistical production. This may involve having one or more scripts and functions which are run to achieve a part of production such as data validation or producing tables.
 
+## The problem with spreadsheets
 
-## Terminology
+Many departments are moving some analysis from spreadsheets to open source languages like R and python. This is due to a few reasons.
+* Spreadsheet errors
+  - These are relatively common due to human error. a [list of errors](http://www.eusprig.org/horror-stories.htm) caused by spreadsheets illustrates this. This is related to the high degree of copy and pasting that excel encourages.
+* Lack of Proper Version Control
+  - Whilst it is possible to version control spreadsheets it is difficult and time consuming relative to new tools available such as Git. This allows not only a complete record of every change but the reasons and decisions behind the process are also stored. This provides an audit trail and allows manager to have confidence in the QA of the analysis without having to go through the work line by line.
+* Not reproducible.
+  - Spreadsheets often involve many manual steps or 'point and clicks'. These steps are not recorded and make reproducing work later difficult or impossible. Notes or documentation may help in this process but even detailed documentation is unlikely to give a full record of the process.
+* Testing and QA often happens at the end, not throughout
+  - QA is a time consuming process when done manually and can take up a significant proportion of an analysts time. Automating QA and other aspects free up time to be spent querying the process and interpreting the results.
 
-* GIT
-* SHELL
-* VC
-* Repository
-* CLI
-* GUI
-* Unit Test
+## Open source
+
+Open source languages such as Python and R are increasing in popularity across government. One advantage of using these tools is that we can reduce the number of steps where the data needs to be moved from one program (or format) into another. This is in line with the principle of reproducibility given in guidance on producing quality analysis for government (the AQUA book), as the entire process can be represented as a single step in code, greatly reducing the likelihood of manual transcription errors.
+
+The [Technology Code of Practice](https://www.gov.uk/government/publications/technology-code-of-practice/technology-code-of-practice) is a set of criteria to help government design, build and buy technology. It’s used as a cross-government agreed standard in the spend controls process. Criteria 3 *"Be open and use open source"* recommends using open sources languages such as R or Python.
+
+Open source languages are easier to find learning material and guides for as there are large and vibrant communities producing materials. This allows a large  degree of self learning, if a output/method/technique wants to be implemented there is very likely a library to support it and a guide to teach it available for all. Also as a result of the large communities of users these languages are capable of preforming a diverse array of tasks allowing departments to try innovative new approaches such as interactive dashboards or web scraping.
