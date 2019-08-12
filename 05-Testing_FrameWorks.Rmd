@@ -12,7 +12,7 @@ Tests should be
 * Self-validating (no manual steps)
 * Thorough (How much do you trust they cover everything?)
 
-There are common testing frameworks which make testing much simplier.
+There are common testing frameworks which make testing much simpler.
 
 * For R [Testthat](http://r-pkgs.had.co.nz/tests.html)
 * For python [pytest](https://docs.pytest.org/en/latest/)
@@ -26,8 +26,8 @@ Unit testing increases confidence in maintaining or changing code. This is becau
 
 
 ### Integration Tests
-Unit tests ensure that the units of code works as expected, intergration tests ensure that the units work together. An example is testing to ensure that a series of functions together do what is expected. In R and Python this can be achieved using the same framework as unit tests.
-There is a question about how much of your code should you test. This depends on the complexity of system and the importance. For statistics QAAD can be used asa framework to gauge the appropriate level of testing. For modeling the AQUA book gives a framework for the appropriate level of QA.
+Unit tests ensure that the units of code works as expected, integration tests ensure that the units work together. An example is testing to ensure that a series of functions together do what is expected. In R and Python this can be achieved using the same framework as unit tests.
+There is a question about how much of your code should you test. This depends on the complexity of system and the importance. For statistics QAAD can be used as framework to gauge the appropriate level of testing. For modeling the AQUA book gives a framework for the appropriate level of QA.
 
 
 ### Test Driven Development

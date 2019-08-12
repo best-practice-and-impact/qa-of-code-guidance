@@ -4,8 +4,7 @@
 
 RAP can be viewed as a layered process. This section of the guidance will go through many of the steps. You might start off with a basic coding project and add additional levels of enhancement to the project as you go. This layered approach gives a framework for progressing through the different levels of sophistication that are possible. How far you get will depend on the skill level in your team, the infrastructure available in your department and pragmatic choices about whether the final stages are proportionately necessary for your project. For smaller pieces of work, the most sophisticated levels might be too time consuming to put in place, with minimal benefit. However for regular work that you are going to repeat, the more levels you can build the more assurance you will have that your code is performing as you expect it to and your outputs are as you intended. Deciding how far to go should be pragmatic and proportionate. You may think about a minimal level that you hope to achieve before the code is put into production, but this level will vary depending on your needs.
 
-RAP can be viewed as a layered process, moving from a simple script containing the code, to a fully integrated package built using R or python and backed up by automated testing. As you move through the RAP levels you add tools and best practice from data science to ensure reproducibility and minimize errors in the production process.
-This assumes that you start with one or more ad hoc scripts. These are likely long scripts that contain the code to do a number of steps such as data validation or producing tables. This is the start of the RAP process.
+Many projects consists of one or more ad hoc scripts to do a number of steps such as data validation or producing tables. This is the start of the RAP process.
 
 The second step is to organize your code into a clear structure. The layout will depend on the project and the tools but in general this will involve separating the code into sections that do particular tasks such as modifying the data or running validation checks. This is an opportunity to start applying coding standards if you are not following them, this will make the process easier.
 
@@ -15,14 +14,10 @@ Another step is to re write the code into reusable functions. Functions are orga
 
 One of the difficulties that can arise in  more manual methods of production is that there can be many different files separated out over different areas all relating to different but interdependent stages of the process. Each needs to be documented and kept up to date. Packaging your code can help solve this problem and gives the project a defined structure. The documentation is part of the package and closely intertwined with the code which aids in institutional knowledge transfer.  
 
-
 > In R, the fundamental unit of shareable code is the package. A package bundles together code, data, documentation, and tests, and is easy to share with others.
 - [Hadley Wickham](https://r-pkgs.org/intro.html)
 
 Throughout this process testing should be implemented when pragmatic and proportionate. This is gone into more detail in chapter 4 on [Testing]. These last stages involves ensuring that the package is fully tested and these are integrated into the version control system ensuring that all tests are run automatically. This gives confidence that the package tests have always been run and notify on the version control site whether tests are failing. Code coverage can also be used letting users know what percent of the package is covered by tests.
-
-
-
 
 
 [Public Health & Intelligence Reproducible Analytical Pipelines](https://www.isdscotland.org/About-ISD/Methodologies/_docs/Reproducible_Analytical_Pipelines_paper_v1.4.pdf)

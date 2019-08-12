@@ -147,7 +147,7 @@
 <div id="who-is-this-guidance-for" class="section level2">
 <h2><span class="header-section-number">1.1</span> Who is this guidance for?</h2>
 <p>This guidance is for producers of official statistics who are using or want to use new methods and techniques to improve and ensure that they use best practice in the production of statistics.</p>
-<p>The guidance is an introduction to techniques and methods, not a comprehensive learning resource. However, it is also not an introduction to coding. You are likely to get the most from this guidance if you are familiar with coding principles, have used a script based language before, or currently use R or Python for the production of statistics. At the end of chapters there are links to resources which provide a more comprehensive and in-depth guide to the methods. These are not the only learning resources available, but we have tried to link to ones that are used widely.</p>
+<p>The guidance is an introduction to techniques and methods, not a comprehensive learning resource. However, it is also not an introduction to coding. You are likely to get the most from this guidance if you are familiar with coding principles, have used a script based language before, or currently use R or Python for the production of statistics. At the end of chapters there are links to resources which provide a more comprehensive and in-depth guide to the methods. These are not the only learning resources available, but we have tried to link to ones that are used widely. The aim of this guidance is to promote good practice in coding across the government analytical professions, it is not targeted for data scientists but more for analsysts who use code but have not been formally trained in computer science.</p>
 </div>
 <div id="what-is-its-aim" class="section level2">
 <h2><span class="header-section-number">1.2</span> What is its aim?</h2>
@@ -159,21 +159,31 @@
 </div>
 <div id="the-problem-with-spreadsheets" class="section level2">
 <h2><span class="header-section-number">1.4</span> The problem with spreadsheets</h2>
-<p>Many departments are moving some analysis from spreadsheets to open source languages like R and python. This is due to a few reasons.
-* Spreadsheet errors
-- These are relatively common due to human error. a <a href="http://www.eusprig.org/horror-stories.htm">list of errors</a> caused by spreadsheets illustrates this. This is related to the high degree of copy and pasting that excel encourages.
-* Lack of Proper Version Control
-- Whilst it is possible to version control spreadsheets it is difficult and time consuming relative to new tools available such as Git. This allows not only a complete record of every change but the reasons and decisions behind the process are also stored. This provides an audit trail and allows manager to have confidence in the QA of the analysis without having to go through the work line by line.
-* Not reproducible.
-- Spreadsheets often involve many manual steps or ‘point and clicks’. These steps are not recorded and make reproducing work later difficult or impossible. Notes or documentation may help in this process but even detailed documentation is unlikely to give a full record of the process.
-* Testing and QA often happens at the end, not throughout
-- QA is a time consuming process when done manually and can take up a significant proportion of an analysts time. Automating QA and other aspects free up time to be spent querying the process and interpreting the results.</p>
+<p>Many departments are moving some analysis from spreadsheets to open source languages like R and python. This is due to a few reasons.</p>
+<ul>
+<li>Spreadsheet errors
+<ul>
+<li>These are relatively common due to human error. a <a href="http://www.eusprig.org/horror-stories.htm">list of errors</a> caused by spreadsheets illustrates this. This is related to the high degree of copy and pasting that excel encourages.</li>
+</ul></li>
+<li>Lack of Proper Version Control
+<ul>
+<li>Whilst it is possible to version control spreadsheets it is difficult and time consuming relative to new tools available such as Git. This allows not only a complete record of every change but the reasons and decisions behind the process are also stored. This provides an audit trail and allows manager to have confidence in the QA of the analysis without having to go through the work line by line.</li>
+</ul></li>
+<li>Not reproducible.
+<ul>
+<li>Spreadsheets often involve many manual steps or ‘point and clicks’. These steps are not recorded and make reproducing work later difficult or impossible. Notes or documentation may help in this process but even detailed documentation is unlikely to give a full record of the process.</li>
+</ul></li>
+<li>Testing and QA often happens at the end, not throughout
+<ul>
+<li>QA is a time consuming process when done manually and can take up a significant proportion of an analysts time. Automating QA and other aspects free up time to be spent querying the process and interpreting the results.</li>
+</ul></li>
+</ul>
 </div>
 <div id="open-source" class="section level2">
 <h2><span class="header-section-number">1.5</span> Open source</h2>
 <p>Open source languages such as Python and R are increasing in popularity across government. One advantage of using these tools is that we can reduce the number of steps where the data needs to be moved from one program (or format) into another. This is in line with the principle of reproducibility given in guidance on producing quality analysis for government (the AQUA book), as the entire process can be represented as a single step in code, greatly reducing the likelihood of manual transcription errors.</p>
 <p>The <a href="https://www.gov.uk/government/publications/technology-code-of-practice/technology-code-of-practice">Technology Code of Practice</a> is a set of criteria to help government design, build and buy technology. It’s used as a cross-government agreed standard in the spend controls process. Criteria 3 <em>“Be open and use open source”</em> recommends using open sources languages such as R or Python.</p>
-<p>Open source languages are easier to find learning material and guides for as there are large and vibrant communities producing materials. This allows a large degree of self learning, if a output/method/technique wants to be implemented there is very likely a library to support it and a guide to teach it available for all. Also as a result of the large communities of users these languages are capable of preforming a diverse array of tasks allowing departments to try innovative new approaches such as interactive dashboards or web scraping.</p>
+<p>Open source languages are easier to find learning material and guides for as there are large and vibrant communities producing materials. This allows a large degree of self learning, if a output/method/technique wants to be implemented there is very likely a library to support it and a guide to teach it available for all. Also as a result of the large communities of users these languages are capable of preforming a diverse array of tasks allowing departments to try innovative new approaches such as interactive dashboards or web scraping. Which langauge analysts r departmetns choose will depend on the particular needs of the area. In general R and Python are the most popular and are good at similar <a href="https://www.openriskmanual.org/wiki/Python_versus_R_Language">tasks</a></p>
 
 </div>
 </div>

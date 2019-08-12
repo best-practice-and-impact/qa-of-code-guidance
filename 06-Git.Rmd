@@ -25,7 +25,7 @@ To actually run Git there are two methods
 * CLI Command Line Interface
 * GUI Graphical User Interface
 
-A GUI is effectively a program that will run git for you. However these only implement a subset of git commands and it is generally recommend to run Git on the command line. To do this you need to get a terminal and Git installed. This is easier than it sounds. A popular method is to get GitBash. This is a terminal interface with Git installed. If you are unfamiliar with running terminal commands there are alot of great online resources, and fundamentally you will only need a handful of commands to run what you need. If you don;t want to learn past that you won't need to.
+A GUI is effectively a program that will run git for you. However these only implement a subset of git commands and it is generally recommend to run Git on the command line. To do this you need to get a terminal and Git installed. This is easier than it sounds. A popular method is to get Git Bash. This is a terminal interface with Git installed. If you are unfamiliar with running terminal commands there are many of great online resources, and fundamentally you will only need a handful of commands to run what you need. If you don;t want to learn past that you won't need to.
 
 ## Typical Git workflow
 
@@ -54,13 +54,13 @@ We can also check on the status of our repository with
 ```
 git status
 ```
-## Remote Repostory
+## Remote Repository
 Using Git just on your computer is useful for being able to roll back or reverse to previous commits, and for keeping track of what changes you made. But Git is really powerful when combined with a remote repository. This basically creates a clone or identical copy of your git repository (all the files in it) and hosts it on another computer, probably on a website such as GitHub or Gitlab. This allows others to also make a copy of the code, to modify and share there changes with you whilst git keeps track. This is a useful tool for peer review and collaborator coding. it is also a backup if your laptop dies or is lost, as the data is safely stored elsewhere too.
 To do this is simple. First you need to setup a repository on a hosting site. Follow the instructions on GitHub or elsewhere on how to do this, it is not difficult. However make it an empty repository, no README file. Next we need to connect our git repository to the remote repository. Open a Shell and run:
 ```
 git remote add origin https://github.com/username/reponame
 ```
-This command is a bit more complex but you will only need to run it once. `remote add` is telling git to add a remote repository to the current git. `origin` will be the name of the remote repository. `https://github.com/username/reponame` is the URL of the repository. You will be able to on GitHub or gitlab copy and paste this into the terminal window.
+This command is a bit more complex but you will only need to run it once. `remote add` is telling git to add a remote repository to the current git. `origin` will be the name of the remote repository. `https://github.com/username/reponame` is the URL of the repository. You will be able to on GitHub or GitLab copy and paste this into the terminal window.
 Now we have a remote repository added we can push our code to it. The typical workflow is the same but with an added step. First we add our files to be staged, we then commit them taking a snapshot of what the current folder looks like, and then we push this snapshot to the remote repository.
 ```
 git add .
