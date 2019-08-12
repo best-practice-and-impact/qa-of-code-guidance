@@ -12,9 +12,18 @@ site: bookdown::bookdown_site
 biblio-style: apalike
 ---
 
-# Introduction
+# Preface {-}
 
-This guidance is published as part of the Quality guidance published by the Best Practice and Impact team in the Office for National Statistics. This guidance has been created to support the the analytical professions in government who are using coding languages for various forms of analysis such as the production of statistics or modeling 
+![](static/logo_alt.jpg)
+
+
+* Twitter: [GSSGoodPractice](https://twitter.com/gssgoodpractice), [UKGSS](https://twitter.com/ukgss)
+* Email us: gsshelp@statistics.gov.uk
+
+
+# Introduction 
+
+This guidance is published as part of the Quality guidance published by the Best Practice and Impact team in the Office for National Statistics. This guidance has been created to support the the analytical professions in government who are using coding languages for various forms of analysis such as the production of statistics or modeling. 
 
 ## Who is this guidance for?
 
