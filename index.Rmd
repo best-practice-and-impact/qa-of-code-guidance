@@ -14,6 +14,10 @@ biblio-style: apalike
 
 # Preface {-}
 
+**ALPHA**
+
+This is a draft of GSS guidance. This is unpublished and **does not** represent the views of the **ONS** or the **GSS**.
+
 ![](static/logo_alt.jpg)
 
 
@@ -21,9 +25,9 @@ biblio-style: apalike
 * Email us: gsshelp@statistics.gov.uk
 
 
-# Introduction 
+# Introduction
 
-This guidance is published as part of the Quality guidance published by the Best Practice and Impact team in the Office for National Statistics. This guidance has been created to support the the analytical professions in government who are using coding languages for various forms of analysis such as the production of statistics or modeling. 
+This guidance is published as part of the Quality guidance published by the Best Practice and Impact team in the Office for National Statistics. This guidance has been created to support the the analytical professions in government who are using coding languages for various forms of analysis such as the production of statistics or modeling.
 
 ## Who is this guidance for?
 
