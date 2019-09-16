@@ -46,6 +46,8 @@ Specific and prescription coding guidelines ensure that all the code follows a s
 There are many style guides out there. You may choose to adopt one or part of one. Your team or department could also write some guidelines tailored to your needs to encourage best practice.
 Here are some existing guidelines:
 
+* [Git Style Guide](https://gds-way.cloudapps.digital/standards/git.html#commit-messages)
+
 * [Best Practice in Programming for Data Scientists:](https://datasciencecampus.github.io/coffee-and-coding/20190611_clean_code/Best_Practice_in_Programming_for_Data_Scientists_python_and_R.html#2_names)
 
 * [Google’s R Style Guide](https://google.github.io/styleguide/Rguide.xml)

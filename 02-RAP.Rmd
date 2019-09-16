@@ -4,7 +4,7 @@
 Producing official statistics can be time-consuming and painstaking as we need to make sure that our outputs are both accurate and timely.  Reproducible analysis is about opening up the production process so that anybody can follow the steps we took and understand how we got to the results that we publish.  By making our analysis reproducible, we make it easier for others to quality assure, assess and critique.  It is easier to re-use our methods and results, and for colleagues to test and validate what we have done.
 
 In a reproducible workflow, we bring together the code and the data that we used to generate our results.  This lets us be fully open about the decisions we made as we generated our outputs so that other analysts can follow what we did and re-create them.  Reproducible analysis supports the requirements of the Code of Practice for Statistics around quality assurance and transparency, as, wherever possible, we share the code we used to build the outputs, along with enough data to allow for proper testing.
-
+se
 ## What is a reproducible analytical pipeline?
 Across government we aim to create effective and efficient analytical workflows which are repeatable over time and follow the principles of reproducible analysis. We call these Reproducible Analytical Pipelines (RAP).
 

@@ -15,3 +15,6 @@ Ensuring that a model is producing the correct output is a time intensive proces
 ## Repeatable
 
 The [AQUA Book](https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/416478/aqua_book_final_web.pdf) states that analysis should be repeatable to be considered valid. Using open source languages increases the repeatable of analysis over spreadsheets such as excel which often require many manual steps which can be hard to repeat. Using scripted languages means that the entire process has been written down and can be exactly repeated. Using languages such as SPSS or SAS suffer from repeatable because they are propriety software languages which means a license is needed to use them, which may not always be the case.   
+
+## RAP Levels align with AQUA Levels
+**work in progess**

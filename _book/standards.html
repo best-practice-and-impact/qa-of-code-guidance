@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 9 Standards | QA of Code</title>
+  <meta name="description" content="This is a draft of QA for Coding guidance" />
+  <meta name="generator" content="bookdown 0.11 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 9 Standards | QA of Code" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This is a draft of QA for Coding guidance" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 9 Standards | QA of Code" />
+  
+  <meta name="twitter:description" content="This is a draft of QA for Coding guidance" />
+  
+
+<meta name="author" content="Joshua Halls" />
+
+
+<meta name="date" content="2019-09-16" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="documentation.html">
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">QA of Code</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a><ul>
+<li class="chapter" data-level="0.1" data-path="index.html"><a href="index.html#who-is-this-guidance-for"><i class="fa fa-check"></i><b>0.1</b> Who is this guidance for?</a></li>
+<li class="chapter" data-level="0.2" data-path="index.html"><a href="index.html#what-is-its-aim"><i class="fa fa-check"></i><b>0.2</b> What is its aim?</a></li>
+<li class="chapter" data-level="0.3" data-path="index.html"><a href="index.html#why-the-move-away-from-spreadsheets"><i class="fa fa-check"></i><b>0.3</b> Why the move away from Spreadsheets</a></li>
+<li class="chapter" data-level="0.4" data-path="index.html"><a href="index.html#why-move-from-sas-or-spss-to-open-source"><i class="fa fa-check"></i><b>0.4</b> Why move from SAS or SPSS to open source</a></li>
+<li class="chapter" data-level="0.5" data-path="index.html"><a href="index.html#open-source"><i class="fa fa-check"></i><b>0.5</b> Open source</a></li>
+<li class="chapter" data-level="0.6" data-path="index.html"><a href="index.html#for-managers"><i class="fa fa-check"></i><b>0.6</b> For Managers</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="rap.html"><a href="rap.html"><i class="fa fa-check"></i><b>1</b> RAP</a><ul>
+<li class="chapter" data-level="1.1" data-path="rap.html"><a href="rap.html#why-make-our-work-reproducible"><i class="fa fa-check"></i><b>1.1</b> Why make our work reproducible?</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="modeling.html"><a href="modeling.html"><i class="fa fa-check"></i><b>2</b> Modeling</a><ul>
+<li class="chapter" data-level="2.1" data-path="modeling.html"><a href="modeling.html#aqua-book-qa-principles-for-code"><i class="fa fa-check"></i><b>2.1</b> AQUA book QA principles for code</a></li>
+<li class="chapter" data-level="2.2" data-path="modeling.html"><a href="modeling.html#repeatable"><i class="fa fa-check"></i><b>2.2</b> Repeatable</a></li>
+<li class="chapter" data-level="2.3" data-path="modeling.html"><a href="modeling.html#rap-levels-align-with-aqua-levels"><i class="fa fa-check"></i><b>2.3</b> RAP Levels align with AQUA Levels</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="levels-of-rap.html"><a href="levels-of-rap.html"><i class="fa fa-check"></i><b>3</b> Levels of RAP</a></li>
+<li class="chapter" data-level="4" data-path="Testing.html"><a href="Testing.html"><i class="fa fa-check"></i><b>4</b> Testing</a><ul>
+<li class="chapter" data-level="4.1" data-path="Testing.html"><a href="Testing.html#advantages-of-testing-your-code"><i class="fa fa-check"></i><b>4.1</b> Advantages of testing your code</a></li>
+<li class="chapter" data-level="4.2" data-path="Testing.html"><a href="Testing.html#when-a-project-should-use-testing"><i class="fa fa-check"></i><b>4.2</b> When a project should use testing</a></li>
+<li class="chapter" data-level="4.3" data-path="Testing.html"><a href="Testing.html#when-a-project-might-not-deploy-testing"><i class="fa fa-check"></i><b>4.3</b> When a project might not deploy testing</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="testing-frameworks.html"><a href="testing-frameworks.html"><i class="fa fa-check"></i><b>5</b> Testing Frameworks</a><ul>
+<li class="chapter" data-level="5.1" data-path="testing-frameworks.html"><a href="testing-frameworks.html#what-exactly-is-a-test"><i class="fa fa-check"></i><b>5.1</b> What exactly is a test</a></li>
+<li class="chapter" data-level="5.2" data-path="testing-frameworks.html"><a href="testing-frameworks.html#unit-test"><i class="fa fa-check"></i><b>5.2</b> Unit Test</a></li>
+<li class="chapter" data-level="5.3" data-path="testing-frameworks.html"><a href="testing-frameworks.html#integration-tests"><i class="fa fa-check"></i><b>5.3</b> Integration Tests</a></li>
+<li class="chapter" data-level="5.4" data-path="testing-frameworks.html"><a href="testing-frameworks.html#what-to-tests"><i class="fa fa-check"></i><b>5.4</b> What to tests</a></li>
+<li class="chapter" data-level="5.5" data-path="testing-frameworks.html"><a href="testing-frameworks.html#references"><i class="fa fa-check"></i><b>5.5</b> References</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="GIT.html"><a href="GIT.html"><i class="fa fa-check"></i><b>6</b> GIT</a><ul>
+<li class="chapter" data-level="6.1" data-path="GIT.html"><a href="GIT.html#git-introduction"><i class="fa fa-check"></i><b>6.1</b> Git Introduction</a></li>
+<li class="chapter" data-level="6.2" data-path="GIT.html"><a href="GIT.html#about-version-control"><i class="fa fa-check"></i><b>6.2</b> About Version Control</a></li>
+<li class="chapter" data-level="6.3" data-path="GIT.html"><a href="GIT.html#what-is-git"><i class="fa fa-check"></i><b>6.3</b> What is GIT</a></li>
+<li class="chapter" data-level="6.4" data-path="GIT.html"><a href="GIT.html#how-does-git-actually-work"><i class="fa fa-check"></i><b>6.4</b> How does GIT actually work</a></li>
+<li class="chapter" data-level="6.5" data-path="GIT.html"><a href="GIT.html#typical-git-workflow"><i class="fa fa-check"></i><b>6.5</b> Typical Git workflow</a></li>
+<li class="chapter" data-level="6.6" data-path="GIT.html"><a href="GIT.html#remote-repository"><i class="fa fa-check"></i><b>6.6</b> Remote Repository</a></li>
+<li class="chapter" data-level="6.7" data-path="GIT.html"><a href="GIT.html#branching"><i class="fa fa-check"></i><b>6.7</b> Branching</a></li>
+<li class="chapter" data-level="6.8" data-path="GIT.html"><a href="GIT.html#pull-request-and-issues"><i class="fa fa-check"></i><b>6.8</b> Pull Request and issues</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="Coding-Guidelines.html"><a href="Coding-Guidelines.html"><i class="fa fa-check"></i><b>7</b> Coding Guidelines</a><ul>
+<li class="chapter" data-level="7.1" data-path="Coding-Guidelines.html"><a href="Coding-Guidelines.html#why-useful"><i class="fa fa-check"></i><b>7.1</b> Why Useful</a></li>
+<li class="chapter" data-level="7.2" data-path="Coding-Guidelines.html"><a href="Coding-Guidelines.html#best-practice-coding-principles"><i class="fa fa-check"></i><b>7.2</b> Best Practice: Coding Principles</a></li>
+<li class="chapter" data-level="7.3" data-path="Coding-Guidelines.html"><a href="Coding-Guidelines.html#style-guides"><i class="fa fa-check"></i><b>7.3</b> Style Guides</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="documentation.html"><a href="documentation.html"><i class="fa fa-check"></i><b>8</b> Documentation</a><ul>
+<li class="chapter" data-level="8.1" data-path="documentation.html"><a href="documentation.html#commenting"><i class="fa fa-check"></i><b>8.1</b> Commenting</a></li>
+<li class="chapter" data-level="8.2" data-path="documentation.html"><a href="documentation.html#readme"><i class="fa fa-check"></i><b>8.2</b> README</a></li>
+<li class="chapter" data-level="8.3" data-path="documentation.html"><a href="documentation.html#package-documentation"><i class="fa fa-check"></i><b>8.3</b> Package Documentation</a></li>
+<li class="chapter" data-level="8.4" data-path="documentation.html"><a href="documentation.html#markdown-for-desk-notes"><i class="fa fa-check"></i><b>8.4</b> Markdown for desk notes</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="standards.html"><a href="standards.html"><i class="fa fa-check"></i><b>9</b> Standards</a><ul>
+<li class="chapter" data-level="9.1" data-path="standards.html"><a href="standards.html#standards-for-peer-review"><i class="fa fa-check"></i><b>9.1</b> Standards for Peer review</a></li>
+<li class="chapter" data-level="9.2" data-path="standards.html"><a href="standards.html#standard-structures-for-projects"><i class="fa fa-check"></i><b>9.2</b> Standard Structures for Projects</a></li>
+<li class="chapter" data-level="9.3" data-path="standards.html"><a href="standards.html#dependency-management"><i class="fa fa-check"></i><b>9.3</b> Dependency Management</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://gss.civilservice.gov.uk/policy-store/government-statistical-service-gss-quality-strategy/" target="blank">Government Statistical Service (GSS) Quality </a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">QA of Code</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="standards" class="section level1">
+<h1><span class="header-section-number">Chapter 9</span> Standards</h1>
+<div id="standards-for-peer-review" class="section level2">
+<h2><span class="header-section-number">9.1</span> Standards for Peer review</h2>
+<p><img src="static/code_review.jpg" /></p>
+<p>An important element of getting quality code is <strong>peer review</strong>. Showing people your code and getting it scrutinized is an essential part of ensuring that code is doing what it is supposed to do. It also allows for iteration, a process where the back and forth of reviewing code cleans and sharpens it. This process is made easier by coding standards. When code is written in a familiar style it will be easier for others to pick it up quickly and understand what was your intention. Poorly written code may achieve the desired output but is usually difficult to read and follow, making it hard to scrutinise and quality assure. This increases the likelihood that it will contain errors or have unforeseen side effects.</p>
+<p>A common language aids this as a business area which uses Excel, R, SAS, SQL, Scala, SPSS and Python will struggle to maintain effective peer review because of the number of different coding platforms in use. It is advantageous to consider a wider peer review, where people outside your team review your code. This can be challenging, depending on the systems in use and the sensitivity of your data. However code itself is usually not sensitive, and it is recommended that code is shared and scrutinised widely to increase robustness and promote transparency. Using dummy data or synthetic data which has the same structure and patterns as the actual data but has been randomly generated is one way to enable peer review from those who do not have access to the data.</p>
+<p>Departments or business areas might find it useful to have standards for peer review. This could involve a checklist of common things issues or a procedure to follow. An example is provided by <a href="https://devguide.ropensci.org/reviewtemplate.html">ropensci</a>. A peer review template might be useful for encouraging a unified approach and ensuring that important checks don’t get missed.</p>
+</div>
+<div id="standard-structures-for-projects" class="section level2">
+<h2><span class="header-section-number">9.2</span> Standard Structures for Projects</h2>
+<p>For projects of a similar type a standard structure might be useful. This would allow users to pick up projects quickly as they would have a general idea of the layout. For example you can look at <a href="http://drivendata.github.io/cookiecutter-data-science/#example">Cookiecutter Data Science</a>. This would aid in peer review as it would be possible to get analysts outside of your team to review your code, without them having to understand a unique structure. It might be that there is a <em>better</em> good practice structure that departments could encourage by having or adopting a standard. It would also allow projects to start faster as the standard could be copied, and then modified to fit the project as needed.</p>
+</div>
+<div id="dependency-management" class="section level2">
+<h2><span class="header-section-number">9.3</span> Dependency Management</h2>
+<p>Packrat / Docker</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="documentation.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": ["QA_Code.pdf", "QA_Code.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
