@@ -1,0 +1,36 @@
+# Testing {#Testing}
+
+When you are working on a project how do you know that your code is doing what you expect it to do? You run it and look at the output. This is a manual test and it has it's limitations.
+
+Hadley Wickham in [The R Journal](https://rjournal.github.io/archive/2011-1/RJournal_2011-1.pdf#page=5)
+
+> it’s not that we don’t test our
+code, it’s that we don’t store our tests so they can be
+re-run automatically.
+
+Manual tests need to be constantly re-run. This is achievable when your code is small but when it becomes longer this is time consuming. When you come back to your code in the future you will have forgotten what tests you have run, any changes are then liable to break something. Fundamentally if you don't test your code then how do you know that your code is doing what it is suppose to? Just as data validation in an important step in ensuring that the the data is correct, code validation using testing is important to check that the process is correct.
+
+## Advantages of testing your code
+
+* Better Code Structure
+  - Writing tests forces you to separate code into functions that are separate and isolated, reducing duplication in your code. This approach will make your code easier to test and also easier to understand and use.
+* Less Bugs
+  - Like *double entry book keeping*, the behavior of your code is specified twice, once in the code and again in a test which makes it less error prone.
+* More Robust Code
+  - If all the major functions of your code have associated tests then code can be changed without the issue that this has caused a break or bug elsewhere which might not be discovered until later.
+* Decreased Frustration
+  - Untested code is precarious, an making changes without knowing if you have broken a section is stress inducing. Being able to deploy code that you are confident will work because it is tested will make the process more productive.
+
+## When a project should use testing
+* In a Analytics pipeline
+  -In general if code is planned to be reused then it needs to be tested to ensure that it is working properly.
+* In important pieces of work such as a National Statistic or in modeling work
+  -It is important that National Statistics and models are correct and that the public has confidence in the validity of published work, testing is important to ensure that the code is working as expected and prevents errors which increases confidence in government analysis.
+* When working in a team
+  -Testing ensures that collaborators can alter code without the issue with  breaking the code without realizing. This allows a team to work on separate sections and have confidence that they can make changes.
+
+## When a project might not deploy testing
+* One off pieces of work
+  -The effort of writing tests might not be proportionate if a project is onetime. The QA process would then consist of manual checks which might be sufficient.  
+* Exploratory work
+  -For exploratory work, where it is unclear whether it will be converted into permanent project then testing may not be appropriate. There would be a benefit to testing if a exploratory project turns into a permanent one, however the code may be changed so fundamentally that all the tests would have to be re written. Fundamentally it is a trade off.

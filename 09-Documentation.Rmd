@@ -1,0 +1,61 @@
+# Documentation
+
+![](static/commenting.jpg)
+
+
+An important part of producing analysis is documenting the process. This can be done in many ways but a common issue is that documentation isn't thorough enough.  Understanding how a process was done in the past may rely on partial documentation or the expert knowledge of one or two individuals, which is very risky if they leave. New tools open up different avenues for collecting documentation in ways which might be easier and better. This is not a panacea, but my making documentation and code closely intertwined it encourages the process.
+
+## Commenting
+This is the process of in a code script putting comments or documentation in with the code. In R and Python this can be done by placing a #, and that line will now be a comment rather than active code. An example is the following function which is not clear what it does by looking.
+
+```
+even = function(x){
+     data =  x %% 2 == 0
+     sum(data)
+}
+
+```
+By applying good coding standards and commenting it is far clearer what the function does, however being more verbose can make the script more cluttered. The aim to is to make the script understandable to your future self and others, and comments are an important element along with good [coding standards](Coding_Guidelines)
+
+```
+# A function that returns the number of even numbers in a list
+
+find_number_even <- function(x){
+# Find the even numbers as TRUE or FALSE
+  find_evens <- x %% 2 == 0
+# sum the list to find total number of even
+  sum(find_evens)
+}
+
+```
+## README
+
+This sections assumes you are using [GIT]. Every project using Git should have a README file. This is a file that is displayed when people view your repository and it is often he first thing people see when they view your project. You can use it to tell people what your project is, what it can do and how people can use it. What you include in it might depend on what stage of development you are at. By summarising the project and including details in acts as a guide to the project for others to use. There are some standards of what to include such as [READMEs for GOV.UK](https://docs.publishing.service.gov.uk/manual/readmes.html) and
+[GitHub Guide to README](https://help.github.com/en/articles/about-readmes).
+Some useful information to include is
+
+* What the project does
+* Why the project is useful
+* How users can get started with the project
+* Where users can get help with your project
+* Who maintains and contributes to the project
+
+Departments might want to consider have a README template to standardize what is included across the department.
+
+## Package Documentation
+
+A package enshrines all the business knowledge used to create a piece of work in one place, including the code used to generate the output and the documentation. If you bundle your code into a package then functions and other aspects of the project can have associated documentation. This allows a package to be shared with the documentation of how to use the functions built into the package.
+
+```
+# For R
+?your_package_function
+help(your_package_function)
+
+# For Python
+help()
+
+```
+
+##  Markdown for desk notes
+
+In R and other languages markdown and variants can be used to write desk notes. These are documentation of what an analyst needs to do, such as produce a statistic or generate an output from a model. Rather than produce these in a text editor such as word these could be produced in R markdown or a Jupiter Notebook (both support many languages). This allows blocks of texts describing what, why and how next to live code that can be run to give an example. Documenting the work flow in this manner is another method of interweaving commentary and code together.    
