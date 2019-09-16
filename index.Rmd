@@ -56,6 +56,7 @@ Many departments are moving some analysis from spreadsheets to open source langu
 
 ## Why move from SAS or SPSS to open source
 **expand**
+
 * black box- can't examine the algorithms
 * hard to do Testing
 * more limited
