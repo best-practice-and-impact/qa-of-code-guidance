@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 10 Standards | QA of Code</title>
+  <title>Chapter 3 Modelling | QA of Code</title>
   <meta name="description" content="This is a draft of QA for Coding guidance" />
   <meta name="generator" content="bookdown 0.11 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 10 Standards | QA of Code" />
+  <meta property="og:title" content="Chapter 3 Modelling | QA of Code" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 10 Standards | QA of Code" />
+  <meta name="twitter:title" content="Chapter 3 Modelling | QA of Code" />
   
   <meta name="twitter:description" content="This is a draft of QA for Coding guidance" />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="documentation.html">
-
+<link rel="prev" href="rap.html">
+<link rel="next" href="levels-of-reproducible-analysis.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -143,22 +143,23 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="standards" class="section level1">
-<h1><span class="header-section-number">Chapter 10</span> Standards</h1>
-<div id="standards-for-peer-review" class="section level2">
-<h2><span class="header-section-number">10.1</span> Standards for Peer review</h2>
-<p><img src="static/code_review.jpg" /></p>
-<p>An important element of getting quality code is <strong>peer review</strong>. Showing people your code and getting it scrutinized is an essential part of ensuring that code is doing what it is supposed to do. It also allows for iteration, a process where the back and forth of reviewing code cleans and sharpens it. This process is made easier by coding standards. When code is written in a familiar style it will be easier for others to pick it up quickly and understand what was your intention. Poorly written code may achieve the desired output but is usually difficult to read and follow, making it hard to scrutinise and quality assure. This increases the likelihood that it will contain errors or have unforeseen side effects.</p>
-<p>A common language aids this as a business area which uses Excel, R, SAS, SQL, Scala, SPSS and Python will struggle to maintain effective peer review because of the number of different coding platforms in use. It is advantageous to consider a wider peer review, where people outside your team review your code. This can be challenging, depending on the systems in use and the sensitivity of your data. However code itself is usually not sensitive, and it is recommended that code is shared and scrutinised widely to increase robustness and promote transparency. Using dummy data or synthetic data which has the same structure and patterns as the actual data but has been randomly generated is one way to enable peer review from those who do not have access to the data.</p>
-<p>Departments or business areas might find it useful to have standards for peer review. This could involve a checklist of common things issues or a procedure to follow. An example is provided by <a href="https://devguide.ropensci.org/reviewtemplate.html">ropensci</a>. A peer review template might be useful for encouraging a unified approach and ensuring that important checks don’t get missed.</p>
+<div id="modelling" class="section level1">
+<h1><span class="header-section-number">Chapter 3</span> Modelling</h1>
+<p><img src="static/aqua_levels.jpg" /></p>
+<p>This figure sets out the principle that as models increase in business risk and complexity, the level of appropriate quality assurance also increases. This is similar to the idea that we can achieving different levels of reproducible analysis, which is explored in the next chapter.</p>
+<div id="aqua-book-quality-assurance-principles-for-code" class="section level2">
+<h2><span class="header-section-number">3.1</span> AQUA book quality assurance principles for code</h2>
+<p>The quality assurance principles from the AQUA book apply to all models, whether they are built in Excel or an open source language. The main difference is that new software practices allow analysts to enhance the quality assurance of models more makes the process of peer review easier and more efficient. It is also easy using Git to push the code used to produce models to external platforms such as GitHub allowing the model code to be publicity available. This enhancing the transparency of government and would allow analysts or informed citizens to contribute by finding error or bugs or suggesting new approaches. This is also a powerful tool for spreading best practice as analysts would be able to look at effective models from across government rather than keep them siloed in departments.</p>
+<p>Git offers an platform for effective peer review whether from others in the team but also from analysts in other teams or departments. Making peer review easier to preform is an effective tool for increasing overall QA. Git also tracks changes made to code and who made them, and includes the decisions behind the changes. This ensures that models have a full audit trail built in without analysts having to invest resources documenting it.</p>
+<p>Ensuring that a model is producing the correct output is a time intensive process of analytical testing. This process can be automated using software <a href="Testing.html#Testing">Testing</a> frameworks. This enhances the robustness of models and increases confidence that the output is a result of the data not the process.</p>
 </div>
-<div id="standard-structures-for-projects" class="section level2">
-<h2><span class="header-section-number">10.2</span> Standard Structures for Projects</h2>
-<p>For projects of a similar type a standard structure might be useful. This would allow users to pick up projects quickly as they would have a general idea of the layout. For example you can look at <a href="http://drivendata.github.io/cookiecutter-data-science/#example">Cookiecutter Data Science</a>. This would aid in peer review as it would be possible to get analysts outside of your team to review your code, without them having to understand a unique structure. It might be that there is a <em>better</em> good practice structure that departments could encourage by having or adopting a standard. It would also allow projects to start faster as the standard could be copied, and then modified to fit the project as needed.</p>
+<div id="repeatable" class="section level2">
+<h2><span class="header-section-number">3.2</span> Repeatable</h2>
+<p>The <a href="https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/416478/aqua_book_final_web.pdf">AQUA Book</a> states that analysis should be repeatable to be considered valid. Using open source languages effectively should increase the repeatability of analysis when compared with existing spreadsheet methods. The latter often require many manual steps which can be hard to repeat. Using scripted languages means that the entire process has been written down and can be exactly repeated. While it is possible to implement some of these ideas in proprietary tools such as SPSS or SAS, the proprietary nature of the software languages means a license is needed to use them, and everybody who needs to be involved in quality assurance must have one. This may work internally, but if algorithms are published and independently audited, the audience will also need access to the proprietary tools. This is not always possible.</p>
 </div>
-<div id="dependency-management" class="section level2">
-<h2><span class="header-section-number">10.3</span> Dependency Management</h2>
-<p>Packrat / Docker</p>
+<div id="rap-levels-align-with-aqua-levels" class="section level2">
+<h2><span class="header-section-number">3.3</span> RAP Levels align with AQUA Levels</h2>
+<p><strong>work in progess</strong></p>
 
 </div>
 </div>
@@ -167,8 +168,8 @@
           </div>
         </div>
       </div>
-<a href="documentation.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-
+<a href="rap.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="levels-of-reproducible-analysis.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
