@@ -9,7 +9,6 @@ so that everyone in a team knows how it works and doesn't have to learn other me
 > Good coding style is like correct punctuation: you can manage without it, butitsuremakesthingseasiertoread.
 – **The Tidyverse Style Guide by Hadley Wickham**
 
-
 ## Why Useful
 
 Coding guidelines are helpful

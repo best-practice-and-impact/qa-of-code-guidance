@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 10 Standards | QA of Code</title>
+  <title>Chapter 4 Levels of reproducible analysis | QA of Code</title>
   <meta name="description" content="This is a draft of QA for Coding guidance" />
   <meta name="generator" content="bookdown 0.11 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 10 Standards | QA of Code" />
+  <meta property="og:title" content="Chapter 4 Levels of reproducible analysis | QA of Code" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 10 Standards | QA of Code" />
+  <meta name="twitter:title" content="Chapter 4 Levels of reproducible analysis | QA of Code" />
   
   <meta name="twitter:description" content="This is a draft of QA for Coding guidance" />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="documentation.html">
-
+<link rel="prev" href="modelling.html">
+<link rel="next" href="Testing.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -143,32 +143,32 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="standards" class="section level1">
-<h1><span class="header-section-number">Chapter 10</span> Standards</h1>
-<div id="standards-for-peer-review" class="section level2">
-<h2><span class="header-section-number">10.1</span> Standards for Peer review</h2>
-<p><img src="static/code_review.jpg" /></p>
-<p>An important element of getting quality code is <strong>peer review</strong>. Showing people your code and getting it scrutinized is an essential part of ensuring that code is doing what it is supposed to do. It also allows for iteration, a process where the back and forth of reviewing code cleans and sharpens it. This process is made easier by coding standards. When code is written in a familiar style it will be easier for others to pick it up quickly and understand what was your intention. Poorly written code may achieve the desired output but is usually difficult to read and follow, making it hard to scrutinise and quality assure. This increases the likelihood that it will contain errors or have unforeseen side effects.</p>
-<p>A common language aids this as a business area which uses Excel, R, SAS, SQL, Scala, SPSS and Python will struggle to maintain effective peer review because of the number of different coding platforms in use. It is advantageous to consider a wider peer review, where people outside your team review your code. This can be challenging, depending on the systems in use and the sensitivity of your data. However code itself is usually not sensitive, and it is recommended that code is shared and scrutinised widely to increase robustness and promote transparency. Using dummy data or synthetic data which has the same structure and patterns as the actual data but has been randomly generated is one way to enable peer review from those who do not have access to the data.</p>
-<p>Departments or business areas might find it useful to have standards for peer review. This could involve a checklist of common things issues or a procedure to follow. An example is provided by <a href="https://devguide.ropensci.org/reviewtemplate.html">ropensci</a>. A peer review template might be useful for encouraging a unified approach and ensuring that important checks don’t get missed.</p>
-</div>
-<div id="standard-structures-for-projects" class="section level2">
-<h2><span class="header-section-number">10.2</span> Standard Structures for Projects</h2>
-<p>For projects of a similar type a standard structure might be useful. This would allow users to pick up projects quickly as they would have a general idea of the layout. For example you can look at <a href="http://drivendata.github.io/cookiecutter-data-science/#example">Cookiecutter Data Science</a>. This would aid in peer review as it would be possible to get analysts outside of your team to review your code, without them having to understand a unique structure. It might be that there is a <em>better</em> good practice structure that departments could encourage by having or adopting a standard. It would also allow projects to start faster as the standard could be copied, and then modified to fit the project as needed.</p>
-</div>
-<div id="dependency-management" class="section level2">
-<h2><span class="header-section-number">10.3</span> Dependency Management</h2>
-<p>Packrat / Docker</p>
+<div id="levels-of-reproducible-analysis" class="section level1">
+<h1><span class="header-section-number">Chapter 4</span> Levels of reproducible analysis</h1>
+<p><img src="static/RAP_Levels.jpg" /></p>
+<p>Building a reproducible analytical pipeline (which we will shorten to RAP) can be viewed as a layered process. This section of the guidance will go through many of the steps. You might start off with a basic coding project and add additional levels of enhancement to the project as you go. This layered approach gives a framework for progressing through the different levels of sophistication that are possible - and deciding whether it is appropriate to make the project more elaborate.</p>
+<p>How far you get will depend on the skill level in your team, the infrastructure available in your department and pragmatic choices about whether the final stages are proportionate to assure fitness for use. For smaller pieces of work, the most sophisticated levels might be too time consuming to put in place, with minimal benefit. However for regular work that you are going to repeat, the more levels you can build in, the more assurance you will have that your code is doing what you expect it to do and that your outputs are as you intended. Deciding how far to go should be pragmatic and proportionate. Think about the minimal level that you need to achieve before your code is put into production.</p>
+<p>Many projects consists of one or more ad hoc scripts to do a number of steps such as data validation or producing tables. This is level one of the RAP process.</p>
+<p>The second step is to organize your code into a clear structure. The layout will depend on the project and the tools, but in general this involves separating the code into sections that do particular tasks such as modifying the data or running validation checks. This is an opportunity to start applying coding standards if you are not following them, and that will make the process easier to follow.</p>
+<p>The next step is to add version control. Version control software such as git and cloud-based code repositories such as GitHub or Gitlab, allow changes to the code to be made collaboratively and recorded. In addition, changes can be rolled back to a previous state. This provides reassurance in that any change can be reversed allowing new methods or approaches to be tried without fear that this will break the current process. This automatically builds documentation into the production process and creates a record of what has been done and why which can be audited in future. This is covered in depth in chapter 5 on <a href="GIT.html#GIT">GIT</a>.</p>
+<p>Another step is to re write the code into reusable functions. Functions are organised, reusable pieces of code that perform a specific task. Functions help to keep code clean and allow code re-usability. They can be given useful and informative names and stored separately, making workflows clean and easy to follow. Using functions helps to eliminate mistakes when copying and pasting. More importantly, their use means that when you need to add new functionality you only need to change a single function and those changes will cascade to wherever the function is called.</p>
+<p>One of the difficulties that can arise in more manual methods of production is that there are many files separated out over different locations, all relating to different but interdependent stages of the process. Often, the process itself requires the use of several tools, such as Excel, SAS and Microsoft Word. Each part of the process needs to be documented and kept up to date, and, in the worst cases, they are only connected through manual intervention. A third step in the process ofo building a reproducible pipeline is to package your code. Packaging brings together all of the scripts that run the pipeline, together with documentation, tests and dummy data that can be used to verify that everything is working. Packaging can gives the project a defined structure. Because the documentation is part of the package and closely intertwined with the code which aids in institutional knowledge transfer.</p>
+<blockquote>
+<p>In R, the fundamental unit of shareable code is the package. A package bundles together code, data, documentation, and tests, and is easy to share with others.
+- <a href="https://r-pkgs.org/intro.html">Hadley Wickham</a></p>
+</blockquote>
+<p>We recommend that testing should be implemented as part of the process of building an analytical pipeline, when this is pragmatic and proportionate. Chapter 4, <a href="Testing.html#Testing">Testing</a>, covers this in more detail.</p>
+<p>The final stages of the RAP process, levels six and seven, are about ensuring that the package is fully tested, that tests are integrated into the version control system and building in functionality to ensure that all tests are run automatically. This improves resilience. Tests are run automatically, and failures are notified automatically on the version control site. Code coverage statistics let users know what percentage of the code (and data) in the package is covered by tests.</p>
+<p><a href="https://www.isdscotland.org/About-ISD/Methodologies/_docs/Reproducible_Analytical_Pipelines_paper_v1.4.pdf">Public Health &amp; Intelligence Reproducible Analytical Pipelines</a></p>
 
-</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="documentation.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-
+<a href="modelling.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="Testing.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

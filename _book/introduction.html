@@ -24,7 +24,7 @@
 <meta name="author" content="Joshua Halls" />
 
 
-<meta name="date" content="2019-09-16" />
+<meta name="date" content="2019-10-02" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -70,20 +70,21 @@
 <li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a><ul>
 <li class="chapter" data-level="1.1" data-path="introduction.html"><a href="introduction.html#who-is-this-guidance-for"><i class="fa fa-check"></i><b>1.1</b> Who is this guidance for?</a></li>
 <li class="chapter" data-level="1.2" data-path="introduction.html"><a href="introduction.html#what-is-its-aim"><i class="fa fa-check"></i><b>1.2</b> What is its aim?</a></li>
-<li class="chapter" data-level="1.3" data-path="introduction.html"><a href="introduction.html#why-the-move-away-from-spreadsheets"><i class="fa fa-check"></i><b>1.3</b> Why the move away from Spreadsheets</a></li>
-<li class="chapter" data-level="1.4" data-path="introduction.html"><a href="introduction.html#why-move-from-sas-or-spss-to-open-source"><i class="fa fa-check"></i><b>1.4</b> Why move from SAS or SPSS to open source</a></li>
+<li class="chapter" data-level="1.3" data-path="introduction.html"><a href="introduction.html#why-move-away-from-spreadsheets"><i class="fa fa-check"></i><b>1.3</b> Why move away from spreadsheets?</a></li>
+<li class="chapter" data-level="1.4" data-path="introduction.html"><a href="introduction.html#why-move-from-sas-or-spss-to-an-open-source-tool"><i class="fa fa-check"></i><b>1.4</b> Why move from SAS or SPSS to an open source tool?</a></li>
 <li class="chapter" data-level="1.5" data-path="introduction.html"><a href="introduction.html#open-source"><i class="fa fa-check"></i><b>1.5</b> Open source</a></li>
-<li class="chapter" data-level="1.6" data-path="introduction.html"><a href="introduction.html#for-managers"><i class="fa fa-check"></i><b>1.6</b> For Managers</a></li>
+<li class="chapter" data-level="1.6" data-path="introduction.html"><a href="introduction.html#for-managers"><i class="fa fa-check"></i><b>1.6</b> For managers</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="rap.html"><a href="rap.html"><i class="fa fa-check"></i><b>2</b> RAP</a><ul>
 <li class="chapter" data-level="2.1" data-path="rap.html"><a href="rap.html#why-make-our-work-reproducible"><i class="fa fa-check"></i><b>2.1</b> Why make our work reproducible?</a></li>
+<li class="chapter" data-level="2.2" data-path="rap.html"><a href="rap.html#what-is-a-reproducible-analytical-pipeline"><i class="fa fa-check"></i><b>2.2</b> What is a reproducible analytical pipeline?</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="modeling.html"><a href="modeling.html"><i class="fa fa-check"></i><b>3</b> Modeling</a><ul>
-<li class="chapter" data-level="3.1" data-path="modeling.html"><a href="modeling.html#aqua-book-qa-principles-for-code"><i class="fa fa-check"></i><b>3.1</b> AQUA book QA principles for code</a></li>
-<li class="chapter" data-level="3.2" data-path="modeling.html"><a href="modeling.html#repeatable"><i class="fa fa-check"></i><b>3.2</b> Repeatable</a></li>
-<li class="chapter" data-level="3.3" data-path="modeling.html"><a href="modeling.html#rap-levels-align-with-aqua-levels"><i class="fa fa-check"></i><b>3.3</b> RAP Levels align with AQUA Levels</a></li>
+<li class="chapter" data-level="3" data-path="modelling.html"><a href="modelling.html"><i class="fa fa-check"></i><b>3</b> Modelling</a><ul>
+<li class="chapter" data-level="3.1" data-path="modelling.html"><a href="modelling.html#aqua-book-quality-assurance-principles-for-code"><i class="fa fa-check"></i><b>3.1</b> AQUA book quality assurance principles for code</a></li>
+<li class="chapter" data-level="3.2" data-path="modelling.html"><a href="modelling.html#repeatable"><i class="fa fa-check"></i><b>3.2</b> Repeatable</a></li>
+<li class="chapter" data-level="3.3" data-path="modelling.html"><a href="modelling.html#rap-levels-align-with-aqua-levels"><i class="fa fa-check"></i><b>3.3</b> RAP Levels align with AQUA Levels</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="levels-of-rap.html"><a href="levels-of-rap.html"><i class="fa fa-check"></i><b>4</b> Levels of RAP</a></li>
+<li class="chapter" data-level="4" data-path="levels-of-reproducible-analysis.html"><a href="levels-of-reproducible-analysis.html"><i class="fa fa-check"></i><b>4</b> Levels of reproducible analysis</a></li>
 <li class="chapter" data-level="5" data-path="Testing.html"><a href="Testing.html"><i class="fa fa-check"></i><b>5</b> Testing</a><ul>
 <li class="chapter" data-level="5.1" data-path="Testing.html"><a href="Testing.html#advantages-of-testing-your-code"><i class="fa fa-check"></i><b>5.1</b> Advantages of testing your code</a></li>
 <li class="chapter" data-level="5.2" data-path="Testing.html"><a href="Testing.html#when-a-project-should-use-testing"><i class="fa fa-check"></i><b>5.2</b> When a project should use testing</a></li>
@@ -144,44 +145,44 @@
             <section class="normal" id="section-">
 <div id="introduction" class="section level1">
 <h1><span class="header-section-number">Chapter 1</span> Introduction</h1>
-<p>This guidance is published as part of the Quality guidance published by the Best Practice and Impact team in the Office for National Statistics. This guidance has been created to support the analytical professions in government who are using coding languages for various forms of analysis such as the production of statistics or modeling.</p>
+<p>This guidance is part of the quality assurance guidance published by the Best Practice and Impact team at the Office for National Statistics. This guidance has been created to support analysis professionals in government who use coding languages for in their work such as the production of statistics or modeling.</p>
 <div id="who-is-this-guidance-for" class="section level2">
 <h2><span class="header-section-number">1.1</span> Who is this guidance for?</h2>
-<p>This guidance is for analysis’s who are using or want to use new methods and techniques to improve and ensure that they use best practice in their work. The aim of this guidance is to promote good practice in coding across the government analytical professions, it is not targeted for data scientists but more for analysts who use code but have not been formally trained in computer science.</p>
-<p>The guidance is an introduction to techniques and methods, not a comprehensive learning resource. However, it is also not an introduction to coding. You are likely to get the most from this guidance if you are familiar with coding principles, have used a script based language before, or currently use R or Python for analysis. At the end of chapters there are links to resources which provide a more comprehensive and in-depth guide to the methods. These are not the only learning resources available, but we have tried to link to ones that are used widely.</p>
+<p>This guidance is for analysts who are want to make their work reproducible and ensure that they use best practice. The aim of the guidance is to promote good practice in coding across the government analytical professions. It is aimed primarily at analysts who use code but have not been formally trained in computer science, rather than data scientists.</p>
+<p>The guidance provides an introduction to techniques and methods. It is not a comprehensive learning resource. However, it is also not an introduction to coding. You are will get the most from this guidance if you are familiar with coding principles, have used a script based language before, or currently use R or Python for analysis. At the end of chapters there are links to resources which provide a more comprehensive and in-depth guide to the methods we discuss. These are not the only learning resources available, but we have tried to link to ones that are used widely.</p>
 </div>
 <div id="what-is-its-aim" class="section level2">
 <h2><span class="header-section-number">1.2</span> What is its aim?</h2>
-<p>Analysis in government is moving away from legacy systems that are largely manual to workflows built using open source languages and tools that encourage rigorous documentation and a full audit trail. This trend, which builds on best practice in software engineering, provides opportunities for using new tools and methods to enhance the quality of the systems used to produce statistics. Many producers of such systems are not data scientists or coding experts, but other analysts or non-analytical staff who may not be familiar with these new approaches. This guidance aims to introduce some of the common practices that are recommended for implementing analysis in a transparent and fully auditable way and sources best practice from across government.</p>
+<p>Analysis in government is moving away from legacy systems that are largely manual to workflows built using open source languages and tools that encourage rigorous documentation and a full audit trail. This trend, which builds on best practice in software engineering, provides opportunities for using new tools and methods to enhance the quality of the systems used to produce analysis. Many producers of such systems are not data scientists or coding experts, but other analysts or non-analytical staff who may not be familiar with these new approaches. This guidance will introduce some of the common practices that are recommended for implementing analysis in a transparent and fully auditable way and brings together best practice from across government.</p>
 </div>
-<div id="why-the-move-away-from-spreadsheets" class="section level2">
-<h2><span class="header-section-number">1.3</span> Why the move away from Spreadsheets</h2>
-<p>Many departments are moving some analysis from spreadsheets to open source languages like R and python. This is due to a few reasons.</p>
+<div id="why-move-away-from-spreadsheets" class="section level2">
+<h2><span class="header-section-number">1.3</span> Why move away from spreadsheets?</h2>
+<p>Many departments are moving some analysis from spreadsheets to more automated workflows built with open source languages like R and Python. There are several reasons for this.</p>
 <ul>
 <li>Spreadsheet errors
 <ul>
-<li>Fundamentally spreadsheets intermesh data and code together. This makes it more difficult to QA and test the logic as it is mixed up in the data and it is harder to understand what the code is doing. Splitting the code and data allows tests to be written with many data types. Spreadsheets are not designed to work with best practice software testing.<br />
+<li>Spreadsheets intermesh data and code together. This makes it hard to quality assure and test the logic. It is mixed up with the data and it is harder to understand what the code is doing. Splitting the code and data allows us to write tests to make sure the code is doing what it is supposed to. Spreadsheets are not designed to work with best practice software testing.<br />
 </li>
-<li>These are relatively common due to human error. a <a href="http://www.eusprig.org/horror-stories.htm">list of errors</a> caused by spreadsheets illustrates this. This is related to the high degree of copy and pasting that spreadsheets encourages and the intermeshing of data and logic together. It is <a href="https://genomebiology.biomedcentral.com/articles/10.1186/s13059-016-1044-7">estimated</a> that 20% of genetic research papers contains errors because excel converted gene names into calendar dates. This demonstrates the difficulty of spreadsheet logic preforming tasks without informing the user, which combined with the difficulty of testing causes errors resulting in the need for large amounts of time intensive manual QA.<br />
+<li>Errors are relatively common because of human error. This <a href="http://www.eusprig.org/horror-stories.htm">list of errors</a> caused by spreadsheets illustrates the problem. One of the problems is the high degree of copy and pasting that using spreadsheets encourages, coupled with the intermeshing of data and logic together. It is <a href="https://genomebiology.biomedcentral.com/articles/10.1186/s13059-016-1044-7">estimated</a> that 20 per cent of genetic research papers contains errors because a spreadsheet converted gene names into calendar dates. This demonstrates the problem of spreadsheet logic preforming tasks without informing the user. When this is combined with the difficulty of building proper tests, the resulting workflows are error prone. This, in turn, leads to the requirement for large amounts of time intensive, manual quality assurance.<br />
 </li>
 </ul></li>
-<li>Lack of Proper Version Control
+<li>Lack of proper version control
 <ul>
-<li>Whilst it is possible to version control spreadsheets it is difficult and time consuming relative to new tools available such as Git. This allows not only a complete record of every change but the reasons and decisions behind the process are also stored. This provides an audit trail and allows manager to have confidence in the QA of the analysis without having to go through the work line by line.</li>
-<li>It is very difficult using Git to make changes without it being recorded which along with it’s ease of use makes VC a fundamental part of the analytical workflow rather than relying on the burden placed on the analysis to remember to recorded changes and maintain proper VC.</li>
+<li>Whilst it is possible to version control spreadsheets, this is difficult and time consuming when compared to the version control functionality of tools like <a href="https://git-scm.com/">Git</a>. These tools preserve a complete record of every change, along with the reasons and decisions behind those changes. This provides a complete audit trail and allows managers to have confidence in the quality assurance of the analysis without having to go through the work line by line.</li>
+<li>When using Git, it is very difficult to make changes without this being recorded. Along with its ease of use, this makes version control a fundamental part of the analytical workflow rather than relying on the analyst to remember to recorded changes and maintain proper version control manually.</li>
 </ul></li>
-<li>Less reproducible.
+<li>Spreadsheets are less reproducible
 <ul>
-<li>Spreadsheets often involve many manual steps or ‘point and clicks’. These steps are not recorded and make reproducing work later difficult or impossible. Notes or documentation may help in this process but even detailed documentation is unlikely to give a full record of the process.</li>
+<li>Spreadsheets often involve lots of manual steps or ‘point and clicks’. These steps are not recorded, which makes reproducing work later difficult or impossible. Notes and documentation may help, but even detailed documentation is unlikely to give a comprehensive record of all the steps taken.</li>
 </ul></li>
 <li>Testing and QA often happens at the end, not throughout
 <ul>
-<li>QA is a time consuming process when done manually and can take up a significant proportion of an analysts time. Automating QA and other aspects free up time to be spent querying the process and interpreting the results.</li>
+<li>Quality assurance is time consuming when done manually and can take up a significant proportion of analyst time. Automating quality assurance and code management, alongside building testing into the workflow, frees up time to do more analysis and interpret the results.</li>
 </ul></li>
 </ul>
 </div>
-<div id="why-move-from-sas-or-spss-to-open-source" class="section level2">
-<h2><span class="header-section-number">1.4</span> Why move from SAS or SPSS to open source</h2>
+<div id="why-move-from-sas-or-spss-to-an-open-source-tool" class="section level2">
+<h2><span class="header-section-number">1.4</span> Why move from SAS or SPSS to an open source tool?</h2>
 <p><strong>expand</strong></p>
 <ul>
 <li>black box- can’t examine the algorithms</li>
@@ -192,13 +193,13 @@
 </div>
 <div id="open-source" class="section level2">
 <h2><span class="header-section-number">1.5</span> Open source</h2>
-<p>Open source languages such as Python and R are increasing in popularity across government. One advantage of using these tools is that we can reduce the number of steps where the data needs to be moved from one program (or format) into another. This is in line with the principle of reproducibility given in guidance on producing quality analysis for government (the AQUA book), as the entire process can be represented as a single step in code, greatly reducing the likelihood of manual transcription errors.</p>
-<p>The <a href="https://www.gov.uk/government/publications/technology-code-of-practice/technology-code-of-practice">Technology Code of Practice</a> is a set of criteria to help government design, build and buy technology. It’s used as a cross-government agreed standard in the spend controls process. Criteria 3 <em>“Be open and use open source”</em> recommends using open sources languages such as R or Python.</p>
-<p>Open source languages are easier to find learning material and guides for as there are large and vibrant communities producing materials. This allows a large degree of self learning, if a output/method/technique wants to be implemented there is very likely a library to support it and a guide to teach it available for all. Also as a result of the large communities of users these languages are capable of preforming a diverse array of tasks allowing departments to try innovative new approaches such as interactive dashboards or web scraping. Which language analysts or departments choose will depend on the particular needs of the area. In general R and Python are the most popular and are good at similar <a href="https://www.openriskmanual.org/wiki/Python_versus_R_Language">tasks</a></p>
+<p>Open source languages like Python and R are increasing in popularity across government. One advantage of using these tools is that we can reduce the number of steps where the data needs to be moved from one program (or format) into another. This is in line with the principle of reproducibility set out in the government’s <a href="https://www.gov.uk/government/publications/the-aqua-book-guidance-on-producing-quality-analysis-for-government">AQUA guidance on quality analysis in government</a>, as the entire process can be set out in code, greatly reducing the likelihood of manual transcription errors.</p>
+<p>The Government Digital Service <a href="https://www.gov.uk/government/publications/technology-code-of-practice/technology-code-of-practice">Technology Code of Practice</a> is a set of criteria to help government design, build and buy technology. It’s a cross-government agreed standard in the spend controls process. Criterion 3 <em>“<a href="https://www.gov.uk/guidance/be-open-and-use-open-source">Be open and use open source</a>”</em> recommends using open source languages to improve transparency, flexibility and accountability.</p>
+<p>It is easy to find learning resources and guides for open source languages, as they are supported by large and vibrant communities. This allows for a large degree of self learning, if an output, method or technique is widely used (and even if it is cutting edge), there is usually a library to support it already in place and a guide to teach it that is freely available for all. As a result of these large communities of users, open source languages can perform an enormous array of tasks. This means that departments can try innovative new approaches such as interactive dashboards or web scraping quickly and easily. Which language a department chooses will depend on business needs. In general, R and Python are the most widely used open source analysis tools and are good at similar <a href="https://www.openriskmanual.org/wiki/Python_versus_R_Language">tasks</a></p>
 </div>
 <div id="for-managers" class="section level2">
-<h2><span class="header-section-number">1.6</span> For Managers</h2>
-<p>Managers or analysts responsible for producing analysis such as statistics and modelling are responsible for showing that the outputs are fit for purpose and have been properly Quality Assured. Whilst spreadsheet based workflows are familiar to all, these new approaches require changes to the process which may leave managers unsure of the robustness of the process. This may lead to an issue where these processes are slowed down or not deployed due to these worries or the manager feels the responsibility to go line by line through the process. This guidance will show how managers can be certain that best practice has been followed. If the process follows these best practices then a manager can have confidence in the output. Managers can ask whether business risk they sit on has been properly tested and uses VC, and can see every change and how the changes where managed using Git allowing the analysists to focus on the coding and the managers to focus on managing.</p>
+<h2><span class="header-section-number">1.6</span> For managers</h2>
+<p>Managers who lead the production of analysis outputs like statistics or models are responsible for showing that those outputs are fit for purpose and properly quality assured. Whilst spreadsheet based workflows are familiar to all, moving to an open source workflow will require changes to the process. Because the tools and methods are often unfamiliar at the start, managers may be unsure of the robustness of the process. In consequence, processes might be slowed down or not deployed or the manager may feel they need to go line by line through the process. This guidance will support managers and explain what they need to do to be certain that best practice has been followed. If the process follows these best practices then a manager can have confidence in the output. Managers can ask whether business risks that they own have been properly tested and mitigated. Because workflows are fully audited and transparent, a manager can see every change and how the changes were managed. This allows the analysists to focus on the coding and the managers to focus on managing.</p>
 
 </div>
 </div>
