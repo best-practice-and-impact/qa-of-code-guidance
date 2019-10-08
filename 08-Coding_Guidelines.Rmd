@@ -1,6 +1,6 @@
 # Coding Guidelines {#Coding_Guidelines}
 
-![](static/code_review.jpg)
+![](static/code_style.jpg)
 
 Best practices are more about what code you write than how you write it.
 For example, there are many ways to access databases, but one particular way might be considered ‘best practice’
@@ -41,7 +41,9 @@ Specific and prescription coding guidelines ensure that all the code follows a s
 6. Nesting.
   - You should always avoid nesting as it make the code harder to read and understand.
 
+
 ## Style Guides
+
 There are many style guides out there. You may choose to adopt one or part of one. Your team or department could also write some guidelines tailored to your needs to encourage best practice.
 Here are some existing guidelines:
 

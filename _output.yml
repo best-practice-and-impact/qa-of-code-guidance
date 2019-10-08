@@ -8,3 +8,4 @@ bookdown::gitbook:
         <li><a href="https://gss.civilservice.gov.uk/policy-store/government-statistical-service-gss-quality-strategy/" target="blank">Government Statistical Service (GSS) Quality </a></li>
     download: ["pdf", "epub"]
 bookdown::epub_book: default
+
