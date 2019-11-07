@@ -10,8 +10,7 @@ cache:
     - $HOME/bin
 
 script:
-  - Rscript -e "bookdown::render_book('index.Rmd', 'bookdown::gitbook')"
-  - Rscript -e "bookdown::clean_book(TRUE)"
+  - Rscript -e "bookdown::render_book('index.Rmd')"
 
 deploy:
   provider: pages
