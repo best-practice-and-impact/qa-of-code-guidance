@@ -15,9 +15,9 @@ script:
 
 deploy:
   provider: pages
+  local_dir: _book
   skip_cleanup: true
   github_token: $GITHUB_TOKEN
-  keep_history: true
   on:
     branch: master
-  local_dir: _book
+  
