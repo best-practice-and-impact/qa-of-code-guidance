@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 2 Reproducible, Auditable, and Assured | QA of Code</title>
+  <title>Chapter 2 Reproducible, Auditable and Assured | QA of Code</title>
   <meta name="description" content="This is a draft of QA for Coding guidance" />
   <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 2 Reproducible, Auditable, and Assured | QA of Code" />
+  <meta property="og:title" content="Chapter 2 Reproducible, Auditable and Assured | QA of Code" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 2 Reproducible, Auditable, and Assured | QA of Code" />
+  <meta name="twitter:title" content="Chapter 2 Reproducible, Auditable and Assured | QA of Code" />
   
   <meta name="twitter:description" content="This is a draft of QA for Coding guidance" />
   
@@ -78,11 +78,18 @@
 <li class="chapter" data-level="1.5" data-path="introduction.html"><a href="introduction.html#open-source"><i class="fa fa-check"></i><b>1.5</b> Open source</a></li>
 <li class="chapter" data-level="1.6" data-path="introduction.html"><a href="introduction.html#for-managers"><i class="fa fa-check"></i><b>1.6</b> For managers</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="reproducible-auditable-and-assured.html"><a href="reproducible-auditable-and-assured.html"><i class="fa fa-check"></i><b>2</b> Reproducible, Auditable, and Assured</a><ul>
+<li class="chapter" data-level="2" data-path="reproducible-auditable-and-assured.html"><a href="reproducible-auditable-and-assured.html"><i class="fa fa-check"></i><b>2</b> Reproducible, Auditable and Assured</a><ul>
 <li class="chapter" data-level="2.1" data-path="reproducible-auditable-and-assured.html"><a href="reproducible-auditable-and-assured.html#reproducible"><i class="fa fa-check"></i><b>2.1</b> Reproducible</a></li>
-<li class="chapter" data-level="2.2" data-path="reproducible-auditable-and-assured.html"><a href="reproducible-auditable-and-assured.html#what-is-a-reproducible-analytical-pipeline"><i class="fa fa-check"></i><b>2.2</b> What is a reproducible analytical pipeline?</a></li>
-<li class="chapter" data-level="2.3" data-path="reproducible-auditable-and-assured.html"><a href="reproducible-auditable-and-assured.html#why-make-our-work-reproducible"><i class="fa fa-check"></i><b>2.3</b> Why make our work reproducible?</a></li>
-<li class="chapter" data-level="2.4" data-path="reproducible-auditable-and-assured.html"><a href="reproducible-auditable-and-assured.html#strategies-and-guidance"><i class="fa fa-check"></i><b>2.4</b> Strategies and Guidance</a></li>
+<li class="chapter" data-level="2.2" data-path="reproducible-auditable-and-assured.html"><a href="reproducible-auditable-and-assured.html#auditable"><i class="fa fa-check"></i><b>2.2</b> Auditable</a></li>
+<li class="chapter" data-level="2.3" data-path="reproducible-auditable-and-assured.html"><a href="reproducible-auditable-and-assured.html#assured"><i class="fa fa-check"></i><b>2.3</b> Assured</a></li>
+<li class="chapter" data-level="2.4" data-path="reproducible-auditable-and-assured.html"><a href="reproducible-auditable-and-assured.html#what-is-a-reproducible-analytical-pipeline"><i class="fa fa-check"></i><b>2.4</b> What is a reproducible analytical pipeline?</a></li>
+<li class="chapter" data-level="2.5" data-path="reproducible-auditable-and-assured.html"><a href="reproducible-auditable-and-assured.html#guidance"><i class="fa fa-check"></i><b>2.5</b> Guidance</a></li>
+<li class="chapter" data-level="2.6" data-path="reproducible-auditable-and-assured.html"><a href="reproducible-auditable-and-assured.html#strategies-and-approaches"><i class="fa fa-check"></i><b>2.6</b> Strategies and approaches</a><ul>
+<li class="chapter" data-level="2.6.1" data-path="reproducible-auditable-and-assured.html"><a href="reproducible-auditable-and-assured.html#one-place"><i class="fa fa-check"></i><b>2.6.1</b> One place</a></li>
+<li class="chapter" data-level="2.6.2" data-path="reproducible-auditable-and-assured.html"><a href="reproducible-auditable-and-assured.html#checklists-and-processes"><i class="fa fa-check"></i><b>2.6.2</b> Checklists and processes</a></li>
+<li class="chapter" data-level="2.6.3" data-path="reproducible-auditable-and-assured.html"><a href="reproducible-auditable-and-assured.html#defensive-design"><i class="fa fa-check"></i><b>2.6.3</b> Defensive design</a></li>
+<li class="chapter" data-level="2.6.4" data-path="reproducible-auditable-and-assured.html"><a href="reproducible-auditable-and-assured.html#rap-is-knowledge-management"><i class="fa fa-check"></i><b>2.6.4</b> RAP is Knowledge Management</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="modelling.html"><a href="modelling.html"><i class="fa fa-check"></i><b>3</b> Modelling</a><ul>
 <li class="chapter" data-level="3.1" data-path="modelling.html"><a href="modelling.html#aqua-book-quality-assurance-principles-for-code"><i class="fa fa-check"></i><b>3.1</b> AQUA book quality assurance principles for code</a></li>
@@ -149,41 +156,78 @@
 
             <section class="normal" id="section-">
 <div id="reproducible-auditable-and-assured" class="section level1">
-<h1><span class="header-section-number">Chapter 2</span> Reproducible, Auditable, and Assured</h1>
-<p>When we do analysis in government we must ensure that it is fit for purpose.
-If we don’t we risk misinforming decisions.
-Poor quality analysis can result in harm or misallocation of public funds.
-We must figure out what the right steps to take are to ensure high quality analysis.</p>
-<p>However, some of the analysis that we do in government does bear on decisions at that level.
-We don’t want to overburden analysts with hoops to jump through where it isn’t required.
-We advocate proportionality - the right quality assurance procedures for the right analysis.</p>
-<p>If decisions are made based on analysis then we must make sure that the story of that analysis is available.
-Our analysis and the evidence we provide must be able to be held to scrutiny and audited.
-Auditable analysis is about answering:
-&gt; who made which decisions at what time and based on what evidence?</p>
-<p>All quality assurance stems from reproducibility.
-If you can’t prove that you can run the same analysis, with the same data, and obtain the same results then you are not adding anything of value.
-The secondary assurances of peer review, rigorous testing, and validity are secondary to being able to reproduce any analysis that you produce.</p>
+<h1><span class="header-section-number">Chapter 2</span> Reproducible, Auditable and Assured</h1>
+<p>When we do analysis it must be fit for purpose.
+If it isn’t, we risk misinforming decisions.
+Bad analysis can result in harm or misallocation of public funds.
+We must figure out the right steps to take to ensure high quality analysis.</p>
+<p>This book recognises three founding principles of good analysis, each supported by the one before.</p>
+<p><img src="Static/repro_stack.png" /></p>
+<p>Reproducibility guarantees that we have done what we have said we have done, and that users could do it too.
+Auditability means that we know why we chose our analysis, and who is responsible for each bit - including assurance.
+Assurance improves the average quality and communicates that quality to users.</p>
 <div id="reproducible" class="section level2">
 <h2><span class="header-section-number">2.1</span> Reproducible</h2>
-<p>Reproducibility is the only thing you can guarantee in your analysis.</p>
-<p>Producing official statistics can be time-consuming and painstaking as we need to make sure that our outputs are both accurate and timely.<br />
-Reproducible analysis is about opening up the production process so that anybody can follow the steps we took and understand how we got to the results that we publish.<br />
-By making our analysis reproducible, we make it easier for others to quality assure, assess and critique.<br />
-It is easier to re-use our methods and results, and for colleagues to test and validate what we have done.</p>
-<p>In a reproducible workflow, we bring together the code and the data that we used to generate our results.<br />
-This lets us be fully open about the decisions we made as we generated our outputs so that other analysts can follow what we did and re-create them.<br />
-Reproducible analysis supports the requirements of the Code of Practice for Statistics around quality assurance and transparency, as, wherever possible, we share the code we used to build the outputs, along with enough data to allow for proper testing.</p>
+<p>Reproducibility is the only thing you can guarantee in your analysis.
+It is the first pillar of good analysis.
+If you can’t prove that you can run the same analysis, with the same data, and obtain the same results then you are not adding valuable analysis.
+The secondary assurances of peer review, rigorous testing, and validity are secondary to being able to reproduce any analysis that you produce in a proportionate amount of time.</p>
+<p>Reproducible analysis relies on a transparent production process so that anyone can follow our steps and understand our results.
+The transparency eases reuse of our methods and results.
+Easy reproducibility helps colleagues test and validate what we have done.
+As reproducibility is guaranteed, users and colleagues can focus on verifying that the implentation is correct and that the research is useful for its intended purpose.</p>
+<p>Reproducibility relies on effective documentation.
+Good documentation should show how our methodology and our implementation map to each other.
+Good documentation should allow users and other researchers to reuse and adapt our analysis.</p>
+<p>Reproducible analysis supports the requirements of the Code of Practice for Statistics around quality assurance and transparency (auditability).
+Wherever possible, we share the code we used to build the outputs, along with enough data to allow for proper testing.</p>
+</div>
+<div id="auditable" class="section level2">
+<h2><span class="header-section-number">2.2</span> Auditable</h2>
+<p>If decisions are made based on analysis then we must make sure that the story of that analysis is available.
+Our analysis and the evidence we provide must be able to be held to scrutiny and audited.
+Auditable analysis is about being able to, at any point, answer:</p>
+<blockquote>
+<p>Who made which decisions at what time and based on what evidence?</p>
+</blockquote>
+<p>Answering these questions gives decision makers and users greater trust in our work.
+They know the story of our analysis and why we made certain analytical choices.
+They know who is responsible for each part of the analysis, including the assurance.
+They know exactly what changes have been made at any point.</p>
+<p>In a reproducible workflow, we must bring together the code and the data that we used to generate our results.
+These are ideally published alongside our reports, and alongside a record of analytical choices made and responsible owners of those choices.
+The transparency this gives our work helps trustworthiness.
+More eyes examining our work can point out challenges or flaws that can help us to improve.
+We can be fully open about the decisions we made when we generated our outputs so that other analysts can follow what we did and re-create them.
+By making our analysis reproducible, we make it easier for others to quality assure, assess and critique.</p>
+</div>
+<div id="assured" class="section level2">
+<h2><span class="header-section-number">2.3</span> Assured</h2>
+<p>Good quality analysis requires good quality assurance.
+If decisions are being made based on analysis then this analysis must be held to high standards</p>
+<p>However, some of the analysis that we do in government doesn’t bear on decisions at that level.
+We don’t want to overburden analysts with QA procedures when they aren’t required.
+In government we advocate <em>proportionality</em> - the right quality assurance procedures for the right analysis.
+Analysis can be proportionately assured through peer review and defensive design.</p>
+<p>We advocate following your department’s guidance on what proportionate quality assurance looks like.
+Most departments derive their guidance from the Aqua book.
+Assurance is best guaranteed through peer review.
+Peer reviewers must be able to understand your analytical choices and be able to reproduce your conclusions.</p>
+<p>Guarantees of quality assurance should be published alongside any report, or be taken into consideration by decision makers.</p>
 </div>
 <div id="what-is-a-reproducible-analytical-pipeline" class="section level2">
-<h2><span class="header-section-number">2.2</span> What is a reproducible analytical pipeline?</h2>
-<p>Across government we aim to create effective and efficient analytical workflows which are repeatable over time and follow the principles of reproducible analysis. We call these <a href="https://dataingovernment.blog.gov.uk/2017/03/27/reproducible-analytical-pipeline/">Reproducible Analytical Pipelines</a> (RAP).</p>
-<p>Reproducible analysis is quite a new idea for government.<br />
-Many analysts still use proprietary (paid-for) analytical tools like SAS or SPSS in combination with programs like Excel, Word or Acrobat to create statistical products.
+<h2><span class="header-section-number">2.4</span> What is a reproducible analytical pipeline?</h2>
+<p>Producing official statistics can be time-consuming and painstaking.
+We need to make sure that our outputs are both accurate and timely.<br />
+Across government we aim to create effective and efficient analytical workflows which are repeatable over time and follow the principles of reproducible analysis.
+We call these <a href="https://dataingovernment.blog.gov.uk/2017/03/27/reproducible-analytical-pipeline/">Reproducible Analytical Pipelines</a> (RAP).</p>
+<p>Reproducible analysis is still not widely practiced across government.<br />
+Many analysts use proprietary (paid-for) analytical tools like SAS or SPSS in combination with programs like Excel, Word or Acrobat to create statistical products.
 The processes for creating statistics this way are usually manual or semi-manual.<br />
-Colleagues typically repeat parts of the process manually to quality assure the outputs.</p>
-<p>This way of working is time consuming and can be frustrating because the manual steps can be quite hard to replicate quickly.<br />
-Work flows are also prone to error, because the input data and the outputs are not connected directly, only through the analyst’s manual intervention.</p>
+Colleagues typically repeat parts of the process manually to quality assure the outputs.
+This makes the analysis difficult to reproduce.</p>
+<p>This way of working is time consuming and can be frustrating because the manual steps can be quite hard to replicate quickly.
+These processes are also prone to error, because the input data and the outputs are not connected directly, only through the analyst’s manual intervention.</p>
 <p>More recently, the tools and techniques available to analysts have evolved.
 Open-source tools like Python and R, coupled with the use of version control and software management platforms like Git, used widely in software engineering to make it easier to collaborate, have made it possible to develop more automatic, streamlined processes, accompanied by a full audit trail.</p>
 <p>RAP was first piloted in the Government Statistical Service in 2017 by analysts in the Department for Digital, Culture, Media &amp; Sport (DCMS) and the Department for Education (DfE).
@@ -191,19 +235,33 @@ They collaborated with data scientists from the Government Digital Service (GDS)
 <p>To support the adoption of RAP across government, there is a network of <a href="https://gss.civilservice.gov.uk/about-us/champion-networks/reproducible-analytical-pipeline-rap-champions/">RAP champions</a>.
 Champions are responsible for promoting reproducible analysis and the use of reproducible analytical pipelines and supporting others who want to develop RAP in their own teams.</p>
 </div>
-<div id="why-make-our-work-reproducible" class="section level2">
-<h2><span class="header-section-number">2.3</span> Why make our work reproducible?</h2>
-<p><img src="Static/repro_stack.png" /></p>
-</div>
-<div id="strategies-and-guidance" class="section level2">
-<h2><span class="header-section-number">2.4</span> Strategies and Guidance</h2>
+<div id="guidance" class="section level2">
+<h2><span class="header-section-number">2.5</span> Guidance</h2>
 <ul>
 <li>Aqua Book</li>
 <li>GSS Quality Strategy</li>
 <li>DCMS Data Ethics Framework</li>
 <li>Government Transformation Strategy</li>
+<li>Communicating quality, change and uncertainty</li>
 </ul>
+</div>
+<div id="strategies-and-approaches" class="section level2">
+<h2><span class="header-section-number">2.6</span> Strategies and approaches</h2>
+<div id="one-place" class="section level3">
+<h3><span class="header-section-number">2.6.1</span> One place</h3>
+</div>
+<div id="checklists-and-processes" class="section level3">
+<h3><span class="header-section-number">2.6.2</span> Checklists and processes</h3>
+<p>Don’t reinvent the wheel.
+It’s always worth taking at look at what went well, and what could be improved, when you are at natural pauses.</p>
+</div>
+<div id="defensive-design" class="section level3">
+<h3><span class="header-section-number">2.6.3</span> Defensive design</h3>
+</div>
+<div id="rap-is-knowledge-management" class="section level3">
+<h3><span class="header-section-number">2.6.4</span> RAP is Knowledge Management</h3>
 
+</div>
 </div>
 </div>
             </section>

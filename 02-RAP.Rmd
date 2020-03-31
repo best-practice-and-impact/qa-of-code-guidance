@@ -1,50 +1,90 @@
-# Reproducible, Auditable, and Assured
+# Reproducible, Auditable and Assured
 
-When we do analysis in government we must ensure that it is fit for purpose.
-If we don't we risk misinforming decisions.
-Poor quality analysis can result in harm or misallocation of public funds.
-We must figure out what the right steps to take are to ensure high quality analysis.
+When we do analysis it must be fit for purpose.
+If it isn't, we risk misinforming decisions.
+Bad analysis can result in harm or misallocation of public funds.
+We must figure out the right steps to take to ensure high quality analysis.
 
-However, some of the analysis that we do in government does bear on decisions at that level.
-We don't want to overburden analysts with hoops to jump through where it isn't required.
-We advocate proportionality - the right quality assurance procedures for the right analysis.
+This book recognises three founding principles of good analysis, each supported by the one before.
 
-If decisions are made based on analysis then we must make sure that the story of that analysis is available.
-Our analysis and the evidence we provide must be able to be held to scrutiny and audited.
-Auditable analysis is about answering: 
-> who made which decisions at what time and based on what evidence?
+![](static/repro_stack.png)
 
-All quality assurance stems from reproducibility.
-If you can't prove that you can run the same analysis, with the same data, and obtain the same results then you are not adding anything of value.
-The secondary assurances of peer review, rigorous testing, and validity are secondary to being able to reproduce any analysis that you produce.
-
-
+Reproducibility guarantees that we have done what we have said we have done, and that users could do it too.
+Auditability means that we know why we chose our analysis, and who is responsible for each bit - including assurance.
+Assurance improves the average quality and communicates that quality to users.
 
 ## Reproducible
 
-
-
 Reproducibility is the only thing you can guarantee in your analysis.
+It is the first pillar of good analysis.
+If you can't prove that you can run the same analysis, with the same data, and obtain the same results then you are not adding valuable analysis.
+The secondary assurances of peer review, rigorous testing, and validity are secondary to being able to reproduce any analysis that you produce in a proportionate amount of time.
 
-Producing official statistics can be time-consuming and painstaking as we need to make sure that our outputs are both accurate and timely.  
-Reproducible analysis is about opening up the production process so that anybody can follow the steps we took and understand how we got to the results that we publish.  
-By making our analysis reproducible, we make it easier for others to quality assure, assess and critique.  
-It is easier to re-use our methods and results, and for colleagues to test and validate what we have done.
+Reproducible analysis relies on a transparent production process so that anyone can follow our steps and understand our results.
+The transparency eases reuse of our methods and results. 
+Easy reproducibility helps colleagues test and validate what we have done.
+As reproducibility is guaranteed, users and colleagues can focus on verifying that the implentation is correct and that the research is useful for its intended purpose.
 
-In a reproducible workflow, we bring together the code and the data that we used to generate our results.  
-This lets us be fully open about the decisions we made as we generated our outputs so that other analysts can follow what we did and re-create them.  
-Reproducible analysis supports the requirements of the Code of Practice for Statistics around quality assurance and transparency, as, wherever possible, we share the code we used to build the outputs, along with enough data to allow for proper testing.
+Reproducibility relies on effective documentation.
+Good documentation should show how our methodology and our implementation map to each other.
+Good documentation should allow users and other researchers to reuse and adapt our analysis.
+
+Reproducible analysis supports the requirements of the Code of Practice for Statistics around quality assurance and transparency (auditability). 
+Wherever possible, we share the code we used to build the outputs, along with enough data to allow for proper testing.
+
+
+## Auditable
+
+If decisions are made based on analysis then we must make sure that the story of that analysis is available.
+Our analysis and the evidence we provide must be able to be held to scrutiny and audited.
+Auditable analysis is about being able to, at any point, answer: 
+
+> Who made which decisions at what time and based on what evidence?
+
+Answering these questions gives decision makers and users greater trust in our work.
+They know the story of our analysis and why we made certain analytical choices.
+They know who is responsible for each part of the analysis, including the assurance.
+They know exactly what changes have been made at any point.
+
+In a reproducible workflow, we must bring together the code and the data that we used to generate our results.
+These are ideally published alongside our reports, and alongside a record of analytical choices made and responsible owners of those choices.
+The transparency this gives our work helps trustworthiness.
+More eyes examining our work can point out challenges or flaws that can help us to improve.
+We can be fully open about the decisions we made when we generated our outputs so that other analysts can follow what we did and re-create them.
+By making our analysis reproducible, we make it easier for others to quality assure, assess and critique.
+
+## Assured
+
+Good quality analysis requires good quality assurance.
+If decisions are being made based on analysis then this analysis must be held to high standards
+
+However, some of the analysis that we do in government doesn't bear on decisions at that level.
+We don't want to overburden analysts with QA procedures when they aren't required.
+In government we advocate *proportionality* - the right quality assurance procedures for the right analysis.
+Analysis can be proportionately assured through peer review and defensive design.
+
+We advocate following your department's guidance on what proportionate quality assurance looks like.
+Most departments derive their guidance from the Aqua book.
+Assurance is best guaranteed through peer review.
+Peer reviewers must be able to understand your analytical choices and be able to reproduce your conclusions.
+
+Guarantees of quality assurance should be published alongside any report, or be taken into consideration by decision makers.
+
 
 ## What is a reproducible analytical pipeline?
-Across government we aim to create effective and efficient analytical workflows which are repeatable over time and follow the principles of reproducible analysis. We call these [Reproducible Analytical Pipelines](https://dataingovernment.blog.gov.uk/2017/03/27/reproducible-analytical-pipeline/) (RAP).
+Producing official statistics can be time-consuming and painstaking.
+We need to make sure that our outputs are both accurate and timely.  
+Across government we aim to create effective and efficient analytical workflows which are repeatable over time and follow the principles of reproducible analysis. 
+We call these [Reproducible Analytical Pipelines](https://dataingovernment.blog.gov.uk/2017/03/27/reproducible-analytical-pipeline/) (RAP).
 
-Reproducible analysis is quite a new idea for government.  
-Many analysts still use proprietary (paid-for) analytical tools like SAS or SPSS in combination with programs like Excel, Word or Acrobat to create statistical products. 
+Reproducible analysis is still not widely practiced across government.  
+Many analysts use proprietary (paid-for) analytical tools like SAS or SPSS in combination with programs like Excel, Word or Acrobat to create statistical products. 
 The processes for creating statistics this way are usually manual or semi-manual.  
 Colleagues typically repeat parts of the process manually to quality assure the outputs.
+This makes the analysis difficult to reproduce.
 
-This way of working is time consuming and can be frustrating because the manual steps can be quite hard to replicate quickly.  
-Work flows are also prone to error, because the input data and the outputs are not connected directly, only through the analyst’s manual intervention.
+This way of working is time consuming and can be frustrating because the manual steps can be quite hard to replicate quickly. 
+These processes are also prone to error, because the input data and the outputs are not connected directly, only through the analyst’s manual intervention.
 
 More recently, the tools and techniques available to analysts have evolved. 
 Open-source tools like Python and R, coupled with the use of version control and software management platforms like Git, used widely in software engineering to make it easier to collaborate, have made it possible to develop more automatic, streamlined processes, accompanied by a full audit trail.
@@ -55,15 +95,27 @@ They collaborated with data scientists from the Government Digital Service (GDS)
 To support the adoption of RAP across government, there is a network of [RAP champions](https://gss.civilservice.gov.uk/about-us/champion-networks/reproducible-analytical-pipeline-rap-champions/). 
 Champions are responsible for promoting reproducible analysis and the use of reproducible analytical pipelines and supporting others who want to develop RAP in their own teams.
 
-
-## Why make our work reproducible?
-
-![](static/repro_stack.png)
-
-## Strategies and Guidance
+## Guidance
 
 - Aqua Book
 - GSS Quality Strategy
 - DCMS Data Ethics Framework
 - Government Transformation Strategy
+- Communicating quality, change and uncertainty
 
+## Strategies and approaches
+
+### One place
+
+
+### Checklists and processes
+
+Don't reinvent the wheel.
+It's always worth taking at look at what went well, and what could be improved, when you are at natural pauses.
+
+
+
+### Defensive design
+
+
+### RAP is Knowledge Management
