@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>QA of Code</title>
+  <title>Chapter 2 Reproducible, Auditable, and Assured | QA of Code</title>
   <meta name="description" content="This is a draft of QA for Coding guidance" />
   <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="QA of Code" />
+  <meta property="og:title" content="Chapter 2 Reproducible, Auditable, and Assured | QA of Code" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="QA of Code" />
+  <meta name="twitter:title" content="Chapter 2 Reproducible, Auditable, and Assured | QA of Code" />
   
   <meta name="twitter:description" content="This is a draft of QA for Coding guidance" />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-<link rel="next" href="introduction.html"/>
+<link rel="prev" href="introduction.html"/>
+<link rel="next" href="modelling.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -148,28 +148,57 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">QA of Code</h1>
-<p class="author"><em>Joshua Halls</em></p>
-<p class="date"><em>2020-03-31</em></p>
-</div>
-<div id="preface" class="section level1 unnumbered">
-<h1>Preface</h1>
-<p><strong>ALPHA</strong></p>
-<p>This is a draft of Government Statistical Service guidance. It is unpublished and <strong>does not</strong> represent the views of the <strong>ONS</strong> or the <strong>GSS</strong>.</p>
-<p><img src="static/logo_alt.jpg" /></p>
+<div id="reproducible-auditable-and-assured" class="section level1">
+<h1><span class="header-section-number">Chapter 2</span> Reproducible, Auditable, and Assured</h1>
+<div id="strategies-and-guidance" class="section level2">
+<h2><span class="header-section-number">2.1</span> Strategies and Guidance</h2>
 <ul>
-<li>Twitter: <a href="https://twitter.com/gssgoodpractice">GSSGoodPractice</a>, <a href="https://twitter.com/ukgss">UKGSS</a></li>
-<li>Email us: <a href="mailto:gsshelp@statistics.gov.uk" class="email">gsshelp@statistics.gov.uk</a></li>
+<li>Aqua Book</li>
+<li>GSS Quality Strategy</li>
+<li>DCMS Data Ethics Framework</li>
+<li>Government Transformation Strategy</li>
 </ul>
+</div>
+<div id="reproducible" class="section level2">
+<h2><span class="header-section-number">2.2</span> Reproducible</h2>
+<p><img src="static/repro_stack.png" /></p>
+<p>Reproducibility</p>
+<p>Producing official statistics can be time-consuming and painstaking as we need to make sure that our outputs are both accurate and timely.<br />
+Reproducible analysis is about opening up the production process so that anybody can follow the steps we took and understand how we got to the results that we publish.<br />
+By making our analysis reproducible, we make it easier for others to quality assure, assess and critique.<br />
+It is easier to re-use our methods and results, and for colleagues to test and validate what we have done.</p>
+<p>In a reproducible workflow, we bring together the code and the data that we used to generate our results.<br />
+This lets us be fully open about the decisions we made as we generated our outputs so that other analysts can follow what we did and re-create them.<br />
+Reproducible analysis supports the requirements of the Code of Practice for Statistics around quality assurance and transparency, as, wherever possible, we share the code we used to build the outputs, along with enough data to allow for proper testing.</p>
+</div>
+<div id="what-is-a-reproducible-analytical-pipeline" class="section level2">
+<h2><span class="header-section-number">2.3</span> What is a reproducible analytical pipeline?</h2>
+<p>Across government we aim to create effective and efficient analytical workflows which are repeatable over time and follow the principles of reproducible analysis. We call these <a href="https://dataingovernment.blog.gov.uk/2017/03/27/reproducible-analytical-pipeline/">Reproducible Analytical Pipelines</a> (RAP).</p>
+<p>Reproducible analysis is quite a new idea for government.<br />
+Many analysts still use proprietary (paid-for) analytical tools like SAS or SPSS in combination with programs like Excel, Word or Acrobat to create statistical products.
+The processes for creating statistics this way are usually manual or semi-manual.<br />
+Colleagues typically repeat parts of the process manually to quality assure the outputs.</p>
+<p>This way of working is time consuming and can be frustrating because the manual steps can be quite hard to replicate quickly.<br />
+Work flows are also prone to error, because the input data and the outputs are not connected directly, only through the analyst’s manual intervention.</p>
+<p>More recently, the tools and techniques available to analysts have evolved.
+Open-source tools like Python and R, coupled with the use of version control and software management platforms like Git, used widely in software engineering to make it easier to collaborate, have made it possible to develop more automatic, streamlined processes, accompanied by a full audit trail.</p>
+<p>RAP was first piloted in the Government Statistical Service in 2017 by analysts in the Department for Digital, Culture, Media &amp; Sport (DCMS) and the Department for Education (DfE).
+They collaborated with data scientists from the Government Digital Service (GDS) to automate the production of statistical bulletins.</p>
+<p>To support the adoption of RAP across government, there is a network of <a href="https://gss.civilservice.gov.uk/about-us/champion-networks/reproducible-analytical-pipeline-rap-champions/">RAP champions</a>.
+Champions are responsible for promoting reproducible analysis and the use of reproducible analytical pipelines and supporting others who want to develop RAP in their own teams.</p>
+</div>
+<div id="why-make-our-work-reproducible" class="section level2">
+<h2><span class="header-section-number">2.4</span> Why make our work reproducible?</h2>
+
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-
-<a href="introduction.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="introduction.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="modelling.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>QA of Code</title>
+  <title>Chapter 8 Coding Guidelines | QA of Code</title>
   <meta name="description" content="This is a draft of QA for Coding guidance" />
   <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="QA of Code" />
+  <meta property="og:title" content="Chapter 8 Coding Guidelines | QA of Code" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="QA of Code" />
+  <meta name="twitter:title" content="Chapter 8 Coding Guidelines | QA of Code" />
   
   <meta name="twitter:description" content="This is a draft of QA for Coding guidance" />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-<link rel="next" href="introduction.html"/>
+<link rel="prev" href="GIT.html"/>
+<link rel="next" href="documentation.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -148,28 +148,103 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">QA of Code</h1>
-<p class="author"><em>Joshua Halls</em></p>
-<p class="date"><em>2020-03-31</em></p>
-</div>
-<div id="preface" class="section level1 unnumbered">
-<h1>Preface</h1>
-<p><strong>ALPHA</strong></p>
-<p>This is a draft of Government Statistical Service guidance. It is unpublished and <strong>does not</strong> represent the views of the <strong>ONS</strong> or the <strong>GSS</strong>.</p>
-<p><img src="static/logo_alt.jpg" /></p>
+<div id="Coding_Guidelines" class="section level1">
+<h1><span class="header-section-number">Chapter 8</span> Coding Guidelines</h1>
+<p><img src="static/code_style.jpg" /></p>
+<p>Best practices are more about what code you write than how you write it.
+For example, there are many ways to access databases, but one particular way might be considered ‘best practice’
+so that everyone in a team knows how it works and doesn’t have to learn other methods.</p>
+<blockquote>
+<p>Good coding style is like correct punctuation: you can manage without it, butitsuremakesthingseasiertoread.
+– <strong>The Tidyverse Style Guide by Hadley Wickham</strong></p>
+</blockquote>
+<div id="why-useful" class="section level2">
+<h2><span class="header-section-number">8.1</span> Why Useful</h2>
+<p>Coding guidelines are helpful</p>
 <ul>
-<li>Twitter: <a href="https://twitter.com/gssgoodpractice">GSSGoodPractice</a>, <a href="https://twitter.com/ukgss">UKGSS</a></li>
-<li>Email us: <a href="mailto:gsshelp@statistics.gov.uk" class="email">gsshelp@statistics.gov.uk</a></li>
+<li>Peer Review</li>
+<li>Makes it easier to learn
+<ul>
+<li>Often people new to coding want some guidelines as this makes it easier to learn. It is hard to know what is best practice, so some guidelines can be helpful.</li>
+</ul></li>
+<li>Makes maintaining code easier
+<ul>
+<li>Just as important as writing the code is maintaining it in production, perhaps after the writers have left. Maintainability is always an important consideration to make projects sustainable.</li>
+</ul></li>
+<li>Makes projects more coherent
+<ul>
+<li>If code is written by a team then if everyone is writing in unique distinct styles then the project
+will be much harder to read when combined.</li>
+</ul></li>
 </ul>
+</div>
+<div id="best-practice-coding-principles" class="section level2">
+<h2><span class="header-section-number">8.2</span> Best Practice: Coding Principles</h2>
+<p>Specific and prescription coding guidelines ensure that all the code follows a similar style but can be difficult to implement. However there are some principles which apply to all languages and can be used to improve the quality of your code.</p>
+<ol style="list-style-type: decimal">
+<li>Naming</li>
+</ol>
+<ul>
+<li>The names of variables &amp; functions need to be descriptive (intention-revealing), pronounceable and need to reflect what a function does and what the variables are.</li>
+</ul>
+<ol start="2" style="list-style-type: decimal">
+<li>Short vs Readability</li>
+</ol>
+<ul>
+<li>Being efficient with writing does not always lead to a code that is readable, don’t sacrifice readability to make your code shorter.</li>
+</ul>
+<ol start="3" style="list-style-type: decimal">
+<li>Distinct (Ubiquitous language)</li>
+</ol>
+<ul>
+<li>Make meaningful distinctions. Do not use the same name for two (or more) distinct items. Use the same term in the code, in the documents and when talking to users.</li>
+<li>eg Do not use cancer name for the Data and the model. Use cancerData and cancerModel for the Data and model respectively. The same is true for Dataframes and columns of the Dataframes.</li>
+</ul>
+<ol start="4" style="list-style-type: decimal">
+<li>Code can be self-documenting.</li>
+</ol>
+<ul>
+<li>Put the effort to improve, organize and structure your code i.e. clean it.</li>
+</ul>
+<ol start="5" style="list-style-type: decimal">
+<li>Keep functions simple</li>
+</ol>
+<ul>
+<li>Keep as few arguments as possible when creating a function. A function should aim to do one thing well, if there are lots of arguments then maybe that is a sign you should think about separating the function into multiple functions. The idea it to keep the code together that can get damaged for the same reason of change, when changing something you want to impact as few things as possible.<br />
+</li>
+</ul>
+<ol start="6" style="list-style-type: decimal">
+<li>Nesting.</li>
+</ol>
+<ul>
+<li>You should always avoid nesting as it make the code harder to read and understand.</li>
+</ul>
+</div>
+<div id="style-guides" class="section level2">
+<h2><span class="header-section-number">8.3</span> Style Guides</h2>
+<p>There are many style guides out there. You may choose to adopt one or part of one. Your team or department could also write some guidelines tailored to your needs to encourage best practice.
+Here are some existing guidelines:</p>
+<ul>
+<li><p><a href="https://gds-way.cloudapps.digital/standards/git.html#commit-messages">Git Style Guide</a></p></li>
+<li><p><a href="https://datasciencecampus.github.io/coffee-and-coding/20190611_clean_code/Best_Practice_in_Programming_for_Data_Scientists_python_and_R.html#2_names">Best Practice in Programming for Data Scientists:</a></p></li>
+<li><p><a href="https://google.github.io/styleguide/Rguide.xml">Google’s R Style Guide</a></p></li>
+<li><p><a href="https://style.tidyverse.org/">TidyVerse Style Guide</a></p></li>
+<li><p><a href="https://journal.r-project.org/archive/2012-2/RJournal_2012-2_Baaaath.pdf">The State of Naming Conventions in R</a></p></li>
+<li><p><a href="https://www.python.org/dev/peps/pep-0008/">PEP 8 – Style Guide for Python Code</a></p></li>
+<li><p><a href="https://github.com/moj-analytical-services/our-coding-standards">Ministry of Justice Analytical Services Coding Standards</a></p></li>
+<li><p><a href="https://datasciencecampus.github.io/coding-standards/">Data Science Campus Coding Standards</a></p></li>
+<li><p><a href="https://github.com/Health-SocialCare-Scotland/R-Resources/blob/master/PHI%20R%20style%20guide.md">Health and Social Care Scotland R Resources</a></p></li>
+</ul>
+
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-
-<a href="introduction.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="GIT.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="documentation.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
