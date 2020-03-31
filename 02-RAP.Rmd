@@ -1,12 +1,18 @@
 # Reproducible, Auditable, and Assured
 
 When we do analysis in government we must ensure that it is fit for purpose.
-If we don't do this we risk misinforming decisions.
-Misinformed decisions can result in poor allocation of public funds or harm.
+If we don't we risk misinforming decisions.
+Poor quality analysis can result in harm or misallocation of public funds.
+We must figure out what the right steps to take are to ensure high quality analysis.
 
-Some of the analysis that we do in government does not have bearing on decisions like this.
-We don't want to overburden analysts with hoops to jump through.
+However, some of the analysis that we do in government does bear on decisions at that level.
+We don't want to overburden analysts with hoops to jump through where it isn't required.
 We advocate proportionality - the right quality assurance procedures for the right analysis.
+
+If decisions are made based on analysis then we must make sure that the story of that analysis is available.
+Our analysis and the evidence we provide must be able to be held to scrutiny and audited.
+Auditable analysis is about answering: 
+> who made which decisions at what time and based on what evidence?
 
 All quality assurance stems from reproducibility.
 If you can't prove that you can run the same analysis, with the same data, and obtain the same results then you are not adding anything of value.
