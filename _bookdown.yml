@@ -1,5 +1,8 @@
-book_filename: "QA_Code"
+book_filename: "qa-of-code-guidance"
 delete_merged_file: true
 language:
   ui:
     chapter_name: "Chapter "
+  label:
+    fig: "Figure "
+    tab: "Table "
