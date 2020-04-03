@@ -433,11 +433,13 @@ The Separation of Concerns priciple captures a similar concept to Single Respons
 This principle suggests that your software should be separated into distinct sections that each address a single concern.
 
 For example, if your software is responsible for managing sales of a product, then your concerns might include:
+
 - Presenting information to the customer, to allow them to select a product
 - Taking payment from the customer
 - Arranging dispatch and delivery of the product
 
 Within the section of you software that is responsible for taking payment, you might have multiple responsibilities:
+
 - collect the users input, to capture payment details
 - pass the payment information on to a third party, to process the payment
 - report the status of the payment to the user
