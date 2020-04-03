@@ -26,6 +26,11 @@ knitr::opts_chunk$set(
 
 This is an early draft of Government Statistical Service (GSS) guidance.
 It forms part of the quality assurance guidance published by the Best Practice and Impact team, Office for National Statistics.
+
+```{r out.width = "50%"}
+knitr::include_graphics("images/GSS_logo.jpg")
+```
+
 This guidance has been created to support analysts in government who use coding in their work, for example in production of statistics, modeling or data science.
 
 - Slack: [GSS](https://gov-stats-service.slack.com), [Gov Data Science](https://govdatascience.slack.com)
