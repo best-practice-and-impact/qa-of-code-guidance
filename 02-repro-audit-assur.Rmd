@@ -6,6 +6,7 @@ Bad analysis can result in harm or misallocation of public funds.
 We must figure out the right steps to take to ensure high quality analysis.
 
 This book recognises three founding principles of good analysis, each supported by the one before.
+Analysis in programming makes each of these principles easier to fulfil in most cases.
 
 ![](static/repro_stack.png)
 
@@ -65,57 +66,45 @@ Analysis can be proportionately assured through peer review and defensive design
 
 We advocate following your department's guidance on what proportionate quality assurance looks like.
 Most departments derive their guidance from the Aqua book.
-Assurance is best guaranteed through peer review.
+Assurance is best demonstrated through peer review.
 Peer reviewers must be able to understand your analytical choices and be able to reproduce your conclusions.
+In particularly high risk analysis dual running should be considered.
 
 Guarantees of quality assurance should be published alongside any report, or be taken into consideration by decision makers.
 
 
-## What is a reproducible analytical pipeline?
-Producing official statistics can be time-consuming and painstaking.
-We need to make sure that our outputs are both accurate and timely.  
-Across government we aim to create effective and efficient analytical workflows which are repeatable over time and follow the principles of reproducible analysis. 
+## Reproducible analytical pipelines
+
+Producing analysis, such as official statistics, can be time-consuming and painstaking.
+We need to make sure that our outputs are accurate and timely.  
+We aim to develop effective and efficient analytical workflows that are repeatable over time.
+These workflows should follow the principles of reproducible analysis. 
 We call these [Reproducible Analytical Pipelines](https://dataingovernment.blog.gov.uk/2017/03/27/reproducible-analytical-pipeline/) (RAP).
 
-Reproducible analysis is still not widely practiced across government.  
+Reproducible analysis is still not widely practiced across government.
 Many analysts use proprietary (paid-for) analytical tools like SAS or SPSS in combination with programs like Excel, Word or Acrobat to create statistical products. 
-The processes for creating statistics this way are usually manual or semi-manual.  
+The processes for creating statistics this way are usually manual or semi-manual.
 Colleagues typically repeat parts of the process manually to quality assure the outputs.
-This makes the analysis difficult to reproduce.
 
 This way of working is time consuming and can be frustrating because the manual steps can be quite hard to replicate quickly. 
 These processes are also prone to error, because the input data and the outputs are not connected directly, only through the analyst’s manual intervention.
 
 More recently, the tools and techniques available to analysts have evolved. 
-Open-source tools like Python and R, coupled with the use of version control and software management platforms like Git, used widely in software engineering to make it easier to collaborate, have made it possible to develop more automatic, streamlined processes, accompanied by a full audit trail.
+Open-source tools like Python and R have become available.
+Coupled with version control and software management platforms like git and git services have made it possible to develop automatic, streamlined processes, accompanied by a full audit trail.
 
 RAP was first piloted in the Government Statistical Service in 2017 by analysts in the Department for Digital, Culture, Media & Sport (DCMS) and the Department for Education (DfE). 
 They collaborated with data scientists from the Government Digital Service (GDS) to automate the production of statistical bulletins.
 
 To support the adoption of RAP across government, there is a network of [RAP champions](https://gss.civilservice.gov.uk/about-us/champion-networks/reproducible-analytical-pipeline-rap-champions/). 
-Champions are responsible for promoting reproducible analysis and the use of reproducible analytical pipelines and supporting others who want to develop RAP in their own teams.
+Champions are responsible for promoting reproducible analysis and the use of reproducible analytical pipelines and supporting others who want to develop RAP in their own departments.
 
-## Guidance
+## Further reading
 
-- Aqua Book
-- GSS Quality Strategy
-- DCMS Data Ethics Framework
-- Government Transformation Strategy
-- Communicating quality, change and uncertainty
+Various government guidance has been developed to help you when developing analysis.
+We recommend using the [Aqua book](https://www.gov.uk/government/publications/the-aqua-book-guidance-on-producing-quality-analysis-for-government) to understand guidance around assurance.
+We recommend using the [GSS Quality Strategy](https://gss.civilservice.gov.uk/policy-store/government-statistical-service-gss-quality-strategy/) when thinking about the quality of statistics.
+We recommend the [DCMS Data Ethics Framework](https://www.gov.uk/government/publications/data-ethics-framework/data-ethics-framework) when approaching any analysis.
+We recommend the [Communicating quality, uncertainty and change guidance](https://gss.civilservice.gov.uk/policy-store/communicating-quality-uncertainty-and-change/) whenever you must develop user-facing products.
 
-## Strategies and approaches
-
-### One place
-
-
-### Checklists and processes
-
-Don't reinvent the wheel.
-It's always worth taking at look at what went well, and what could be improved, when you are at natural pauses.
-
-
-
-### Defensive design
-
-
-### RAP is Knowledge Management
+Each of these pieces of guidance recommend reproducibility as a core tenet of quality analysis.
