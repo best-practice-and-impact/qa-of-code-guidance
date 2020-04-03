@@ -1,0 +1,22 @@
+# Chapter title
+
+## Introduction
+
+### Prerequisites
+
+Awareness of the following will help your understanding of this chapter:
+- reference chapter
+
+### Motivation
+
+
+![test img]("./images/GSS_logo.jpg")
+
+## Easiest chapter section
+
+
+## Harder chapter section
+
+
+## Hardest chapter section
+
