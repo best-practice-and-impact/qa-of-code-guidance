@@ -8,7 +8,11 @@ We must figure out the right steps to take to ensure high quality analysis.
 This book recognises three founding principles of good analysis, each supported by the one before.
 Analysis in programming makes each of these principles easier to fulfil in most cases.
 
-![](static/repro_stack.png)
+
+```{r fig.cap = "The reproducibility stack", out.width = "50%"}
+knitr::include_graphics("images/repro_stack.png")
+```
+
 
 Reproducibility guarantees that we have done what we have said we have done, and that users could do it too.
 Auditability means that we know why we chose our analysis, and who is responsible for each bit - including assurance.
