@@ -1,9 +1,9 @@
 bookdown::gitbook:
-  css: style.css
+  css: css/style.css
   config:
     toc:
       before: |
-        <li><a href="./">Quality Assurance of Code</a></li>
+        <li><a href="./index.html">Quality Assurance of Code</a></li>
       after: |
         <li><a href="https://gss.civilservice.gov.uk/" target="blank"><img src="./images/GSS_logo.jpg" alt="The GSS logo" style="width:100%"></a></li>
     download: ["pdf"]
@@ -11,4 +11,3 @@ bookdown::gitbook:
     sharing:
       github: yes
       facebook: no
-
