@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 1 Introduction | QA of Code</title>
+  <meta name="description" content="This is a draft of QA for Coding guidance" />
+  <meta name="generator" content="bookdown 0.18.1 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 1 Introduction | QA of Code" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This is a draft of QA for Coding guidance" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 1 Introduction | QA of Code" />
+  
+  <meta name="twitter:description" content="This is a draft of QA for Coding guidance" />
+  
+
+<meta name="author" content="Joshua Halls" />
+
+
+<meta name="date" content="2020-04-17" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="index.html"/>
+<link rel="next" href="reproducible-auditable-and-assured.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">QA of Code</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a><ul>
+<li class="chapter" data-level="1.1" data-path="introduction.html"><a href="introduction.html#who-is-this-guidance-for"><i class="fa fa-check"></i><b>1.1</b> Who is this guidance for?</a></li>
+<li class="chapter" data-level="1.2" data-path="introduction.html"><a href="introduction.html#what-is-its-aim"><i class="fa fa-check"></i><b>1.2</b> What is its aim?</a></li>
+<li class="chapter" data-level="1.3" data-path="introduction.html"><a href="introduction.html#why-move-away-from-spreadsheets"><i class="fa fa-check"></i><b>1.3</b> Why move away from spreadsheets?</a></li>
+<li class="chapter" data-level="1.4" data-path="introduction.html"><a href="introduction.html#why-move-from-sas-or-spss-to-an-open-source-tool"><i class="fa fa-check"></i><b>1.4</b> Why move from SAS or SPSS to an open source tool?</a></li>
+<li class="chapter" data-level="1.5" data-path="introduction.html"><a href="introduction.html#open-source"><i class="fa fa-check"></i><b>1.5</b> Open source</a></li>
+<li class="chapter" data-level="1.6" data-path="introduction.html"><a href="introduction.html#for-managers"><i class="fa fa-check"></i><b>1.6</b> For managers</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="reproducible-auditable-and-assured.html"><a href="reproducible-auditable-and-assured.html"><i class="fa fa-check"></i><b>2</b> Reproducible, Auditable, and Assured</a><ul>
+<li class="chapter" data-level="2.1" data-path="reproducible-auditable-and-assured.html"><a href="reproducible-auditable-and-assured.html#reproducible"><i class="fa fa-check"></i><b>2.1</b> Reproducible</a></li>
+<li class="chapter" data-level="2.2" data-path="reproducible-auditable-and-assured.html"><a href="reproducible-auditable-and-assured.html#what-is-a-reproducible-analytical-pipeline"><i class="fa fa-check"></i><b>2.2</b> What is a reproducible analytical pipeline?</a></li>
+<li class="chapter" data-level="2.3" data-path="reproducible-auditable-and-assured.html"><a href="reproducible-auditable-and-assured.html#why-make-our-work-reproducible"><i class="fa fa-check"></i><b>2.3</b> Why make our work reproducible?</a></li>
+<li class="chapter" data-level="2.4" data-path="reproducible-auditable-and-assured.html"><a href="reproducible-auditable-and-assured.html#strategies-and-guidance"><i class="fa fa-check"></i><b>2.4</b> Strategies and Guidance</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="modelling.html"><a href="modelling.html"><i class="fa fa-check"></i><b>3</b> Modelling</a><ul>
+<li class="chapter" data-level="3.1" data-path="modelling.html"><a href="modelling.html#aqua-book-quality-assurance-principles-for-code"><i class="fa fa-check"></i><b>3.1</b> AQUA book quality assurance principles for code</a></li>
+<li class="chapter" data-level="3.2" data-path="modelling.html"><a href="modelling.html#repeatable"><i class="fa fa-check"></i><b>3.2</b> Repeatable</a></li>
+<li class="chapter" data-level="3.3" data-path="modelling.html"><a href="modelling.html#rap-levels-align-with-aqua-levels"><i class="fa fa-check"></i><b>3.3</b> RAP Levels align with AQUA Levels</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="levels-of-reproducible-analysis.html"><a href="levels-of-reproducible-analysis.html"><i class="fa fa-check"></i><b>4</b> Levels of reproducible analysis</a></li>
+<li class="chapter" data-level="5" data-path="Testing.html"><a href="Testing.html"><i class="fa fa-check"></i><b>5</b> Testing</a><ul>
+<li class="chapter" data-level="5.1" data-path="Testing.html"><a href="Testing.html#advantages-of-testing-your-code"><i class="fa fa-check"></i><b>5.1</b> Advantages of testing your code</a></li>
+<li class="chapter" data-level="5.2" data-path="Testing.html"><a href="Testing.html#when-a-project-should-use-testing"><i class="fa fa-check"></i><b>5.2</b> When a project should use testing</a></li>
+<li class="chapter" data-level="5.3" data-path="Testing.html"><a href="Testing.html#when-a-project-might-not-deploy-testing"><i class="fa fa-check"></i><b>5.3</b> When a project might not deploy testing</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="testing-frameworks.html"><a href="testing-frameworks.html"><i class="fa fa-check"></i><b>6</b> Testing Frameworks</a><ul>
+<li class="chapter" data-level="6.1" data-path="testing-frameworks.html"><a href="testing-frameworks.html#what-exactly-is-a-test"><i class="fa fa-check"></i><b>6.1</b> What exactly is a test</a></li>
+<li class="chapter" data-level="6.2" data-path="testing-frameworks.html"><a href="testing-frameworks.html#unit-test"><i class="fa fa-check"></i><b>6.2</b> Unit Test</a></li>
+<li class="chapter" data-level="6.3" data-path="testing-frameworks.html"><a href="testing-frameworks.html#integration-tests"><i class="fa fa-check"></i><b>6.3</b> Integration Tests</a></li>
+<li class="chapter" data-level="6.4" data-path="testing-frameworks.html"><a href="testing-frameworks.html#what-to-tests"><i class="fa fa-check"></i><b>6.4</b> What to tests</a></li>
+<li class="chapter" data-level="6.5" data-path="testing-frameworks.html"><a href="testing-frameworks.html#references"><i class="fa fa-check"></i><b>6.5</b> References</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="GIT.html"><a href="GIT.html"><i class="fa fa-check"></i><b>7</b> GIT</a><ul>
+<li class="chapter" data-level="7.1" data-path="GIT.html"><a href="GIT.html#git-introduction"><i class="fa fa-check"></i><b>7.1</b> Git Introduction</a></li>
+<li class="chapter" data-level="7.2" data-path="GIT.html"><a href="GIT.html#about-version-control"><i class="fa fa-check"></i><b>7.2</b> About Version Control</a></li>
+<li class="chapter" data-level="7.3" data-path="GIT.html"><a href="GIT.html#what-is-git"><i class="fa fa-check"></i><b>7.3</b> What is GIT</a></li>
+<li class="chapter" data-level="7.4" data-path="GIT.html"><a href="GIT.html#how-does-git-actually-work"><i class="fa fa-check"></i><b>7.4</b> How does GIT actually work</a></li>
+<li class="chapter" data-level="7.5" data-path="GIT.html"><a href="GIT.html#typical-git-workflow"><i class="fa fa-check"></i><b>7.5</b> Typical Git workflow</a></li>
+<li class="chapter" data-level="7.6" data-path="GIT.html"><a href="GIT.html#remote-repository"><i class="fa fa-check"></i><b>7.6</b> Remote Repository</a></li>
+<li class="chapter" data-level="7.7" data-path="GIT.html"><a href="GIT.html#branching"><i class="fa fa-check"></i><b>7.7</b> Branching</a></li>
+<li class="chapter" data-level="7.8" data-path="GIT.html"><a href="GIT.html#pull-request-and-issues"><i class="fa fa-check"></i><b>7.8</b> Pull Request and issues</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="Coding-Guidelines.html"><a href="Coding-Guidelines.html"><i class="fa fa-check"></i><b>8</b> Coding Guidelines</a><ul>
+<li class="chapter" data-level="8.1" data-path="Coding-Guidelines.html"><a href="Coding-Guidelines.html#why-useful"><i class="fa fa-check"></i><b>8.1</b> Why Useful</a></li>
+<li class="chapter" data-level="8.2" data-path="Coding-Guidelines.html"><a href="Coding-Guidelines.html#best-practice-coding-principles"><i class="fa fa-check"></i><b>8.2</b> Best Practice: Coding Principles</a></li>
+<li class="chapter" data-level="8.3" data-path="Coding-Guidelines.html"><a href="Coding-Guidelines.html#style-guides"><i class="fa fa-check"></i><b>8.3</b> Style Guides</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="documentation.html"><a href="documentation.html"><i class="fa fa-check"></i><b>9</b> Documentation</a><ul>
+<li class="chapter" data-level="9.1" data-path="documentation.html"><a href="documentation.html#commenting"><i class="fa fa-check"></i><b>9.1</b> Commenting</a></li>
+<li class="chapter" data-level="9.2" data-path="documentation.html"><a href="documentation.html#readme"><i class="fa fa-check"></i><b>9.2</b> README</a></li>
+<li class="chapter" data-level="9.3" data-path="documentation.html"><a href="documentation.html#package-documentation"><i class="fa fa-check"></i><b>9.3</b> Package Documentation</a></li>
+<li class="chapter" data-level="9.4" data-path="documentation.html"><a href="documentation.html#markdown-for-desk-notes"><i class="fa fa-check"></i><b>9.4</b> Markdown for desk notes</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="standards.html"><a href="standards.html"><i class="fa fa-check"></i><b>10</b> Standards</a><ul>
+<li class="chapter" data-level="10.1" data-path="standards.html"><a href="standards.html#standards-for-peer-review"><i class="fa fa-check"></i><b>10.1</b> Standards for Peer review</a></li>
+<li class="chapter" data-level="10.2" data-path="standards.html"><a href="standards.html#standard-structures-for-projects"><i class="fa fa-check"></i><b>10.2</b> Standard Structures for Projects</a></li>
+<li class="chapter" data-level="10.3" data-path="standards.html"><a href="standards.html#dependency-management"><i class="fa fa-check"></i><b>10.3</b> Dependency Management</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://gss.civilservice.gov.uk/policy-store/government-statistical-service-gss-quality-strategy/" target="blank">Government Statistical Service (GSS) Quality </a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">QA of Code</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="introduction" class="section level1">
+<h1><span class="header-section-number">Chapter 1</span> Introduction</h1>
+<p>This guidance is part of the quality assurance guidance published by the Best Practice and Impact team at the Office for National Statistics. This guidance has been created to support analysis professionals in government who use coding languages for in their work such as the production of statistics or modeling.</p>
+<div id="who-is-this-guidance-for" class="section level2">
+<h2><span class="header-section-number">1.1</span> Who is this guidance for?</h2>
+<p>This guidance is for analysts who are want to make their work reproducible and ensure that they use best practice. The aim of the guidance is to promote good practice in coding across the government analytical professions. It is aimed primarily at analysts who use code but have not been formally trained in computer science, rather than data scientists.</p>
+<p>The guidance provides an introduction to techniques and methods. It is not a comprehensive learning resource. However, it is also not an introduction to coding. You are will get the most from this guidance if you are familiar with coding principles, have used a script based language before, or currently use R or Python for analysis. At the end of chapters there are links to resources which provide a more comprehensive and in-depth guide to the methods we discuss. These are not the only learning resources available, but we have tried to link to ones that are used widely.</p>
+</div>
+<div id="what-is-its-aim" class="section level2">
+<h2><span class="header-section-number">1.2</span> What is its aim?</h2>
+<p>Analysis in government is moving away from legacy systems that are largely manual to workflows built using open source languages and tools that encourage rigorous documentation and a full audit trail. This trend, which builds on best practice in software engineering, provides opportunities for using new tools and methods to enhance the quality of the systems used to produce analysis. Many producers of such systems are not data scientists or coding experts, but other analysts or non-analytical staff who may not be familiar with these new approaches. This guidance will introduce some of the common practices that are recommended for implementing analysis in a transparent and fully auditable way and brings together best practice from across government.</p>
+</div>
+<div id="why-move-away-from-spreadsheets" class="section level2">
+<h2><span class="header-section-number">1.3</span> Why move away from spreadsheets?</h2>
+<p>Many departments are moving some analysis from spreadsheets to more automated workflows built with open source languages like R and Python. There are several reasons for this.</p>
+<ul>
+<li>Spreadsheet errors
+<ul>
+<li>Spreadsheets intermesh data and code together. This makes it hard to quality assure and test the logic. It is mixed up with the data and it is harder to understand what the code is doing. Splitting the code and data allows us to write tests to make sure the code is doing what it is supposed to. Spreadsheets are not designed to work with best practice software testing.<br />
+</li>
+<li>Errors are relatively common because of human error. This <a href="http://www.eusprig.org/horror-stories.htm">list of errors</a> caused by spreadsheets illustrates the problem. One of the problems is the high degree of copy and pasting that using spreadsheets encourages, coupled with the intermeshing of data and logic together. It is <a href="https://genomebiology.biomedcentral.com/articles/10.1186/s13059-016-1044-7">estimated</a> that 20 per cent of genetic research papers contains errors because a spreadsheet converted gene names into calendar dates. This demonstrates the problem of spreadsheet logic preforming tasks without informing the user. When this is combined with the difficulty of building proper tests, the resulting workflows are error prone. This, in turn, leads to the requirement for large amounts of time intensive, manual quality assurance.<br />
+</li>
+</ul></li>
+<li>Lack of proper version control
+<ul>
+<li>Whilst it is possible to version control spreadsheets, this is difficult and time consuming when compared to the version control functionality of tools like <a href="https://git-scm.com/">Git</a>. These tools preserve a complete record of every change, along with the reasons and decisions behind those changes. This provides a complete audit trail and allows managers to have confidence in the quality assurance of the analysis without having to go through the work line by line.</li>
+<li>When using Git, it is very difficult to make changes without this being recorded. Along with its ease of use, this makes version control a fundamental part of the analytical workflow rather than relying on the analyst to remember to recorded changes and maintain proper version control manually.</li>
+</ul></li>
+<li>Spreadsheets are less reproducible
+<ul>
+<li>Spreadsheets often involve lots of manual steps or ‘point and clicks’. These steps are not recorded, which makes reproducing work later difficult or impossible. Notes and documentation may help, but even detailed documentation is unlikely to give a comprehensive record of all the steps taken.</li>
+</ul></li>
+<li>Testing and QA often happens at the end, not throughout
+<ul>
+<li>Quality assurance is time consuming when done manually and can take up a significant proportion of analyst time. Automating quality assurance and code management, alongside building testing into the workflow, frees up time to do more analysis and interpret the results.</li>
+</ul></li>
+</ul>
+</div>
+<div id="why-move-from-sas-or-spss-to-an-open-source-tool" class="section level2">
+<h2><span class="header-section-number">1.4</span> Why move from SAS or SPSS to an open source tool?</h2>
+<p><strong>expand</strong></p>
+<ul>
+<li>black box- can’t examine the algorithms</li>
+<li>hard to do Testing</li>
+<li>more limited</li>
+<li>cost money</li>
+</ul>
+</div>
+<div id="open-source" class="section level2">
+<h2><span class="header-section-number">1.5</span> Open source</h2>
+<p>Open source languages like Python and R are increasing in popularity across government. One advantage of using these tools is that we can reduce the number of steps where the data needs to be moved from one program (or format) into another. This is in line with the principle of reproducibility set out in the government’s <a href="https://www.gov.uk/government/publications/the-aqua-book-guidance-on-producing-quality-analysis-for-government">AQUA guidance on quality analysis in government</a>, as the entire process can be set out in code, greatly reducing the likelihood of manual transcription errors.</p>
+<p>The Government Digital Service <a href="https://www.gov.uk/government/publications/technology-code-of-practice/technology-code-of-practice">Technology Code of Practice</a> is a set of criteria to help government design, build and buy technology. It’s a cross-government agreed standard in the spend controls process. Criterion 3 <em>“<a href="https://www.gov.uk/guidance/be-open-and-use-open-source">Be open and use open source</a>”</em> recommends using open source languages to improve transparency, flexibility and accountability.</p>
+<p>It is easy to find learning resources and guides for open source languages, as they are supported by large and vibrant communities. This allows for a large degree of self learning, if an output, method or technique is widely used (and even if it is cutting edge), there is usually a library to support it already in place and a guide to teach it that is freely available for all. As a result of these large communities of users, open source languages can perform an enormous array of tasks. This means that departments can try innovative new approaches such as interactive dashboards or web scraping quickly and easily. Which language a department chooses will depend on business needs. In general, R and Python are the most widely used open source analysis tools and are good at similar <a href="https://www.openriskmanual.org/wiki/Python_versus_R_Language">tasks</a></p>
+</div>
+<div id="for-managers" class="section level2">
+<h2><span class="header-section-number">1.6</span> For managers</h2>
+<p>Managers who lead the production of analysis outputs like statistics or models are responsible for showing that those outputs are fit for purpose and properly quality assured. Whilst spreadsheet based workflows are familiar to all, moving to an open source workflow will require changes to the process. Because the tools and methods are often unfamiliar at the start, managers may be unsure of the robustness of the process. In consequence, processes might be slowed down or not deployed or the manager may feel they need to go line by line through the process. This guidance will support managers and explain what they need to do to be certain that best practice has been followed. If the process follows these best practices then a manager can have confidence in the output. Managers can ask whether business risks that they own have been properly tested and mitigated. Because workflows are fully audited and transparent, a manager can see every change and how the changes were managed. This allows the analysists to focus on the coding and the managers to focus on managing.</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="reproducible-auditable-and-assured.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["QA_Code.pdf", "QA_Code.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

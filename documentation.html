@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 9 Documentation | QA of Code</title>
+  <meta name="description" content="This is a draft of QA for Coding guidance" />
+  <meta name="generator" content="bookdown 0.18.1 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 9 Documentation | QA of Code" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This is a draft of QA for Coding guidance" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 9 Documentation | QA of Code" />
+  
+  <meta name="twitter:description" content="This is a draft of QA for Coding guidance" />
+  
+
+<meta name="author" content="Joshua Halls" />
+
+
+<meta name="date" content="2020-04-17" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="Coding-Guidelines.html"/>
+<link rel="next" href="standards.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">QA of Code</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a><ul>
+<li class="chapter" data-level="1.1" data-path="introduction.html"><a href="introduction.html#who-is-this-guidance-for"><i class="fa fa-check"></i><b>1.1</b> Who is this guidance for?</a></li>
+<li class="chapter" data-level="1.2" data-path="introduction.html"><a href="introduction.html#what-is-its-aim"><i class="fa fa-check"></i><b>1.2</b> What is its aim?</a></li>
+<li class="chapter" data-level="1.3" data-path="introduction.html"><a href="introduction.html#why-move-away-from-spreadsheets"><i class="fa fa-check"></i><b>1.3</b> Why move away from spreadsheets?</a></li>
+<li class="chapter" data-level="1.4" data-path="introduction.html"><a href="introduction.html#why-move-from-sas-or-spss-to-an-open-source-tool"><i class="fa fa-check"></i><b>1.4</b> Why move from SAS or SPSS to an open source tool?</a></li>
+<li class="chapter" data-level="1.5" data-path="introduction.html"><a href="introduction.html#open-source"><i class="fa fa-check"></i><b>1.5</b> Open source</a></li>
+<li class="chapter" data-level="1.6" data-path="introduction.html"><a href="introduction.html#for-managers"><i class="fa fa-check"></i><b>1.6</b> For managers</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="reproducible-auditable-and-assured.html"><a href="reproducible-auditable-and-assured.html"><i class="fa fa-check"></i><b>2</b> Reproducible, Auditable, and Assured</a><ul>
+<li class="chapter" data-level="2.1" data-path="reproducible-auditable-and-assured.html"><a href="reproducible-auditable-and-assured.html#reproducible"><i class="fa fa-check"></i><b>2.1</b> Reproducible</a></li>
+<li class="chapter" data-level="2.2" data-path="reproducible-auditable-and-assured.html"><a href="reproducible-auditable-and-assured.html#what-is-a-reproducible-analytical-pipeline"><i class="fa fa-check"></i><b>2.2</b> What is a reproducible analytical pipeline?</a></li>
+<li class="chapter" data-level="2.3" data-path="reproducible-auditable-and-assured.html"><a href="reproducible-auditable-and-assured.html#why-make-our-work-reproducible"><i class="fa fa-check"></i><b>2.3</b> Why make our work reproducible?</a></li>
+<li class="chapter" data-level="2.4" data-path="reproducible-auditable-and-assured.html"><a href="reproducible-auditable-and-assured.html#strategies-and-guidance"><i class="fa fa-check"></i><b>2.4</b> Strategies and Guidance</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="modelling.html"><a href="modelling.html"><i class="fa fa-check"></i><b>3</b> Modelling</a><ul>
+<li class="chapter" data-level="3.1" data-path="modelling.html"><a href="modelling.html#aqua-book-quality-assurance-principles-for-code"><i class="fa fa-check"></i><b>3.1</b> AQUA book quality assurance principles for code</a></li>
+<li class="chapter" data-level="3.2" data-path="modelling.html"><a href="modelling.html#repeatable"><i class="fa fa-check"></i><b>3.2</b> Repeatable</a></li>
+<li class="chapter" data-level="3.3" data-path="modelling.html"><a href="modelling.html#rap-levels-align-with-aqua-levels"><i class="fa fa-check"></i><b>3.3</b> RAP Levels align with AQUA Levels</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="levels-of-reproducible-analysis.html"><a href="levels-of-reproducible-analysis.html"><i class="fa fa-check"></i><b>4</b> Levels of reproducible analysis</a></li>
+<li class="chapter" data-level="5" data-path="Testing.html"><a href="Testing.html"><i class="fa fa-check"></i><b>5</b> Testing</a><ul>
+<li class="chapter" data-level="5.1" data-path="Testing.html"><a href="Testing.html#advantages-of-testing-your-code"><i class="fa fa-check"></i><b>5.1</b> Advantages of testing your code</a></li>
+<li class="chapter" data-level="5.2" data-path="Testing.html"><a href="Testing.html#when-a-project-should-use-testing"><i class="fa fa-check"></i><b>5.2</b> When a project should use testing</a></li>
+<li class="chapter" data-level="5.3" data-path="Testing.html"><a href="Testing.html#when-a-project-might-not-deploy-testing"><i class="fa fa-check"></i><b>5.3</b> When a project might not deploy testing</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="testing-frameworks.html"><a href="testing-frameworks.html"><i class="fa fa-check"></i><b>6</b> Testing Frameworks</a><ul>
+<li class="chapter" data-level="6.1" data-path="testing-frameworks.html"><a href="testing-frameworks.html#what-exactly-is-a-test"><i class="fa fa-check"></i><b>6.1</b> What exactly is a test</a></li>
+<li class="chapter" data-level="6.2" data-path="testing-frameworks.html"><a href="testing-frameworks.html#unit-test"><i class="fa fa-check"></i><b>6.2</b> Unit Test</a></li>
+<li class="chapter" data-level="6.3" data-path="testing-frameworks.html"><a href="testing-frameworks.html#integration-tests"><i class="fa fa-check"></i><b>6.3</b> Integration Tests</a></li>
+<li class="chapter" data-level="6.4" data-path="testing-frameworks.html"><a href="testing-frameworks.html#what-to-tests"><i class="fa fa-check"></i><b>6.4</b> What to tests</a></li>
+<li class="chapter" data-level="6.5" data-path="testing-frameworks.html"><a href="testing-frameworks.html#references"><i class="fa fa-check"></i><b>6.5</b> References</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="GIT.html"><a href="GIT.html"><i class="fa fa-check"></i><b>7</b> GIT</a><ul>
+<li class="chapter" data-level="7.1" data-path="GIT.html"><a href="GIT.html#git-introduction"><i class="fa fa-check"></i><b>7.1</b> Git Introduction</a></li>
+<li class="chapter" data-level="7.2" data-path="GIT.html"><a href="GIT.html#about-version-control"><i class="fa fa-check"></i><b>7.2</b> About Version Control</a></li>
+<li class="chapter" data-level="7.3" data-path="GIT.html"><a href="GIT.html#what-is-git"><i class="fa fa-check"></i><b>7.3</b> What is GIT</a></li>
+<li class="chapter" data-level="7.4" data-path="GIT.html"><a href="GIT.html#how-does-git-actually-work"><i class="fa fa-check"></i><b>7.4</b> How does GIT actually work</a></li>
+<li class="chapter" data-level="7.5" data-path="GIT.html"><a href="GIT.html#typical-git-workflow"><i class="fa fa-check"></i><b>7.5</b> Typical Git workflow</a></li>
+<li class="chapter" data-level="7.6" data-path="GIT.html"><a href="GIT.html#remote-repository"><i class="fa fa-check"></i><b>7.6</b> Remote Repository</a></li>
+<li class="chapter" data-level="7.7" data-path="GIT.html"><a href="GIT.html#branching"><i class="fa fa-check"></i><b>7.7</b> Branching</a></li>
+<li class="chapter" data-level="7.8" data-path="GIT.html"><a href="GIT.html#pull-request-and-issues"><i class="fa fa-check"></i><b>7.8</b> Pull Request and issues</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="Coding-Guidelines.html"><a href="Coding-Guidelines.html"><i class="fa fa-check"></i><b>8</b> Coding Guidelines</a><ul>
+<li class="chapter" data-level="8.1" data-path="Coding-Guidelines.html"><a href="Coding-Guidelines.html#why-useful"><i class="fa fa-check"></i><b>8.1</b> Why Useful</a></li>
+<li class="chapter" data-level="8.2" data-path="Coding-Guidelines.html"><a href="Coding-Guidelines.html#best-practice-coding-principles"><i class="fa fa-check"></i><b>8.2</b> Best Practice: Coding Principles</a></li>
+<li class="chapter" data-level="8.3" data-path="Coding-Guidelines.html"><a href="Coding-Guidelines.html#style-guides"><i class="fa fa-check"></i><b>8.3</b> Style Guides</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="documentation.html"><a href="documentation.html"><i class="fa fa-check"></i><b>9</b> Documentation</a><ul>
+<li class="chapter" data-level="9.1" data-path="documentation.html"><a href="documentation.html#commenting"><i class="fa fa-check"></i><b>9.1</b> Commenting</a></li>
+<li class="chapter" data-level="9.2" data-path="documentation.html"><a href="documentation.html#readme"><i class="fa fa-check"></i><b>9.2</b> README</a></li>
+<li class="chapter" data-level="9.3" data-path="documentation.html"><a href="documentation.html#package-documentation"><i class="fa fa-check"></i><b>9.3</b> Package Documentation</a></li>
+<li class="chapter" data-level="9.4" data-path="documentation.html"><a href="documentation.html#markdown-for-desk-notes"><i class="fa fa-check"></i><b>9.4</b> Markdown for desk notes</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="standards.html"><a href="standards.html"><i class="fa fa-check"></i><b>10</b> Standards</a><ul>
+<li class="chapter" data-level="10.1" data-path="standards.html"><a href="standards.html#standards-for-peer-review"><i class="fa fa-check"></i><b>10.1</b> Standards for Peer review</a></li>
+<li class="chapter" data-level="10.2" data-path="standards.html"><a href="standards.html#standard-structures-for-projects"><i class="fa fa-check"></i><b>10.2</b> Standard Structures for Projects</a></li>
+<li class="chapter" data-level="10.3" data-path="standards.html"><a href="standards.html#dependency-management"><i class="fa fa-check"></i><b>10.3</b> Dependency Management</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://gss.civilservice.gov.uk/policy-store/government-statistical-service-gss-quality-strategy/" target="blank">Government Statistical Service (GSS) Quality </a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">QA of Code</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="documentation" class="section level1">
+<h1><span class="header-section-number">Chapter 9</span> Documentation</h1>
+<p><img src="static/commenting.jpg" /></p>
+<p>An important part of producing analysis is documenting the process. This can be done in many ways but a common issue is that documentation isn’t thorough enough. Understanding how a process was done in the past may rely on partial documentation or the expert knowledge of one or two individuals, which is very risky if they leave. New tools open up different avenues for collecting documentation in ways which might be easier and better. This is not a panacea, but my making documentation and code closely intertwined it encourages the process.</p>
+<div id="commenting" class="section level2">
+<h2><span class="header-section-number">9.1</span> Commenting</h2>
+<p>This is the process of in a code script putting comments or documentation in with the code. In R and Python this can be done by placing a #, and that line will now be a comment rather than active code. An example is the following function which is not clear what it does by looking.</p>
+<pre><code>even = function(x){
+     data =  x %% 2 == 0
+     sum(data)
+}
+</code></pre>
+<p>By applying good coding standards and commenting it is far clearer what the function does, however being more verbose can make the script more cluttered. The aim to is to make the script understandable to your future self and others, and comments are an important element along with good <a href="Coding_Guidelines">coding standards</a></p>
+<pre><code># A function that returns the number of even numbers in a list
+
+find_number_even &lt;- function(x){
+# Find the even numbers as TRUE or FALSE
+  find_evens &lt;- x %% 2 == 0
+# sum the list to find total number of even
+  sum(find_evens)
+}
+</code></pre>
+</div>
+<div id="readme" class="section level2">
+<h2><span class="header-section-number">9.2</span> README</h2>
+<p>This sections assumes you are using <a href="GIT.html#GIT">GIT</a>. Every project using Git should have a README file. This is a file that is displayed when people view your repository and it is often he first thing people see when they view your project. You can use it to tell people what your project is, what it can do and how people can use it. What you include in it might depend on what stage of development you are at. By summarising the project and including details in acts as a guide to the project for others to use. There are some standards of what to include such as <a href="https://docs.publishing.service.gov.uk/manual/readmes.html">READMEs for GOV.UK</a> and
+<a href="https://help.github.com/en/articles/about-readmes">GitHub Guide to README</a>.
+Some useful information to include is</p>
+<ul>
+<li>What the project does</li>
+<li>Why the project is useful</li>
+<li>How users can get started with the project</li>
+<li>Where users can get help with your project</li>
+<li>Who maintains and contributes to the project</li>
+</ul>
+<p>Departments might want to consider have a README template to standardize what is included across the department.</p>
+</div>
+<div id="package-documentation" class="section level2">
+<h2><span class="header-section-number">9.3</span> Package Documentation</h2>
+<p>A package enshrines all the business knowledge used to create a piece of work in one place, including the code used to generate the output and the documentation. If you bundle your code into a package then functions and other aspects of the project can have associated documentation. This allows a package to be shared with the documentation of how to use the functions built into the package.</p>
+<pre><code># For R
+?your_package_function
+help(your_package_function)
+
+# For Python
+help()
+</code></pre>
+</div>
+<div id="markdown-for-desk-notes" class="section level2">
+<h2><span class="header-section-number">9.4</span> Markdown for desk notes</h2>
+<p>In R and other languages markdown and variants can be used to write desk notes. These are documentation of what an analyst needs to do, such as produce a statistic or generate an output from a model. Rather than produce these in a text editor such as word these could be produced in R markdown or a Jupiter Notebook (both support many languages). This allows blocks of texts describing what, why and how next to live code that can be run to give an example. Documenting the work flow in this manner is another method of interweaving commentary and code together.</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="Coding-Guidelines.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="standards.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["QA_Code.pdf", "QA_Code.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
