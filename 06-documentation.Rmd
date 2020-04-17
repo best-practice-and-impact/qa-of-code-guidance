@@ -36,7 +36,7 @@ For example explaining that a piece of your code doesn't follow standard practic
 This type of comment may help to clarify the logic that you have used, without spelling out the individual steps taken.
 Comments explaining why will help yourself and other developers to understand your intentions when writting the code.
 
-```
+```python
 # Insert demo of useful comments here
 
 
@@ -50,7 +50,7 @@ This applies to both section of a script, as demonstrated below, and functions o
 
 For example, an anlysis script might be broken down into sections that describe each part of the analysis pipeline:
 
-```
+```python
 import pandas as pd
 import matplotlib.pyplot as plt
 
@@ -85,7 +85,7 @@ Docstrings commonly describe:
 - references to other functions or classes carry out similar tasks
 
 
-```
+```python
 def add_to_each_in_list(numbers, to_add):
     """
     Adds a number to each number in a list.
@@ -355,4 +355,3 @@ Markup file formats, for easy generation of HTML:
 
 - [Markdown](https://daringfireball.net/projects/markdown/)
 - [reStructuredText](https://docutils.sourceforge.io/docs/user/rst/quickstart.html)
-
