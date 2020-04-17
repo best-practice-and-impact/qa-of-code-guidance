@@ -1,9 +1,4 @@
-.Rproj.user/
+.Rproj.user
 .Rhistory
 .RData
 .Ruserdata
-_book/
-_[0-9].*
-*.Rproj
-.Rproj.user
-
