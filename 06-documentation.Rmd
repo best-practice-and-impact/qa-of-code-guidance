@@ -153,17 +153,18 @@ Thankfully tools are available to extract this information from your code and re
 
 We reccomend the python package [sphinx](https://www.sphinx-doc.org/en/master/) for generating HTML documentation.
 It uses the [reStructuredText](https://docutils.sourceforge.io/docs/user/rst/quickstart.html) markup language and supports code highlighting for multiple programming langauges within a project.
-However, other tools may be required to collate documentation from code for some languages.
+However, other tools may be required to automatically collate documentation from code for some languages.
 You can format your documentation using an [existing theme](https://www.writethedocs.org/guide/tools/sphinx-themes/), or design your own.
 
-In addition to building pretty documentation from your code, these tools can also run examples that are found within docstrings.
+In addition to building elegant documentation from your code, these tools can also run examples that are found within docstrings (see example in [Docstrings].
 These examples test that your documentation is accurate and up-to-date, but may also flag when your code does not work as expected.
 In sphinx, python code examples can be tested using the [doctest extension](https://www.sphinx-doc.org/en/master/usage/extensions/doctest.html).
 
 Tools for automatic documentation generation:
 
 - The python package [sphinx](https://www.sphinx-doc.org/en/master/)
-- The R package [Roxygen2](https://cran.r-project.org/web/packages/roxygen2/vignettes/roxygen2.html)
+- The R package [Roxygen2](https://cran.r-project.org/web/packages/roxygen2/vignettes/roxygen2.html) - generate classic R documentation (.Rd files)
+- The R package [pkgdown](https://pkgdown.r-lib.org/articles/pkgdown.html) - generate web-based R documentation
 - [Natural Docs](https://www.naturaldocs.org/) - open source tool that supports 20 different programming languages
 - [Doxygen](http://www.doxygen.nl/)
 - [JavaDoc](https://www.oracle.com/technetwork/java/javase/documentation/index-137868.html)
@@ -196,6 +197,7 @@ Packages are listed under the `Imports` key.
 You can get a list of your installed R packages using the `installed.packages()` function.
 
 [Environment management] tools are very useful for keeping track of software and package versions used in a project.
+
 
 ### User Desk Instructions ★☆☆☆☆
 
@@ -290,6 +292,7 @@ While changes is the minor and patch numbers indicate changes that are either co
 ```{r fig.cap = "[Semantic versioning](https://semver.org/)", out.width = "70%"}
 knitr::include_graphics("images/semantic_versioning.png")
 ```
+
 
 ### Changelog ★★☆☆☆
 
