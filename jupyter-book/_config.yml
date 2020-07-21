@@ -1,0 +1,26 @@
+# Book settings
+title: ""
+author: ""
+email: gsshelp@statistics.gov.uk
+description: >- # this means to ignore newlines until "logo:"
+  Guidance to support the quality assurance of code
+  by civil service analysts.
+logo: "./_static/qa_of_code_logo.png"
+
+repository:
+  url: https://github.com/best-practice-and-impact/qa-of-code-guidance
+
+html:
+  use_repository_button: true
+  use_issues_button: true
+  use_edit_page_button: true
+  extra_footer: "<p>Best Practice & Impact division, Office for National Statistics</p><p>This document is very young, please help use to make it grow by providing any feedback by <a href='mailto:gsshelp@statistics.gov.uk'>email</a> or via the <a href='https://github.com/best-practice-and-impact/qa-of-code-guidance'>GitHub repository</a>."
+  extra_navbar: "<li><a href='https://gss.civilservice.gov.uk/' target='_blank'><img src='./_static/GSS_logo.jpg' alt='The Government Statistical Service logo' style='width:100%'></a></li>"
+
+sphinx:
+  extra_extensions:
+    - sphinx_tabs.tabs
+
+latex:
+  latex_documents:
+    targetname: book.tex
