@@ -4,13 +4,13 @@
 
 This chapter covers a range of methods for documenting code and coding projects.
 
-Key to the usefulness of all of these documentation types - when your code changes, you should ensure that all relevent documentation is also updated.
+Key to the usefulness of all of these documentation types - when your code changes, you should ensure that all relevant documentation is also up-to-date.
 
 ## Code Documentation
 
 ### Comments ★☆☆☆☆
 
-The most common form of documentation that you might come across is code comments.
+A common form of documentation is code comments, which are found throughout source code files.
 
 Comments are useful for explaining the logic behind sections of your code.
 However, excessive use of code comments often leads to redundancy and can ironically make reading your code more effortful.
@@ -26,15 +26,15 @@ number_2 = 9
 total = number_1 + number_2
 ```
 
-Comments that describe exactly **what** is occuring in the code, as above, are often not necessary.
-They may be redundant, if [good naming practices](naming) are followed to self-document what is occuring in your code.
-A developer or user can read your code and other documentation (see [Docstrings]) to find out what steps are carried out.
-If it is difficult to understand your code without comments, then your code may overly complex and might benefit from being refactored into smaller units.
+Comments that describe exactly **what** is occurring in the code, as above, are often not necessary.
+They may be redundant, if [good naming practices](naming) are followed to self-document the steps that occur in your code.
+A developer or user can read your code and other more appropriate forms of documentation (see [Docstrings]) for more detailed description of the logic behind your code.
+If it is difficult to understand your code without comments, then this can be an indicator that your code is overly complex and might benefit from being refactored into smaller units.
 
-Comments can instead be used more effectively to explain **why** you might have used a particular method.
-For example explaining that a piece of your code doesn't follow standard practices, perhaps because the typical method didn't work.
-This type of comment may help to clarify the logic that you have used, without spelling out the individual steps taken.
-Comments explaining why will help yourself and other developers to understand your intentions when writting the code.
+Comments can used more effectively to explain **why** you might have used a particular method.
+For example, explaining to other analysts/developers why a section of your code doesn't follow standard practices, perhaps because the typical method didn't work.
+This type of comment may help to clarify your choice of logic, without needing to describe the individual steps taken.
+Comments explaining **why** you made programming choices will help yourself and other developers to understand your intentions when writing the code.
 
 ```python
 # Insert demo of useful comments here
@@ -45,10 +45,8 @@ Comments explaining why will help yourself and other developers to understand yo
 
 ```
 
-Although it is not necessary to describe your code line-by-line, it is highly beneficial to describe the overarching functionality for sections of your code.
-This applies to both section of a script, as demonstrated below, and functions or classes (see [docstrings]).
-
-For example, an anlysis script might be broken down into sections that describe each part of the analysis pipeline:
+Another use of code comments, is to divide long sections of code into sub-sections that relate to their overall functionality.
+For example, an analysis script might be broken down into sections that describe each part of the analysis process:
 
 ```python
 import pandas as pd
@@ -74,12 +72,12 @@ plt.plot(ten_years_price)
 ### Docstrings ★★☆☆☆
 
 When your code is structured as functions or classes, these functional units can be efficiently documented using docstrings.
-Docstrings are multiline comments that appear at the start of a function definition.
+Docstrings are multi-line comments that appear at the start of a function definition.
 Use of these comments keeps the documentation of your code closely associated with the relevant sections of code.
 Docstrings commonly describe:
 
 - what the function or class does
-- what paramaters the function or class takes as arguments
+- what parameters the function or class takes as arguments
 - what the code returns
 - how to use section of code
 - references to other functions or classes carry out similar tasks
@@ -123,15 +121,15 @@ def add_to_each_in_list(numbers, to_add):
    return new numbers
 ```
 
-In this example, the dosctring starts with a brief description of the overall function.
+In this typical example, the dosctring starts with a brief description of the overall function.
 It then lists the parameters that our function takes, along with the suggested type of each and a brief description.
 It also tells us that the function will raise an error if the wrong type is provided for the first parameter.
 Then there is a description of the object that is returned from the function, followed by an example of the function in use.
-Finally, it references a similar function.
-This example follows the [numpydocs style](https://numpydoc.readthedocs.io/en/latest/format.html), which is particularly readable nice on the eyes.
+Finally, it references a similar related function.
+This example follows the [numpydocs style](https://numpydoc.readthedocs.io/en/latest/format.html), which is particularly readable in code files.
 
-You might find that writing function, class or package descriptions prior to writing any code helps to focus on the task at hand.
-As documentation tends to be user-focussed, this may help to keep the users needs in mind when implementing the code.
+You might find that writing function, class or package descriptions prior to writing their code helps you to focus on the desired task.
+As documentation tends to be user-focussed, this approach also helps you to keep the user's needs in mind when developing code.
 
 
 Other useful resource include:
@@ -142,21 +140,21 @@ Other useful resource include:
 
 ### Automatic Documentation Generation ★★☆☆☆
 
-Sadly this section does not describe a tool that miraculously writes your documentation for you (though tools for [autocompleting your code](https://kite.com) do exist!).
+Sadly this section does not describe a tool that miraculously writes your documentation for you (though tools for [auto-completing your code](https://kite.com) do exist!).
 It does, however, describe tools that automate generation of searchable, user-friendly HTML documentation.
 You should ensure that the resulting documentation remains associated with the source code of your project.
 
-Great, so you've embedded documentation into your code, in the form of docstrings.
-These docstrings are great for technical users looking for a quick understanding of your code.
-However, this is not the nicest format to read documentation in and it might require navigating the files containing the code to find the relevant documentation.
+Great, so you've embedded documentation into your code, in the form of docstrings (above).
+These docstrings are ideal for technical users looking for a quick understanding of how to use your code.
+However, this is not the nicest format to read documentation in and it may require users to navigate the files containing the code to find the relevant documentation.
 Thankfully tools are available to extract this information from your code and reproduce it in HTML.
 
-We reccomend the python package [sphinx](https://www.sphinx-doc.org/en/master/) for generating HTML documentation.
-It uses the [reStructuredText](https://docutils.sourceforge.io/docs/user/rst/quickstart.html) markup language and supports code highlighting for multiple programming langauges within a project.
-However, other tools may be required to automatically collate documentation from code for some languages.
+We recommend the python package [sphinx](https://www.sphinx-doc.org/en/master/) for generating HTML documentation.
+Sphinx primarily uses the [reStructuredText](https://docutils.sourceforge.io/docs/user/rst/quickstart.html) markup language.
+Sphinx supports code highlighting for multiple programming languages within a project, however, other tools may be required to automatically collate documentation from code for some languages.
 You can format your documentation using an [existing theme](https://www.writethedocs.org/guide/tools/sphinx-themes/), or design your own.
 
-In addition to building elegant documentation from your code, these tools can also run examples that are found within docstrings (see example in [Docstrings].
+In addition to building elegant documentation from your code, these tools can also run examples that are found within docstrings (see example in [Docstrings]).
 These examples test that your documentation is accurate and up-to-date, but may also flag when your code does not work as expected.
 In sphinx, python code examples can be tested using the [doctest extension](https://www.sphinx-doc.org/en/master/usage/extensions/doctest.html).
 
@@ -169,12 +167,12 @@ Tools for automatic documentation generation:
 - [Doxygen](http://www.doxygen.nl/)
 - [JavaDoc](https://www.oracle.com/technetwork/java/javase/documentation/index-137868.html)
 
-Be sure to read the documentation for these tools, as you may need to use a particularl docstring style or format that the tool can detect.
+Be sure to read the documentation for these tools, as you may need to use a particular docstring style or format that your choice of tool can detect.
 
 
 ## Project Documentation
 
-Whether you're developing a package or collaborating on a piece of anlaysis, documenting your project makes it much easier for others to understand your goal and ways of working.
+Whether you're developing a package or collaborating on a piece of analysis, documenting your project makes it much easier for others to understand your goal and ways of working.
 
 ### README ★☆☆☆☆
 
@@ -186,8 +184,8 @@ This file can be any text type, including `.txt`, `.md`, and `.rst`, and can be 
 
 ### Dependencies ★☆☆☆☆
 
-The simpliest way to document which packages your code is dependent on, is to record them in a text file.
-This is typically called `requiements.txt`.
+The simplest way to document which packages your code is dependent on, is to record them in a text file.
+This is typically called `requirements.txt`.
 
 Python packages record their dependencies within their `setup.py` file, via `setup(install_requires=...)`.
 You can get a list of your installed python packages using `pip freeze` in the command line.
@@ -207,7 +205,7 @@ These instructions should include:
 
 - How to set up an environment to run your code (including how to install dependencies)
 - How to run your code
-- What ouputs (if any) your code or system produces and how these should be intepreted
+- What outputs (if any) your code or system produces and how these should be interpreted
 - What quality assurance has been carried out and what further quality assurance of outputs is required
 
 
@@ -266,7 +264,7 @@ We have used the [Markdown](https://daringfireball.net/projects/markdown/syntax)
 
 ### Vignettes ★★☆☆☆
 
-Vignettes are a form of supplementary documentation, containing applied examples that demonstrate the intented use of the code in your project or package.
+Vignettes are a form of supplementary documentation, containing applied examples that demonstrate the intended use of the code in your project or package.
 Docstrings may contain examples applying individual functional units, while vignettes may show multiple units being used together.
 The term vignette is usually used with reference to R packages, for example this introduction to the [{dplyr} package](https://cran.r-project.org/web/packages/dplyr/vignettes/dplyr.html) for data manipulation.
 However, the same long-form documentation is beneficial for projects in any programming language.
@@ -296,7 +294,7 @@ knitr::include_graphics("images/semantic_versioning.png")
 
 ### Changelog ★★☆☆☆
 
-A changelog records the major changes that have occured to a project or package, between versioned releases of the code.
+A changelog records the major changes that have occurred to a project or package, between versioned releases of the code.
 
 ```
 # Changelog
@@ -323,38 +321,34 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 Similarly to versioning, a changelog is useful for users to determine whether an update to your code is compatible with their work which may depend on your code.
 It can also document which parts of your code will no longer be supported in future version and which bugs in your code have been addressed.
-Your changelog can be in any format and should be associated with your code documentation, so that it is easy for users and other contibutors to find.
+Your changelog can be in any format and should be associated with your code documentation, so that it is easy for users and other contributors to find.
 
 [keep a changelog](https://keepachangelog.com/en/1.0.0/) provides a simple but effective template for recording changes to your code.
 
 
-### License ★★☆☆☆
+### Copyright and Licenses ★★☆☆☆
 
-Software licences are important for users and developers to understand how they can use, modify and redistribute your code.
+Copyright indicates ownership of work.
+All material create by civil servants, ministers, government departments and their agencies are covered by [Crown copyright](https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/).
+It is not essential to include a copyright notice on your work, but doing so can help to avoid confusion around ownership.
+
+Licences outline the conditions under which others may use, modify and/or redistribute your work.
+As such, including a licence with your code, is important for users and developers alike.
 
 In government, we [support and promote open source](https://www.gov.uk/service-manual/service-standard/point-12-make-new-source-code-open) whenever possible.
-Open source projects are those which freely release their source code for modification and redistribution.
-As a government analyst, you should try to make all new source code open, unless justification can provided for withholding part of your source code.
-This openess encourages collaboration and provides transparency in government analysis.
+[Open source](https://opensource.com/resources/what-open-source) software is software with source code that anyone can freely inspect, modify and enhance.
+As a government analyst, you should aim to make all new source code open, unless justification can provided for withholding part of your source code.
 
-Please see the [GDS guidance](https://www.gov.uk/government/publications/open-source-guidance/when-code-should-be-open-or-closed) for when code should be open or closed.
+Benefits of open sourcing our code include:
+
+* Transparency - it doesn't get much more open than publishing documented methods for our analyses
+* Sharing value - others can benefit from our work, either through use or demonstration of good programming practices
+* Sharing opportunity - others can contribute to and help to improve our approaches
+* Feels good - we regularly benefit from open source software, so it's nice to give something back
+* Attribution - open sourcing your code through public version control (e.g. GitHub) creates a public record of your contributions
+
+Please see the [Government Data Service (GDS) guidance](https://www.gov.uk/government/publications/open-source-guidance/when-code-should-be-open-or-closed) for help deciding when code should be open or closed.
 Additional security concerns for coding in the open are addressed in further [GDS guidance](https://www.gov.uk/government/publications/open-source-guidance/security-considerations-when-coding-in-the-open).
 
-All code produced in government departments and agencies is covered by [Crown Copyright](https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/).
-Where possible, this material is released under the [Open Government Licence (OGL)](http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/).
-
-Where Crown copyright material is covered by the Open Government Licence, others can:
-
-- Copy, publish, distribute and transmit the information
-- Adapt the information
-- Exploit the information commercially and non commercially for example, by combining it with information of your own
-
-However, users must acknowledge the source of the information and reference the licence.
-
-
-## Other Documentation References
-
-Markup file formats, for easy generation of HTML:
-
-- [Markdown](https://daringfireball.net/projects/markdown/)
-- [reStructuredText](https://docutils.sourceforge.io/docs/user/rst/quickstart.html)
+Choice of open source licence, depends largely on how you would like others to be able distribute modified versions of your work.
+[Government Data Service guidelines](https://gds-way.cloudapps.digital/manuals/licensing.html#use-mit) suggest the MIT licence for code and the OGL (Open Government Licence) for documentation.
