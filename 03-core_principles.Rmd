@@ -1,4 +1,5 @@
-# Core principles
+# Core Principles
+
 
 ## Introduction
 
@@ -56,11 +57,12 @@ knitr::include_graphics("images/class_pikachu.png")
     - text documents containing source code
     - may be broken down into sections or "chunks"
     - may contain functions, classes and/or lines of non-modular code
-    
+
 - Packages
     - collections of code that perform related tasks
     - may be sub-sectioned into modules that perform related, but lower level groups of tasks
     - contains other useful information about the code in the package (see Packaging)
+
 
 ## Clean code ★★☆☆☆
 
@@ -70,6 +72,7 @@ Code with high readability is often referred to as "Clean Code".
 >  and only incidentally for computers to execute."
 >
 > `r tufte::quote_footer('--- Donald Knuth, The Art of Computer Programming')`
+
 
 Clean code helps us to understand the program faster.
 Clean code often sounds quite natural when spoken aloud.
@@ -86,6 +89,7 @@ Someone reading your code will benefit greatly if you use names that are:
 
 - informative and not misleading
 - concise but not cryptic
+
 
 #### Naming variables
 
@@ -136,7 +140,7 @@ Naming is important for distguishing between similar variables.
 It can be tempting to use a number or character to reflect these differences.
 However, these identifiers are not informative.
 
-For instance in:
+For instance, in:
 
 ```
 letters1 = ["a", "b", "c"]
@@ -176,6 +180,7 @@ prepared_potato = peel_potato("potato")
 Sometimes a function might be used to provide a Boolean response to a decision.
 In this case, it might be appropriate to name a function as a question that is being posed.
 
+
 ```python
 def is_clean(car):
     if car.cleanliness > 5:
@@ -211,6 +216,7 @@ When the syntax of a programming language is not strict (as with python and R), 
 Code style guides provide a standard or convention to work towards, with the intention of increase consistency across a programming community.
 Agreed (within a team, for example) style guides might improve your ability to read other peoples code and vice versa.
 Guides might include how to appropriately:
+
 - comment or document your code
 - separate elements of your code with whitespace
 - follow naming conventions
@@ -342,6 +348,9 @@ This code is clearer and more concise.
 If two slightly different tasks must be carried out, you might:
 
 - develop two functions containing the different elements of code, with names that express the difference in their purpose
+
+or
+
 - add a parameter to your function that will allow a user to differentiate between the two tasks
 
 ```python
@@ -388,12 +397,10 @@ The `Rule of Three` suggests that if similar code has been written more than two
 
 ### You Ain't Gonna Need It
 
-
 Try to capture your users needs in the functionality that your software provides.
 But anything more than this may not be beneficial.
 It can be tempting to try to account for every eventuality in your program, or dive down an interesting rabbit hole.
 There's a good chance that many cases that you account for will never occur.
-
 
 ### Be Explicit
 
@@ -406,6 +413,7 @@ In the literary sense of the word!
 In some programming languages, it is possible to perform a task or decision by relying on an implied parsing of your code.
 
 To make your intentions clear, you should explicitly state yout intentions in the code.
+
 
 
 ```python
@@ -424,6 +432,7 @@ If a count of 0 should be printed, then this lack of specificity has created a b
 
 To perform the same decision explicitly, you could specify the exact condition under which the coconut count should be printed.
 
+
 ```python
 coconut_count = 0
 
@@ -432,11 +441,11 @@ if coconut_count is not None:
     print("There are " + coconut_count + " coconuts!")
 ```
 
+
 ## SOLID ★★★☆☆
 
 SOLID is an acronym that encompasses 5 software design principles that are intended to increase the readability and extensibility of software source code.
 These principles are designed to improve object-oriented programs, but can be roughly applied to functional programs.
-
 
 ### Single responsibility
 
@@ -484,7 +493,6 @@ For example, extension of a class or function could be carried out through subcl
 
 This makes managing dependencies much easier between packages and projects.
 
-★★★★☆
 In functional programming we can use the concepts of function composition and higher-order functions to enact the open-closed principle.
 
 ### Liskov substitution
@@ -504,6 +512,7 @@ If you were to increase the domain and range of a function to account for new ca
 As you add more and more functionality into a single interface, it becomes more difficult to extend or maintain. 
 Separating these into multiple interfaces increases simplicity and maintainability.
 
+
 ### Dependency inversion
 
 > Depend on abstractions, not concretions
@@ -515,3 +524,4 @@ Concrete implementations should depend on abstractions.
 
 Specify parameters to a function (or a higher order function to retrieve them) rather than hard coding the function to get some value.
 The function should not look outside of its own environment for data.
+
