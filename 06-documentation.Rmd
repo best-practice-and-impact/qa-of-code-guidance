@@ -121,7 +121,7 @@ def add_to_each_in_list(numbers, to_add):
    return new numbers
 ```
 
-In this typical example, the dosctring starts with a brief description of the overall function.
+In this typical example, the docstring starts with a brief description of the overall function.
 It then lists the parameters that our function takes, along with the suggested type of each and a brief description.
 It also tells us that the function will raise an error if the wrong type is provided for the first parameter.
 Then there is a description of the object that is returned from the function, followed by an example of the function in use.
@@ -134,7 +134,7 @@ As documentation tends to be user-focussed, this approach also helps you to keep
 
 Other useful resource include:
 
-- [Python docstrings convention](https://www.python.org/dev/peps/pep-0257/)
+- [Python docstring convention](https://www.python.org/dev/peps/pep-0257/)
 - Guidance for [documenting objects and functions in R](http://r-pkgs.had.co.nz/man.html)
 
 
@@ -162,7 +162,7 @@ Tools for automatic documentation generation:
 
 - The python package [sphinx](https://www.sphinx-doc.org/en/master/)
 - The R package [Roxygen2](https://cran.r-project.org/web/packages/roxygen2/vignettes/roxygen2.html) - generate classic R documentation (.Rd files)
-- The R package [pkgdown](https://pkgdown.r-lib.org/articles/pkgdown.html) - generate web-based R documentation
+- The R package [pkgdown](https://pkgdown.r-lib.org/articles/pkgdown.html) - generate web-based R documentation, using roxygen-style documentation
 - [Natural Docs](https://www.naturaldocs.org/) - open source tool that supports 20 different programming languages
 - [Doxygen](http://www.doxygen.nl/)
 - [JavaDoc](https://www.oracle.com/technetwork/java/javase/documentation/index-137868.html)
@@ -270,7 +270,7 @@ The term vignette is usually used with reference to R packages, for example this
 However, the same long-form documentation is beneficial for projects in any programming language.
 
 We've seen that docstrings can be used to describe individual functional code elements.
-Vignttes provide a demonstration of the intended use for these classes and functions, in a realistic context.
+Vignettes provide a demonstration of the intended use for these classes and functions, in a realistic context.
 This can help users to understand how different code elements interact, and how they might use your code in their own program.
 
 Another good example is this vignette describing [how to design vignettes](http://r-pkgs.had.co.nz/vignettes.html) in Rmarkdown.
