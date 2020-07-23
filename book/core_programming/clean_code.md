@@ -10,6 +10,7 @@ Code with high readability is often referred to as "Clean Code".
 Clean code helps us to understand the program faster.
 Clean code often sounds quite natural when spoken aloud.
 
+(naming)=
 ## Naming
 
 ```{epigraph}
@@ -237,7 +238,7 @@ my_fast_car = SportsCar()
 ```
 
 ````
-
+(code-style)=
 ## Code style
 
 When the syntax of a programming language is not strict (as with python and R), it's difficult to know how to "correctly" format  code.

@@ -9,7 +9,7 @@ This book recognises three founding principles of good analysis, each supported 
 Analysis in programming makes each of these principles easier to fulfil in most cases.
 
 
-```{figure} ./_static/repro_stack.png
+```{figure} ../_static/repro_stack.png
 ---
 width: 50%
 name: repro_stack

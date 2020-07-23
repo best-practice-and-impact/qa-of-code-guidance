@@ -173,7 +173,7 @@ Sphinx primarily uses the [reStructuredText](https://docutils.sourceforge.io/doc
 Sphinx supports code highlighting for multiple programming languages within a project, however, other tools may be required to automatically collate documentation from code for some languages.
 You can format your documentation using an [existing theme](https://www.writethedocs.org/guide/tools/sphinx-themes/), or design your own.
 
-In addition to building elegant documentation from your code, these tools can also run examples that are found within docstrings (see example in [Docstrings]).
+In addition to building elegant documentation from your code, these tools can also run examples that are found within docstrings (see example in Docstrings).
 These examples test that your documentation is accurate and up-to-date, but may also flag when your code does not work as expected.
 In sphinx, python code examples can be tested using the [doctest extension](https://www.sphinx-doc.org/en/master/usage/extensions/doctest.html).
 
