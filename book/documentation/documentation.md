@@ -15,7 +15,9 @@ A common form of documentation is code comments, which are found throughout sour
 Comments are useful for explaining the logic behind sections of your code.
 However, excessive use of code comments often leads to redundancy and can ironically make reading your code more effortful.
 
-```python
+````{tabs}
+
+```{code-tab} py
 # Set number_1 to 5
 number_1 = 5
 
@@ -25,6 +27,8 @@ number_2 = 9
 # Set total to the sum of number_1 and number_2
 total = number_1 + number_2
 ```
+
+````
 
 Comments that describe exactly **what** is occurring in the code, as above, are often not necessary.
 They may be redundant, if [good naming practices](naming) are followed to self-document the steps that occur in your code.
@@ -36,7 +40,9 @@ For example, explaining to other analysts/developers why a section of your code 
 This type of comment may help to clarify your choice of logic, without needing to describe the individual steps taken.
 Comments explaining **why** you made programming choices will help yourself and other developers to understand your intentions when writing the code.
 
-```python
+````{tabs}
+
+```{code-tab} py
 # Insert demo of useful comments here
 
 
@@ -45,10 +51,14 @@ Comments explaining **why** you made programming choices will help yourself and 
 
 ```
 
+````
+
 Another use of code comments, is to divide long sections of code into sub-sections that relate to their overall functionality.
 For example, an analysis script might be broken down into sections that describe each part of the analysis process:
 
-```python
+````{tabs}
+
+```{code-tab} py
 import pandas as pd
 import matplotlib.pyplot as plt
 
@@ -68,6 +78,7 @@ print("Median price: " + median_price)
 plt.plot(ten_years_price)
 ```
 
+````
 
 ### Docstrings ★★☆☆☆
 
@@ -83,7 +94,9 @@ Docstrings commonly describe:
 - references to other functions or classes carry out similar tasks
 
 
-```python
+````{tabs}
+
+```{code-tab} py
 def add_to_each_in_list(numbers, to_add):
     """
     Adds a number to each number in a list.
@@ -120,6 +133,12 @@ def add_to_each_in_list(numbers, to_add):
    new_numbers = [number + to_add for number in numbers]
    return new numbers
 ```
+
+```{code-tab} r
+# Roxygen goes here!
+```
+
+````
 
 In this typical example, the docstring starts with a brief description of the overall function.
 It then lists the parameters that our function takes, along with the suggested type of each and a brief description.
@@ -287,8 +306,13 @@ Each level of version number indicates the extent of changes to the application 
 Changes to the major version number indicate changes to the API that are not compatible with use of previous versions of the code.
 While changes is the minor and patch numbers indicate changes that are either compatible or have no effect on the use of the code, respectively.
 
-```{r fig.cap = "[Semantic versioning](https://semver.org/)", out.width = "70%"}
-knitr::include_graphics("images/semantic_versioning.png")
+
+```{figure} ../_static/semantic_versioning.png
+---
+width: 70%
+name: semantic_versioning
+---
+[Semantic versioning](https://semver.org/)
 ```
 
 

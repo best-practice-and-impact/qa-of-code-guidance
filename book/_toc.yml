@@ -1,0 +1,10 @@
+file: index
+sections:
+- file: core_programming\index
+  sections:
+  - file: core_programming\clean_code
+  - file: core_programming\kiss
+  - file: core_programming\modular_code
+  - file: core_programming\solid
+- file: documentation\documentation
+- file: principles\principles
