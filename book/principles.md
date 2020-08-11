@@ -1,4 +1,4 @@
-# Reproducible, Auditable and Assured
+# Principles
 
 When we do analysis it must be fit for purpose.
 If it isn't, we risk misinforming decisions.
@@ -9,10 +9,13 @@ This book recognises three founding principles of good analysis, each supported 
 Analysis in programming makes each of these principles easier to fulfil in most cases.
 
 
-```{r fig.cap = "Founding principles of good analysis", out.width = "50%"}
-knitr::include_graphics("images/repro_stack.png")
+```{figure} ./_static/repro_stack.png
+---
+width: 50%
+name: repro_stack
+---
+Founding principles of good analysis
 ```
-
 
 Reproducibility guarantees that we have done what we are claiming to have done, and that users could do it to get the same result.
 Auditability means that we know why we chose our analysis, and who is responsible for each part of it - including assurance.
@@ -28,7 +31,7 @@ The secondary assurances of peer review, rigorous testing, and validity are seco
 Reproducible analysis relies on a transparent production process, so that anyone can follow your steps and understand your results.
 This transparency eases reuse of our methods and results. 
 Easy reproducibility helps your colleagues test and validate what we have done.
-When reproducibility is guaranteed, users and colleagues can focus on verifying that the implentation is correct and that the research is useful for its intended purpose.
+When reproducibility is guaranteed, users and colleagues can focus on verifying that the implementation is correct and that the research is useful for its intended purpose.
 
 Reproducibility relies on effective documentation.
 Good documentation should show how our methodology and our implementation map to each other.
@@ -87,7 +90,7 @@ We aim to develop effective and efficient analytical workflows that are repeatab
 These workflows should follow the principles of reproducible analysis. 
 We call these [Reproducible Analytical Pipelines](https://dataingovernment.blog.gov.uk/2017/03/27/reproducible-analytical-pipeline/) (RAP).
 
-Reproducible analysis is still not widely practiced across government.
+Reproducible analysis is still not widely practised across government.
 Many analysts use proprietary (paid-for) analytical tools like SAS or SPSS in combination with programs like Excel, Word or Acrobat to create statistical products. 
 The processes for creating statistics in this way are usually manual or semi-manual.
 Colleagues then typically repeat parts of the process manually to quality assure the outputs.
@@ -113,4 +116,4 @@ We recommend using the [GSS Quality Strategy](https://gss.civilservice.gov.uk/po
 We recommend the [DCMS Data Ethics Framework](https://www.gov.uk/government/publications/data-ethics-framework/data-ethics-framework) when approaching any analysis.
 We recommend the [Communicating quality, uncertainty and change guidance](https://gss.civilservice.gov.uk/policy-store/communicating-quality-uncertainty-and-change/) whenever you must develop user-facing products.
 
-Each of these pieces of guidance recommend reproducibility as a core tenet of quality analysis.
+Each of these pieces of guidance advocate reproducibility as a core tenet of quality analysis.
