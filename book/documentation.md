@@ -307,7 +307,7 @@ Changes to the major version number indicate changes to the API that are not com
 While changes is the minor and patch numbers indicate changes that are either compatible or have no effect on the use of the code, respectively.
 
 
-```{figure} ../_static/semantic_versioning.png
+```{figure} ./_static/semantic_versioning.png
 ---
 width: 70%
 name: semantic_versioning
