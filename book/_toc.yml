@@ -2,5 +2,7 @@ file: index
 sections:
 - file: principles
 - file: core_programming
-- file: documentation
+- file: struture_project
+- file: code_documentation
+- file: project_documentation
 
