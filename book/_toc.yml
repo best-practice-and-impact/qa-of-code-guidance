@@ -5,4 +5,5 @@ sections:
 - file: structure_project
 - file: code_documentation
 - file: project_documentation
+- file: testing_code
 
