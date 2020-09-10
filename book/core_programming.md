@@ -122,7 +122,7 @@ z = Car()
 my_favourite_number = "ssh, I'm a string"
 ```
 
-```{code-tab} r
+```{code-tab} r R
 x <- "Sioban"
 
 y <- 42
@@ -170,7 +170,7 @@ number_of_attendees += 1
 my_car.clean()
 ```
 
-```{code-tab} r
+```{code-tab} r R
 # Defining variables
 first_name <- "Sioban"
 
@@ -207,7 +207,7 @@ letters_1 = ["a", "b", "c"]
 letters_2 = ["x", "y", "z"]
 ```
 
-```{code-tab} r
+```{code-tab} r R
 letters_1 <- list("a", "b", "c")
 letters_2 <- list("x", "y", "z")
 ```
@@ -227,7 +227,7 @@ letters_last_three = ["x", "y", "z"]
 letters_first_three_reversed = reversed(first_three_letters)
 ```
 
-```{code-tab} r
+```{code-tab} r R
 letters_first_three <- list("a", "b", "c")
 letters_last_three <- list("x", "y", "z")
 

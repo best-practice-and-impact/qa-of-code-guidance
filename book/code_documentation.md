@@ -126,7 +126,7 @@ def add_to_each_in_list(numbers, to_add):
    return new numbers
 ```
 
-```{code-tab} r
+```{code-tab} r R
 # Roxygen goes here!
 ```
 

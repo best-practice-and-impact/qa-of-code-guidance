@@ -132,7 +132,7 @@ TODO: Might just be a reference to project structure?
 
 ```
 
-```{code-tab} r
+```{code-tab} r R
 ```
 
 ````
