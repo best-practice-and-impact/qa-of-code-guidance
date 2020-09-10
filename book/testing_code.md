@@ -184,3 +184,10 @@ Or perhaps, you need to ensure that changes are undone after each test is comple
 Reference material:
 * [`pytest` Fixture](https://docs.pytest.org/en/stable/fixture.html) documentation
 * [`{testthat}` Fixture](https://testthat.r-lib.org/articles/test-fixtures.html) documentation
+
+
+## Other references
+
+* Hadley Wickham's [testthat: getting started with testing](https://vita.had.co.nz/papers/testthat.pdf)
+* [`pytest` getting started](https://docs.pytest.org/en/3.0.1/getting-started.html)
+* Real Python [Getting Started With Testing in Python](https://realpython.com/python-testing/)
