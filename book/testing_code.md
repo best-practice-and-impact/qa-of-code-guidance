@@ -1,6 +1,6 @@
 # Testing Code
 
-Testing here refers to automated tests that assert that your code is working as expected.
+Testing here refers to code that assert that your code is working as expected.
 Where code documentation specifies what code should do, testing assures that this specification is true.
 
 The core concept of testing is **"Does my code give do what I expect it to, given realistic inputs?"**.
@@ -9,6 +9,16 @@ The most common pattern for writing these tests is:
 1. Arrange - set up any pre-requisites for your test
 2. Act - run the code that your are testing
 3. Assert - verify that the code performed the expected action
+
+
+## Why test code ★☆☆☆☆
+
+Key reasons for testing your code include:
+* Knowing that your code works - you can't be sure that your code works without having run it with realistic examples
+* Asserting that user requirements have been met - test can verify that users expectations are met by the code
+* Increasing confidence in your changes - tests let you know when you've broken the expected functionality of your code
+* Profiling performance - tests can be used to report or flag poor performance (e.g. modelling)
+* Improving code structure - well-structured code is easier to write tests for, so testing incentivises good code structure
 
 
 ## What to test ★☆☆☆☆
@@ -102,9 +112,9 @@ In it's simplest form, a test asserts that an expectation is true:
 
 ````
 
-In this chapter we will cover describe a more formalised method for testing.
+In this chapter we will describe a more formalised method for testing.
 
-In order of increasing scale, the main layers of testing covered here are:
+In order of increasing scale, the main layers of testing covered here will be:
 
 * Unit testing - assuring that functions or class methods perform as expected
 * Integration testing - assuring that multiple units interact with each other as expected
