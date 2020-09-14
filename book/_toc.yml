@@ -5,6 +5,7 @@ sections:
 - file: structure_project
 - file: code_documentation
 - file: project_documentation
+- file: version_control
 - file: peer_review
 - file: testing_code
 

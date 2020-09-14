@@ -23,6 +23,9 @@ Key reasons for testing your code include:
 
 ## What to test ★☆☆☆☆
 
+> A QA engineer walks into a bar. Orders 1 beer. Orders 3.14 beers. Orders -1 beers. Orders 99999999999 beers. Orders a lizard.  Orders NULL.
+> First real customer walks in and asks where the bathroom is. The bar bursts into flames.
+
 Unfortunately, there's no golden rule for exactly what you should test.
 We can use general guides to direct where most of our testing effort goes.
 
@@ -180,10 +183,16 @@ These are similarly set to run before and after each test, respectively.
 Fixtures can be especially useful when setting up a test object takes a large amount of time or resource.
 Or perhaps, you need to ensure that changes are undone after each test is complete.
 
-
 Reference material:
 * [`pytest` Fixture](https://docs.pytest.org/en/stable/fixture.html) documentation
 * [`{testthat}` Fixture](https://testthat.r-lib.org/articles/test-fixtures.html) documentation
+
+
+## Testing in multiple environments ★★★☆☆
+
+tox/nox
+
+[rhub](https://r-hub.github.io/rhub/)?
 
 
 ## Other references

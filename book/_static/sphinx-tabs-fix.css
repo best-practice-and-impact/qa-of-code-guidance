@@ -1,8 +1,0 @@
-.sphinx-tabs .sphinx-menu {
-    padding-left: 0;
-    padding-right: 0;
-}
-
-main.bd-content #main-content div.sphinx-tabs > div.menu > a.active.item {
-    margin-bottom: -1px;
-}
