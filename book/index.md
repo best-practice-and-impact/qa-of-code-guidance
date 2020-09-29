@@ -1,5 +1,5 @@
 
-# QA of Code for Analysis and Research
+# Quality Assurance of Code for Analysis and Research
 
 This is an early draft of Government Statistical Service (GSS) guidance.
 It forms part of the quality assurance guidance published by the Best Practice and Impact team, Office for National Statistics.

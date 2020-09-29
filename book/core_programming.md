@@ -43,12 +43,12 @@ A few code abstractions are outlined below, which will be useful for understandi
     - used in functional programming
 
 
-```{figure} ./_static/function.png
+```{figure} https://upload.wikimedia.org/wikipedia/commons/3/3b/Function_machine2.svg
 ---
 width: 50%
 name: function_fig
 ---
-Visual representation of a function
+Visual representation of a function, from [Wikipedia Functions (mathematics)](https://en.wikipedia.org/wiki/Function_(mathematics))
 ```
 
 - Objects (often defined by classes)

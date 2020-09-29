@@ -28,6 +28,15 @@ It is the first pillar of good analysis.
 If you can't prove that you can run the same analysis, with the same data, and obtain the same results then you are not adding valuable analysis.
 The secondary assurances of peer review, rigorous testing, and validity are secondary to being able to reproduce any analysis that you produce in a proportionate amount of time.
 
+```{figure} ./_static/reproducibility_matrix.jpg
+---
+width: 60%
+name: reproducibility_matrix
+---
+Defining reproducibility, from [The Turing Way](https://the-turing-way.netlify.app/reproducible-research/overview/overview-definitions.html)
+```
+
+
 Reproducible analysis relies on a transparent production process, so that anyone can follow your steps and understand your results.
 This transparency eases reuse of our methods and results. 
 Easy reproducibility helps your colleagues test and validate what we have done.
