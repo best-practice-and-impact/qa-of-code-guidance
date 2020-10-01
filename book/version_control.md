@@ -2,8 +2,9 @@
 
 In this chapter, we primarily discuss the benefits of using the [Git](https://git-scm.com/) version control system.
 
+## Rationale
 
-## Why do we need version control
+### Why do we need version control
 
 Manually versioning files is not appropriate for development at pace or with input from multiple individuals.
 
@@ -37,7 +38,7 @@ When used effectively, it also allows us to more easily identify changes that ha
 Most importantly, it allows us to refer to specific versions of our code that have been used to produce specific outputs.
 
 
-## What should I version control
+### What should I version control
 
 You should include any code that is required to run your system, but that is not sensitive.
 
@@ -50,7 +51,7 @@ You shouldn't include the following in your code repository:
 * data, except for small example datasets
 
 You might include example configuration files, or documentation describing how configuration is applied.
-However, the exact configuration of a system for a particular run of your code should be recorded by logging.
+However, the exact configuration of a system for a particular run of your code should be recorded by logging for reproducibility purposes.
 
 The data we use for analysis is often unreleased or sensitive, so should not be shared in a code repository.
 It is still important to version the data that we use for our analyses, but this can be done more appropriately using databases.
@@ -98,12 +99,12 @@ A repository (often shortened to repo) is a collection files that are being vers
 * a local repository is your self-contained copy of the project
 * a remote repository is a centralised copy of a project that is often used as the truth
 
-A `.gitignore` tells git not to version specific patterns of file names.
-* useful for excluding configuration files, data and other files 
+A `.gitignore` file tells git not to version specific patterns of file names.
+* useful for ensuring that specific files or types are not included. Such as configuration files or data.
 
 Commits are collections of changes to one or more files.
 * are attributed to the author of these changes
-* each commit has a unique hash associated to it, which has a long (e.g. `121b5b4f18231e4ee32c9c61f6754429f9572743` ) and short version (e.g. `121b5b4`)
+* each commit has a unique hash associated to it, which has a long (e.g. `121b5b4f18231e4ee32c9c61f6754429f9572743`) and short version (e.g. `121b5b4`)
 * also have an associated message that is used to describe the changes - this is a key part of the audit trail
 
 See this model commit message from [A note about Git commit messages](https://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html):
@@ -132,25 +133,33 @@ Further paragraphs come after blank lines.
 - Use a hanging indent
 ```
 
-
 Branches
 * independent copies of a project's history, copied from the state of the parent branch at a specific point in that branches history
-* allow for multiple changes to a project to occur in parallel
-* `master` is the default name for the original branch of a repository, however, many platforms are changing this default to `main`
+* help to support multiple changes to a project that are developed in parallel
+* `master` is the default name for the original branch of a repository, however, some platforms are changing this default to `main`
 
-HEAD
+`HEAD`
+* refers to the current state of the current branch
+* usually indicates the last commit that was created or checked out
+* `HEAD` and other references are described in more detail in [References section of the Git book](https://git-scm.com/book/en/v2/Git-Internals-Git-References)
 
-
-
-Merges
-
+Merge
+* recreating changes from one branch on another
+* can be done using a few different methods, including fast-forward and rebasing
 
 Conflicts
+* when multiple changes have been made to the same part of a file
+* you must indicate which change (or combination of changes) should be retained
 
 Don't panic
+* it's easy to make mistakes, but thankfully Git's audit trail means that we can always revert back to working versions
+* [stackoverflow](https://stackoverflow.com/) is your friend
 
-Don't change published history
-
+Don't change published (i.e. `remote`) history
+* otherwise you might need to panic
+* causes issues across versions of the repo, as other developer's local copies may no longer contain the same history
+* consider this before force pushing changes to a remote repository
+* instead create new commits that resolve or revert to fix the problem
 
 ### Releases (Tagging)
 
