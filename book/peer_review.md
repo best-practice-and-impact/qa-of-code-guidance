@@ -2,16 +2,25 @@
 
 Peer review of code is a quality assurance activity, where a developer other than the code's author views and tests the usage of piece of code.
 
-## Rationale
+## Motivation
 
-### Why do we need peer review
+### Why do we need peer review?
+
+Peer review allows a fresh pair of eyes to take a look at your work.
+This form of systematic check helps to identify errors in your code and provides feedback on your approach to tackling a problem.
+This constructive feedback helps you to improve your code quality and provides confidence in your work.
+
+A major benefit of internal review is shared knowledge.
+Both the reviewer and reviewee are exposed to new concepts.
+It encourages a deeper understanding what the code is doing.
+This can help with future work on the project, as multiple team members have the understanding to maintain the project.
 
 ```{todo}
 
-content pls
+Needs review and more content
 
 ```
-### What to review
+### What to review?
 
 When reviewing code, you might ask yourself the following questions:
 * Am I able to easily understand what the code is doing?
@@ -78,6 +87,10 @@ Your suggestions should be tailored to the code that you are reviewing.
 Be critical and clear, but not mean. Ask questions and set actions.
 
 ```
+
+Make sure that you share the load on reviewing work within your teams.
+Reviewing code from those with more and less experience is beneficial.
+
 
 ## Review Approaches
 

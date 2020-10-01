@@ -2,9 +2,9 @@
 
 In this chapter, we primarily discuss the benefits of using the [Git](https://git-scm.com/) version control system.
 
-## Rationale
+## Motivation
 
-### Why do we need version control
+### Why do we need version control?
 
 Manually versioning files is not appropriate for development at pace or with input from multiple individuals.
 
@@ -38,7 +38,7 @@ When used effectively, it also allows us to more easily identify changes that ha
 Most importantly, it allows us to refer to specific versions of our code that have been used to produce specific outputs.
 
 
-### What should I version control
+### What should I version control?
 
 You should include any code that is required to run your system, but that is not sensitive.
 

@@ -23,7 +23,7 @@ Key reasons for testing your code include:
 
 ## What to test ★☆☆☆☆
 
-> A QA engineer walks into a bar. Orders 1 beer. Orders 3.14 beers. Orders -1 beers. Orders 99999999999 beers. Orders a lizard.  Orders NULL.
+> A quality assurance engineer walks into a bar. Orders 1 beer. Orders 3.14 beers. Orders -1 beers. Orders 99999999999 beers. Orders a lizard.  Orders NULL.  
 > First real customer walks in and asks where the bathroom is. The bar bursts into flames.
 
 Unfortunately, there's no golden rule for exactly what you should test.
@@ -63,8 +63,12 @@ Other common frameworks, which have a Class-based focus, are:
 * `{Runit}` for R
 
 
-TODO: Modelling-relevant testing
+```{todo}
 
+Modelling-relevant testing
+including https://www.jeremyjordan.me/testing-ml/
+
+```
 
 ## When to run tests ★☆☆☆☆
 
@@ -81,10 +85,14 @@ Otherwise, running the entire collection of tests has the added benefit of captu
 For example, in part of your code that you have not directly changed.
 
 It's not easy to remember running tests at regular intervals.
-You're already putting effort into commiting your changes to a version control system regularly.
+You're already putting effort into `commit`ing your changes to a version control system regularly.
 And you're right to think "surely this could be automated too?"
 
-TODO: Reference CI
+```{todo}
+
+Reference CI
+
+```
 
 The most effective way of automating testing is through the use of Continuous Integration.
 This can be used to ensure that all changes to a particular project are tested.
@@ -131,9 +139,13 @@ Please note that principles covered early on also apply at subsequent levels.
 
 ## Structuring Test Code ★☆☆☆☆
 
-TODO: Might just be a reference to project structure?
+```{todo}
 
+Might just be a reference to project structure?
 
+Lots of content needed below
+
+```
 
 ## Unit Testing ★★☆☆☆
 
