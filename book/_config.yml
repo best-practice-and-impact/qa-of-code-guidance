@@ -21,6 +21,9 @@ html:
 sphinx:
   extra_extensions:
     - sphinx_tabs.tabs
+    - sphinx.ext.todo
+  config:
+    todo_include_todos: true
 
 latex:
   latex_documents:

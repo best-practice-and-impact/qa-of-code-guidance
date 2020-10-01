@@ -6,8 +6,11 @@ Peer review of code is a quality assurance activity, where a developer other tha
 
 ### Why do we need peer review
 
-TODO: content pls
+```{todo}
 
+content pls
+
+```
 ### What to review
 
 When reviewing code, you might ask yourself the following questions:
