@@ -336,10 +336,16 @@ A recent version of the [`jupyter-book` CI configuration](https://github.com/exe
 
 Adopting a particular workflow for Git can help to keep work consistent within a project.
 
-Here we suggest a couple of workflows that might be used to version your analytical work.
+Generally, it is good practice to:
+* Commit a small number of changes, and commit often
+* Use one branch per high level change (e.g. bug or feature)
+
+These practices help to keep the audit trail informative and assist with peer review.
+
+Here we suggest a couple of common workflows that might be used to version your analytical work.
 You might not benefit from following these patterns to the the word, but should choose aspects of these to adopt a consistent workflow in your team.
 
-These workflows are especially useful when working in a team, as they embed peer review into your workflow.
+These workflows are especially useful when working in a team, as they embed a peer review process into your workflow.
 
 ### Gitflow
 
