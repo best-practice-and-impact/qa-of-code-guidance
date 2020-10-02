@@ -109,7 +109,7 @@ Commits are collections of changes to one or more files.
 
 See this model commit message from [A note about Git commit messages](https://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html):
 
-``` {code-block}
+```{code-block} text
 Capitalized, short (50 chars or less) summary
 
 More detailed explanatory text, if necessary.  Wrap it to about 72
@@ -157,16 +157,15 @@ Don't panic
 
 Don't change published (i.e. `remote`) history
 * otherwise you might need to panic
-* causes issues across versions of the repo, as other developer's local copies may no longer contain the same history
+* this causes issues across different users of the repo, as other developer's local copies may no longer contain the same history
 * consider this before force pushing changes to a remote repository
-* instead create new commits that resolve or revert to fix the problem
+* instead create new commits that resolve or `revert` to fix the problem
 
 ### Releases (Tagging)
 
-Regularly `commit`ing changes using Git helps us to create a continuous audit trail of changes to our project.
-However, there may be discrete points in the history of the project that we want to mark for future reference.
-For example, a particular model version or a new software version to be released.
-
+Regularly `commit`ing changes using Git helps us to create a thorough audit trail of changes to our project.
+However, there may be discrete points in the history of the project that we want to mark for easy future reference.
+Let's face it, hashes like `121b5b4` don't exactly roll of the tongue.
 
 ```{figure} https://i.stack.imgur.com/yRIIc.png
 ---
@@ -178,7 +177,8 @@ From [Imgur](https://i.stack.imgur.com/yRIIc.png)
 
 Tags can be created in Git, to reference a specific point in the projects history.
 A tag essentially acts as an alias for a commit hash.
-By default, tags will reference the current position in history (i.e. the latest commit or HEAD).
+You might use tags, for example, to mark a particular model version or a new software version to be released.
+By default, tags will reference the current position in history (i.e. the latest commit or `HEAD`).
 
 An annotated tag might be created for a new software version like so:
 
