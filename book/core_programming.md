@@ -110,6 +110,7 @@ Code with high readability is often referred to as "Clean Code".
 Clean code helps us to understand the program faster.
 Clean code often sounds quite natural when spoken aloud.
 
+
 (naming)=
 ### Naming
 
@@ -229,13 +230,13 @@ letters_2 = ["x", "y", "z"]
 ```
 
 ```{code-tab} r R
-letters_1 <- list("a", "b", "c")
-letters_2 <- list("x", "y", "z")
+letters_1 <- c("a", "b", "c")
+letters_2 <- c("x", "y", "z")
 ```
 
 ````
 
-Here we can infer what the lists contain, but it is not apparent what makes `letters_1` different to `letters_2`.
+Here we can infer what the lists/vectors contain, but it is not apparent what makes `letters_1` different to `letters_2`.
 
 Variable names can be used to document differences between variables, or to incrementally describe changes made to a variable.
 
@@ -249,8 +250,8 @@ letters_first_three_reversed = reversed(first_three_letters)
 ```
 
 ```{code-tab} r R
-letters_first_three <- list("a", "b", "c")
-letters_last_three <- list("x", "y", "z")
+letters_first_three <- c("a", "b", "c")
+letters_last_three <- c("x", "y", "z")
 
 letters_first_three_reversed <- rev(first_three_letters)
 ```
