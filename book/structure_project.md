@@ -14,7 +14,7 @@ Others are more specific, and - as with all guidelines - should not be taken as 
 
 As you begin developing your project it's a good idea to save your working code in a script file.
 In R these are saved as `.R` files, and in python as `.py`.
-Scripts can be used within an IDE (integrated development environment) like [Spyder](https://www.spyder-ide.org/), [RStudio](https://rstudio.com/), or [pycharm](https://www.jetbrains.com/pycharm/).
+Scripts can be used within an IDE (integrated development environment) like [Visual Studio Code](https://code.visualstudio.com/), [RStudio](https://rstudio.com/), or [pycharm](https://www.jetbrains.com/pycharm/).
 Inside an IDE you can usually run through your script line-by-line, or run the whole file at once.
 This can be an easier workflow than running code in the python or R console and then rewriting the same code in a script later.
 
