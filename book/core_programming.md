@@ -5,7 +5,8 @@
 
 The principles outlined in this chapter represent good practices in general programming and software development.
 
-Before reading this chapter, you would benefit from having an understanding of basic programming.
+Before reading this chapter, you would benefit from having an understanding of core programming concepts.
+This includes assigning and using variables, and using functions and classes.
 
 
 You might look to these sources for introductory learning:
@@ -16,7 +17,7 @@ You might look to these sources for introductory learning:
 * [edx](https://www.edx.org/) and [freeCodeCamp](https://www.freecodecamp.org/) hosts many free online coding courses
 * [DataCamp](https://www.datacamp.com/), [Codecademy](https://www.codecademy.com/) and [Coursera](https://www.coursera.org/) host a range of introductory courses, but more advanced courses are often not free.
 
-Or more advanced topics:
+These resources cover more advanced topics:
 * Aggregation, functions and control flow in [Python](https://learninghub.ons.gov.uk/enrol/index.php?id=525) and [R](https://learninghub.ons.gov.uk/enrol/index.php?id=527) (GSS only)
 * Dataframes, manipulation and cleaning in [Python](https://learninghub.ons.gov.uk/enrol/index.php?id=521) and [R](https://learninghub.ons.gov.uk/enrol/index.php?id=523) (GSS only)
 * [Introduction to Unit Testing](https://learninghub.ons.gov.uk/enrol/index.php?id=539) and other code quality assurance for Python and R (GSS only)
@@ -154,9 +155,9 @@ my_favourite_number <- "ssh, I'm a string"
 
 ````
 
-Another developer, or even future you, would be unable to correctly understand what you intended these variable names to represent.
+Another developer, or even "future you", would be unable to correctly understand what you intended these variable names to represent.
 
-Using single letters to name variables may be suitable when they are representing well-known mathematical entities (e.g. $y = mx + c$), but should otherwise be avoided.
+Using single letters to name variables is suitable when they are representing well-known mathematical entities (e.g. $y = mx + c$), but should otherwise be avoided.
 
 
 ```{figure} ./_static/dirty_code_gandalf.png
@@ -467,7 +468,7 @@ Even if they are aware of the difference, they may be unable to tell if a differ
 **Refactoring** is the process of restructuring code without changing its behaviour.
 For example, converting a few lines of code with a common overall task into a function or class.
 
-If you refactor repetitive code into functions or classes then bug fixes or modifications can only be carried out once to change all implementations.
+If you refactor repetitive code into functions or classes then bug fixes or modifications need only be carried out once to change all implementations.
 New, intended behaviour is then consistently given by each call to the reusable function or class.
 The intended functionality can be reflected by the functions name.
 

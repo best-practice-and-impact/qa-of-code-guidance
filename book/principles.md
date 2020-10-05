@@ -74,8 +74,9 @@ By making our analysis reproducible, we make it easier for others to quality ass
 
 ## Assured
 
-Good quality analysis requires good quality assurance.
-If decisions are being made based on analysis then this analysis must be held to high standards
+Good quality analysis requires good quality assurance (QA).
+If decisions are being made based on analysis then this analysis must be held to high standards.
+This is true for analysis carried out using any medium, including code.
 
 However, some of the analysis that we do in government doesn't bear on decisions at that level.
 We don't want to overburden analysts with QA procedures when they are not required.
@@ -86,7 +87,7 @@ We advocate following your department's guidance on what proportionate quality a
 Most departments derive their guidance from the [Aqua book](https://www.gov.uk/government/publications/the-aqua-book-guidance-on-producing-quality-analysis-for-government).
 Assurance is best demonstrated through peer review.
 Peer reviewers must be able to understand your analytical choices and be able to reproduce your conclusions.
-In particularly high risk analysis dual running should be considered.
+In particularly high risk analysis, dual running should be considered.
 
 Guarantees of quality assurance should be published alongside any report, or be taken into consideration by decision makers.
 

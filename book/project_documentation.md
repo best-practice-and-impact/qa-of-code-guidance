@@ -178,7 +178,10 @@ All material created by civil servants, ministers, government departments and th
 It is not essential to include a copyright notice on your work, but doing so can help to avoid confusion around ownership.
 
 Licences outline the conditions under which others may use, modify and/or redistribute your work.
-As such, including a licence with your code, is important for users and developers alike.
+As such, including a licence with code is important for users and other developers alike.
+This [online tool](https://choosealicense.com/) might help you to choose an appropriate license for your project.
+The Government Digital Service generally recommends using the [MIT license](https://opensource.org/licenses/MIT) for code and the [Open Government License (OGL)](http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/) for documentation.
+
 
 ## Open source your code ★★☆☆☆
 
@@ -186,16 +189,20 @@ In government, we [support and promote open source](https://www.gov.uk/service-m
 [Open source](https://opensource.com/resources/what-open-source) software is software with source code that anyone can freely inspect, modify and enhance.
 As a government analyst, you should aim to make all new source code open, unless justification can be provided for withholding part of your source code.
 
-Benefits of open sourcing our code include:
+Open sourcing code is benefits yourself, other government analyst and the public.
 
-* Transparency - it doesn't get much more open than publishing documented methods for our analyses
-* Sharing value - others can benefit from our work, either through use or demonstration of good programming practices
-* Sharing opportunity - others can contribute to and help to improve our approaches
-* Feels good - we regularly benefit from open source software, so it's nice to give something back
-* Attribution - open sourcing your code through public version control (e.g. GitHub) creates a public record of your contributions
+Personal benefits from open sourcing include:
+
+* Attribution - coding in the open creates a public record of your contributions to analysis and software.
+* Collaboration - you can gain experience working with analysts in other departments.
+* Review - peers and experts in the field can provide advice on improving your analysis and coding.
+* Feels good - we regularly benefit from open source software, so it's nice to give something back.
+
+While the public benefit from:
+
+* Transparency - stakeholders can understand and reproduce our analysis, which is a core element of the [Statistics Code of Practice](https://code.statisticsauthority.gov.uk/).
+* Sharing value - others can benefit from our work, either through reuse or demonstration of good practices.
+* Sharing opportunity - others can gain insight and experience from reading and possibly contributing to  your code.
 
 Please see the [Government Data Service (GDS) guidance](https://www.gov.uk/government/publications/open-source-guidance/when-code-should-be-open-or-closed) for help deciding when code should be open or closed.
-Additional security concerns for coding in the open are addressed in further [GDS guidance](https://www.gov.uk/government/publications/open-source-guidance/security-considerations-when-coding-in-the-open).
-
-Choice of open source licence, depends largely on how you would like others to be able distribute modified versions of your work.
-[Government Data Service guidelines](https://gds-way.cloudapps.digital/manuals/licensing.html#use-mit) suggest the MIT licence for code and the OGL (Open Government Licence) for documentation.
+Security concerns for coding in the open are also addressed in further [GDS guidance](https://www.gov.uk/government/publications/open-source-guidance/security-considerations-when-coding-in-the-open).
