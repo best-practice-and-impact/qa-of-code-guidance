@@ -44,8 +44,3 @@ Therefore, you should strive to apply the most appropriate practices given the r
 
 The principles in this book are language agnostic - as such it does not form a comprehensive learning resource and you may often need to study further resources to implement these practices.
 That said, examples and useful references are provided for **Python** and **R**, as a pair of open source languages that are commonly applied across government.
-
-
-## Acknowledgements
-
-Where referenced, content has been adapted (or shamelessly plundered) from the [Turing Way](https://the-turing-way.netlify.com), a guide to reproducible data science that is produced by the The Turing Institute.

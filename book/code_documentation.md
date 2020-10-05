@@ -20,6 +20,17 @@ number_2 = 9
 total = number_1 + number_2
 ```
 
+```{code-tab} r R
+# Set number_1 to 5
+number_1 <- 5
+
+# Set number_2 to 9
+number_2 <- 9
+
+# Set total to the sum of number_1 and number_2
+total <- number_1 + number_2
+```
+
 ````
 
 Comments that describe exactly **what** is occurring in the code, as above, are often not necessary.
@@ -89,15 +100,15 @@ Docstrings commonly describe:
 ````{tabs}
 
 ```{code-tab} py
-def add_to_each_in_list(numbers, to_add):
+def add_to_each_in_list(numbers, add):
     """
     Adds a number to each number in a list.
 
     Parameters
     ----------
     numbers : list
-        Numbers to add `to_add` to.
-    to_add : int or float
+        Numbers to add `add` to.
+    add : int or float
         Number to be added to each element of `numbers`.
 
     Raises
@@ -107,8 +118,8 @@ def add_to_each_in_list(numbers, to_add):
 
     Returns
     -------
-    new_numbers : list
-       `numbers` with `to_add` added to each element.
+    list
+       `numbers` with `add` added to each element.
 
     Examples
     --------
@@ -127,7 +138,26 @@ def add_to_each_in_list(numbers, to_add):
 ```
 
 ```{code-tab} r R
-# Roxygen goes here!
+
+#' Add a number to each element of a vector
+#'
+#' @param numbers A vector of numbers
+#' @param add A float or integer to be added to each element of \code{numbers}
+#'
+#' @return \code{numbers} with \code{add} added to each element
+#'
+#' @seealso \code{\link{add}}
+#' @examples
+#' add_to_each_in_list(list(1, 2, 3), 5)
+#'
+#' @export
+add_to_each_in_list <- function(numbers, add) {
+    if (!(is.vector(numbers) & is.numeric(numbers)){
+        stop("'numbers' must be a numeric vector.")
+    }
+    numbers + add
+}
+
 ```
 
 ````
