@@ -12,13 +12,12 @@ This file can be any text type, including `.txt`, `.md`, and `.rst`, and can be 
 
 We suggest the following for a good README:
   
-  - Short statement of intent
+- Short statement of intent
 - Longer description describing the problem that your project solves and how it solves it
 - Basic installation instructions or link to installation guide
 - Example usage
-- Screenshot if your project has a GUI
+- Screenshot if your project has a graphical user interface
 - Links to related projects
-
 
 
 ## Contributing Guidance ★☆☆☆☆
@@ -181,6 +180,21 @@ Licences outline the conditions under which others may use, modify and/or redist
 As such, including a licence with code is important for users and other developers alike.
 This [online tool](https://choosealicense.com/) might help you to choose an appropriate license for your project.
 The Government Digital Service generally recommends using the [MIT license](https://opensource.org/licenses/MIT) for code and the [Open Government License (OGL)](http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/) for documentation.
+
+Both copyright and license are usually placed in a LICENSE file in your project.
+For example, an MIT LICENSE file might look like:
+
+```{code-block} text
+
+Copyright 2020, Crown copyright 
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+```
 
 
 ## Open source your code ★★☆☆☆

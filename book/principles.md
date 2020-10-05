@@ -21,6 +21,7 @@ Reproducibility guarantees that we have done what we are claiming to have done, 
 Auditability means that we know why we chose our analysis, and who is responsible for each part of it - including assurance.
 Assurance improves the average quality and includes the communication of that quality to users.
 
+
 ## Reproducible
 
 Reproducibility is the only thing that you can guarantee in your analysis.
@@ -72,6 +73,7 @@ More eyes examining our work can point out challenges or flaws that can help us 
 We can be fully open about the decisions we made when we generated our outputs, so that other analysts can follow what we did and re-create them.
 By making our analysis reproducible, we make it easier for others to quality assure, assess and critique.
 
+
 ## Assured
 
 Good quality analysis requires good quality assurance (QA).
@@ -117,6 +119,7 @@ They collaborated with data scientists from the Government Digital Service (GDS)
 
 To support the adoption of RAP across government, there is a network of [RAP champions](https://gss.civilservice.gov.uk/about-us/champion-networks/reproducible-analytical-pipeline-rap-champions/). 
 These champions are responsible for promoting reproducible analysis through the use of reproducible analytical pipelines, and supporting others who want to develop RAP in their own departments.
+
 
 ## Further reading
 
