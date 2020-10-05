@@ -61,7 +61,7 @@ A few code abstractions are outlined below, which will be useful for understandi
 - Functions
     - a unit of code that performs a minimal number of tasks (one ideally)
     - can take inputs and can return outputs, though both are optional
-    - used in functional programming
+    - the functional programming paradigm uses these exclusively
 
 
 ```{figure} https://upload.wikimedia.org/wikipedia/commons/3/3b/Function_machine2.svg
@@ -95,7 +95,7 @@ Demonstration of a Pokémon class, with an example object (instance of the class
 - Packages
     - collections of code that perform related tasks
     - may be sub-sectioned into modules that perform related, but lower level groups of tasks
-    - contains other useful information about the code in the package (see Packaging)
+    - contains other useful information relating to the code in the package (see [](project_documentation.md))
 
 
 ## Clean code ★★☆☆☆
@@ -107,8 +107,8 @@ Programs are meant to be read by humans and only incidentally for computers to e
 ```
 
 Code with high readability is often referred to as "Clean Code".
-Clean code helps us to understand the program faster.
-Clean code often sounds quite natural when spoken aloud.
+Clean code helps us to understand a program faster.
+The code itself often sounds quite natural when spoken aloud.
 
 
 (naming)=
@@ -135,11 +135,13 @@ You may have previously come across code that contains variable names that are m
 ````{tabs}
 
 ```{code-tab} py
+import pandas as pd
+
 x = "Sioban"
 
 y = 42
 
-z = Car()
+z = pd.DataFrame()
 
 my_favourite_number = "ssh, I'm a string"
 ```
@@ -149,7 +151,7 @@ x <- "Sioban"
 
 y <- 42
 
-z <- new(Car)
+z <- data.frame()
 
 my_favourite_number <- "ssh, I'm a string"
 ```
@@ -172,41 +174,44 @@ Gandalf regrets writing poor quality code
 
 Using variable names that contain a few (3 or so) informative words can drastically improve the readability of your code:
 
-
 ````{tabs}
 
 ```{code-tab} py
+import pandas as pd
+
 # Defining variables
 first_name = "Sioban"
 
 number_of_attendees = 42
 
-my_car = Car()
+empty_dataframe = pd.DataFrame()
 
 
 # Using variables
-print("Hi " + user_name)
+print("Hi " + first_name)
 
 number_of_attendees += 1
 
-my_car.clean()
+empty_dataframe.empty
 ```
 
 ```{code-tab} r R
+library(plyr)
+
 # Defining variables
 first_name <- "Sioban"
 
 number_of_attendees <- 42
 
-my_car <- new(Car)
+empty_dataframe <- data.frame()
 
 
 # Using variables
-print(paste("Hi" + user_name))
+print(paste("Hi" + first_name))
 
 number_of_attendees <- number_of_attendees + 1
 
-my_car <- clean(my_car)
+empty(empty_dataframe)
 ```
 
 ````
@@ -274,8 +279,8 @@ You'll need to use your best judgement to adapt variable names in order to keep 
 
 #### Naming functions
 
-When naming functions, you should consider your user's point of view, even if the user is future you.
-Your user should be able to infer the purpose or action of the function from the name of the function.
+When naming functions, you should consider a user's point of view.
+Your user should be able to infer the purpose or action of the function from its name.
 If you can't describe the overall task performed by the function in a few words, then it may be that your function is overly complex.
 In this case, you could consider breaking the function down into a number of smaller functions that perform individual tasks.
 
@@ -294,6 +299,18 @@ def peel_potato(vegetable):
 prepared_potato = peel_potato("potato")
 ```
 
+```{code-tab} r R
+peel_potato <- function(vegetable) {
+    if (vegetable == "potato") {
+        "peeled_potato"
+    } else {
+        stop("That's not a potato!")
+    }
+}
+
+prepared_potato = peel_potato("potato")
+```
+
 ````
 
 Sometimes a function might be used to provide a Boolean response to a decision.
@@ -303,14 +320,28 @@ In this case, it cam be helpful to name a function as a question that is being p
 ````{tabs}
 
 ```{code-tab} py
-def is_clean(car):
-    if car.cleanliness > 5:
+def is_clean(cleanliness):
+    if cleanliness > 5:
         return True
     else:
         return False
 
-if is_clean(my_car):
+if is_clean(6):
     print("Nice!")
+```
+
+```{code-tab} r R
+is_clean <- function(cleanliness) {
+  if (cleanliness > 5){
+      TRUE
+  } else {
+      FALSE
+  }  
+}
+
+if (is_clean(6)) {
+    print("Nice!")
+}
 ```
 
 ````
@@ -325,31 +356,68 @@ Class and object names should be concise and descriptive, like variable names.
 ````{tabs}
 
 ```{code-tab} py
-class SportsCar(Car):
+class SportsCar(colour):
 
-    def clean(self):
-        self.cleanliness = 10
-        print("Squeak")
+    def __init__():
+        self.colour = colour
 
     def drive(self):
         print("VROOOOM!")
 
 
-my_fast_car = SportsCar()
+fast_car = SportsCar("yellow")
+fast_car.colour
+fast_car.drive()
+```
+
+```{code-tab} r R (S3 class)
+drive <- function(x) {
+            UseMethod("drive", x)
+}
+drive.SportsCar <- function(x) {
+            print("VROOOOOOM!")
+}
+
+
+fast_car <- list(colour = "yellow")
+class(fast_car) <- "SportsCar"
+fast_car$colour
+drive(fast_car)
+```
+
+```{code-tab} r R (S4 class)
+setClass(
+    "SportsCar",
+    slots = list(colour = "character")
+)
+drive <- function(object) {
+    print("VROOOOM!")
+}
+setMethod(
+    "drive",
+    signature("SportsCar"),
+    function(object) {print("VROOOOM!")}
+)
+
+
+fast_car <- new("SportsCar", colour = "yellow")
+fast_car@colour
+drive(fast_car)
 ```
 
 ````
+
 (code-style)=
 ### Code style
 
-When the syntax of a programming language is not strict (as with python and R), it's difficult to know how to "correctly" format  code.
+When the syntax of a programming language is not strict (as with python and R), it can be difficult to know how to "correctly" format code.
 Code style guides provide a standard or convention to work towards, with the intention of increase consistency across a programming community.
-Agreed (within a team, for example) style guides might improve your ability to read other peoples code and vice versa.
+Agreed style guides (within a team or project) might improve your ability to read other peoples code and vice versa.
 Guides might include how to appropriately:
 
 - comment or document your code
-- separate elements of your code with whitespace
 - follow naming conventions
+- separate elements of your code with whitespace
 
 Don't code in fear of breaching style guidance or showing a little flair in your programming style.
 Guides cannot account for every possibility and may decrease readability of code in some cases.
@@ -404,6 +472,9 @@ You can run multiple of these, to catch a broader range of stylistic or programm
 
 If you're considering these tools as part of a project, see [Continuous Integration](link to continuous integration) for advice on automating them.
 
+```{todo}
+Add continuous integration content link
+```
 
 
 ## KISS ★★☆☆☆
@@ -433,49 +504,96 @@ Repetition not only wastes your time, writing redundant lines of code, but it ma
 Modular code can be used to tackle repetition.
 
 Consider a script that contains three copies of a similar piece of code.
-
 If the code that is used to perform the repetitive task is found to be incorrect, or if a developer wishes to modify the task being performed by this code, a similar change must be implemented in each of the three copies.
+In the example below, we want to get the odd numbers from three different lists/vectors of numbers.
 
 
 ````{tabs}
 
 ```{code-tab} py
 first_ten_numbers = list(range(1, 11))
-
 odd_first_ten_numbers = []
 for number in first_ten_numbers:
     if number % 2 == 1:
     odd_first_ten_numbers.append(number)
 
-second_ten_numbers = list(range(20, 21))
+second_ten_numbers = list(range(10, 21))
 odd_second_ten_numbers = []
 for number in second_ten_numbers:
     if number % 2 == 1:
     odd_second_ten_numbers.append(number)
 
-third_ten_numbers = list(range(20, 21))
+third_ten_numbers = list(range(20, 31))
 odd_third_ten_numbers = []
 for number in third_ten_numbers:
-    if number % 2 == 1:
+    if number % 2 == 0:
     odd_third_ten_numbers.append(number)
+```
+
+```{code-tab} r R
+first_ten_numbers = 1:10
+odd_first_ten_numbers <- c()
+for (number in first_ten_numbers) {
+    if (number %% 2 == 1) {
+        odd_first_ten_numbers <- c(odd_first_ten_numbers, number)
+    }
+}
+    
+
+second_ten_numbers = 11:20
+odd_second_ten_numbers = c()
+for (number in second_ten_numbers) {
+    if (number %% 2 == 1) {
+        odd_second_ten_numbers <- c(odd_second_ten_numbers, number)
+    }
+}
+
+third_ten_numbers = 21:30
+odd_third_ten_numbers = c()
+for (number in third_ten_numbers) {
+    if (number %% 2 == 0) {
+        odd_third_ten_numbers <- c(odd_third_ten_numbers, number)
+    }
+}
 ```
 
 ````
 
-Modifying multiple copies of a code snippet is laborious and presents a risk - some copies of the repeated code may be modified while others erroneously remain the same.
+In the example above, the third repeated snippet of code actually collects the even numbers, but assigns them to the `odd_third_ten_numbers` variable.
 A naive user or developer may assume that all copies of the similar code are performing the same task.
 Even if they are aware of the difference, they may be unable to tell if a difference between these copies is intentional or a mistake.
+
+Modifying multiple copies of a code snippet is laborious and presents a risk - some copies of the repeated code may be modified while others erroneously remain the same.
+This is analogous to modifying the formula in individual cells of a spreadsheet.
 
 **Refactoring** is the process of restructuring code without changing its behaviour.
 For example, converting a few lines of code with a common overall task into a function or class.
 
-If you refactor repetitive code into functions or classes then bug fixes or modifications need only be carried out once to change all implementations.
+If you refactor repetitive code into functions or classes, then bug fixes or modifications need only be carried out once to change all implementations.
 New, intended behaviour is then consistently given by each call to the reusable function or class.
-The intended functionality can be reflected by the functions name.
+The intended functionality should be reflected by the functions name.
 
 ````{tabs}
 
 ```{code-tab} py
+
+get_odd <- function(numbers) {
+    odd_numbers <- c()
+    for (number in numbers) {
+        if (number %% 2 == 1) {
+            odd_numbers <- c(odd_numbers, number)
+        }
+    }
+    return(odd_numbers)
+}
+
+first_ten_numbers = 1:10
+odd_first_ten_numbers <- c()
+for (number in first_ten_numbers) {
+    if (number %% 2 == 1) {
+        odd_first_ten_numbers <- c(odd_first_ten_numbers, number)
+    }
+}
 def get_odd(numbers):
     odd_numbers = []
     for number in first_ten_numbers:
@@ -493,11 +611,29 @@ third_ten_numbers = list(range(20, 21))
 odd_third_ten_numbers = get_odd(third_ten_numbers)
 ```
 
+```{code-tab} r R
+def get_odd(numbers):
+    odd_numbers = []
+    for number in first_ten_numbers:
+        if number % 2 == 1:
+        odd_first_ten_numbers.append(number)
+    return odd_numbers
+
+first_ten_numbers = 1:10
+odd_first_ten_numbers = get_odd(first_ten_numbers)
+
+second_ten_numbers = 11:20
+odd_second_ten_numbers = get_odd(second_ten_numbers)
+
+third_ten_numbers = 21:30
+odd_third_ten_numbers = get_odd(third_ten_numbers)
+```
+
 ````
 
+Here we've refactored the repetitive code into a function to get odd numbers, called `get_odd`.
 If the functionality of `get_odd` needs to be modified, it now need only be done once. 
-In addition, this code is now more concise and it's purpose is easier to interpret.
-
+Additionally, this code is now more concise and it's purpose is easier to interpret.
 
 If two slightly different tasks must be carried out, you might approach this in one of two ways:
 
@@ -515,31 +651,77 @@ def is_odd(number):
     else:
         return False
 
-def get_odd(list_of_numbers):
+def get_odd(numbers):
     odd_numbers = []
-    for number in list_of_numbers:
+    for number in numbers:
         if is_odd(number):
             odd_numbers.append(number)
     return odd_numbers
 
-def get_even(list_of_numbers):
+def get_even(numbers):
     even_numbers = []
-    for number in list_of_numbers:
+    for number in numbers:
         if not is_odd(number):
             even_numbers.append(number)
     return even_numbers
 
 
-# More concise, but also more complex - not always good
-def get_numbers_with_parity(list_of_numbers, parity):
-    numbers_with_parity = []
+# More concise, but also more complex - not always best
+def get_numbers_with_parity(numbers, parity):
     if parity == "odd":
         remainder = 1
     elif parity == "even":
         remainder = 0
     else:
         raise ValueError("parity must be 'odd' or 'even'")
-    return [number for number in list_of_numbers if number % 2 == remainder]
+    return [number for number in numbers if number % 2 == remainder]
+odd_numbers = get_numbers_with_parity(list(range(1, 11), "odd"))
+```
+
+```{code-tab} r R
+# Simple and modular
+is_odd <- function(number) {
+    if (number %% 2 == 1){
+        TRUE
+    } else {
+        FALSE
+    }
+}
+
+get_odd <- function(numbers){
+    odd_numbers = c()
+    for (number in numbers) {
+        if (is_odd(number)) {
+           odd_numbers = c(odd_numbers, number) 
+        }
+    }
+    return(odd_numbers)
+}
+
+get_even <- function(numbers){
+    even_numbers = c()
+    for (number in numbers) {
+        if (!is_odd(number)) {
+           even_numbers = c(even_numbers, number) 
+        }
+    }
+    return(even_numbers)
+}
+
+
+# More concise, but also more complex - not always best
+get_numbers_with_parity <- function(numbers, parity) {
+    numbers_with_parity = c()
+    if (parity == "odd") {
+        remainder = 1
+    } else if (parity == "even") {
+        remainder = 0
+    } else {
+        stop("parity must be 'odd' or 'even'")
+    }
+    numbers[numbers %% 2 == remainder]
+}
+odd_numbers <- get_numbers_with_parity(1:10, "odd")
 ```
 
 ````
@@ -552,9 +734,12 @@ The "Rule of Three" suggests that if similar code has been written more than two
 
 ### You Ain't Gonna Need It
 
-Try to capture your users needs in the functionality that your software provides.
+It's important to capture the requirements of your code before writing it.
+This includes when your code needs to be adapted to meet changing needs.
+
+You should then aim to meet these requirements in the functionality that your code provides.
 Developing anything more than this may not be beneficial.
-It can be tempting to try to account for every eventuality in your program, or dive down an interesting rabbit hole.
+It can be tempting to try to account for every eventuality in your program.
 As there's a good chance that many cases that you account for will never occur, you should try to prioritise based and what you're certain is needed from your code.
 
 ### Be Explicit
@@ -582,14 +767,23 @@ if coconut_count:
     print("There are " + coconut_count + " coconuts!")
 ```
 
+```{code-tab} r R
+coconut_count <- FALSE
+
+# Relying on falseness of FALSE
+if (coconut_count) {
+    print("There are " + coconut_count + " coconuts!")
+} 
+```
+
 ````
 
-In the example above, the coconut count is not printed because None is evaluated to False.
+In the example above, the coconut count is not printed because `None` and `FALSE` evaluate to false.
 In python and R, 0 will also evaluate to False.
-It is unclear whether the programmer intended that the statement is printed when the count is 0.
+Therefore, it is unclear whether the programmer intended that the statement is printed when the count is 0.
 If a count of 0 should be printed, then this lack of specificity has created a bug.
 
-To perform the same decision explicitly, you could specify the exact condition under which the coconut count should be printed.
+To perform the same decision explicitly, we should specify the exact condition under which the coconut count should be printed.
 
 ````{tabs}
 
@@ -597,11 +791,23 @@ To perform the same decision explicitly, you could specify the exact condition u
 coconut_count = 0
 
 # Explicitly only print if not None
-if coconut_count is not None:
+if coconut_count >= 0:
     print("There are " + coconut_count + " coconuts!")
 ```
 
+```{code-tab} r R
+coconut_count = 0
+
+# Explicitly only print if more than 0
+if (coconut_count >= 0){
+    print("There are " + coconut_count + " coconuts!")
+}
+```
+
 ````
+
+Now the count is printed if it is more than or equal to 0.
+It's clear that we intend for this to be the case.
 
 
 ## SOLID ★★★☆☆

@@ -141,6 +141,7 @@ Branches
 `HEAD`
 * refers to the current state of the current branch
 * usually indicates the last commit that was created or checked out
+* becomes "detached" if an individual commit or a remote branch is checked out without creating a new local branch
 * `HEAD` and other references are described in more detail in [References section of the Git book](https://git-scm.com/book/en/v2/Git-Internals-Git-References)
 
 Merge
