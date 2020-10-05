@@ -3,7 +3,7 @@
 Testing here refers to code that assert that your code is working as expected.
 Where code documentation specifies what code should do, testing assures that this specification is true.
 
-The core concept of testing is **"Does my code give do what I expect it to, given realistic inputs?"**.
+The core concept of testing is **"Does my code do what I expect it to, given realistic inputs?"**.
 
 The most common pattern for writing these tests is:
 1. Arrange - set up any pre-requisites for your test
