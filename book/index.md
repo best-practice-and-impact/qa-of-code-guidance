@@ -44,3 +44,30 @@ Therefore, you should strive to apply the most appropriate practices given the r
 
 The principles in this book are language agnostic - as such it does not form a comprehensive learning resource and you may often need to study further resources to implement these practices.
 That said, examples and useful references are provided for **Python** and **R**, as a pair of open source languages that are commonly applied across government.
+
+
+## Accessibility statement
+
+This accessibility statement applies to the quality assurance of code guidance.
+
+The website is managed by the Best Practice and Impact division of the Office for National Statistics.
+We would like this guidance to be accessible for as many people as possible.
+This means that you should be able to:
+* change colours, contrast levels and fonts
+* zoom in up to 300% without the text spilling off the screen
+* navigate most of the website using just a keyboard
+* navigate most of the website using speech recognition software
+* listen to most of the website using a screen reader (including the most recent versions of JAWS, NVDA and VoiceOver)
+
+We know that some parts of the guidance are not currently fully accessible:
+* tabbed content (e.g. code examples) cannot be focussed and switched using a keyboard
+
+### Feedback and reporting accessibility problems
+
+We’re always looking to improve the accessibility of our guidance.
+If you find any problems not listed on this page or think that we’re not meeting accessibility requirements, please contact us by email at [gsshelp@statistics.gov.uk](mailto:gsshelp@statistics.gov.uk).
+Also please get in touch if you are unable to access any part of this guidance, or require the content in a different format.
+
+### Enforcement procedure
+
+The Equality and Human Rights Commission (EHRC) is responsible for enforcing the Public Sector Bodies (Websites and Mobile Applications) (No. 2) Accessibility Regulations 2018 (the ‘accessibility regulations’). If you’re not happy with how we respond to your complaint, [contact the Equality Advisory and Support Service (EASS)](https://www.equalityadvisoryservice.com/).
