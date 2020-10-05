@@ -17,10 +17,10 @@ This can help with future work on the project, as multiple team members have the
 
 ```{todo}
 
-Needs review and more content
+Needs review (lol) and more content
 
 ```
-### What to review?
+## What to review
 
 When reviewing code, you might ask yourself the following questions:
 * Am I able to easily understand what the code is doing?
