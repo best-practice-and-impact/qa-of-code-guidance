@@ -74,6 +74,7 @@ non-minor changes.
 In this case we have outlined our standard practices for using version control on GitHub, the code style that we are using in the project and the review process that we follow.
 We have used the [Markdown](https://daringfireball.net/projects/markdown/syntax) (`.md`) markup language for this document, which is formatted into HTML when viewed on our repository.
 
+
 ## User Desk Instructions ★☆☆☆☆
 
 If your project is very user focussed, for example developing a statistic production pipeline, it is very important that the code users understand how to appropriately use your code.
@@ -85,6 +86,7 @@ These instructions should include:
 - What outputs (if any) your code or system produces and how these should be interpreted
 - What quality assurance has been carried out and what further quality assurance of outputs is required
 - How to maintain your project (including how to update data sources)
+
 
 ## Dependencies ★☆☆☆☆
 
@@ -102,6 +104,7 @@ Packages are listed under the `Imports` key.
 You can get a list of your installed R packages using the `installed.packages()` function.
 
 [Environment management] tools are very useful for keeping track of software and package versions used in a project.
+
 
 ## Vignettes ★★☆☆☆
 
@@ -170,6 +173,7 @@ It can also document which parts of your code will no longer be supported in fut
 Your changelog can be in any format and should be associated with your code documentation, so that it is easy for users and other contributors to find.
 
 [keep a changelog](https://keepachangelog.com/en/1.0.0/) provides a simple but effective template for recording changes to your code.
+
 
 ## Copyright and Licenses ★★☆☆☆
 
