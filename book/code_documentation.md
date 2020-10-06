@@ -1,5 +1,6 @@
 # Code Documentation
 
+
 ## Comments ★☆☆☆☆
 
 A common form of documentation is code comments, which are found throughout source code files.
@@ -38,25 +39,34 @@ They may be redundant, if [good naming practices](naming) are followed to self-d
 A developer or user can read your code and other more appropriate forms of documentation (see [Docstrings]) for more detailed description of the logic behind your code.
 If it is difficult to understand your code without comments, then this can be an indicator that your code is overly complex and might benefit from being refactored into smaller units.
 
-Comments can used more effectively to explain **why** you might have used a particular method.
+Comments can be used more effectively to explain **why** you might have written code in a certain way.
 For example, explaining to other analysts/developers why a section of your code doesn't follow standard practices, perhaps because the typical method didn't work.
 This type of comment may help to clarify your choice of logic, without needing to describe the individual steps taken.
-Comments explaining **why** you made programming choices will help yourself and other developers to understand your intentions when writing the code.
+Comments explaining **why** you made programming choices will help yourself and other developers to understand your intentions.
 
 ````{tabs}
 
 ```{code-tab} py
-# Insert demo of useful comments here
+# Tried solution X, but Y worked better because of Z
 
+# Don't use function X here, because of Y
 
-# Works around bug in function X
-# TODO: Fix function x!
+# Temporary work around for bug in function X
+# TODO: fix function X
+```
 
+```{code-tab} r R
+# Tried solution X, but Y worked better because of Z
+
+# Don't use function X here, because of Y
+
+# Temporary work around for bug in function X
+# TODO: fix function X
 ```
 
 ````
 
-Another use of code comments, is to divide long sections of code into sub-sections that relate to their overall functionality.
+Comments can also be used effectively to divide long sections of code into sub-sections that relate to their overall functionality.
 For example, an analysis script might be broken down into sections that describe each part of the analysis process:
 
 ````{tabs}
@@ -83,6 +93,12 @@ plt.plot(ten_years_price)
 
 ````
 
+But note that in simple cases, such as the example above, these steps may already be apparent from the code.
+
+In summary, use comments sparingly but effectively.
+
+
+(docstrings)=
 ## Docstrings ★★☆☆☆
 
 When your code is structured as functions or classes, these functional units can be efficiently documented using docstrings.
@@ -100,7 +116,7 @@ Docstrings commonly describe:
 ````{tabs}
 
 ```{code-tab} py
-def add_to_each_in_list(numbers, add):
+def add_to_each(numbers, add):
     """
     Adds a number to each number in a list.
 
@@ -148,10 +164,10 @@ def add_to_each_in_list(numbers, add):
 #'
 #' @seealso \code{\link{add}}
 #' @examples
-#' add_to_each_in_list(list(1, 2, 3), 5)
+#' add_to_each(list(1, 2, 3), 5)
 #'
 #' @export
-add_to_each_in_list <- function(numbers, add) {
+add_to_each <- function(numbers, add) {
     if (!(is.vector(numbers) & is.numeric(numbers)){
         stop("'numbers' must be a numeric vector.")
     }
@@ -162,16 +178,18 @@ add_to_each_in_list <- function(numbers, add) {
 
 ````
 
-In this typical example, the docstring starts with a brief description of the overall function.
+In this example, the function docstring starts with a brief description of the overall function.
 It then lists the parameters that our function takes, along with the suggested type of each and a brief description.
 It also tells us that the function will raise an error if the wrong type is provided for the first parameter.
 Then there is a description of the object that is returned from the function, followed by an example of the function in use.
 Finally, it references a similar related function.
-This example follows the [numpydocs style](https://numpydoc.readthedocs.io/en/latest/format.html), which is particularly readable in code files.
 
-You might find that writing function, class or package descriptions prior to writing their code helps you to focus on the desired task.
-As documentation tends to be user-focussed, this approach also helps you to keep the user's needs in mind when developing code.
+The Python example follows the [numpydocs style](https://numpydoc.readthedocs.io/en/latest/format.html), which is particularly readable in code files.
+While the R example uses the [roxygen2 package](https://cran.r-project.org/web/packages/roxygen2/vignettes/roxygen2.html) and follows the [tidyverse style guide](https://style.tidyverse.org/documentation.html).
 
+You might find that writing function, class or package descriptions prior to writing their code helps you to focus on the task at hand.
+The documentation should be a specification of what the code is expected to do.
+As documentation tends to be user-focussed, this approach helps you to keep the user's needs in mind when developing code.
 
 Other useful resource include:
 
@@ -184,30 +202,36 @@ Sadly this section does not describe a tool that miraculously writes your docume
 It does, however, describe tools that automate generation of searchable, user-friendly HTML documentation.
 You should ensure that the resulting documentation remains associated with the source code of your project.
 
-Great, so you've embedded documentation into your code, in the form of docstrings (above).
+Great, so you've embedded documentation into your code, in the form of [docstrings](docstrings).
 These docstrings are ideal for technical users looking for a quick understanding of how to use your code.
 However, this is not the nicest format to read documentation in and it may require users to navigate the files containing the code to find the relevant documentation.
 Thankfully tools are available to extract this information from your code and reproduce it in HTML.
 
-We recommend the python package [sphinx](https://www.sphinx-doc.org/en/master/) for generating HTML documentation.
-Sphinx primarily uses the [reStructuredText](https://docutils.sourceforge.io/docs/user/rst/quickstart.html) markup language.
-Sphinx supports code highlighting for multiple programming languages within a project, however, other tools may be required to automatically collate documentation from code for some languages.
+
+### Generating HTML documentation
+
+For Python, we recommend the [Python package `sphinx`](https://www.sphinx-doc.org/en/master/) for generating HTML documentation.
+Sphinx primarily uses the [reStructuredText](https://docutils.sourceforge.io/docs/user/rst/quickstart.html) markup language, but can be extended to also support [Markdown](https://www.sphinx-doc.org/en/master/usage/markdown.html).
+Sphinx supports code highlighting for multiple programming languages within a project, however, other tools may be required to automatically collate documentation from code in languages other than Python.
 You can format your documentation using an [existing theme](https://www.writethedocs.org/guide/tools/sphinx-themes/), or design your own.
 
-In addition to building elegant documentation from your code, these tools can also run examples that are found within docstrings (see example in Docstrings).
+Many [`sphinx` extensions](https://github.com/yoloseem/awesome-sphinxdoc) are available to add features to your documentation.
+For example, the [doctest extension](https://www.sphinx-doc.org/en/master/usage/extensions/doctest.html) allows you to run examples that are found within [docstrings](docstrings).
 These examples test that your documentation is accurate and up-to-date, but may also flag when your code does not work as expected.
-In sphinx, python code examples can be tested using the [doctest extension](https://www.sphinx-doc.org/en/master/usage/extensions/doctest.html).
 
-Tools for automatic documentation generation:
-
-- The python package [sphinx](https://www.sphinx-doc.org/en/master/)
-- The R package [Roxygen2](https://cran.r-project.org/web/packages/roxygen2/vignettes/roxygen2.html) - generate classic R documentation (.Rd files)
-- The R package [pkgdown](https://pkgdown.r-lib.org/articles/pkgdown.html) - generate web-based R documentation, using roxygen-style documentation
-- [Natural Docs](https://www.naturaldocs.org/) - open source tool that supports 20 different programming languages
-- [Doxygen](http://www.doxygen.nl/)
-- [JavaDoc](https://www.oracle.com/technetwork/java/javase/documentation/index-137868.html)
-
-Be sure to read the documentation for these tools, as you may need to use a particular docstring style or format that your choice of tool can detect.
+For R projects, you may find [`pkgdown`](https://pkgdown.r-lib.org/) more suitable.
+This package will create a HTML references section, containing your code documentation.
+It uses your project's README file as a home page for the site and you can add additional content to the site in the form of [vignettes](https://r-pkgs.org/vignettes.html).
+The [package's website](https://pkgdown.r-lib.org/) and [it's source code](https://github.com/r-lib/pkgdown/) provide a good demonstration of the package being applied.
 
 
+### Hosting HTML documentation
 
+Once built, the HTML files containing your documentation can be opened in any browser.
+Rather than pass around copies of these files, you may want to host your documentation.
+
+Your version control platform might support hosting documentation in the form of Wiki.
+The GitHub platform provides this hosting via [GitHub Pages](https://pages.github.com/).
+In many cases, you may be able to automatically update your hosted documentation using [](continuous-integration).
+
+[Read the docs](https://readthedocs.org/) is a community-funded project that provides hosting for open source projects.
