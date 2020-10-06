@@ -2,8 +2,8 @@
 
 Whether you're developing a package or collaborating on a piece of analysis, documenting your project makes it much easier for others to understand your goal and ways of working.
 
-## README ★☆☆☆☆
 
+## README ★☆☆☆☆
 
 When working on a collaborative or open coding project, it's good practice to describe an overview of your project in a README file.
 This allows users or developers to grasp the overall goal of your project.
@@ -80,7 +80,7 @@ If your project is very user focussed, for example developing a statistic produc
 
 These instructions should include:
   
-  - How to set up an environment to run your code (including how to install dependencies)
+- How to set up an environment to run your code (including how to install dependencies)
 - How to run your code
 - What outputs (if any) your code or system produces and how these should be interpreted
 - What quality assurance has been carried out and what further quality assurance of outputs is required
@@ -107,17 +107,18 @@ You can get a list of your installed R packages using the `installed.packages()`
 
 Vignettes are a form of supplementary documentation, containing applied examples that demonstrate the intended use of the code in your project or package.
 Docstrings may contain examples applying individual functional units, while vignettes may show multiple units being used together.
-The term vignette is usually used with reference to R packages, for example this introduction to the [{dplyr} package](https://cran.r-project.org/web/packages/dplyr/vignettes/dplyr.html) for data manipulation.
-However, the same long-form documentation is beneficial for projects in any programming language - for instance the [{pandas} basics](https://pandas.pydata.org/docs/user_guide/basics.html).
+The term vignette is usually used with reference to R packages, for example this introduction to the [`dplyr` package](https://cran.r-project.org/web/packages/dplyr/vignettes/dplyr.html) for data manipulation.
+However, the same long-form documentation is beneficial for projects in any programming language - for instance the [`pandas` basics guide](https://pandas.pydata.org/docs/user_guide/basics.html).
 
-We've seen that docstrings can be used to describe individual functional code elements.
+We've seen that [docstrings](docstrings) can be used to describe individual functional code elements.
 Vignettes provide a demonstration of the intended use for these classes and functions, in a realistic context.
 This can help users to understand how different code elements interact, and how they might use your code in their own program.
 
 Another good example is this vignette describing [how to design vignettes](http://r-pkgs.had.co.nz/vignettes.html) in Rmarkdown.
 You can produce this type of documentation in any format, though Rmarkdown is particularly effectively at combining sections of code, code outputs and descriptive text.
 
-You might also consider providing these examples in an interactive notebook, that users can run for themselves.
+You might also consider providing examples in an interactive notebook, that users can run for themselves.
+
 
 ## Versioning ★★☆☆☆
 

@@ -93,6 +93,10 @@ plt.plot(ten_years_price)
 
 ````
 
+```{todo}
+Add R example
+```
+
 But note that in simple cases, such as the example above, these steps may already be apparent from the code.
 
 In summary, use comments sparingly but effectively.
