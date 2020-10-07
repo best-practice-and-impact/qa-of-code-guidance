@@ -28,14 +28,14 @@ The cost of their easy to use interface and flexibility is a complete lack of qu
 
 Spreadsheets are not suitable for storage of data (or statistics production and modelling processes).
 Issues when using spreadsheets for data storage include:
-* Lack of audibility - changes to data are not recorded
-* Multiple users can't work with a single spreadsheet file at once
-* They are error prone and have no built in quality assurance
-* Files become cumbersome when they are large
-* Automatic "correction" of grammar and data type, which silently corrupts your data
-  * Converting dates to a different datetime format
-  * Converting numbers to dates
-  * Converting text to dates (e.g. [gene names that are converted to dates](https://bmcbioinformatics.biomedcentral.com/articles/10.1186/1471-2105-5-80)
+* Lack of audibility - changes to data are not recorded.
+* Multiple users can't work with a single spreadsheet file at once.
+* They are error prone and have no built in quality assurance.
+* Files become cumbersome when they are large.
+* Automatic "correction" of grammar and data type, which silently corrupts your data.
+  * Converting dates to a different datetime format.
+  * Converting numbers to dates.
+  * Converting text to dates (e.g. [gene names that are converted to dates](https://bmcbioinformatics.biomedcentral.com/articles/10.1186/1471-2105-5-80)).
 
 
 ### Databases
@@ -72,8 +72,8 @@ Other database concepts:
 
 Good practices when working with databases:
 * Use auto-generated primary keys, rather than composites of multiple fields.
-* Break your data into logical chunks (tables), to reduce redundancy in each table
-* Lock tables that should not be modified
+* Break your data into logical chunks (tables), to reduce redundancy in each table.
+* Lock tables that should not be modified.
 
 Other resources:
 * This [SQL lecture from Harvard's computer science course](https://www.youtube.com/watch?v=u5pDdEKnbKA) may be a useful introduction to working with databases from Python.
