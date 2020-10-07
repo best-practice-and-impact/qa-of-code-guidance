@@ -24,6 +24,7 @@ sphinx:
     - sphinx.ext.todo
   config:
     todo_include_todos: true
+    language: en
 
 latex:
   latex_documents:
