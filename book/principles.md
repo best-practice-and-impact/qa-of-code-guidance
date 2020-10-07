@@ -100,7 +100,7 @@ Producing analysis, such as official statistics, can be time-consuming and pains
 We need to make sure that our outputs are both accurate and timely.
 We aim to develop effective and efficient analytical workflows that are repeatable and sustainable over time.
 These workflows should follow the principles of reproducible analysis. 
-We call these [Reproducible Analytical Pipelines](https://dataingovernment.blog.gov.uk/2017/03/27/reproducible-analytical-pipeline/) (RAP).
+We call these [Reproducible Analytical Pipelines (RAP)](https://dataingovernment.blog.gov.uk/2017/03/27/reproducible-analytical-pipeline/).
 
 Reproducible analysis is still not widely practised across government.
 Many analysts use proprietary (paid-for) analytical tools like SAS or SPSS in combination with programs like Excel, Word or Acrobat to create statistical products. 
@@ -109,6 +109,9 @@ Colleagues then typically repeat parts of the process manually to quality assure
 
 This way of working is time consuming and can be frustrating, especially where the manual steps are difficult to replicate quickly. 
 These processes are also prone to error, because the input data and the outputs are not connected directly, only through the analyst’s manual intervention.
+
+In a recent case, manual data transfer and use of legacy analytical tools lead to [gross under-reporting of COVID-19 statistics](https://www.bbc.co.uk/news/technology-54423988).
+It is essential that we use appropriate, up-to-date tools for analysis.
 
 More recently, the tools and techniques available to analysts have evolved. 
 Open-source tools like Python and R have become available.
