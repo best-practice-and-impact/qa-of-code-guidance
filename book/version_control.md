@@ -293,7 +293,7 @@ You can also assign reviewers and tag (`@`) project collaborators as part of the
 
 ### Project boards
 
-Project boards offer project management features through a [Kanban board](https://en.wikipedia.org/wiki/Kanban_board) interface.
+[Project boards](https://docs.github.com/en/free-pro-team@latest/github/managing-your-work-on-github/about-project-boards) offer project management features through a [Kanban board](https://en.wikipedia.org/wiki/Kanban_board) interface.
 
 These boards can be used to track assignment and progress of specific tasks.
 This is aided by linking tasks to specific issues and pull requests.

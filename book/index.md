@@ -15,9 +15,10 @@ name: GSS_logo
 
 This guidance has been created to support analysts in government who use coding in their work. Including those who produce statistics, carry out modelling or apply data science.
 
+You can find us on:
 - Slack: [GSS](https://gov-stats-service.slack.com) and [Gov Data Science](https://govdatascience.slack.com)
 - Twitter: [GSS Good Practice Team](https://twitter.com/gssgoodpractice) and [UK GSS](https://twitter.com/ukgss)
-- Email us: [gsshelp@statistics.gov.uk](mailto:gsshelp@statistics.gov.uk)
+- Email: [gsshelp@statistics.gov.uk](mailto:gsshelp@statistics.gov.uk)
 
 
 ## Structure of the book
