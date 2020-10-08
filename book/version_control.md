@@ -67,12 +67,15 @@ The following sections describe useful concepts for using Git to version control
 We use examples of Git commands throughout, but do not provide detailed descriptions of Git usage.
 If you're not yet familiar with using Git, you should first look into introductory training.
 
-Useful training resources for this are:
+```{admonition} Key Learning
+:class: admonition-learning
+
+Useful training resources for learning Git are:
 * [Intro to Git](https://learninghub.ons.gov.uk/course/view.php?id=532) - the GSS Analytical Learning course (GSS members only)
 * The [Pro Git book](https://git-scm.com/book/en/v2) - starting with Git Basics
 * Software Carpentry [Version Control with Git](https://swcarpentry.github.io/git-novice/) - an applied project
 * Interactive online training with [Katacoda](https://www.katacoda.com/courses/git) or [Learn Git Branching](https://learngitbranching.js.org/)
-
+```
 
 ### Git Commands
 

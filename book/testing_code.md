@@ -20,6 +20,8 @@ Key reasons for testing your code include:
 * Profiling performance - tests can be used to report or flag poor performance (e.g. modelling)
 * Improving code structure - well-structured code is easier to write tests for, so testing incentivises good code structure
 
+Testing is crucial to assuring quality in your code and will also increase efficiency in development of your code.
+
 
 ## What to test ★☆☆☆☆
 
@@ -56,11 +58,11 @@ We'll describe two useful ways of reducing the burden of writing and maintaining
 
 The examples in this section use these testing frameworks:
 * `pytest` for Python
-* `{testthat}` for R
+* `testthat` for R
 
 Other common frameworks, which have a Class-based focus, are:
 * `unittest` built into Python
-* `{Runit}` for R
+* `Runit` for R
 
 
 ```{todo}
@@ -131,6 +133,8 @@ In order of increasing scale, the main layers of testing covered here will be:
 * Integration testing - assuring that multiple units interact with each other as expected
 * End-to-end or system testing - verifying that a complete system meets its requirements
 
+Time taken to develop and run individual tests roughly increases down this list.
+
 [Acceptance testing](https://en.wikipedia.org/wiki/Acceptance_testing) is often considered as additional level, but is not covered here.
 
 The following sections will climb through these layers of testing.
@@ -149,6 +153,13 @@ Lots of content needed below
 
 ## Unit Testing ★★☆☆☆
 
+
+```{admonition} Key Learning
+:class: admonition-learning
+
+You should follow the [Introduction to Unit Testing course](https://learninghub.ons.gov.uk/enrol/index.php?id=539) (GSS only) for applied examples in Python and R.
+The course also covers writing and documenting functions, and error handling.
+```
 
 <!-- 
 ````{tabs}
@@ -170,16 +181,7 @@ Lots of content needed below
 ## End-to-end Testing ★★★☆☆
 
 
-## Reducing Testing Effort
-
-
-### Parametrization
-
-
-Reference material:
-* [`pytest` Parametrize mark](https://docs.pytest.org/en/stable/parametrize.html) documentation
-* [`{testthat}` Fixture](https://testthat.r-lib.org/articles/test-fixtures.html) documentation
-
+## Reducing repetition in tests
 
 ### Fixtures
 
@@ -198,6 +200,17 @@ Or perhaps, you need to ensure that changes are undone after each test is comple
 Reference material:
 * [`pytest` Fixture](https://docs.pytest.org/en/stable/fixture.html) documentation
 * [`{testthat}` Fixture](https://testthat.r-lib.org/articles/test-fixtures.html) documentation
+
+
+### Parametrization
+
+You might also find that similar steps are taken when testing multiple combinations of inputs and outputs.
+Parameterization allows us to spe
+
+
+
+Reference material:
+* [`pytest` Parametrize mark](https://docs.pytest.org/en/stable/parametrize.html) documentation
 
 
 ## Testing in multiple environments ★★★☆☆

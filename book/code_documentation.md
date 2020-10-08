@@ -44,27 +44,14 @@ For example, explaining to other analysts/developers why a section of your code 
 This type of comment may help to clarify your choice of logic, without needing to describe the individual steps taken.
 Comments explaining **why** you made programming choices will help yourself and other developers to understand your intentions.
 
-````{tabs}
-
-```{code-tab} py
+```{code-block}
 # Tried solution X, but Y worked better because of Z
 
 # Don't use function X here, because of Y
 
 # Temporary work around for bug in function X
-# TODO: fix function X
+# TODO: fix function X, so that Y
 ```
-
-```{code-tab} r R
-# Tried solution X, but Y worked better because of Z
-
-# Don't use function X here, because of Y
-
-# Temporary work around for bug in function X
-# TODO: fix function X
-```
-
-````
 
 Comments can also be used effectively to divide long sections of code into sub-sections that relate to their overall functionality.
 For example, an analysis script might be broken down into sections that describe each part of the analysis process:

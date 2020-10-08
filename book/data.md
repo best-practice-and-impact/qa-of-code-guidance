@@ -56,13 +56,23 @@ This allows you to store data with minimal duplication within a table, but quick
 Relational DBMS are called RDBMS.
 
 Most DBMS use structured query language (SQL) to communicate with databases.
+
+```{admonition} Key Learning
+:class: admonition-learning
+
 You might find this [foundations of SQL (GSS only course)](https://learninghub.ons.gov.uk/enrol/index.php?id=529) or [w3schools SQL tutorials](https://www.w3schools.com/sql/default.asp) useful for learning the basics of SQL.
+```
 
 Common analysis tools can interface with databases using SQL packages, or those which provide an object-relational mapping (ORM).
 An ORM is non-SQL-based interface to connect to a database.
 They are often user-friendly, but may not support all of the functionality that SQL offers.
+
+```{admonition} Key Learning
+:class: admonition-learning
+
 This guide covers [Python SQL libraries](https://realpython.com/python-sql-libraries/) in detail.
 While this Software Carpentry course covers [SQL databases and R](http://datacarpentry.org/R-ecology-lesson/05-r-and-databases.html).
+```
 
 Other database concepts:
 * Schema - a blueprint that describes the field names and types for a table, including any other rules (constraints).
@@ -70,7 +80,7 @@ Other database concepts:
 * View - a virtual table that provides a quick way to look at part of your database, defined by a stored query.
 * Indexes - data structures that can increase the speed of particular queries.
 
-Good practices when working with databases:
+Good practices when working with databases include:
 * Use auto-generated primary keys, rather than composites of multiple fields.
 * Break your data into logical chunks (tables), to reduce redundancy in each table.
 * Lock tables that should not be modified.

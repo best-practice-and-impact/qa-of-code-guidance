@@ -9,6 +9,9 @@ Before reading this chapter, you would benefit from having an understanding of c
 This includes assigning and using variables, and using functions and classes.
 
 
+```{admonition} Key Learning
+:class: admonition-learning
+
 You might look to these sources for introductory learning:
 * Introduction to [Python](https://learninghub.ons.gov.uk/enrol/index.php?id=536) and [R](https://learninghub.ons.gov.uk/enrol/index.php?id=538) (GSS only)
 * Official Python [Getting Started Guide](https://www.python.org/about/gettingstarted/)
@@ -27,6 +30,7 @@ These resources cover more advanced topics:
 * [Advanced R](https://adv-r.hadley.nz/index.html)
 * Harvard University's courses on [Python](https://online-learning.harvard.edu/subject/python) and [R](https://online-learning.harvard.edu/subject/r)
 
+```
 
 ## Motivation 
 

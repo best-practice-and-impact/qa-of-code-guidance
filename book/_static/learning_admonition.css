@@ -1,0 +1,5 @@
+.admonition-learning p.admonition-title::before {
+    content: "\f5fc";
+    left: .45rem;
+    top: .5rem;
+}
