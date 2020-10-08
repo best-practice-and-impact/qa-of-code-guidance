@@ -151,6 +151,50 @@ Lots of content needed below
 
 ```
 
+
+## Reducing repetition in tests ★★☆☆☆
+
+Repetitive test code violates the "Don't repeat yourself" rule.
+Code is much easier to maintain when it is reusable and is only implemented once.
+
+
+### Fixtures
+
+As your test suite grows, you might notice that many of your test use similar code to prepare your tests or to clean up after each test has run.
+You're be right to be unnerved by this, especially if "Don't Repeat Yourself" comes to mind.
+
+Fixtures help us to avoid this form of repetition in our tests.
+You define your test preparation and clean up within a function, then the fixture carries out these steps consistently for each function that it is used with. 
+
+In Class-based testing frameworks, these functions tend to be separated into `SetUp` and `TearDown` functions.
+These are similarly set to run before and after each test, respectively.
+
+Fixtures can be especially useful when setting up a test object takes a large amount of time or resource.
+Or perhaps, you need to ensure that changes are undone after each test is complete.
+
+Reference material:
+* [`pytest` Fixture](https://docs.pytest.org/en/stable/fixture.html) documentation
+* [`{testthat}` Fixture](https://testthat.r-lib.org/articles/test-fixtures.html) documentation
+
+
+### Parametrization
+
+You might also find that similar steps are taken when testing multiple combinations of inputs and outputs.
+Parameterization allows us to reduce repetition in our code, in a similar way to reusable functions.
+We specify the pairs of inputs and expected outputs, so that our testing tool can repeat a test for each scenario.
+
+Note that this approach is equivalent to looping to apply a test function over multiple inputs and expected outputs.
+However, using functionality from test packages may improve efficiency and the detail of test reports.
+
+In `pytest`, this can be achieved using the [Parametrize mark](https://docs.pytest.org/en/stable/parametrize.html).
+
+In R, the `patrick` package extends `testthat` to provide a [`with_parameters_test_that`](https://rdrr.io/cran/patrick/man/with_parameters_test_that.html) function to achieve this.
+
+```{todo}
+Add examples of parametrization
+```
+
+
 ## Unit Testing ★★☆☆☆
 
 
@@ -177,40 +221,18 @@ The course also covers writing and documenting functions, and error handling.
 
 ## Integration Testing ★★★☆☆
 
+Your process likely involves multiple units working together to perform a high level task.
+Assuring that individual units work as expected, using unit testing, does not guarantee that multiple units interact with one another as expected.
+
+Integration tests incorporate two or more units, so check that they work together correctly.
+
 
 ## End-to-end Testing ★★★☆☆
 
-
-## Reducing repetition in tests
-
-### Fixtures
-
-As your test suite grows, you might notice that many of your test use similar code to prepare your tests or to clean up after each test has run.
-You're be right to be unnerved by this, especially if "Don't Repeat Yourself" comes to mind.
-
-Fixtures help us to avoid this form of repetition in our tests.
-You define your test preparation and clean up within a function, then the fixture carries out these steps consistently for each function that it is used with. 
-
-In Class-based testing frameworks, these functions tend to be separated into `SetUp` and `TearDown` functions.
-These are similarly set to run before and after each test, respectively.
-
-Fixtures can be especially useful when setting up a test object takes a large amount of time or resource.
-Or perhaps, you need to ensure that changes are undone after each test is complete.
-
-Reference material:
-* [`pytest` Fixture](https://docs.pytest.org/en/stable/fixture.html) documentation
-* [`{testthat}` Fixture](https://testthat.r-lib.org/articles/test-fixtures.html) documentation
-
-
-### Parametrization
-
-You might also find that similar steps are taken when testing multiple combinations of inputs and outputs.
-Parameterization allows us to spe
-
-
-
-Reference material:
-* [`pytest` Parametrize mark](https://docs.pytest.org/en/stable/parametrize.html) documentation
+As the name suggests, these tests cover the entire process.
+These tests are much slower to run and can take longer to develop for complex processes.
+Having at least one end-to-end test for your process will ensure that the high-level specification of your code is met.
+This should validate that your user requirements are met.
 
 
 ## Testing in multiple environments ★★★☆☆
