@@ -13,6 +13,7 @@ Analysis in programming makes each of these principles easier to fulfil in most 
 ---
 width: 50%
 name: repro_stack
+alt: Founding principles of good analysis.
 ---
 Founding principles of good analysis
 ```
@@ -33,6 +34,7 @@ The secondary assurances of peer review, rigorous testing, and validity are seco
 ---
 width: 60%
 name: reproducibility_matrix
+alt: Defining reproducibility as getting the same result when using the same analysis on the same data.
 ---
 Defining reproducibility, from [The Turing Way](https://the-turing-way.netlify.app/reproducible-research/overview/overview-definitions.html)
 ```
@@ -110,12 +112,11 @@ Colleagues then typically repeat parts of the process manually to quality assure
 This way of working is time consuming and can be frustrating, especially where the manual steps are difficult to replicate quickly. 
 These processes are also prone to error, because the input data and the outputs are not connected directly, only through the analyst’s manual intervention.
 
-In a recent case, manual data transfer and use of legacy analytical tools lead to [gross under-reporting of COVID-19 statistics](https://www.bbc.co.uk/news/technology-54423988).
-It is essential that we use appropriate, up-to-date tools for analysis.
-
 More recently, the tools and techniques available to analysts have evolved. 
 Open-source tools like Python and R have become available.
 Coupled with version control and software management platforms like git and git services have made it possible to develop automatic, streamlined processes, accompanied by a full audit trail.
+It is essential that we use appropriate, up-to-date tools for analysis.
+In a recent case, use of legacy analytical tools lead to [under-reporting of COVID-19 statistics](https://www.bbc.co.uk/news/technology-54423988).
 
 RAP was first piloted in the Government Statistical Service in 2017 by analysts in the Department for Digital, Culture, Media & Sport (DCMS) and the Department for Education (DfE). 
 They collaborated with data scientists from the Government Digital Service (GDS) to automate the production of statistical bulletins.

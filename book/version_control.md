@@ -19,6 +19,7 @@ Without automated version control, we commonly see:
 ---
 width: 30%
 name: file_names
+alt: Comic demonstrating poor file naming, like "Untitled 138 Copy.docx".
 ---
 Documents, from [xkcd](https://xkcd.com/1459/)
 ```
@@ -168,14 +169,6 @@ Regularly `commit`ing changes using Git helps us to create a thorough audit trai
 However, there may be discrete points in the history of the project that we want to mark for easy future reference.
 Let's face it, hashes like `121b5b4` don't exactly roll of the tongue.
 
-```{figure} https://i.stack.imgur.com/yRIIc.png
----
-width: 80%
-name: release_image
----
-From [Imgur](https://i.stack.imgur.com/yRIIc.png)
-```
-
 Tags can be created in Git, to reference a specific point in the projects history.
 A tag essentially acts as an alias for a commit hash.
 You might use tags, for example, to mark a particular model version or a new software version to be released.
@@ -246,14 +239,6 @@ You can then make modifications on this copy, without affecting the original rep
 You might want to do this because you:
 * Would like to contribute to a repository, but are not added to the repo as a collaborator
 * Would like to make changes to the project for your own use
-
-```{figure} https://camo.githubusercontent.com/0d56371e0d1dd02c072aa6c782275bdddedfa179/687474703a2f2f692e696d6775722e636f6d2f6833757477494b2e706e67
----
-width: 30%
-name: fork
----
-Fork me on GitHub banner, commonly seen on project documentation
-```
 
 Note that forks do not automatically synchronise with the original repo.
 This means that changes to the original repo after you create a fork need to be manually synchronised if you want to include them in your repo.
@@ -362,6 +347,7 @@ This mode of release provides an extra opportunity for discussion and quality as
 ---
 width: 75%
 name: gitflow
+alt: Branching structure when using the gitflow workflow. Features are branched from Develop, which is branched from Master.
 ---
 Branching diagram to demonstrate gitflow, from [Atlassian](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow).
 ```
@@ -383,6 +369,7 @@ This workflow might be more suited to projects with rapid development cycles.
 ---
 width: 75%
 name: github_flow
+alt: Branching structure when using the GitHub flow workflow. Features branch directly from Master.
 ---
 Branching diagram to demonstrate GitHub, from [Programster's blog post of git workflows](https://blog.programster.org/git-workflows).
 ```

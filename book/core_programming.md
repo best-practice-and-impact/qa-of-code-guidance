@@ -36,8 +36,8 @@ Code is read more often than it is written.
 -- Guido van Rossum (creator of Python)
 ```
 
-You can't be available and responsible for long term maintenance of every piece of code that you write. 
-In the future, others will inevitably need to use and adapt your code.
+You can't be responsible for long term maintenance of every piece of code that you write. 
+In the future, others will inevitably need to understand, use and adapt your code.
 It is important that other programmers can quickly and easily understand the task that your code performs.
 Many programs perform a task correctly, but are deemed to be "black boxes" because of the barrier to understanding them.
 It is your responsibility to avoid putting this barrier in place.
@@ -48,7 +48,6 @@ Good code helps you with these ambitions.
 
 This chapter highlights good coding practices that will improve the readability, and therefore maintainability, of your code.
 However, if your code is well-tested, documented, and reviewed then you have already reached your goal and don't need to add more complexity to your project.
-
 
 
 ## Modular code ★☆☆☆☆
@@ -68,6 +67,7 @@ A few code abstractions are outlined below, which will be useful for understandi
 ---
 width: 50%
 name: function_fig
+alt: Demonstrating that a mathematical function takes inputs and returns outputs, given then process of the function.
 ---
 Visual representation of a function, from [Wikipedia Functions (mathematics)](https://en.wikipedia.org/wiki/Function_(mathematics))
 ```
@@ -79,12 +79,13 @@ Visual representation of a function, from [Wikipedia Functions (mathematics)](ht
     - the basis of object-oriented programming (OOP)
 
 
-```{figure} ./_static/class_pikachu.png
+```{figure} ./_static/class_car.png
 ---
 width: 70%
-name: pikachu_class
+name: car_class
+alt: Demonstrating that classes have attributes and methods.
 ---
-Demonstration of a Pokémon class, with an example object (instance of the class)
+Demonstration of a Car class, with an example object (instance of the class)
 ```
 
 - Scripts
@@ -167,6 +168,7 @@ Using single letters to name variables is suitable when they are representing we
 ---
 width: 40%
 name: gandalf
+alt: Gandalf the wizard saying that he can't remember writing this code.
 ---
 Gandalf regrets writing poor quality code
 ```
@@ -428,6 +430,7 @@ In any case, use your best judgement.
 ---
 width: 80%
 name: code_quality
+alt: Comic strip describing a brutal code review.
 ---
 Code Quality, from [xkcd](https://xkcd.com/1513/)
 ```
@@ -576,7 +579,24 @@ The intended functionality should be reflected by the functions name.
 ````{tabs}
 
 ```{code-tab} py
+def get_odd(numbers):
+    odd_numbers = []
+    for number in first_ten_numbers:
+        if number % 2 == 1:
+        odd_first_ten_numbers.append(number)
+    return odd_numbers
 
+first_ten_numbers = 1:10
+odd_first_ten_numbers = get_odd(first_ten_numbers)
+
+second_ten_numbers = 11:20
+odd_second_ten_numbers = get_odd(second_ten_numbers)
+
+third_ten_numbers = 21:30
+odd_third_ten_numbers = get_odd(third_ten_numbers)
+```
+
+```{code-tab} r R
 get_odd <- function(numbers) {
     odd_numbers <- c()
     for (number in numbers) {
@@ -608,24 +628,6 @@ second_ten_numbers = list(range(20, 21))
 odd_second_ten_numbers = get_odd(second_ten_numbers)
 
 third_ten_numbers = list(range(20, 21))
-odd_third_ten_numbers = get_odd(third_ten_numbers)
-```
-
-```{code-tab} r R
-def get_odd(numbers):
-    odd_numbers = []
-    for number in first_ten_numbers:
-        if number % 2 == 1:
-        odd_first_ten_numbers.append(number)
-    return odd_numbers
-
-first_ten_numbers = 1:10
-odd_first_ten_numbers = get_odd(first_ten_numbers)
-
-second_ten_numbers = 11:20
-odd_second_ten_numbers = get_odd(second_ten_numbers)
-
-third_ten_numbers = 21:30
 odd_third_ten_numbers = get_odd(third_ten_numbers)
 ```
 
@@ -799,7 +801,7 @@ if coconut_count >= 0:
 coconut_count = 0
 
 # Explicitly only print if more than 0
-if (coconut_count >= 0){
+if (coconut_count >= 0) {
     print("There are " + coconut_count + " coconuts!")
 }
 ```
@@ -850,6 +852,7 @@ Within the section of you software that is responsible for taking payment, you m
 ---
 width: 80%
 name: separation_of_concerns
+alt: Representation of concerns and responsibilities within a piece of software.
 ---
 Representation of concerns and responsibilities within a piece of software
 ```

@@ -82,6 +82,9 @@ Other resources:
 
 ## Documenting data
 
+```{todo}
+Add content for documenting and versioning data
+```
 
 
 ## Data versioning
