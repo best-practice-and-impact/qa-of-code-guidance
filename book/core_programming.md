@@ -307,11 +307,11 @@ prepared_potato = peel_potato("potato")
 
 ```{code-tab} r R
 peel_potato <- function(vegetable) {
-    if (vegetable == "potato") {
-        "peeled_potato"
-    } else {
-        stop("That's not a potato!")
-    }
+  if (vegetable == "potato") {
+    "peeled_potato"
+  } else {
+    stop("That's not a potato!")
+  }
 }
 
 prepared_potato = peel_potato("potato")
@@ -378,10 +378,10 @@ fast_car.drive()
 
 ```{code-tab} r R (S3 class)
 drive <- function(x) {
-            UseMethod("drive", x)
+  UseMethod("drive", x)
 }
 drive.SportsCar <- function(x) {
-            print("VROOOOOOM!")
+  print("VROOOOOOM!")
 }
 
 
@@ -393,16 +393,16 @@ drive(fast_car)
 
 ```{code-tab} r R (S4 class)
 setClass(
-    "SportsCar",
-    slots = list(colour = "character")
+  "SportsCar",
+  slots = list(colour = "character")
 )
 drive <- function(object) {
-    print("VROOOOM!")
+  print("VROOOOM!")
 }
 setMethod(
-    "drive",
-    signature("SportsCar"),
-    function(object) {print("VROOOOM!")}
+  "drive",
+  signature("SportsCar"),
+  function(object) {print("VROOOOM!")}
 )
 
 
@@ -541,26 +541,26 @@ for number in third_ten_numbers:
 first_ten_numbers = 1:10
 odd_first_ten_numbers <- c()
 for (number in first_ten_numbers) {
-    if (number %% 2 == 1) {
-        odd_first_ten_numbers <- c(odd_first_ten_numbers, number)
-    }
+  if (number %% 2 == 1) {
+    odd_first_ten_numbers <- c(odd_first_ten_numbers, number)
+  }
 }
-    
+
 
 second_ten_numbers = 11:20
 odd_second_ten_numbers = c()
 for (number in second_ten_numbers) {
-    if (number %% 2 == 1) {
-        odd_second_ten_numbers <- c(odd_second_ten_numbers, number)
-    }
+  if (number %% 2 == 1) {
+    odd_second_ten_numbers <- c(odd_second_ten_numbers, number)
+  }
 }
 
 third_ten_numbers = 21:30
 odd_third_ten_numbers = c()
 for (number in third_ten_numbers) {
-    if (number %% 2 == 0) {
-        odd_third_ten_numbers <- c(odd_third_ten_numbers, number)
-    }
+  if (number %% 2 == 0) {
+    odd_third_ten_numbers <- c(odd_third_ten_numbers, number)
+  }
 }
 ```
 
@@ -602,28 +602,31 @@ odd_third_ten_numbers = get_odd(third_ten_numbers)
 
 ```{code-tab} r R
 get_odd <- function(numbers) {
-    odd_numbers <- c()
-    for (number in numbers) {
-        if (number %% 2 == 1) {
-            odd_numbers <- c(odd_numbers, number)
-        }
+  odd_numbers <- c()
+  for (number in numbers) {
+    if (number %% 2 == 1) {
+      odd_numbers <- c(odd_numbers, number)
     }
-    return(odd_numbers)
+  }
+  return(odd_numbers)
 }
 
 first_ten_numbers = 1:10
 odd_first_ten_numbers <- c()
 for (number in first_ten_numbers) {
-    if (number %% 2 == 1) {
-        odd_first_ten_numbers <- c(odd_first_ten_numbers, number)
-    }
+  if (number %% 2 == 1) {
+    odd_first_ten_numbers <- c(odd_first_ten_numbers, number)
+  }
 }
-def get_odd(numbers):
-    odd_numbers = []
-    for number in first_ten_numbers:
-        if number % 2 == 1:
-        odd_first_ten_numbers.append(number)
-    return odd_numbers
+get_odd <- function(numbers) {
+  odd_numbers = []
+  for (number in first_ten_numbers) {
+    if (number % 2 == 1) {
+      odd_first_ten_numbers.append(number)
+    }
+  }
+  return odd_numbers
+}
 
 first_ten_numbers = list(range(1, 11))
 odd_first_ten_numbers = get_odd(first_ten_numbers)
@@ -687,45 +690,45 @@ odd_numbers = get_numbers_with_parity(list(range(1, 11), "odd"))
 ```{code-tab} r R
 # Simple and modular
 is_odd <- function(number) {
-    if (number %% 2 == 1){
-        TRUE
-    } else {
-        FALSE
-    }
+  if (number %% 2 == 1) {
+    TRUE
+  } else {
+    FALSE
+  }
 }
 
-get_odd <- function(numbers){
-    odd_numbers = c()
-    for (number in numbers) {
-        if (is_odd(number)) {
-           odd_numbers = c(odd_numbers, number) 
-        }
+get_odd <- function(numbers) {
+  odd_numbers = c()
+  for (number in numbers) {
+    if (is_odd(number)) {
+      odd_numbers = c(odd_numbers, number)
     }
-    return(odd_numbers)
+  }
+  return(odd_numbers)
 }
 
-get_even <- function(numbers){
-    even_numbers = c()
-    for (number in numbers) {
-        if (!is_odd(number)) {
-           even_numbers = c(even_numbers, number) 
-        }
+get_even <- function(numbers) {
+  even_numbers = c()
+  for (number in numbers) {
+    if (!is_odd(number)) {
+      even_numbers = c(even_numbers, number)
     }
-    return(even_numbers)
+  }
+  return(even_numbers)
 }
 
 
 # More concise, but also more complex - not always best
 get_numbers_with_parity <- function(numbers, parity) {
-    numbers_with_parity = c()
-    if (parity == "odd") {
-        remainder = 1
-    } else if (parity == "even") {
-        remainder = 0
-    } else {
-        stop("parity must be 'odd' or 'even'")
-    }
-    numbers[numbers %% 2 == remainder]
+  numbers_with_parity = c()
+  if (parity == "odd") {
+    remainder = 1
+  } else if (parity == "even") {
+    remainder = 0
+  } else {
+    stop("parity must be 'odd' or 'even'")
+  }
+  numbers[numbers %% 2 == remainder]
 }
 odd_numbers <- get_numbers_with_parity(1:10, "odd")
 ```
@@ -778,7 +781,7 @@ coconut_count <- FALSE
 
 # Relying on falseness of FALSE
 if (coconut_count) {
-    print("There are " + coconut_count + " coconuts!")
+  print("There are " + coconut_count + " coconuts!")
 } 
 ```
 
@@ -806,7 +809,7 @@ coconut_count = 0
 
 # Explicitly only print if more than 0
 if (coconut_count >= 0) {
-    print("There are " + coconut_count + " coconuts!")
+  print("There are " + coconut_count + " coconuts!")
 }
 ```
 

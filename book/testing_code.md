@@ -115,12 +115,12 @@ In it's simplest form, a test asserts that an expectation is true:
 ````{tabs}
 
 ```{code-tab} py
-   assert 1 == 1
+assert 1 == 1
 ```
 
 ```{code-tab} r R
-   if (1 != 1):
-     stop("Something has gone terribly wrong")
+if (1 != 1):
+  stop("Something has gone terribly wrong")
 ```
 
 ````

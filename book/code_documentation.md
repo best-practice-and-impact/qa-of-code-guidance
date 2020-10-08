@@ -145,7 +145,6 @@ def add_to_each(numbers, add):
 ```
 
 ```{code-tab} r R
-
 #' Add a number to each element of a vector
 #'
 #' @param numbers A vector of numbers
@@ -159,12 +158,11 @@ def add_to_each(numbers, add):
 #'
 #' @export
 add_to_each <- function(numbers, add) {
-    if (!(is.vector(numbers) & is.numeric(numbers)){
-        stop("'numbers' must be a numeric vector.")
-    }
-    numbers + add
+  if (!(is.vector(numbers) & is.numeric(numbers)) {
+    stop("'numbers' must be a numeric vector.")
+  }
+  numbers + add
 }
-
 ```
 
 ````
