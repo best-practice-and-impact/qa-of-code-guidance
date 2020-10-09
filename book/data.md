@@ -5,7 +5,7 @@ This requires suitable storage of the data, with any relevant documentation.
 And versioning of the data where it may change over time.
 
 
-## Data storage
+## Data storage ★☆☆☆☆
 
 It is assumed that most data are now stored digitally.
 
@@ -90,7 +90,7 @@ Other resources:
 * A guide to [using the `sqldf` R package](https://dept.stat.lsa.umich.edu/~jerrick/courses/stat701/notes/sql.html).
 
 
-## Documenting data
+## Documenting data ★☆☆☆☆
 
 Without documentation, it is difficult to understand and work with new dataset.
 
@@ -137,7 +137,7 @@ An IAR may include:
 GOV.UK provides [IAR templates](https://www.gov.uk/government/publications/information-asset-register) that you might use in your organisation.
 
 
-## Data versioning
+## Data versioning ★★☆☆☆
 
 A key requirement for reproducing our analysis is the ability to identify the data that we used.
 Data change over time;
@@ -150,6 +150,9 @@ Whether using a primary or secondary data source, you should version and documen
 Documentation for data versions should include the reason why the version has changed.
 For example, if an open data source has been recollected, revisions have been made to existing data, or part of the data has been removed.
 
+The same considerations apply when storing outputs from your analysis.
+To maintain a complete audit trail, systems should not overwrite existing outputs but should store a new copy of each output after each run.
+
 The Python package [DVC](https://dvc.org/) provides Git-like version control of data, which can liked with the versioning of analysis code.
 You might alternatively version your data manually.
 For example, by creating new database tables or files for each new version of the data.
@@ -157,5 +160,5 @@ It must be possible to recreated previous versions of the data, for reproducibil
 As such, is important that data file versions are named uniquely, for example, using incrementing numbers and/or date of collection.
 Additionally, files should not be modified after they have been used for analysis.
 
-Finally, for this to be effective, your analysis should record the version of data used to generate each set of outputs.
+Finally, for this to be effective, your analysis should record the version of data used to generate a specified set of outputs.
 This might be documented in analysis reports or automatically logged by your code.
