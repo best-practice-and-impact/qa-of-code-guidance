@@ -114,8 +114,9 @@ These processes are also prone to error, because the input data and the outputs 
 
 More recently, the tools and techniques available to analysts have evolved. 
 Open-source tools like Python and R have become available.
-Coupled with version control and software management platforms like git and git services have made it possible to develop automatic, streamlined processes, accompanied by a full audit trail.
-It is essential that we use appropriate, up-to-date tools for analysis.
+Coupled with version control and software management platforms like Git and Git-services have made it possible to develop automatic, streamlined processes, accompanied by a full audit trail.
+
+It is essential that appropriate and up-to-date tools are available and are used for our analysis.
 In a recent case, use of legacy analytical tools lead to [under-reporting of COVID-19 statistics](https://www.bbc.co.uk/news/technology-54423988).
 
 RAP was first piloted in the Government Statistical Service in 2017 by analysts in the Department for Digital, Culture, Media & Sport (DCMS) and the Department for Education (DfE). 

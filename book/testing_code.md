@@ -203,6 +203,11 @@ Add examples of parametrization
 
 You should follow the [Introduction to Unit Testing course](https://learninghub.ons.gov.uk/enrol/index.php?id=539) (GSS only) for applied examples in Python and R.
 The course also covers writing and documenting functions, and error handling.
+
+Other resources include:
+* Hadley Wickham's [testthat: getting started with testing](https://vita.had.co.nz/papers/testthat.pdf)
+* [`pytest` getting started](https://docs.pytest.org/en/3.0.1/getting-started.html)
+* Real Python [Getting Started With Testing in Python](https://realpython.com/python-testing/)
 ```
 
 <!-- 
@@ -240,10 +245,3 @@ This should validate that your user requirements are met.
 tox/nox
 
 [rhub](https://r-hub.github.io/rhub/)?
-
-
-## Other references
-
-* Hadley Wickham's [testthat: getting started with testing](https://vita.had.co.nz/papers/testthat.pdf)
-* [`pytest` getting started](https://docs.pytest.org/en/3.0.1/getting-started.html)
-* Real Python [Getting Started With Testing in Python](https://realpython.com/python-testing/)

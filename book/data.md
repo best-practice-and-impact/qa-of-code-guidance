@@ -92,12 +92,70 @@ Other resources:
 
 ## Documenting data
 
-```{todo}
-Add content for documenting and versioning data
-```
+Without documentation, it is difficult to understand and work with new dataset.
+
+For our analysis, we should be able to quickly grasp:
+* What data is available to us?
+* How was this data collected or generated?
+* How is this data represented?
+* Has this data been validated or manipulated?
+* How am I ethically and legally permitted to use the data?
+
+This information should be created by data providers and analysts, in the form of documentation.
+
+
+### Data dictionary
+
+A data dictionary describes the contents and format of a dataset.
+
+For variables in tabular datasets, you might document:
+* a short description of what each variable represents
+* variable labels, if categorical
+* valid values or ranges, if numerical
+* representation of missing data
+* reference to the question, if survey data
+* if derived, detail how variables were obtained
+* any rules for use or processing of the data, set by the data owner
+
+See this detailed example - the [National Workforce Data Set](https://www.datadictionary.nhs.uk/data_sets/administrative_data_sets/national_workforce_data_set.html#dataset_national_workforce_data_set), from the NHS Data Model and Dictionary.
+
+Please see [UK Data Service guidance on documenting other data](https://www.ukdataservice.ac.uk/manage-data/document/data-level/tabular.aspx), including qualitative data.
+
+
+### Information Asset Register (IAR)
+
+An information asset register (IAR) documents the information assets within your organisation.
+
+This record may not contain detailed information on how to use each data source (provided by data dictionaries), but IAR's do increase visibility of data flows.
+An IAR may include:
+* the owner of each dataset
+* a high level description of the dataset
+* the reason that your organisation holds the dataset
+* how the information is stored and secured
+* the risk of information being lost or compromised
+
+GOV.UK provides [IAR templates](https://www.gov.uk/government/publications/information-asset-register) that you might use in your organisation.
 
 
 ## Data versioning
 
+A key requirement for reproducing our analysis is the ability to identify the data that we used.
+Data change over time;
+Open data and other secondary data may be revised over time or cease to be available with no notice.
+The owners of these data can't always be relied on to provide historical versions of their data.
 
+As an analyst, it is your responsibility to ensure that the exact data that you have used can be identified.
 
+Whether using a primary or secondary data source, you should version and document all changes to the data that you use.
+Documentation for data versions should include the reason why the version has changed.
+For example, if an open data source has been recollected, revisions have been made to existing data, or part of the data has been removed.
+
+The Python package [DVC](https://dvc.org/) provides Git-like version control of data, which can liked with the versioning of analysis code.
+You might alternatively version your data manually.
+For example, by creating new database tables or files for each new version of the data.
+It must be possible to recreated previous versions of the data, for reproducibility.
+As such, is important that data file versions are named uniquely, for example, using incrementing numbers and/or date of collection.
+Additionally, files should not be modified after they have been used for analysis.
+
+Finally, for this to be effective, your analysis should record the version of data used to generate each set of outputs.
+This might be documented in analysis reports or automatically logged by your code.
