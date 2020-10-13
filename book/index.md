@@ -46,6 +46,9 @@ Therefore, you should strive to apply the most appropriate practices given the r
 The principles in this book are language agnostic - as such it does not form a comprehensive learning resource and you may often need to study further resources to implement these practices.
 That said, examples and useful references are provided for **Python** and **R**, as a pair of open source languages that are commonly applied across government.
 
+Many of the learning references in this book point to the UK Statistics Authority Learning Hub, which are labelled GSS only.
+All government analysts can request an account for the Hub via [gss.capability@ons.gov.uk](mailto:gss.capability@ons.gov.uk).
+
 
 ## Accessibility statement
 
@@ -63,11 +66,13 @@ This means that you should be able to:
 We know that some parts of the guidance are not currently fully accessible:
 * tabbed content (e.g. code examples) cannot be focussed and switched using a keyboard
 
+
 ### Feedback and reporting accessibility problems
 
 We’re always looking to improve the accessibility of our guidance.
 If you find any problems not listed on this page or think that we’re not meeting accessibility requirements, please contact us by email at [gsshelp@statistics.gov.uk](mailto:gsshelp@statistics.gov.uk).
 Also please get in touch if you are unable to access any part of this guidance, or require the content in a different format.
+
 
 ### Enforcement procedure
 
