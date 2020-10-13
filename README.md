@@ -1,4 +1,4 @@
-# Quality Asssurance of Code for Analysis and Research
+# Quality Assurance of Code for Analysis and Research
 
 [![Travis build status](https://travis-ci.org/best-practice-and-impact/qa-of-coding-guidance.svg?branch=master)](https://travis-ci.org/best-practice-and-impact/qa-of-coding-guidance)
 
