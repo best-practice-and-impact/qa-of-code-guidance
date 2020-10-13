@@ -153,12 +153,15 @@ For example, if an open data source has been recollected, revisions have been ma
 The same considerations apply when storing outputs from your analysis.
 To maintain a complete audit trail, systems should not overwrite existing outputs but should store a new copy of each output after each run.
 
-The Python package [DVC](https://dvc.org/) provides Git-like version control of data, which can liked with the versioning of analysis code.
+The Python package [DVC provides Git-like version control of data](https://dvc.org/), which can linked with the versioning of analysis code.
+The [`daff` package summarises changes in tabular data files](https://github.com/paulfitz/daff), which can be integrated with Git for data versioning.
+
 You might alternatively version your data manually.
 For example, by creating new database tables or files for each new version of the data.
 It must be possible to recreated previous versions of the data, for reproducibility.
 As such, is important that data file versions are named uniquely, for example, using incrementing numbers and/or date of collection.
-Additionally, files should not be modified after they have been used for analysis.
+Additionally, file versions must not be modified after they have been used for analysis - they should be treated as read-only.
+All modifications to the data should result in new versions.
 
 Finally, for this to be effective, your analysis should record the version of data used to generate a specified set of outputs.
 This might be documented in analysis reports or automatically logged by your code.

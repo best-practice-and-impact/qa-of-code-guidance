@@ -69,7 +69,7 @@ A few code abstractions are outlined below, which will be useful for understandi
 
 ```{figure} https://upload.wikimedia.org/wikipedia/commons/3/3b/Function_machine2.svg
 ---
-width: 50%
+width: 35%
 name: function_fig
 alt: Demonstrating that a mathematical function takes inputs and returns outputs, given then process of the function.
 ---
