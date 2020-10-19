@@ -86,19 +86,12 @@ If some tests take considerably longer to run, you might want to run these less 
 Otherwise, running the entire collection of tests has the added benefit of capturing unexpected side-effects of your changes.
 For example, in part of your code that you have not directly changed.
 
-It's not easy to remember running tests at regular intervals.
+It's not easy to remember to run your tests at regular intervals.
 You're already putting effort into `commit`ing your changes to a version control system regularly.
 And you're right to think "surely this could be automated too?"
-
-```{todo}
-
-Reference CI
-
-```
-
-The most effective way of automating testing is through the use of Continuous Integration.
-This can be used to ensure that all changes to a particular project are tested.
-Additionally, it allows anyone reviewing your code to see the results of your tests.
+[Continuous integration](continuous-integration) can be used to automate testing, amongst other quality assurance measures, and can be triggered when changes are made to your remote version control repository.
+These tools can be used to ensure that all changes to a particular project are tested.
+Additionally, it allows others that are reviewing your code to see the results of your tests.
 
 An alternative to continuous integration, is using a Git hook.
 [Git hooks](https://git-scm.com/docs/githooks) are scripts which can be set to run locally at specific points in your Git workflow.
@@ -223,6 +216,9 @@ Other resources include:
 ````
 -->
 
+```{todo}
+These sections all need more content/examples.
+```
 
 ## Integration Testing ★★★☆☆
 
@@ -242,6 +238,11 @@ This should validate that your user requirements are met.
 
 ## Testing in multiple environments ★★★☆☆
 
+
+```{todo}
 tox/nox
 
 [rhub](https://r-hub.github.io/rhub/)?
+
+Though CI makes these reasonably redundant
+```

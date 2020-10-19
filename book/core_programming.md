@@ -30,6 +30,8 @@ These resources cover more advanced topics:
 * [Advanced R](https://adv-r.hadley.nz/index.html)
 * Harvard University's courses on [Python](https://online-learning.harvard.edu/subject/python) and [R](https://online-learning.harvard.edu/subject/r)
 
+Please note that non-GSS learning may not follow good practices, however, exposure a range of applied examples will still benefit your learning.
+You should compare and contrast your learning to the good practices outlined in this section.
 ```
 
 ## Motivation 
@@ -477,10 +479,11 @@ Be sure to read the documentation for any of these tools, to understand what the
 Some can be configured to ignore or detect specific types of formatting error.
 You can run multiple of these, to catch a broader range of stylistic or programmatic errors.
 
-If you're considering these tools as part of a project, see [Continuous Integration](link to continuous integration) for advice on automating them.
+If you're considering these tools as part of a project, see [Continuous Integration](continuous-integration) for advice on automating them.
 
 ```{todo}
-Add continuous integration content link
+Potentially add something around not leaving commented-out code lying around, without good reason.
+Will need to link to section on configs, as beginners sometimes use comments for parametrising code.
 ```
 
 

@@ -17,7 +17,7 @@ This can help with future work on the project, as multiple team members have the
 
 ```{todo}
 
-Needs review (lol) and more content
+Ironically needs review and more content
 
 ```
 ## What to review
@@ -40,7 +40,7 @@ You might use a review template to formalise review in your development process.
 This example is written in Markdown, so that it can be used in Git platform Pull/Merge requests:
 
 
-```{code-block} markdown
+```{code-block} md
 
 ##  Code Review
 

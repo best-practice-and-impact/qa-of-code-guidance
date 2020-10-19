@@ -92,8 +92,8 @@ For example, `use_test()` will add the directories necessary for testing using `
 Repositories or "repos" are typically project folders that are version controlled using Git or a similar version control system.
 One repository usually contains a single project.
 
-See [](vsetion_control.md) for more information.
+See [](version_control.md) for more information.
 
 ```{todo}
-Alex, any more expected here?
+Any more expected here?
 ```

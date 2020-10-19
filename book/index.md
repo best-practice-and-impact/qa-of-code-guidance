@@ -1,9 +1,7 @@
 
 # Quality Assurance of Code for Analysis and Research
 
-This is an early draft of Government Statistical Service (GSS) guidance.
-It forms part of the quality assurance guidance published by the Best Practice and Impact team, Office for National Statistics.
-
+This is an early draft of Government Statistical Service (GSS) and Analysis Function guidance, produced by the Best Practice and Impact team, Office for National Statistics.
 
 ```{figure} ./_static/GSS_logo.jpg
 ---
@@ -12,8 +10,8 @@ name: GSS_logo
 ---
 ```
 
-
-This guidance has been created to support analysts in government who use coding in their work. Including those who produce statistics, carry out modelling or apply data science.
+This guidance has been written to support analysts in government who use coding in their work.
+Including those who produce statistics, carry out modelling or apply data science.
 
 You can find us on:
 - Slack: [GSS](https://gov-stats-service.slack.com) and [Gov Data Science](https://govdatascience.slack.com)
@@ -52,7 +50,7 @@ All government analysts can request an account for the Hub via [gss.capability@o
 
 ## Accessibility statement
 
-This accessibility statement applies to the quality assurance of code guidance.
+This accessibility statement applies to the Quality Assurance of Code for Analysis and Research.
 
 The website is managed by the Best Practice and Impact division of the Office for National Statistics.
 We would like this guidance to be accessible for as many people as possible.
@@ -62,9 +60,6 @@ This means that you should be able to:
 * navigate most of the website using just a keyboard
 * navigate most of the website using speech recognition software
 * listen to most of the website using a screen reader (including the most recent versions of JAWS, NVDA and VoiceOver)
-
-We know that some parts of the guidance are not currently fully accessible:
-* tabbed content (e.g. code examples) cannot be focussed and switched using a keyboard
 
 
 ### Feedback and reporting accessibility problems

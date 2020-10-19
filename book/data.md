@@ -153,7 +153,9 @@ For example, if an open data source has been recollected, revisions have been ma
 The same considerations apply when storing outputs from your analysis.
 To maintain a complete audit trail, systems should not overwrite existing outputs but should store a new copy of each output after each run.
 
-The Python package [DVC provides Git-like version control of data](https://dvc.org/), which can linked with the versioning of analysis code.
+To automate the versioning of data, you might use the Python package [DVC, which provides Git-like version control of data](https://dvc.org/).
+This tool can also relate the data version to the version of analysis code, strongly facilitating reproducibility .
+Git can be used to version data, but you should be mindful of where the remote repository stores the data.
 The [`daff` package summarises changes in tabular data files](https://github.com/paulfitz/daff), which can be integrated with Git for data versioning.
 
 You might alternatively version your data manually.

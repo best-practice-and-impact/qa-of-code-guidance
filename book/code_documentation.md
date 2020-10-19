@@ -57,6 +57,8 @@ Comments explaining **why** you made programming choices will help yourself and 
 
 # Temporary work around for bug in function X
 # TODO: fix function X, so that Y
+
+# This section of code is commented out because of X
 ```
 
 Comments can also be used effectively to divide long sections of code into sub-sections that relate to their overall functionality.
@@ -190,6 +192,7 @@ Other useful resource include:
 
 - [Python docstring convention](https://www.python.org/dev/peps/pep-0257/)
 - Guidance for [documenting objects and functions in R](http://r-pkgs.had.co.nz/man.html)
+
 
 ## Automatic Documentation Generation ★★☆☆☆
 

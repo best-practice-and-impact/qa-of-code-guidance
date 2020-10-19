@@ -298,17 +298,22 @@ You can also assign reviewers and tag (`@`) project collaborators as part of the
 These boards can be used to track assignment and progress of specific tasks.
 This is aided by linking tasks to specific issues and pull requests.
 
+(continuous-integration)=
 ### Continuous integration and continuous deployment
 
 Continuous integration (CI) and deployment (CD) services help to automate repetitive tasks in development and operations (DevOps).
 
 GitHub provides this service via [GitHub Actions](https://github.com/features/actions).
-However, many other CI/CD provides can be integrated with GitHub projects.
+However, many other CI/CD tools can be integrated with version control platforms, including GitHub.
 Other commonly used services include:
 * Jenkins
 * Travis
 * CircleCI
 * AppVeyor
+
+```{todo}
+Simple YAML example for running tests
+```
 
 You can see a detailed example of CI/CI in practice in the `jupyter-book` project.
 A recent version of the [`jupyter-book` CI configuration](https://github.com/executablebooks/jupyter-book/blob/6fb0cbe4abb5bc29e9081afbe24f71d864b40475/.github/workflows/tests.yml) includes:
@@ -319,7 +324,8 @@ A recent version of the [`jupyter-book` CI configuration](https://github.com/exe
   * multiple operating systems
 * Reporting test coverage
 * Check that documentation builds successfully
-* Deploy a new version of the `jupyter-book` package to [PyPI](https://pypi.org/)
+* Deploy a new version of the `jupyter-book` package to [the python package index (PyPI)](https://pypi.org/)
+
 
 ## Workflows
 
