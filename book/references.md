@@ -31,9 +31,17 @@ These links detail application of good practices to machine learning.
 
 ## Miscellaneous learning
 
+* [Comparing data wrangling in Python and R](https://pandas.pydata.org/pandas-docs/stable/getting_started/comparison/comparison_with_r.html)
 * [The Unix Workbench](https://seankross.com/the-unix-workbench/) - a guide to getting started with Unix operating systems.
 * [The Missing Semester](https://www.youtube.com/channel/UCuXy5tCgEninup9cGplbiFw) - recorded computer science lectures from MIT
 * [Teaching materials for computational social science](https://github.com/collections/teaching-computational-social-science)
 * [Google Tech Dev Guide](https://techdevguide.withgoogle.com/)
 * [Packt free learning](https://www.packtpub.com/free-learning) - daily free e-books
 * [The Hitchhiker's Guide to Python](https://docs.python-guide.org/) - everything Python
+
+
+## Challenge yourself
+
+* [Project Euler](https://projecteuler.net/)
+* [Codewars](https://www.codewars.com/)
+* [Rosalind](http://rosalind.info/problems/locations/) 

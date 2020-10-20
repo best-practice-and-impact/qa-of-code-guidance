@@ -299,32 +299,119 @@ These boards can be used to track assignment and progress of specific tasks.
 This is aided by linking tasks to specific issues and pull requests.
 
 (continuous-integration)=
-### Continuous integration and continuous deployment
+### Continuous integration
 
-Continuous integration (CI) and deployment (CD) services help to automate repetitive tasks in development and operations (DevOps).
+Continuous integration (CI) describes the practice of frequently committing changes to your code.
+This subsection relates to CI tools, which primarily help to automate routine quality assurance tasks.
+These include verifying that your code successfully builds or installs and that your code tests run successfully.
+As the execution environment is defined in the CI workflow configuration, running of tests in this way should be reproducible.
 
-GitHub provides this service via [GitHub Actions](https://github.com/features/actions).
-However, many other CI/CD tools can be integrated with version control platforms, including GitHub.
-Other commonly used services include:
+Automation of routine tasks in this way reduces the effort required to merge changes onto the existing code base.
+This encourages frequent merging of small changes.
+As such, conflicts between multiple contributions should be minimal and that review of these changes is simpler.
+
+CI is often linked to:
+* Continuous delivery - ensuring that your code is fit for use after each integration
+* Continuous deployment - automatically deploying working code into production
+
+GitHub provides a CI service via [GitHub Actions](https://github.com/features/actions).
+However, many other CI tools can be integrated with version control platforms, including GitHub.
+Other commonly used tools/services include:
 * Jenkins
 * Travis
 * CircleCI
 * AppVeyor
 
-```{todo}
-Simple YAML example for running tests
+
+#### Testing example
+
+Below is an example configuration file, for use with GitHub actions.
+The `YAML` file, which is used here, is common for CI tools.
+Other CI tools may use different file types, but these likely have a similar overall structure.
+
+```
+name: Test python package
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: [3.6, 3.7, 3.8, 3.9]
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v2
+      with:
+        python-version: ${{ matrix.python-version }}
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install pytest 
+        pip install -r requirements.txt
+        
+    - name: Test with pytest
+      run: |
+        pytest
 ```
 
-You can see a detailed example of CI/CI in practice in the `jupyter-book` project.
-A recent version of the [`jupyter-book` CI configuration](https://github.com/executablebooks/jupyter-book/blob/6fb0cbe4abb5bc29e9081afbe24f71d864b40475/.github/workflows/tests.yml) includes:
+The first section of this example describes when our workflow should be run.
+In this case, we're running the CI workflow whenever code is `push`ed to the `master` branch or where any Pull Request is created.
+In the case of Pull Requests, the results of the CI workflow will be report on the request's page.
+If any of the workflow stages fail, this can block the merge of these changes onto a more stable branch.
+Subsequent commits to the source branch will trigger the CI workflow to run again.
+
+Below `jobs`, we're defining what tasks we would like to run when our workflow is triggered.
+We define what operating system we would like to run our workflow on - the Linux operating system `ubuntu` here.
+The `matrix` section under `strategy` defines parameters for the workflow.
+The workflow will be repeated for each combination of parameters supplied here - in this case the 4 latest Python versions.
+
+The individual stages of the workflow are defined under `steps`.
+`steps` typically have an informative name and run code to perform an action.
+Here `uses: actions/checkout@v2` references [existing code](https://github.com/actions/checkout) that will retrieve the code from our repo.
+The subsequent `steps` will use this code.
+The next step provides us with the a working Python version, as specified in the `matrix`.
+Then we install dependencies/requirements for our code and the `pytest` module.
+Finally, we run `pytest` to check that our code is working as expected.
+
+This workflow will report whether our test code ran successfully for each of the specified Python versions.
+
+
+#### Documentation example
+
+This book uses the following GitHub Actions configuration.
+
+```{todo}
+Include content from projects CI config
+```
+
+Our workflow checks that changes to the book's contents to not prevent the book from building HTML.
+Each time a change is merged onto the `master` branch of this book's project, the HTML that you are reading now is automatically re-deployed.
+You might use a similar approach to deploy your code's documentation.
+
+
+#### Complex example
+
+You can see a detailed example of CI in practice in the `jupyter-book` project.
+A recent version of the [`jupyter-book` CI workflow](https://github.com/executablebooks/jupyter-book/blob/6fb0cbe4abb5bc29e9081afbe24f71d864b40475/.github/workflows/tests.yml) includes:
 * Checking code against style guidelines, using [pre-commit](https://pre-commit.com/)
 * Running code tests over
   * a range of Python versions
   * multiple versions of specific dependencies (`sphinx` here)
   * multiple operating systems
 * Reporting test coverage
-* Check that documentation builds successfully
-* Deploy a new version of the `jupyter-book` package to [the python package index (PyPI)](https://pypi.org/)
+* Checking that documentation builds successfully
+* Deploying a new version of the `jupyter-book` package to [the python package index (PyPI)](https://pypi.org/)
 
 
 ## Workflows

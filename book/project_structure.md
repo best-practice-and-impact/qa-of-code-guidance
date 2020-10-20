@@ -38,6 +38,26 @@ It also runs the code with a clean environment, not containing variables or othe
 Content for clean directories
 ```
 
+### Filenames
+
+Much like names of elements in your code, good filenames inform you of the purpose of a file.
+Within a project, you should follow a standard file naming convention.
+Good naming practices improve your ability to locate and identify the contents of files.
+
+Good naming conventions include:
+* Consistency, above all else
+* Short but descriptive and human readable names
+* No spaces, for machine readability - underscores (`_`) or dashes (`-`) are preferred
+* Use of consistent date formatting (e.g. [YYYY-MM-DD](https://en.wikipedia.org/wiki/ISO_8601))
+* Padding the left side of numbers with zeros to maintain order -  e.g. `001` instead of `1`. The number of zeros should reflect the expected number of files.
+
+When using dates or times to name files, start with the largest unit of time and work towards the smallest.
+This will ensure that the default ordering of these files is in chronological order.
+This makes it much easier to find the earliest or latest files.
+
+You start filenames with numbers to order files, if ordering is logical and informative.
+For example, where the `01_introduction` should come before `02_methodology` and `03_results`.
+
 
 ### Analysis is a DAG
 
