@@ -1,4 +1,4 @@
-# Code Documentation
+# Code documentation
 
 ```{epigraph}
 Documentation is a love letter that you write to your future self.
@@ -11,8 +11,8 @@ Documentation is a love letter that you write to your future self.
 
 A common form of documentation is code comments, which are found throughout source code files.
 
-Comments are useful for explaining the logic behind sections of your code.
-However, excessive use of code comments often leads to redundancy and can ironically make reading your code more effortful.
+Comments are essential for explaining the logic behind sections of your code.
+However, excessive use of code comments often leads to redundancy and can ironically make your code harder to read.
 
 ````{tabs}
 
@@ -43,12 +43,12 @@ total <- number_1 + number_2
 Comments that describe exactly **what** is occurring in the code, as above, are often not necessary.
 They may be redundant, if [good naming practices](naming) are followed to self-document the steps that occur in your code.
 A developer or user can read your code and other more appropriate forms of documentation (see [Docstrings]) for more detailed description of the logic behind your code.
-If it is difficult to understand your code without comments, then this can be an indicator that your code is overly complex and might benefit from being refactored into smaller units.
+If it is difficult to understand your code without comments, this can indicate that your code is overly complex and might benefit from being refactored into smaller units.
 
 Comments can be used more effectively to explain **why** you might have written code in a certain way.
-For example, explaining to other analysts/developers why a section of your code doesn't follow standard practices, perhaps because the typical method didn't work.
-This type of comment may help to clarify your choice of logic, without needing to describe the individual steps taken.
-Comments explaining **why** you made programming choices will help yourself and other developers to understand your intentions.
+For example, you might explain to other analysts and developers why a section of your code doesn't follow standard practices, perhaps because the typical method didn't work.
+This type of comment can help to clarify your choice of logic, without needing to describe the individual steps taken.
+Comments explaining **why** you made programming choices will help your future self and other developers to understand your intentions.
 
 ```{code-block}
 # Tried solution X, but Y worked better because of Z
@@ -153,18 +153,22 @@ def add_to_each(numbers, add):
 ```
 
 ```{code-tab} r R
-#' Add a number to each element of a vector
+#'@title add_to_each
 #'
-#' @param numbers A vector of numbers
-#' @param add A float or integer to be added to each element of \code{numbers}
+#'@description Add a number to elements of a vector
 #'
-#' @return \code{numbers} with \code{add} added to each element
+#'@details Cycles through a vector of numbers and adds a user-specified number to each element.
 #'
-#' @seealso \code{\link{add}}
-#' @examples
+#'@param numbers A vector of numbers
+#'@param add A float or integer to be added to each element of \code{numbers}
+#'
+#'@return \code{numbers} with \code{add} added to each element
+#'
+#'@seealso \code{\link{add}}
+#'@examples
 #' add_to_each(list(1, 2, 3), 5)
 #'
-#' @export
+#'@export
 add_to_each <- function(numbers, add) {
   if (!(is.vector(numbers) & is.numeric(numbers)) {
     stop("'numbers' must be a numeric vector.")
@@ -188,13 +192,13 @@ You might find that writing function, class or package descriptions prior to wri
 The documentation should be a specification of what the code is expected to do.
 As documentation tends to be user-focussed, this approach helps you to keep the user's needs in mind when developing code.
 
-Other useful resource include:
+Other useful resources include:
 
 - [Python docstring convention](https://www.python.org/dev/peps/pep-0257/)
 - Guidance for [documenting objects and functions in R](http://r-pkgs.had.co.nz/man.html)
 
 
-## Automatic Documentation Generation ★★☆☆☆
+## Automatic documentation generation ★★☆☆☆
 
 Sadly this section does not describe a tool that miraculously writes your documentation for you (though tools for [auto-completing your code](https://kite.com) do exist!).
 It does, however, describe tools that automate generation of searchable, user-friendly HTML documentation.
@@ -220,7 +224,7 @@ These examples test that your documentation is accurate and up-to-date, but may 
 For R projects, you may find [`pkgdown`](https://pkgdown.r-lib.org/) more suitable.
 This package will create a HTML references section, containing your code documentation.
 It uses your project's README file as a home page for the site and you can add additional content to the site in the form of [vignettes](https://r-pkgs.org/vignettes.html).
-The [package's website](https://pkgdown.r-lib.org/) and [it's source code](https://github.com/r-lib/pkgdown/) provide a good demonstration of the package being applied.
+The [package's website](https://pkgdown.r-lib.org/) and [its source code](https://github.com/r-lib/pkgdown/) provide a good demonstration of the package being applied.
 
 
 ### Hosting HTML documentation
