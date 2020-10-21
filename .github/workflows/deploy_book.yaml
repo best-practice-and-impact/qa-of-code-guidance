@@ -1,19 +1,17 @@
-name: deploy-book
+name: Deploy book
 
-# Only run this when the master branch changes
 on:
   push:
     branches:
+    - main
     - master
 
-# This job installs dependencies, build the book, and pushes it to `gh-pages`
 jobs:
   deploy-book:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
 
-    # Install dependencies
     - name: Set up Python 3.7
       uses: actions/setup-python@v1
       with:
@@ -22,12 +20,13 @@ jobs:
     - name: Install dependencies
       run: |
         pip install -r requirements.txt
-    # Build the book
+
     - name: Build the book
       run: |
-        jupyter-book build book
-    # Push the book's HTML to github-pages
-    - name: GitHub Pages action
+        jb build book -W --keep-going
+        && touch ./book/_build/html/.nojekyll
+
+    - name: Deploy book to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3.6.1
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
