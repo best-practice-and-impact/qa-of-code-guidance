@@ -1,9 +1,9 @@
-# Core Programming Practices
+# Core programming practices
 
 
 ## Introduction
 
-The principles outlined in this chapter represent good practices in general programming and software development.
+The principles outlined in this chapter represent good practices for general programming and software development.
 
 Before reading this chapter, you would benefit from having an understanding of core programming concepts.
 This includes assigning and using variables, and using functions and classes.
@@ -13,7 +13,7 @@ This includes assigning and using variables, and using functions and classes.
 :class: admonition-learning
 
 You might look to these sources for introductory learning:
-* Introduction to [Python](https://learninghub.ons.gov.uk/enrol/index.php?id=536) and [R](https://learninghub.ons.gov.uk/enrol/index.php?id=538) (GSS only)
+* Introduction to [Python](https://learninghub.ons.gov.uk/enrol/index.php?id=536) and [R](https://learninghub.ons.gov.uk/enrol/index.php?id=538) (central government analysts only)
 * Official Python [Getting Started Guide](https://www.python.org/about/gettingstarted/)
 * [Learn Python](https://www.learnpython.org/) supported by DataCamp
 * [R Basics](https://www.udemy.com/course/r-basics/?LSNPUBID=JVFxdTr9V80&ranEAID=JVFxdTr9V80&ranMID=39197&ranSiteID=JVFxdTr9V80-mzkL.lpta.ugiFro.8Oc_Q&utm_medium=udemyads&utm_source=aff-campaign) on Udemy
@@ -30,7 +30,7 @@ These resources cover more advanced topics:
 * [Advanced R](https://adv-r.hadley.nz/index.html)
 * Harvard University's courses on [Python](https://online-learning.harvard.edu/subject/python) and [R](https://online-learning.harvard.edu/subject/r)
 
-Please note that non-GSS learning may not follow good practices, however, exposure a range of applied examples will still benefit your learning.
+Please note that non-GSS learning may not follow good practices. However, exposure to a range of applied examples will still benefit your learning.
 You should compare and contrast your learning to the good practices outlined in this section.
 ```
 
@@ -45,14 +45,14 @@ Code is read more often than it is written.
 You can't be responsible for long term maintenance of every piece of code that you write. 
 In the future, others will inevitably need to understand, use and adapt your code.
 It is important that other programmers can quickly and easily understand the task that your code performs.
-Many programs perform a task correctly, but are deemed to be "black boxes" because of the barrier to understanding them.
-It is your responsibility to avoid putting this barrier in place.
+Many programs perform a task correctly, but are deemed to be "black boxes" because of barriers to understanding them.  Common barriers include documentation that is hard to understand or absent, or that assumes familiarity and in-depth knowledge of the problem space and the process which newcomers simply will not have. Most of us have found our own code hard to follow when revisiting it after months or years!
+It is your responsibility to avoid putting such barriers in place.
 
 Good code is easier to document, review and test.
 These practices are necessary to make sure that your analysis is reproducible, auditable and assured.
 Good code helps you with these ambitions.
 
-This chapter highlights good coding practices that will improve the readability, and therefore maintainability, of your code.
+This chapter highlights good coding practices that will improve the readability and maintainability  of your code.
 However, if your code is well-tested, documented, and reviewed then you have already reached your goal and don't need to add more complexity to your project.
 
 
@@ -64,16 +64,16 @@ Code comes in many shapes and sizes.
 A few code abstractions are outlined below, which will be useful for understanding concepts throughout the rest of this chapter and book.
 
 - Functions
-    - a unit of code that performs a minimal number of tasks (one ideally)
+    - are units of code that perform a minimal number of tasks (one ideally)
     - can take inputs and can return outputs, though both are optional
-    - the functional programming paradigm uses these exclusively
+    - the functional programming paradigm uses them exclusively
 
 
 ```{figure} https://upload.wikimedia.org/wikipedia/commons/3/3b/Function_machine2.svg
 ---
 width: 35%
 name: function_fig
-alt: Demonstrating that a mathematical function takes inputs and returns outputs, given then process of the function.
+alt: Demonstrating that a mathematical function takes inputs and returns outputs, given the process of the function.
 ---
 Visual representation of a function, from [Wikipedia Functions (mathematics)](https://en.wikipedia.org/wiki/Function_(mathematics))
 ```
@@ -167,7 +167,7 @@ my_favourite_number <- "ssh, I'm a string"
 
 Another developer, or even "future you", would be unable to correctly understand what you intended these variable names to represent.
 
-Using single letters to name variables is suitable when they are representing well-known mathematical entities (e.g. $y = mx + c$), but should otherwise be avoided.
+Using single letters to name variables is suitable when they are representing well-known mathematical entities (e.g. $y = mx + c$), but you should avoid them in other situations.
 
 
 ```{figure} ./_static/dirty_code_gandalf.png
@@ -225,13 +225,13 @@ empty(empty_dataframe)
 ````
 
 
-The purpose of these variables is clear from their name alone.
-In addition, the variable names make logical sense in the context that are used later on in the code.
+The purpose of these variables is clear from just reading their names.
+In addition, the variable names make logical sense in the context that they are used later on in the code.
 This removes the need for explanatory comments, as your intentions can be interpreted from the code itself.
 
 Naming is important for distinguishing between similar variables.
 It can be tempting to use a number or character to reflect these differences.
-However, these identifiers are not informative.
+However, this results in identifiers that are not informative.
 
 For instance, in:
 
@@ -249,7 +249,7 @@ letters_2 <- c("x", "y", "z")
 
 ````
 
-Here we can infer what the lists/vectors contain, but it is not apparent what makes `letters_1` different to `letters_2`.
+Here we can infer what these lists and vectors contain, but it is not apparent what makes `letters_1` different to `letters_2`.
 
 Variable names can be used to document differences between variables, or to incrementally describe changes made to a variable.
 
@@ -442,8 +442,8 @@ Code Quality, from [xkcd](https://xkcd.com/1513/)
 ```
 
 
-Strive to be **consistent** in your style.
-Even if another programmer takes a dislike to your use of whitespace or `mixedCase`, as long as you follow a consistent style within a project others will soon get used to it.
+Strive to be **consistent** in your style. This is especially important when working in a coding team where you need to develop code as a group or when you are developing your own code that others might re-use.
+Even if others take a dislike to your use of whitespace or `mixedCase`, as long as you follow a consistent style within a project other programmers will soon get used to it.
 
 ```{admonition} Common Style Guides
 [PEP8](https://www.python.org/dev/peps/pep-0008/) is an official Python style guide, which is widely used.
@@ -483,7 +483,7 @@ If you're considering these tools as part of a project, see [Continuous Integrat
 
 ```{todo}
 Potentially add something around not leaving commented-out code lying around, without good reason.
-Will need to link to section on configs, as beginners sometimes use comments for parametrising code.
+Will need to link to section on configs, as beginners sometimes use comments for parameterising code.
 ```
 
 
@@ -502,7 +502,7 @@ You are aiming to communicate a complex series of steps to your reader.
 Keeping the overall design of your code simple will improve the clarity of this communication.
 Many principles that support good programming practices share this common theme - **simplicity**.
 
-Simple programs are more likely to run, while any bugs in their code will be easier to track down.
+Simple programs are more likely to run. Bugs in the code will be easier to track down.
 
 While you should strive towards simplicity, this should not compromise the usability of your code.
 It should still perform the desired task, just in a way that is no more complex than necessary.
@@ -511,11 +511,11 @@ It should still perform the desired task, just in a way that is no more complex 
 ### Don't Repeat Yourself (DRY)
 
 Repetition not only wastes your time, writing redundant lines of code, but it makes code more difficult to read and maintain.
-Modular code can be used to tackle repetition.
+You can use modular code to tackle repetition.
 
 Consider a script that contains three copies of a similar piece of code.
-If the code that is used to perform the repetitive task is found to be incorrect, or if a developer wishes to modify the task being performed by this code, a similar change must be implemented in each of the three copies.
-In the example below, we want to get the odd numbers from three different lists/vectors of numbers.
+If the code that is used to perform the repetitive task is found to be incorrect, or if a developer wishes to modify the task being performed by this code, they must implement a similar change in each of the three copies.
+In the example below, we want to get the odd numbers from three different lists of numbers.
 
 
 ````{tabs}
@@ -569,7 +569,7 @@ for (number in third_ten_numbers) {
 
 ````
 
-In the example above, the third repeated snippet of code actually collects the even numbers, but assigns them to the `odd_third_ten_numbers` variable.
+In the example the third repeated snippet of code actually collects the even numbers, but assigns them to the `odd_third_ten_numbers` variable.
 A naive user or developer may assume that all copies of the similar code are performing the same task.
 Even if they are aware of the difference, they may be unable to tell if a difference between these copies is intentional or a mistake.
 
@@ -581,16 +581,16 @@ For example, converting a few lines of code with a common overall task into a fu
 
 If you refactor repetitive code into functions or classes, then bug fixes or modifications need only be carried out once to change all implementations.
 New, intended behaviour is then consistently given by each call to the reusable function or class.
-The intended functionality should be reflected by the functions name.
+The intended functionality should be reflected in the function name.
 
 ````{tabs}
 
 ```{code-tab} py
 def get_odd(numbers):
     odd_numbers = []
-    for number in first_ten_numbers:
+    for number in numbers:
         if number % 2 == 1:
-        odd_first_ten_numbers.append(number)
+        odd_numbers.append(number)
     return odd_numbers
 
 first_ten_numbers = 1:10
@@ -645,7 +645,7 @@ odd_third_ten_numbers = get_odd(third_ten_numbers)
 
 Here we've refactored the repetitive code into a function to get odd numbers, called `get_odd`.
 If the functionality of `get_odd` needs to be modified, it now need only be done once. 
-Additionally, this code is now more concise and it's purpose is easier to interpret.
+Additionally, this code is more concise and it's purpose is easier to interpret.
 
 If two slightly different tasks must be carried out, you might approach this in one of two ways:
 
@@ -741,10 +741,10 @@ odd_numbers <- get_numbers_with_parity(1:10, "odd")
 You should use your best judgement to decide which is most appropriate in a given situation.
 
 It can be difficult to decide when repetition warrants refactoring of code into reusable functions/classes.
-The "Rule of Three" suggests that if similar code has been written more than two times, then it is worth extracting its operation to a reproducible procedure (i.e. a function or class).
+The "Rule of Three" suggests that if similar code has been written more than two times, then it is worth extracting its operation to a reproducible procedure like a function or class.
 
 
-### You Ain't Gonna Need It
+### You ain't gonna need it
 
 It's important to capture the requirements of your code before writing it.
 This includes when your code needs to be adapted to meet changing needs.
@@ -752,9 +752,9 @@ This includes when your code needs to be adapted to meet changing needs.
 You should then aim to meet these requirements in the functionality that your code provides.
 Developing anything more than this may not be beneficial.
 It can be tempting to try to account for every eventuality in your program.
-As there's a good chance that many cases that you account for will never occur, you should try to prioritise based and what you're certain is needed from your code.
+As there's a good chance that many cases that you account for will never occur, you should try to prioritise based on what you're certain is needed from your code.
 
-### Be Explicit
+### Be explicit
 
 In the literary sense of the word!
 
@@ -882,7 +882,7 @@ This makes managing dependencies much easier between packages and projects.
 
 In functional programming we can use the concepts of function composition and higher-order functions to enact the open-closed principle.
 
-### Liskov substitution
+### [Liskov substitution](https://en.wikipedia.org/wiki/Liskov_substitution_principle)
 
 > Objects should be replaceable with instances of their subtypes, without altering the correctness of that program
 > Functions should be replaceable with similar functions that observe the same interface contract.
