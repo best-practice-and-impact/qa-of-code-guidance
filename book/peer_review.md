@@ -1,6 +1,6 @@
-# Peer Review
+# Peer review
 
-Peer review of code is a quality assurance activity, where a developer other than the code's author views and tests the usage of piece of code.
+Peer review of code is a quality assurance activity, where a developer other than the code's author views and tests the usage of a piece of code.
 
 ## Motivation
 
@@ -12,7 +12,7 @@ This constructive feedback helps you to improve your code quality and provides c
 
 A major benefit of internal review is shared knowledge.
 Both the reviewer and reviewee are exposed to new concepts.
-It encourages a deeper understanding what the code is doing.
+It encourages a deeper understanding of what the code is doing.
 This can help with future work on the project, as multiple team members have the understanding to maintain the project.
 
 ```{todo}
@@ -22,16 +22,16 @@ Ironically needs review and more content
 ```
 ## What to review
 
-When reviewing code, you might ask yourself the following questions:
-* Am I able to easily understand what the code is doing?
-    * Is the code sufficiently documented?
-    * Is there any duplication in the code?
+When reviewing code, you should ask yourself the following questions:
+* Can I easily understand what the code is doing?
+    * Is the code sufficiently documented for me to understand it?
+    * Is there duplication in the code that could be simplified by refactoring?
     * Are functions and class methods simple, using few parameters?
 * Does the code fulfil its requirements?
 * Is the required functionality tested sufficiently?
 * How easy will it be to alter this code when requirements change? They always do.
-    * Are high level parameters kept in a dedicated configuration file?
-* Does the code style appear to be consistent?
+    * Are high level parameters kept in a dedicated configuration file, or Would somebody need to work their way through the code with lots of manual edits to reconfigure for a new run?
+* Is the code style consistent?
 * Can I generate the same outputs that the analysis claims to produce?
     * Have dependencies been sufficiently documented?
     * Is the code version, data version and configuration recorded?
@@ -42,7 +42,7 @@ This example is written in Markdown, so that it can be used in Git platform Pull
 
 ```{code-block} md
 
-##  Code Review
+##  Code review
 
 #### Documentation
 
@@ -69,7 +69,7 @@ Estimated time spent reviewing: #
 
 ---
 
-### Review Comments
+### Review comments
 
 *Insert detailed comments here!*
 
@@ -92,7 +92,7 @@ Make sure that you share the load on reviewing work within your teams.
 Reviewing code from those with more and less experience is beneficial.
 
 
-## Review Approaches
+## Approaches to code review
 
 ### Pair programming
 
@@ -105,20 +105,20 @@ Each developer takes turns to actively author parts of the code, while others pr
 This encourages developers to think about and vocalise why they are writing code in a particular way.
 It gives reviewers a chance to suggest improvements and question the author's approach as they write code.
 The rotational aspect of this practice ensures that all team members gain experience from both the author and review perspective.
-From both angles,  you'll to learn new techniques and practices.
+From both angles,  you'll learn new techniques and practices.
 
-If used regularly, this approach can help you to get used to receiving constructive feedback and being more open to improve your coding practices.
+If used regularly, this approach can help you to get used to receiving constructive feedback and being more open to improve your coding practice.
 
-An alternative to this is the over-the-shoulder review technique, where one developer authors for the entire session.
+An alternative is the over-the-shoulder review technique, where one developer authors for the entire session.
 This can be useful when working with a mentor, but it is often more useful for a mentor to lead by example.
 
 
-### Remote Review
+### Remote review
 
 This approach essentially involves sharing your code with a reviewer, and receiving constructive comments following the review.
 This may be an iterative process, until the reviewer is satisfied with the resulting code.
 
-This can work best within an Agile working pattern, where changes are little and often. Requesting review of small but regular changes reduces the burden, relative to large review of a complete project.
+This can work best within an Agile working pattern, where changes are small and frequent. Requesting review of small but regular changes reduces the burden, relative to large review of a complete project.
 
 The thought of someone else reviewing your code in this way encourages good practices from the outset:
 * Clear code and documentation - so that others with no experience can use and test your code
