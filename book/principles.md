@@ -28,7 +28,7 @@ Assurance improves the average quality and includes the communication of that qu
 Reproducibility is the only thing that you can guarantee in your analysis.
 It is the first pillar of good analysis.
 If you can't prove that you can run the same analysis, with the same data, and obtain the same results then you are not adding valuable analysis.
-The secondary assurances of peer review, rigorous testing, and validity are secondary to being able to reproduce any analysis that you produce in a proportionate amount of time.
+The additional assurances of peer review, rigorous testing, and validity are secondary to being able to reproduce any analysis that you carry out in a proportionate amount of time.
 
 ```{figure} ./_static/reproducibility_matrix.jpg
 ---
@@ -41,13 +41,13 @@ Defining reproducibility, from [The Turing Way](https://the-turing-way.netlify.a
 
 
 Reproducible analysis relies on a transparent production process, so that anyone can follow your steps and understand your results.
-This transparency eases reuse of our methods and results. 
-Easy reproducibility helps your colleagues test and validate what we have done.
+This transparency eases reuse of your methods and results. 
+Easy reproducibility helps your colleagues test and validate what you have done.
 When reproducibility is guaranteed, users and colleagues can focus on verifying that the implementation is correct and that the research is useful for its intended purpose.
 
 Reproducibility relies on effective documentation.
-Good documentation should show how our methodology and our implementation map to each other.
-Good documentation should allow users and other researchers to reuse and adapt our analysis.
+Good documentation should show how your methodology and your implementation map to each other.
+Good documentation should allow users and other researchers to reuse and adapt your analysis.
 
 Reproducible analysis supports the requirements of the [Code of Practice for Statistics](https://www.statisticsauthority.gov.uk/code-of-practice/) around quality assurance and transparency (auditability).
 Wherever possible, we share the code we used to produce our outputs, along with enough data to allow for proper testing.
@@ -55,25 +55,25 @@ Wherever possible, we share the code we used to produce our outputs, along with 
 
 ## Auditable
 
-If decisions are made, based on our analysis, then we must make sure that the story of that analysis is available.
-Our analysis and the evidence that we provide must be available for scrutiny and audit.
+If decisions are made, based on your analysis, then you must make sure that the story of that analysis is available.
+Your analysis and the evidence that you provide must be available for scrutiny and audit.
 Auditable analysis is about being able to, at any point, answer: 
 
 > Who made each decision?
 > When was this decision made?
 > What evidence was this decision made on?
 
-Answering these questions gives decision makers and users greater trust in our work.
-They know the story of our analysis and why we made certain analytical choices.
+Answering these questions gives decision makers and users greater trust in your work.
+They know the story of your analysis and why you made certain analytical choices.
 They know who is responsible for each part of the analysis, including the assurance.
 They know exactly what changes have been made at any point.
 
-In a reproducible workflow, we must bring together the code and the data that we used to generate our results.
-These are ideally published alongside our reports, with a record of analytical choices made and the responsible owners of those choices.
-The transparency that this gives our work helps to increase trustworthiness.
-More eyes examining our work can point out challenges or flaws that can help us to improve.
-We can be fully open about the decisions we made when we generated our outputs, so that other analysts can follow what we did and re-create them.
-By making our analysis reproducible, we make it easier for others to quality assure, assess and critique.
+In a reproducible workflow, you must bring together the code and the data that you used to generate your results.
+These are ideally published alongside your reports, with a record of analytical choices made and the responsible owners of those choices.
+The transparency that this gives your work helps to increase trustworthiness.
+More eyes examining your work can point out challenges or flaws that can help you to improve.
+You can be fully open about the decisions you made when you generated your outputs, so that other analysts can follow what you did and re-create them.
+By making your analysis reproducible, you make it easier for others to quality assure, assess and critique.
 
 
 ## Assured
@@ -110,25 +110,25 @@ The processes for creating statistics in this way are usually manual or semi-man
 Colleagues then typically repeat parts of the process manually to quality assure the outputs.
 
 This way of working is time consuming and can be frustrating, especially where the manual steps are difficult to replicate quickly. 
-These processes are also prone to error, because the input data and the outputs are not connected directly, only through the analyst’s manual intervention.
+Processes like this are also prone to error, because the input data and the outputs are not connected directly, only through the analyst’s manual intervention.
 
 More recently, the tools and techniques available to analysts have evolved. 
-Open-source tools like Python and R have become available.
-Coupled with version control and software management platforms like Git and Git-services have made it possible to develop automatic, streamlined processes, accompanied by a full audit trail.
+Open-source tools like [Python](https://www.python.org/) and [R](https://www.r-project.org/) have become available.
+Coupled with version control and software management platforms like [Git](https://git-scm.com/) and Git-services have made it possible to develop automatic, streamlined processes, accompanied by a full audit trail.
 
-It is essential that appropriate and up-to-date tools are available and are used for our analysis.
+It is essential that we have access to appropriate and up-to-date tools for our analysis.
 In a recent case, use of legacy analytical tools lead to [under-reporting of COVID-19 statistics](https://www.bbc.co.uk/news/technology-54423988).
 
-RAP was first piloted in the Government Statistical Service in 2017 by analysts in the Department for Digital, Culture, Media & Sport (DCMS) and the Department for Education (DfE). 
+RAP was [first piloted in the Government Statistical Service in 2017](https://dataingovernment.blog.gov.uk/2017/03/27/reproducible-analytical-pipeline/) by analysts in the Department for Digital, Culture, Media & Sport (DCMS) and the Department for Education (DfE). 
 They collaborated with data scientists from the Government Digital Service (GDS) to automate the production of statistical bulletins.
 
 To support the adoption of RAP across government, there is a network of [RAP champions](https://gss.civilservice.gov.uk/about-us/champion-networks/reproducible-analytical-pipeline-rap-champions/). 
-These champions are responsible for promoting reproducible analysis through the use of reproducible analytical pipelines, and supporting others who want to develop RAP in their own departments.
+RAP champions are responsible for promoting reproducible analysis through the use of reproducible analytical pipelines, and supporting others who want to develop RAP in their own departments.
 
 
 ## Further reading
 
-Various government guidance has been developed to help you when developing analysis.
+Government guidance is available to help you when developing analysis.
 We recommend:
 1. The [Aqua book](https://www.gov.uk/government/publications/the-aqua-book-guidance-on-producing-quality-analysis-for-government) to understand guidance around assurance.
 2. The [GSS Quality Strategy](https://gss.civilservice.gov.uk/policy-store/government-statistical-service-gss-quality-strategy/) when thinking about the quality of statistics.
