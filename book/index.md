@@ -64,10 +64,10 @@ This means that you should be able to:
 * navigate most of the website using speech recognition software
 * listen to most of the website using a screen reader (including the most recent versions of JAWS, NVDA and VoiceOver)
 
-For keyboard navigation, left and right arrow keys can be used to move forwards and backwards thought the book.
-Up and down arrow keys can be used to scroll up and down on the current page.
-Tabbed content (including code example) can be focused using the Tab key.
-Arrow keys are then used to select the required tab option, where Enter can be used to display that option's content.
+For keyboard navigation, up and down arrow keys can be used to scroll up and down on the current page.
+Left and right arrow keys can be used to move forwards and backwards thought the pages of the book.
+Tabbed content (including code example) can be focused using the tab key.
+Arrow keys are then used to focus the required tab option, where Enter can be used to select that option and display the associated content.
 
 
 ### Feedback and reporting accessibility problems
