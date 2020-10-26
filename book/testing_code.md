@@ -1,6 +1,6 @@
-# Testing Code
+# Testing code
 
-Testing here refers to code that assert that your code is working as expected.
+Testing refers here to code that verifies that your code is working as expected.
 Where code documentation specifies what code should do, testing assures that this specification is true.
 
 The core concept of testing is **"Does my code do what I expect it to, given realistic inputs?"**.
@@ -11,7 +11,7 @@ The most common pattern for writing these tests is:
 3. Assert - verify that the code performed the expected action
 
 
-## Why test code ★☆☆☆☆
+## Why test code? ★☆☆☆☆
 
 Key reasons for testing your code include:
 * Knowing that your code works - you can't be sure that your code works without having run it with realistic examples
@@ -20,7 +20,7 @@ Key reasons for testing your code include:
 * Profiling performance - tests can be used to report or flag poor performance (e.g. modelling)
 * Improving code structure - well-structured code is easier to write tests for, so testing incentivises good code structure
 
-Testing is crucial to assuring quality in your code and will also increase efficiency in development of your code.
+Testing is crucial to assuring quality in your code and will also increase efficiency in the development of your code.
 
 
 ## What to test ★☆☆☆☆
@@ -40,12 +40,12 @@ You should:
 
 You shouldn't:
 * Attempt to test every possible input and type of input
-* Focus on things that are already tested (e.g. functionality from your dependencies packages)
+* Focus on things that are already sufficiently tested (e.g. it should not be necessary to test the functionality from your dependencies packages if you are confident that they are already been subjected to sufficient assurance)
 * Write tests that have an element of randomness - tests should be deterministic
 
 
 A short check-list for questions to ask when writing tests:
-* Have I tested realistic combinations of my codes input parameters?
+* Have I tested realistic combinations of my code's input parameters?
 * Have I tested any discrete outputs once?
 * Have I tested the boundaries of non-discrete outputs?
 * Are informative errors raised when the code is not used in a valid or correct way?
@@ -80,13 +80,13 @@ Tests should be run whenever you make changes to your project.
 This ensures that changes do not break the existing, intended functionality of your code.
 When tests fail, you should endeavour to fix these before adding these changes to a stable or production version of your code.
 
-If you have intentionally altered the functionality of your code, this will like break existing tests.
+If you have intentionally altered the functionality of your code, this will likely break existing tests.
 Failing tests here are a good reminder that your should update your documentation and tests to reflect the new functionality.
 
 If your collection of tests runs quickly, it's simplest to run them all often.
 If some tests take considerably longer to run, you might want to run these less often - perhaps only when relevant changes have been made.
 Otherwise, running the entire collection of tests has the added benefit of capturing unexpected side-effects of your changes.
-For example, in part of your code that you have not directly changed.
+For example, you might pick up an unexpected failure in part of your code that you have not directly changed.
 
 It's not easy to remember to run your tests at regular intervals.
 You're already putting effort into `commit`ing your changes to a version control system regularly.
@@ -105,7 +105,7 @@ This might stop our commit/push if the tests fail, so that we don't push breakin
 
 Testing comes in many shapes and sizes.
 
-In it's simplest form, a test asserts that an expectation is true:
+In its simplest form, a test asserts that an expectation is true:
 
 ````{tabs}
 
@@ -128,15 +128,15 @@ In order of increasing scale, the main layers of testing covered here will be:
 * Integration testing - assuring that multiple units interact with each other as expected
 * End-to-end or system testing - verifying that a complete system meets its requirements
 
-Time taken to develop and run individual tests roughly increases down this list.
+The time taken to develop and run individual tests roughly increases down this list.
 
 [Acceptance testing](https://en.wikipedia.org/wiki/Acceptance_testing) is often considered as additional level, but is not covered here.
 
 The following sections will climb through these layers of testing.
-Please note that principles covered early on also apply at subsequent levels.
+Please note that the principles covered early on also apply at subsequent levels.
 
 
-## Structuring Test Code ★☆☆☆☆
+## Structuring test code ★☆☆☆☆
 
 ```{todo}
 
@@ -172,7 +172,7 @@ Reference material:
 * [`{testthat}` Fixture](https://testthat.r-lib.org/articles/test-fixtures.html) documentation
 
 
-### Parametrization
+### Parameterization
 
 You might also find that similar steps are taken when testing multiple combinations of inputs and outputs.
 Parameterization allows us to reduce repetition in our code, in a similar way to reusable functions.
@@ -190,7 +190,7 @@ Add examples of parametrization
 ```
 
 
-## Unit Testing ★★☆☆☆
+## Unit testing ★★☆☆☆
 
 
 ```{admonition} Key Learning
@@ -222,7 +222,7 @@ Other resources include:
 These sections all need more content/examples.
 ```
 
-## Integration Testing ★★★☆☆
+## Integration testing ★★★☆☆
 
 Your analysis likely involves multiple units working together to perform a high level task.
 Assuring that individual units work as expected, using unit testing, does not guarantee that multiple units interact with one another as expected.
@@ -237,7 +237,7 @@ You might use Stubs or Mocks for this purpose:
 * Mocks require additional setup in your test code, to define your expectations. Use these when your test needs to verify that your code interacts with the Mock in a specific way.
 
 
-## End-to-end Testing ★★★☆☆
+## End-to-end testing ★★★☆☆
 
 As the name suggests, these tests cover the entire process.
 These tests are much slower to run and can take longer to develop for complex processes.

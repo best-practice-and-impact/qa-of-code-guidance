@@ -1,6 +1,6 @@
-# Project Documentation
+# Project documentation
 
-Whether you're developing a package or collaborating on a piece of analysis, documenting your project makes it much easier for others to understand your goal and ways of working.
+Whether you're developing a package or collaborating on a piece of analysis, documenting your project well makes it much easier for others to understand your goal and ways of working.
 
 
 ## README ★☆☆☆☆
@@ -20,7 +20,7 @@ We suggest the following for a good README:
 - Links to related projects
 
 
-## Contributing Guidance ★☆☆☆☆
+## Contributing guidance ★☆☆☆☆
 
 When collaborating, it is also useful to outline the standards used within your project.
 This might include particular packages that should used for certain tasks and guidance on the [code style](code-style) used in the project.
@@ -37,8 +37,7 @@ For an example, see the CONTRIBUTING file from our [gptables package](https://gi
 # Contributing
 
 When contributing to this repository, please first discuss the change you wish
-to make via issue, email, or any other method with the owners of this
-repository before making a change.
+to make via issue, email, or any other method with the owners before making a change.
 
 ## Pull/merge request process
 
@@ -126,9 +125,9 @@ In this case we have outlined our standard practices for using version control o
 We have used the [Markdown](https://daringfireball.net/projects/markdown/syntax) (`.md`) markup language for this document, which is formatted into HTML when viewed on our repository.
 
 
-## User Desk Instructions ★☆☆☆☆
+## User desk instructions ★☆☆☆☆
 
-If your project is very user focussed, for example developing a statistic production pipeline, it is very important that the code users understand how to appropriately use your code.
+If your project is very user focussed, for example developing a statistic production pipeline for other analysts to execute, it is very important that the code users understand how to appropriately run your code.
 
 These instructions should include:
   
@@ -141,7 +140,7 @@ These instructions should include:
 
 ## Dependencies ★☆☆☆☆
 
-The environment that your code runs in includes the machine, the operating system (Windows, Mac...), the programming language, and any external packages.
+The environment that your code runs in includes the machine, the operating system (Windows, Mac, Linux...), the programming language, and any external packages.
 It is important to record this information to ensure reproducibility.
 
 The simplest way to document which packages your code is dependent on, is to record them in a text file.
@@ -150,7 +149,7 @@ This is typically called `requirements.txt`.
 Python packages record their dependencies within their `setup.py` file, via `setup(install_requires=...)`.
 You can get a list of your installed python packages using `pip freeze` in the command line.
 
-R packages and projects record their dependencies in a DESCRIPTION file.
+[R packages](https://r-pkgs.org/) and projects record their dependencies in a [DESCRIPTION](https://r-pkgs.org/description.html) file.
 Packages are listed under the `Imports` key.
 You can get a list of your installed R packages using the `installed.packages()` function.
 

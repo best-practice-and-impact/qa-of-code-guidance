@@ -11,7 +11,7 @@ It is assumed that most data are now stored digitally.
 
 Digital data risk becoming inaccessible as technology develops and commonly used software changes.
 Long term data storage should use open or standard file formats.
-There are [recommended formats](https://www.ukdataservice.ac.uk/manage-data/format/recommended-formats.aspx) for storing different data types, though we suggest avoiding formats that depend on proprietary software like SPSS and SAS.
+There are [recommended formats](https://www.ukdataservice.ac.uk/manage-data/format/recommended-formats.aspx) for storing different data types, though we suggest avoiding formats that depend on proprietary software like SPSS, STATA and SAS.
 
 Short term storage, for use in analysis, might use any format that is suitable for the analysis task.
 However, most analysis tools should support reading data directly from safe long term storage, including databases.
@@ -23,7 +23,7 @@ Guidance from the UK Data Service describes [data security considerations](https
 
 ### Spreadsheets
 
-Spreadsheets (e.g. Microsoft Excel formats) are a very general data analysis tool.
+Spreadsheets (e.g. Microsoft Excel formats and open equivalents) are a very general data analysis tool.
 The cost of their easy to use interface and flexibility is a complete lack of quality assurance.
 
 Spreadsheets are not suitable for storage of data (or statistics production and modelling processes).
@@ -60,7 +60,7 @@ Most DBMS use structured query language (SQL) to communicate with databases.
 ```{admonition} Key Learning
 :class: admonition-learning
 
-You might find this [foundations of SQL (GSS only course)](https://learninghub.ons.gov.uk/enrol/index.php?id=529) or [w3schools SQL tutorials](https://www.w3schools.com/sql/default.asp) useful for learning the basics of SQL.
+You might find this [foundations of SQL (government analysts only course)](https://learninghub.ons.gov.uk/enrol/index.php?id=529) or [w3schools SQL tutorials](https://www.w3schools.com/sql/default.asp) useful for learning the basics of SQL.
 ```
 
 Common analysis tools can interface with databases using SQL packages, or those which provide an object-relational mapping (ORM).
@@ -115,7 +115,7 @@ For variables in tabular datasets, you might document:
 * representation of missing data
 * reference to the question, if survey data
 * reference to any related variables in the dataset
-* if derived, detail how variables were obtained
+* if derived, detail how variables were obtained or calculated
 * any rules for use or processing of the data, set by the data owner
 
 See this detailed example - the [National Workforce Data Set](https://www.datadictionary.nhs.uk/data_sets/administrative_data_sets/national_workforce_data_set.html#dataset_national_workforce_data_set), from the NHS Data Model and Dictionary.
@@ -140,7 +140,7 @@ GOV.UK provides [IAR templates](https://www.gov.uk/government/publications/infor
 
 ## Data versioning ★★☆☆☆
 
-A key requirement for reproducing our analysis is the ability to identify the data that we used.
+A key requirement for reproducing your analysis is the ability to identify the data that you used.
 Data change over time;
 Open data and other secondary data may be revised over time or cease to be available with no notice.
 The owners of these data can't always be relied on to provide historical versions of their data.

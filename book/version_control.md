@@ -6,14 +6,16 @@ In this chapter, we primarily discuss the benefits of using the [Git](https://gi
 
 ### Why do we need version control?
 
-Manually versioning files is not appropriate for development at pace or with input from multiple individuals.
+Manually versioning files is not appropriate or sufficient for development at pace or with input from multiple individuals.
 
 Without automated version control, we commonly see:
 * Multiple copies of files or the entire project
-* Issues resolving multiple changes to the same file
+* Issues in resolving multiple changes to the same file
 * Duplicated effort
+* Difficulty understanding where changes have been made and by whom
 * Difficulty understanding the order that changes have occurred in
 * Difficulty identifying changes that have introduced errors
+* Problems in trying to roll back changes to get code working again quickly
 
 ```{figure} https://imgs.xkcd.com/comics/documents.png
 ---
@@ -32,7 +34,7 @@ It's important for us to be able to answer the following questions about our ana
 * What evidence directed these changes?
 * Who made those changes?
 
-Version control software, like Git, records the answers to these questions through the development of a project.
+Version control software, like Git, records the answers to these questions throughout the development of a project.
 Using a remote Git repository maintains a single source of truth, despite multiple individuals working on a project.
 It helps us to record and combine changes from multiple developers.
 When used effectively, it also allows us to more easily identify changes that have negatively impacted our work and remove them.
@@ -41,7 +43,7 @@ Most importantly, it allows us to refer to specific versions of our code that ha
 
 ### What should I version control?
 
-You should include any code that is required to run your system, but that is not sensitive.
+Ideally, you should include any code that is required to run your system.  In a public repository, you may need to omit confidential or sensitive code.
 
 You shouldn't include the following in your code repository:
 * passwords, credentials or keys
@@ -49,12 +51,13 @@ You shouldn't include the following in your code repository:
 * code that contains sensitive information
   * for example, code that describes a method for fraud detection
   * or code that contains references to personally identifiable data
+  * or code that might compromise security protocols
 * data, except for small example datasets
 
 You might include example configuration files, or documentation describing how configuration is applied.
 However, the exact configuration of a system for a particular run of your code should be recorded by logging for reproducibility purposes.
 
-The data we use for analysis is often unreleased or sensitive, so should not be shared in a code repository.
+The data we use for analysis is often unreleased or sensitive.  Unpublished, sensitive or disclosive data should never be shared in a code repository.  As a rule of thumb, only small example datasets should be included.
 It is still important to version the data that we use for our analyses, but this can be done more appropriately using databases.
 
 
@@ -79,7 +82,7 @@ Useful training resources for learning Git are:
 
 ### Git Commands
 
-Git commands are run from the terminal, which is typically bash or a command prompt.
+Git commands are run from the terminal, which is typically [bash](https://en.wikipedia.org/wiki/Bash_(Unix_shell)) or a command prompt.
 
 Commands have a very standard structure in Git, namely they always starts with `git` to run the command using the Git program.
 
@@ -166,7 +169,7 @@ Don't change published (i.e. `remote`) history
 * consider this before force pushing changes to a remote repository
 * instead create new commits that resolve or `revert` to fix the problem
 
-### Releases (Tagging)
+### Releases (tagging)
 
 Regularly `commit`ing changes using Git helps us to create a thorough audit trail of changes to our project.
 However, there may be discrete points in the history of the project that we want to mark for easy future reference.
@@ -275,7 +278,7 @@ Issues are a useful soundboard for requesting changes, but the implementation of
 
 ### Pull requests
 
-A Pull request lets you describe changes that you have made to a repo.
+A pull request lets you describe changes that you have made to a repo.
 The request is based on the difference between a target branch (usually `dev` or `master`) and a source branch, where you have implemented changes.
 The source branch can the in the same repository, or might be in a Fork (below) of the repository if you are not a member of the project.
 

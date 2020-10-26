@@ -1,5 +1,5 @@
 
-# Quality Assurance of Code for Analysis and Research
+# Quality assurance of code for analysis and research
 
 This is an early draft of Government Statistical Service (GSS) and Analysis Function guidance, produced by the Best Practice and Impact division of the Office for National Statistics.
 
@@ -28,7 +28,7 @@ We have noted a rough guide to difficulty for each section using a ★★★★�
 
 ## How to get the most out of the book
 
-This guidance is tailored to government analysts that would like to quality assure their code and increase the reproducibility of their analyses.
+This guidance is tailored to government analysts who would like to quality assure their code and increase the reproducibility of their analyses.
 
 However, the practices outlined in the book are general to many applications of programming, so may also be insightful for those outside of government.
 
@@ -43,8 +43,8 @@ This book can be used to guide your learning and as a reference.
 The start of each chapter describes the risks which the described practices may help to address.
 Therefore, you should strive to apply the most appropriate practices given the risks associated with your work.
 
-The principles in this book are language agnostic - as such it does not form a comprehensive learning resource and you may often need to study further resources to implement these practices.
-That said, examples and useful references are provided for **Python** and **R**, as a pair of open source languages that are commonly applied across government.
+The principles in this book are language agnostic.  As such, it does not form a comprehensive learning resource and you may often need to study further resources to implement these practices.
+That said, examples and useful references are provided for **Python** and **R**, as open source languages that are commonly applied across government.
 
 Many of the learning references in this book point to the UK Statistics Authority Learning Hub, which are labelled GSS only.
 All government analysts can request an account for the Hub via [gss.capability@ons.gov.uk](mailto:gss.capability@ons.gov.uk).
