@@ -118,7 +118,10 @@ This can be useful when working with a mentor, but it is often more useful for a
 This approach essentially involves sharing your code with a reviewer, and receiving constructive comments following the review.
 This may be an iterative process, until the reviewer is satisfied with the resulting code.
 
-This can work best within an Agile working pattern, where changes are little and often. Requesting review of small but regular changes reduces the burden, relative to large review of a complete project.
+This can work best where changes are little and often.
+Requesting review of small but regular changes reduces the burden on reviewers, when compared to large review of a complete project.
+When reviewing larger pieces of work, it may be worth reviewing different aspects of the code is separate passes.
+For example, focussing on documentation in one session and then functionality in the next.
 
 The thought of someone else reviewing your code in this way encourages good practices from the outset:
 * Clear code and documentation - so that others with no experience can use and test your code

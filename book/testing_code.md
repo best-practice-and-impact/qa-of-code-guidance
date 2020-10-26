@@ -60,6 +60,8 @@ The examples in this section use these testing frameworks:
 * `pytest` for Python
 * `testthat` for R
 
+R users might also be interested in `assertthat`, which provides Python-like assertions in R.
+
 Other common frameworks, which have a Class-based focus, are:
 * `unittest` built into Python
 * `Runit` for R
@@ -222,10 +224,17 @@ These sections all need more content/examples.
 
 ## Integration Testing ★★★☆☆
 
-Your process likely involves multiple units working together to perform a high level task.
+Your analysis likely involves multiple units working together to perform a high level task.
 Assuring that individual units work as expected, using unit testing, does not guarantee that multiple units interact with one another as expected.
 
-Integration tests incorporate two or more units, so check that they work together correctly.
+Integration tests incorporate two or more units and check that they work together correctly.
+These tests are also used to test the interface between your code and external dependencies, such as a database or web-based API.
+
+When your code relies upon interaction with complex or external dependencies, it may be difficult for your tests to reproducibly access these dependencies.
+Creating abstractions of these dependencies when they are not being directly tested can keep your test code simpler and more focused.
+You might use Stubs or Mocks for this purpose:
+* Stubs carry out a predetermined behaviour. For example, a stub representing an API always return the same response. Use these when you are not interested in the details around how your code interacts with the dependency.
+* Mocks require additional setup in your test code, to define your expectations. Use these when your test needs to verify that your code interacts with the Mock in a specific way.
 
 
 ## End-to-end Testing ★★★☆☆

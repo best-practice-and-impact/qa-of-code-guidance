@@ -114,6 +114,7 @@ For variables in tabular datasets, you might document:
 * valid values or ranges, if numerical
 * representation of missing data
 * reference to the question, if survey data
+* reference to any related variables in the dataset
 * if derived, detail how variables were obtained
 * any rules for use or processing of the data, set by the data owner
 
@@ -150,8 +151,11 @@ Whether using a primary or secondary data source, you should version and documen
 Documentation for data versions should include the reason why the version has changed.
 For example, if an open data source has been recollected, revisions have been made to existing data, or part of the data has been removed.
 
-The same considerations apply when storing outputs from your analysis.
-To maintain a complete audit trail, systems should not overwrite existing outputs but should store a new copy of each output after each run.
+
+
+```{todo}
+Reference outputs should be disposable. Otherwise, version your outputs?
+```
 
 To automate the versioning of data, you might use the Python package [DVC, which provides Git-like version control of data](https://dvc.org/).
 This tool can also relate the data version to the version of analysis code, strongly facilitating reproducibility .
@@ -164,6 +168,11 @@ It must be possible to recreated previous versions of the data, for reproducibil
 As such, is important that data file versions are named uniquely, for example, using incrementing numbers and/or date of collection.
 Additionally, file versions must not be modified after they have been used for analysis - they should be treated as read-only.
 All modifications to the data should result in new versions.
+
+
+```{todo}
+Diagram of good manual versioning workflow.
+```
 
 Finally, for this to be effective, your analysis should record the version of data used to generate a specified set of outputs.
 This might be documented in analysis reports or automatically logged by your code.

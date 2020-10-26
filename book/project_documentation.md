@@ -28,8 +28,12 @@ If you plan to have contributors from outside your organisation it is useful to 
 Please [see GitHub](https://docs.github.com/en/github/building-a-strong-community/adding-a-code-of-conduct-to-your-project) for advice on creating a code of conduct.
 
 For an example, see the CONTRIBUTING file from our [gptables package](https://github.com/best-practice-and-impact/gptables/blob/master/CONTRIBUTING.md):
-  
-  ```
+
+`````{tabs}
+
+````{tab} Markdown
+
+```{code-block}
 # Contributing
 
 When contributing to this repository, please first discuss the change you wish
@@ -70,6 +74,53 @@ non-minor changes.
 3. Reviewers will be requested from associated communities.
 4. Only once reviewers are satisfied, will the `dev` branch be released.
 ```
+
+````
+
+````{tab} HTML
+
+<h1>Contributing</h1>
+
+When contributing to this repository, please first discuss the change you wish
+to make via issue, email, or any other method with the owners of this
+repository before making a change.
+
+<h2>Pull/merge request process</h2>
+
+1. Branch from the `dev` branch. If you are implementing a feature name it
+`feature/name_of_feature`, if you are implementing a bugfix name it
+`bug/issue_name`.
+2. Update the README.md and other documentation with details of major changes
+to the interface, this includes new environment variables, useful file
+locations and container parameters.
+3. Once you are ready for review please open a pull/merge request to the
+`dev` branch.
+4. You may merge the Pull/Merge Request in once you have the sign-off of two
+maintainers.
+5. If you are merging `dev` to `master`, you must increment the version number
+in the VERSION file to the new version that this Pull/Merge Request would
+represent. The versioning scheme we use is [SemVer](http://semver.org/).
+
+
+<h2>Code style</h2>
+
+- We name variables using few nouns in lowercase, e.g. `mapping_names`
+or `increment`.
+- We name functions using verbs in lowercase, e.g. `map_variables_to_names` or
+`change_values`.
+- We use the [numpydoc](https://numpydoc.readthedocs.io/en/latest/format.html)
+format for documenting features using docstrings.
+
+<h2>Review process</h2>
+
+1. When we want to release the package we will request a formal review for any
+non-minor changes.
+2. The review process follows a similar process to ROpenSci.
+3. Reviewers will be requested from associated communities.
+4. Only once reviewers are satisfied, will the `dev` branch be released.
+````
+
+`````
 
 In this case we have outlined our standard practices for using version control on GitHub, the code style that we are using in the project and the review process that we follow.
 We have used the [Markdown](https://daringfireball.net/projects/markdown/syntax) (`.md`) markup language for this document, which is formatted into HTML when viewed on our repository.

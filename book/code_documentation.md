@@ -42,7 +42,7 @@ total <- number_1 + number_2
 
 Comments that describe exactly **what** is occurring in the code, as above, are often not necessary.
 They may be redundant, if [good naming practices](naming) are followed to self-document the steps that occur in your code.
-A developer or user can read your code and other more appropriate forms of documentation (see [Docstrings]) for more detailed description of the logic behind your code.
+A developer or user can read your code and other more appropriate forms of documentation (see [Docstrings](docstrings) below) for more detailed description of the logic behind your code.
 If it is difficult to understand your code without comments, then this can be an indicator that your code is overly complex and might benefit from being refactored into smaller units.
 
 Comments can be used more effectively to explain **why** you might have written code in a certain way.
@@ -109,7 +109,7 @@ Docstrings commonly describe:
 - what parameters the function or class takes as arguments
 - what the code returns
 - how to use section of code
-- references to other functions or classes carry out similar tasks
+- references to other functions or classes that carry out similar tasks
 
 
 ````{tabs}

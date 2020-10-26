@@ -60,8 +60,8 @@ However, if your code is well-tested, documented, and reviewed then you have alr
 
 Breaking your code down into smaller, more manageable chunks is a sure fire way to improve readability.
 
-Code comes in many shapes and sizes.
-A few code abstractions are outlined below, which will be useful for understanding concepts throughout the rest of this chapter and book.
+Code comes in many shapes and sizes, though is often broken down in a modular fashion.
+Common code structures are outlined below, which will be useful for understanding concepts throughout the rest of this chapter and book.
 
 - Functions
     - a unit of code that performs a minimal number of tasks (one ideally)
@@ -95,7 +95,7 @@ Demonstration of a Car class, with an example object (instance of the class)
 ```
 
 - Scripts
-    - text documents containing source code
+    - text documents containing code (also refereed to as source code)
     - may be broken down into sections or "chunks"
     - may contain functions, classes and/or lines of non-modular code
 
@@ -116,6 +116,12 @@ Programs are meant to be read by humans and only incidentally for computers to e
 Code with high readability is often referred to as "Clean Code".
 Clean code helps us to understand a program faster.
 The code itself often sounds quite natural when spoken aloud.
+
+```{admonition} Key Learning
+:class: admonition-learning
+
+These concepts are also applied in the self-led learning course on [clean code](https://learninghub.ons.gov.uk/enrol/index.php?id=537).
+```
 
 
 (naming)=
@@ -204,8 +210,6 @@ empty_dataframe.empty
 ```
 
 ```{code-tab} r R
-library(plyr)
-
 # Defining variables
 first_name <- "Sioban"
 
@@ -219,7 +223,7 @@ print(paste("Hi" + first_name))
 
 number_of_attendees <- number_of_attendees + 1
 
-empty(empty_dataframe)
+plyr::empty(empty_dataframe)
 ```
 
 ````
@@ -299,10 +303,10 @@ Where a function performs a specific task, it can be effective to describe this 
 
 ```{code-tab} py
 def peel_potato(vegetable):
-   if vegetable == "potato":
-       return "peeled_potato"
-   else:
-      raise ValueError("That's not a potato!")
+    if vegetable == "potato":
+        return "peeled_potato"
+    else:
+        raise ValueError("That's not a potato!")
       
 prepared_potato = peel_potato("potato")
 ```
@@ -322,7 +326,7 @@ prepared_potato = peel_potato("potato")
 ````
 
 Sometimes a function might be used to provide a Boolean response to a decision.
-In this case, it cam be helpful to name a function as a question that is being posed.
+In this case, it can be helpful to name a function as a question that is being posed.
 
 
 ````{tabs}
@@ -593,34 +597,17 @@ def get_odd(numbers):
         odd_first_ten_numbers.append(number)
     return odd_numbers
 
-first_ten_numbers = 1:10
+first_ten_numbers = list(range(1, 11))
 odd_first_ten_numbers = get_odd(first_ten_numbers)
 
-second_ten_numbers = 11:20
+second_ten_numbers = list(range(20, 21))
 odd_second_ten_numbers = get_odd(second_ten_numbers)
 
-third_ten_numbers = 21:30
+third_ten_numbers = list(range(20, 21))
 odd_third_ten_numbers = get_odd(third_ten_numbers)
 ```
 
 ```{code-tab} r R
-get_odd <- function(numbers) {
-  odd_numbers <- c()
-  for (number in numbers) {
-    if (number %% 2 == 1) {
-      odd_numbers <- c(odd_numbers, number)
-    }
-  }
-  return(odd_numbers)
-}
-
-first_ten_numbers = 1:10
-odd_first_ten_numbers <- c()
-for (number in first_ten_numbers) {
-  if (number %% 2 == 1) {
-    odd_first_ten_numbers <- c(odd_first_ten_numbers, number)
-  }
-}
 get_odd <- function(numbers) {
   odd_numbers = []
   for (number in first_ten_numbers) {
@@ -631,13 +618,14 @@ get_odd <- function(numbers) {
   return odd_numbers
 }
 
-first_ten_numbers = list(range(1, 11))
+
+first_ten_numbers = 1:10
 odd_first_ten_numbers = get_odd(first_ten_numbers)
 
-second_ten_numbers = list(range(20, 21))
+second_ten_numbers = 11:20
 odd_second_ten_numbers = get_odd(second_ten_numbers)
 
-third_ten_numbers = list(range(20, 21))
+third_ten_numbers = 21:30
 odd_third_ten_numbers = get_odd(third_ten_numbers)
 ```
 
@@ -765,9 +753,10 @@ Explicit is better than implicit
 ```
 
 
-In some programming languages, it is possible to perform a task or decision by relying on an implied parsing of your code.
+In some programming languages, it is possible to perform a task or decision by relying on an implied interpretation of your code.
+For example, in Python `1`, `100`, `["A list of text"]` and many other objects evaluate to `True`, while `0`, `[]` and `None` evaluate to `False`.
 
-To make your intentions clear, you should explicitly state your intentions in the code.
+To make your intentions clear, you should explicitly state your intended comparison in the code.
 
 ````{tabs}
 
@@ -802,7 +791,7 @@ To perform the same decision explicitly, we should specify the exact condition u
 ```{code-tab} py
 coconut_count = 0
 
-# Explicitly only print if not None
+# Explicitly print only if more than 0
 if coconut_count >= 0:
     print("There are " + coconut_count + " coconuts!")
 ```
@@ -826,6 +815,10 @@ It's clear that we intend for this to be the case.
 
 SOLID is an acronym that encompasses 5 software design principles that are intended to increase the readability and extensibility of software source code.
 These principles are designed to improve object-oriented programs, but can be roughly applied to functional programs.
+
+```{todo}
+Extend these subsections with analytical examples. Not necessarily code-based.
+```
 
 ### Single responsibility
 
