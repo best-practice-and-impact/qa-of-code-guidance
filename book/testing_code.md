@@ -227,6 +227,15 @@ These sections all need more content/examples.
 Your analysis likely involves multiple units working together to perform a high level task.
 Assuring that individual units work as expected, using unit testing, does not guarantee that multiple units interact with one another as expected.
 
+```{figure} ./_static/no_integration_tests.png
+---
+width: 40%
+name: no_integration_tests
+alt: Two drawers that open into each other's handles.
+---
+Two unit tests, no integration tests.
+```
+
 Integration tests incorporate two or more units and check that they work together correctly.
 These tests are also used to test the interface between your code and external dependencies, such as a database or web-based API.
 
@@ -240,6 +249,18 @@ You might use Stubs or Mocks for this purpose:
 ## End-to-end testing ★★★☆☆
 
 As the name suggests, these tests cover the entire process.
+The motivation for using end-to-end tests is similar to that of integration tests.
+Despite assurance that small sections of the code are functioning correctly, it's important to validate that your overall system is fit for purpose.
+
+```{figure} https://i.stack.imgur.com/Nirxy.jpg
+---
+width: 50%
+name: sinking_ship
+alt: A sinking ship would still report passing unit tests.
+---
+A sinking ship would still report a number of passing unit and integration tests, while the system is failing overall.
+```
+
 These tests are much slower to run and can take longer to develop for complex processes.
 Having at least one end-to-end test for your process will ensure that the high-level specification of your code is met.
 This should validate that your user requirements are met.
