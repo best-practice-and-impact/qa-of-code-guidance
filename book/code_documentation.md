@@ -42,7 +42,8 @@ total <- number_1 + number_2
 
 Comments that describe exactly **what** is occurring in the code, as above, are often not necessary.
 They may be redundant, if [good naming practices](naming) are followed to self-document the steps that occur in your code.
-A developer or user can read your code and other more appropriate forms of documentation (see [Docstrings]) for more detailed description of the logic behind your code.
+
+A developer or user can read your code and other more appropriate forms of documentation (see [Docstrings](docstrings) below) for more detailed description of the logic behind your code.
 If it is difficult to understand your code without comments, this can indicate that your code is overly complex and might benefit from being refactored into smaller units.
 
 Comments can be used more effectively to explain **why** you might have written code in a certain way.
@@ -68,37 +69,41 @@ For example, an analysis script might be broken down into sections that describe
 
 ```{code-tab} py
 import pandas as pd
+import seaborn as sns
 import matplotlib.pyplot as plt
 
 
 ## Get data
-time_series = pd.read_csv("time_Series_data.csv")
+penguins = sns.load_dataset("penguins")
 
-## Filter data
-ten_years = time_series.loc["2010:2020"]
-ten_years_price = ten_years.loc[:, "price"]
+## Analyse
+species_means = penguins.groupby("species").mean()
 
-## Analyse data
-median_price = ten_years_price.median()
-print("Median price: " + median_price)
-
-## Produce figures
-plt.plot(ten_years_price)
+## Report
+plt.plot(penguins.bill_length_mm)
+species_means.to_csv("penguin_species_mean_measurements.csv")
 ```
 ```{code-tab} r R
 ##### GET DATA #####
 time_series <- read.csv("time_Series_data.csv")
 
-##### FILTER DATA #####
-ten_years <- dplyr::select(time_series, "2010":"2020")
-ten_years_price <- dplyr::select(ten_years, price)
+```{code-tab} r R
+library(palmerpenguins)
+library(magrittr)
 
-##### ANALYSE DATA #####
-median_price <- median(ten_years_price)
-print(paste0("Median price: ", as.character(median_price)))
 
-##### PLOT #####
-plot(ten_years_price)
+## Get data
+penguins_data <- penguins
+
+## Analyse
+species_means <- penguins_data %>% 
+  dplyr::group_by(species) %>% 
+  dplyr::summarize(dplyr::across(where(is.numeric), mean, na.rm = TRUE))
+
+## Report
+plot(penguins_data$bill_length_mm)
+write.csv(species_means, "penguin_species_mean_measurements.csv")
+```
 
 ````
 
@@ -120,7 +125,7 @@ Docstrings commonly describe:
 - what parameters the function or class takes as arguments
 - what the code returns
 - how to use section of code
-- references to other functions or classes carry out similar tasks
+- references to other functions or classes that carry out similar tasks
 
 
 ````{tabs}

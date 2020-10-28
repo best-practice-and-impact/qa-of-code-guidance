@@ -41,24 +41,27 @@ Code is read more often than it is written.
 
 You can't be responsible for long term maintenance of every piece of code that you write. 
 In the future, others will inevitably need to understand, use and adapt your code.
-It is important that other programmers can quickly and easily understand the task that your code performs.
-Many programs perform a task correctly, but are deemed to be "black boxes" because of barriers to understanding them.  Common barriers include documentation that is hard to understand or absent, or that assumes familiarity and in-depth knowledge of the problem space and the process which newcomers simply will not have. Most of us have found our own code hard to follow when revisiting it after months or years!
+It is important that other programmers can quickly and easily understand the tasks that your code performs.
+Many programs perform a task correctly, but are deemed to be "black boxes" because of barriers to understanding them. 
+Common barriers include documentation that is hard to understand or absent, or that assumes familiarity and in-depth knowledge of the problem space and the process which newcomers simply will not have.
+Most of us have found our own code hard to follow when revisiting it after months or years!
 It is your responsibility to avoid putting such barriers in place.
 
 Good code is easier to document, review and test.
 These practices are necessary to make sure that your analysis is reproducible, auditable and assured.
 Good code helps you with these ambitions.
 
-This chapter highlights good coding practices that will improve the readability and maintainability  of your code.
-However, if your code is well-tested, documented, and reviewed then you have already reached your goal and don't need to add more complexity to your project.
+This chapter highlights good coding practices that will improve the readability and maintainability of your code.
+Here, readability refers how easily another analyst can gain a decent understand of how your code works, within a reasonable amount of time.
+While maintainability refers to how easily another analysts can understand your code well enough to modify and repair it.
 
 
 ## Modular code ★☆☆☆☆
 
 Breaking your code down into smaller, more manageable chunks is a sure fire way to improve readability.
 
-Code comes in many shapes and sizes.
-A few code abstractions are outlined below, which will be useful for understanding concepts throughout the rest of this chapter and book.
+Code comes in many shapes and sizes, though is often broken down in a modular fashion.
+Common code structures are outlined below, which will be useful for understanding concepts throughout the rest of this chapter and book.
 
 Functions:
   - are units of code that perform a minimal number of tasks (one ideally)
@@ -113,6 +116,12 @@ Programs are meant to be read by humans and only incidentally for computers to e
 Code with high readability is often referred to as "Clean Code".
 Clean code helps us to understand a program faster.
 The code itself often sounds quite natural when spoken aloud.
+
+```{admonition} Key Learning
+:class: admonition-learning
+
+These concepts are also applied in the self-led learning course on [clean code](https://learninghub.ons.gov.uk/enrol/index.php?id=537).
+```
 
 
 (naming)=
@@ -201,8 +210,6 @@ empty_dataframe.empty
 ```
 
 ```{code-tab} r R
-library(plyr)
-
 # Defining variables
 first_name <- "Sioban"
 
@@ -216,7 +223,7 @@ print(paste("Hi" + first_name))
 
 number_of_attendees <- number_of_attendees + 1
 
-empty(empty_dataframe)
+plyr::empty(empty_dataframe)
 ```
 
 ````
@@ -296,10 +303,10 @@ Where a function performs a specific task, it can be effective to describe this 
 
 ```{code-tab} py
 def peel_potato(vegetable):
-   if vegetable == "potato":
-       return "peeled_potato"
-   else:
-      raise ValueError("That's not a potato!")
+    if vegetable == "potato":
+        return "peeled_potato"
+    else:
+        raise ValueError("That's not a potato!")
       
 prepared_potato = peel_potato("potato")
 ```
@@ -319,7 +326,7 @@ prepared_potato = peel_potato("potato")
 ````
 
 Sometimes a function might be used to provide a Boolean response to a decision.
-In this case, it cam be helpful to name a function as a question that is being posed.
+In this case, it can be helpful to name a function as a question that is being posed.
 
 
 ````{tabs}
@@ -486,7 +493,7 @@ Will need to link to section on configs, as beginners sometimes use comments for
 
 ## KISS ★★☆☆☆
 
-**K**EEP **I**T **S**IMPLE AND **S**TRAIGHTFORWARD
+**K**eep **I**t **S**imple and **S**traightforward
 
 ```{epigraph}
 Make everything as simple as possible, but not simpler.
@@ -590,34 +597,17 @@ def get_odd(numbers):
         odd_numbers.append(number)
     return odd_numbers
 
-first_ten_numbers = 1:10
+first_ten_numbers = list(range(1, 11))
 odd_first_ten_numbers = get_odd(first_ten_numbers)
 
-second_ten_numbers = 11:20
+second_ten_numbers = list(range(20, 21))
 odd_second_ten_numbers = get_odd(second_ten_numbers)
 
-third_ten_numbers = 21:30
+third_ten_numbers = list(range(20, 21))
 odd_third_ten_numbers = get_odd(third_ten_numbers)
 ```
 
 ```{code-tab} r R
-get_odd <- function(numbers) {
-  odd_numbers <- c()
-  for (number in numbers) {
-    if (number %% 2 == 1) {
-      odd_numbers <- c(odd_numbers, number)
-    }
-  }
-  return(odd_numbers)
-}
-
-first_ten_numbers = 1:10
-odd_first_ten_numbers <- c()
-for (number in first_ten_numbers) {
-  if (number %% 2 == 1) {
-    odd_first_ten_numbers <- c(odd_first_ten_numbers, number)
-  }
-}
 get_odd <- function(numbers) {
   odd_numbers = []
   for (number in first_ten_numbers) {
@@ -628,13 +618,14 @@ get_odd <- function(numbers) {
   return odd_numbers
 }
 
-first_ten_numbers = list(range(1, 11))
+
+first_ten_numbers = 1:10
 odd_first_ten_numbers = get_odd(first_ten_numbers)
 
-second_ten_numbers = list(range(20, 21))
+second_ten_numbers = 11:20
 odd_second_ten_numbers = get_odd(second_ten_numbers)
 
-third_ten_numbers = list(range(20, 21))
+third_ten_numbers = 21:30
 odd_third_ten_numbers = get_odd(third_ten_numbers)
 ```
 
@@ -762,9 +753,10 @@ Explicit is better than implicit
 ```
 
 
-In some programming languages, it is possible to perform a task or decision by relying on an implied parsing of your code.
+In some programming languages, it is possible to perform a task or decision by relying on an implied interpretation of your code.
+For example, in Python `1`, `100`, `["A list of text"]` and many other objects evaluate to `True`, while `0`, `[]` and `None` evaluate to `False`.
 
-To make your intentions clear, you should explicitly state your intentions in the code.
+To make your intentions clear, you should explicitly state your intended comparison in the code.
 
 ````{tabs}
 
@@ -799,7 +791,7 @@ To perform the same decision explicitly, we should specify the exact condition u
 ```{code-tab} py
 coconut_count = 0
 
-# Explicitly only print if not None
+# Explicitly print only if more than 0
 if coconut_count >= 0:
     print("There are " + coconut_count + " coconuts!")
 ```
@@ -819,10 +811,14 @@ Now the count is printed if it is more than or equal to 0.
 It's clear that we intend for this to be the case.
 
 
-## SOLID ★★★☆☆
+## SOLID ★★★★☆
 
 SOLID is an acronym that encompasses 5 software design principles that are intended to increase the readability and extensibility of software source code.
-These principles are designed to improve object-oriented programs, but can be roughly applied to functional programs.
+These principles are designed to improve object-oriented programs, but can be roughly applied to functional programs too.
+
+```{todo}
+Extend these subsections with analytical examples. Not necessarily code-based.
+```
 
 ### Single responsibility
 
@@ -844,15 +840,15 @@ This principle suggests that your software should be separated into distinct sec
 
 For example, if your software is responsible for managing sales of a product, then your concerns might include:
 
-- Presenting information to the customer, to allow them to select a product
-- Taking payment from the customer
-- Arranging dispatch and delivery of the product
+- Presenting information to the customer, to allow them to select a product.
+- Taking payment from the customer.
+- Arranging dispatch and delivery of the product.
 
 Within the section of you software that is responsible for taking payment, you might have multiple responsibilities:
 
-- collect the users input, to capture payment details
-- pass the payment information on to a third party, to process the payment
-- report the status of the payment to the user
+- Collect the users input, to capture payment details.
+- Pass the payment information on to a third party, to process the payment.
+- Report the status of the payment to the user.
 
 
 ```{figure} ./_static/separation_of_concerns.png
@@ -870,7 +866,7 @@ Within each section of your software, distinct functions or classes should be re
 
 ### Open-closed
 
-> Objects and functions should be open for extension, but closed for modification
+> Objects and functions should be open for extension, but closed for modification.
 
 This means that it should be possible to extend the functionality of classes or functions, without modifying their source code or how they work.
 For example, extension of a class or function could be carried out through sub-classing or wrapper functions and decorators, respectively.
@@ -891,7 +887,10 @@ If you were to increase the domain and range of a function to account for new ca
 
 ### Interface segregation
 
-> Many client-specific interfaces are better than one general-purpose interface
+> Many client-specific interfaces are better than one general-purpose interface.
+
+An interface describes the interaction between multiple elements of code.
+This might be a piece of your code that uses another piece of your code or someone else's.
 
 As you add more and more functionality into a single interface, between parts of a program or from the program to customers, it becomes more difficult to extend or maintain. 
 Separating these into multiple interfaces increases simplicity and maintainability.
@@ -903,12 +902,13 @@ It is better that each user persona gets an interface that is meant for them rat
 
 ### Dependency inversion
 
-> Depend on abstractions, not concretions
+> Depend on abstractions, not concretions.
 
 High level modules should not depend on low-level modules. 
 Both should depend on interfaces - i.e. be built with this interaction in mind.
-Abstractions should not depend on specific details.
-Concrete implementations should depend on abstractions.
+
+Abstractions should not depend on specific details, but should outline a general concept.
+Concrete implementations should depend on these abstractions.
 
 Specify parameters to a function (or a higher order function to retrieve them) rather than hard coding the function to get some value.
 The function should not look outside of its own environment for data.

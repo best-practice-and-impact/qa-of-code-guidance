@@ -1,4 +1,4 @@
-# Reproducible data
+# Data Management
 
 In order to reproduce a piece of analysis we need to be able to identify and access the data that our analysis used and produced.
 This requires suitable storage of the data, with any relevant documentation and versioning of the data where it may change over time.
@@ -14,10 +14,6 @@ There are [recommended formats](https://www.ukdataservice.ac.uk/manage-data/form
 
 Short term storage, for use in analysis, might use any format that is suitable for the analysis task.
 However, most analysis tools should support reading data directly from safe long term storage, including databases.
-
-When publishing or sharing tabular data, you should follow the [GOV.UK Tabular data standard](https://www.gov.uk/government/publications/recommended-open-standards-for-government/tabular-data-standard).
-
-Guidance from the UK Data Service describes [data security considerations](https://www.ukdataservice.ac.uk/manage-data/store/security).
 
 
 ### Spreadsheets
@@ -114,6 +110,7 @@ For variables in tabular datasets, you might document:
 * valid values or ranges, if numerical
 * representation of missing data
 * reference to the question, if survey data
+* reference to any related variables in the dataset
 * if derived, detail how variables were obtained or calculated
 * any rules for use or processing of the data, set by the data owner
 
@@ -125,8 +122,10 @@ Please see [UK Data Service guidance on documenting other data](https://www.ukda
 ### Information Asset Register (IAR)
 
 An information asset register (IAR) documents the information assets within your organisation.
+Your department should have an IAR in place, to document its information assets.
+As an analysts, you might use the register to identify contacts for data require for your analyses.
 
-This record may not contain detailed information on how to use each data source (provided by data dictionaries), but IAR's do increase visibility of data flows.
+This form of documentation may not contain detailed information on how to use each data source (provided by data dictionaries), but an IAR does increases visibility of data flows.
 An IAR may include:
 * the owner of each dataset
 * a high level description of the dataset
@@ -134,7 +133,7 @@ An IAR may include:
 * how the information is stored and secured
 * the risk of information being lost or compromised
 
-GOV.UK provides [IAR templates](https://www.gov.uk/government/publications/information-asset-register) that you might use in your organisation.
+GOV.UK provides [IAR templates](https://www.gov.uk/government/publications/information-asset-register) that your department might use to structure their IAR.
 
 
 ## Data versioning ★★☆☆☆
@@ -150,8 +149,9 @@ Whether using a primary or secondary data source, you should version and documen
 Documentation for data versions should include the reason why the version has changed.
 For example, if an open data source has been recollected, revisions have been made to existing data, or part of the data has been removed.
 
-The same considerations apply when storing outputs from your analysis.
-To maintain a complete audit trail, systems should not overwrite existing outputs but should store a new copy of each output after each run.
+```{todo}
+Reference outputs should be disposable. Otherwise, version your outputs?
+```
 
 To automate the versioning of data, you might use the Python package [DVC, which provides Git-like version control of data](https://dvc.org/).
 This tool can also relate the data version to the version of analysis code, strongly facilitating reproducibility .
@@ -165,5 +165,28 @@ As such, is important that data file versions are named uniquely, for example, u
 Additionally, file versions must not be modified after they have been used for analysis - they should be treated as read-only.
 All modifications to the data should result in new versions.
 
+```{todo}
+Diagram of good manual versioning workflow.
+```
+
 Finally, for this to be effective, your analysis should record the version of data used to generate a specified set of outputs.
 This might be documented in analysis reports or automatically logged by your code.
+
+
+## Releasing data ★★☆☆☆
+
+```{todo}
+Open Linked Data ratings
+CSVW
+
+```
+
+
+Other guidance addresses:
+* [Releasing statistics in spreadsheets](https://gss.civilservice.gov.uk/policy-store/releasing-statistics-in-spreadsheets/)
+* [Quality assurance of administrative data](https://osr.statisticsauthority.gov.uk/guidance/administrative-data-and-official-statistics/)
+* When publishing or sharing tabular data, you should follow the [GOV.UK Tabular data standard](https://www.gov.uk/government/publications/recommended-open-standards-for-government/tabular-data-standard).
+
+Analysts producing published statistics may also be interested in [Connected Open Government Statistsics (COGS)](https://gss.civilservice.gov.uk/guidance/the-gss-data-project/).
+
+Guidance from the UK Data Service describes [data security considerations](https://www.ukdataservice.ac.uk/manage-data/store/security).

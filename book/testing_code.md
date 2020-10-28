@@ -59,6 +59,8 @@ The examples in this section use these testing frameworks:
 * `pytest` for Python
 * `testthat` for R
 
+R users might also be interested in `assertthat`, which provides Python-like assertions in R.
+
 Other common frameworks, which have a Class-based focus, are:
 * `unittest` built into Python
 * `Runit` for R
@@ -144,49 +146,6 @@ Lots of content needed below
 ```
 
 
-## Reducing repetition in tests ★★☆☆☆
-
-Repetitive test code violates the "Don't repeat yourself" rule.
-Code is much easier to maintain when it is reusable and is only implemented once.
-
-
-### Fixtures
-
-As your test suite grows, you might notice that many of your test use similar code to prepare your tests or to clean up after each test has run.
-You're be right to be unnerved by this, especially if "Don't Repeat Yourself" comes to mind.
-
-Fixtures help us to avoid this form of repetition in our tests.
-You define your test preparation and clean up within a function, then the fixture carries out these steps consistently for each function that it is used with. 
-
-In Class-based testing frameworks, these functions tend to be separated into `SetUp` and `TearDown` functions.
-These are similarly set to run before and after each test, respectively.
-
-Fixtures can be especially useful when setting up a test object takes a large amount of time or resource.
-Or perhaps, you need to ensure that changes are undone after each test is complete.
-
-Reference material:
-* [`pytest` Fixture](https://docs.pytest.org/en/stable/fixture.html) documentation
-* [`{testthat}` Fixture](https://testthat.r-lib.org/articles/test-fixtures.html) documentation
-
-
-### Parameterization
-
-You might also find that similar steps are taken when testing multiple combinations of inputs and outputs.
-Parameterization allows us to reduce repetition in our code, in a similar way to reusable functions.
-We specify the pairs of inputs and expected outputs, so that our testing tool can repeat a test for each scenario.
-
-Note that this approach is equivalent to looping to apply a test function over multiple inputs and expected outputs.
-However, using functionality from test packages may improve efficiency and the detail of test reports.
-
-In `pytest`, this can be achieved using the [Parametrize mark](https://docs.pytest.org/en/stable/parametrize.html).
-
-In R, the `patrick` package extends `testthat` to provide a [`with_parameters_test_that`](https://rdrr.io/cran/patrick/man/with_parameters_test_that.html) function to achieve this.
-
-```{todo}
-Add examples of parametrization
-```
-
-
 ## Unit testing ★★☆☆☆
 
 
@@ -221,27 +180,98 @@ These sections all need more content/examples.
 
 ## Integration testing ★★★☆☆
 
-Your process likely involves multiple units working together to perform a high level task.
+Your analysis likely involves multiple units working together to perform a high level task.
 Assuring that individual units work as expected, using unit testing, does not guarantee that multiple units interact with one another as expected.
 
-Integration tests incorporate two or more units, so check that they work together correctly.
+```{figure} ./_static/no_integration_tests.png
+---
+width: 40%
+name: no_integration_tests
+alt: Two drawers that open into each other's handles.
+---
+Two unit tests, no integration tests.
+```
+
+Integration tests incorporate two or more units and check that they work together correctly.
+These tests are also used to test the interface between your code and external dependencies, such as a database or web-based API.
+
+When your code relies upon interaction with complex or external dependencies, it may be difficult for your tests to reproducibly access these dependencies.
+Creating abstractions of these dependencies when they are not being directly tested can keep your test code simpler and more focused.
+You might use Stubs or Mocks for this purpose:
+* Stubs carry out a predetermined behaviour. For example, a stub representing an API always return the same response. Use these when you are not interested in the details around how your code interacts with the dependency.
+* Mocks require additional setup in your test code, to define your expectations. Use these when your test needs to verify that your code interacts with the Mock in a specific way.
 
 
 ## End-to-end testing ★★★☆☆
 
 As the name suggests, these tests cover the entire process.
+The motivation for using end-to-end tests is similar to that of integration tests.
+Despite assurance that small sections of the code are functioning correctly, it's important to validate that your overall system is fit for purpose.
+
+```{figure} https://i.stack.imgur.com/Nirxy.jpg
+---
+width: 50%
+name: sinking_ship
+alt: A sinking ship would still report passing unit tests.
+---
+A sinking ship would still report a number of passing unit and integration tests, while the system is failing overall.
+```
+
 These tests are much slower to run and can take longer to develop for complex processes.
 Having at least one end-to-end test for your process will ensure that the high-level specification of your code is met.
 This should validate that your user requirements are met.
 
 
-## Testing in multiple environments ★★★☆☆
+
+## Reducing repetition in tests ★★★☆☆
+
+Repetitive test code violates the "Don't repeat yourself" rule.
+As with functional code, test code is much easier to maintain when it is modular and reusable.
+
+```{todo}
+Add examples to demonstrate these
+```
+
+
+### Fixtures
+
+As your test suite grows, you might notice that many of your test use similar code to prepare your tests or to clean up after each test has run.
+Copying these code snippets for each test is laborious and also increases the risk of inconsistently applying those steps.
+
+Fixtures help us to avoid this form of repetition in our tests.
+You define your test preparation and clean up within a function (the fixture).
+You then use the fixture to carry out these steps consistently for each test that they are required for. 
+
+In Class-based testing frameworks, these functions tend to be separated into `SetUp` and `TearDown` functions.
+These are similarly set to run before and after each test, respectively.
+
+Fixtures can be especially useful when setting up a test object takes a large amount of time or resource.
+They can be designed to run for each test, once for a group of tests or once for the whole test suite.
+They are also useful for undoing any consequences of each test run.
+For example, removing data which has been written to a temporary file or database.
+
+Reference material:
+* [`pytest` Fixture](https://docs.pytest.org/en/stable/fixture.html) documentation
+* [`{testthat}` Fixture](https://testthat.r-lib.org/articles/test-fixtures.html) documentation
+
+
+### Parameterization
+
+You might also find that similar steps are taken when testing multiple combinations of inputs and outputs.
+Parameterization allows us to reduce repetition in our code, in a similar way to reusable functions.
+We specify the pairs of inputs and expected outputs, so that our testing tool can repeat a test for each scenario.
+
+Note that this approach is equivalent to using a for-loop to apply a test function over multiple inputs and expected outputs.
+However, using functionality from test packages may improve running efficiency and the detail of subsequent test reports.
+
+In `pytest`, this can be achieved using the [Parametrize mark](https://docs.pytest.org/en/stable/parametrize.html).
+
+In R, the `patrick` package extends `testthat` to provide a [`with_parameters_test_that`](https://rdrr.io/cran/patrick/man/with_parameters_test_that.html) function to achieve this.
+
 
 
 ```{todo}
-tox/nox
-
-[rhub](https://r-hub.github.io/rhub/)?
-
-Though CI makes these reasonably redundant
+Testing in multiple environments?
+* [tox](https://tox.readthedocs.io/en/latest/)/[nox](https://nox.thea.codes/en/stable/)
+* [rhub](https://r-hub.github.io/rhub/)
 ```
