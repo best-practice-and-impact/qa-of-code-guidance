@@ -76,7 +76,7 @@ We have used the [Markdown](https://daringfireball.net/projects/markdown/syntax)
 
 ## User desk instructions ★☆☆☆☆
 
-If your project is very user focussed, for example developing a statistic production pipeline for other analysts to execute, it is very important that the code users understand how to appropriately run your code.
+If your project is very user focussed for one particular task, for example developing a statistic production pipeline for other analysts to execute, it is very important that the code users understand how to appropriately run your code.
 
 These instructions should include:
   
@@ -102,7 +102,7 @@ You can get a list of your installed python packages using `pip freeze` in the c
 Packages are listed under the `Imports` key.
 You can get a list of your installed R packages using the `installed.packages()` function.
 
-[Environment management] tools are very useful for keeping track of software and package versions used in a project.
+Environment management tools, such as [`renv`](https://rstudio.github.io/renv/articles/renv.html) for R or [`pyenv`](https://github.com/pyenv/pyenv) for python, are very useful for keeping track of software and package versions used in a project.
 
 
 ## Vignettes ★★☆☆☆
@@ -207,7 +207,7 @@ In government, we [support and promote open source](https://www.gov.uk/service-m
 [Open source](https://opensource.com/resources/what-open-source) software is software with source code that anyone can freely inspect, modify and enhance.
 As a government analyst, you should aim to make all new source code open, unless justification can be provided for withholding part of your source code.
 
-Open sourcing code is benefits yourself, other government analyst and the public.
+Open sourcing code benefits yourself, other government analyst and the public.
 
 Personal benefits from open sourcing include:
 

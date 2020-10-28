@@ -1,15 +1,12 @@
 # Core programming practices
 
-
-## Introduction
-
 The principles outlined in this chapter represent good practices for general programming and software development.
 
 Before reading this chapter, you would benefit from having an understanding of core programming concepts.
 This includes assigning and using variables, and using functions and classes.
 
 
-```{admonition} Key Learning
+```{admonition} Pre-requisites
 :class: admonition-learning
 
 You might look to these sources for introductory learning:
@@ -63,10 +60,10 @@ Breaking your code down into smaller, more manageable chunks is a sure fire way 
 Code comes in many shapes and sizes.
 A few code abstractions are outlined below, which will be useful for understanding concepts throughout the rest of this chapter and book.
 
-- Functions
-    - are units of code that perform a minimal number of tasks (one ideally)
-    - can take inputs and can return outputs, though both are optional
-    - the functional programming paradigm uses them exclusively
+Functions:
+  - are units of code that perform a minimal number of tasks (one ideally)
+  - can take inputs and can return outputs, though both are optional
+  - the functional programming paradigm uses them exclusively
 
 
 ```{figure} https://upload.wikimedia.org/wikipedia/commons/3/3b/Function_machine2.svg
@@ -78,11 +75,11 @@ alt: Demonstrating that a mathematical function takes inputs and returns outputs
 Visual representation of a function, from [Wikipedia Functions (mathematics)](https://en.wikipedia.org/wiki/Function_(mathematics))
 ```
 
-- Objects (often defined by classes)
-    - can have associated attributes (variables that belong to the object)
-    - can have associated methods (functions that belong to the object)
-    - maintain association between data (stored in the object's attributes) and a particular set of tasks (the object's methods)
-    - the basis of object-oriented programming (OOP)
+Objects (often defined by classes):
+  - can have associated attributes (variables that belong to the object)
+  - can have associated methods (functions that belong to the object)
+  - maintain association between data (stored in the object's attributes) and a particular set of tasks (the object's methods)
+  - are the basis of object-oriented programming (OOP)
 
 
 ```{figure} ./_static/class_car.png
@@ -94,15 +91,15 @@ alt: Demonstrating that classes have attributes and methods.
 Demonstration of a Car class, with an example object (instance of the class)
 ```
 
-- Scripts
-    - text documents containing source code
-    - may be broken down into sections or "chunks"
-    - may contain functions, classes and/or lines of non-modular code
+Scripts: 
+  - are text documents containing source code
+  - may be broken down into sections or "chunks"
+  - may contain functions, classes and/or lines of non-modular code
 
-- Packages
-    - collections of code that perform related tasks
-    - may be sub-sectioned into modules that perform related, but lower level groups of tasks
-    - contains other useful information relating to the code in the package (see [](project_documentation.md))
+Packages:
+  - are collections of code that perform related tasks
+  - may be sub-sectioned into modules that perform related, but lower level groups of tasks
+  - contain other useful information relating to the code in the package (see [](project_documentation.md))
 
 
 ## Clean code ★★☆☆☆
@@ -482,7 +479,7 @@ You can run multiple of these, to catch a broader range of stylistic or programm
 If you're considering these tools as part of a project, see [Continuous Integration](continuous-integration) for advice on automating them.
 
 ```{todo}
-Potentially add something around not leaving commented-out code lying around, without good reason.
+Potentially add something around not leaving commented-out code lying around, without good reason. This should go in code documentation.
 Will need to link to section on configs, as beginners sometimes use comments for parameterising code.
 ```
 
@@ -896,8 +893,12 @@ If you were to increase the domain and range of a function to account for new ca
 
 > Many client-specific interfaces are better than one general-purpose interface
 
-As you add more and more functionality into a single interface, it becomes more difficult to extend or maintain. 
+As you add more and more functionality into a single interface, between parts of a program or from the program to customers, it becomes more difficult to extend or maintain. 
 Separating these into multiple interfaces increases simplicity and maintainability.
+
+It can be tempting to generalise your program to as many use cases as possible.
+However, this can overwhelm your users.
+It is better that each user persona gets an interface that is meant for them rather than a complicated one which doesn't satisfy any user persona.
 
 
 ### Dependency inversion

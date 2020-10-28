@@ -10,16 +10,22 @@ Peer review allows a fresh pair of eyes to take a look at your work.
 This form of systematic check helps to identify errors in your code and provides feedback on your approach to tackling a problem.
 This constructive feedback helps you to improve your code quality and provides confidence in your work.
 
+```{todo}
+Must include reference to the AQUA book
+```
+
 A major benefit of internal review is shared knowledge.
 Both the reviewer and reviewee are exposed to new concepts.
 It encourages a deeper understanding of what the code is doing.
 This can help with future work on the project, as multiple team members have the understanding to maintain the project.
 
 ```{todo}
-
-Ironically needs review and more content
-
+Must include more focus on:
+- peer review helps reproducibility because peer reviewers have to reproduce the results
+- peer review helps quality because it offers constructive challenge
+- peer review helps auditability because a transparent review process shines a light on the development process
 ```
+
 ## What to review
 
 When reviewing code, you should ask yourself the following questions:
@@ -77,7 +83,7 @@ These might include, but not exclusively:
 
 - bugs that need fixing (does it work as expected? and does it work with other code
   that it is likely to interact with?)
-- alternative methods (could it be written more efficiently?)
+- alternative methods (could it be written more efficiently or with more clarity?)
 - documentation improvements (does it reflect what the code actually does?)
 - additional tests that should be implemented (do the tests effectively assure that it
   works correctly?)
@@ -126,3 +132,9 @@ The thought of someone else reviewing your code in this way encourages good prac
 
 This form of review is aided by features of most version control platforms, namely the Pull request (or equivalent).
 See [](version_control.md) for more information.
+
+```{todo}
+There's probably an example from ROpenSci we can point people to here
+
+https://github.com/ropensci/software-review/issues/168
+```

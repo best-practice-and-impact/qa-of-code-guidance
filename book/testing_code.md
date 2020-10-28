@@ -7,26 +7,25 @@ The core concept of testing is **"Does my code do what I expect it to, given rea
 
 The most common pattern for writing these tests is:
 1. Arrange - set up any pre-requisites for your test
-2. Act - run the code that your are testing
+2. Act - run the code that you are testing
 3. Assert - verify that the code performed the expected action
 
 
 ## Why test code? ★☆☆☆☆
 
-Key reasons for testing your code include:
-* Knowing that your code works - you can't be sure that your code works without having run it with realistic examples
-* Asserting that user requirements have been met - test can verify that users expectations are met by the code
-* Increasing confidence in your changes - tests let you know when you've broken the expected functionality of your code
-* Profiling performance - tests can be used to report or flag poor performance (e.g. modelling)
-* Improving code structure - well-structured code is easier to write tests for, so testing incentivises good code structure
+You can't be sure that your code works without having run it with realistic examples. Tests can verify that users expectations are met by the code.
+They let you know when you've broken the expected functionality of your code - or when users have.
+They can be used to report or flag poor performance (e.g. modelling).
+Well-structured code is easier to write tests for, so testing incentivises good code structure.
 
 Testing is crucial to assuring quality in your code and will also increase efficiency in the development of your code.
 
 
 ## What to test ★☆☆☆☆
 
-> A quality assurance engineer walks into a bar. Orders 1 beer. Orders 3.14 beers. Orders -1 beers. Orders 99999999999 beers. Orders a lizard.  Orders NULL.  
-> First real customer walks in and asks where the bathroom is. The bar bursts into flames.
+> A quality assurance engineer walks into a bar. They order 1 beer. They order 3.14 beers. They order -1 beers. They order 99999999999 beers. They order a lizard. They order `NULL`.  
+
+> The first customer walks in and asks where the bathroom is. The bar bursts into flames.
 
 Unfortunately, there's no golden rule for exactly what you should test.
 We can use general guides to direct where most of our testing effort goes.
@@ -128,7 +127,7 @@ In order of increasing scale, the main layers of testing covered here will be:
 
 The time taken to develop and run individual tests roughly increases down this list.
 
-[Acceptance testing](https://en.wikipedia.org/wiki/Acceptance_testing) is often considered as additional level, but is not covered here.
+[Acceptance testing](https://en.wikipedia.org/wiki/Acceptance_testing) is often considered as an additional level, but is not covered here.
 
 The following sections will climb through these layers of testing.
 Please note that the principles covered early on also apply at subsequent levels.

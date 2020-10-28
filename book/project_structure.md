@@ -1,6 +1,6 @@
 # Structuring your project
 
-When you're designing your analysis it can often be difficult to keep your thoughts tidy.
+When you're designing your analysis it can be difficult to keep your thoughts tidy.
 Analysis is often exploratory and subject to change.
 This nature means that scripts and programs can become messy.
 The messier the programs, the harder they are to maintain and change in future.
@@ -34,9 +34,11 @@ It also runs the code with a clean environment, not containing variables or othe
 
 ## Clean directories ★☆☆☆☆
 
-```{todo}
-Content for clean directories
-```
+
+
+As your analysis project grows it becomes more important to keep your project structure clean.
+Every project is different and the right way to organise your project might differ from another project.
+However, there are some principles that are useful to consider.
 
 ### Filenames
 
@@ -61,11 +63,36 @@ For example, where the `001_introduction` should come before `002_methodology` a
 
 ### Analysis is a DAG
 
+Analysis can best be thought of as a directed acyclic graph.
+Don't let the name scare you off!
+All we mean by this is that you start off with the input data, you finish with the output(s), and in between there are no lines that link backwards.
+
+```{figure} https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Tred-G.svg/800px-Tred-G.svg.png
+---
+width: 60%
+name: dag
+alt: Analysis is a directed, acyclic graph that links the input data through a series of steps to the outputs.
+---
+Defining analysis as a DAG - linking the input data at (a) to the output at (e).
+```
+
+When thinking about how to structure your project it is useful to think in terms of what your project's DAG looks like.
+Most analysis will have an ingest or input stage, a processing stage, and a reporting stage.
+Similarly, your project structure should have a folder for inputs, a folder for your processing code, and a folder for your outputs and reporting.
 
 ### Raw data should be preserved
 
+You should not alter the raw data except in very specific circumstances.
+Even data cleaning should take place on a copy of the raw data so that you can understand which cleaning decisions have been made.
+
+There must be an immutable store for raw data in your project structure.
 
 ### Outputs should be disposable
+
+You should be able to dispose of your outputs, deleting them, without worrying.
+If you are worried about deleting your outputs then it is unlikely you have confidence in being able to reproduce your results.
+
+It is good practice to delete your outputs frequently when developing analysis.
 
 
 ## Modules and packages ★★☆☆☆
@@ -115,7 +142,3 @@ One repository usually contains a single project.
 Developing your project using a version controlled repository has significant benefits for reproducibility.
 
 See [](version_control.md) for more information.
-
-```{todo}
-Any more expected here?
-```

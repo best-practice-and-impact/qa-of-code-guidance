@@ -85,12 +85,22 @@ print("Median price: " + median_price)
 ## Produce figures
 plt.plot(ten_years_price)
 ```
+```{code-tab} r R
+##### GET DATA #####
+time_series <- read.csv("time_Series_data.csv")
+
+##### FILTER DATA #####
+ten_years <- dplyr::select(time_series, "2010":"2020")
+ten_years_price <- dplyr::select(ten_years, price)
+
+##### ANALYSE DATA #####
+median_price <- median(ten_years_price)
+print(paste0("Median price: ", as.character(median_price)))
+
+##### PLOT #####
+plot(ten_years_price)
 
 ````
-
-```{todo}
-Add R example
-```
 
 But note that in simple cases, such as the example above, these steps may already be apparent from the code.
 
@@ -103,6 +113,7 @@ In summary, use comments sparingly but effectively.
 When your code is structured as functions or classes, these functional units can be efficiently documented using docstrings.
 Docstrings are multi-line comments that appear at the start of a function definition.
 Use of these comments keeps the documentation of your code closely associated with the relevant sections of code.
+This close association means it is easier to keep documentation up-to-date.
 Docstrings commonly describe:
 
 - what the function or class does

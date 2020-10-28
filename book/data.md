@@ -1,8 +1,7 @@
-# Data
+# Reproducible data
 
 In order to reproduce a piece of analysis we need to be able to identify and access the data that our analysis used and produced.
-This requires suitable storage of the data, with any relevant documentation.
-And versioning of the data where it may change over time.
+This requires suitable storage of the data, with any relevant documentation and versioning of the data where it may change over time.
 
 
 ## Data storage ★☆☆☆☆
@@ -24,7 +23,7 @@ Guidance from the UK Data Service describes [data security considerations](https
 ### Spreadsheets
 
 Spreadsheets (e.g. Microsoft Excel formats and open equivalents) are a very general data analysis tool.
-The cost of their easy to use interface and flexibility is a complete lack of quality assurance.
+The cost of their easy to use interface and flexibility is increased difficulty of quality assurance.
 
 Spreadsheets are not suitable for storage of data (or statistics production and modelling processes).
 Issues when using spreadsheets for data storage include:
@@ -110,6 +109,7 @@ A data dictionary describes the contents and format of a dataset.
 
 For variables in tabular datasets, you might document:
 * a short description of what each variable represents
+* the frame of reference of the data
 * variable labels, if categorical
 * valid values or ranges, if numerical
 * representation of missing data

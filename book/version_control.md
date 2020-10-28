@@ -2,8 +2,6 @@
 
 In this chapter, we primarily discuss the benefits of using the [Git](https://git-scm.com/) version control system.
 
-## Motivation
-
 ### Why do we need version control?
 
 Manually versioning files is not appropriate or sufficient for development at pace or with input from multiple individuals.
@@ -26,12 +24,12 @@ alt: Comic demonstrating poor file naming, like "Untitled 138 Copy.docx".
 Documents, from [xkcd](https://xkcd.com/1459/)
 ```
 
-As discussed in [](principles.md), an effective audit trail is essential for reproducibility.
+As discussed in [](principles.md), an audit trail is essential for quality analysis.
 
 It's important for us to be able to answer the following questions about our analysis:
 * What changes have been made to our project?
 * When were those changes made?
-* What evidence directed these changes?
+* Why were those changes made?
 * Who made those changes?
 
 Version control software, like Git, records the answers to these questions throughout the development of a project.
@@ -45,6 +43,8 @@ Most importantly, it allows us to refer to specific versions of our code that ha
 
 Ideally, you should include any code that is required to run your system.  In a public repository, you may need to omit confidential or sensitive code.
 
+```{caution}
+
 You shouldn't include the following in your code repository:
 * passwords, credentials or keys
 * configuration files that are environment-dependent
@@ -53,18 +53,22 @@ You shouldn't include the following in your code repository:
   * or code that contains references to personally identifiable data
   * or code that might compromise security protocols
 * data, except for small example datasets
+```
 
 You might include example configuration files, or documentation describing how configuration is applied.
 However, the exact configuration of a system for a particular run of your code should be recorded by logging for reproducibility purposes.
 
-The data we use for analysis is often unreleased or sensitive.  Unpublished, sensitive or disclosive data should never be shared in a code repository.  As a rule of thumb, only small example datasets should be included.
+The data we use for analysis is often unreleased or sensitive.  
+Unpublished, sensitive or disclosive data should never be shared in a code repository.  
+As a rule of thumb, only small example datasets should be included.
 It is still important to version the data that we use for our analyses, but this can be done more appropriately using databases.
 
 
 ## Git
 
-Git is a distributed version control system, which means that all users have access to a complete and self-contained history of changes to a given project.
-This means that it can be used to record local changes, with the option of synchronising these changes with a central, remote repository.
+Git is a distributed version control system. 
+All users have access to a complete and self-contained history of changes to a given project.
+It can be used to record local changes, with the option of then synchronising these changes with a central, remote repository.
 
 The following sections describe useful concepts for using Git to version control your projects.
 We use examples of Git commands throughout, but do not provide detailed descriptions of Git usage.
@@ -102,17 +106,17 @@ You can use this [cheat-sheet](https://education.github.com/git-cheat-sheet-educ
 
 
 A repository (often shortened to repo) is a collection files that are being versioned by Git.
-* created by `init`ialising a new repo or `clone`ing an existing one
-* a local repository is your self-contained copy of the project
-* a remote repository is a centralised copy of a project that is often used as the truth
+A repository is created by `init`ialising a new repo or `clone`ing an existing one.
+A local repository is your self-contained copy of the project.
+A remote repository is a centralised copy of a project that is often used as the truth.
 
 A `.gitignore` file tells git not to version specific patterns of file names.
-* useful for ensuring that specific files or types are not included. Such as configuration files or data.
+This is useful for ensuring that specific files or types are not included. For example, configuration files or data.
 
 Commits are collections of changes to one or more files.
-* are attributed to the author of these changes
-* each commit has a unique hash associated to it, which has a long (e.g. `121b5b4f18231e4ee32c9c61f6754429f9572743`) and short version (e.g. `121b5b4`)
-* also have an associated message that is used to describe the changes - this is a key part of the audit trail
+Every commit is attributed to the author of these changes.
+Each commit has a unique hash - or identifier - associated with it, which has a long (e.g. `121b5b4f18231e4ee32c9c61f6754429f9572743`) and short version (e.g. `121b5b4`)
+Every commit also has an associated message that is used to describe the changes - this is a key part of the audit trail.
 
 See this model commit message from [A note about Git commit messages](https://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html):
 
@@ -140,40 +144,33 @@ Further paragraphs come after blank lines.
 - Use a hanging indent
 ```
 
-Branches
-* independent copies of a project's history, copied from the state of the parent branch at a specific point in that branches history
-* help to support multiple changes to a project that are developed in parallel
-* `master` is the default name for the original branch of a repository, however, some platforms are changing this default to `main`
+Branches are independent copies of a project's history, copied from the state of the parent branch at a specific point in that branches history.
+They help to support multiple changes to a project that are developed in parallel.
+The `master` is the default name for the original branch of a repository, however, some platforms are changing this default to `main`.
 
-`HEAD`
-* refers to the current state of the current branch
-* usually indicates the last commit that was created or checked out
-* becomes "detached" if an individual commit or a remote branch is checked out without creating a new local branch
-* `HEAD` and other references are described in more detail in [References section of the Git book](https://git-scm.com/book/en/v2/Git-Internals-Git-References)
+`HEAD` refers to the current state of the current branch.
+It usually indicates the last commit that was created or checked out.
+It becomes "detached" if an individual commit or a remote branch is checked out without creating a new local branch.
+`HEAD` and other references are described in more detail in [References section of the Git book](https://git-scm.com/book/en/v2/Git-Internals-Git-References).
 
-Merge
-* recreating changes from one branch on another
-* can be done using a few different methods, including fast-forward and rebasing
+Merge is the process of recreating changes from one branch on another branch. 
+It can be done using a few different methods, including fast-forward and rebasing.
 
-Conflicts
-* when multiple changes have been made to the same part of a file
-* you must indicate which change (or combination of changes) should be retained
+Conflicts arise when multiple changes have been made to the same part of a file.
+You must indicate which change (or combination of changes) should be retained.
 
-Don't panic
-* it's easy to make mistakes, but thankfully Git's audit trail means that we can always revert back to working versions
-* [stackoverflow](https://stackoverflow.com/) is your friend
+Don't panic! It's easy to make mistakes, but thankfully Git's audit trail means that we can always revert back to working versions. For most issues, [stackoverflow](https://stackoverflow.com/) is your friend.
 
-Don't change published (i.e. `remote`) history
-* otherwise you might need to panic
-* this causes issues across different users of the repo, as other developer's local copies may no longer contain the same history
-* consider this before force pushing changes to a remote repository
-* instead create new commits that resolve or `revert` to fix the problem
+Don't change published (i.e. `remote`) history. Otherwise you might need to panic.
+This causes issues across different users of the repo, as other developer's local copies may no longer contain the same history.
+You must consider this before force pushing changes to a remote repository.
+Create new commits that resolve or `revert` to fix the problem.
 
 ### Releases (tagging)
 
 Regularly `commit`ing changes using Git helps us to create a thorough audit trail of changes to our project.
 However, there may be discrete points in the history of the project that we want to mark for easy future reference.
-Let's face it, hashes like `121b5b4` don't exactly roll of the tongue.
+Let's face it, hashes like `121b5b4` don't exactly roll off of the tongue.
 
 Tags can be created in Git, to reference a specific point in the projects history.
 A tag essentially acts as an alias for a commit hash.
@@ -224,7 +221,7 @@ Many of these project management tools are also discussed on the [GitHub feature
 
 ### Access management
 
-GitHub repositories have a [visibility setting](https://docs.github.com/en/free-pro-team@latest/github/administering-a-repository/setting-repository-visibility) that represents whether the a repo can be viewed publicly or only by owners of the project,
+GitHub repositories have a [visibility setting](https://docs.github.com/en/free-pro-team@latest/github/administering-a-repository/setting-repository-visibility) that represents whether the repo can be viewed publicly or only by owners of the project,
 Note that some GitHub features are limited or are not available for private repos on free GitHub accounts.
 
 Organizations provide an area for collating multiple repos that are associated with a particular team or department.
