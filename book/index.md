@@ -1,22 +1,28 @@
 
-# Quality assurance of code for analysis and research
+# Introduction
+
+## Quality Assurance of Code for Analysis and Research
 
 This is an early draft of Government Statistical Service (GSS) and Analysis Function guidance, produced by the Best Practice and Impact division of the Office for National Statistics.
-
-```{figure} ./_static/GSS_logo.jpg
----
-width: 70%
-name: GSS_logo
----
-```
 
 This guidance has been written to support analysts in government who use coding in their work.
 Including those who produce statistics, carry out modelling or apply data science.
 
+## About us
+
 You can find us on:
+- Our websites: [Government Statistical Service](https://gss.civilservice.gov.uk/) and [Government Analytical Function](https://www.gov.uk/government/organisations/government-analysis-function)
+- Email: [gsshelp@statistics.gov.uk](mailto:gsshelp@statistics.gov.uk) and [analysis.function@ons.gov.uk](mailto:analysis.function@ons.gov.uk)
 - Slack: [GSS](https://gov-stats-service.slack.com) and [Gov Data Science](https://govdatascience.slack.com)
 - Twitter: [GSS Good Practice Team](https://twitter.com/gssgoodpractice) and [UK GSS](https://twitter.com/ukgss)
-- Email: [gsshelp@statistics.gov.uk](mailto:gsshelp@statistics.gov.uk)
+
+```{figure} ./_static/GSS_logo.jpg
+---
+width: 60%
+name: GSS_logo
+alt: The Governments Statistical Service logo
+---
+```
 
 
 ## Structure of the book
@@ -68,6 +74,9 @@ For keyboard navigation, up and down arrow keys can be used to scroll up and dow
 Left and right arrow keys can be used to move forwards and backwards thought the pages of the book.
 Tabbed content (including code example) can be focused using the tab key.
 Arrow keys are then used to focus the required tab option, where Enter can be used to select that option and display the associated content.
+
+Parts of this guidance which are not accessible include:
+* Our star rating for sections, which are not screen-reader friendly.
 
 
 ### Feedback and reporting accessibility problems

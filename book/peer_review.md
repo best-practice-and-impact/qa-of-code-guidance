@@ -15,11 +15,7 @@ Both the reviewer and reviewee are exposed to new concepts.
 It encourages a deeper understanding of what the code is doing.
 This can help with future work on the project, as multiple team members have the understanding to maintain the project.
 
-```{todo}
 
-Ironically needs review and more content
-
-```
 ## What to review
 
 When reviewing code, you should ask yourself the following questions:

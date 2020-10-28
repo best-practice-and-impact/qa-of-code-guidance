@@ -1,11 +1,11 @@
 # Book settings
-title: ""
+title: "Quality Assurance of Code for Analysis and Research"
 author: ""
 email: gsshelp@statistics.gov.uk
 description: >- # ignore newlines until "logo:"
   Guidance to support the quality assurance of code
   by civil service researchers and analysts.
-logo: "./_static/qa_of_code_logo.png"
+logo: "./_static/qa_of_code_favicon.png"
 
 repository:
   url: https://github.com/best-practice-and-impact/qa-of-code-guidance

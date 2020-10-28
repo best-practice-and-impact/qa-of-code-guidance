@@ -44,16 +44,19 @@ Code is read more often than it is written.
 
 You can't be responsible for long term maintenance of every piece of code that you write. 
 In the future, others will inevitably need to understand, use and adapt your code.
-It is important that other programmers can quickly and easily understand the task that your code performs.
-Many programs perform a task correctly, but are deemed to be "black boxes" because of barriers to understanding them.  Common barriers include documentation that is hard to understand or absent, or that assumes familiarity and in-depth knowledge of the problem space and the process which newcomers simply will not have. Most of us have found our own code hard to follow when revisiting it after months or years!
+It is important that other programmers can quickly and easily understand the tasks that your code performs.
+Many programs perform a task correctly, but are deemed to be "black boxes" because of barriers to understanding them. 
+Common barriers include documentation that is hard to understand or absent, or that assumes familiarity and in-depth knowledge of the problem space and the process which newcomers simply will not have.
+Most of us have found our own code hard to follow when revisiting it after months or years!
 It is your responsibility to avoid putting such barriers in place.
 
 Good code is easier to document, review and test.
 These practices are necessary to make sure that your analysis is reproducible, auditable and assured.
 Good code helps you with these ambitions.
 
-This chapter highlights good coding practices that will improve the readability and maintainability  of your code.
-However, if your code is well-tested, documented, and reviewed then you have already reached your goal and don't need to add more complexity to your project.
+This chapter highlights good coding practices that will improve the readability and maintainability of your code.
+Here, readability refers how easily another analyst can gain a decent understand of how your code works, within a reasonable amount of time.
+While maintainability refers to how easily another analysts can understand your code well enough to modify and repair it.
 
 
 ## Modular code ★☆☆☆☆
@@ -493,7 +496,7 @@ Will need to link to section on configs, as beginners sometimes use comments for
 
 ## KISS ★★☆☆☆
 
-**K**EEP **I**T **S**IMPLE AND **S**TRAIGHTFORWARD
+**K**eep **I**t **S**imple and **S**traightforward
 
 ```{epigraph}
 Make everything as simple as possible, but not simpler.
@@ -811,10 +814,10 @@ Now the count is printed if it is more than or equal to 0.
 It's clear that we intend for this to be the case.
 
 
-## SOLID ★★★☆☆
+## SOLID ★★★★☆
 
 SOLID is an acronym that encompasses 5 software design principles that are intended to increase the readability and extensibility of software source code.
-These principles are designed to improve object-oriented programs, but can be roughly applied to functional programs.
+These principles are designed to improve object-oriented programs, but can be roughly applied to functional programs too.
 
 ```{todo}
 Extend these subsections with analytical examples. Not necessarily code-based.
@@ -840,15 +843,15 @@ This principle suggests that your software should be separated into distinct sec
 
 For example, if your software is responsible for managing sales of a product, then your concerns might include:
 
-- Presenting information to the customer, to allow them to select a product
-- Taking payment from the customer
-- Arranging dispatch and delivery of the product
+- Presenting information to the customer, to allow them to select a product.
+- Taking payment from the customer.
+- Arranging dispatch and delivery of the product.
 
 Within the section of you software that is responsible for taking payment, you might have multiple responsibilities:
 
-- collect the users input, to capture payment details
-- pass the payment information on to a third party, to process the payment
-- report the status of the payment to the user
+- Collect the users input, to capture payment details.
+- Pass the payment information on to a third party, to process the payment.
+- Report the status of the payment to the user.
 
 
 ```{figure} ./_static/separation_of_concerns.png
@@ -866,7 +869,7 @@ Within each section of your software, distinct functions or classes should be re
 
 ### Open-closed
 
-> Objects and functions should be open for extension, but closed for modification
+> Objects and functions should be open for extension, but closed for modification.
 
 This means that it should be possible to extend the functionality of classes or functions, without modifying their source code or how they work.
 For example, extension of a class or function could be carried out through sub-classing or wrapper functions and decorators, respectively.
@@ -887,7 +890,10 @@ If you were to increase the domain and range of a function to account for new ca
 
 ### Interface segregation
 
-> Many client-specific interfaces are better than one general-purpose interface
+> Many client-specific interfaces are better than one general-purpose interface.
+
+An interface describes the interaction between multiple elements of code.
+This might be a piece of your code that uses another piece of your code or someone else's.
 
 As you add more and more functionality into a single interface, it becomes more difficult to extend or maintain. 
 Separating these into multiple interfaces increases simplicity and maintainability.
@@ -895,12 +901,13 @@ Separating these into multiple interfaces increases simplicity and maintainabili
 
 ### Dependency inversion
 
-> Depend on abstractions, not concretions
+> Depend on abstractions, not concretions.
 
 High level modules should not depend on low-level modules. 
 Both should depend on interfaces - i.e. be built with this interaction in mind.
-Abstractions should not depend on specific details.
-Concrete implementations should depend on abstractions.
+
+Abstractions should not depend on specific details, but should outline a general concept.
+Concrete implementations should depend on these abstractions.
 
 Specify parameters to a function (or a higher order function to retrieve them) rather than hard coding the function to get some value.
 The function should not look outside of its own environment for data.

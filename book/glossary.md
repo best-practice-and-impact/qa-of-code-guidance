@@ -1,3 +1,7 @@
+* Assured -
+* Auditable - 
+* Reproducibile - produces the same results, given the same analysis and the same data.
+* Quality assurance - 
 
 
 * Readability - ability to gain an understanding of code within a reasonable amount of time.

@@ -301,6 +301,7 @@ You can also assign reviewers and tag (`@`) project collaborators as part of the
 These boards can be used to track assignment and progress of specific tasks.
 This is aided by linking tasks to specific issues and pull requests.
 
+
 (continuous-integration)=
 ### Continuous integration
 
@@ -392,15 +393,50 @@ This workflow will report whether our test code ran successfully for each of the
 
 #### Documentation example
 
-This book uses the following GitHub Actions configuration.
+This book uses the following GitHub Actions configuration to build and deploy the HTML content:
 
-```{todo}
-Include content from projects CI config
 ```
+name: Deploy book
 
-Our workflow checks that changes to the book's contents to not prevent the book from building HTML.
-Each time a change is merged onto the `master` branch of this book's project, the HTML that you are reading now is automatically re-deployed.
-You might use a similar approach to deploy your code's documentation.
+on:
+  push:
+    branches:
+    - master
+
+jobs:
+  deploy-book:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Set up Python 3.7
+      uses: actions/setup-python@v1
+      with:
+        python-version: 3.7
+
+    - name: Install dependencies
+      run: |
+        pip install -r requirements.txt
+
+    - name: Build the book
+      run: |
+        jb build book -W --keep-going
+        && touch ./book/_build/html/.nojekyll
+
+    - name: Deploy book to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3.6.1
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./book/_build/html
+```
+This workflow runs whenever changes are pushed (including merges) onto the `master` branch.
+As with the previous example, we start by setting up an environment with Python.
+We install the dependencies for the project, which includes `jupyter-book` to build to the book.
+
+Our workflow then builds the book's HTML content, where it will fail if warnings or errors are raised.
+Finally, the book (including the new changes) is deployed to the site that you are reading now.
+
+You might use a similar approach to deploy your code's HTML documentation.
 
 
 #### Complex example
@@ -417,9 +453,9 @@ A recent version of the [`jupyter-book` CI workflow](https://github.com/executab
 * Deploying a new version of the `jupyter-book` package to [the python package index (PyPI)](https://pypi.org/)
 
 
-## Workflows
+## Branching models
 
-Adopting a particular workflow for Git can help to keep work consistent within a project.
+Adopting a particular branching model or workflow for Git can help to keep work consistent within a project.
 
 Generally, it is good practice to:
 * Commit a small number of changes, and commit often
@@ -442,16 +478,16 @@ In this workflow:
 We recommend that you use pull requests (or equivalents) to review changes that are merged onto the development and master branches.
 This mode of release provides an extra opportunity for discussion and quality assurance, before changes are added to the most stable branch.
 
-```{figure} https://wac-cdn.atlassian.com/dam/jcr:b5259cce-6245-49f2-b89b-9871f9ee3fa4/03%20(2).svg?cdnVersion=1273
+```{figure} https://nvie.com/img/git-model@2x.png
 ---
-width: 75%
+width: 65%
 name: gitflow
-alt: Branching structure when using the gitflow workflow. Features are branched from Develop, which is branched from Master.
+alt: Branching structure when using the gitflow workflow. Features are branched from develop, which is branched from master.
 ---
-Branching diagram to demonstrate gitflow, from [Atlassian](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow).
+Branching diagram to demonstrate gitflow. From [A successful Git branching model](https://nvie.com/posts/a-successful-git-branching-model/) by Vincent Driessen.
 ```
 
-This [Gitflow guide](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow) from Atlassian describes the workflow, with useful images to depict branching.
+This [blog post](https://nvie.com/posts/a-successful-git-branching-model/) and the [Atlassian Gitflow guide](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow) describe the workflow, with useful images to depict the branching model.
 
 
 ### GitHub flow

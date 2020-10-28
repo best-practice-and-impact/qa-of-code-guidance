@@ -69,29 +69,40 @@ For example, an analysis script might be broken down into sections that describe
 
 ```{code-tab} py
 import pandas as pd
+import seaborn as sns
 import matplotlib.pyplot as plt
 
 
 ## Get data
-time_series = pd.read_csv("time_Series_data.csv")
+penguins = sns.load_dataset("penguins")
 
-## Filter data
-ten_years = time_series.loc["2010:2020"]
-ten_years_price = ten_years.loc[:, "price"]
+## Analyse
+species_means = penguins.groupby("species").mean()
 
-## Analyse data
-median_price = ten_years_price.median()
-print("Median price: " + median_price)
+## Report
+plt.plot(penguins.bill_length_mm)
+species_means.to_csv("penguin_species_mean_measurements.csv")
+```
 
-## Produce figures
-plt.plot(ten_years_price)
+```{code-tab} r R
+library(palmerpenguins)
+library(magrittr)
+
+
+## Get data
+penguins_data <- penguins
+
+## Analyse
+species_means <- penguins_data %>% 
+  dplyr::group_by(species) %>% 
+  dplyr::summarize(dplyr::across(where(is.numeric), mean, na.rm = TRUE))
+
+## Report
+plot(penguins_data$bill_length_mm)
+write.csv(species_means, "penguin_species_mean_measurements.csv")
 ```
 
 ````
-
-```{todo}
-Add R example
-```
 
 But note that in simple cases, such as the example above, these steps may already be apparent from the code.
 

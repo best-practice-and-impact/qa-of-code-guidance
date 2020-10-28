@@ -61,6 +61,10 @@ For example, where the `001_introduction` should come before `002_methodology` a
 
 ### Analysis is a DAG
 
+```{todo}
+Does this below under a section on workflows?
+```
+
 
 ### Raw data should be preserved
 
@@ -115,7 +119,3 @@ One repository usually contains a single project.
 Developing your project using a version controlled repository has significant benefits for reproducibility.
 
 See [](version_control.md) for more information.
-
-```{todo}
-Any more expected here?
-```
