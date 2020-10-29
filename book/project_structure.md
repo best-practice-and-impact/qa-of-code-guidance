@@ -102,7 +102,7 @@ Modules are single files that contain one or more reusable units of code.
 Multiple modules might be collected together into a package.
 
 It's likely that you've already used a package written by somebody else as part of your analysis.
-For example, installing additional functionality for Python using `pip install <package>` on the command line or running `install.packages(<package>)` in an R interpreter.
+For example, installing additional functionality for Python using `pip install <package>` on the command line or running `install.packages("<package>")` in an R interpreter.
 
 ```{admonition} Key Learning
 :class: admonition-learning
