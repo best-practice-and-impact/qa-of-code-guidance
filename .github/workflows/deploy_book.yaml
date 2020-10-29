@@ -23,8 +23,7 @@ jobs:
 
     - name: Build the book
       run: |
-        jb build book -W --keep-going
-        && touch ./book/_build/html/.nojekyll
+        jb build book -W --keep-going && touch ./book/_build/html/.nojekyll
 
     - name: Deploy book to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3.6.1
