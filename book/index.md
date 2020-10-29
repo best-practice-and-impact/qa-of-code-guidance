@@ -3,12 +3,20 @@
 
 ## Quality Assurance of Code for Analysis and Research
 
-This is an early draft of Government Statistical Service (GSS) and Analysis Function guidance, produced by the Best Practice and Impact division of the Office for National Statistics.
+This is an early draft of Government Statistical Service (GSS) and Analysis Function guidance.
+It is produced by the [Best Practice and Impact division](https://gss.civilservice.gov.uk/about-us/support-for-the-gss/) of the Office for National Statistics.
 
 This guidance has been written to support analysts in government who use coding in their work.
 This includes those who produce statistics, carry out modelling or apply data science.
 
+You may notice "Todo" notes throughout the guidance.
+These indicate where we plan to add additional content in the near future.
+We are extremely grateful for any feedback that you are able to provide on existing and future content.
+
+
 ## About us
+
+The Best Practice and Impact division supports government analysis by providing guidance, consultancy and training.
 
 You can find us on:
 - Our websites: [Government Statistical Service](https://gss.civilservice.gov.uk/) and [Government Analytical Function](https://www.gov.uk/government/organisations/government-analysis-function)
@@ -72,13 +80,10 @@ This means that you should be able to:
 * navigate most of the website using speech recognition software
 * listen to most of the website using a screen reader (including the most recent versions of JAWS, NVDA and VoiceOver)
 
-For keyboard navigation, up and down arrow keys can be used to scroll up and down on the current page.
-Left and right arrow keys can be used to move forwards and backwards thought the pages of the book.
-Tabbed content (including code example) can be focused using the tab key.
-Arrow keys are then used to focus the required tab option, where Enter can be used to select that option and display the associated content.
-
-Parts of this guidance which are not accessible include:
-* Our star rating for sections, which are not screen-reader friendly.
+For keyboard navigation, <kbd>Up Arrow</kbd> and <kbd>Down Arrow</kbd> keys can be used to scroll up and down on the current page.
+<kbd>Left Arrow</kbd> and <kbd>Right Arrow</kbd> keys can be used to move forwards and backwards through the pages of the book.
+Tabbed content (including code example) can be focused using the <kbd>Tab</kbd> key.
+<kbd>Left Arrow</kbd> and <kbd>Right Arrow</kbd> keys  are then used to focus the required tab option, where <kbd>Enter</kbd> can be used to select that option and display the associated content.
 
 
 ### Feedback and reporting accessibility problems

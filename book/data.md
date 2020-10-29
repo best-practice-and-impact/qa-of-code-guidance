@@ -4,7 +4,7 @@ In order to reproduce a piece of analysis we need to be able to identify and acc
 This requires suitable storage of the data, with any relevant documentation and versioning of the data where it may change over time.
 
 
-## Data storage ★☆☆☆☆
+## Data storage <span role="image" aria-label="difficulty rating: 1 out of 5">★☆☆☆☆</span>
 
 It is assumed that most data are now stored digitally.
 
@@ -85,7 +85,7 @@ Other resources:
 * A guide to [using the `sqldf` R package](https://dept.stat.lsa.umich.edu/~jerrick/courses/stat701/notes/sql.html).
 
 
-## Documenting data ★☆☆☆☆
+## Documenting data <span role="image" aria-label="difficulty rating: 1 out of 5">★☆☆☆☆</span>
 
 Without documentation, it is difficult to understand and work with new dataset.
 
@@ -136,7 +136,7 @@ An IAR may include:
 GOV.UK provides [IAR templates](https://www.gov.uk/government/publications/information-asset-register) that your department might use to structure their IAR.
 
 
-## Data versioning ★★☆☆☆
+## Data versioning <span role="image" aria-label="difficulty rating: 2 out of 5">★★☆☆☆</span>
 
 A key requirement for reproducing your analysis is the ability to identify the data that you used.
 Data change over time;
@@ -149,14 +149,13 @@ Whether using a primary or secondary data source, you should version and documen
 Documentation for data versions should include the reason why the version has changed.
 For example, if an open data source has been recollected, revisions have been made to existing data, or part of the data has been removed.
 
-```{todo}
-Reference outputs should be disposable. Otherwise, version your outputs?
-```
+You should be able to generate your analytical outputs reproducibly and, as such, treat them as disposable.
+If this is not the case, you should also version outputs so that they can be easily linked to the versioned input data and analysis code.
 
 To automate the versioning of data, you might use the Python package [DVC, which provides Git-like version control of data](https://dvc.org/).
-This tool can also relate the data version to the version of analysis code, strongly facilitating reproducibility .
-Git can be used to version data, but you should be mindful of where the remote repository stores the data.
-The [`daff` package summarises changes in tabular data files](https://github.com/paulfitz/daff), which can be integrated with Git for data versioning.
+This tool can also relate the data version to the version of analysis code, further facilitating reproducibility.
+Git can be used to version data, but you should be mindful of where your remote repository stores this data.
+The [`daff` package summarises changes in tabular data files](https://github.com/paulfitz/daff), which can be integrated with Git to investigate changes to data.
 
 You might alternatively version your data manually.
 For example, by creating new database tables or files for each new version of the data.
@@ -173,11 +172,13 @@ Finally, for this to be effective, your analysis should record the version of da
 This might be documented in analysis reports or automatically logged by your code.
 
 
-## Releasing data ★★☆☆☆
+## Releasing data <span role="image" aria-label="difficulty rating: 2 out of 5">★★☆☆☆</span>
 
 ```{todo}
 Open Linked Data ratings
+
 CSVW
+
 
 ```
 
@@ -185,8 +186,12 @@ CSVW
 Other guidance addresses:
 * [Releasing statistics in spreadsheets](https://gss.civilservice.gov.uk/policy-store/releasing-statistics-in-spreadsheets/)
 * [Quality assurance of administrative data](https://osr.statisticsauthority.gov.uk/guidance/administrative-data-and-official-statistics/)
+* [Data linking methods](https://www.gov.uk/government/publications/joined-up-data-in-government-the-future-of-data-linking-methods
+)
 * When publishing or sharing tabular data, you should follow the [GOV.UK Tabular data standard](https://www.gov.uk/government/publications/recommended-open-standards-for-government/tabular-data-standard).
+
 
 Analysts producing published statistics may also be interested in [Connected Open Government Statistsics (COGS)](https://gss.civilservice.gov.uk/guidance/the-gss-data-project/).
 
 Guidance from the UK Data Service describes [data security considerations](https://www.ukdataservice.ac.uk/manage-data/store/security).
+

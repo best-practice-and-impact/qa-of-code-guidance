@@ -56,7 +56,7 @@ Here, readability refers how easily another analyst can gain a decent understand
 While maintainability refers to how easily another analysts can understand your code well enough to modify and repair it.
 
 
-## Modular code ★☆☆☆☆
+## Modular code <span role="image" aria-label="difficulty rating: 1 out of 5">★☆☆☆☆</span>
 
 Breaking your code down into smaller, more manageable chunks is a sure fire way to improve readability.
 
@@ -105,7 +105,7 @@ Packages:
   - contain other useful information relating to the code in the package (see [](project_documentation.md))
 
 
-## Clean code ★★☆☆☆
+## Clean code <span role="image" aria-label="difficulty rating: 2 out of 5">★★☆☆☆</span>
 
 ```{epigraph}
 Programs are meant to be read by humans and only incidentally for computers to execute.
@@ -491,7 +491,7 @@ Will need to link to section on configs, as beginners sometimes use comments for
 ```
 
 
-## KISS ★★☆☆☆
+## KISS <span role="image" aria-label="difficulty rating: 2 out of 5">★★☆☆☆</span>
 
 **K**eep **I**t **S**imple and **S**traightforward
 
@@ -811,7 +811,7 @@ Now the count is printed if it is more than or equal to 0.
 It's clear that we intend for this to be the case.
 
 
-## SOLID ★★★★☆
+## SOLID <span role="image" aria-label="difficulty rating: 4 out of 5">★★★★☆</span>
 
 SOLID is an acronym that encompasses 5 software design principles that are intended to increase the readability and extensibility of software source code.
 These principles are designed to improve object-oriented programs, but can be roughly applied to functional programs too.

@@ -7,7 +7,7 @@ Documentation is a love letter that you write to your future self.
 ```
 
 
-## Comments ★☆☆☆☆
+## Comments <span role="image" aria-label="difficulty rating: 1 out of 5">★☆☆☆☆</span>
 
 A common form of documentation is code comments, which are found throughout source code files.
 
@@ -109,7 +109,7 @@ In summary, use comments sparingly but effectively.
 
 
 (docstrings)=
-## Docstrings ★★☆☆☆
+## Docstrings <span role="image" aria-label="difficulty rating: 2 out of 5">★★☆☆☆</span>
 
 When your code is structured as functions or classes, these functional units can be efficiently documented using docstrings.
 Docstrings are multi-line comments that appear at the start of a function definition.
@@ -210,7 +210,7 @@ Other useful resources include:
 - Guidance for [documenting objects and functions in R](http://r-pkgs.had.co.nz/man.html)
 
 
-## Automatic documentation generation ★★☆☆☆
+## Automatic documentation generation <span role="image" aria-label="difficulty rating: 2 out of 5">★★☆☆☆</span>
 
 Sadly this section does not describe a tool that miraculously writes your documentation for you (though tools for [auto-completing your code](https://kite.com) do exist!).
 It does, however, describe tools that automate generation of searchable, user-friendly HTML documentation.
