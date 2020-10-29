@@ -1,0 +1,540 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Data Management &#8212; DRAFT: Quality Assurance of Code for Analysis and Research</title>
+    
+  <link rel="stylesheet" href="_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="_static/sphinx-book-theme.2d2078699c18a0efb88233928e1cf6ed.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="_static/markdown_within_tabs.css" />
+    <link rel="stylesheet" type="text/css" href="_static/learning_admonition.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.3da636dd464baa7582d2.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/duck.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.be0a4a0c39cd630af62a2fcf693f3f06.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="shortcut icon" href="_static/qa_of_code_favicon.png"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Peer review" href="peer_review.html" />
+    <link rel="prev" title="Version control" href="version_control.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  <img src="_static/qa_of_code_favicon.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">DRAFT: Quality Assurance of Code for Analysis and Research</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="index.html">
+   Introduction
+  </a>
+ </li>
+</ul>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="principles.html">
+   Principles
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="core_programming.html">
+   Core programming practices
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="project_structure.html">
+   Structuring your project
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="code_documentation.html">
+   Code documentation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="project_documentation.html">
+   Project documentation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="version_control.html">
+   Version control
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Data Management
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="peer_review.html">
+   Peer review
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="testing_code.html">
+   Testing code
+  </a>
+ </li>
+</ul>
+
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  <li><a href='https://gss.civilservice.gov.uk/' target='_blank'><img src='./_static/GSS_logo.jpg' alt='The Government Statistical Service logo' style='width:100%'></a></li>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/data.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/best-practice-and-impact/qa-of-code-guidance"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/best-practice-and-impact/qa-of-code-guidance/issues/new?title=Issue%20on%20page%20%2Fdata.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/best-practice-and-impact/qa-of-code-guidance/edit/master/data.md"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#data-storage-span-role-image-aria-label-difficulty-rating-1-out-of-5-span">
+   Data storage
+   <span aria-label="difficulty rating: 1 out of 5" role="image">
+    ★☆☆☆☆
+   </span>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#spreadsheets">
+     Spreadsheets
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#databases">
+     Databases
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#documenting-data-span-role-image-aria-label-difficulty-rating-1-out-of-5-span">
+   Documenting data
+   <span aria-label="difficulty rating: 1 out of 5" role="image">
+    ★☆☆☆☆
+   </span>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#data-dictionary">
+     Data dictionary
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#information-asset-register-iar">
+     Information Asset Register (IAR)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#data-versioning-span-role-image-aria-label-difficulty-rating-2-out-of-5-span">
+   Data versioning
+   <span aria-label="difficulty rating: 2 out of 5" role="image">
+    ★★☆☆☆
+   </span>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#releasing-data-span-role-image-aria-label-difficulty-rating-2-out-of-5-span">
+   Releasing data
+   <span aria-label="difficulty rating: 2 out of 5" role="image">
+    ★★☆☆☆
+   </span>
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="data-management">
+<h1>Data Management<a class="headerlink" href="#data-management" title="Permalink to this headline">¶</a></h1>
+<p>In order to reproduce a piece of analysis we need to be able to identify and access the data that our analysis used and produced.
+This requires suitable storage of the data, with any relevant documentation and versioning of the data where it may change over time.</p>
+<div class="section" id="data-storage-span-role-image-aria-label-difficulty-rating-1-out-of-5-span">
+<h2>Data storage <span role="image" aria-label="difficulty rating: 1 out of 5">★☆☆☆☆</span><a class="headerlink" href="#data-storage-span-role-image-aria-label-difficulty-rating-1-out-of-5-span" title="Permalink to this headline">¶</a></h2>
+<p>It is assumed that most data are now stored digitally.</p>
+<p>Digital data risk becoming inaccessible as technology develops and commonly used software changes.
+Long term data storage should use open or standard file formats.
+There are <a class="reference external" href="https://www.ukdataservice.ac.uk/manage-data/format/recommended-formats.aspx">recommended formats</a> for storing different data types, though we suggest avoiding formats that depend on proprietary software like SPSS, STATA and SAS.</p>
+<p>Short term storage, for use in analysis, might use any format that is suitable for the analysis task.
+However, most analysis tools should support reading data directly from safe long term storage, including databases.</p>
+<div class="section" id="spreadsheets">
+<h3>Spreadsheets<a class="headerlink" href="#spreadsheets" title="Permalink to this headline">¶</a></h3>
+<p>Spreadsheets (e.g. Microsoft Excel formats and open equivalents) are a very general data analysis tool.
+The cost of their easy to use interface and flexibility is increased difficulty of quality assurance.</p>
+<p>Spreadsheets are not suitable for storage of data (or statistics production and modelling processes).
+Issues when using spreadsheets for data storage include:</p>
+<ul class="simple">
+<li><p>Lack of audibility - changes to data are not recorded.</p></li>
+<li><p>Multiple users can’t work with a single spreadsheet file at once.</p></li>
+<li><p>They are error prone and have no built in quality assurance.</p></li>
+<li><p>Files become cumbersome when they are large.</p></li>
+<li><p>Automatic “correction” of grammar and data type, which silently corrupts your data.</p>
+<ul>
+<li><p>Converting dates to a different datetime format.</p></li>
+<li><p>Converting numbers to dates.</p></li>
+<li><p>Converting text to dates (e.g. <a class="reference external" href="https://bmcbioinformatics.biomedcentral.com/articles/10.1186/1471-2105-5-80">gene names that are converted to dates</a>).</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="databases">
+<h3>Databases<a class="headerlink" href="#databases" title="Permalink to this headline">¶</a></h3>
+<p>Databases are collections of related data, which can be easily accessed and managed.
+Each database contains one or more tables, which hold data.
+Database creation and management is carried out using a database management system (DBMS).
+These usually support authorisation of access to the database and support multiple users accessing the database concurrently.
+Popular open source DBMS include:</p>
+<ul class="simple">
+<li><p>SQLite</p></li>
+<li><p>MySQL</p></li>
+<li><p>PostgreSQL</p></li>
+<li><p>Redis</p></li>
+</ul>
+<p>The most common form of database is a relational database.
+Data in the tables of a relational database are linked by common keys (e.g. unique identifiers).
+This allows you to store data with minimal duplication within a table, but quickly collect related data when required.
+Relational DBMS are called RDBMS.</p>
+<p>Most DBMS use structured query language (SQL) to communicate with databases.</p>
+<div class="admonition-learning admonition">
+<p class="admonition-title">Key Learning</p>
+<p>You might find this <a class="reference external" href="https://learninghub.ons.gov.uk/enrol/index.php?id=529">foundations of SQL (government analysts only course)</a> or <a class="reference external" href="https://www.w3schools.com/sql/default.asp">w3schools SQL tutorials</a> useful for learning the basics of SQL.</p>
+</div>
+<p>Common analysis tools can interface with databases using SQL packages, or those which provide an object-relational mapping (ORM).
+An ORM is non-SQL-based interface to connect to a database.
+They are often user-friendly, but may not support all of the functionality that SQL offers.</p>
+<div class="admonition-learning admonition">
+<p class="admonition-title">Key Learning</p>
+<p>This guide covers <a class="reference external" href="https://realpython.com/python-sql-libraries/">Python SQL libraries</a> in detail.
+While this Software Carpentry course covers <a class="reference external" href="http://datacarpentry.org/R-ecology-lesson/05-r-and-databases.html">SQL databases and R</a>.</p>
+</div>
+<p>Other database concepts:</p>
+<ul class="simple">
+<li><p>Schema - a blueprint that describes the field names and types for a table, including any other rules (constraints).</p></li>
+<li><p>Query - a SQL command that creates, reads, updates or deletes data from a database.</p></li>
+<li><p>View - a virtual table that provides a quick way to look at part of your database, defined by a stored query.</p></li>
+<li><p>Indexes - data structures that can increase the speed of particular queries.</p></li>
+</ul>
+<p>Good practices when working with databases include:</p>
+<ul class="simple">
+<li><p>Use auto-generated primary keys, rather than composites of multiple fields.</p></li>
+<li><p>Break your data into logical chunks (tables), to reduce redundancy in each table.</p></li>
+<li><p>Lock tables that should not be modified.</p></li>
+</ul>
+<p>Other resources:</p>
+<ul class="simple">
+<li><p>This <a class="reference external" href="https://www.youtube.com/watch?v=u5pDdEKnbKA">SQL lecture from Harvard’s computer science course</a> may be a useful introduction to working with databases from Python.</p></li>
+<li><p>A guide to <a class="reference external" href="https://dept.stat.lsa.umich.edu/~jerrick/courses/stat701/notes/sql.html">using the <code class="docutils literal notranslate"><span class="pre">sqldf</span></code> R package</a>.</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="documenting-data-span-role-image-aria-label-difficulty-rating-1-out-of-5-span">
+<h2>Documenting data <span role="image" aria-label="difficulty rating: 1 out of 5">★☆☆☆☆</span><a class="headerlink" href="#documenting-data-span-role-image-aria-label-difficulty-rating-1-out-of-5-span" title="Permalink to this headline">¶</a></h2>
+<p>Without documentation, it is difficult to understand and work with new dataset.</p>
+<p>For our analysis, we should be able to quickly grasp:</p>
+<ul class="simple">
+<li><p>What data is available to us?</p></li>
+<li><p>How was this data collected or generated?</p></li>
+<li><p>How is this data represented?</p></li>
+<li><p>Has this data been validated or manipulated?</p></li>
+<li><p>How am I ethically and legally permitted to use the data?</p></li>
+</ul>
+<p>This information should be created by data providers and analysts, in the form of documentation.</p>
+<div class="section" id="data-dictionary">
+<h3>Data dictionary<a class="headerlink" href="#data-dictionary" title="Permalink to this headline">¶</a></h3>
+<p>A data dictionary describes the contents and format of a dataset.</p>
+<p>For variables in tabular datasets, you might document:</p>
+<ul class="simple">
+<li><p>a short description of what each variable represents</p></li>
+<li><p>the frame of reference of the data</p></li>
+<li><p>variable labels, if categorical</p></li>
+<li><p>valid values or ranges, if numerical</p></li>
+<li><p>representation of missing data</p></li>
+<li><p>reference to the question, if survey data</p></li>
+<li><p>reference to any related variables in the dataset</p></li>
+<li><p>if derived, detail how variables were obtained or calculated</p></li>
+<li><p>any rules for use or processing of the data, set by the data owner</p></li>
+</ul>
+<p>See this detailed example - the <a class="reference external" href="https://www.datadictionary.nhs.uk/data_sets/administrative_data_sets/national_workforce_data_set.html#dataset_national_workforce_data_set">National Workforce Data Set</a>, from the NHS Data Model and Dictionary.</p>
+<p>Please see <a class="reference external" href="https://www.ukdataservice.ac.uk/manage-data/document/data-level/tabular.aspx">UK Data Service guidance on documenting other data</a>, including qualitative data.</p>
+</div>
+<div class="section" id="information-asset-register-iar">
+<h3>Information Asset Register (IAR)<a class="headerlink" href="#information-asset-register-iar" title="Permalink to this headline">¶</a></h3>
+<p>An information asset register (IAR) documents the information assets within your organisation.
+Your department should have an IAR in place, to document its information assets.
+As an analysts, you might use the register to identify contacts for data require for your analyses.</p>
+<p>This form of documentation may not contain detailed information on how to use each data source (provided by data dictionaries), but an IAR does increases visibility of data flows.
+An IAR may include:</p>
+<ul class="simple">
+<li><p>the owner of each dataset</p></li>
+<li><p>a high level description of the dataset</p></li>
+<li><p>the reason that your organisation holds the dataset</p></li>
+<li><p>how the information is stored and secured</p></li>
+<li><p>the risk of information being lost or compromised</p></li>
+</ul>
+<p>GOV.UK provides <a class="reference external" href="https://www.gov.uk/government/publications/information-asset-register">IAR templates</a> that your department might use to structure their IAR.</p>
+</div>
+</div>
+<div class="section" id="data-versioning-span-role-image-aria-label-difficulty-rating-2-out-of-5-span">
+<h2>Data versioning <span role="image" aria-label="difficulty rating: 2 out of 5">★★☆☆☆</span><a class="headerlink" href="#data-versioning-span-role-image-aria-label-difficulty-rating-2-out-of-5-span" title="Permalink to this headline">¶</a></h2>
+<p>A key requirement for reproducing your analysis is the ability to identify the data that you used.
+Data change over time;
+Open data and other secondary data may be revised over time or cease to be available with no notice.
+The owners of these data can’t always be relied on to provide historical versions of their data.</p>
+<p>As an analyst, it is your responsibility to ensure that the exact data that you have used can be identified.</p>
+<p>Whether using a primary or secondary data source, you should version and document all changes to the data that you use.
+Documentation for data versions should include the reason why the version has changed.
+For example, if an open data source has been recollected, revisions have been made to existing data, or part of the data has been removed.</p>
+<p>You should be able to generate your analytical outputs reproducibly and, as such, treat them as disposable.
+If this is not the case, you should also version outputs so that they can be easily linked to the versioned input data and analysis code.</p>
+<p>To automate the versioning of data, you might use the Python package <a class="reference external" href="https://dvc.org/">DVC, which provides Git-like version control of data</a>.
+This tool can also relate the data version to the version of analysis code, further facilitating reproducibility.
+Git can be used to version data, but you should be mindful of where your remote repository stores this data.
+The <a class="reference external" href="https://github.com/paulfitz/daff"><code class="docutils literal notranslate"><span class="pre">daff</span></code> package summarises changes in tabular data files</a>, which can be integrated with Git to investigate changes to data.</p>
+<p>You might alternatively version your data manually.
+For example, by creating new database tables or files for each new version of the data.
+It must be possible to recreated previous versions of the data, for reproducibility.
+As such, is important that data file versions are named uniquely, for example, using incrementing numbers and/or date of collection.
+Additionally, file versions must not be modified after they have been used for analysis - they should be treated as read-only.
+All modifications to the data should result in new versions.</p>
+<div class="admonition-todo admonition" id="id1">
+<p class="admonition-title">Todo</p>
+<p>Diagram of good manual versioning workflow.</p>
+</div>
+<p>Finally, for this to be effective, your analysis should record the version of data used to generate a specified set of outputs.
+This might be documented in analysis reports or automatically logged by your code.</p>
+</div>
+<div class="section" id="releasing-data-span-role-image-aria-label-difficulty-rating-2-out-of-5-span">
+<h2>Releasing data <span role="image" aria-label="difficulty rating: 2 out of 5">★★☆☆☆</span><a class="headerlink" href="#releasing-data-span-role-image-aria-label-difficulty-rating-2-out-of-5-span" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-todo admonition" id="id2">
+<p class="admonition-title">Todo</p>
+<p>Open Linked Data ratings</p>
+<p>CSVW</p>
+</div>
+<p>Other guidance addresses:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://gss.civilservice.gov.uk/policy-store/releasing-statistics-in-spreadsheets/">Releasing statistics in spreadsheets</a></p></li>
+<li><p><a class="reference external" href="https://osr.statisticsauthority.gov.uk/guidance/administrative-data-and-official-statistics/">Quality assurance of administrative data</a></p></li>
+<li><p><a class="reference external" href="https://www.gov.uk/government/publications/joined-up-data-in-government-the-future-of-data-linking-methods">Data linking methods</a></p></li>
+<li><p>When publishing or sharing tabular data, you should follow the <a class="reference external" href="https://www.gov.uk/government/publications/recommended-open-standards-for-government/tabular-data-standard">GOV.UK Tabular data standard</a>.</p></li>
+</ul>
+<p>Analysts producing published statistics may also be interested in <a class="reference external" href="https://gss.civilservice.gov.uk/guidance/the-gss-data-project/">Connected Open Government Statistsics (COGS)</a>.</p>
+<p>Guidance from the UK Data Service describes <a class="reference external" href="https://www.ukdataservice.ac.uk/manage-data/store/security">data security considerations</a>.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="version_control.html" title="previous page">Version control</a>
+    <a class='right-next' id="next-link" href="peer_review.html" title="next page">Peer review</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          <div class="extra_footer">
+            <p>Best Practice & Impact division, Office for National Statistics</p><p>This document is very young, please help use to make it grow by providing any feedback by <a href='mailto:gsshelp@statistics.gov.uk'>email</a> or via the <a href='https://github.com/best-practice-and-impact/qa-of-code-guidance'>GitHub repository</a>.
+          </div>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="_static/js/index.3da636dd464baa7582d2.js"></script>
+
+
+    
+  </body>
+</html>

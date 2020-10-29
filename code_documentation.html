@@ -1,0 +1,564 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Code documentation &#8212; DRAFT: Quality Assurance of Code for Analysis and Research</title>
+    
+  <link rel="stylesheet" href="_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="_static/sphinx-book-theme.2d2078699c18a0efb88233928e1cf6ed.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="_static/markdown_within_tabs.css" />
+    <link rel="stylesheet" type="text/css" href="_static/learning_admonition.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.3da636dd464baa7582d2.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/tabs.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/duck.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.be0a4a0c39cd630af62a2fcf693f3f06.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="shortcut icon" href="_static/qa_of_code_favicon.png"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Project documentation" href="project_documentation.html" />
+    <link rel="prev" title="Structuring your project" href="project_structure.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  <img src="_static/qa_of_code_favicon.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">DRAFT: Quality Assurance of Code for Analysis and Research</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="index.html">
+   Introduction
+  </a>
+ </li>
+</ul>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="principles.html">
+   Principles
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="core_programming.html">
+   Core programming practices
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="project_structure.html">
+   Structuring your project
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Code documentation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="project_documentation.html">
+   Project documentation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="version_control.html">
+   Version control
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data.html">
+   Data Management
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="peer_review.html">
+   Peer review
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="testing_code.html">
+   Testing code
+  </a>
+ </li>
+</ul>
+
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  <li><a href='https://gss.civilservice.gov.uk/' target='_blank'><img src='./_static/GSS_logo.jpg' alt='The Government Statistical Service logo' style='width:100%'></a></li>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/code_documentation.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/best-practice-and-impact/qa-of-code-guidance"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/best-practice-and-impact/qa-of-code-guidance/issues/new?title=Issue%20on%20page%20%2Fcode_documentation.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/best-practice-and-impact/qa-of-code-guidance/edit/master/code_documentation.md"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#comments-span-role-image-aria-label-difficulty-rating-1-out-of-5-span">
+   Comments
+   <span aria-label="difficulty rating: 1 out of 5" role="image">
+    ★☆☆☆☆
+   </span>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#docstrings-span-role-image-aria-label-difficulty-rating-2-out-of-5-span">
+   Docstrings
+   <span aria-label="difficulty rating: 2 out of 5" role="image">
+    ★★☆☆☆
+   </span>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#automatic-documentation-generation-span-role-image-aria-label-difficulty-rating-2-out-of-5-span">
+   Automatic documentation generation
+   <span aria-label="difficulty rating: 2 out of 5" role="image">
+    ★★☆☆☆
+   </span>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#generating-html-documentation">
+     Generating HTML documentation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#hosting-html-documentation">
+     Hosting HTML documentation
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="code-documentation">
+<h1>Code documentation<a class="headerlink" href="#code-documentation" title="Permalink to this headline">¶</a></h1>
+<blockquote class="epigraph">
+<div><p>Documentation is a love letter that you write to your future self.</p>
+<p class="attribution">—Damian Conway</p>
+</div></blockquote>
+<div class="section" id="comments-span-role-image-aria-label-difficulty-rating-1-out-of-5-span">
+<h2>Comments <span role="image" aria-label="difficulty rating: 1 out of 5">★☆☆☆☆</span><a class="headerlink" href="#comments-span-role-image-aria-label-difficulty-rating-1-out-of-5-span" title="Permalink to this headline">¶</a></h2>
+<p>A common form of documentation is code comments, which are found throughout source code files.</p>
+<p>Comments are essential for explaining the logic behind sections of your code.
+However, excessive use of code comments often leads to redundancy and can ironically make your code harder to read.</p>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" role="tablist"><button aria-controls="panel-0-UHl0aG9u" aria-selected="true" class="sphinx-tabs-tab code-tab group-tab" id="tab-0-UHl0aG9u" name="UHl0aG9u" role="tab" tabindex="0">Python</button><button aria-controls="panel-0-Ug==" aria-selected="false" class="sphinx-tabs-tab code-tab group-tab" id="tab-0-Ug==" name="Ug==" role="tab" tabindex="-1">R</button></div><div aria-labelledby="tab-0-UHl0aG9u" class="sphinx-tabs-panel code-tab group-tab" id="panel-0-UHl0aG9u" name="UHl0aG9u" role="tabpanel" tabindex="0"><div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set number_1 to 5</span>
+<span class="n">number_1</span> <span class="o">=</span> <span class="mi">5</span>
+
+<span class="c1"># Set number_2 to 9</span>
+<span class="n">number_2</span> <span class="o">=</span> <span class="mi">9</span>
+
+<span class="c1"># Set total to the sum of number_1 and number_2</span>
+<span class="n">total</span> <span class="o">=</span> <span class="n">number_1</span> <span class="o">+</span> <span class="n">number_2</span>
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-0-Ug==" class="sphinx-tabs-panel code-tab group-tab" hidden="true" id="panel-0-Ug==" name="Ug==" role="tabpanel" tabindex="0"><div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set number_1 to 5</span>
+<span class="n">number_1</span> <span class="o">&lt;-</span> <span class="m">5</span>
+
+<span class="c1"># Set number_2 to 9</span>
+<span class="n">number_2</span> <span class="o">&lt;-</span> <span class="m">9</span>
+
+<span class="c1"># Set total to the sum of number_1 and number_2</span>
+<span class="n">total</span> <span class="o">&lt;-</span> <span class="n">number_1</span> <span class="o">+</span> <span class="n">number_2</span>
+</pre></div>
+</div>
+</div></div>
+<p>Comments that describe exactly <strong>what</strong> is occurring in the code, as above, are often not necessary.
+They may be redundant, if <a class="reference internal" href="core_programming.html#naming"><span class="std std-ref">good naming practices</span></a> are followed to self-document the steps that occur in your code.</p>
+<p>A developer or user can read your code and other more appropriate forms of documentation (see <a class="reference internal" href="#docstrings"><span class="std std-ref">Docstrings</span></a> below) for more detailed description of the logic behind your code.
+If it is difficult to understand your code without comments, this can indicate that your code is overly complex and might benefit from being refactored into smaller units.</p>
+<p>Comments can be used more effectively to explain <strong>why</strong> you might have written code in a certain way.
+For example, you might explain to other analysts and developers why a section of your code doesn’t follow standard practices, perhaps because the typical method didn’t work.
+This type of comment can help to clarify your choice of logic, without needing to describe the individual steps taken.
+Comments explaining <strong>why</strong> you made programming choices will help your future self and other developers to understand your intentions.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Tried solution X, but Y worked better because of Z</span>
+
+<span class="c1"># Don&#39;t use function X here, because of Y</span>
+
+<span class="c1"># Temporary work around for bug in function X</span>
+<span class="c1"># TODO: fix function X, so that Y</span>
+
+<span class="c1"># This section of code is commented out because of X</span>
+</pre></div>
+</div>
+<p>Comments can also be used effectively to divide long sections of code into sub-sections that relate to their overall functionality.
+For example, an analysis script might be broken down into sections that describe each part of the analysis process:</p>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" role="tablist"><button aria-controls="panel-1-UHl0aG9u" aria-selected="true" class="sphinx-tabs-tab code-tab group-tab" id="tab-1-UHl0aG9u" name="UHl0aG9u" role="tab" tabindex="0">Python</button><button aria-controls="panel-1-Ug==" aria-selected="false" class="sphinx-tabs-tab code-tab group-tab" id="tab-1-Ug==" name="Ug==" role="tab" tabindex="-1">R</button></div><div aria-labelledby="tab-1-UHl0aG9u" class="sphinx-tabs-panel code-tab group-tab" id="panel-1-UHl0aG9u" name="UHl0aG9u" role="tabpanel" tabindex="0"><div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+
+<span class="c1">## Get data</span>
+<span class="n">penguins</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="s2">&quot;penguins&quot;</span><span class="p">)</span>
+
+<span class="c1">## Analyse</span>
+<span class="n">species_means</span> <span class="o">=</span> <span class="n">penguins</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;species&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+
+<span class="c1">## Report</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">penguins</span><span class="o">.</span><span class="n">bill_length_mm</span><span class="p">)</span>
+<span class="n">species_means</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s2">&quot;penguin_species_mean_measurements.csv&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-1-Ug==" class="sphinx-tabs-panel code-tab group-tab" hidden="true" id="panel-1-Ug==" name="Ug==" role="tabpanel" tabindex="0"><div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">library</span><span class="p">(</span><span class="n">palmerpenguins</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">magrittr</span><span class="p">)</span>
+
+
+<span class="c1">## Get data</span>
+<span class="n">penguins_data</span> <span class="o">&lt;-</span> <span class="n">penguins</span>
+
+<span class="c1">## Analyse</span>
+<span class="n">species_means</span> <span class="o">&lt;-</span> <span class="n">penguins_data</span> <span class="o">%&gt;%</span> 
+  <span class="n">dplyr</span><span class="o">::</span><span class="nf">group_by</span><span class="p">(</span><span class="n">species</span><span class="p">)</span> <span class="o">%&gt;%</span> 
+  <span class="n">dplyr</span><span class="o">::</span><span class="nf">summarize</span><span class="p">(</span><span class="n">dplyr</span><span class="o">::</span><span class="nf">across</span><span class="p">(</span><span class="nf">where</span><span class="p">(</span><span class="n">is.numeric</span><span class="p">),</span> <span class="n">mean</span><span class="p">,</span> <span class="n">na.rm</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">))</span>
+
+<span class="c1">## Report</span>
+<span class="nf">plot</span><span class="p">(</span><span class="n">penguins_data</span><span class="o">$</span><span class="n">bill_length_mm</span><span class="p">)</span>
+<span class="nf">write.csv</span><span class="p">(</span><span class="n">species_means</span><span class="p">,</span> <span class="s">&quot;penguin_species_mean_measurements.csv&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div></div>
+<p>But note that in simple cases, such as the example above, these steps may already be apparent from the code.</p>
+<p>In summary, use comments sparingly but effectively.</p>
+</div>
+<div class="section" id="docstrings-span-role-image-aria-label-difficulty-rating-2-out-of-5-span">
+<span id="docstrings"></span><h2>Docstrings <span role="image" aria-label="difficulty rating: 2 out of 5">★★☆☆☆</span><a class="headerlink" href="#docstrings-span-role-image-aria-label-difficulty-rating-2-out-of-5-span" title="Permalink to this headline">¶</a></h2>
+<p>When your code is structured as functions or classes, these functional units can be efficiently documented using docstrings.
+Docstrings are multi-line comments that appear at the start of a function definition.
+Use of these comments keeps the documentation of your code closely associated with the relevant sections of code.
+This close association means it is easier to keep documentation up-to-date.
+Docstrings commonly describe:</p>
+<ul class="simple">
+<li><p>what the function or class does</p></li>
+<li><p>what parameters the function or class takes as arguments</p></li>
+<li><p>what the code returns</p></li>
+<li><p>how to use section of code</p></li>
+<li><p>references to other functions or classes that carry out similar tasks</p></li>
+</ul>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" role="tablist"><button aria-controls="panel-2-UHl0aG9u" aria-selected="true" class="sphinx-tabs-tab code-tab group-tab" id="tab-2-UHl0aG9u" name="UHl0aG9u" role="tab" tabindex="0">Python</button><button aria-controls="panel-2-Ug==" aria-selected="false" class="sphinx-tabs-tab code-tab group-tab" id="tab-2-Ug==" name="Ug==" role="tab" tabindex="-1">R</button></div><div aria-labelledby="tab-2-UHl0aG9u" class="sphinx-tabs-panel code-tab group-tab" id="panel-2-UHl0aG9u" name="UHl0aG9u" role="tabpanel" tabindex="0"><div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">add_to_each</span><span class="p">(</span><span class="n">numbers</span><span class="p">,</span> <span class="n">add</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Adds a number to each number in a list.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    numbers : list</span>
+<span class="sd">        Numbers to add `add` to.</span>
+<span class="sd">    add : int or float</span>
+<span class="sd">        Number to be added to each element of `numbers`.</span>
+
+<span class="sd">    Raises</span>
+<span class="sd">    ------</span>
+<span class="sd">    TypeError</span>
+<span class="sd">        if `numbers` is not a list.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    list</span>
+<span class="sd">       `numbers` with `add` added to each element.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; my_numbers = [2, 4, 6, 8]</span>
+<span class="sd">    &gt;&gt;&gt; add_to_each_in_list(my_numbers, 3)</span>
+<span class="sd">    [5, 7, 9, 11]</span>
+<span class="sd">    </span>
+<span class="sd">    See Also</span>
+<span class="sd">    --------</span>
+<span class="sd">    add : Adds two numbers </span>
+<span class="sd">   &quot;&quot;&quot;</span>
+   <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">numbers</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+       <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;numbers must be a list&quot;</span><span class="p">)</span>
+   <span class="n">new_numbers</span> <span class="o">=</span> <span class="p">[</span><span class="n">number</span> <span class="o">+</span> <span class="n">to_add</span> <span class="k">for</span> <span class="n">number</span> <span class="ow">in</span> <span class="n">numbers</span><span class="p">]</span>
+   <span class="k">return</span> <span class="n">new</span> <span class="n">numbers</span>
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-2-Ug==" class="sphinx-tabs-panel code-tab group-tab" hidden="true" id="panel-2-Ug==" name="Ug==" role="tabpanel" tabindex="0"><div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#&#39;@title add_to_each</span>
+<span class="c1">#&#39;</span>
+<span class="c1">#&#39;@description Add a number to elements of a vector</span>
+<span class="c1">#&#39;</span>
+<span class="c1">#&#39;@details Cycles through a vector of numbers and adds a user-specified number to each element.</span>
+<span class="c1">#&#39;</span>
+<span class="c1">#&#39;@param numbers A vector of numbers</span>
+<span class="c1">#&#39;@param add A float or integer to be added to each element of \code{numbers}</span>
+<span class="c1">#&#39;</span>
+<span class="c1">#&#39;@return \code{numbers} with \code{add} added to each element</span>
+<span class="c1">#&#39;</span>
+<span class="c1">#&#39;@seealso \code{\link{add}}</span>
+<span class="c1">#&#39;@examples</span>
+<span class="c1">#&#39; add_to_each(list(1, 2, 3), 5)</span>
+<span class="c1">#&#39;</span>
+<span class="c1">#&#39;@export</span>
+<span class="n">add_to_each</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">numbers</span><span class="p">,</span> <span class="n">add</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nf">if </span><span class="p">(</span><span class="o">!</span><span class="p">(</span><span class="nf">is.vector</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span> <span class="o">&amp;</span> <span class="nf">is.numeric</span><span class="p">(</span><span class="n">numbers</span><span class="p">))</span> <span class="p">{</span>
+    <span class="nf">stop</span><span class="p">(</span><span class="s">&quot;&#39;numbers&#39; must be a numeric vector.&quot;</span><span class="p">)</span>
+  <span class="p">}</span>
+  <span class="n">numbers</span> <span class="o">+</span> <span class="n">add</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></div>
+<p>In this example, the function docstring starts with a brief description of the overall function.
+It then lists the parameters that our function takes, along with the suggested type of each and a brief description.
+It also tells us that the function will raise an error if the wrong type is provided for the first parameter.
+Then there is a description of the object that is returned from the function, followed by an example of the function in use.
+Finally, it references a similar related function.</p>
+<p>The Python example follows the <a class="reference external" href="https://numpydoc.readthedocs.io/en/latest/format.html">numpydocs style</a>, which is particularly readable in code files.
+While the R example uses the <a class="reference external" href="https://cran.r-project.org/web/packages/roxygen2/vignettes/roxygen2.html">roxygen2 package</a> and follows the <a class="reference external" href="https://style.tidyverse.org/documentation.html">tidyverse style guide</a>.</p>
+<p>You might find that writing function, class or package descriptions prior to writing their code helps you to focus on the task at hand.
+The documentation should be a specification of what the code is expected to do.
+As documentation tends to be user-focussed, this approach helps you to keep the user’s needs in mind when developing code.</p>
+<p>Other useful resources include:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.python.org/dev/peps/pep-0257/">Python docstring convention</a></p></li>
+<li><p>Guidance for <a class="reference external" href="http://r-pkgs.had.co.nz/man.html">documenting objects and functions in R</a></p></li>
+</ul>
+</div>
+<div class="section" id="automatic-documentation-generation-span-role-image-aria-label-difficulty-rating-2-out-of-5-span">
+<h2>Automatic documentation generation <span role="image" aria-label="difficulty rating: 2 out of 5">★★☆☆☆</span><a class="headerlink" href="#automatic-documentation-generation-span-role-image-aria-label-difficulty-rating-2-out-of-5-span" title="Permalink to this headline">¶</a></h2>
+<p>Sadly this section does not describe a tool that miraculously writes your documentation for you (though tools for <a class="reference external" href="https://kite.com">auto-completing your code</a> do exist!).
+It does, however, describe tools that automate generation of searchable, user-friendly HTML documentation.
+You should ensure that the resulting documentation remains associated with the source code of your project.</p>
+<p>Great, so you’ve embedded documentation into your code, in the form of <a class="reference internal" href="#docstrings"><span class="std std-ref">docstrings</span></a>.
+These docstrings are ideal for technical users looking for a quick understanding of how to use your code.
+However, this is not the nicest format to read documentation in and it may require users to navigate the files containing the code to find the relevant documentation.
+Thankfully tools are available to extract this information from your code and reproduce it in HTML.</p>
+<div class="section" id="generating-html-documentation">
+<h3>Generating HTML documentation<a class="headerlink" href="#generating-html-documentation" title="Permalink to this headline">¶</a></h3>
+<p>For Python, we recommend the <a class="reference external" href="https://www.sphinx-doc.org/en/master/">Python package <code class="docutils literal notranslate"><span class="pre">sphinx</span></code></a> for generating HTML documentation.
+Sphinx primarily uses the <a class="reference external" href="https://docutils.sourceforge.io/docs/user/rst/quickstart.html">reStructuredText</a> markup language, but can be extended to also support <a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/markdown.html">Markdown</a>.
+Sphinx supports code highlighting for multiple programming languages within a project, however, other tools may be required to automatically collate documentation from code in languages other than Python.
+You can format your documentation using an <a class="reference external" href="https://www.writethedocs.org/guide/tools/sphinx-themes/">existing theme</a>, or design your own.</p>
+<p>Many <a class="reference external" href="https://github.com/yoloseem/awesome-sphinxdoc"><code class="docutils literal notranslate"><span class="pre">sphinx</span></code> extensions</a> are available to add features to your documentation.
+For example, the <a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/extensions/doctest.html">doctest extension</a> allows you to run examples that are found within <a class="reference internal" href="#docstrings"><span class="std std-ref">docstrings</span></a>.
+These examples test that your documentation is accurate and up-to-date, but may also flag when your code does not work as expected.</p>
+<p>For R projects, you may find <a class="reference external" href="https://pkgdown.r-lib.org/"><code class="docutils literal notranslate"><span class="pre">pkgdown</span></code></a> more suitable.
+This package will create a HTML references section, containing your code documentation.
+It uses your project’s README file as a home page for the site and you can add additional content to the site in the form of <a class="reference external" href="https://r-pkgs.org/vignettes.html">vignettes</a>.
+The <a class="reference external" href="https://pkgdown.r-lib.org/">package’s website</a> and <a class="reference external" href="https://github.com/r-lib/pkgdown/">its source code</a> provide a good demonstration of the package being applied.</p>
+</div>
+<div class="section" id="hosting-html-documentation">
+<h3>Hosting HTML documentation<a class="headerlink" href="#hosting-html-documentation" title="Permalink to this headline">¶</a></h3>
+<p>Once built, the HTML files containing your documentation can be opened in any browser.
+Rather than pass around copies of these files, you may want to host your documentation.</p>
+<p>Your version control platform might support hosting documentation in the form of Wiki.
+The GitHub platform provides this hosting via <a class="reference external" href="https://pages.github.com/">GitHub Pages</a>.
+In many cases, you may be able to automatically update your hosted documentation using <a class="reference internal" href="version_control.html#continuous-integration"><span class="std std-ref">Continuous integration</span></a>.</p>
+<p><a class="reference external" href="https://readthedocs.org/">Read the docs</a> is a community-funded project that provides hosting for open source projects.</p>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="project_structure.html" title="previous page">Structuring your project</a>
+    <a class='right-next' id="next-link" href="project_documentation.html" title="next page">Project documentation</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          <div class="extra_footer">
+            <p>Best Practice & Impact division, Office for National Statistics</p><p>This document is very young, please help use to make it grow by providing any feedback by <a href='mailto:gsshelp@statistics.gov.uk'>email</a> or via the <a href='https://github.com/best-practice-and-impact/qa-of-code-guidance'>GitHub repository</a>.
+          </div>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="_static/js/index.3da636dd464baa7582d2.js"></script>
+
+
+    
+  </body>
+</html>

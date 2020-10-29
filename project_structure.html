@@ -1,0 +1,488 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Structuring your project &#8212; DRAFT: Quality Assurance of Code for Analysis and Research</title>
+    
+  <link rel="stylesheet" href="_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="_static/sphinx-book-theme.2d2078699c18a0efb88233928e1cf6ed.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="_static/markdown_within_tabs.css" />
+    <link rel="stylesheet" type="text/css" href="_static/learning_admonition.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.3da636dd464baa7582d2.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/duck.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.be0a4a0c39cd630af62a2fcf693f3f06.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="shortcut icon" href="_static/qa_of_code_favicon.png"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Code documentation" href="code_documentation.html" />
+    <link rel="prev" title="Core programming practices" href="core_programming.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  <img src="_static/qa_of_code_favicon.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">DRAFT: Quality Assurance of Code for Analysis and Research</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="index.html">
+   Introduction
+  </a>
+ </li>
+</ul>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="principles.html">
+   Principles
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="core_programming.html">
+   Core programming practices
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Structuring your project
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="code_documentation.html">
+   Code documentation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="project_documentation.html">
+   Project documentation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="version_control.html">
+   Version control
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data.html">
+   Data Management
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="peer_review.html">
+   Peer review
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="testing_code.html">
+   Testing code
+  </a>
+ </li>
+</ul>
+
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  <li><a href='https://gss.civilservice.gov.uk/' target='_blank'><img src='./_static/GSS_logo.jpg' alt='The Government Statistical Service logo' style='width:100%'></a></li>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/project_structure.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/best-practice-and-impact/qa-of-code-guidance"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/best-practice-and-impact/qa-of-code-guidance/issues/new?title=Issue%20on%20page%20%2Fproject_structure.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/best-practice-and-impact/qa-of-code-guidance/edit/master/project_structure.md"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#scripts-span-role-image-aria-label-difficulty-rating-1-out-of-5-span">
+   Scripts
+   <span aria-label="difficulty rating: 1 out of 5" role="image">
+    ★☆☆☆☆
+   </span>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#clean-directories-span-role-image-aria-label-difficulty-rating-1-out-of-5-span">
+   Clean directories
+   <span aria-label="difficulty rating: 1 out of 5" role="image">
+    ★☆☆☆☆
+   </span>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#filenames">
+     Filenames
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#analysis-is-a-dag">
+     Analysis is a DAG
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#raw-data-should-be-preserved">
+     Raw data should be preserved
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#outputs-should-be-disposable">
+     Outputs should be disposable
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#modules-and-packages-span-role-image-aria-label-difficulty-rating-2-out-of-5-span">
+   Modules and packages
+   <span aria-label="difficulty rating: 2 out of 5" role="image">
+    ★★☆☆☆
+   </span>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#project-templates-span-role-image-aria-label-difficulty-rating-2-out-of-5-span">
+   Project templates
+   <span aria-label="difficulty rating: 2 out of 5" role="image">
+    ★★☆☆☆
+   </span>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#repositories-span-role-image-aria-label-difficulty-rating-2-out-of-5-span">
+   Repositories
+   <span aria-label="difficulty rating: 2 out of 5" role="image">
+    ★★☆☆☆
+   </span>
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="structuring-your-project">
+<h1>Structuring your project<a class="headerlink" href="#structuring-your-project" title="Permalink to this headline">¶</a></h1>
+<p>When you’re designing your analysis it can be difficult to keep your thoughts tidy.
+Analysis is often exploratory and subject to change.
+This nature means that scripts and programs can become messy.
+The messier the programs, the harder they are to maintain and change in future.</p>
+<p>Good directory structure and file hygiene can go a long way to mitigate this.
+It will help others to read your code more easily, and you will write better code into the bargain.
+Some structures have been found to be generally quite effective through trial and error.
+Others are more specific, and - as with all guidelines - should not be taken as mandatory.</p>
+<div class="section" id="scripts-span-role-image-aria-label-difficulty-rating-1-out-of-5-span">
+<h2>Scripts <span role="image" aria-label="difficulty rating: 1 out of 5">★☆☆☆☆</span><a class="headerlink" href="#scripts-span-role-image-aria-label-difficulty-rating-1-out-of-5-span" title="Permalink to this headline">¶</a></h2>
+<p>As you begin developing your project it’s a good idea to save your working code in a script file.
+In R these are saved as <code class="docutils literal notranslate"><span class="pre">.R</span></code> files, and in Python as <code class="docutils literal notranslate"><span class="pre">.py</span></code>.
+Scripts can be used within an integrated development environment (IDE) like <a class="reference external" href="https://code.visualstudio.com/">Visual Studio Code</a>, <a class="reference external" href="https://rstudio.com/">RStudio</a>, or <a class="reference external" href="https://www.jetbrains.com/pycharm/">PyCharm</a>.
+Inside an IDE you can usually run through your script line-by-line, or run the whole file at once.
+This can be an easier workflow than running code in the Python or the R console and then rewriting the same code in a script later.</p>
+<p>Scripts serve as the basic units of saved code.
+Often, we like to define functions or reusable bits of code in one file and then use these in another file.
+For example we may write a few functions that help us to calculate <code class="docutils literal notranslate"><span class="pre">mean</span></code>, <code class="docutils literal notranslate"><span class="pre">mode</span></code>, and <code class="docutils literal notranslate"><span class="pre">median</span></code> of our dataset in the <code class="docutils literal notranslate"><span class="pre">functions.R</span></code> file.
+Then we can use those functions in our main script, saved in <code class="docutils literal notranslate"><span class="pre">main.R</span></code>.</p>
+<p>Outside of an IDE you can also run your scripts using the Python or R interpreters from the command line.
+This allows other programs to use your scripts.
+For example you can use the <code class="docutils literal notranslate"><span class="pre">Rcmd</span> <span class="pre">&lt;script-path&gt;</span></code> command to run your R scripts or the <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">&lt;script-path&gt;</span></code> command to run your Python scripts.</p>
+<p>Running your analysis files from end to end ensures that your code is executed in the same order each time.
+It also runs the code with a clean environment, not containing variables or other objects from previous runs that can be a common source of errors.</p>
+</div>
+<div class="section" id="clean-directories-span-role-image-aria-label-difficulty-rating-1-out-of-5-span">
+<h2>Clean directories <span role="image" aria-label="difficulty rating: 1 out of 5">★☆☆☆☆</span><a class="headerlink" href="#clean-directories-span-role-image-aria-label-difficulty-rating-1-out-of-5-span" title="Permalink to this headline">¶</a></h2>
+<p>As your analysis project grows it becomes more important to keep your project structure clean.
+Every project is different and the right way to organise your project might differ from another project.
+However, there are some principles that are useful to consider.</p>
+<div class="section" id="filenames">
+<h3>Filenames<a class="headerlink" href="#filenames" title="Permalink to this headline">¶</a></h3>
+<p>Much like names of elements in your code, good filenames inform you of the purpose of a file.
+Within a project, you should follow a standard file naming convention.
+Good naming practices improve your ability to locate and identify the contents of files.</p>
+<p>Good naming conventions include:</p>
+<ul class="simple">
+<li><p>Consistency, above all else</p></li>
+<li><p>Short but descriptive and human readable names</p></li>
+<li><p>No spaces, for machine readability - underscores (<code class="docutils literal notranslate"><span class="pre">_</span></code>) or dashes (<code class="docutils literal notranslate"><span class="pre">-</span></code>) are preferred</p></li>
+<li><p>Use of consistent date formatting (e.g. <a class="reference external" href="https://en.wikipedia.org/wiki/ISO_8601">YYYY-MM-DD</a>)</p></li>
+<li><p>Padding the left side of numbers with zeros to maintain order -  e.g. <code class="docutils literal notranslate"><span class="pre">001</span></code> instead of <code class="docutils literal notranslate"><span class="pre">1</span></code>. The number of zeros should reflect the expected number of files.</p></li>
+</ul>
+<p>When using dates or times to name files, start with the largest unit of time and work towards the smallest.  So we would use <code class="docutils literal notranslate"><span class="pre">2020-10-15_data_input</span></code>, and not <code class="docutils literal notranslate"><span class="pre">15-10-2020_data_input</span></code>.
+This will ensure that the default ordering of these files is in chronological order.
+This makes it much easier to find the earliest or latest files.</p>
+<p>You should start filenames with numbers to order files, if ordering is logical and informative.
+For example, where the <code class="docutils literal notranslate"><span class="pre">001_introduction</span></code> should come before <code class="docutils literal notranslate"><span class="pre">002_methodology</span></code> and <code class="docutils literal notranslate"><span class="pre">003_results</span></code>.</p>
+</div>
+<div class="section" id="analysis-is-a-dag">
+<h3>Analysis is a DAG<a class="headerlink" href="#analysis-is-a-dag" title="Permalink to this headline">¶</a></h3>
+<p>Analysis can best be thought of as a directed acyclic graph.
+Don’t let the name scare you off!
+All we mean by this is that you start off with the input data, you finish with the output(s), and in between there are no lines that link backwards.</p>
+<div class="figure align-default" id="dag">
+<a class="reference internal image-reference" href="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Tred-G.svg/800px-Tred-G.svg.png"><img alt="Analysis is a directed, acyclic graph that links the input data through a series of steps to the outputs." src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Tred-G.svg/800px-Tred-G.svg.png" style="width: 50%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 9 </span><span class="caption-text">Defining analysis as a DAG - linking the input data at (a) to the output at (e).</span><a class="headerlink" href="#dag" title="Permalink to this image">¶</a></p>
+</div>
+<p>When thinking about how to structure your project it is useful to think in terms of what your project’s DAG looks like.
+Most analysis will have an ingest or input stage, a processing stage, and a reporting stage.
+Similarly, your project structure should have a folder for inputs, a folder for your processing code, and a folder for your outputs and reporting.</p>
+</div>
+<div class="section" id="raw-data-should-be-preserved">
+<h3>Raw data should be preserved<a class="headerlink" href="#raw-data-should-be-preserved" title="Permalink to this headline">¶</a></h3>
+<p>You should not alter the raw data except in very specific circumstances.
+Even data cleaning should take place on a copy of the raw data so that you can understand which cleaning decisions have been made.</p>
+<p>There must be an immutable store for raw data in your project structure.</p>
+</div>
+<div class="section" id="outputs-should-be-disposable">
+<h3>Outputs should be disposable<a class="headerlink" href="#outputs-should-be-disposable" title="Permalink to this headline">¶</a></h3>
+<p>You should be able to dispose of your outputs, deleting them, without worrying.
+If you are worried about deleting your outputs then it is unlikely you have confidence in being able to reproduce your results.</p>
+<p>It is good practice to delete and regenerate your outputs frequently when developing analysis.</p>
+</div>
+</div>
+<div class="section" id="modules-and-packages-span-role-image-aria-label-difficulty-rating-2-out-of-5-span">
+<h2>Modules and packages <span role="image" aria-label="difficulty rating: 2 out of 5">★★☆☆☆</span><a class="headerlink" href="#modules-and-packages-span-role-image-aria-label-difficulty-rating-2-out-of-5-span" title="Permalink to this headline">¶</a></h2>
+<p>Code that is more complex, high risk or reusable between projects can benefit from being structured into a package.
+Modules are single files that contain one or more reusable units of code.
+Multiple modules might be collected together into a package.</p>
+<p>It’s likely that you’ve already used a package written by somebody else as part of your analysis.
+For example, installing additional functionality for Python using <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">&lt;package&gt;</span></code> on the command line or running <code class="docutils literal notranslate"><span class="pre">install.packages(&quot;&lt;package&gt;&quot;)</span></code> in an R interpreter.</p>
+<div class="admonition-learning admonition">
+<p class="admonition-title">Key Learning</p>
+<p>The <a class="reference external" href="https://python-packaging-user-guide.readthedocs.io/">Python Packaging User Guide</a> describes good packaging practices using the most up-to-date Python tools.
+<a class="reference external" href="https://r-pkgs.org/">R Packages</a> provides a comprehensive summary of packaging in R.
+This <a class="reference external" href="http://web.mit.edu/insong/www/pdf/rpackage_instructions.pdf">step by step guide to creating R package</a> from MIT might also be useful.</p>
+</div>
+<p>See <a class="reference internal" href="project_documentation.html"><span class="doc std std-doc">Project documentation</span></a> for a summary of common package and project documentation types.</p>
+</div>
+<div class="section" id="project-templates-span-role-image-aria-label-difficulty-rating-2-out-of-5-span">
+<h2>Project templates <span role="image" aria-label="difficulty rating: 2 out of 5">★★☆☆☆</span><a class="headerlink" href="#project-templates-span-role-image-aria-label-difficulty-rating-2-out-of-5-span" title="Permalink to this headline">¶</a></h2>
+<p>Although project structure is flexible, you might recognise that many analysts choose to use similar structures for multiple projects.
+Consistency in structure makes it easier to navigate unfamiliar projects.
+It means that members of the team can quickly orient themselves when joining an existing project or starting a new one.</p>
+<p><a class="reference external" href="https://github.com/cookiecutter/cookiecutter">Cookiecutter</a> is a command-line tool that creates projects from templates (cookiecutters).
+Using an existing cookiecutter, or creating one to meet your needs, can be a useful way to increase consistency in structure between your projects.
+It can save time by creating common folder structures, laying out essential documentation or even starting off your code with basic boilerplate.
+Layout out a structure to include documentation and code testing encourages these good practices.</p>
+<p>Useful cookiecutters include:</p>
+<ul class="simple">
+<li><p>The comprehensive Python data science project template <a class="reference external" href="http://drivendata.github.io/cookiecutter-data-science/">cookiecutter-data-science</a></p></li>
+<li><p>The Python package template <a class="reference external" href="https://cookiecutter-pypackage.readthedocs.io/en/latest/">cookiecutter-pypackage</a></p></li>
+</ul>
+<p>Rstudio provides a standard template for R packages via <code class="docutils literal notranslate"><span class="pre">File</span> <span class="pre">&gt;</span> <span class="pre">New</span> <span class="pre">Project...</span> <span class="pre">&gt;</span> <span class="pre">New</span> <span class="pre">Directory</span> <span class="pre">&gt;</span> <span class="pre">R</span> <span class="pre">Package</span></code>.  We have created some basic templates for an <a class="reference external" href="https://github.com/best-practice-and-impact/example-package-r">R package</a> and a <a class="reference external" href="https://github.com/best-practice-and-impact/example-package-python">Python package</a> that may be helpful.
+R project structures can also be set up or extended, one component at a time, using the <a class="reference external" href="https://usethis.r-lib.org/"><code class="docutils literal notranslate"><span class="pre">usethis</span></code> workflow package</a>.
+For example, <code class="docutils literal notranslate"><span class="pre">use_test()</span></code> will add the directories necessary for testing using <code class="docutils literal notranslate"><span class="pre">testthat</span></code> and generate basic test file templates for a given function name.</p>
+</div>
+<div class="section" id="repositories-span-role-image-aria-label-difficulty-rating-2-out-of-5-span">
+<h2>Repositories <span role="image" aria-label="difficulty rating: 2 out of 5">★★☆☆☆</span><a class="headerlink" href="#repositories-span-role-image-aria-label-difficulty-rating-2-out-of-5-span" title="Permalink to this headline">¶</a></h2>
+<p>Repositories or “repos” are typically project folders that are version controlled using Git or a similar version control system.
+One repository usually contains a single project.
+Developing your project using a version controlled repository has significant benefits for reproducibility.</p>
+<p>See <a class="reference internal" href="version_control.html"><span class="doc std std-doc">Version control</span></a> for more information.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="core_programming.html" title="previous page">Core programming practices</a>
+    <a class='right-next' id="next-link" href="code_documentation.html" title="next page">Code documentation</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          <div class="extra_footer">
+            <p>Best Practice & Impact division, Office for National Statistics</p><p>This document is very young, please help use to make it grow by providing any feedback by <a href='mailto:gsshelp@statistics.gov.uk'>email</a> or via the <a href='https://github.com/best-practice-and-impact/qa-of-code-guidance'>GitHub repository</a>.
+          </div>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="_static/js/index.3da636dd464baa7582d2.js"></script>
+
+
+    
+  </body>
+</html>

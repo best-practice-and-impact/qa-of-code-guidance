@@ -1,0 +1,474 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Principles &#8212; DRAFT: Quality Assurance of Code for Analysis and Research</title>
+    
+  <link rel="stylesheet" href="_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="_static/sphinx-book-theme.2d2078699c18a0efb88233928e1cf6ed.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="_static/markdown_within_tabs.css" />
+    <link rel="stylesheet" type="text/css" href="_static/learning_admonition.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.3da636dd464baa7582d2.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/duck.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.be0a4a0c39cd630af62a2fcf693f3f06.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="shortcut icon" href="_static/qa_of_code_favicon.png"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Core programming practices" href="core_programming.html" />
+    <link rel="prev" title="Introduction" href="index.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  <img src="_static/qa_of_code_favicon.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">DRAFT: Quality Assurance of Code for Analysis and Research</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="index.html">
+   Introduction
+  </a>
+ </li>
+</ul>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Principles
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="core_programming.html">
+   Core programming practices
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="project_structure.html">
+   Structuring your project
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="code_documentation.html">
+   Code documentation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="project_documentation.html">
+   Project documentation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="version_control.html">
+   Version control
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data.html">
+   Data Management
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="peer_review.html">
+   Peer review
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="testing_code.html">
+   Testing code
+  </a>
+ </li>
+</ul>
+
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  <li><a href='https://gss.civilservice.gov.uk/' target='_blank'><img src='./_static/GSS_logo.jpg' alt='The Government Statistical Service logo' style='width:100%'></a></li>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/principles.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/best-practice-and-impact/qa-of-code-guidance"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/best-practice-and-impact/qa-of-code-guidance/issues/new?title=Issue%20on%20page%20%2Fprinciples.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/best-practice-and-impact/qa-of-code-guidance/edit/master/principles.md"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#reproducible">
+   Reproducible
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#auditable">
+   Auditable
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#assured">
+   Assured
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#reproducible-analytical-pipelines">
+   Reproducible analytical pipelines
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#further-development">
+   Further development
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#adaptable">
+     Adaptable
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sustainable">
+     Sustainable
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="principles">
+<h1>Principles<a class="headerlink" href="#principles" title="Permalink to this headline">¶</a></h1>
+<p>When we do analysis it must be fit for purpose.
+If it isn’t, we risk misinforming decisions.
+Bad analysis can result in harm or misallocation of public funds.
+As such, we must take the right steps to ensure high quality analysis.</p>
+<p>This book recognises three founding principles of good analysis, each supported by the one before it.
+Analysis in programming makes each of these principles easier to fulfil in most cases.</p>
+<div class="figure align-default" id="repro-stack">
+<a class="reference internal image-reference" href="_images/repro_stack.png"><img alt="Founding principles of good analysis." src="_images/repro_stack.png" style="width: 50%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 2 </span><span class="caption-text">Founding principles of good analysis</span><a class="headerlink" href="#repro-stack" title="Permalink to this image">¶</a></p>
+</div>
+<p>Reproducibility guarantees that we have done what we are claiming to have done, and that users could do it to get the same result.
+Auditability means that we know why we chose our analysis, and who is responsible for each part of it - including assurance.
+Assurance improves the average quality and includes the communication of that quality to users.</p>
+<div class="admonition-learning admonition">
+<p class="admonition-title">Key strategies</p>
+<p>Government guidance is available to help you when developing analysis.
+We recommend:</p>
+<ol class="simple">
+<li><p>The <a class="reference external" href="https://www.gov.uk/government/publications/the-aqua-book-guidance-on-producing-quality-analysis-for-government">Aqua book</a> to understand guidance around assurance.</p></li>
+<li><p>The <a class="reference external" href="https://gss.civilservice.gov.uk/policy-store/government-statistical-service-gss-quality-strategy/">GSS Quality Strategy</a> when thinking about the quality of statistics.</p></li>
+<li><p>The <a class="reference external" href="https://www.gov.uk/government/publications/data-ethics-framework/data-ethics-framework">DCMS Data Ethics Framework</a> when approaching any analysis.</p></li>
+<li><p>The <a class="reference external" href="https://gss.civilservice.gov.uk/policy-store/communicating-quality-uncertainty-and-change/">Communicating quality, uncertainty and change guidance</a> whenever you must develop user-facing products.</p></li>
+</ol>
+<p>Each of these pieces of guidance advocate reproducibility as a core tenet of quality analysis.</p>
+</div>
+<div class="section" id="reproducible">
+<h2>Reproducible<a class="headerlink" href="#reproducible" title="Permalink to this headline">¶</a></h2>
+<p>Reproducibility is the only thing that you can guarantee in your analysis.
+It is the first pillar of good analysis.
+If you can’t prove that you can run the same analysis, with the same data, and obtain the same results then you are not adding valuable analysis.
+The additional assurances of peer review, rigorous testing, and validity are secondary to being able to reproduce any analysis that you carry out in a proportionate amount of time.</p>
+<div class="figure align-default" id="reproducibility-matrix">
+<a class="reference internal image-reference" href="_images/reproducibility_matrix.jpg"><img alt="Defining reproducibility as getting the same result when using the same analysis on the same data." src="_images/reproducibility_matrix.jpg" style="width: 60%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 3 </span><span class="caption-text">Defining reproducibility, from <a class="reference external" href="https://the-turing-way.netlify.app/reproducible-research/overview/overview-definitions.html">The Turing Way</a></span><a class="headerlink" href="#reproducibility-matrix" title="Permalink to this image">¶</a></p>
+</div>
+<p>Reproducible analysis relies on a transparent production process, so that anyone can follow your steps and understand your results.
+This transparency eases reuse of your methods and results.
+Easy reproducibility helps your colleagues test and validate what you have done.
+When reproducibility is guaranteed, users and colleagues can focus on verifying that the implementation is correct and that the research is useful for its intended purpose.</p>
+<p>Reproducibility relies on effective documentation.
+Good documentation should show how your methodology and your implementation map to each other.
+Good documentation should allow users and other researchers to reuse and adapt your analysis.</p>
+<p>Reproducible analysis supports the requirements of the <a class="reference external" href="https://www.statisticsauthority.gov.uk/code-of-practice/">Code of Practice for Statistics</a> around quality assurance and transparency (auditability).
+Wherever possible, we share the code we used to produce our outputs, along with enough data to allow for proper testing.</p>
+</div>
+<div class="section" id="auditable">
+<h2>Auditable<a class="headerlink" href="#auditable" title="Permalink to this headline">¶</a></h2>
+<p>If decisions are made, based on your analysis, then you must make sure that the story of that analysis is available.
+Your analysis and the evidence that you provide must be available for scrutiny and audit.
+Auditable analysis is about being able to, at any point, answer:</p>
+<blockquote>
+<div><p>Who made each decision?
+When was this decision made?
+What evidence was this decision made on?</p>
+</div></blockquote>
+<p>Answering these questions gives decision makers and users greater trust in your work.
+They know the story of your analysis and why you made certain analytical choices.
+They know who is responsible for each part of the analysis, including the assurance.
+They know exactly what changes have been made at any point.</p>
+<p>In a reproducible workflow, you must bring together the code and the data that you used to generate your results.
+These are ideally published alongside your reports, with a record of analytical choices made and the responsible owners of those choices.
+The transparency that this gives your work helps to increase trustworthiness.
+More eyes examining your work can point out challenges or flaws that can help you to improve.
+You can be fully open about the decisions you made when you generated your outputs, so that other analysts can follow what you did and re-create them.
+By making your analysis reproducible, you make it easier for others to quality assure, assess and critique.</p>
+</div>
+<div class="section" id="assured">
+<h2>Assured<a class="headerlink" href="#assured" title="Permalink to this headline">¶</a></h2>
+<p>Good quality analysis requires good quality assurance (QA).
+If decisions are being made based on analysis then this analysis must be held to high standards.
+This is true for analysis carried out using any medium, including code.</p>
+<p>However, some of the analysis that we do in government doesn’t bear on decisions at that level.
+We don’t want to overburden analysts with QA procedures when they are not required.
+In government we advocate <em>proportionality</em> - the right quality assurance procedures for the right analysis.
+Analysis can be proportionately assured through peer review and defensive design.</p>
+<p>We advocate following your department’s guidance on what proportionate quality assurance looks like.
+Most departments derive their guidance from the <a class="reference external" href="https://www.gov.uk/government/publications/the-aqua-book-guidance-on-producing-quality-analysis-for-government">Aqua book</a>.
+Assurance is best demonstrated through peer review.
+Peer reviewers must be able to understand your analytical choices and be able to reproduce your conclusions.
+In particularly high risk analysis, dual running should be considered.</p>
+<p>Guarantees of quality assurance should be published alongside any report, or be taken into consideration by decision makers.</p>
+</div>
+<div class="section" id="reproducible-analytical-pipelines">
+<h2>Reproducible analytical pipelines<a class="headerlink" href="#reproducible-analytical-pipelines" title="Permalink to this headline">¶</a></h2>
+<p>Producing analysis, such as official statistics, can be time-consuming and painstaking.
+We need to make sure that our outputs are both accurate and timely.
+We aim to develop effective and efficient analytical workflows that are repeatable and sustainable over time.
+These workflows should follow the principles of reproducible analysis.
+We call these <a class="reference external" href="https://dataingovernment.blog.gov.uk/2017/03/27/reproducible-analytical-pipeline/">Reproducible Analytical Pipelines (RAP)</a>.</p>
+<p>Reproducible analysis is still not widely practised across government.
+Many analysts use proprietary (paid-for) analytical tools like SAS or SPSS in combination with programs like Excel, Word or Acrobat to create statistical products.
+The processes for creating statistics in this way are usually manual or semi-manual.
+Colleagues then typically repeat parts of the process manually to quality assure the outputs.</p>
+<p>This way of working is time consuming and can be frustrating, especially where the manual steps are difficult to replicate quickly.
+Processes like this are also prone to error, because the input data and the outputs are not connected directly, only through the analyst’s manual intervention.</p>
+<p>More recently, the tools and techniques available to analysts have evolved.
+Open-source tools like <a class="reference external" href="https://www.python.org/">Python</a> and <a class="reference external" href="https://www.r-project.org/">R</a> have become available.
+Coupled with version control and software management platforms like <a class="reference external" href="https://git-scm.com/">Git</a> and Git-services have made it possible to develop automatic, streamlined processes, accompanied by a full audit trail.</p>
+<p>It is essential that we have access to appropriate and up-to-date tools for our analysis.
+In a recent case, use of legacy analytical tools lead to <a class="reference external" href="https://www.bbc.co.uk/news/technology-54423988">under-reporting of COVID-19 statistics</a>.</p>
+<p>RAP was <a class="reference external" href="https://dataingovernment.blog.gov.uk/2017/03/27/reproducible-analytical-pipeline/">first piloted in the Government Statistical Service in 2017</a> by analysts in the Department for Digital, Culture, Media &amp; Sport (DCMS) and the Department for Education (DfE).
+They collaborated with data scientists from the Government Digital Service (GDS) to automate the production of statistical bulletins.</p>
+<p>To support the adoption of RAP across government, there is a network of <a class="reference external" href="https://gss.civilservice.gov.uk/about-us/champion-networks/reproducible-analytical-pipeline-rap-champions/">RAP champions</a>.
+RAP champions are responsible for promoting reproducible analysis through the use of reproducible analytical pipelines, and supporting others who want to develop RAP in their own departments.</p>
+</div>
+<div class="section" id="further-development">
+<h2>Further development<a class="headerlink" href="#further-development" title="Permalink to this headline">¶</a></h2>
+<blockquote class="epigraph">
+<div><p>Automation <em>is</em> documentation.</p>
+<p class="attribution">—<a class="reference external" href="https://edwinth.github.io/ADSwR/automation.html#automation-is-documentation">Edwin Thoen (Agile Data Science with R)</a></p>
+</div></blockquote>
+<p>The founding three principles above are reliant on a wider context.
+Analysis does not sit in a vacuum - it relies on a culture that values high quality analysis and supports it.
+In addition to reproducibility, auditability and quality assurance, we value adaptability and sustainability too.
+Adaptability guarantees that work done now will have value in the future.
+Sustainability guarantees that work done now will not diminish in quality or relevance over time.</p>
+<div class="section" id="adaptable">
+<h3>Adaptable<a class="headerlink" href="#adaptable" title="Permalink to this headline">¶</a></h3>
+<p>Analysis must be available to be reused or repurposed for other needs.</p>
+<p>Data sources change in shape or substance frequently.
+Analysis products should be able to adapt to those changes in the data source.</p>
+</div>
+<div class="section" id="sustainable">
+<h3>Sustainable<a class="headerlink" href="#sustainable" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="index.html" title="previous page">Introduction</a>
+    <a class='right-next' id="next-link" href="core_programming.html" title="next page">Core programming practices</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          <div class="extra_footer">
+            <p>Best Practice & Impact division, Office for National Statistics</p><p>This document is very young, please help use to make it grow by providing any feedback by <a href='mailto:gsshelp@statistics.gov.uk'>email</a> or via the <a href='https://github.com/best-practice-and-impact/qa-of-code-guidance'>GitHub repository</a>.
+          </div>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="_static/js/index.3da636dd464baa7582d2.js"></script>
+
+
+    
+  </body>
+</html>

@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Introduction &#8212; DRAFT: Quality Assurance of Code for Analysis and Research</title>
+    <title>Peer review &#8212; DRAFT: Quality Assurance of Code for Analysis and Research</title>
     
   <link rel="stylesheet" href="_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
 
@@ -62,7 +62,8 @@
     <link rel="shortcut icon" href="_static/qa_of_code_favicon.png"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Principles" href="principles.html" />
+    <link rel="next" title="Testing code" href="testing_code.html" />
+    <link rel="prev" title="Data Management" href="data.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -79,7 +80,7 @@
 <div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
     
         <div class="navbar-brand-box">
-<a class="navbar-brand text-wrap" href="#">
+<a class="navbar-brand text-wrap" href="index.html">
   
   <img src="_static/qa_of_code_favicon.png" class="logo" alt="logo">
   
@@ -97,12 +98,12 @@
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
   <ul class="nav sidenav_l1">
  <li class="toctree-l1">
-  <a class="reference internal" href="#">
+  <a class="reference internal" href="index.html">
    Introduction
   </a>
  </li>
 </ul>
-<ul class="nav sidenav_l1">
+<ul class="current nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="principles.html">
    Principles
@@ -138,8 +139,8 @@
    Data Management
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="peer_review.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Peer review
   </a>
  </li>
@@ -190,7 +191,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/index.md"><button type="button"
+        <a class="dropdown-buttons" href="_sources/peer_review.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -210,10 +211,10 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/best-practice-and-impact/qa-of-code-guidance/issues/new?title=Issue%20on%20page%20%2Findex.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/best-practice-and-impact/qa-of-code-guidance/issues/new?title=Issue%20on%20page%20%2Fpeer_review.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        <a class="edit-button" href="https://github.com/best-practice-and-impact/qa-of-code-guidance/edit/master/index.md"><button
+        <a class="edit-button" href="https://github.com/best-practice-and-impact/qa-of-code-guidance/edit/master/peer_review.md"><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
     </div>
@@ -239,38 +240,35 @@
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#quality-assurance-of-code-for-analysis-and-research">
-   Quality Assurance of Code for Analysis and Research
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#about-us">
-   About us
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#structure-of-the-book">
-   Structure of the book
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#how-to-get-the-most-out-of-the-book">
-   How to get the most out of the book
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#accessibility-statement">
-   Accessibility statement
+  <a class="reference internal nav-link" href="#motivation">
+   Motivation
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#feedback-and-reporting-accessibility-problems">
-     Feedback and reporting accessibility problems
+    <a class="reference internal nav-link" href="#why-do-we-need-peer-review">
+     Why do we need peer review?
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-to-review">
+   What to review
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#approaches-to-code-review">
+   Approaches to code review
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pair-programming">
+     Pair programming
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#enforcement-procedure">
-     Enforcement procedure
+    <a class="reference internal nav-link" href="#remote-review">
+     Remote review
     </a>
    </li>
   </ul>
@@ -286,90 +284,148 @@
         
               <div>
                 
-  <div class="section" id="introduction">
-<h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="quality-assurance-of-code-for-analysis-and-research">
-<h2>Quality Assurance of Code for Analysis and Research<a class="headerlink" href="#quality-assurance-of-code-for-analysis-and-research" title="Permalink to this headline">¶</a></h2>
-<p>This is an early draft of Government Statistical Service (GSS) and Analysis Function guidance.
-It is produced by the <a class="reference external" href="https://gss.civilservice.gov.uk/about-us/support-for-the-gss/">Best Practice and Impact division</a> of the Office for National Statistics.</p>
-<p>This guidance has been written to support analysts in government who use coding in their work.
-This includes those who produce statistics, carry out modelling or apply data science.</p>
-<p>You may notice “Todo” notes throughout the guidance.
-These indicate where we plan to add additional content in the near future.
-We are extremely grateful for any feedback that you are able to provide on existing and future content.</p>
+  <div class="section" id="peer-review">
+<h1>Peer review<a class="headerlink" href="#peer-review" title="Permalink to this headline">¶</a></h1>
+<p>Peer review of code is a quality assurance activity, where a developer other than the code’s author views and tests the usage of a piece of code.</p>
+<div class="section" id="motivation">
+<h2>Motivation<a class="headerlink" href="#motivation" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="why-do-we-need-peer-review">
+<h3>Why do we need peer review?<a class="headerlink" href="#why-do-we-need-peer-review" title="Permalink to this headline">¶</a></h3>
+<p>Peer review allows a fresh pair of eyes to take a look at your work.
+This form of systematic check helps to identify errors in your code and provides feedback on your approach to tackling a problem.
+This constructive feedback helps you to improve your code quality and provides confidence in your work.</p>
+<div class="admonition-todo admonition" id="id1">
+<p class="admonition-title">Todo</p>
+<p>Must include reference to the AQUA book</p>
 </div>
-<div class="section" id="about-us">
-<h2>About us<a class="headerlink" href="#about-us" title="Permalink to this headline">¶</a></h2>
-<p>The Best Practice and Impact division supports government analysis by providing guidance, consultancy and training.</p>
-<p>You can find us on:</p>
+<p>A major benefit of internal review is shared knowledge.
+Both the reviewer and reviewee are exposed to new concepts.
+It encourages a deeper understanding of what the code is doing.
+This can help with future work on the project, as multiple team members have the understanding to maintain the project.</p>
+<div class="admonition-todo admonition" id="id2">
+<p class="admonition-title">Todo</p>
+<p>Must include more focus on:</p>
 <ul class="simple">
-<li><p>Our websites: <a class="reference external" href="https://gss.civilservice.gov.uk/">Government Statistical Service</a> and <a class="reference external" href="https://www.gov.uk/government/organisations/government-analysis-function">Government Analytical Function</a></p></li>
-<li><p>Email: <a class="reference external" href="mailto:gsshelp&#37;&#52;&#48;statistics&#46;gov&#46;uk">gsshelp<span>&#64;</span>statistics<span>&#46;</span>gov<span>&#46;</span>uk</a> and <a class="reference external" href="mailto:analysis&#46;function&#37;&#52;&#48;ons&#46;gov&#46;uk">analysis<span>&#46;</span>function<span>&#64;</span>ons<span>&#46;</span>gov<span>&#46;</span>uk</a></p></li>
-<li><p>Slack: <a class="reference external" href="https://gov-stats-service.slack.com">GSS</a> and <a class="reference external" href="https://govdatascience.slack.com">Gov Data Science</a></p></li>
-<li><p>Twitter: <a class="reference external" href="https://twitter.com/gssgoodpractice">GSS Good Practice Team</a> and <a class="reference external" href="https://twitter.com/ukgss">UK GSS</a></p></li>
+<li><p>peer review helps reproducibility because peer reviewers have to reproduce the results</p></li>
+<li><p>peer review helps quality because it offers constructive challenge</p></li>
+<li><p>peer review helps auditability because a transparent review process shines a light on the development process</p></li>
 </ul>
-<div class="figure align-default" id="gss-logo">
-<a class="reference internal image-reference" href="_images/GSS_logo.jpg"><img alt="The Governments Statistical Service logo" src="_images/GSS_logo.jpg" style="width: 60%;" /></a>
 </div>
 </div>
-<div class="section" id="structure-of-the-book">
-<h2>Structure of the book<a class="headerlink" href="#structure-of-the-book" title="Permalink to this headline">¶</a></h2>
-<p>The content of the book is ordered roughly in increasing depth.
-Each chapter is also broken down into sections that gradually increase in difficulty.
-We have noted a rough guide to difficulty for each section using a ★★★★★ rating system.</p>
 </div>
-<div class="section" id="how-to-get-the-most-out-of-the-book">
-<h2>How to get the most out of the book<a class="headerlink" href="#how-to-get-the-most-out-of-the-book" title="Permalink to this headline">¶</a></h2>
-<p>This guidance is tailored to government analysts who would like to quality assure their code and increase the reproducibility of their analyses.
-We have tried to interpret the requirements of pieces of guidance (the <a class="reference internal" href="principles.html"><span class="doc std std-doc">principles</span></a>) into actions and deliverables for analytical programming.</p>
-<p>However, the practices outlined in the book are general to many applications of programming, so may also be insightful for those outside of government.</p>
-<p>This book might be most useful for you if you are:</p>
+<div class="section" id="what-to-review">
+<h2>What to review<a class="headerlink" href="#what-to-review" title="Permalink to this headline">¶</a></h2>
+<p>When reviewing code, you should ask yourself the following questions:</p>
 <ul class="simple">
-<li><p>writing code to automate part of your work and would like to assure that it is working as expected</p></li>
-<li><p>developing a statistical production pipeline and would like to assure that it is long term sustainable and reproducible</p></li>
-<li><p>developing models and would like to assure that they are transparent and reproducible</p></li>
-<li><p>developing data science techniques and would like your code to be useful to others</p></li>
-<li><p>looking for a high level introduction to software engineering practices in the context of analysis and research</p></li>
+<li><p>Can I easily understand what the code is doing?</p>
+<ul>
+<li><p>Is the code sufficiently documented for me to understand it?</p></li>
+<li><p>Is there duplication in the code that could be simplified by refactoring?</p></li>
+<li><p>Are functions and class methods simple, using few parameters?</p></li>
 </ul>
-<p>This book can be used to guide your learning and as a reference.
-The start of each chapter describes the risks which the described practices may help to address.
-Therefore, you should strive to apply the most appropriate practices given the risks associated with your work.</p>
-<p>The principles in this book are language agnostic.<br />
-It does not form a comprehensive learning resource and you may often need to study further resources to implement these practices.
-That said, examples and useful references are provided for <strong>Python</strong> and <strong>R</strong>, as open source languages that are commonly applied across government.</p>
-<p>Many of the learning references in this book point to the UK Statistics Authority Learning Hub, which are labelled GSS only.
-All government analysts can request an account for the Hub via <a class="reference external" href="mailto:gss&#46;capability&#37;&#52;&#48;ons&#46;gov&#46;uk">gss<span>&#46;</span>capability<span>&#64;</span>ons<span>&#46;</span>gov<span>&#46;</span>uk</a>.</p>
+</li>
+<li><p>Does the code fulfil its requirements?</p></li>
+<li><p>Is the required functionality tested sufficiently?</p></li>
+<li><p>How easy will it be to alter this code when requirements change? They always do.</p>
+<ul>
+<li><p>Are high level parameters kept in a dedicated configuration file, or Would somebody need to work their way through the code with lots of manual edits to reconfigure for a new run?</p></li>
+</ul>
+</li>
+<li><p>Is the code style consistent?</p></li>
+<li><p>Can I generate the same outputs that the analysis claims to produce?</p>
+<ul>
+<li><p>Have dependencies been sufficiently documented?</p></li>
+<li><p>Is the code version, data version and configuration recorded?</p></li>
+</ul>
+</li>
+</ul>
+<p>You might use a review template to formalise review in your development process.
+This example is written in Markdown, so that it can be used in Git platform Pull/Merge requests:</p>
+<div class="highlight-md notranslate"><div class="highlight"><pre><span></span><span class="gu">##  Code review</span>
+
+<span class="gu">#### Documentation</span>
+
+Any new code includes all the following forms of documentation:
+
+<span class="k">- [ ]</span> <span class="gs">**Function Documentation**</span> as docstrings within the function definition.
+<span class="k">- [ ]</span> <span class="gs">**Examples**</span> demonstrating major functionality, which runs successfully locally.
+
+<span class="gu">#### Functionality</span>
+
+<span class="k">- [ ]</span> <span class="gs">**Installation**</span>: Installation or build of the code succeeds.
+<span class="k">- [ ]</span> <span class="gs">**Functionality**</span>: Any functional claims of new code have been confirmed.
+<span class="k">- [ ]</span> <span class="gs">**Automated tests**</span>: Unit tests cover essential functions for a reasonable range
+  of inputs and conditions. All tests pass on your local machine.
+<span class="k">- [ ]</span> <span class="gs">**Packaging guidelines**</span>: New code conforms to the project contribution
+  guidelines.
+
+<span class="gu">#### Final approval (post-review)</span>
+
+The author has responded to my review and made changes to my satisfaction.
+<span class="k">- [ ]</span> <span class="gs">**I recommend merging this request.**</span>
+
+Estimated time spent reviewing: #
+
+---
+
+<span class="gu">### Review comments</span>
+
+<span class="ge">*Insert detailed comments here!*</span>
+
+These might include, but not exclusively:
+
+<span class="k">-</span> bugs that need fixing (does it work as expected? and does it work with other code
+  that it is likely to interact with?)
+<span class="k">-</span> alternative methods (could it be written more efficiently or with more clarity?)
+<span class="k">-</span> documentation improvements (does it reflect what the code actually does?)
+<span class="k">-</span> additional tests that should be implemented (do the tests effectively assure that it
+  works correctly?)
+<span class="k">-</span> code style improvements (could the code be written more clearly?)
+
+Your suggestions should be tailored to the code that you are reviewing.
+Be critical and clear, but not mean. Ask questions and set actions.
+</pre></div>
 </div>
-<div class="section" id="accessibility-statement">
-<h2>Accessibility statement<a class="headerlink" href="#accessibility-statement" title="Permalink to this headline">¶</a></h2>
-<p>This accessibility statement applies to the Quality Assurance of Code for Analysis and Research.
-Please not that this does not include third-party content that is referenced from this guidance.</p>
-<p>The website is managed by the Best Practice and Impact division of the Office for National Statistics.
-We would like this guidance to be accessible for as many people as possible.
-This means that you should be able to:</p>
+<p>Make sure that you share the load on reviewing work within your teams.
+Reviewing code from those with more and less experience is beneficial.</p>
+</div>
+<div class="section" id="approaches-to-code-review">
+<h2>Approaches to code review<a class="headerlink" href="#approaches-to-code-review" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="pair-programming">
+<h3>Pair programming<a class="headerlink" href="#pair-programming" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>Two heads are better than one</p>
+</div></blockquote>
+<p>This practice combines the code writing and review process into one step.
+Here, two or three developers work together on a writing a single piece of code.
+Each developer takes turns to actively author parts of the code, while others provide real time feedback on the code being written.</p>
+<p>This encourages developers to think about and vocalise why they are writing code in a particular way.
+It gives reviewers a chance to suggest improvements and question the author’s approach as they write code.
+The rotational aspect of this practice ensures that all team members gain experience from both the author and review perspective.
+From both angles,  you’ll learn new techniques and practices.</p>
+<p>If used regularly, this approach can help you to get used to receiving constructive feedback and being more open to improve your coding practice.</p>
+<p>An alternative is the over-the-shoulder review technique, where one developer authors for the entire session.
+This can be useful when working with a mentor, but it is often more useful for a mentor to lead by example.</p>
+</div>
+<div class="section" id="remote-review">
+<h3>Remote review<a class="headerlink" href="#remote-review" title="Permalink to this headline">¶</a></h3>
+<p>This approach essentially involves sharing your code with a reviewer, and receiving constructive comments following the review.
+This may be an iterative process, until the reviewer is satisfied with the resulting code.</p>
+<p>This can work best where changes are small and frequent.
+Requesting review of small but regular changes reduces the burden on reviewers, relative to large review of a complete project.
+When reviewing larger pieces of work, it may be worth reviewing different aspects of the code is separate passes.
+For example, focussing on documentation in one session and then functionality in the next.</p>
+<p>The thought of someone else reviewing your code in this way encourages good practices from the outset:</p>
 <ul class="simple">
-<li><p>change colours, contrast levels and fonts</p></li>
-<li><p>zoom in up to 300% without the text spilling off the screen</p></li>
-<li><p>navigate most of the website using just a keyboard</p></li>
-<li><p>navigate most of the website using speech recognition software</p></li>
-<li><p>listen to most of the website using a screen reader (including the most recent versions of JAWS, NVDA and VoiceOver)</p></li>
+<li><p>Clear code and documentation - so that others with no experience can use and test your code</p></li>
+<li><p>Usable dependency management - so that others can run your code in their own environment</p></li>
 </ul>
-<p>For keyboard navigation, <kbd>Up Arrow</kbd> and <kbd>Down Arrow</kbd> keys can be used to scroll up and down on the current page.
-<kbd>Left Arrow</kbd> and <kbd>Right Arrow</kbd> keys can be used to move forwards and backwards through the pages of the book.
-Tabbed content (including code example) can be focused using the <kbd>Tab</kbd> key.
-<kbd>Left Arrow</kbd> and <kbd>Right Arrow</kbd> keys  are then used to focus the required tab option, where <kbd>Enter</kbd> can be used to select that option and display the associated content.</p>
-<div class="section" id="feedback-and-reporting-accessibility-problems">
-<h3>Feedback and reporting accessibility problems<a class="headerlink" href="#feedback-and-reporting-accessibility-problems" title="Permalink to this headline">¶</a></h3>
-<p>We’re always looking to improve the accessibility of our guidance.
-If you find any problems not listed on this page or think that we’re not meeting accessibility requirements, please contact us by email at <a class="reference external" href="mailto:gsshelp&#37;&#52;&#48;statistics&#46;gov&#46;uk">gsshelp<span>&#64;</span>statistics<span>&#46;</span>gov<span>&#46;</span>uk</a>.
-Please also get in touch if you are unable to access any part of this guidance, or require the content in a different format.</p>
-<p>We will consider your request and aim to get back to you within 5 working days.</p>
-</div>
-<div class="section" id="enforcement-procedure">
-<h3>Enforcement procedure<a class="headerlink" href="#enforcement-procedure" title="Permalink to this headline">¶</a></h3>
-<p>The Equality and Human Rights Commission (EHRC) is responsible for enforcing the <a class="reference external" href="https://www.legislation.gov.uk/uksi/2018/952/made">Public Sector Bodies (Websites and Mobile Applications) (No. 2) Accessibility Regulations 2018 (the ‘accessibility regulations’)</a>.
-If you’re not happy with how we respond to your complaint, you should <a class="reference external" href="https://www.equalityadvisoryservice.com/">contact the Equality Advisory and Support Service (EASS)</a>.</p>
-<div class="toctree-wrapper compound">
+<p>This form of review is aided by features of most version control platforms, namely the Pull request (or equivalent).
+See <a class="reference internal" href="version_control.html"><span class="doc std std-doc">Version control</span></a> for more information.</p>
+<div class="admonition-todo admonition" id="id3">
+<p class="admonition-title">Todo</p>
+<p>There’s probably an example from ROpenSci we can point people to here</p>
+<p>https://github.com/ropensci/software-review/issues/168</p>
 </div>
 </div>
 </div>
@@ -403,7 +459,8 @@ If you’re not happy with how we respond to your complaint, you should <a class
     
     <div class='prev-next-bottom'>
         
-    <a class='right-next' id="next-link" href="principles.html" title="next page">Principles</a>
+    <a class='left-prev' id="prev-link" href="data.html" title="previous page">Data Management</a>
+    <a class='right-next' id="next-link" href="testing_code.html" title="next page">Testing code</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
