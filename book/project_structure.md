@@ -92,7 +92,7 @@ There must be an immutable store for raw data in your project structure.
 You should be able to dispose of your outputs, deleting them, without worrying.
 If you are worried about deleting your outputs then it is unlikely you have confidence in being able to reproduce your results.
 
-It is good practice to delete your outputs frequently when developing analysis.
+It is good practice to delete and regenerate your outputs frequently when developing analysis.
 
 
 ## Modules and packages ★★☆☆☆

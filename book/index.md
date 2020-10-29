@@ -35,7 +35,7 @@ We have noted a rough guide to difficulty for each section using a ★★★★�
 ## How to get the most out of the book
 
 This guidance is tailored to government analysts who would like to quality assure their code and increase the reproducibility of their analyses.
-We have tried to interpret the requirements of pieces of guidance (the [principles](/principles.html)) into actions and deliverables for analytical programming.
+We have tried to interpret the requirements of pieces of guidance (the [principles](/principles.md)) into actions and deliverables for analytical programming.
 
 However, the practices outlined in the book are general to many applications of programming, so may also be insightful for those outside of government.
 

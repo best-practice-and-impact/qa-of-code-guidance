@@ -2,7 +2,7 @@
 
 In this chapter, we primarily discuss the benefits of using the [Git](https://git-scm.com/) version control system.
 
-### Why do we need version control?
+## Why do we need version control?
 
 Manually versioning files is not appropriate or sufficient for development at pace or with input from multiple individuals.
 
@@ -39,13 +39,13 @@ When used effectively, it also allows us to more easily identify changes that ha
 Most importantly, it allows us to refer to specific versions of our code that have been used to produce specific outputs.
 
 
-### What should I version control?
+## What should I version control?
 
 Ideally, you should include any code that is required to run your system.  In a public repository, you may need to omit confidential or sensitive code.
 
 ```{caution}
 
-You shouldn't include the following in your code repository:
+You should **not** include the following in your code repository:
 * passwords, credentials or keys
 * configuration files that are environment-dependent
 * code that contains sensitive information
@@ -300,7 +300,7 @@ This is aided by linking tasks to specific issues and pull requests.
 
 
 (continuous-integration)=
-### Continuous integration
+## Continuous integration
 
 Continuous integration (CI) describes the practice of frequently committing changes to your code.
 This subsection relates to CI tools, which primarily help to automate routine quality assurance tasks.
@@ -324,7 +324,7 @@ Other commonly used tools/services include:
 * AppVeyor
 
 
-#### Testing example
+### Testing example
 
 Below is an example configuration file, for use with GitHub actions.
 The `YAML` file, which is used here, is common for CI tools.
@@ -335,7 +335,8 @@ name: Test python package
 
 on:
   push:
-    branches: [ master ]
+    branches:
+      - master
   pull_request:
 
 
@@ -388,7 +389,7 @@ Finally, we run `pytest` to check that our code is working as expected.
 This workflow will report whether our test code ran successfully for each of the specified Python versions.
 
 
-#### Documentation example
+### Documentation example
 
 This book uses the following GitHub Actions configuration to build and deploy the HTML content:
 
@@ -430,13 +431,14 @@ This workflow runs whenever changes are pushed (including merges) onto the `mast
 As with the previous example, we start by setting up an environment with Python.
 We install the dependencies for the project, which includes `jupyter-book` to build to the book.
 
-Our workflow then builds the book's HTML content, where it will fail if warnings or errors are raised.
+Our workflow then builds the book's HTML content, where the workflow will fail if warnings or errors are raised.
 Finally, the book (including the new changes) is deployed to the site that you are reading now.
+This deployment step requires authentication, which is managed by a secret/token that is accessed from the Action's envrionment.
 
 You might use a similar approach to deploy your code's HTML documentation.
 
 
-#### Complex example
+### Complex example
 
 You can see a detailed example of CI in practice in the `jupyter-book` project.
 A recent version of the [`jupyter-book` CI workflow](https://github.com/executablebooks/jupyter-book/blob/6fb0cbe4abb5bc29e9081afbe24f71d864b40475/.github/workflows/tests.yml) includes:

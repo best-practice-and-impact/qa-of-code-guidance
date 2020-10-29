@@ -84,10 +84,6 @@ plt.plot(penguins.bill_length_mm)
 species_means.to_csv("penguin_species_mean_measurements.csv")
 ```
 ```{code-tab} r R
-##### GET DATA #####
-time_series <- read.csv("time_Series_data.csv")
-
-```{code-tab} r R
 library(palmerpenguins)
 library(magrittr)
 
