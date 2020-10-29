@@ -14,7 +14,7 @@ Without a simplified example, it can be difficult to diagnose your problem and s
 You might even find that breaking the problem down to simplify the example leads you to a solution.
 
 * We're all guilty of using tools without reading the manual - give it a search
-* [Google](www.google.co.uk)
+* [Google](https://www.google.co.uk)
 * [stackoverflow](https://stackoverflow.com/)
 * Reach out to communities, like the [Government Data Science Slack](https://govdatascience.slack.com)
 * Take a break - come back at it with a clear head
