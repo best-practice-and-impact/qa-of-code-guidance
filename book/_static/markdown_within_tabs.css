@@ -1,0 +1,5 @@
+/* Fixes sphinx tabs that contain HTML h1 elements.
+Otherwise h1::before covers the tabs and prevents switching. */
+.sphinx-tabs-panel h1::before {
+    display: none;
+}

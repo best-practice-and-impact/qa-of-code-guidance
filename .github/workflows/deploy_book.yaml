@@ -1,0 +1,33 @@
+name: Deploy book
+
+on:
+  push:
+    branches:
+    - main
+    - master
+
+jobs:
+  deploy-book:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Set up Python 3.7
+      uses: actions/setup-python@v1
+      with:
+        python-version: 3.7
+
+    - name: Install dependencies
+      run: |
+        pip install -r requirements.txt
+
+    - name: Build the book
+      run: |
+        jb build book -W --keep-going
+        && touch ./book/_build/html/.nojekyll
+
+    - name: Deploy book to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3.6.1
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./book/_build/html

@@ -1,0 +1,2 @@
+jupyter-book
+git+https://github.com/foster999/sphinx-tabs.git@accessibility
