@@ -6,6 +6,8 @@ on:
       - main
       - master
   pull_request:
+  release:
+    - created
 
 jobs:
   build:
@@ -29,7 +31,7 @@ jobs:
   deploy:
     needs: build
     runs-on: ubuntu-latest
-    if: startsWith( github.ref, 'refs/tags/v')
+    if: github.event_name == 'release'
     steps:
     - name: "Deploy book to GitHub Pages"
       uses: peaceiris/actions-gh-pages@v3.6.1
