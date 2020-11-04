@@ -59,3 +59,28 @@ Please start your pull request title with a keyword to indicate the type of chan
 * Improve - Improved existing content
 * Fix - Fix typo's or other mistakes in existing content
 * Document - Changes to the documentation of the project
+
+
+## Publishing changes
+
+### Preparation
+
+To create a new release and publish the `master` branch, you'll need to install the development dependencies:
+
+```
+pip install -r dev-requirements.txt
+```
+
+### Releasing
+
+To create a new release, use the command line tool `bump2version`, which will be installed with the dev dependencies.
+The version number references the current `year` and an incremental `build` count.
+
+For a the first release of a year, provide the `year` as the command argument, otherwise provide `build`:
+
+```
+bump2version build
+```
+
+`bump2version` will create a new Git tag and `commit`.
+If you're happy with the version increase, `push` these to the remote to trigger the publication.
