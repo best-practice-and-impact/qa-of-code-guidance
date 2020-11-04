@@ -72,9 +72,9 @@ If decisions are made, based on your analysis, then you must make sure that the 
 Your analysis and the evidence that you provide must be available for scrutiny and audit.
 Auditable analysis is about being able to, at any point, answer: 
 
-> Who made each decision?
-> When was this decision made?
-> What evidence was this decision made on?
+* Who made each decision?
+* When was this decision made?
+* What evidence was this decision made on?
 
 Answering these questions gives decision makers and users greater trust in your work.
 They know the story of your analysis and why you made certain analytical choices.
