@@ -400,10 +400,10 @@ name: Deploy book
 on:
   push:
     branches:
-      - main
-      - master
+    - main
+    - master
     tags:
-      - 'v*'
+    - 'v*'
 
 jobs:
   deploy-book:
