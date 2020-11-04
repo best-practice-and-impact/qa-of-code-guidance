@@ -199,8 +199,8 @@ You'll see this, or a similar version numbering, on packages that you install fo
 Changes to this book don't cause backwards-compatibility issues in the same sense as code.
 We've chosen to use a form of calender versioning ([CalVer](https://calver.org/)).
 You'll see the current version below the site's table of contents, where the first four digits represent the year that latest changes were made.
-The incremental number following the full stop indicates how many versions have been released in that year.
-As this guidance will change over time, this version provides users with a reference for citing a specific state of the guidance.
+The incremental number following the full stop indicates how many versions of the guidance have been published in that year.
+As this guidance will change over time, this version number provides users with a reference for citing a specific state of the guidance.
 
 
 ## Changelog <span role="image" aria-label="difficulty rating: 2 out of 5">★★☆☆☆</span>
