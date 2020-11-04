@@ -395,18 +395,17 @@ This workflow will report whether our test code ran successfully for each of the
 This book uses the following GitHub Actions configuration to build and deploy the HTML content:
 
 ```
-name: Deploy book
+name: Build and deploy book
 
 on:
   push:
     branches:
       - main
       - master
-    tags:
-      - 'v*'
+  pull_request:
 
 jobs:
-  deploy-book:
+  build:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
@@ -422,25 +421,35 @@ jobs:
 
     - name: Build the book
       run: |
-        jb build book -W --keep-going && touch ./book/_build/html/.nojekyll
+        jb build book -W -v --keep-going && touch ./book/_build/html/.nojekyll
 
-    - name: Deploy book to GitHub Pages
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    if: startsWith( github.ref, 'refs/tags/v')
+    steps:
+    - name: "Deploy book to GitHub Pages"
       uses: peaceiris/actions-gh-pages@v3.6.1
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./book/_build/html
 ```
-This workflow runs whenever a new version tag is pushed onto the `master` or `main` branch.
-This allows us to accumulate changes on the main branch, before releasing a collection of changes in the next version.
+
+This workflow runs whenever a pull request is create or changes are pushed directly to the main branch.
+It has two jobs - one that builds the book's HTML content and another that deploys the content to this website.
 
 As with the previous example, we start the workflow by setting up an environment with Python.
 We install the dependencies for the project, which includes `jupyter-book` to build to the book.
 
 Our workflow then builds the book's HTML content, where the workflow will fail if warnings or errors are raised.
-Finally, the book (including the new changes) is deployed to the site that you are reading now.
-This deployment step requires authentication, which is managed by a secret/token that is accessed from the Action's envrionment.
 
-You might use a similar approach to deploy your code's HTML documentation.
+In the second job, the book (including the new changes) is deployed to the site that you are reading now.
+This job needs the build job to have completed successfully before it will run.
+It will only run if a new Git tag has been created, to indicate a new version of the book.
+This allows us to accumulate changes on the main branch, before releasing a collection of changes in the next version.
+This deployment step requires authentication, which is managed by a secret/token that is accessed from the Action's environment.
+
+You might use a similar approach to this to deploy your code's HTML documentation.
 
 
 ### Complex example
