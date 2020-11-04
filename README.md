@@ -86,5 +86,6 @@ bump2version build
 If you're happy with the version increase, `push` these to the remote to trigger the publication.
 
 ```
-git push origin --tags
+git push
+git push --tags
 ```
