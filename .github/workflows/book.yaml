@@ -9,7 +9,6 @@ on:
       - 'v*'
   pull_request:
 
-
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -25,16 +24,12 @@ jobs:
       run: |
         pip install -r requirements.txt
 
-    - name: Build the book
+    - name: Check book build
       run: |
-        jb build book -W -v --keep-going && touch ./book/_build/html/.nojekyll
+        jb build book -W -v --keep-going
 
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    if: startsWith(github.event.ref, 'refs/tags/v')
-    steps:
     - name: "Deploy book to GitHub Pages"
+      if: startsWith(github.event.ref, 'refs/tags/v')
       uses: peaceiris/actions-gh-pages@v3.6.1
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
