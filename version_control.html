@@ -156,7 +156,7 @@
  <!-- To handle the deprecated key -->
 
 <div class="navbar_extra_footer">
-  <p>Book version Book version 2020.0</><a href='https://gss.civilservice.gov.uk/' target='_blank'><img src='./_static/GSS_logo.jpg' alt='The Government Statistical Service logo' style='width:100%'></a>
+  <p>Book version 2020.8</><a href='https://gss.civilservice.gov.uk/' target='_blank'><img src='./_static/GSS_logo.jpg' alt='The Government Statistical Service logo' style='width:100%'></a>
 </div>
 
 </div>
@@ -702,18 +702,17 @@ Finally, we run <code class="docutils literal notranslate"><span class="pre">pyt
 <div class="section" id="documentation-example">
 <h3>Documentation example<a class="headerlink" href="#documentation-example" title="Permalink to this headline">¶</a></h3>
 <p>This book uses the following GitHub Actions configuration to build and deploy the HTML content:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>name: Deploy book
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>name: Build and deploy book
 
 on:
   push:
     branches:
-    - main
-    - master
-    tags:
-    - &#39;v*&#39;
+      - main
+      - master
+  pull_request:
 
 jobs:
-  deploy-book:
+  build:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
@@ -729,23 +728,31 @@ jobs:
 
     - name: Build the book
       run: |
-        jb build book -W --keep-going &amp;&amp; touch ./book/_build/html/.nojekyll
+        jb build book -W -v --keep-going &amp;&amp; touch ./book/_build/html/.nojekyll
 
-    - name: Deploy book to GitHub Pages
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    if: startsWith( github.ref, &#39;refs/tags/v&#39;)
+    steps:
+    - name: &quot;Deploy book to GitHub Pages&quot;
       uses: peaceiris/actions-gh-pages@v3.6.1
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./book/_build/html
 </pre></div>
 </div>
-<p>This workflow runs whenever a new version tag is pushed onto the <code class="docutils literal notranslate"><span class="pre">master</span></code> or <code class="docutils literal notranslate"><span class="pre">main</span></code> branch.
-This allows us to accumulate changes on the main branch, before releasing a collection of changes in the next version.</p>
+<p>This workflow runs whenever a pull request is create or changes are pushed directly to the main branch.
+It has two jobs - one that builds the book’s HTML content and another that deploys the content to this website.</p>
 <p>As with the previous example, we start the workflow by setting up an environment with Python.
 We install the dependencies for the project, which includes <code class="docutils literal notranslate"><span class="pre">jupyter-book</span></code> to build to the book.</p>
-<p>Our workflow then builds the book’s HTML content, where the workflow will fail if warnings or errors are raised.
-Finally, the book (including the new changes) is deployed to the site that you are reading now.
-This deployment step requires authentication, which is managed by a secret/token that is accessed from the Action’s envrionment.</p>
-<p>You might use a similar approach to deploy your code’s HTML documentation.</p>
+<p>Our workflow then builds the book’s HTML content, where the workflow will fail if warnings or errors are raised.</p>
+<p>In the second job, the book (including the new changes) is deployed to the site that you are reading now.
+This job needs the build job to have completed successfully before it will run.
+It will only run if a new Git tag has been created, to indicate a new version of the book.
+This allows us to accumulate changes on the main branch, before releasing a collection of changes in the next version.
+This deployment step requires authentication, which is managed by a secret/token that is accessed from the Action’s environment.</p>
+<p>You might use a similar approach to this to deploy your code’s HTML documentation.</p>
 </div>
 <div class="section" id="complex-example">
 <h3>Complex example<a class="headerlink" href="#complex-example" title="Permalink to this headline">¶</a></h3>
