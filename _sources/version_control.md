@@ -166,6 +166,7 @@ This causes issues across different users of the repo, as other developer's loca
 You must consider this before force pushing changes to a remote repository.
 Create new commits that resolve or `revert` to fix the problem.
 
+
 ### Releases (tagging)
 
 Regularly `commit`ing changes using Git helps us to create a thorough audit trail of changes to our project.
@@ -399,7 +400,10 @@ name: Deploy book
 on:
   push:
     branches:
+    - main
     - master
+    tags:
+    - 'v*'
 
 jobs:
   deploy-book:
@@ -418,8 +422,7 @@ jobs:
 
     - name: Build the book
       run: |
-        jb build book -W --keep-going
-        && touch ./book/_build/html/.nojekyll
+        jb build book -W --keep-going && touch ./book/_build/html/.nojekyll
 
     - name: Deploy book to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3.6.1
@@ -427,8 +430,10 @@ jobs:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./book/_build/html
 ```
-This workflow runs whenever changes are pushed (including merges) onto the `master` branch.
-As with the previous example, we start by setting up an environment with Python.
+This workflow runs whenever a new version tag is pushed onto the `master` or `main` branch.
+This allows us to accumulate changes on the main branch, before releasing a collection of changes in the next version.
+
+As with the previous example, we start the workflow by setting up an environment with Python.
 We install the dependencies for the project, which includes `jupyter-book` to build to the book.
 
 Our workflow then builds the book's HTML content, where the workflow will fail if warnings or errors are raised.

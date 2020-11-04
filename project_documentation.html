@@ -158,7 +158,7 @@
  <!-- To handle the deprecated key -->
 
 <div class="navbar_extra_footer">
-  <p>Book version 0.2.0</><a href='https://gss.civilservice.gov.uk/' target='_blank'><img src='./_static/GSS_logo.jpg' alt='The Government Statistical Service logo' style='width:100%'></a>
+  <p>Book version 2020.0</><a href='https://gss.civilservice.gov.uk/' target='_blank'><img src='./_static/GSS_logo.jpg' alt='The Government Statistical Service logo' style='width:100%'></a>
 </div>
 
 </div>
@@ -472,15 +472,24 @@ You can produce this type of documentation in any format, though Rmarkdown is pa
 </div>
 <div class="section" id="versioning-span-role-image-aria-label-difficulty-rating-2-out-of-5-span">
 <h2>Versioning <span role="image" aria-label="difficulty rating: 2 out of 5">★★☆☆☆</span><a class="headerlink" href="#versioning-span-role-image-aria-label-difficulty-rating-2-out-of-5-span" title="Permalink to this headline">¶</a></h2>
+<p>Documenting the version of your code provides distinct points of reference in the code’s development.
+Recording the version of code used for analysis is important for reproducing your work.
+When used in combination with <a class="reference internal" href="version_control.html"><span class="doc std std-doc">Version control</span></a>, versioning allows you to recover the exact code used to run your analysis and thus reproduce the same results.</p>
 <p><a class="reference external" href="https://semver.org/">Semantic versioning</a> provides useful rules for versioning releases of your code.
-Following these rules helps a user of your code to understand how changes in your code may affect their software.
-Each level of version number indicates the extent of changes to the application programming interface (API) of your code, i.e. the code that a user interacts with directly.
+Following these rules also helps other users of your code to understand how changes in your code may affect their software.
+Each level of version number indicates the extent of changes to the application programming interface (API) of your code, i.e. the part of the code that a user interacts with directly.
 Changes to the major version number indicate changes to the API that are not compatible with use of previous versions of the code.
 While changes is the minor and patch numbers indicate changes that are either compatible or have no effect on the use of the code, respectively.</p>
 <div class="figure align-default" id="semantic-versioning">
 <a class="reference internal image-reference" href="_images/semantic_versioning.png"><img alt="_images/semantic_versioning.png" src="_images/semantic_versioning.png" style="width: 70%;" /></a>
 <p class="caption"><span class="caption-number">Fig. 9 </span><span class="caption-text"><a class="reference external" href="https://semver.org/">Semantic versioning</a></span><a class="headerlink" href="#semantic-versioning" title="Permalink to this image">¶</a></p>
 </div>
+<p>You’ll see this, or a similar version numbering, on packages that you install for Python and R.</p>
+<p>Changes to this book don’t cause backwards-compatibility issues in the same sense as code.
+We’ve chosen to use a form of calender versioning (<a class="reference external" href="https://calver.org/">CalVer</a>).
+You’ll see the current version below the site’s table of contents, where the first four digits represent the year that latest changes were made.
+The incremental number following the full stop indicates how many versions of the guidance have been published in that year.
+As this guidance will change over time, this version number provides users with a reference for citing a specific state of the guidance.</p>
 </div>
 <div class="section" id="changelog-span-role-image-aria-label-difficulty-rating-2-out-of-5-span">
 <h2>Changelog <span role="image" aria-label="difficulty rating: 2 out of 5">★★☆☆☆</span><a class="headerlink" href="#changelog-span-role-image-aria-label-difficulty-rating-2-out-of-5-span" title="Permalink to this headline">¶</a></h2>

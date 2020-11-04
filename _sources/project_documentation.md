@@ -175,9 +175,13 @@ You might also consider providing examples in an interactive notebook, that user
 
 ## Versioning <span role="image" aria-label="difficulty rating: 2 out of 5">★★☆☆☆</span>
 
+Documenting the version of your code provides distinct points of reference in the code's development.
+Recording the version of code used for analysis is important for reproducing your work.
+When used in combination with [](version_control.md), versioning allows you to recover the exact code used to run your analysis and thus reproduce the same results.
+
 [Semantic versioning](https://semver.org/) provides useful rules for versioning releases of your code.
-Following these rules helps a user of your code to understand how changes in your code may affect their software.
-Each level of version number indicates the extent of changes to the application programming interface (API) of your code, i.e. the code that a user interacts with directly.
+Following these rules also helps other users of your code to understand how changes in your code may affect their software.
+Each level of version number indicates the extent of changes to the application programming interface (API) of your code, i.e. the part of the code that a user interacts with directly.
 Changes to the major version number indicate changes to the API that are not compatible with use of previous versions of the code.
 While changes is the minor and patch numbers indicate changes that are either compatible or have no effect on the use of the code, respectively.
 
@@ -189,6 +193,14 @@ name: semantic_versioning
 ---
 [Semantic versioning](https://semver.org/)
 ```
+
+You'll see this, or a similar version numbering, on packages that you install for Python and R.
+
+Changes to this book don't cause backwards-compatibility issues in the same sense as code.
+We've chosen to use a form of calender versioning ([CalVer](https://calver.org/)).
+You'll see the current version below the site's table of contents, where the first four digits represent the year that latest changes were made.
+The incremental number following the full stop indicates how many versions of the guidance have been published in that year.
+As this guidance will change over time, this version number provides users with a reference for citing a specific state of the guidance.
 
 
 ## Changelog <span role="image" aria-label="difficulty rating: 2 out of 5">★★☆☆☆</span>

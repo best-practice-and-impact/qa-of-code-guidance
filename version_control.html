@@ -156,7 +156,7 @@
  <!-- To handle the deprecated key -->
 
 <div class="navbar_extra_footer">
-  <p>Book version 0.2.0</><a href='https://gss.civilservice.gov.uk/' target='_blank'><img src='./_static/GSS_logo.jpg' alt='The Government Statistical Service logo' style='width:100%'></a>
+  <p>Book version 2020.0</><a href='https://gss.civilservice.gov.uk/' target='_blank'><img src='./_static/GSS_logo.jpg' alt='The Government Statistical Service logo' style='width:100%'></a>
 </div>
 
 </div>
@@ -707,7 +707,10 @@ Finally, we run <code class="docutils literal notranslate"><span class="pre">pyt
 on:
   push:
     branches:
+    - main
     - master
+    tags:
+    - &#39;v*&#39;
 
 jobs:
   deploy-book:
@@ -726,8 +729,7 @@ jobs:
 
     - name: Build the book
       run: |
-        jb build book -W --keep-going
-        &amp;&amp; touch ./book/_build/html/.nojekyll
+        jb build book -W --keep-going &amp;&amp; touch ./book/_build/html/.nojekyll
 
     - name: Deploy book to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3.6.1
@@ -736,8 +738,9 @@ jobs:
         publish_dir: ./book/_build/html
 </pre></div>
 </div>
-<p>This workflow runs whenever changes are pushed (including merges) onto the <code class="docutils literal notranslate"><span class="pre">master</span></code> branch.
-As with the previous example, we start by setting up an environment with Python.
+<p>This workflow runs whenever a new version tag is pushed onto the <code class="docutils literal notranslate"><span class="pre">master</span></code> or <code class="docutils literal notranslate"><span class="pre">main</span></code> branch.
+This allows us to accumulate changes on the main branch, before releasing a collection of changes in the next version.</p>
+<p>As with the previous example, we start the workflow by setting up an environment with Python.
 We install the dependencies for the project, which includes <code class="docutils literal notranslate"><span class="pre">jupyter-book</span></code> to build to the book.</p>
 <p>Our workflow then builds the book’s HTML content, where the workflow will fail if warnings or errors are raised.
 Finally, the book (including the new changes) is deployed to the site that you are reading now.
