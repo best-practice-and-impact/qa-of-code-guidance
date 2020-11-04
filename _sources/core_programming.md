@@ -9,26 +9,31 @@ This includes assigning and using variables, and using functions and classes.
 ```{admonition} Pre-requisites
 :class: admonition-learning
 
-You might look to these sources for introductory learning:
-* Introduction to [Python](https://learninghub.ons.gov.uk/enrol/index.php?id=536) and [R](https://learninghub.ons.gov.uk/enrol/index.php?id=538) (central government analysts only)
+You should look to these sources for introductory learning, before reading this guidance:
+* Introduction to [Python](https://learninghub.ons.gov.uk/enrol/index.php?id=536) and [R](https://learninghub.ons.gov.uk/enrol/index.php?id=538) (government analysts only)
 * Official Python [Getting Started Guide](https://www.python.org/about/gettingstarted/)
 * [Learn Python](https://www.learnpython.org/) supported by DataCamp
 * [R Basics](https://www.udemy.com/course/r-basics/?LSNPUBID=JVFxdTr9V80&ranEAID=JVFxdTr9V80&ranMID=39197&ranSiteID=JVFxdTr9V80-mzkL.lpta.ugiFro.8Oc_Q&utm_medium=udemyads&utm_source=aff-campaign) on Udemy
 * [edx](https://www.edx.org/) and [freeCodeCamp](https://www.freecodecamp.org/) hosts many free online coding courses
 * [DataCamp](https://www.datacamp.com/), [Codecademy](https://www.codecademy.com/) and [Coursera](https://www.coursera.org/) host a range of introductory courses, but more advanced courses are often not free.
 
-These resources cover more advanced topics:
-* Aggregation, functions and control flow in [Python](https://learninghub.ons.gov.uk/enrol/index.php?id=525) and [R](https://learninghub.ons.gov.uk/enrol/index.php?id=527) (GSS only)
-* Dataframes, manipulation and cleaning in [Python](https://learninghub.ons.gov.uk/enrol/index.php?id=521) and [R](https://learninghub.ons.gov.uk/enrol/index.php?id=523) (GSS only)
+Please note that non-GSS learning may not follow good practices. However, exposure to a range of applied examples will still benefit your learning.
+You should compare and contrast your learning to the good practices outlined in this section.
+```
+
+
+```{admonition} Further Learning
+:class: admonition-learning
+
+These resources cover more advanced topics, which are not essential for for this section:
+* Aggregation, functions and control flow in [Python](https://learninghub.ons.gov.uk/enrol/index.php?id=525) and [R](https://learninghub.ons.gov.uk/enrol/index.php?id=527) (government analysts only)
+* Dataframes, manipulation and cleaning in [Python](https://learninghub.ons.gov.uk/enrol/index.php?id=521) and [R](https://learninghub.ons.gov.uk/enrol/index.php?id=523) (government analysts only)
 * [Introduction to Unit Testing](https://learninghub.ons.gov.uk/enrol/index.php?id=539) and other code quality assurance for Python and R (GSS only)
 * Python [Data Science Handbook](https://jakevdp.github.io/PythonDataScienceHandbook/index.html)
 * [Python for Data Analysis](https://github.com/wesm/pydata-book)
 * [R for Data Science](https://r4ds.had.co.nz/)
 * [Advanced R](https://adv-r.hadley.nz/index.html)
 * Harvard University's courses on [Python](https://online-learning.harvard.edu/subject/python) and [R](https://online-learning.harvard.edu/subject/r)
-
-Please note that non-GSS learning may not follow good practices. However, exposure to a range of applied examples will still benefit your learning.
-You should compare and contrast your learning to the good practices outlined in this section.
 ```
 
 ## Motivation 

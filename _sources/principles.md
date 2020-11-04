@@ -23,7 +23,7 @@ Auditability means that we know why we chose our analysis, and who is responsibl
 Assurance improves the average quality and includes the communication of that quality to users.
 
 ```{admonition} Key strategies
-:class: admonition-learning
+:class: admonition-strategies
 
 Government guidance is available to help you when developing analysis.
 We recommend:

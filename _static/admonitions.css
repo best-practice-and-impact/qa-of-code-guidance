@@ -10,3 +10,15 @@
     left: .45rem;
     top: .5rem;
 }
+
+/* Custom admonition, usage like:
+
+```{admonition} Key Strategies
+:class: admonition-strategies
+
+```
+ */
+.admonition-strategies p.admonition-title::before {
+    content: "\f439";
+    left: .55rem;
+}

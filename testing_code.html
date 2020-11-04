@@ -25,15 +25,15 @@
     href="_static/vendor/lato_latin-ext/1.44.1/index.css">
 
     
-    <link rel="stylesheet" href="_static/sphinx-book-theme.2d2078699c18a0efb88233928e1cf6ed.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.2d2078699c18a0efb88233928e1cf6ed.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="_static/admonitions.css" />
     <link rel="stylesheet" type="text/css" href="_static/markdown_within_tabs.css" />
-    <link rel="stylesheet" type="text/css" href="_static/learning_admonition.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
@@ -157,7 +157,7 @@
  <!-- To handle the deprecated key -->
 
 <div class="navbar_extra_footer">
-  <li><a href='https://gss.civilservice.gov.uk/' target='_blank'><img src='./_static/GSS_logo.jpg' alt='The Government Statistical Service logo' style='width:100%'></a></li>
+  <p>Book version 0.2.0</><a href='https://gss.civilservice.gov.uk/' target='_blank'><img src='./_static/GSS_logo.jpg' alt='The Government Statistical Service logo' style='width:100%'></a>
 </div>
 
 </div>
@@ -497,7 +497,7 @@ The course also covers writing and documenting functions, and error handling.</p
 Assuring that individual units work as expected, using unit testing, does not guarantee that multiple units interact with one another as expected.</p>
 <div class="figure align-default" id="no-integration-tests">
 <a class="reference internal image-reference" href="_images/no_integration_tests.png"><img alt="Two drawers that open into each other's handles." src="_images/no_integration_tests.png" style="width: 40%;" /></a>
-<p class="caption"><span class="caption-number">Fig. 14 </span><span class="caption-text">Two unit tests, no integration tests.</span><a class="headerlink" href="#no-integration-tests" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 13 </span><span class="caption-text">Two unit tests, no integration tests.</span><a class="headerlink" href="#no-integration-tests" title="Permalink to this image">¶</a></p>
 </div>
 <p>Integration tests incorporate two or more units and check that they work together correctly.
 These tests are also used to test the interface between your code and external dependencies, such as a database or web-based API.</p>
@@ -516,7 +516,7 @@ The motivation for using end-to-end tests is similar to that of integration test
 Despite assurance that small sections of the code are functioning correctly, it’s important to validate that your overall system is fit for purpose.</p>
 <div class="figure align-default" id="sinking-ship">
 <a class="reference internal image-reference" href="https://i.stack.imgur.com/Nirxy.jpg"><img alt="A sinking ship would still report passing unit tests." src="https://i.stack.imgur.com/Nirxy.jpg" style="width: 50%;" /></a>
-<p class="caption"><span class="caption-number">Fig. 15 </span><span class="caption-text">A sinking ship would still report a number of passing unit and integration tests, while the system is failing overall.</span><a class="headerlink" href="#sinking-ship" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 14 </span><span class="caption-text">A sinking ship would still report a number of passing unit and integration tests, while the system is failing overall.</span><a class="headerlink" href="#sinking-ship" title="Permalink to this image">¶</a></p>
 </div>
 <p>These tests are much slower to run and can take longer to develop for complex processes.
 Having at least one end-to-end test for your process will ensure that the high-level specification of your code is met.
