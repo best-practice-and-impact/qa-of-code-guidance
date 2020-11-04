@@ -84,3 +84,7 @@ bump2version build
 
 `bump2version` will create a new Git tag and `commit`.
 If you're happy with the version increase, `push` these to the remote to trigger the publication.
+
+```
+git push origin --tags
+```
