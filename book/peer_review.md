@@ -12,6 +12,10 @@ This constructive feedback helps you to improve your code quality and provides c
 
 ```{todo}
 Must include reference to the AQUA book
+
+Internal and external peer review is required under the AQUA book.
+
+[#24](https://github.com/best-practice-and-impact/qa-of-code-guidance/issues/24)
 ```
 
 A major benefit of internal review is shared knowledge.
@@ -20,10 +24,14 @@ It encourages a deeper understanding of what the code is doing.
 This can help with future work on the project, as multiple team members have the understanding to maintain the project.
 
 ```{todo}
+New writing for peer review intro.
+
 Must include more focus on:
 - peer review helps reproducibility because peer reviewers have to reproduce the results
 - peer review helps quality because it offers constructive challenge
 - peer review helps auditability because a transparent review process shines a light on the development process
+
+[#25](https://github.com/best-practice-and-impact/qa-of-code-guidance/issues/25)
 ```
 
 ## What to review
@@ -137,7 +145,9 @@ This form of review is aided by features of most version control platforms, name
 See [](version_control.md) for more information.
 
 ```{todo}
-There's probably an example from ROpenSci we can point people to here
+There's probably an example from ROpenSci we can point people to for peer review
 
 https://github.com/ropensci/software-review/issues/168
+
+[#26](https://github.com/best-practice-and-impact/qa-of-code-guidance/issues/26)
 ```
