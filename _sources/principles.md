@@ -72,9 +72,9 @@ If decisions are made, based on your analysis, then you must make sure that the 
 Your analysis and the evidence that you provide must be available for scrutiny and audit.
 Auditable analysis is about being able to, at any point, answer: 
 
-> Who made each decision?
-> When was this decision made?
-> What evidence was this decision made on?
+* Who made each decision?
+* When was this decision made?
+* What evidence was this decision made on?
 
 Answering these questions gives decision makers and users greater trust in your work.
 They know the story of your analysis and why you made certain analytical choices.
@@ -160,4 +160,14 @@ Analysis must be available to be reused or repurposed for other needs.
 Data sources change in shape or substance frequently.
 Analysis products should be able to adapt to those changes in the data source.
 
+```{todo}
+Complete the Adaptable principles.
+[#18](https://github.com/best-practice-and-impact/qa-of-code-guidance/issues/18)
+```
+
 ### Sustainable
+
+```{todo}
+Write the sustainable principles.
+[#19](https://github.com/best-practice-and-impact/qa-of-code-guidance/issues/19)
+```

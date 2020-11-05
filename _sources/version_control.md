@@ -74,7 +74,7 @@ The following sections describe useful concepts for using Git to version control
 We use examples of Git commands throughout, but do not provide detailed descriptions of Git usage.
 If you're not yet familiar with using Git, you should first look into introductory training.
 
-```{admonition} Key Learning
+```{admonition} Pre-requisites
 :class: admonition-learning
 
 Useful training resources for learning Git are:

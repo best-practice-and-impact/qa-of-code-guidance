@@ -19,7 +19,7 @@ We are extremely grateful for any feedback that you are able to provide on exist
 The Best Practice and Impact division supports government analysis by providing guidance, consultancy and training.
 
 You can find us on:
-- Our websites: [Government Statistical Service](https://gss.civilservice.gov.uk/) and [Government Analytical Function](https://www.gov.uk/government/organisations/government-analysis-function)
+- Our websites: [Government Statistical Service](https://gss.civilservice.gov.uk/) and [Government Analysis Function](https://www.gov.uk/government/organisations/government-analysis-function)
 - Email: [gsshelp@statistics.gov.uk](mailto:gsshelp@statistics.gov.uk) and [analysis.function@ons.gov.uk](mailto:analysis.function@ons.gov.uk)
 - Slack: [GSS](https://gov-stats-service.slack.com) and [Gov Data Science](https://govdatascience.slack.com)
 - Twitter: [GSS Good Practice Team](https://twitter.com/gssgoodpractice) and [UK GSS](https://twitter.com/ukgss)

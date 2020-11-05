@@ -165,7 +165,9 @@ Additionally, file versions must not be modified after they have been used for a
 All modifications to the data should result in new versions.
 
 ```{todo}
-Diagram of good manual versioning workflow.
+Diagram of good manual data versioning workflow.
+
+[#22](https://github.com/best-practice-and-impact/qa-of-code-guidance/issues/22)
 ```
 
 Finally, for this to be effective, your analysis should record the version of data used to generate a specified set of outputs.
@@ -179,7 +181,7 @@ Open Linked Data ratings
 
 CSVW
 
-
+[#23](https://github.com/best-practice-and-impact/qa-of-code-guidance/issues/23)
 ```
 
 

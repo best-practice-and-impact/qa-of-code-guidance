@@ -138,10 +138,13 @@ Please note that the principles covered early on also apply at subsequent levels
 ## Structuring test code <span role="image" aria-label="difficulty rating: 1 out of 5">★☆☆☆☆</span>
 
 ```{todo}
+Need to write structure test code
 
 Might just be a reference to project structure?
 
 Lots of content needed below
+
+[#27](https://github.com/best-practice-and-impact/qa-of-code-guidance/issues/27)
 
 ```
 
@@ -175,7 +178,9 @@ Other resources include:
 -->
 
 ```{todo}
-These sections all need more content/examples.
+These testing sections all need more content/examples.
+
+[#28](https://github.com/best-practice-and-impact/qa-of-code-guidance/issues/28)
 ```
 
 ## Integration testing <span role="image" aria-label="difficulty rating: 3 out of 5">★★★☆☆</span>
@@ -229,7 +234,9 @@ Repetitive test code violates the "Don't repeat yourself" rule.
 As with functional code, test code is much easier to maintain when it is modular and reusable.
 
 ```{todo}
-Add examples to demonstrate these
+Add examples to reducing repetition in tests to demonstrate these
+
+[#29](https://github.com/best-practice-and-impact/qa-of-code-guidance/issues/29)
 ```
 
 
