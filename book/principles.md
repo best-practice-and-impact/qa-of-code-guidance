@@ -160,4 +160,14 @@ Analysis must be available to be reused or repurposed for other needs.
 Data sources change in shape or substance frequently.
 Analysis products should be able to adapt to those changes in the data source.
 
+```{todo}
+Complete the Adaptable principles.
+[#18](https://github.com/best-practice-and-impact/qa-of-code-guidance/issues/18)
+```
+
 ### Sustainable
+
+```{todo}
+Write the sustainable principles.
+[#19](https://github.com/best-practice-and-impact/qa-of-code-guidance/issues/19)
+```
