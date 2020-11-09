@@ -491,8 +491,12 @@ You can run multiple of these, to catch a broader range of stylistic or programm
 If you're considering these tools as part of a project, see [Continuous Integration](continuous-integration) for advice on automating them.
 
 ```{todo}
-Potentially add something around not leaving commented-out code lying around, without good reason. This should go in code documentation.
+Potentially add something around not leaving commented-out code lying around, without good reason. 
+
+This should go in code documentation.
 Will need to link to section on configs, as beginners sometimes use comments for parameterising code.
+
+[#20](https://github.com/best-practice-and-impact/qa-of-code-guidance/issues/20)
 ```
 
 
@@ -822,7 +826,11 @@ SOLID is an acronym that encompasses 5 software design principles that are inten
 These principles are designed to improve object-oriented programs, but can be roughly applied to functional programs too.
 
 ```{todo}
-Extend these subsections with analytical examples. Not necessarily code-based.
+Extend SOLID subsections with analytical examples. 
+
+Not necessarily code-based.
+
+[#21](https://github.com/best-practice-and-impact/qa-of-code-guidance/issues/21)
 ```
 
 ### Single responsibility
