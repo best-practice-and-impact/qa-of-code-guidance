@@ -48,9 +48,15 @@ Please:
 * Provide examples of good and/or bad practices to support your content
 * Take on feedback from users and other developers
 
+Any content that is in early development, should be kept under the `early_development` directory.
+While content that is ready for publication belongs under `book`.
+All pages in `book` must be referenced in `_toc.yml` or a warning will be raised and the changes will not be published.
+
 
 ### Submitting contributions
 
+If you are not a member of BPI and would like to contribute, please create a fork of the repository.
+You should create a new branch to collect related changes that you make.
 Once you're happy with any changes you've made to the book, you should raise a [Pull Request](https://github.com/best-practice-and-impact/qa-of-code-guidance/pulls) to the `master` branch of the book's repository.
 
 Please start your pull request title with a keyword to indicate the type of change(s):
@@ -65,7 +71,7 @@ Please start your pull request title with a keyword to indicate the type of chan
 
 ### Preparation
 
-To create a new release and publish the `master` branch, you'll need to install the development dependencies:
+To create a new release and publish the `master` branch, you will need to install the development dependencies:
 
 ```
 pip install -r dev-requirements.txt
@@ -82,8 +88,8 @@ For a the first release of a year, provide the `year` as the command argument, o
 bump2version build
 ```
 
-`bump2version` will create a new Git tag and `commit`.
-If you're happy with the version increase, `push` these to the remote to trigger the publication.
+`bump2version` will create a new Git `tag` and `commit`.
+If you're happy with the version increase, `push` these to the remote to trigger the publication, by running both:
 
 ```
 git push
