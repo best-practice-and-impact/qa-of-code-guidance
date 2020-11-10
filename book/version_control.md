@@ -115,9 +115,10 @@ This is useful for ensuring that specific files or types are not included. For e
 
 Commits are collections of changes to one or more files.
 Every commit is attributed to the author of these changes.
-Each commit has a unique hash - or identifier - associated with it, which has a long (e.g. `121b5b4f18231e4ee32c9c61f6754429f9572743`) and short version (e.g. `121b5b4`)
-Every commit also has an associated message that is used to describe the changes - this is a key part of the audit trail.
+Each commit has a unique hash - or identifier - associated with it, which has a long (e.g. `121b5b4f18231e4ee32c9c61f6754429f9572743`) and short version (e.g. `121b5b4`).
+Every commit also has an associated message that is used to describe the changes - this is a key part of your code's audit trail.
 
+Most commit messages are short and informative, but in some cases you may want to provide more detail.
 See this model commit message from [A note about Git commit messages](https://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html):
 
 ```{code-block} text
