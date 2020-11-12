@@ -69,6 +69,8 @@ Please start your pull request title with a keyword to indicate the type of chan
 
 ## Publishing changes
 
+Internal contributors can trigger a new release of the book.
+
 ### Preparation
 
 To create a new release and publish the `master` branch, you will need to install the development dependencies:

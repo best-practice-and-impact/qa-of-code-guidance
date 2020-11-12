@@ -1,7 +1,11 @@
 # Data Management
 
-In order to reproduce a piece of analysis we need to be able to identify and access the data that our analysis used and produced.
-This requires suitable storage of the data, with any relevant documentation and versioning of the data where it may change over time.
+Data management covers a broad range of disciplines, including organising, storing and maintaining data.
+This management is typically handled by dedicated data architects and engineers, however, we appreciate that analysts are often expected to manage their own data.
+This section aims to highlight good data management practices, so that you can either appreciate how your organisation handles its data or implement your own data management solutions.
+
+In order to reproduce a piece of analysis we need to be able to identify and re-access the data that our analysis used and produced.
+This requires suitable storage of data, with documentation and versioning of the data where it may change over time.
 
 
 ## Data storage <span role="image" aria-label="difficulty rating: 1 out of 5">★☆☆☆☆</span>
