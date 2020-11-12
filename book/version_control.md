@@ -77,8 +77,15 @@ If you're not yet familiar with using Git, you should first look into introducto
 ```{admonition} Pre-requisites
 :class: admonition-learning
 
-Useful training resources for learning Git are:
-* [Intro to Git](https://learninghub.ons.gov.uk/course/view.php?id=532) - the GSS Analytical Learning course (GSS members only)
+Git is most commonly used via a command line interface.
+In most cases this is the Windows command prompt or the UNIX bash terminal.
+You should first learn command line basics through one of these resources:
+* Windows and UNIX [Command Line Basics](https://learninghub.ons.gov.uk/enrol/index.php?id=534) (government analysts only)
+* [Learn enough (UNIX) command line to be dangerous](https://www.learnenough.com/command-line-tutorial/basics)
+* [The UNIX workbench](https://seankross.com/the-unix-workbench/)
+
+Following this, useful training resources for learning Git include:
+* [Intro to Git](https://learninghub.ons.gov.uk/course/view.php?id=532) (government analysts only)
 * The [Pro Git book](https://git-scm.com/book/en/v2) - starting with Git Basics
 * Software Carpentry [Version Control with Git](https://swcarpentry.github.io/git-novice/) - an applied project
 * Interactive online training with [Katacoda](https://www.katacoda.com/courses/git) or [Learn Git Branching](https://learngitbranching.js.org/)
@@ -103,7 +110,6 @@ You can use this [cheat-sheet](https://education.github.com/git-cheat-sheet-educ
 
 
 ### Git versioning concepts
-
 
 A repository (often shortened to repo) is a collection files that are being versioned by Git.
 A repository is created by `init`ialising a new repo or `clone`ing an existing one.
@@ -222,6 +228,7 @@ GitHub provides additional tools for collaborative workflows, including:
 * Continuous Integration
 
 Many of these project management tools are also discussed on the [GitHub features page](https://github.com/features/project-management/).
+
 
 ### Access management
 
@@ -527,7 +534,7 @@ Branching diagram to demonstrate GitHub, from [Programster's blog post of git wo
 
 This simple guide from GitHub also outlines [GitHub flow](https://guides.github.com/introduction/flow/#:~:text=GitHub%20flow%20is%20a%20lightweight,Created%20with%20Snap).
 
-## Other resources
+## Other useful resources
 
 * [GitHub's Git Cheatsheet](https://education.github.com/git-cheat-sheet-education.pdf)
 * [GitHub Git Handbook](https://guides.github.com/introduction/git-handbook/)
