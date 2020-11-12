@@ -4,7 +4,7 @@ Data management covers a broad range of disciplines, including organising, stori
 This management is typically handled by dedicated data architects and engineers, however, we appreciate that analysts are often expected to manage their own data.
 This section aims to highlight good data management practices, so that you can either appreciate how your organisation handles its data or implement your own data management solutions.
 
-In order to reproduce a piece of analysis we need to be able to identify and re-access the data that our analysis used and produced.
+In order to reproduce a piece of analysis we need to be able to identify and access the same data that our analysis used.
 This requires suitable storage of data, with documentation and versioning of the data where it may change over time.
 
 
@@ -183,7 +183,7 @@ This might be documented in analysis reports or automatically logged by your cod
 ```{todo}
 Open Linked Data ratings
 
-CSVW
+Use CSVW when possible
 
 [#23](https://github.com/best-practice-and-impact/qa-of-code-guidance/issues/23)
 ```

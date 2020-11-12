@@ -71,6 +71,7 @@ Other common frameworks, which have a Class-based focus, are:
 Modelling-relevant testing
 including https://www.jeremyjordan.me/testing-ml/
 
+[#15](https://github.com/best-practice-and-impact/qa-of-code-guidance/issues/15)
 ```
 
 ## When to run tests <span role="image" aria-label="difficulty rating: 1 out of 5">★☆☆☆☆</span>
@@ -258,8 +259,8 @@ They are also useful for undoing any consequences of each test run.
 For example, removing data which has been written to a temporary file or database.
 
 Reference material:
-* [`pytest` Fixture](https://docs.pytest.org/en/stable/fixture.html) documentation
-* [`{testthat}` Fixture](https://testthat.r-lib.org/articles/test-fixtures.html) documentation
+* [Python `pytest` Fixture](https://docs.pytest.org/en/stable/fixture.html) documentation
+* [R `testthat` Fixture](https://testthat.r-lib.org/articles/test-fixtures.html) documentation
 
 
 ### Parameterization
