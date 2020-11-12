@@ -160,9 +160,11 @@ It can be done using a few different methods, including fast-forward and rebasin
 Conflicts arise when multiple changes have been made to the same part of a file.
 You must indicate which change (or combination of changes) should be retained.
 
-Don't panic! It's easy to make mistakes, but thankfully Git's audit trail means that we can always revert back to working versions. For most issues, [stackoverflow](https://stackoverflow.com/) is your friend.
+Don't panic!
+It's easy to make mistakes, but thankfully Git's audit trail means that we can always revert back to working versions.
+For most issues, [stackoverflow](https://stackoverflow.com/) is your friend.
 
-Don't change published (i.e. `remote`) history. Otherwise you might need to panic.
+Don't change published (i.e. `remote`) history, otherwise you might need to panic.
 This causes issues across different users of the repo, as other developer's local copies may no longer contain the same history.
 You must consider this before force pushing changes to a remote repository.
 Create new commits that resolve or `revert` to fix the problem.
