@@ -105,7 +105,32 @@ write.csv(species_means, "penguin_species_mean_measurements.csv")
 
 But note that in simple cases, such as the example above, these steps may already be apparent from the code.
 
-In summary, use comments sparingly but effectively.
+Comments should not be used to alter your code's behaviour.
+
+````{tabs}
+
+```{code-tab} py
+print("Run me!")
+# print("Don't run me...")
+```
+```{code-tab} r R
+print("Run me!")
+# print("Don't run me...")
+```
+
+````
+
+Leaving unused code in your scripts makes them more difficult to read and understand.
+It is easy to forget which parts of code have been commented out and why they has been commented.
+You should instead use appropriate control flow to determine when these sections should be run, for example `if/else` statements.
+When changes are required between individual runs of your analysis, you should define these options via a configuration file.
+
+```{todo}
+Reference configuration file section.
+[#30](https://github.com/best-practice-and-impact/qa-of-code-guidance/issues/30)
+```
+
+In summary, you should use comments sparingly but purposefully.
 
 
 (docstrings)=

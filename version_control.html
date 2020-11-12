@@ -26,12 +26,13 @@
 
     
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/sphinx-book-theme.2d2078699c18a0efb88233928e1cf6ed.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="_static/logo.css" />
     <link rel="stylesheet" type="text/css" href="_static/admonitions.css" />
     <link rel="stylesheet" type="text/css" href="_static/markdown_within_tabs.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
@@ -48,7 +49,7 @@
     <script src="_static/copybutton.js"></script>
     <script src="_static/doctools.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="_static/sphinx-book-theme.be0a4a0c39cd630af62a2fcf693f3f06.js"></script>
+    <script src="_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
@@ -87,15 +88,12 @@
   <h1 class="site-logo" id="site-title">DRAFT: Quality Assurance of Code for Analysis and Research</h1>
   
 </a>
-</div>
-
-<form class="bd-search d-flex align-items-center" action="search.html" method="get">
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form>
-
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-  <ul class="nav sidenav_l1">
+    <ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="index.html">
    Introduction
@@ -150,12 +148,10 @@
  </li>
 </ul>
 
-</nav>
-
- <!-- To handle the deprecated key -->
+</nav> <!-- To handle the deprecated key -->
 
 <div class="navbar_extra_footer">
-  <p>Book version 2020.9</><a href='https://gss.civilservice.gov.uk/' target='_blank'><img src='./_static/GSS_logo.jpg' alt='The Government Statistical Service logo' style='width:100%'></a>
+  <p>Book version 2020.10</><a href='https://gss.civilservice.gov.uk/' target='_blank'><img src='./_static/GSS_logo.jpg' alt='The Government Statistical Service logo' style='width:100%'></a>
 </div>
 
 </div>
@@ -181,11 +177,11 @@
             <i class="fas fa-arrow-up"></i>
         </button>
         
-        <div class="dropdown-buttons-trigger">
+        
+<div class="dropdown-buttons-trigger">
     <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
             class="fas fa-download"></i></button>
 
-    
     <div class="dropdown-buttons">
         <!-- ipynb file if we had a myst markdown file -->
         
@@ -197,8 +193,8 @@
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
             onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
-    
 </div>
+
         <!-- Source interaction buttons -->
 
 <div class="dropdown-buttons-trigger">
@@ -342,8 +338,8 @@
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#other-resources">
-   Other resources
+  <a class="reference internal nav-link" href="#other-useful-resources">
+   Other useful resources
   </a>
  </li>
 </ul>
@@ -427,9 +423,17 @@ We use examples of Git commands throughout, but do not provide detailed descript
 If you’re not yet familiar with using Git, you should first look into introductory training.</p>
 <div class="admonition-learning admonition">
 <p class="admonition-title">Pre-requisites</p>
-<p>Useful training resources for learning Git are:</p>
+<p>Git is most commonly used via a command line interface.
+In most cases this is the Windows command prompt or the UNIX bash terminal.
+You should first learn command line basics through one of these resources:</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://learninghub.ons.gov.uk/course/view.php?id=532">Intro to Git</a> - the GSS Analytical Learning course (GSS members only)</p></li>
+<li><p>Windows and UNIX <a class="reference external" href="https://learninghub.ons.gov.uk/enrol/index.php?id=534">Command Line Basics</a> (government analysts only)</p></li>
+<li><p><a class="reference external" href="https://www.learnenough.com/command-line-tutorial/basics">Learn enough (UNIX) command line to be dangerous</a></p></li>
+<li><p><a class="reference external" href="https://seankross.com/the-unix-workbench/">The UNIX workbench</a></p></li>
+</ul>
+<p>Following this, useful training resources for learning Git include:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://learninghub.ons.gov.uk/course/view.php?id=532">Intro to Git</a> (government analysts only)</p></li>
 <li><p>The <a class="reference external" href="https://git-scm.com/book/en/v2">Pro Git book</a> - starting with Git Basics</p></li>
 <li><p>Software Carpentry <a class="reference external" href="https://swcarpentry.github.io/git-novice/">Version Control with Git</a> - an applied project</p></li>
 <li><p>Interactive online training with <a class="reference external" href="https://www.katacoda.com/courses/git">Katacoda</a> or <a class="reference external" href="https://learngitbranching.js.org/">Learn Git Branching</a></p></li>
@@ -464,9 +468,10 @@ A remote repository is a centralised copy of a project that is often used as the
 This is useful for ensuring that specific files or types are not included. For example, configuration files or data.</p>
 <p>Commits are collections of changes to one or more files.
 Every commit is attributed to the author of these changes.
-Each commit has a unique hash - or identifier - associated with it, which has a long (e.g. <code class="docutils literal notranslate"><span class="pre">121b5b4f18231e4ee32c9c61f6754429f9572743</span></code>) and short version (e.g. <code class="docutils literal notranslate"><span class="pre">121b5b4</span></code>)
-Every commit also has an associated message that is used to describe the changes - this is a key part of the audit trail.</p>
-<p>See this model commit message from <a class="reference external" href="https://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html">A note about Git commit messages</a>:</p>
+Each commit has a unique hash - or identifier - associated with it, which has a long (e.g. <code class="docutils literal notranslate"><span class="pre">121b5b4f18231e4ee32c9c61f6754429f9572743</span></code>) and short version (e.g. <code class="docutils literal notranslate"><span class="pre">121b5b4</span></code>).
+Every commit also has an associated message that is used to describe the changes - this is a key part of your code’s audit trail.</p>
+<p>Most commit messages are short and informative, but in some cases you may want to provide more detail.
+See this model commit message from <a class="reference external" href="https://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html">A note about Git commit messages</a>:</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Capitalized, short (50 chars or less) summary
 
 More detailed explanatory text, if necessary.  Wrap it to about 72
@@ -501,8 +506,10 @@ It becomes “detached” if an individual commit or a remote branch is checked 
 It can be done using a few different methods, including fast-forward and rebasing.</p>
 <p>Conflicts arise when multiple changes have been made to the same part of a file.
 You must indicate which change (or combination of changes) should be retained.</p>
-<p>Don’t panic! It’s easy to make mistakes, but thankfully Git’s audit trail means that we can always revert back to working versions. For most issues, <a class="reference external" href="https://stackoverflow.com/">stackoverflow</a> is your friend.</p>
-<p>Don’t change published (i.e. <code class="docutils literal notranslate"><span class="pre">remote</span></code>) history. Otherwise you might need to panic.
+<p>Don’t panic!
+It’s easy to make mistakes, but thankfully Git’s audit trail means that we can always revert back to working versions.
+For most issues, <a class="reference external" href="https://stackoverflow.com/">stackoverflow</a> is your friend.</p>
+<p>Don’t change published (i.e. <code class="docutils literal notranslate"><span class="pre">remote</span></code>) history, otherwise you might need to panic.
 This causes issues across different users of the repo, as other developer’s local copies may no longer contain the same history.
 You must consider this before force pushing changes to a remote repository.
 Create new commits that resolve or <code class="docutils literal notranslate"><span class="pre">revert</span></code> to fix the problem.</p>
@@ -817,8 +824,8 @@ This mode of release provides an extra opportunity for discussion and quality as
 <p>This simple guide from GitHub also outlines <a class="reference external" href="https://guides.github.com/introduction/flow/#:~:text=GitHub%20flow%20is%20a%20lightweight,Created%20with%20Snap">GitHub flow</a>.</p>
 </div>
 </div>
-<div class="section" id="other-resources">
-<h2>Other resources<a class="headerlink" href="#other-resources" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="other-useful-resources">
+<h2>Other useful resources<a class="headerlink" href="#other-useful-resources" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://education.github.com/git-cheat-sheet-education.pdf">GitHub’s Git Cheatsheet</a></p></li>
 <li><p><a class="reference external" href="https://guides.github.com/introduction/git-handbook/">GitHub Git Handbook</a></p></li>

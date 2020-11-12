@@ -77,8 +77,15 @@ If you're not yet familiar with using Git, you should first look into introducto
 ```{admonition} Pre-requisites
 :class: admonition-learning
 
-Useful training resources for learning Git are:
-* [Intro to Git](https://learninghub.ons.gov.uk/course/view.php?id=532) - the GSS Analytical Learning course (GSS members only)
+Git is most commonly used via a command line interface.
+In most cases this is the Windows command prompt or the UNIX bash terminal.
+You should first learn command line basics through one of these resources:
+* Windows and UNIX [Command Line Basics](https://learninghub.ons.gov.uk/enrol/index.php?id=534) (government analysts only)
+* [Learn enough (UNIX) command line to be dangerous](https://www.learnenough.com/command-line-tutorial/basics)
+* [The UNIX workbench](https://seankross.com/the-unix-workbench/)
+
+Following this, useful training resources for learning Git include:
+* [Intro to Git](https://learninghub.ons.gov.uk/course/view.php?id=532) (government analysts only)
 * The [Pro Git book](https://git-scm.com/book/en/v2) - starting with Git Basics
 * Software Carpentry [Version Control with Git](https://swcarpentry.github.io/git-novice/) - an applied project
 * Interactive online training with [Katacoda](https://www.katacoda.com/courses/git) or [Learn Git Branching](https://learngitbranching.js.org/)
@@ -104,7 +111,6 @@ You can use this [cheat-sheet](https://education.github.com/git-cheat-sheet-educ
 
 ### Git versioning concepts
 
-
 A repository (often shortened to repo) is a collection files that are being versioned by Git.
 A repository is created by `init`ialising a new repo or `clone`ing an existing one.
 A local repository is your self-contained copy of the project.
@@ -115,9 +121,10 @@ This is useful for ensuring that specific files or types are not included. For e
 
 Commits are collections of changes to one or more files.
 Every commit is attributed to the author of these changes.
-Each commit has a unique hash - or identifier - associated with it, which has a long (e.g. `121b5b4f18231e4ee32c9c61f6754429f9572743`) and short version (e.g. `121b5b4`)
-Every commit also has an associated message that is used to describe the changes - this is a key part of the audit trail.
+Each commit has a unique hash - or identifier - associated with it, which has a long (e.g. `121b5b4f18231e4ee32c9c61f6754429f9572743`) and short version (e.g. `121b5b4`).
+Every commit also has an associated message that is used to describe the changes - this is a key part of your code's audit trail.
 
+Most commit messages are short and informative, but in some cases you may want to provide more detail.
 See this model commit message from [A note about Git commit messages](https://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html):
 
 ```{code-block} text
@@ -159,9 +166,11 @@ It can be done using a few different methods, including fast-forward and rebasin
 Conflicts arise when multiple changes have been made to the same part of a file.
 You must indicate which change (or combination of changes) should be retained.
 
-Don't panic! It's easy to make mistakes, but thankfully Git's audit trail means that we can always revert back to working versions. For most issues, [stackoverflow](https://stackoverflow.com/) is your friend.
+Don't panic!
+It's easy to make mistakes, but thankfully Git's audit trail means that we can always revert back to working versions.
+For most issues, [stackoverflow](https://stackoverflow.com/) is your friend.
 
-Don't change published (i.e. `remote`) history. Otherwise you might need to panic.
+Don't change published (i.e. `remote`) history, otherwise you might need to panic.
 This causes issues across different users of the repo, as other developer's local copies may no longer contain the same history.
 You must consider this before force pushing changes to a remote repository.
 Create new commits that resolve or `revert` to fix the problem.
@@ -219,6 +228,7 @@ GitHub provides additional tools for collaborative workflows, including:
 * Continuous Integration
 
 Many of these project management tools are also discussed on the [GitHub features page](https://github.com/features/project-management/).
+
 
 ### Access management
 
@@ -524,7 +534,7 @@ Branching diagram to demonstrate GitHub, from [Programster's blog post of git wo
 
 This simple guide from GitHub also outlines [GitHub flow](https://guides.github.com/introduction/flow/#:~:text=GitHub%20flow%20is%20a%20lightweight,Created%20with%20Snap).
 
-## Other resources
+## Other useful resources
 
 * [GitHub's Git Cheatsheet](https://education.github.com/git-cheat-sheet-education.pdf)
 * [GitHub Git Handbook](https://guides.github.com/introduction/git-handbook/)

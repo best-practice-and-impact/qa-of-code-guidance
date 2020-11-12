@@ -17,7 +17,7 @@ You should look to these sources for introductory learning, before reading this 
 * [edx](https://www.edx.org/) and [freeCodeCamp](https://www.freecodecamp.org/) hosts many free online coding courses
 * [DataCamp](https://www.datacamp.com/), [Codecademy](https://www.codecademy.com/) and [Coursera](https://www.coursera.org/) host a range of introductory courses, but more advanced courses are often not free.
 
-Please note that non-GSS learning may not follow good practices. However, exposure to a range of applied examples will still benefit your learning.
+Please note that non-government analysis learning may not follow good practices. However, exposure to a range of applied examples will still benefit your learning.
 You should compare and contrast your learning to the good practices outlined in this section.
 ```
 
@@ -28,7 +28,7 @@ You should compare and contrast your learning to the good practices outlined in 
 These resources cover more advanced topics, which are not essential for for this section:
 * Aggregation, functions and control flow in [Python](https://learninghub.ons.gov.uk/enrol/index.php?id=525) and [R](https://learninghub.ons.gov.uk/enrol/index.php?id=527) (government analysts only)
 * Dataframes, manipulation and cleaning in [Python](https://learninghub.ons.gov.uk/enrol/index.php?id=521) and [R](https://learninghub.ons.gov.uk/enrol/index.php?id=523) (government analysts only)
-* [Introduction to Unit Testing](https://learninghub.ons.gov.uk/enrol/index.php?id=539) and other code quality assurance for Python and R (GSS only)
+* [Introduction to Unit Testing](https://learninghub.ons.gov.uk/enrol/index.php?id=539) and other code quality assurance for Python and R (government analysts only)
 * Python [Data Science Handbook](https://jakevdp.github.io/PythonDataScienceHandbook/index.html)
 * [Python for Data Analysis](https://github.com/wesm/pydata-book)
 * [R for Data Science](https://r4ds.had.co.nz/)
@@ -125,7 +125,7 @@ The code itself often sounds quite natural when spoken aloud.
 ```{admonition} Key Learning
 :class: admonition-learning
 
-These concepts are also applied in the self-led learning course on [clean code](https://learninghub.ons.gov.uk/enrol/index.php?id=537).
+These concepts are also applied in the [self-led learning course on clean code](https://learninghub.ons.gov.uk/enrol/index.php?id=537) (government analysts only).
 ```
 
 
@@ -489,15 +489,6 @@ Some can be configured to ignore or detect specific types of formatting error.
 You can run multiple of these, to catch a broader range of stylistic or programmatic errors.
 
 If you're considering these tools as part of a project, see [Continuous Integration](continuous-integration) for advice on automating them.
-
-```{todo}
-Potentially add something around not leaving commented-out code lying around, without good reason. 
-
-This should go in code documentation.
-Will need to link to section on configs, as beginners sometimes use comments for parameterising code.
-
-[#20](https://github.com/best-practice-and-impact/qa-of-code-guidance/issues/20)
-```
 
 
 ## KISS <span role="image" aria-label="difficulty rating: 2 out of 5">★★☆☆☆</span>

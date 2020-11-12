@@ -62,8 +62,8 @@ The principles in this book are language agnostic.
 It does not form a comprehensive learning resource and you may often need to study further resources to implement these practices.
 That said, examples and useful references are provided for **Python** and **R**, as open source languages that are commonly applied across government.
 
-Many of the learning references in this book point to the UK Statistics Authority Learning Hub, which are labelled GSS only.
-All government analysts can request an account for the Hub via [gss.capability@ons.gov.uk](mailto:gss.capability@ons.gov.uk).
+Many of the learning resources referenced in this book point to the UK Statistics Authority Learning Hub, which are labelled as "government analysts only".
+Government analysts can request an account for the Hub via [gss.capability@ons.gov.uk](mailto:gss.capability@ons.gov.uk).
 
 
 ## Accessibility statement
@@ -80,10 +80,10 @@ This means that you should be able to:
 * navigate most of the website using speech recognition software
 * listen to most of the website using a screen reader (including the most recent versions of JAWS, NVDA and VoiceOver)
 
-For keyboard navigation, <kbd>Up Arrow</kbd> and <kbd>Down Arrow</kbd> keys can be used to scroll up and down on the current page.
-<kbd>Left Arrow</kbd> and <kbd>Right Arrow</kbd> keys can be used to move forwards and backwards through the pages of the book.
-Tabbed content (including code example) can be focused using the <kbd>Tab</kbd> key.
-<kbd>Left Arrow</kbd> and <kbd>Right Arrow</kbd> keys  are then used to focus the required tab option, where <kbd>Enter</kbd> can be used to select that option and display the associated content.
+For keyboard navigation, {kbd}`Up Arrow` and {kbd}`Down Arrow`keys can be used to scroll up and down on the current page.
+{kbd}`Left Arrow` and {kbd}`Right Arrow` keys can be used to move forwards and backwards through the pages of the book.
+Tabbed content (including code example) can be focused using the {kbd}`Tab` key.
+{kbd}`Left Arrow` and {kbd}`Right Arrow` keys are then used to focus the required tab option, where {kbd}`Enter` can be used to select that option and display the associated content.
 
 
 ### Feedback and reporting accessibility problems

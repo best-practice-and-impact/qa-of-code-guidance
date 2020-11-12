@@ -26,12 +26,13 @@
 
     
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/sphinx-book-theme.2d2078699c18a0efb88233928e1cf6ed.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="_static/logo.css" />
     <link rel="stylesheet" type="text/css" href="_static/admonitions.css" />
     <link rel="stylesheet" type="text/css" href="_static/markdown_within_tabs.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
@@ -48,7 +49,7 @@
     <script src="_static/copybutton.js"></script>
     <script src="_static/doctools.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="_static/sphinx-book-theme.be0a4a0c39cd630af62a2fcf693f3f06.js"></script>
+    <script src="_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
@@ -86,16 +87,13 @@
   <h1 class="site-logo" id="site-title">DRAFT: Quality Assurance of Code for Analysis and Research</h1>
   
 </a>
-</div>
-
-<form class="bd-search d-flex align-items-center" action="search.html" method="get">
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form>
-
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-  <ul class="nav sidenav_l1">
- <li class="toctree-l1">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1 current active">
   <a class="reference internal" href="#">
    Introduction
   </a>
@@ -149,12 +147,10 @@
  </li>
 </ul>
 
-</nav>
-
- <!-- To handle the deprecated key -->
+</nav> <!-- To handle the deprecated key -->
 
 <div class="navbar_extra_footer">
-  <p>Book version 2020.9</><a href='https://gss.civilservice.gov.uk/' target='_blank'><img src='./_static/GSS_logo.jpg' alt='The Government Statistical Service logo' style='width:100%'></a>
+  <p>Book version 2020.10</><a href='https://gss.civilservice.gov.uk/' target='_blank'><img src='./_static/GSS_logo.jpg' alt='The Government Statistical Service logo' style='width:100%'></a>
 </div>
 
 </div>
@@ -180,11 +176,11 @@
             <i class="fas fa-arrow-up"></i>
         </button>
         
-        <div class="dropdown-buttons-trigger">
+        
+<div class="dropdown-buttons-trigger">
     <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
             class="fas fa-download"></i></button>
 
-    
     <div class="dropdown-buttons">
         <!-- ipynb file if we had a myst markdown file -->
         
@@ -196,8 +192,8 @@
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
             onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
-    
 </div>
+
         <!-- Source interaction buttons -->
 
 <div class="dropdown-buttons-trigger">
@@ -336,8 +332,8 @@ Therefore, you should strive to apply the most appropriate practices given the r
 <p>The principles in this book are language agnostic.<br />
 It does not form a comprehensive learning resource and you may often need to study further resources to implement these practices.
 That said, examples and useful references are provided for <strong>Python</strong> and <strong>R</strong>, as open source languages that are commonly applied across government.</p>
-<p>Many of the learning references in this book point to the UK Statistics Authority Learning Hub, which are labelled GSS only.
-All government analysts can request an account for the Hub via <a class="reference external" href="mailto:gss&#46;capability&#37;&#52;&#48;ons&#46;gov&#46;uk">gss<span>&#46;</span>capability<span>&#64;</span>ons<span>&#46;</span>gov<span>&#46;</span>uk</a>.</p>
+<p>Many of the learning resources referenced in this book point to the UK Statistics Authority Learning Hub, which are labelled as “government analysts only”.
+Government analysts can request an account for the Hub via <a class="reference external" href="mailto:gss&#46;capability&#37;&#52;&#48;ons&#46;gov&#46;uk">gss<span>&#46;</span>capability<span>&#64;</span>ons<span>&#46;</span>gov<span>&#46;</span>uk</a>.</p>
 </div>
 <div class="section" id="accessibility-statement">
 <h2>Accessibility statement<a class="headerlink" href="#accessibility-statement" title="Permalink to this headline">¶</a></h2>
@@ -353,10 +349,10 @@ This means that you should be able to:</p>
 <li><p>navigate most of the website using speech recognition software</p></li>
 <li><p>listen to most of the website using a screen reader (including the most recent versions of JAWS, NVDA and VoiceOver)</p></li>
 </ul>
-<p>For keyboard navigation, <kbd>Up Arrow</kbd> and <kbd>Down Arrow</kbd> keys can be used to scroll up and down on the current page.
-<kbd>Left Arrow</kbd> and <kbd>Right Arrow</kbd> keys can be used to move forwards and backwards through the pages of the book.
-Tabbed content (including code example) can be focused using the <kbd>Tab</kbd> key.
-<kbd>Left Arrow</kbd> and <kbd>Right Arrow</kbd> keys  are then used to focus the required tab option, where <kbd>Enter</kbd> can be used to select that option and display the associated content.</p>
+<p>For keyboard navigation, <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Up</kbd> <kbd class="kbd docutils literal notranslate">Arrow</kbd></kbd> and <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Down</kbd> <kbd class="kbd docutils literal notranslate">Arrow</kbd></kbd>keys can be used to scroll up and down on the current page.
+<kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Left</kbd> <kbd class="kbd docutils literal notranslate">Arrow</kbd></kbd> and <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Right</kbd> <kbd class="kbd docutils literal notranslate">Arrow</kbd></kbd> keys can be used to move forwards and backwards through the pages of the book.
+Tabbed content (including code example) can be focused using the <kbd class="kbd docutils literal notranslate">Tab</kbd> key.
+<kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Left</kbd> <kbd class="kbd docutils literal notranslate">Arrow</kbd></kbd> and <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Right</kbd> <kbd class="kbd docutils literal notranslate">Arrow</kbd></kbd> keys are then used to focus the required tab option, where <kbd class="kbd docutils literal notranslate">Enter</kbd> can be used to select that option and display the associated content.</p>
 <div class="section" id="feedback-and-reporting-accessibility-problems">
 <h3>Feedback and reporting accessibility problems<a class="headerlink" href="#feedback-and-reporting-accessibility-problems" title="Permalink to this headline">¶</a></h3>
 <p>We’re always looking to improve the accessibility of our guidance.

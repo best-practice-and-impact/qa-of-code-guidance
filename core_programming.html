@@ -26,12 +26,13 @@
 
     
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/sphinx-book-theme.2d2078699c18a0efb88233928e1cf6ed.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="_static/logo.css" />
     <link rel="stylesheet" type="text/css" href="_static/admonitions.css" />
     <link rel="stylesheet" type="text/css" href="_static/markdown_within_tabs.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
@@ -50,7 +51,7 @@
     <script src="_static/tabs.js"></script>
     <script src="_static/doctools.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="_static/sphinx-book-theme.be0a4a0c39cd630af62a2fcf693f3f06.js"></script>
+    <script src="_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
@@ -89,15 +90,12 @@
   <h1 class="site-logo" id="site-title">DRAFT: Quality Assurance of Code for Analysis and Research</h1>
   
 </a>
-</div>
-
-<form class="bd-search d-flex align-items-center" action="search.html" method="get">
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form>
-
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-  <ul class="nav sidenav_l1">
+    <ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="index.html">
    Introduction
@@ -152,12 +150,10 @@
  </li>
 </ul>
 
-</nav>
-
- <!-- To handle the deprecated key -->
+</nav> <!-- To handle the deprecated key -->
 
 <div class="navbar_extra_footer">
-  <p>Book version 2020.9</><a href='https://gss.civilservice.gov.uk/' target='_blank'><img src='./_static/GSS_logo.jpg' alt='The Government Statistical Service logo' style='width:100%'></a>
+  <p>Book version 2020.10</><a href='https://gss.civilservice.gov.uk/' target='_blank'><img src='./_static/GSS_logo.jpg' alt='The Government Statistical Service logo' style='width:100%'></a>
 </div>
 
 </div>
@@ -183,11 +179,11 @@
             <i class="fas fa-arrow-up"></i>
         </button>
         
-        <div class="dropdown-buttons-trigger">
+        
+<div class="dropdown-buttons-trigger">
     <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
             class="fas fa-download"></i></button>
 
-    
     <div class="dropdown-buttons">
         <!-- ipynb file if we had a myst markdown file -->
         
@@ -199,8 +195,8 @@
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
             onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
-    
 </div>
+
         <!-- Source interaction buttons -->
 
 <div class="dropdown-buttons-trigger">
@@ -384,7 +380,7 @@ This includes assigning and using variables, and using functions and classes.</p
 <li><p><a class="reference external" href="https://www.edx.org/">edx</a> and <a class="reference external" href="https://www.freecodecamp.org/">freeCodeCamp</a> hosts many free online coding courses</p></li>
 <li><p><a class="reference external" href="https://www.datacamp.com/">DataCamp</a>, <a class="reference external" href="https://www.codecademy.com/">Codecademy</a> and <a class="reference external" href="https://www.coursera.org/">Coursera</a> host a range of introductory courses, but more advanced courses are often not free.</p></li>
 </ul>
-<p>Please note that non-GSS learning may not follow good practices. However, exposure to a range of applied examples will still benefit your learning.
+<p>Please note that non-government analysis learning may not follow good practices. However, exposure to a range of applied examples will still benefit your learning.
 You should compare and contrast your learning to the good practices outlined in this section.</p>
 </div>
 <div class="admonition-learning admonition">
@@ -393,7 +389,7 @@ You should compare and contrast your learning to the good practices outlined in 
 <ul class="simple">
 <li><p>Aggregation, functions and control flow in <a class="reference external" href="https://learninghub.ons.gov.uk/enrol/index.php?id=525">Python</a> and <a class="reference external" href="https://learninghub.ons.gov.uk/enrol/index.php?id=527">R</a> (government analysts only)</p></li>
 <li><p>Dataframes, manipulation and cleaning in <a class="reference external" href="https://learninghub.ons.gov.uk/enrol/index.php?id=521">Python</a> and <a class="reference external" href="https://learninghub.ons.gov.uk/enrol/index.php?id=523">R</a> (government analysts only)</p></li>
-<li><p><a class="reference external" href="https://learninghub.ons.gov.uk/enrol/index.php?id=539">Introduction to Unit Testing</a> and other code quality assurance for Python and R (GSS only)</p></li>
+<li><p><a class="reference external" href="https://learninghub.ons.gov.uk/enrol/index.php?id=539">Introduction to Unit Testing</a> and other code quality assurance for Python and R (government analysts only)</p></li>
 <li><p>Python <a class="reference external" href="https://jakevdp.github.io/PythonDataScienceHandbook/index.html">Data Science Handbook</a></p></li>
 <li><p><a class="reference external" href="https://github.com/wesm/pydata-book">Python for Data Analysis</a></p></li>
 <li><p><a class="reference external" href="https://r4ds.had.co.nz/">R for Data Science</a></p></li>
@@ -471,7 +467,7 @@ Clean code helps us to understand a program faster.
 The code itself often sounds quite natural when spoken aloud.</p>
 <div class="admonition-learning admonition">
 <p class="admonition-title">Key Learning</p>
-<p>These concepts are also applied in the self-led learning course on <a class="reference external" href="https://learninghub.ons.gov.uk/enrol/index.php?id=537">clean code</a>.</p>
+<p>These concepts are also applied in the <a class="reference external" href="https://learninghub.ons.gov.uk/enrol/index.php?id=537">self-led learning course on clean code</a> (government analysts only).</p>
 </div>
 <div class="section" id="naming">
 <span id="id1"></span><h3>Naming<a class="headerlink" href="#naming" title="Permalink to this headline">¶</a></h3>
@@ -769,13 +765,6 @@ Two main types of tool exist for this task, which automate validation and repair
 Some can be configured to ignore or detect specific types of formatting error.
 You can run multiple of these, to catch a broader range of stylistic or programmatic errors.</p>
 <p>If you’re considering these tools as part of a project, see <a class="reference internal" href="version_control.html#continuous-integration"><span class="std std-ref">Continuous Integration</span></a> for advice on automating them.</p>
-<div class="admonition-todo admonition" id="id3">
-<p class="admonition-title">Todo</p>
-<p>Potentially add something around not leaving commented-out code lying around, without good reason.</p>
-<p>This should go in code documentation.
-Will need to link to section on configs, as beginners sometimes use comments for parameterising code.</p>
-<p><a class="reference external" href="https://github.com/best-practice-and-impact/qa-of-code-guidance/issues/20">#20</a></p>
-</div>
 </div>
 </div>
 </div>
@@ -1056,7 +1045,7 @@ It’s clear that we intend for this to be the case.</p>
 <h2>SOLID <span role="image" aria-label="difficulty rating: 4 out of 5">★★★★☆</span><a class="headerlink" href="#solid-span-role-image-aria-label-difficulty-rating-4-out-of-5-span" title="Permalink to this headline">¶</a></h2>
 <p>SOLID is an acronym that encompasses 5 software design principles that are intended to increase the readability and extensibility of software source code.
 These principles are designed to improve object-oriented programs, but can be roughly applied to functional programs too.</p>
-<div class="admonition-todo admonition" id="id4">
+<div class="admonition-todo admonition" id="id3">
 <p class="admonition-title">Todo</p>
 <p>Extend SOLID subsections with analytical examples.</p>
 <p>Not necessarily code-based.</p>
