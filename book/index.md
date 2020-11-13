@@ -9,6 +9,8 @@ It is produced by the [Best Practice and Impact division](https://gss.civilservi
 This guidance has been written to support analysts in government who use coding in their work.
 This includes those who produce statistics, carry out modelling or apply data science.
 
+This guidance is a living document, so will be continually updated.
+You can refer to the current version of the guidance by it's version number, found below the site table of contents.
 You may notice "Todo" notes throughout the guidance.
 These indicate where we plan to add additional content in the near future.
 We are extremely grateful for any feedback that you are able to provide on existing and future content.
@@ -19,18 +21,10 @@ We are extremely grateful for any feedback that you are able to provide on exist
 The Best Practice and Impact division supports government analysis by providing guidance, consultancy and training.
 
 You can find us on:
-- Our websites: [Government Statistical Service](https://gss.civilservice.gov.uk/) and [Government Analysis Function](https://www.gov.uk/government/organisations/government-analysis-function)
-- Email: [gsshelp@statistics.gov.uk](mailto:gsshelp@statistics.gov.uk) and [analysis.function@ons.gov.uk](mailto:analysis.function@ons.gov.uk)
-- Slack: [GSS](https://gov-stats-service.slack.com) and [Gov Data Science](https://govdatascience.slack.com)
-- Twitter: [GSS Good Practice Team](https://twitter.com/gssgoodpractice) and [UK GSS](https://twitter.com/ukgss)
-
-```{figure} ./_static/GSS_logo.jpg
----
-width: 60%
-name: GSS_logo
-alt: The Governments Statistical Service logo
----
-```
+- Our websites: [Government Analysis Function](https://www.gov.uk/government/organisations/government-analysis-function) and [Government Statistical Service](https://gss.civilservice.gov.uk/)
+- Email: [analysis.function@ons.gov.uk](mailto:analysis.function@ons.gov.uk) and [gsshelp@statistics.gov.uk](mailto:gsshelp@statistics.gov.uk)
+- Slack: [Government Data Science](https://govdatascience.slack.com) and [GSS](https://gov-stats-service.slack.com)
+- Twitter: [Government Analysis Function](https://twitter.com/gov_analysis),  [GSS Good Practice Team](https://twitter.com/gssgoodpractice) and [UK GSS](https://twitter.com/ukgss)
 
 
 ## Structure of the book
