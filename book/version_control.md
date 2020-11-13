@@ -41,7 +41,8 @@ Most importantly, it allows us to refer to specific versions of our code that ha
 
 ## What should I version control?
 
-Ideally, you should include any code that is required to run your system.  In a public repository, you may need to omit confidential or sensitive code.
+Ideally, you should include any code that is required to run your system.
+In a public repository, you may need to omit confidential or sensitive code.
 
 ```{caution}
 
@@ -90,6 +91,50 @@ Following this, useful training resources for learning Git include:
 * Software Carpentry [Version Control with Git](https://swcarpentry.github.io/git-novice/) - an applied project
 * Interactive online training with [Katacoda](https://www.katacoda.com/courses/git) or [Learn Git Branching](https://learngitbranching.js.org/)
 ```
+
+
+### Excluding information from Git repositories
+
+
+#### .gitignore
+
+As mentioned above, you may not want to include all of the files associated with your project in a Git repository.
+A `.gitignore` file allows you to exclude folders or files from being tracked by Git.
+Within this file, you provide a list of text patterns.
+If a folder matches one of your `.gitignore` file patterns, none of the files or folder below that folder will be tracked.
+If an individual file matches one of the patterns, this file will not be tracked.
+
+Given this example `.gitignore` file:
+
+```
+secrets.yaml
+sandpit/
+*.csv
+```
+
+The first pattern tells Git to ignore any file with the exact name `secrets.yaml`.
+The second will ignore all files within a folder named `sandpit/`.
+Note that if there are multiple folders in the project named `sandpit/`, they will all be excluded.
+You should make the pattern more specific if you want to exclude particular directories.
+The third pattern will exclude all `.csv` files, regardless of which folder or sub-folder they are in.
+
+```{caution}
+Files that are already being tracked by Git will not be excluded when you add new patterns to your `.gitignore` file.
+Ensure that you set up your `.gitignore` before adding files to be tracked in your repository.
+```
+
+Please see the [Git documentation for `.gitignore`](https://git-scm.com/docs/gitignore) for more details.
+
+
+#### .Rdata files
+
+
+#### Notebooks
+
+
+#### Handling a data breach
+
+
 
 ### Git Commands
 
@@ -263,7 +308,8 @@ See the GitHub Docs for [instructions on forking a repo and keeping your fork up
 
 ### Issues
 
-Issues offer a method for requesting tasks, including enhancements and bugs in your project.
+Issues offer a method for requesting or recording tasks, including enhancements and bug fixes in your project.
+They act as a collaborative todo list, which users can easily contribute to.
 
 The basic elements of an issue are the:
 * Title and description, provided by the person that submitted the issue
