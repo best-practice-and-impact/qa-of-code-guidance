@@ -156,6 +156,35 @@ You can get a list of your installed R packages using the `installed.packages()`
 Environment management tools, such as [`renv`](https://rstudio.github.io/renv/articles/renv.html) for R or [`pyenv`](https://github.com/pyenv/pyenv) for python, are very useful for keeping track of software and package versions used in a project.
 
 
+## Citation <span role="image" aria-label="difficulty rating: 1 out of 5">★☆☆☆☆</span>
+
+For research or analytical code that is likely to be referenced by others, it can be helpful to provide a citation template.
+This can be included in your code repository as a `CITATION` file or part of your `README`.
+For example, the R package `ggplot2` provides the following:
+
+```
+ To cite ggplot2 in publications, please use:
+
+ H. Wickham. ggplot2: elegant graphics for data analysis. Springer New York,
+ 2009.
+
+A BibTeX entry for LaTeX users is
+
+@Book{,
+   author = {Hadley Wickham},
+   title = {ggplot2: elegant graphics for data analysis},
+   publisher = {Springer New York},
+   year = {2009},
+   isbn = {978-0-387-98140-6},
+   url = {http://had.co.nz/ggplot2/book},
+ }
+```
+
+This might include multiple citations, if your project includes multiple datasets, pieces of code or outputs with their own [DOI's](https://en.wikipedia.org/wiki/Digital_object_identifier).
+
+See this [GitHub guide for more information on making your public code citable](https://guides.github.com/activities/citable-code/).
+
+
 ## Vignettes <span role="image" aria-label="difficulty rating: 2 out of 5">★★☆☆☆</span>
 
 Vignettes are a form of supplementary documentation, containing applied examples that demonstrate the intended use of the code in your project or package.
