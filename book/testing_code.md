@@ -10,10 +10,11 @@ The most common pattern for writing these tests is:
 2. Act - run the code that you are testing
 3. Assert - verify that the code performed the expected action
 
+This style is referred to as "Triple-A Testing".
 
 ## Why test code? <span role="image" aria-label="difficulty rating: 1 out of 5">★☆☆☆☆</span>
 
-You can't be sure that your code works without having run it with realistic examples. Tests can verify that users expectations are met by the code.
+You can't be sure that your code works without having run it with realistic examples. Tests can verify that users' expectations are met by the code.
 They let you know when you've broken the expected functionality of your code - or when users have.
 They can be used to report or flag poor performance (e.g. modelling).
 Well-structured code is easier to write tests for, so testing incentivises good code structure.
@@ -31,7 +32,7 @@ Unfortunately, there's no golden rule for exactly what you should test.
 We can use general guides to direct where most of our testing effort goes.
 
 You should:
-* Focus on testing the most complex and vulnerable parts of your code
+* Focus on testing the most complex and vulnerable parts of your code (such as logic branches or mathematical formulae)
 * Write a new test every time you find a bug, to squash it for good
 * Focus on testing the most realistic use cases of your code
 * Test external interfaces - what happens if something unexpected is returned from one of your dependencies?
@@ -39,7 +40,7 @@ You should:
 
 You shouldn't:
 * Attempt to test every possible input and type of input
-* Focus on things that are already sufficiently tested (e.g. it should not be necessary to test the functionality from your dependencies packages if you are confident that they are already been subjected to sufficient assurance)
+* Focus on things that are already sufficiently tested (e.g. it should not be necessary to test the functionality from your dependencies packages if you are confident that they have already been subjected to sufficient assurance)
 * Write tests that have an element of randomness - tests should be deterministic
 
 
@@ -79,6 +80,7 @@ including https://www.jeremyjordan.me/testing-ml/
 Tests should be run whenever you make changes to your project.
 This ensures that changes do not break the existing, intended functionality of your code.
 When tests fail, you should endeavour to fix these before adding these changes to a stable or production version of your code.
+Once one test breaks in a system, human nature finds it easy to permit more breakages - ["broken window"](https://en.wikipedia.org/wiki/Broken_windows_theory) theory.
 
 If you have intentionally altered the functionality of your code, this will likely break existing tests.
 Failing tests here are a good reminder that your should update your documentation and tests to reflect the new functionality.
