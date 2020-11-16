@@ -156,6 +156,35 @@ You can get a list of your installed R packages using the `installed.packages()`
 Environment management tools, such as [`renv`](https://rstudio.github.io/renv/articles/renv.html) for R or [`pyenv`](https://github.com/pyenv/pyenv) for python, are very useful for keeping track of software and package versions used in a project.
 
 
+## Citation <span role="image" aria-label="difficulty rating: 1 out of 5">★☆☆☆☆</span>
+
+For research or analytical code that is likely to be referenced by others, it can be helpful to provide a citation template.
+This can be included in your code repository as a `CITATION` file or part of your `README`.
+For example, the R package `ggplot2` provides the following:
+
+```
+ To cite ggplot2 in publications, please use:
+
+ H. Wickham. ggplot2: elegant graphics for data analysis. Springer New York,
+ 2009.
+
+A BibTeX entry for LaTeX users is
+
+@Book{,
+   author = {Hadley Wickham},
+   title = {ggplot2: elegant graphics for data analysis},
+   publisher = {Springer New York},
+   year = {2009},
+   isbn = {978-0-387-98140-6},
+   url = {http://had.co.nz/ggplot2/book},
+ }
+```
+
+This might include multiple citations, if your project includes multiple datasets, pieces of code or outputs with their own [DOI's](https://en.wikipedia.org/wiki/Digital_object_identifier).
+
+See this [GitHub guide for more information on making your public code citable](https://guides.github.com/activities/citable-code/).
+
+
 ## Vignettes <span role="image" aria-label="difficulty rating: 2 out of 5">★★☆☆☆</span>
 
 Vignettes are a form of supplementary documentation, containing applied examples that demonstrate the intended use of the code in your project or package.
@@ -251,17 +280,13 @@ The Government Digital Service generally recommends using the [MIT license](http
 Both copyright and license are usually placed in a LICENSE file in your project.
 For example, an MIT LICENSE file might look like:
 
-```{code-block} text
-
-Copyright 2020, Crown copyright 
-
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-
-```
+> Copyright 2020, Crown copyright
+>
+> Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+>
+> The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+>
+> THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 
 ## Open source your code <span role="image" aria-label="difficulty rating: 2 out of 5">★★☆☆☆</span>

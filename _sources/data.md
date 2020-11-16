@@ -25,6 +25,15 @@ However, most analysis tools should support reading data directly from safe long
 Spreadsheets (e.g. Microsoft Excel formats and open equivalents) are a very general data analysis tool.
 The cost of their easy to use interface and flexibility is increased difficulty of quality assurance.
 
+```{figure} https://assets.amuniversal.com/7f343ac0870a01332a13005056a9545d
+---
+width: 75%
+name: spreadsheets-comic
+alt: A comic strip joking that it doesn't matter if a spreadsheet if wrong, "as long as it gives me the answer I want".
+---
+Does it matter if the spreadsheet is wrong, from [Dilbert by Scott Adams](https://dilbert.com/strip/2016-01-07)
+```
+
 Spreadsheets are not suitable for storage of data (or statistics production and modelling processes).
 Issues when using spreadsheets for data storage include:
 * Lack of audibility - changes to data are not recorded.
@@ -33,8 +42,9 @@ Issues when using spreadsheets for data storage include:
 * Files become cumbersome when they are large.
 * Automatic "correction" of grammar and data type, which silently corrupts your data.
   * Converting dates to a different datetime format.
-  * Converting numbers to dates.
-  * Converting text to dates (e.g. [gene names that are converted to dates](https://bmcbioinformatics.biomedcentral.com/articles/10.1186/1471-2105-5-80)).
+  * Converting numbers or text that resemble dates to dates.
+
+The European Spreadsheet Risks Interest Group document [spreadsheet related errors and their consequences](http://www.eusprig.org/horror-stories.htm).
 
 
 ### Databases
@@ -195,7 +205,6 @@ Other guidance addresses:
 * [Data linking methods](https://www.gov.uk/government/publications/joined-up-data-in-government-the-future-of-data-linking-methods
 )
 * When publishing or sharing tabular data, you should follow the [GOV.UK Tabular data standard](https://www.gov.uk/government/publications/recommended-open-standards-for-government/tabular-data-standard).
-
 
 Analysts producing published statistics may also be interested in [Connected Open Government Statistsics (COGS)](https://gss.civilservice.gov.uk/guidance/the-gss-data-project/).
 

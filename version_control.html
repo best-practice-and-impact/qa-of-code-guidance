@@ -59,7 +59,7 @@
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <link rel="shortcut icon" href="_static/qa_of_code_favicon.png"/>
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Data Management" href="data.html" />
@@ -151,7 +151,7 @@
 </nav> <!-- To handle the deprecated key -->
 
 <div class="navbar_extra_footer">
-  <p>Book version 2020.10</><a href='https://gss.civilservice.gov.uk/' target='_blank'><img src='./_static/GSS_logo.jpg' alt='The Government Statistical Service logo' style='width:100%'></a>
+  <p>Book version 2020.11</><a href='https://gss.civilservice.gov.uk/' target='_blank'><img src='./_static/GSS_logo.jpg' alt='The Government Statistical Service logo' style='width:100%'></a>
 </div>
 
 </div>
@@ -262,6 +262,45 @@
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#releases-tagging">
      Releases (tagging)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#excluding-information-from-git-repositories">
+     Excluding information from Git repositories
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#gitignore-files">
+       .gitignore files
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#excluding-rdata-and-rhistory-files">
+       Excluding
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         .Rdata
+        </span>
+       </code>
+       and
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         .Rhistory
+        </span>
+       </code>
+       files
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#jupyter-notebooks">
+       Jupyter Notebooks
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#handling-data-breaches-via-git-repositories">
+     Handling data breaches via Git repositories
     </a>
    </li>
   </ul>
@@ -389,7 +428,8 @@ Most importantly, it allows us to refer to specific versions of our code that ha
 </div>
 <div class="section" id="what-should-i-version-control">
 <h2>What should I version control?<a class="headerlink" href="#what-should-i-version-control" title="Permalink to this headline">¶</a></h2>
-<p>Ideally, you should include any code that is required to run your system.  In a public repository, you may need to omit confidential or sensitive code.</p>
+<p>Ideally, you should include any code that is required to run your system.
+In a public repository, you may need to omit confidential or sensitive code.</p>
 <div class="admonition caution">
 <p class="admonition-title">Caution</p>
 <p>You should <strong>not</strong> include the following in your code repository:</p>
@@ -406,11 +446,12 @@ Most importantly, it allows us to refer to specific versions of our code that ha
 <li><p>data, except for small example datasets</p></li>
 </ul>
 </div>
+<p>See <a class="reference internal" href="#excluding-from-git"><span class="std std-ref">Excluding information from Git repositories</span></a> for details on how to mitigate the risk of including sensitive information in a Git repository.</p>
 <p>You might include example configuration files, or documentation describing how configuration is applied.
 However, the exact configuration of a system for a particular run of your code should be recorded by logging for reproducibility purposes.</p>
-<p>The data we use for analysis is often unreleased or sensitive.<br />
-Unpublished, sensitive or disclosive data should never be shared in a code repository.<br />
-As a rule of thumb, only small example datasets should be included.
+<p>The data we use for analysis is often unreleased or sensitive.
+Unpublished, sensitive or disclosive data should never be shared in a code repository.
+As a rule of thumb, only small dummy/example datasets should be include.
 It is still important to version the data that we use for our analyses, but this can be done more appropriately using databases.</p>
 </div>
 <div class="section" id="git">
@@ -451,7 +492,7 @@ You should first learn command line basics through one of these resources:</p>
 <ul>
 <li><p>these can be long, starting with two dashes (e.g. <code class="docutils literal notranslate"><span class="pre">--no-edit</span></code>)</p></li>
 <li><p>or short, starting with one dash (e.g. <code class="docutils literal notranslate"><span class="pre">-m</span></code>)</p></li>
-<li><p>note that the <code class="docutils literal notranslate"><span class="pre">-h</span></code> flag can be used to get help for any command</p></li>
+<li><p>note that the <code class="docutils literal notranslate"><span class="pre">-h</span></code> flag can be used to display help for any command</p></li>
 </ul>
 </li>
 <li><p>flag arguments, which follow some flags that take arguments (e.g. <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">-m</span> <span class="pre">&quot;my</span> <span class="pre">message&quot;</span></code>)</p></li>
@@ -543,6 +584,124 @@ By default, tags will reference the current position in history (i.e. the latest
 </pre></div>
 </div>
 </div>
+<div class="section" id="excluding-information-from-git-repositories">
+<span id="excluding-from-git"></span><h3>Excluding information from Git repositories<a class="headerlink" href="#excluding-information-from-git-repositories" title="Permalink to this headline">¶</a></h3>
+<p>Code itself is very rarely sensitive, so we should be open to sharing it.
+However, analysts may often want to use sensitive information in their analysis.
+This might be in the form of credentials, used to access a service, or data that contains personally identifiable information.</p>
+<p>In these cases, we need to minimise the risk of inadvertently sharing this information with our code.
+This subsection suggests how you might mitigate this risk in your analysis.</p>
+<div class="section" id="gitignore-files">
+<h4>.gitignore files<a class="headerlink" href="#gitignore-files" title="Permalink to this headline">¶</a></h4>
+<p>As mentioned above, you may not want to include all of the files associated with your project in a Git repository.
+A <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> file allows you to exclude folders or files from being tracked by Git.
+Within this file, you provide a list of text patterns.
+If a folder matches one of your <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> file patterns, none of the files or folder below that folder will be tracked.
+If an individual file matches one of the patterns, this file will not be tracked.</p>
+<p>Given this example <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> file:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">secrets</span><span class="o">.</span><span class="n">yaml</span>
+<span class="n">sandpit</span><span class="o">/</span>
+<span class="o">*.</span><span class="n">csv</span>
+</pre></div>
+</div>
+<p>The first pattern tells Git to ignore any file with the exact name <code class="docutils literal notranslate"><span class="pre">secrets.yaml</span></code>.
+The second will ignore all files within a folder named <code class="docutils literal notranslate"><span class="pre">sandpit/</span></code>.
+Note that if there are multiple folders in the project named <code class="docutils literal notranslate"><span class="pre">sandpit/</span></code>, they will all be excluded.
+You should make the pattern more specific if you want to exclude particular directories.
+The third pattern will exclude all <code class="docutils literal notranslate"><span class="pre">.csv</span></code> files, regardless of which folder or sub-folder they are in.</p>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>Files that are already being tracked by Git will not be excluded when you add new patterns to your <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> file.
+Ensure that you set up your <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> before adding files to be tracked in your repository.</p>
+</div>
+<p>Please see the <a class="reference external" href="https://git-scm.com/docs/gitignore">Git documentation for <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code></a> for more details.</p>
+<p>While we may not want to share files containing credentials, configuration and data, it can be useful to provide dummy examples of these files.
+Demonstrating the format of these files can help others to reuse your code, without sharing sensitive information.</p>
+</div>
+<div class="section" id="excluding-rdata-and-rhistory-files">
+<h4>Excluding <code class="docutils literal notranslate"><span class="pre">.Rdata</span></code> and <code class="docutils literal notranslate"><span class="pre">.Rhistory</span></code> files<a class="headerlink" href="#excluding-rdata-and-rhistory-files" title="Permalink to this headline">¶</a></h4>
+<p>R saves objects from your workspace (working environment) into an <code class="docutils literal notranslate"><span class="pre">.RData</span></code> file at the end of your session.
+This can save time when reloading large objects into R, when returning to a project.
+Depending on your settings, it may prompt you to ask if you would like to save them or it may do this automatically.
+If you have read sensitive information into R during the session, this information may be saved to the <code class="docutils literal notranslate"><span class="pre">.RData</span></code> file.
+As such, we must be careful not to include this information in commits to remote repositories.</p>
+<p>Similarly, R stores a record of all commands executed in your session in a <code class="docutils literal notranslate"><span class="pre">.Rhistory</span></code> file.
+If you have referenced sensitive information directly in your R commands, then this information will be written to the <code class="docutils literal notranslate"><span class="pre">.Rhistory</span></code> file.</p>
+<p>To handle this, we can exclude these files (via <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code>) or prevent R from generating them.
+If you do not use these files, it is safest not to generate them in the first place.</p>
+<p>In Rstudio, you can disable writing of these files via <code class="docutils literal notranslate"><span class="pre">Tools</span> <span class="pre">&gt;</span> <span class="pre">Global</span> <span class="pre">options</span></code>:</p>
+<ul class="simple">
+<li><p>Under Workspace, select <code class="docutils literal notranslate"><span class="pre">Never</span></code> for <code class="docutils literal notranslate"><span class="pre">Save</span> <span class="pre">workspace</span> <span class="pre">to</span> <span class="pre">.RData</span> <span class="pre">on</span> <span class="pre">exit:</span></code>.</p></li>
+<li><p>Under History, deselect <code class="docutils literal notranslate"><span class="pre">Always</span> <span class="pre">save</span> <span class="pre">history</span></code>.</p></li>
+</ul>
+</div>
+<div class="section" id="jupyter-notebooks">
+<h4>Jupyter Notebooks<a class="headerlink" href="#jupyter-notebooks" title="Permalink to this headline">¶</a></h4>
+<p>By default, Jupyter Notebooks save a copy of the data that is used to create cell outputs.
+For example, the data used to generate a chart, table or print a section of a dataframe.
+This can be useful for sharing your code outputs without others needing to re-execute the code cells.</p>
+<p>If you work with sensitive datasets in notebooks, this means that your notebooks may store sensitive data to display cell outputs.
+If these notebooks are subsequently shared in code repositories, you may be making sensitive data available to unauthorised individuals.</p>
+<p>It is <a class="reference external" href="https://github.com/ipython/ipython/issues/1280">not currently possible to prevent the notebooks from retaining cell outputs</a>.</p>
+<p>The best way to handle this situation is to clear the outputs from your notebooks before commiting them to Git repositories.
+This can be done from the notebook itself, by going to the menu <code class="docutils literal notranslate"><span class="pre">Cell</span> <span class="pre">&gt;</span> <span class="pre">All</span> <span class="pre">&gt;</span> <span class="pre">Output</span> <span class="pre">&gt;</span> <span class="pre">Clear</span></code> and then saving your notebook.
+Alternatively, this can be done from the command line, by running this command with your notebook file path:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">jupyter</span> <span class="n">nbconvert</span> <span class="o">--</span><span class="n">ClearOutputPreprocessor</span><span class="o">.</span><span class="n">enabled</span><span class="o">=</span><span class="kc">True</span> <span class="o">--</span><span class="n">inplace</span> <span class="o">&lt;</span><span class="n">notebook_file_path</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>This approach is quite laborious and could easily be forgotten.
+As such, we advise you to automate the cell clearing using <a class="reference external" href="https://git-scm.com/docs/gitattributes/#_filter">Git filter</a> as follows.
+First, we tell Git to set an attribute on our notebook files by creating a <code class="docutils literal notranslate"><span class="pre">.gitattributes</span></code> file in the root of our repo:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">*.</span><span class="n">ipynb</span> <span class="nb">filter</span><span class="o">=</span><span class="n">jupyternotebook</span>
+</pre></div>
+</div>
+<p>We can then define our cleaning instructions in a <code class="docutils literal notranslate"><span class="pre">.gitconfig</span></code> configuration file:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="nb">filter</span> <span class="s2">&quot;jupyternotebook&quot;</span><span class="p">]</span>
+    <span class="n">clean</span> <span class="o">=</span> <span class="n">jupyter</span> <span class="n">nbconvert</span> <span class="o">--</span><span class="n">ClearOutputPreprocessor</span><span class="o">.</span><span class="n">enabled</span><span class="o">=</span><span class="kc">True</span> <span class="o">--</span><span class="n">inplace</span> <span class="o">%</span><span class="n">f</span>
+    <span class="n">required</span>
+</pre></div>
+</div>
+<p>You can add this to your global <code class="docutils literal notranslate"><span class="pre">.gitconfig</span></code> or create a local <code class="docutils literal notranslate"><span class="pre">.gitconfig</span></code> file in the root of your repo.
+If you create a new config in your repo, you must run the following in that repo:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">config</span> <span class="o">--</span><span class="n">local</span> <span class="n">include</span><span class="o">.</span><span class="n">path</span> <span class="o">../.</span><span class="n">gitconfig</span>
+</pre></div>
+</div>
+<p>This configuration will now run the notebook output cleaning command every time a change to an <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code> file is added to your local repo.
+You will need to then <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code> the file a second time to add the changes from the cleaning.
+This should prevent notebook outputs from being included in commits to this repository.</p>
+<p>If you adjust the filter at any point, you should run this command to apply the changes to existing files:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">add</span> <span class="o">--</span><span class="n">renormalize</span> <span class="o">.</span>
+</pre></div>
+</div>
+<p>This approach has been borrowed from <a class="reference external" href="https://zhauniarovich.com/post/2020/2020-10-clearing-jupyter-output-p3/">this blog post by Yury Zhauniarovich</a>.</p>
+</div>
+</div>
+<div class="section" id="handling-data-breaches-via-git-repositories">
+<h3>Handling data breaches via Git repositories<a class="headerlink" href="#handling-data-breaches-via-git-repositories" title="Permalink to this headline">¶</a></h3>
+<p>If unauthorised individuals may access sensitive information through their accidental inclusion in a remote repository, this is a data breach.
+For example, pushing credentials or sensitive data to a remote public GitHub repository.</p>
+<p>To handle a data breach, you should:</p>
+<ol class="simple">
+<li><p>Prevent further access to the information.</p>
+<ul class="simple">
+<li><p>Restrict access of the repository to only those who should have access to the information. For example, make a public repository private.</p></li>
+<li><p>Remove the offending files from the <strong>commit history</strong> of the repository. Note that commiting the deletion of the information alone will not suffice.</p></li>
+<li><p>If credentials (passwords or keys) have been revealed, you should change these credentials.</p></li>
+<li><p>Ask anyone that you know has access to the repository to delete their local copy and re-clone the cleaned remote repository.</p></li>
+</ul>
+</li>
+<li><p>Report the incident.</p>
+<ul class="simple">
+<li><p>Record roughly how long the information was available for and the potential impact of releasing this information.</p></li>
+<li><p>Inform the data owner of the breach.</p></li>
+<li><p>Discuss the breach with the Data Protection Officer in your department. They should be able to advise you on the steps you should take to, according to your departments data security policy.</p></li>
+<li><p>If the breach includes pre-publication statistics, you must also report the breach to the <a class="reference external" href="https://osr.statisticsauthority.gov.uk/">Office for Statistics Regulation</a>.</p></li>
+</ul>
+</li>
+</ol>
+<p>The <a class="reference external" href="https://git-scm.com/book/en/v2/Git-Tools-Rewriting-History">Pro Git book section on rewriting history</a> details methods for editing and deleting files from your repository’s commit history.
+The <a class="reference external" href="https://rtyley.github.io/bfg-repo-cleaner/">BFG repo-cleaner tool</a> can be a simpler alternative to standard Git commands.</p>
+</div>
 </div>
 <div class="section" id="beyond-git-github">
 <h2>Beyond Git - GitHub<a class="headerlink" href="#beyond-git-github" title="Permalink to this headline">¶</a></h2>
@@ -585,7 +744,8 @@ When you would like to offer to contribute your changes to the project (see Pull
 </div>
 <div class="section" id="issues">
 <h3>Issues<a class="headerlink" href="#issues" title="Permalink to this headline">¶</a></h3>
-<p>Issues offer a method for requesting tasks, including enhancements and bugs in your project.</p>
+<p>Issues offer a method for requesting or recording tasks, including enhancements and bug fixes in your project.
+They act as a collaborative todo list, which users can easily contribute to.</p>
 <p>The basic elements of an issue are the:</p>
 <ul class="simple">
 <li><p>Title and description, provided by the person that submitted the issue</p></li>

@@ -59,7 +59,7 @@
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <link rel="shortcut icon" href="_static/qa_of_code_favicon.png"/>
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Code documentation" href="code_documentation.html" />
@@ -151,7 +151,7 @@
 </nav> <!-- To handle the deprecated key -->
 
 <div class="navbar_extra_footer">
-  <p>Book version 2020.10</><a href='https://gss.civilservice.gov.uk/' target='_blank'><img src='./_static/GSS_logo.jpg' alt='The Government Statistical Service logo' style='width:100%'></a>
+  <p>Book version 2020.11</><a href='https://gss.civilservice.gov.uk/' target='_blank'><img src='./_static/GSS_logo.jpg' alt='The Government Statistical Service logo' style='width:100%'></a>
 </div>
 
 </div>
@@ -368,19 +368,40 @@ All we mean by this is that you start off with the input data, you finish with t
 <p class="caption"><span class="caption-number">Fig. 8 </span><span class="caption-text">Defining analysis as a DAG - linking the input data at (a) to the output at (e).</span><a class="headerlink" href="#dag" title="Permalink to this image">¶</a></p>
 </div>
 <p>When thinking about how to structure your project it is useful to think in terms of what your project’s DAG looks like.
+Each project should be kept in its own folder, with a descriptive name.
 Most analysis will have an ingest or input stage, a processing stage, and a reporting stage.
-Similarly, your project structure should have a folder for inputs, a folder for your processing code, and a folder for your outputs and reporting.</p>
+You should use folders within each project to separate raw data, documentation, source code (or <code class="docutils literal notranslate"><span class="pre">src</span></code>) and results.</p>
+<p>A typical analytical project folder might look like:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">|--</span> <span class="n">README</span><span class="o">.</span><span class="n">md</span>
+<span class="o">|--</span> <span class="n">requirements</span><span class="o">.</span><span class="n">txt</span>
+<span class="o">|--</span> <span class="n">data</span><span class="o">/</span>
+<span class="o">|</span>   <span class="o">--</span> <span class="n">incident_counts</span><span class="o">.</span><span class="n">csv</span>
+<span class="o">|--</span> <span class="n">docs</span><span class="o">/</span>
+<span class="o">|</span>   <span class="o">--</span> <span class="n">notebook</span><span class="o">.</span><span class="n">md</span>
+<span class="o">|</span>   <span class="o">--</span> <span class="n">manuscript</span><span class="o">.</span><span class="n">md</span>
+<span class="o">|</span>   <span class="o">--</span> <span class="n">changelog</span><span class="o">.</span><span class="n">md</span>
+<span class="o">|--</span> <span class="n">results</span><span class="o">/</span>
+<span class="o">|</span>   <span class="o">--</span> <span class="n">incident_counts_by_age</span><span class="o">.</span><span class="n">csv</span>
+<span class="o">|</span>   <span class="o">--</span> <span class="n">incidents_over_time</span><span class="o">.</span><span class="n">svg</span>
+<span class="o">|--</span> <span class="n">src</span><span class="o">/</span>
+<span class="o">|</span>   <span class="o">--</span> <span class="n">data_cleaning</span><span class="o">.</span><span class="n">py</span>
+<span class="o">|</span>   <span class="o">--</span> <span class="n">main_analysis</span><span class="o">.</span><span class="n">py</span>
+<span class="o">|</span>   <span class="o">--</span> <span class="n">generate_plots</span><span class="o">.</span><span class="n">py</span>
+</pre></div>
+</div>
+<p>Where you have written code that is used by multiple projects, this code should reside in its own separate folder.
+This will allow you to record changes to your code independent of other dependencies of each project.</p>
 </div>
 <div class="section" id="raw-data-should-be-preserved">
 <h3>Raw data should be preserved<a class="headerlink" href="#raw-data-should-be-preserved" title="Permalink to this headline">¶</a></h3>
-<p>You should not alter the raw data except in very specific circumstances.
-Even data cleaning should take place on a copy of the raw data so that you can understand which cleaning decisions have been made.</p>
+<p>You should not alter raw data - treat it as read-only.
+Even data cleaning should take place on a copy of the raw data, so that you can document which cleaning decisions have been made.</p>
 <p>There must be an immutable store for raw data in your project structure.</p>
 </div>
 <div class="section" id="outputs-should-be-disposable">
 <h3>Outputs should be disposable<a class="headerlink" href="#outputs-should-be-disposable" title="Permalink to this headline">¶</a></h3>
 <p>You should be able to dispose of your outputs, deleting them, without worrying.
-If you are worried about deleting your outputs then it is unlikely you have confidence in being able to reproduce your results.</p>
+If you are worried about deleting your outputs (i.e. results) then it is unlikely you have confidence in being able to reproduce your results.</p>
 <p>It is good practice to delete and regenerate your outputs frequently when developing analysis.</p>
 </div>
 </div>
@@ -388,7 +409,7 @@ If you are worried about deleting your outputs then it is unlikely you have conf
 <h2>Modules and packages <span role="image" aria-label="difficulty rating: 2 out of 5">★★☆☆☆</span><a class="headerlink" href="#modules-and-packages-span-role-image-aria-label-difficulty-rating-2-out-of-5-span" title="Permalink to this headline">¶</a></h2>
 <p>Code that is more complex, high risk or reusable between projects can benefit from being structured into a package.
 Modules are single files that contain one or more reusable units of code.
-Multiple modules might be collected together into a package.</p>
+Multiple related modules are typically collected together within a package.</p>
 <p>It’s likely that you’ve already used a package written by somebody else as part of your analysis.
 For example, installing additional functionality for Python using <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">&lt;package&gt;</span></code> on the command line or running <code class="docutils literal notranslate"><span class="pre">install.packages(&quot;&lt;package&gt;&quot;)</span></code> in an R interpreter.</p>
 <div class="admonition-learning admonition">

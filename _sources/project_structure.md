@@ -34,8 +34,6 @@ It also runs the code with a clean environment, not containing variables or othe
 
 ## Clean directories <span role="image" aria-label="difficulty rating: 1 out of 5">★☆☆☆☆</span>
 
-
-
 As your analysis project grows it becomes more important to keep your project structure clean.
 Every project is different and the right way to organise your project might differ from another project.
 However, there are some principles that are useful to consider.
@@ -77,20 +75,46 @@ Defining analysis as a DAG - linking the input data at (a) to the output at (e).
 ```
 
 When thinking about how to structure your project it is useful to think in terms of what your project's DAG looks like.
+Each project should be kept in its own folder, with a descriptive name.
 Most analysis will have an ingest or input stage, a processing stage, and a reporting stage.
-Similarly, your project structure should have a folder for inputs, a folder for your processing code, and a folder for your outputs and reporting.
+You should use folders within each project to separate raw data, documentation, source code (or `src`) and results.
+
+A typical analytical project folder might look like:
+
+```
+|-- README.md
+|-- requirements.txt
+|-- data/
+|   -- incident_counts.csv
+|-- docs/
+|   -- notebook.md
+|   -- manuscript.md
+|   -- changelog.md
+|-- results/
+|   -- incident_counts_by_age.csv
+|   -- incidents_over_time.svg
+|-- src/
+|   -- data_cleaning.py
+|   -- main_analysis.py
+|   -- generate_plots.py
+```
+
+Where you have written code that is used by multiple projects, this code should reside in its own separate folder.
+This will allow you to record changes to your code independent of other dependencies of each project.
+
 
 ### Raw data should be preserved
 
-You should not alter the raw data except in very specific circumstances.
-Even data cleaning should take place on a copy of the raw data so that you can understand which cleaning decisions have been made.
+You should not alter raw data - treat it as read-only.
+Even data cleaning should take place on a copy of the raw data, so that you can document which cleaning decisions have been made.
 
 There must be an immutable store for raw data in your project structure.
+
 
 ### Outputs should be disposable
 
 You should be able to dispose of your outputs, deleting them, without worrying.
-If you are worried about deleting your outputs then it is unlikely you have confidence in being able to reproduce your results.
+If you are worried about deleting your outputs (i.e. results) then it is unlikely you have confidence in being able to reproduce your results.
 
 It is good practice to delete and regenerate your outputs frequently when developing analysis.
 
@@ -99,7 +123,7 @@ It is good practice to delete and regenerate your outputs frequently when develo
 
 Code that is more complex, high risk or reusable between projects can benefit from being structured into a package.
 Modules are single files that contain one or more reusable units of code.
-Multiple modules might be collected together into a package.
+Multiple related modules are typically collected together within a package.
 
 It's likely that you've already used a package written by somebody else as part of your analysis.
 For example, installing additional functionality for Python using `pip install <package>` on the command line or running `install.packages("<package>")` in an R interpreter.

@@ -61,7 +61,7 @@
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <link rel="shortcut icon" href="_static/qa_of_code_favicon.png"/>
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Version control" href="version_control.html" />
@@ -153,7 +153,7 @@
 </nav> <!-- To handle the deprecated key -->
 
 <div class="navbar_extra_footer">
-  <p>Book version 2020.10</><a href='https://gss.civilservice.gov.uk/' target='_blank'><img src='./_static/GSS_logo.jpg' alt='The Government Statistical Service logo' style='width:100%'></a>
+  <p>Book version 2020.11</><a href='https://gss.civilservice.gov.uk/' target='_blank'><img src='./_static/GSS_logo.jpg' alt='The Government Statistical Service logo' style='width:100%'></a>
 </div>
 
 </div>
@@ -263,6 +263,14 @@
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#dependencies-span-role-image-aria-label-difficulty-rating-1-out-of-5-span">
    Dependencies
+   <span aria-label="difficulty rating: 1 out of 5" role="image">
+    ★☆☆☆☆
+   </span>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#citation-span-role-image-aria-label-difficulty-rating-1-out-of-5-span">
+   Citation
    <span aria-label="difficulty rating: 1 out of 5" role="image">
     ★☆☆☆☆
    </span>
@@ -452,6 +460,31 @@ Packages are listed under the <code class="docutils literal notranslate"><span c
 You can get a list of your installed R packages using the <code class="docutils literal notranslate"><span class="pre">installed.packages()</span></code> function.</p>
 <p>Environment management tools, such as <a class="reference external" href="https://rstudio.github.io/renv/articles/renv.html"><code class="docutils literal notranslate"><span class="pre">renv</span></code></a> for R or <a class="reference external" href="https://github.com/pyenv/pyenv"><code class="docutils literal notranslate"><span class="pre">pyenv</span></code></a> for python, are very useful for keeping track of software and package versions used in a project.</p>
 </div>
+<div class="section" id="citation-span-role-image-aria-label-difficulty-rating-1-out-of-5-span">
+<h2>Citation <span role="image" aria-label="difficulty rating: 1 out of 5">★☆☆☆☆</span><a class="headerlink" href="#citation-span-role-image-aria-label-difficulty-rating-1-out-of-5-span" title="Permalink to this headline">¶</a></h2>
+<p>For research or analytical code that is likely to be referenced by others, it can be helpful to provide a citation template.
+This can be included in your code repository as a <code class="docutils literal notranslate"><span class="pre">CITATION</span></code> file or part of your <code class="docutils literal notranslate"><span class="pre">README</span></code>.
+For example, the R package <code class="docutils literal notranslate"><span class="pre">ggplot2</span></code> provides the following:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span> <span class="n">To</span> <span class="n">cite</span> <span class="n">ggplot2</span> <span class="ow">in</span> <span class="n">publications</span><span class="p">,</span> <span class="n">please</span> <span class="n">use</span><span class="p">:</span>
+
+ <span class="n">H</span><span class="o">.</span> <span class="n">Wickham</span><span class="o">.</span> <span class="n">ggplot2</span><span class="p">:</span> <span class="n">elegant</span> <span class="n">graphics</span> <span class="k">for</span> <span class="n">data</span> <span class="n">analysis</span><span class="o">.</span> <span class="n">Springer</span> <span class="n">New</span> <span class="n">York</span><span class="p">,</span>
+ <span class="mf">2009.</span>
+
+<span class="n">A</span> <span class="n">BibTeX</span> <span class="n">entry</span> <span class="k">for</span> <span class="n">LaTeX</span> <span class="n">users</span> <span class="ow">is</span>
+
+<span class="nd">@Book</span><span class="p">{,</span>
+   <span class="n">author</span> <span class="o">=</span> <span class="p">{</span><span class="n">Hadley</span> <span class="n">Wickham</span><span class="p">},</span>
+   <span class="n">title</span> <span class="o">=</span> <span class="p">{</span><span class="n">ggplot2</span><span class="p">:</span> <span class="n">elegant</span> <span class="n">graphics</span> <span class="k">for</span> <span class="n">data</span> <span class="n">analysis</span><span class="p">},</span>
+   <span class="n">publisher</span> <span class="o">=</span> <span class="p">{</span><span class="n">Springer</span> <span class="n">New</span> <span class="n">York</span><span class="p">},</span>
+   <span class="n">year</span> <span class="o">=</span> <span class="p">{</span><span class="mi">2009</span><span class="p">},</span>
+   <span class="n">isbn</span> <span class="o">=</span> <span class="p">{</span><span class="mi">978</span><span class="o">-</span><span class="mi">0</span><span class="o">-</span><span class="mi">387</span><span class="o">-</span><span class="mi">98140</span><span class="o">-</span><span class="mi">6</span><span class="p">},</span>
+   <span class="n">url</span> <span class="o">=</span> <span class="p">{</span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">had</span><span class="o">.</span><span class="n">co</span><span class="o">.</span><span class="n">nz</span><span class="o">/</span><span class="n">ggplot2</span><span class="o">/</span><span class="n">book</span><span class="p">},</span>
+ <span class="p">}</span>
+</pre></div>
+</div>
+<p>This might include multiple citations, if your project includes multiple datasets, pieces of code or outputs with their own <a class="reference external" href="https://en.wikipedia.org/wiki/Digital_object_identifier">DOI’s</a>.</p>
+<p>See this <a class="reference external" href="https://guides.github.com/activities/citable-code/">GitHub guide for more information on making your public code citable</a>.</p>
+</div>
 <div class="section" id="vignettes-span-role-image-aria-label-difficulty-rating-2-out-of-5-span">
 <h2>Vignettes <span role="image" aria-label="difficulty rating: 2 out of 5">★★☆☆☆</span><a class="headerlink" href="#vignettes-span-role-image-aria-label-difficulty-rating-2-out-of-5-span" title="Permalink to this headline">¶</a></h2>
 <p>Vignettes are a form of supplementary documentation, containing applied examples that demonstrate the intended use of the code in your project or package.
@@ -527,15 +560,12 @@ This <a class="reference external" href="https://choosealicense.com/">online too
 The Government Digital Service generally recommends using the <a class="reference external" href="https://opensource.org/licenses/MIT">MIT license</a> for code and the <a class="reference external" href="http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/">Open Government License (OGL)</a> for documentation.</p>
 <p>Both copyright and license are usually placed in a LICENSE file in your project.
 For example, an MIT LICENSE file might look like:</p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Copyright 2020, Crown copyright 
-
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the &quot;Software&quot;), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-</pre></div>
-</div>
+<blockquote>
+<div><p>Copyright 2020, Crown copyright</p>
+<p>Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:</p>
+<p>The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.</p>
+<p>THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
+</div></blockquote>
 </div>
 <div class="section" id="open-source-your-code-span-role-image-aria-label-difficulty-rating-2-out-of-5-span">
 <h2>Open source your code <span role="image" aria-label="difficulty rating: 2 out of 5">★★☆☆☆</span><a class="headerlink" href="#open-source-your-code-span-role-image-aria-label-difficulty-rating-2-out-of-5-span" title="Permalink to this headline">¶</a></h2>

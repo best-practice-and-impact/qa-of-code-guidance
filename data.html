@@ -59,7 +59,7 @@
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <link rel="shortcut icon" href="_static/qa_of_code_favicon.png"/>
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Peer review" href="peer_review.html" />
@@ -151,7 +151,7 @@
 </nav> <!-- To handle the deprecated key -->
 
 <div class="navbar_extra_footer">
-  <p>Book version 2020.10</><a href='https://gss.civilservice.gov.uk/' target='_blank'><img src='./_static/GSS_logo.jpg' alt='The Government Statistical Service logo' style='width:100%'></a>
+  <p>Book version 2020.11</><a href='https://gss.civilservice.gov.uk/' target='_blank'><img src='./_static/GSS_logo.jpg' alt='The Government Statistical Service logo' style='width:100%'></a>
 </div>
 
 </div>
@@ -320,6 +320,10 @@ However, most analysis tools should support reading data directly from safe long
 <h3>Spreadsheets<a class="headerlink" href="#spreadsheets" title="Permalink to this headline">¶</a></h3>
 <p>Spreadsheets (e.g. Microsoft Excel formats and open equivalents) are a very general data analysis tool.
 The cost of their easy to use interface and flexibility is increased difficulty of quality assurance.</p>
+<div class="figure align-default" id="spreadsheets-comic">
+<a class="reference internal image-reference" href="https://assets.amuniversal.com/7f343ac0870a01332a13005056a9545d"><img alt="A comic strip joking that it doesn't matter if a spreadsheet if wrong, &quot;as long as it gives me the answer I want&quot;." src="https://assets.amuniversal.com/7f343ac0870a01332a13005056a9545d" style="width: 75%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 13 </span><span class="caption-text">Does it matter if the spreadsheet is wrong, from <a class="reference external" href="https://dilbert.com/strip/2016-01-07">Dilbert by Scott Adams</a></span><a class="headerlink" href="#spreadsheets-comic" title="Permalink to this image">¶</a></p>
+</div>
 <p>Spreadsheets are not suitable for storage of data (or statistics production and modelling processes).
 Issues when using spreadsheets for data storage include:</p>
 <ul class="simple">
@@ -330,11 +334,11 @@ Issues when using spreadsheets for data storage include:</p>
 <li><p>Automatic “correction” of grammar and data type, which silently corrupts your data.</p>
 <ul>
 <li><p>Converting dates to a different datetime format.</p></li>
-<li><p>Converting numbers to dates.</p></li>
-<li><p>Converting text to dates (e.g. <a class="reference external" href="https://bmcbioinformatics.biomedcentral.com/articles/10.1186/1471-2105-5-80">gene names that are converted to dates</a>).</p></li>
+<li><p>Converting numbers or text that resemble dates to dates.</p></li>
 </ul>
 </li>
 </ul>
+<p>The European Spreadsheet Risks Interest Group document <a class="reference external" href="http://www.eusprig.org/horror-stories.htm">spreadsheet related errors and their consequences</a>.</p>
 </div>
 <div class="section" id="databases">
 <h3>Databases<a class="headerlink" href="#databases" title="Permalink to this headline">¶</a></h3>
