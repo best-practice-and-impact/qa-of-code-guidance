@@ -8,11 +8,15 @@ Documentation is a love letter that you write to your future self.
 
 ## Comments
 
-Perhaps the most common form of code documentation is comments. These are small notes by the developers of the code to anyone else reading the code at a low-level. They also serve as useful, on the fly way of adding context to the codebase.
+```{epigraph}
+Use comments sparingly and with purpose
+```
 
-Comments are essential for explaining the thought process of the person writing the code to anyone reading it down the line. When it comes to providing relevant and perhaps higher level documentation to the end consumer on the functionality of your code, there are much more appropriate solutions such as [docstrings](docstrings).
+Comments are lines of text in source code files which typically aren't executed as part of the program. They are small notes or annotations written by those working on the code. Often they provide context or explain the reasoning behind implementation decisions.
 
-However, for someone trying to alter the functionality or extend your code, comments are a great way to get a better understanding of the decision-making process that lead to the code in front of them. That said, one has to be careful when doing excesive commenting. Like other documentation, outdated comments and inaccuracies in the explanations might provide false context to the reader and can lead to confusion or errors in downstream analysis or code.
+Comments are essential to help those working on the code in the future understand any non-obvious details of the implementation. As such, when it comes to providing relevant and perhaps higher level documentation to the end consumer on the functionality of your code, there are much more appropriate solutions such as [docstrings](docstrings).
+
+Although extremely useful, comments should also be used sparingly. Excessive use of code comments often leads to redundancy and can, ironically, make your code harder to read. It is easy for comments to not be updated as changes are made to the code and outdated or irrelevant comments can confuse or mislead.
 
 ````{tabs}
 
@@ -40,10 +44,9 @@ total <- number_1 + number_2
 
 ````
 
-Comments that describe exactly **what** is occurring in the code, as above, are often not necessary.
-They may be redundant, if [good naming practices](naming) are followed to self-document the steps that occur in your code. For a more detailed description of **what** the code does, the developer can also read more appropriate forms of documentation (see [Docstrings](docstrings) below).
+Comments that describe exactly **what** is occurring in the code, as above, are often not necessary. They may be redundant, if [good naming practices](naming) are followed to self-document the steps that occur in your code. For a more detailed description of **what** the code does, the developer can also read more appropriate forms of documentation (see [Docstrings](docstrings) below).
 
-If it is difficult to understand your code without comments, this can indicate that your code is overly complex and might benefit from being refactored into smaller units. That said, sometime you will be faced with functions and classes that are complex for a reason, however stopping to reflect on why your documentation is so large is a good prompt to consider whether the aformentioned refactoring is in order.
+If it is difficult to understand your code without comments, this can indicate that your code is overly complex and might benefit from being refactored into smaller units. That said, sometimes you will be faced with functions and classes that are complex for a reason, however stopping to reflect on why your documentation is so large is a good prompt to consider whether the aformentioned refactoring is in order.
 
 ````{note}
 ```{epigraph}
@@ -52,11 +55,10 @@ Complex is better than complicated.
 
 \- Zen of Python
 ```
-Complexity is inherant in the real world. For complex methodologies it is hard to completely eliminate complexity and eventually it will have to 'sit' somewhere. High quality software development aims to manage this as much as possible.
+For complex methodologies it is hard to completely eliminate complexity and eventually it will have to 'sit' somewhere. This is natural as real world problems can be complex. The key is to manage that complexity without adding to it.
 ````
 
-Comments can be used more effectively to explain **why** you might have written code in a certain way.
-For example, you might explain to other analysts and developers why a section of your code doesn't follow standard practices, perhaps because the typical method didn't work. This type of comment can help to clarify your decision making process, without needing to describe the individual steps taken.
+Comments can be used more effectively to explain **why** you might have written code in a certain way. For example, you might explain to other analysts and developers why a section of your code doesn't follow standard practices, perhaps because the typical method didn't work. This type of comment can help to clarify your decision making process, without needing to describe the individual steps taken.
 
 In short: _comments explaining **why** you made programming choices will help your future self and other developers to understand your intentions._
 
@@ -71,7 +73,7 @@ In short: _comments explaining **why** you made programming choices will help yo
 # This section of code is commented out because of X
 ```
 
-Comments can also be used effectively to divide long sections of code into sub-sections that relate to their overall functionality. For example, an analysis script might be broken down into sections that describe each part of the analysis process:
+Comments are sometimes also used to divide long sections of code into sub-sections that relate to their overall functionality. That said, the merit of doing so will depend on the value added. For example, the code below is already fairly self-documenting and therefore adding the section headings does not add too much value.
 
 ````{tabs}
 
@@ -111,7 +113,7 @@ write.csv(species_means, "penguin_species_mean_measurements.csv")
 
 ````
 
-But note that in simple cases, such as the example above, these steps may already be apparent from the code, essentially duplicating the messages already provided by the code.
+Leaving unused code in your scripts makes them more difficult to read and understand as they add visual noise to someone trying to absorb what is written at pace. Furthermore, relying on someone to comment and uncomment things to alter the functionality of the code is **highly discouraged**.
 
 ````{tabs}
 
@@ -126,8 +128,6 @@ print("Run me!")
 
 ````
 
-Leaving unused code in your scripts makes them more difficult to read and understand as they add visual noise to someone trying to absorb what is written at pace. Furthermore, relying on someone to comment and uncomment things to alter the functionality of the code is **highly discouraged**.
-
 It is easy to forget which parts of code have been commented out and why they has been commented. It also might produce incosistent runs of the same piece of code and introduces a human factor to the equation that might not be accounted for if someone in the future is not aware of the commented out code.
 
 You should instead use appropriate control flow (such as `if/else` statements) to determine when these sections should be run. When changes are required between individual runs of your analysis, you should define these options via a configuration file.
@@ -137,7 +137,11 @@ Reference configuration file section.
 [#30](https://github.com/best-practice-and-impact/qa-of-code-guidance/issues/30)
 ```
 
-In summary, you should use comments sparingly but purposefully.
+In summary, you should use comments sparingly but purposefully. Make sure to:
+
+- explain **why** certain things are done to provide context around the decisions being made.
+- do not use commenting to echo what your code is already telling the reader
+- and like with any other documentation, make sure comments are accurate and still relevant after code changes
 
 (docstrings)=
 
