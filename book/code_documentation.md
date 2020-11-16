@@ -139,7 +139,7 @@ Reference configuration file section.
 
 In summary, you should use comments sparingly but purposefully. Make sure to:
 
-- explain **why** certain things are done to provide context around the decisions being made.
+- explain **why** certain things are done in order to provide context around the decisions being made
 - do not use commenting to echo what your code is already telling the reader
 - and like with any other documentation, make sure comments are accurate and still relevant after code changes
 
@@ -147,20 +147,16 @@ In summary, you should use comments sparingly but purposefully. Make sure to:
 
 ## Docstrings
 
-When your code is structured as functions or classes, these functional units can be efficiently documented using docstrings. Docstrings are multi-line comments (or specialised strings in the case of Python) wthat appear at the start of a function definition and are the de facto way of documenting these individual components. Note that module level docstrings are also something that is commonly used (usually at the top of the module file in the case of Python). Use of these comments keeps the documentation of your code closely associated with the relevant sections of code. This close association means it is easier to keep documentation up-to-date as changes are introduced.
+When your code is structured as functions or classes, these functional units can be efficiently documented using docstrings. Docstrings are specialised multi-line descriptions that appear at the start of a function definition and are the de facto way of documenting these individual components. In practice they can be either strings (as in Python docstrings) or comments (as in R). Note that module level docstrings are also something that is commonly used (usually at the top of the module file in the case of Python). Use of docstrings keeps the documentation of your code closely associated with the relevant sections of code. This close association means it is easier to keep documentation up-to-date as changes are introduced.
 
-An end-user can access these docstrings by typing `help(function_name)` (Python) after they have imported your library, so they are handily available without needing to have the source code files open in another window. Other tools like Jupyter for Python allow users to easily access these docstrings for quick reference. Hence the focus on detail and comprehensiveness is key as this is the first point of call for and end-user trying to understand what a given function does.
-
-```{todo}
-Provide the example of `help` in R terms.
-```
+An end-user can access these docstrings by typing `help(function_name)` after they have imported your library, so they are handily available without needing to have the source code files open in another window. Other tools like Jupyter for Python allow users to easily access these docstrings for quick reference. Hence the focus on detail and comprehensiveness is key as this is the first point of call for and end-user trying to understand what a given function does.
 
 Docstrings commonly describe:
 
 - what the function or class does
-- what parameters the function or class takes as arguments and their type
+- what parameters the function or class takes as arguments and their types
 - what the code returns
-- what common exceptions (errors) that can happen
+- what common errors can occur and the exceptions they'll raise
 - links to or descriptions of the methodology the function implements
 - example usage of the function
 - references to other functions or classes that are related to this function
@@ -247,7 +243,7 @@ Therefore, write these docstrings early, preferably as you go along or even befo
 
 The Python example above follows the [numpydocs style](https://numpydoc.readthedocs.io/en/latest/format.html) and is a common sight when using the `numpy` python package. However, there are various other standards such as the Google style guide for docstrings as well as official [docstring specification for Python](https://www.python.org/dev/peps/pep-0257/). The R example uses the [roxygen2 package](https://cran.r-project.org/web/packages/roxygen2/vignettes/roxygen2.html) and follows the [tidyverse style guide](https://style.tidyverse.org/documentation.html).
 
-In general, the core idea is `consistency`. Whatever alternations to these conventions are in use for your particular area, it is much more important to keep them up to date and consistant across people than the choice of style guide. However, as you will see in the section on [generating documentation](generating_docs), having a well known standard in place helps you find tools that can generate nice and hostable documentation automatically.
+In general, the core idea is `consistency`. Whatever alterations to these conventions are in use for your particular area, it is much more important to keep them up to date and consistent across people than the choice of style guide. However, as you will see in the section on [generating documentation](generating_docs), having a well known standard in place helps you find tools that can generate nice and hostable documentation automatically.
 
 Other useful resources include:
 
