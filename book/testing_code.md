@@ -42,6 +42,7 @@ You shouldn't:
 * Attempt to test every possible input and type of input
 * Focus on things that are already sufficiently tested (e.g. it should not be necessary to test the functionality from your dependencies packages if you are confident that they have already been subjected to sufficient assurance)
 * Write tests that have an element of randomness - tests should be deterministic
+* Test what doesn't happen - unless there's a very good reason (otherwise there's an infinite set of tests, e.g. "does not make your keyboard glow purple")
 
 
 A short check-list for questions to ask when writing tests:
@@ -85,10 +86,11 @@ Once one test breaks in a system, human nature finds it easy to permit more brea
 If you have intentionally altered the functionality of your code, this will likely break existing tests.
 Failing tests here are a good reminder that your should update your documentation and tests to reflect the new functionality.
 
-If your collection of tests runs quickly, it's simplest to run them all often.
+If your collection of tests runs quickly, it's simplest to run them all often - and people will be more likely to.
 If some tests take considerably longer to run, you might want to run these less often - perhaps only when relevant changes have been made.
 Otherwise, running the entire collection of tests has the added benefit of capturing unexpected side-effects of your changes.
-For example, you might pick up an unexpected failure in part of your code that you have not directly changed.
+For example, you might pick up an unexpected failure in part of your code that you have not directly changed. Without tests, another user of the code
+base may have a shock when their code stops working when they haven't changed it.
 
 It's not easy to remember to run your tests at regular intervals.
 You're already putting effort into `commit`ing your changes to a version control system regularly.
@@ -126,13 +128,18 @@ In this chapter we will describe a more formalised method for testing.
 
 In order of increasing scale, the main layers of testing covered here will be:
 
-* Unit testing - assuring that functions or class methods perform as expected
+* Function level testing - assuring that functions or class methods perform as expected
 * Integration testing - assuring that multiple units interact with each other as expected
 * End-to-end or system testing - verifying that a complete system meets its requirements
 
 The time taken to develop and run individual tests roughly increases down this list.
 
-[Acceptance testing](https://en.wikipedia.org/wiki/Acceptance_testing) is often considered as an additional level, but is not covered here.
+[Acceptance testing](https://en.wikipedia.org/wiki/Acceptance_testing) is often considered as an additional level (namely, tests written from the customer's perspective), but is not covered here.
+
+Note that tests are often referred to as "unit tests" - but this is to remind us that each test should operate as a unit (as defined by Kent Beck in the seminal "Test Driven Development: By Example"):
+* tests should not impact any other tests
+* tests do not rely on other tests to run
+* tests should not leave any trace behind in the system (it is left "undamaged" - the test sweeps up after itself)
 
 The following sections will climb through these layers of testing.
 Please note that the principles covered early on also apply at subsequent levels.
@@ -160,6 +167,8 @@ Lots of content needed below
 
 You should follow the [Introduction to Unit Testing course](https://learninghub.ons.gov.uk/enrol/index.php?id=539) (GSS only) for applied examples in Python and R.
 The course also covers writing and documenting functions, and error handling.
+
+TODO thwe above courses refers to function tests as unit tests - assuming "unit" = "smallest unit", which is incorrect (that'd be atomic testing). Also it neglects to highlight TDD has 3 stages - write test, pass test, refactor - and refactor is 80% of the work... that's the software engineering part. TDD descriptions often accidently do this - see talks such as Ian Cooper - [TDD, Where Did It All Go Wrong](https://www.youtube.com/watch?v=EZ05e7EMOLM).
 
 Other resources include:
 * Hadley Wickham's [testthat: getting started with testing](https://vita.had.co.nz/papers/testthat.pdf)
@@ -204,10 +213,14 @@ Integration tests incorporate two or more units and check that they work togethe
 These tests are also used to test the interface between your code and external dependencies, such as a database or web-based API.
 
 When your code relies upon interaction with complex or external dependencies, it may be difficult for your tests to reproducibly access these dependencies.
-Creating abstractions of these dependencies when they are not being directly tested can keep your test code simpler and more focused.
+Creating abstractions of these dependencies when they are not being directly tested can keep your test code simpler and more focused. For instance,
+how can you tell if an email was generated and sent? A human tester could check the email reached their inbox, or you could mock the email API and check
+that an email was requested to be sent.
 You might use Stubs or Mocks for this purpose:
 * Stubs carry out a predetermined behaviour. For example, a stub representing an API always return the same response. Use these when you are not interested in the details around how your code interacts with the dependency.
 * Mocks require additional setup in your test code, to define your expectations. Use these when your test needs to verify that your code interacts with the Mock in a specific way.
+* Stubs are used to test state - did the system end up with the correct value?
+* Mocks are used to test behaviour - did the system ask for an email to be generated?
 
 
 ## End-to-end testing <span role="image" aria-label="difficulty rating: 3 out of 5">★★★☆☆</span>
@@ -225,8 +238,10 @@ alt: A sinking ship would still report passing unit tests.
 A sinking ship would still report a number of passing unit and integration tests, while the system is failing overall.
 ```
 
-These tests are much slower to run and can take longer to develop for complex processes.
-Having at least one end-to-end test for your process will ensure that the high-level specification of your code is met.
+These tests are much slower to run and can take longer to develop for complex processes. However, as these tests are at a "high" level (at the edges of the code,
+where the user or external systems interact), if you refactor your code - you will find end-to-end tests are undamaged whereas low level unit tests need
+modification, as these are tied to implementation.
+Having at least one end-to-end test for your process will ensure that the high-level specification of your code is met; a user story can be verified automatically - but this extends into User Acceptance testing.
 This should validate that your user requirements are met.
 
 
