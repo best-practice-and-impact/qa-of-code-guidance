@@ -16,7 +16,11 @@ Comments are lines of text in source code files which typically aren't executed 
 
 Comments are essential to help those working on the code in the future understand any non-obvious details of the implementation. As such, when it comes to providing relevant and perhaps higher level documentation to the end consumer on the functionality of your code, there are much more appropriate solutions such as [docstrings](docstrings).
 
-Although extremely useful, comments should also be used sparingly. Excessive use of code comments often leads to redundancy and can, ironically, make your code harder to read. It is easy for comments to not be updated as changes are made to the code and outdated or irrelevant comments can confuse or mislead. Remember - the only point of "truth" is the code that is executed - if the comments are out of date compared to the actual code, it may not be immediately apparent.
+Although extremely useful, comments should also be used sparingly. Excessive use of code comments often leads to redundancy and can, ironically, make your code harder to read. It is easy for comments to not be updated as changes are made to the code and outdated or irrelevant comments can confuse or mislead. Remember - the only point of "truth" is the code that is executed - if the comments are out of date compared to the actual code, it may not be immediately apparent. 
+
+````{note}
+**Remember**: the only point of "truth" is the code that is executed - if the comments are out of date compared to the actual code, it may not be immediately apparent.
+````
 
 ````{tabs}
 
@@ -113,27 +117,6 @@ write.csv(species_means, "penguin_species_mean_measurements.csv")
 
 ````
 
-Note that a function is extremely long, its a sign that its doing too much - which means there's a lot of complexity in one place. Instead, split the function up
-so your original function now calls helper functions and delegates the work, leaving your original function to document the workflow. The helper function names
-are the equivalent of comment blocks describing sections, passing around the "high level" information, leaving the functions to worry about the detail. This is only appropriate when your helper functions contain (say) 10+ lines of code, rather than replacing single lines as in the example. However, you can now see the workflow is: get penguin data, calculate species means and output a report. No comments were needed - so can't get out of sync with the code. Remember that a function becoming too long and unwieldy is a sign refactoring is due - time to reconsider your design and tidy up.
-
-````{tabs}
-
-```{code-tab} py
-import pandas as pd
-import seaborn as sns
-import matplotlib.pyplot as plt
-
-penguins = get_penguin_data("penguins")
-
-species_means = calculate_mean_by_species(penguins)
-
-output_report(penguins, "penguin_species_mean_measurements.csv")
-```
-```{code-tab} r R
-# to do
-```
-````
 Leaving unused code in your scripts makes them more difficult to read and understand as they add visual noise to someone trying to absorb what is written at pace. Furthermore, relying on someone to comment and uncomment things to alter the functionality of the code is **highly discouraged**.
 
 ````{tabs}
@@ -150,8 +133,7 @@ print("Run me!")
 ````
 
 It is easy to forget which parts of code have been commented out and why they has been commented. It also might produce incosistent runs of the same piece of code
-and introduces a human factor to the equation that might not be accounted for if someone in the future is not aware of the commented out code. Commented out code
-can easily stop working, as it is not being actively used - causing problems when someone suddenly realises they need to run this code...
+and introduces a human factor to the equation that might not be accounted for if someone in the future is not aware of the commented out code. Commented out code might quickly become out of sync with the rest of the changes in the codebase as developers might not consider updating code that is commented out as they might think it to be obsolete. 
 
 You should instead use appropriate control flow (such as `if/else` statements) to determine when these sections should be run. When changes are required between individual runs of your analysis, you should define these options via a configuration file.
 
