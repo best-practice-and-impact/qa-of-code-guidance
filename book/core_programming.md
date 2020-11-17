@@ -2,41 +2,9 @@
 
 The principles outlined in this chapter represent good practices for general programming and software development.
 
-Before reading this chapter, you would benefit from having an understanding of core programming concepts.
-This includes assigning and using variables, and using functions and classes.
+However, they are tailored to a more analytical workflow and would benefit analysts with understanding of core programming concepts such as variables, functions and classes. You can find more information and helpful resources in the [resources](resources) section.
 
-
-```{admonition} Pre-requisites
-:class: admonition-learning
-
-You should look to these sources for introductory learning, before reading this guidance:
-* Introduction to [Python](https://learninghub.ons.gov.uk/enrol/index.php?id=536) and [R](https://learninghub.ons.gov.uk/enrol/index.php?id=538) (government analysts only)
-* Aggregation, functions and control flow in [Python](https://learninghub.ons.gov.uk/enrol/index.php?id=525) and [R](https://learninghub.ons.gov.uk/enrol/index.php?id=527) (government analysts only)
-* Official Python [Getting Started Guide](https://www.python.org/about/gettingstarted/)
-* [Learn Python](https://www.learnpython.org/) supported by DataCamp
-* [R Basics](https://www.udemy.com/course/r-basics/?LSNPUBID=JVFxdTr9V80&ranEAID=JVFxdTr9V80&ranMID=39197&ranSiteID=JVFxdTr9V80-mzkL.lpta.ugiFro.8Oc_Q&utm_medium=udemyads&utm_source=aff-campaign) on Udemy
-* [edx](https://www.edx.org/) and [freeCodeCamp](https://www.freecodecamp.org/) hosts many free online coding courses
-* [DataCamp](https://www.datacamp.com/), [Codecademy](https://www.codecademy.com/) and [Coursera](https://www.coursera.org/) host a range of introductory courses, but more advanced courses are often not free.
-
-Please note that non-government analysis learning may not follow good practices. However, exposure to a range of applied examples will still benefit your learning.
-You should compare and contrast your learning to the good practices outlined in this section.
-```
-
-
-```{admonition} Further Learning
-:class: admonition-learning
-
-These resources cover more advanced topics, which are not essential for for this section:
-* Dataframes, manipulation and cleaning in [Python](https://learninghub.ons.gov.uk/enrol/index.php?id=521) and [R](https://learninghub.ons.gov.uk/enrol/index.php?id=523) (government analysts only)
-* [Introduction to Unit Testing](https://learninghub.ons.gov.uk/enrol/index.php?id=539) and other code quality assurance for Python and R (government analysts only)
-* Python [Data Science Handbook](https://jakevdp.github.io/PythonDataScienceHandbook/index.html)
-* [Python for Data Analysis](https://github.com/wesm/pydata-book)
-* [R for Data Science](https://r4ds.had.co.nz/)
-* [Advanced R](https://adv-r.hadley.nz/index.html)
-* Harvard University's courses on [Python](https://online-learning.harvard.edu/subject/python) and [R](https://online-learning.harvard.edu/subject/r)
-```
-
-## Motivation 
+## Motivation
 
 ```{epigraph}
 Code is read more often than it is written.
@@ -44,73 +12,49 @@ Code is read more often than it is written.
 -- Guido van Rossum (creator of Python)
 ```
 
-You can't be responsible for long term maintenance of every piece of code that you write. 
-In the future, others will inevitably need to understand, use and adapt your code.
-It is important that other programmers can quickly and easily understand the tasks that your code performs.
-Many programs perform a task correctly, but are deemed to be "black boxes" because of barriers to understanding them. 
-Common barriers include documentation that is hard to understand or absent, or that assumes familiarity and in-depth knowledge of the problem space and the process which newcomers simply will not have.
-Most of us have found our own code hard to follow when revisiting it after months or years!
-It is your responsibility to avoid putting such barriers in place.
+When writing non-trivial code it is wise to assume that at some point someone else will need to understand, use and adapt your code. Therefore everytime you write such code, it is incredibly important to empathise with these potential users and produce code that is tidy, understandable and does not add unecessary complexity.
 
-Good code is easier to document, review and test.
-These practices are necessary to make sure that your analysis is reproducible, auditable and assured.
-Good code helps you with these ambitions.
+Common barriers to writing redable codebases include documentation that is hard to understand or absent, walls of code with repeating functionality that is hard to absorb in 'chunks' or overcomplicated solutions that solve the problem in ways that could be simplified. These practices are necessary to make sure that your analysis is reproducible, auditable and assured. Therefore it is our professional responsibility to avoid putting such barriers in place whenever possible.
 
-This chapter highlights good coding practices that will improve the readability and maintainability of your code.
+This chapter highlights some good coding practices that will improve the readability and maintainability of your code.
 Here, readability refers how easily another analyst can gain a decent understand of how your code works, within a reasonable amount of time.
 While maintainability refers to how easily another analysts can understand your code well enough to modify and repair it.
 
+## Modular code
 
-## Modular code <span role="image" aria-label="difficulty rating: 1 out of 5">★☆☆☆☆</span>
+Breaking your code down into smaller, more manageable chunks is a sensible way to improve readability. Regardless of the language, there are often methods to containerise your code into self-contained parts such as modules, classes or functions.
 
-Breaking your code down into smaller, more manageable chunks is a sure fire way to improve readability.
+### Functions
 
-Code comes in many shapes and sizes, though is often broken down in a modular fashion.
-Common code structures are outlined below, which will be useful for understanding concepts throughout the rest of this chapter and book.
+When prototyping we often copy paste code to 'make things work' but when time comes to wrap that work up, it is worth taking repetative code that can be easily parametrised and turning it into functions. Writing functions as well-sealed and reusable containers helps them be easily testable and readible.
 
-Functions:
-  - are units of code that perform a minimal number of tasks (one ideally)
-  - can take inputs and can return outputs, though both are optional
-  - the functional programming paradigm uses them exclusively
+When starting to write functions consider what is the right _level of abstraction_. Namely, can this large piece of code be turned into concise and readible function as it is without having to pass the resulting function too many arguments? If not, perhaps you need to break the code into even smaller helper functions (that can also be reused in other places across the codebase) and then _use these smaller functions to build up a larger function that performs the actions you need_.
 
+This helps you break the complexity down into small and easily comprehendable chunks that can be documented, tested and understood much easier.
 
-```{figure} https://upload.wikimedia.org/wikipedia/commons/3/3b/Function_machine2.svg
----
-width: 35%
-name: function_fig
-alt: Demonstrating that a mathematical function takes inputs and returns outputs, given the process of the function.
----
-Visual representation of a function, from [Wikipedia Functions (mathematics)](https://en.wikipedia.org/wiki/Function_(mathematics))
-```
+Another thing to consider is the idea of `referential transparency`. Without going into that much detail, the core rule of thumb to follow is: _can I take my function and replace it by the value that it would return?_
 
-Objects (often defined by classes):
-  - can have associated attributes (variables that belong to the object)
-  - can have associated methods (functions that belong to the object)
-  - maintain association between data (stored in the object's attributes) and a particular set of tasks (the object's methods)
-  - are the basis of object-oriented programming (OOP)
+In practice, this means your functions should try to completely _remove any effects they have on values that you have not explicitly fed into it as parameters_. For instance, adding columns in a lingering data table that is not passed explicitly as a parameter. Avoiding such behaviour makes your code more transparent and users can quickly pick out which functions affect what data without being concerned about these hidden behaviours. In cases where your function alters some external values to that it was not explicitly passed, running that function twice might even produce different results and might make issues harder to debug. Thus, _strive to make sure that running the same function twice with the same inputs produces the same results_.
 
+However this is not always possible or practical in languages that are not designed in a way that encourages this type of programming. And sometimes you **want** a function to capture and affect values outside of the ones provided to it as arguments (adding data to a database or writing to file). Make sure to control this type of behaviour and to signal to the end-user to expect these things to happen. This is usually communicated in documentation for end-users and also in comments for fellow developers. Ultimately, if you do signal where these kind of things might happend, someone trying to debug issues that might be caused by this behaviour will know where to look.
 
-```{figure} ./_static/class_car.png
----
-width: 70%
-name: car_class
-alt: Demonstrating that classes have attributes and methods.
----
-Demonstration of a Car class, with an example object (instance of the class)
-```
+So to summarise:
 
-Scripts: 
-  - are text documents containing source code
-  - may be broken down into sections or "chunks"
-  - may contain functions, classes and/or lines of non-modular code
+- make sure functions are not too overcomplicated and break down the code into even smaller helper functions and build up your functionality and larger functions from these small building blocks
+- make sure minimise the 'side-effects' of functions where at all possible in order to make sure that your code is easy to debug and is transparent in its functionality
+- similarly, strive to make sure that running your function with the same inputs will produce the same results every time.
 
-Packages:
-  - are collections of code that perform related tasks
-  - may be sub-sectioned into modules that perform related, but lower level groups of tasks
-  - contain other useful information relating to the code in the package (see [](project_documentation.md))
+Scripts:
 
+- are text documents containing source code
+- may be broken down into sections or "chunks"
+- may contain functions, classes and/or lines of non-modular code
 
-## Clean code <span role="image" aria-label="difficulty rating: 2 out of 5">★★☆☆☆</span>
+### Classes
+
+TODO: IAN
+
+## Clean code
 
 ```{epigraph}
 Programs are meant to be read by humans and only incidentally for computers to execute.
@@ -128,8 +72,8 @@ The code itself often sounds quite natural when spoken aloud.
 These concepts are also applied in the [self-led learning course on clean code](https://learninghub.ons.gov.uk/enrol/index.php?id=537) (government analysts only).
 ```
 
-
 (naming)=
+
 ### Naming
 
 ```{epigraph}
@@ -144,7 +88,6 @@ Someone reading your code will benefit greatly if you use names that are:
 
 - informative and not misleading
 - concise but not cryptic
-
 
 #### Naming variables
 
@@ -180,7 +123,6 @@ Another developer, or even "future you", would be unable to correctly understand
 
 Using single letters to name variables is suitable when they are representing well-known mathematical entities (e.g. $y = mx + c$), but you should avoid them in other situations.
 
-
 ```{figure} ./_static/dirty_code_gandalf.png
 ---
 width: 40%
@@ -189,7 +131,6 @@ alt: Gandalf the wizard saying that he can't remember writing this code.
 ---
 Gandalf regrets writing poor quality code
 ```
-
 
 Using variable names that contain a few (3 or so) informative words can drastically improve the readability of your code:
 
@@ -232,7 +173,6 @@ plyr::empty(empty_dataframe)
 ```
 
 ````
-
 
 The purpose of these variables is clear from just reading their names.
 In addition, the variable names make logical sense in the context that they are used later on in the code.
@@ -293,7 +233,6 @@ You're not wrong, and longer variable names can make it more awkward to use them
 There is a clear trade-off between the usability and informativeness of variable names.
 You'll need to use your best judgement to adapt variable names in order to keep them informative but reasonably concise.
 
-
 #### Naming functions
 
 When naming functions, you should consider a user's point of view.
@@ -303,7 +242,6 @@ In this case, you could consider breaking the function down into a number of sma
 
 Where a function performs a specific task, it can be effective to describe this task in the function name, starting with a verb like so:
 
-
 ````{tabs}
 
 ```{code-tab} py
@@ -312,7 +250,7 @@ def peel_potato(vegetable):
         return "peeled_potato"
     else:
         raise ValueError("That's not a potato!")
-      
+
 prepared_potato = peel_potato("potato")
 ```
 
@@ -333,7 +271,6 @@ prepared_potato = peel_potato("potato")
 Sometimes a function might be used to provide a Boolean response to a decision.
 In this case, it can be helpful to name a function as a question that is being posed.
 
-
 ````{tabs}
 
 ```{code-tab} py
@@ -353,7 +290,7 @@ is_clean <- function(cleanliness) {
       TRUE
   } else {
       FALSE
-  }  
+  }
 }
 
 if (is_clean(6)) {
@@ -364,7 +301,6 @@ if (is_clean(6)) {
 ````
 
 This improves the readability of code that applies these functions, as seen in this example.
-
 
 #### Naming classes and objects
 
@@ -425,6 +361,7 @@ drive(fast_car)
 ````
 
 (code-style)=
+
 ### Code style
 
 When the syntax of a programming language is not strict (as with python and R), it can be difficult to know how to "correctly" format code.
@@ -440,7 +377,6 @@ Don't code in fear of breaching style guidance or showing a little flair in your
 Guides cannot account for every possibility and may decrease readability of code in some cases.
 In any case, use your best judgement.
 
-
 ```{figure} ./_static/code_quality.png
 ---
 width: 80%
@@ -450,7 +386,6 @@ alt: Comic strip describing a brutal code review.
 Code Quality, from [xkcd](https://xkcd.com/1513/)
 ```
 
-
 Strive to be **consistent** in your style. This is especially important when working in a coding team where you need to develop code as a group or when you are developing your own code that others might re-use.
 Even if others take a dislike to your use of whitespace or `mixedCase`, as long as you follow a consistent style within a project other programmers will soon get used to it.
 
@@ -459,15 +394,13 @@ Even if others take a dislike to your use of whitespace or `mixedCase`, as long 
 The [Google](https://google.github.io/styleguide/Rguide.html) and [tidyverse](https://style.tidyverse.org/) style guides are commonly used for R.
 ```
 
-
 #### Checking code style
 
-Manually checking that code complies with a given style is laborious and a waste of your time - programmers like to automate things after all. 
+Manually checking that code complies with a given style is laborious and a waste of your time - programmers like to automate things after all.
 Two main types of tool exist for this task, which automate validation and repair of code style:
 
 - Linters - these analyse your code to flag sylistic errors (and sometimes bugs or security issues too)
 - Formatter - these not only detect when you have diverged from a style, but will automatically correct the formatting of your code
-
 
 ```{list-table} Packages that can be used for linting or formatting in Python and R
 :header-rows: 1
@@ -490,7 +423,6 @@ You can run multiple of these, to catch a broader range of stylistic or programm
 
 If you're considering these tools as part of a project, see [Continuous Integration](continuous-integration) for advice on automating them.
 
-
 ## KISS <span role="image" aria-label="difficulty rating: 2 out of 5">★★☆☆☆</span>
 
 **K**eep **I**t **S**imple and **S**traightforward
@@ -511,7 +443,6 @@ Simple programs are more likely to run. Bugs in the code will be easier to track
 While you should strive towards simplicity, this should not compromise the usability of your code.
 It should still perform the desired task, just in a way that is no more complex than necessary.
 
-
 ### Don't Repeat Yourself (DRY)
 
 Repetition not only wastes your time, writing redundant lines of code, but it makes code more difficult to read and maintain.
@@ -520,7 +451,6 @@ You can use modular code to tackle repetition.
 Consider a script that contains three copies of a similar piece of code.
 If the code that is used to perform the repetitive task is found to be incorrect, or if a developer wishes to modify the task being performed by this code, they must implement a similar change in each of the three copies.
 In the example below, we want to get the odd numbers from three different lists of numbers.
-
 
 ````{tabs}
 
@@ -632,14 +562,13 @@ odd_third_ten_numbers = get_odd(third_ten_numbers)
 ````
 
 Here we've refactored the repetitive code into a function to get odd numbers, called `get_odd`.
-If the functionality of `get_odd` needs to be modified, it now need only be done once. 
+If the functionality of `get_odd` needs to be modified, it now need only be done once.
 Additionally, this code is more concise and it's purpose is easier to interpret.
 
 If two slightly different tasks must be carried out, you might approach this in one of two ways:
 
 - develop two functions containing the different elements of code, with names that express the difference in their purpose
 - add a parameter to your function that will allow a user to differentiate between the two tasks
-
 
 ````{tabs}
 
@@ -731,7 +660,6 @@ You should use your best judgement to decide which is most appropriate in a give
 It can be difficult to decide when repetition warrants refactoring of code into reusable functions/classes.
 The "Rule of Three" suggests that if similar code has been written more than two times, then it is worth extracting its operation to a reproducible procedure like a function or class.
 
-
 ### You ain't gonna need it
 
 It's important to capture the requirements of your code before writing it.
@@ -751,7 +679,6 @@ Explicit is better than implicit
 
 -- The Zen of Python (`import this`)
 ```
-
 
 In some programming languages, it is possible to perform a task or decision by relying on an implied interpretation of your code.
 For example, in Python `1`, `100`, `["A list of text"]` and many other objects evaluate to `True`, while `0`, `[]` and `None` evaluate to `False`.
@@ -774,7 +701,7 @@ coconut_count <- FALSE
 # Relying on falseness of FALSE
 if (coconut_count) {
   print("There are " + coconut_count + " coconuts!")
-} 
+}
 ```
 
 ````
@@ -810,14 +737,13 @@ if (coconut_count >= 0) {
 Now the count is printed if it is more than or equal to 0.
 It's clear that we intend for this to be the case.
 
-
 ## SOLID <span role="image" aria-label="difficulty rating: 4 out of 5">★★★★☆</span>
 
 SOLID is an acronym that encompasses 5 software design principles that are intended to increase the readability and extensibility of software source code.
 These principles are designed to improve object-oriented programs, but can be roughly applied to functional programs too.
 
 ```{todo}
-Extend SOLID subsections with analytical examples. 
+Extend SOLID subsections with analytical examples.
 
 Not necessarily code-based.
 
@@ -854,7 +780,6 @@ Within the section of you software that is responsible for taking payment, you m
 - Pass the payment information on to a third party, to process the payment.
 - Report the status of the payment to the user.
 
-
 ```{figure} ./_static/separation_of_concerns.png
 ---
 width: 80%
@@ -863,7 +788,6 @@ alt: Representation of concerns and responsibilities within a piece of software.
 ---
 Representation of concerns and responsibilities within a piece of software
 ```
-
 
 As such, separate sections of your software should be responsible for each of the concerns.
 Within each section of your software, distinct functions or classes should be responsible for each task that is required for that sections overall functionality.
@@ -896,19 +820,18 @@ If you were to increase the domain and range of a function to account for new ca
 An interface describes the interaction between multiple elements of code.
 This might be a piece of your code that uses another piece of your code or someone else's.
 
-As you add more and more functionality into a single interface, between parts of a program or from the program to customers, it becomes more difficult to extend or maintain. 
+As you add more and more functionality into a single interface, between parts of a program or from the program to customers, it becomes more difficult to extend or maintain.
 Separating these into multiple interfaces increases simplicity and maintainability.
 
 It can be tempting to generalise your program to as many use cases as possible.
 However, this can overwhelm your users.
 It is better that each user persona gets an interface that is meant for them rather than a complicated one which doesn't satisfy any user persona.
 
-
 ### Dependency inversion
 
 > Depend on abstractions, not concretions.
 
-High level modules should not depend on low-level modules. 
+High level modules should not depend on low-level modules.
 Both should depend on interfaces - i.e. be built with this interaction in mind.
 
 Abstractions should not depend on specific details, but should outline a general concept.
@@ -916,3 +839,38 @@ Concrete implementations should depend on these abstractions.
 
 Specify parameters to a function (or a higher order function to retrieve them) rather than hard coding the function to get some value.
 The function should not look outside of its own environment for data.
+
+(resources)=
+
+# Resoures
+
+This section contains a few resources that might help understanding the concepts and guidance presented in this section.
+
+```{admonition} Pre-requisites
+:class: admonition-learning
+
+You should look to these sources for introductory learning, before reading this guidance:
+* Introduction to [Python](https://learninghub.ons.gov.uk/enrol/index.php?id=536) and [R](https://learninghub.ons.gov.uk/enrol/index.php?id=538) (government analysts only)
+* Aggregation, functions and control flow in [Python](https://learninghub.ons.gov.uk/enrol/index.php?id=525) and [R](https://learninghub.ons.gov.uk/enrol/index.php?id=527) (government analysts only)
+* Official Python [Getting Started Guide](https://www.python.org/about/gettingstarted/)
+* [Learn Python](https://www.learnpython.org/) supported by DataCamp
+* [R Basics](https://www.udemy.com/course/r-basics/?LSNPUBID=JVFxdTr9V80&ranEAID=JVFxdTr9V80&ranMID=39197&ranSiteID=JVFxdTr9V80-mzkL.lpta.ugiFro.8Oc_Q&utm_medium=udemyads&utm_source=aff-campaign) on Udemy
+* [edx](https://www.edx.org/) and [freeCodeCamp](https://www.freecodecamp.org/) hosts many free online coding courses
+* [DataCamp](https://www.datacamp.com/), [Codecademy](https://www.codecademy.com/) and [Coursera](https://www.coursera.org/) host a range of introductory courses, but more advanced courses are often not free.
+
+Please note that non-government analysis learning may not follow good practices. However, exposure to a range of applied examples will still benefit your learning.
+You should compare and contrast your learning to the good practices outlined in this section.
+```
+
+```{admonition} Further Learning
+:class: admonition-learning
+
+These resources cover more advanced topics, which are not essential for for this section:
+* Dataframes, manipulation and cleaning in [Python](https://learninghub.ons.gov.uk/enrol/index.php?id=521) and [R](https://learninghub.ons.gov.uk/enrol/index.php?id=523) (government analysts only)
+* [Introduction to Unit Testing](https://learninghub.ons.gov.uk/enrol/index.php?id=539) and other code quality assurance for Python and R (government analysts only)
+* Python [Data Science Handbook](https://jakevdp.github.io/PythonDataScienceHandbook/index.html)
+* [Python for Data Analysis](https://github.com/wesm/pydata-book)
+* [R for Data Science](https://r4ds.had.co.nz/)
+* [Advanced R](https://adv-r.hadley.nz/index.html)
+* Harvard University's courses on [Python](https://online-learning.harvard.edu/subject/python) and [R](https://online-learning.harvard.edu/subject/r)
+```
