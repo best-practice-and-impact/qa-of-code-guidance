@@ -28,31 +28,84 @@ Breaking your code down into smaller, more manageable chunks is a sensible way t
 
 When prototyping we often copy paste code to 'make things work' but when time comes to wrap that work up, it is worth taking repetative code that can be easily parametrised and turning it into functions. Writing functions as well-sealed and reusable containers helps them be easily testable and readible.
 
-When starting to write functions consider what is the right _level of abstraction_. Namely, can this large piece of code be turned into concise and readible function as it is without having to pass the resulting function too many arguments? If not, perhaps you need to break the code into even smaller helper functions (that can also be reused in other places across the codebase) and then _use these smaller functions to build up a larger function that performs the actions you need_.
+When starting to write functions consider what is the right **level of abstraction**. Namely, can this large piece of code be turned into concise and readible function as it is, without having to pass the resulting function too many arguments? If not, perhaps you need to break the code into even smaller helper functions (that can also be reused in other places across the codebase) and then **use these smaller functions to build up a larger function that performs the actions you need**.
 
 This helps you break the complexity down into small and easily comprehendable chunks that can be documented, tested and understood much easier.
 
-Another thing to consider is the idea of `referential transparency`. Without going into that much detail, the core rule of thumb to follow is: _can I take my function and replace it by the value that it would return?_
+Another thing to consider is the idea of `referential transparency`. Without going into that much detail, the core rule of thumb to follow is: **can I take my function and replace it by the value that it would return?**
 
-In practice, this means your functions should try to completely _remove any effects they have on values that you have not explicitly fed into it as parameters_. For instance, adding columns in a lingering data table that is not passed explicitly as a parameter. Avoiding such behaviour makes your code more transparent and users can quickly pick out which functions affect what data without being concerned about these hidden behaviours. In cases where your function alters some external values to that it was not explicitly passed, running that function twice might even produce different results and might make issues harder to debug. Thus, _strive to make sure that running the same function twice with the same inputs produces the same results_.
+In practice, this means your functions should try to completely **remove any effects they have on values that you have not explicitly fed into it as parameters**. For instance, adding columns in a lingering data table that is not passed explicitly as a parameter. Avoiding such behaviour makes your code more transparent and users can quickly pick out which functions affect what data without being concerned about these hidden behaviours. In cases where your function alters some external values to that it was not explicitly passed, running that function twice might even produce different results and might make issues harder to debug. Thus, **strive to make sure that running the same function twice with the same inputs produces the same results**.
 
-However this is not always possible or practical in languages that are not designed in a way that encourages this type of programming. And sometimes you **want** a function to capture and affect values outside of the ones provided to it as arguments (adding data to a database or writing to file). Make sure to control this type of behaviour and to signal to the end-user to expect these things to happen. This is usually communicated in documentation for end-users and also in comments for fellow developers. Ultimately, if you do signal where these kind of things might happend, someone trying to debug issues that might be caused by this behaviour will know where to look.
+However this is not always possible or practical in languages that are not designed in a way that encourages this type of programming. And sometimes you **want** a function to capture and affect values outside of the ones provided to it as arguments (adding data to a database or writing to file. Make sure to control this type of behaviour and to signal to the end-user to expect these things to happen. This is usually communicated in documentation for end-users and also in comments for fellow developers. Ultimately, if you do signal where these kind of things might happend, someone trying to debug issues that might be caused by this behaviour will know where to look.
 
-So to summarise:
+**To summarise**:
 
 - make sure functions are not too overcomplicated and break down the code into even smaller helper functions and build up your functionality and larger functions from these small building blocks
 - make sure minimise the 'side-effects' of functions where at all possible in order to make sure that your code is easy to debug and is transparent in its functionality
 - similarly, strive to make sure that running your function with the same inputs will produce the same results every time.
 
-Scripts:
-
-- are text documents containing source code
-- may be broken down into sections or "chunks"
-- may contain functions, classes and/or lines of non-modular code
-
 ### Classes
 
 TODO: IAN
+
+### Scripts:
+
+Scripts are simply files containing code that you would like to execute. In Python you commonly have a `main.py` script that orchestrates part of your codebase to achieve an outcome. In machine-learning projects, you have `train.py` and `test.py` which are scripts that train the model and produce performance metrics.
+
+Scripts, if written well, are reproducible. In languages like R and Python, when executed using commands like `python main.py` they are read top to bottom and executed line by line. This is in contrast to other ways of running code such as an interactive interpreter or notebooks, where the human has control of the order of execution allowing for a slew of errors when things are run in the wrong order.
+
+Ultimately for pipelining code and processes you will need to have some way of running your code and the humble script is the primary way of orchestrating your functions and classes in a pipeline fashion.
+
+```{note}
+Having something that is not reproducible in a script will not make it more reproducible. The script is simply a tool to run code in the same fashion across multiple runs.
+```
+
+**To summarise**:
+
+- scripts are a good way to orchestrate your functions and classes in order to build a simple, yet effective pipeline
+- are text documents containing source code which makes them easily human readible and auditable
+- may be broken down into sections using comments for readability
+
+### Modules
+
+### Packages
+
+Programming languages often ship with quite a few in-built functions and procedures available to the end-users. However, when it comes to solving specialised problems, these in-built functions are often not enough and you will have to build functionality to address a given problem from scratch. If the solutions you build are useful you can then wrap it up in a package and allow other users to install it. They can then reuse the work you have put in within their own code to solve similar problems.
+
+In short, packages are _self-contained collections of code written by someone else to achieve some purpose_. For example, packages like `dplyr` and `pandas` are essential when performing data wrangling and contain a myriad of functions that allows us to avoid rewriting this functionality from scratch every time.
+
+This section will not cover the practices required to package up and distribute your code as a package. However if you would like to know more please seek out the packaging guides for your respective language. That said, do keep in mind the question: is my code solving a problem that someone else has not provided a solution in my language? If the answer is 'Yes' then perhaps it is worth considering wrapping up your code and distributing it wider.
+
+```{note}
+**Packaging code up properly will involve applying a lot of the recommendations from this book.**
+
+You will have to consider how to test, document and lay out your code for it to be usable and packagable. In the end, high quality packages are the cornerstone of open-source package ecosystems, however it is not trivial to be a maintainer and developer of well-regarded open-source packages.
+
+If you feel like you are writing code that you might consider turning into a package, consult this book and strive to apply as many of the recommendations as you go. This will make the final polish and packaging much simpler and will produce packages that are easier for third-parties to trust and use.
+```
+
+### Notebooks
+
+It is worth touching upon using Jupyter or other kinds of Notebooks that allow running of your code.
+
+Although individual notebooks could seem like a good way to containerise your analysis for distribution, for larger projects this is perhaps not the best idea.
+
+Notebooks are inherantly opaque to version control software like `git`. Simple text files like scripts can be version controlled easily as you can see which lines changed from one version to another. Notebooks store their internal workings in a much more complicated form, hence seeing the changes from one notebook to another as differences line by line is not possible in common version control tools.
+
+Furthermore, defining and keeping functions within notebooks is prohibitive to testing. It is not really possible to test individual cells of a notebook with standard external tooling.
+
+However the great strength of notebooks is their flexibility in displaying results while you are exploring data and their ability to present final research code alongside a narrative written in markdown. Therefore the top 2 reasons to use notebooks in the project lifecycle is to:
+
+- explore and 'play' with the data while developing your methods
+- turn notebooks into HTML reports to show end users as a way of reporting
+
+TODO: once the data exploration is done
+
+### Modularised analysis
+
+With all the other guidance in mind, it is worth considering how these tips can be applied in structuring your codebase and enhancing your end end-user experience.
+
+In practice throu
 
 ## Clean code
 
