@@ -149,7 +149,10 @@ Programming languages often ship with quite a few in-built functions and procedu
 
 In short, packages are _self-contained collections of code written by someone else to achieve some purpose_. For example, packages like `dplyr` and `pandas` are essential when performing data wrangling and contain a myriad of functions that allows us to avoid rewriting this functionality from scratch every time. Under the hood this is likely to be a set of [modules](modules) containing relevant functions, classes and other code that someone has written and wrapped up in a particular way that the programming language you use can understand, install and make available to you to import.
 
-This section will not cover the practices required to package up and distribute your code as a package. However if you would like to know more please seek out the packaging guides for your respective language. That said, do keep in mind the question: is my code solving a problem that someone else has not provided a solution in my language? If the answer is 'Yes' then perhaps it is worth considering wrapping up your code and distributing it wider.
+This section will not cover the practices required to package up and distribute your code as a package. However if you would like to know more please seek out the packaging guides for your respective language.
+
+That said, do keep in mind the question: **is my code solving a problem that someone else has not provided a solution in my language?**
+If the answer is 'Yes' then perhaps it is worth considering wrapping up your code and distributing it wider.
 
 ```{note}
 **Packaging code up properly will involve applying a lot of the recommendations from this book.**
