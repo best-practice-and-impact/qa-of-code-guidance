@@ -66,13 +66,88 @@ Having something that is not reproducible in a script will not make it more repr
 - are text documents containing source code which makes them easily human readible and auditable
 - may be broken down into sections using comments for readability
 
+(modules)=
+
 ### Modules
+
+Simply put, **modules are simply scripts which house the functions that you want to use in other scripts**. As you write you code and find opportunities to create classes or functions that reduce repetition and promote easier code comprehension, you might eventually decide that you want these functions to sit outside of your `main.py` script and you might decide that they can be grouped into consistent groupings. This is where modules come in.
+
+An example will help comprehend how this might work in practice. Imagine a project where an analyst has created a massive script in a pipeline and then upon reflection split up their data analysis pipeline into functions relating to `data processing`, `data modelling` and `result presentation`. They might decide they want to have a pipeline script called `main` but they also might want to keep it readible and simple. First they create 3 files (we will use Python for the illustration, however the same principle applies to R): `processing.py`, `modelling.py` and `reporting.py`. Their directory now looks something similar to:
+
+```
+project
+| main.py
+| modelling.py
+| processing.py
+| reporting.py
+| README.md
+| LICENSE
+```
+
+They then import the relevant functions into `main.py` from their modules as follows:
+
+```python
+import pandas as pd
+
+from modelling import predict_results
+from processing import clean, preprocess
+from reporting import generate_report, export
+
+data = pd.read_csv("data/path.csv")
+data = preprocess(clean(data))
+results = predict_results(data)
+report = generate_report(results)
+export(report)
+```
+
+```{note}
+This is not the de facto example of a main script and it is just to illustrate how you could import from other modules. This `main.py` lacks the ability to configure things like the path to the data from a central configuration file, requiring users to dig around the code and replace paths manually which is highly discouraged.
+```
+
+````{admonition} A step further
+Another step that can be taken to introduce a bit of clarity is to further wrap these modules into their own folder like so:
+
+```
+project
+| library
+  | __init__.py
+  | modelling.py
+  | processing.py
+  | reporting.py
+| LICENSE
+| main.py
+| README.md
+```
+
+And the expected python code then can be structured as follows
+
+```python
+import pandas as pd
+
+# Import required modules from functions
+from library.modelling import predict_results
+from library.processing import clean, preprocess
+from library.reporting import generate_report, export
+
+# With some extra work that we will not cover in this section, you reduce it into (Python)
+# from library import predict_results, clean, preprocess, generate_report, export
+
+data = pd.read_csv("data/path.csv")
+data = preprocess(clean(data))
+results = predict_results(data)
+report = generate_report(results)
+export(report)
+```
+
+In general this allows us to have nice conceptual boundaries between each module and between the modules and the `main` script.
+
+````
 
 ### Packages
 
 Programming languages often ship with quite a few in-built functions and procedures available to the end-users. However, when it comes to solving specialised problems, these in-built functions are often not enough and you will have to build functionality to address a given problem from scratch. If the solutions you build are useful you can then wrap it up in a package and allow other users to install it. They can then reuse the work you have put in within their own code to solve similar problems.
 
-In short, packages are _self-contained collections of code written by someone else to achieve some purpose_. For example, packages like `dplyr` and `pandas` are essential when performing data wrangling and contain a myriad of functions that allows us to avoid rewriting this functionality from scratch every time.
+In short, packages are _self-contained collections of code written by someone else to achieve some purpose_. For example, packages like `dplyr` and `pandas` are essential when performing data wrangling and contain a myriad of functions that allows us to avoid rewriting this functionality from scratch every time. Under the hood this is likely to be a set of [modules](modules) containing relevant functions, classes and other code that someone has written and wrapped up in a particular way that the programming language you use can understand, install and make available to you to import.
 
 This section will not cover the practices required to package up and distribute your code as a package. However if you would like to know more please seek out the packaging guides for your respective language. That said, do keep in mind the question: is my code solving a problem that someone else has not provided a solution in my language? If the answer is 'Yes' then perhaps it is worth considering wrapping up your code and distributing it wider.
 
