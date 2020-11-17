@@ -176,7 +176,7 @@ Lastly, one of the key issues with notebooks when they are used as methods for r
 
 However the great strength of notebooks is their flexibility in displaying results while you are exploring data and their ability to present final research code alongside a narrative written in markdown. Therefore the top 2 reasons to use notebooks in the project lifecycle is to:
 
-- explore and 'play\*\* with the data while developing your methods
+- explore and 'play' with the data while developing your methods
 - turn notebooks into HTML reports to show end users as a way of reporting
 
 In short, **notebooks are not a great way to modularise your code** however they are a great way to do research analytics and to present results. Therefore as the exploratory part of the analytical project draws to a close or when the notebooks become incredibly large due to function definitions, it is wise to stop and refactor the notebooks. Here are a few suggestions to consider:
