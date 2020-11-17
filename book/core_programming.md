@@ -94,18 +94,38 @@ Notebooks are inherantly opaque to version control software like `git`. Simple t
 
 Furthermore, defining and keeping functions within notebooks is prohibitive to testing. It is not really possible to test individual cells of a notebook with standard external tooling.
 
+Lastly, one of the key issues with notebooks when they are used as methods for running a pipeline is the ability to run cells out of order. In practice this means a user can by accident execute steps in the wrong order causing issues and different results.
+
 However the great strength of notebooks is their flexibility in displaying results while you are exploring data and their ability to present final research code alongside a narrative written in markdown. Therefore the top 2 reasons to use notebooks in the project lifecycle is to:
 
-- explore and 'play' with the data while developing your methods
+- explore and 'play\*\* with the data while developing your methods
 - turn notebooks into HTML reports to show end users as a way of reporting
 
-TODO: once the data exploration is done
+In short, **notebooks are not a great way to modularise your code** however they are a great way to do research analytics and to present results. Therefore as the exploratory part of the analytical project draws to a close or when the notebooks become incredibly large due to function definitions, it is wise to stop and refactor the notebooks. Here are a few suggestions to consider:
 
-### Modularised analysis
+- review the repetative cells and assess which of them can be turned into reusable functions
+- extract all the existing function definitions into their own modules
+- test, document and further refactor these functions and modules following the guidance laid out in this book
+- import the required functionality from the modules you have just made into the notebook
+- use the notebook as an orchestrator for the functions you just imported and outline your analytical thinking by mixing clear markdown descriptions and the code as well as its outputs
+
+What you do after this, either turn the notebooks into HTML to send to stakeholders or save them as is so qualified analysts can re-run your notebooks, the steps you've taken will make your code much easier to comprehend and less likely to be bloated.
+
+That said, unless you store only the rendered HTML versions, the notebooks can still be run out of order by some other analysts and **they should not be used as the main method of actually generating outputs**. That orchestration is better placed in scripts that do not have human input as a factor during runtime.
+
+### Modularised analysis and layout
 
 With all the other guidance in mind, it is worth considering how these tips can be applied in structuring your codebase and enhancing your end end-user experience.
 
-In practice throu
+In practice throughout exploratory development it is hard to know what the final product will look like, but often the following pattern is sufficiently flexible for final publication.
+
+1. Explore the data or problem space in either notebooks or scripts
+2. Once results and outputs become clearer, extract the core parts of the experiments into their own set of modules. For example - after working on a computer vision problem, an analysts notices that aquiring the images from some form of online source is a common function used in many places in the exploratory notebooks. She then extracts that functionality into the `loaders.py` module of her Python project, documents it, decides to write a simple test for it and imports it back into her notebook to be used down the line.
+3. Decide what is the appropriate output of this analysis. For example, the same analyst from point the previous example, decides that she is done establishing her computer vision problem. The code works in a notebook and she is confident that it is ready to be used as a pipeline. She then uses the modules and functions she has built up from her analysis to create a final script that she calls `process.py` that she can configure using a configuration file and re-run as needed.
+
+Ultimately, our example analyst might decide that she wants to guide the user through what is happening in her pipeline, so she might grab a copy of the exploratory notebook she used and adapt it into a step by step explanation (written in Markdown cells) of what the method she developed does (implemented in Python code). This sort of approach allows for a collection of modules to be testable and easily documentable, allows for a reproducible single script to orchestrate the whole process and also allows for more in-depth and interactive presentations using notebooks or rendered notebooks to the end-user for methods that feel like they need extra explanation.
+
+In short, writing analysis like this is like bootstraping yourself from scratch. You explore what you need to do, write the code to do it, when the code is ready you extract it from your experimental environment, test it and document it. Once you've done that you use your own code to further your analysis. This one of cost of refactoring is likely to be absorbed by the time savings of having more robust code during further exploration.
 
 ## Clean code
 
