@@ -14,7 +14,7 @@ Code is read more often than it is written.
 
 When writing non-trivial code it is wise to assume that at some point someone else will need to understand, use and adapt your code. Therefore everytime you write such code, it is incredibly important to empathise with these potential users and produce code that is tidy, understandable and does not add unecessary complexity.
 
-Common barriers to writing redable codebases include documentation that is hard to understand or absent, walls of code with repeating functionality that is hard to absorb in 'chunks' or overcomplicated solutions that solve the problem in ways that could be simplified. These practices are necessary to make sure that your analysis is reproducible, auditable and assured. Therefore it is our professional responsibility to avoid putting such barriers in place whenever possible.
+Common barriers to writing readable codebases include documentation that is hard to understand or absent, walls of code with repeating functionality that is hard to absorb in 'chunks' or overcomplicated solutions that solve the problem in ways that could be simplified. Avoiding these issues is essential to make sure that your analysis is reproducible, auditable and assured. Therefore it is our professional responsibility to avoid putting such barriers in place whenever possible.
 
 This chapter highlights some good coding practices that will improve the readability and maintainability of your code.
 Here, readability refers how easily another analyst can gain a decent understand of how your code works, within a reasonable amount of time.
@@ -34,9 +34,13 @@ This helps you break the complexity down into small and easily comprehendable ch
 
 Another thing to consider is the idea of `referential transparency`. Without going into that much detail, the core rule of thumb to follow is: **can I take my function and replace it by the value that it would return?**
 
-In practice, this means your functions should try to completely **remove any effects they have on values that you have not explicitly fed into it as parameters**. For instance, adding columns in a lingering data table that is not passed explicitly as a parameter. Avoiding such behaviour makes your code more transparent and users can quickly pick out which functions affect what data without being concerned about these hidden behaviours. In cases where your function alters some external values to that it was not explicitly passed, running that function twice might even produce different results and might make issues harder to debug. Thus, **strive to make sure that running the same function twice with the same inputs produces the same results**.
+In practice, this means your functions should try to completely **remove any effects they have on values that you have not explicitly fed into it as arguments**. For instance, adding columns in a lingering data table that is not passed explicitly as an argument. Avoiding such behaviour makes your code more transparent and users can quickly pick out which functions affect what data without being concerned about these hidden behaviours.
 
-However this is not always possible or practical in languages that are not designed in a way that encourages this type of programming. And sometimes you **want** a function to capture and affect values outside of the ones provided to it as arguments (adding data to a database or writing to file. Make sure to control this type of behaviour and to signal to the end-user to expect these things to happen. This is usually communicated in documentation for end-users and also in comments for fellow developers. Ultimately, if you do signal where these kind of things might happend, someone trying to debug issues that might be caused by this behaviour will know where to look.
+In cases where your function alters some external values to that it was not explicitly passed, running that function twice might even produce different results and might make issues harder to debug. Thus, **strive to make sure that running the same function twice with the same inputs produces the same results**.
+
+However this is not always possible or practical in languages that are not designed in a way that encourages this type of programming. And sometimes you **want** a function to capture and affect values outside of the ones provided to it as arguments (i.e. adding data to a database or writing to file). Make sure to control this type of behaviour and to signal to the end-user to expect these things to happen. This is usually communicated in documentation for end-users and also in comments for fellow developers.
+
+Ultimately, if you do signal where these kind of things might happend, someone trying to debug issues that might be caused by this behaviour will know where to look.
 
 **To summarise**:
 
@@ -50,7 +54,7 @@ TODO: IAN
 
 ### Scripts:
 
-Scripts are simply files containing code that you would like to execute. In Python you commonly have a `main.py` script that orchestrates part of your codebase to achieve an outcome. In machine-learning projects, you have `train.py` and `test.py` which are scripts that train the model and produce performance metrics.
+Scripts are simply files containing code that you would like to execute. In Python you commonly have a `main.py` script that orchestrates part of your codebase to achieve an outcome. In machine-learning projects, you sometimes have `train.py` and `test.py` which are scripts that train the model and produce performance metrics.
 
 Scripts, if written well, are reproducible. In languages like R and Python, when executed using commands like `python main.py` they are read top to bottom and executed line by line. This is in contrast to other ways of running code such as an interactive interpreter or notebooks, where the human has control of the order of execution allowing for a slew of errors when things are run in the wrong order.
 
@@ -70,9 +74,13 @@ Having something that is not reproducible in a script will not make it more repr
 
 ### Modules
 
-Simply put, **modules are simply scripts which house the functions that you want to use in other scripts**. As you write you code and find opportunities to create classes or functions that reduce repetition and promote easier code comprehension, you might eventually decide that you want these functions to sit outside of your `main.py` script and you might decide that they can be grouped into consistent groupings. This is where modules come in.
+Simply put, **modules are scripts which house the functions that you want to use in other scripts**. As you write you code and find opportunities to create classes or functions that reduce repetition and promote easier code comprehension, you might eventually decide that you want these functions to sit outside of your `main.py` script and you might decide that they can be grouped into consistent groupings. This is where modules come in. An example will help comprehend how this might work in practice.
 
-An example will help comprehend how this might work in practice. Imagine a project where an analyst has created a massive script in a pipeline and then upon reflection split up their data analysis pipeline into functions relating to `data processing`, `data modelling` and `result presentation`. They might decide they want to have a pipeline script called `main` but they also might want to keep it readible and simple. First they create 3 files (we will use Python for the illustration, however the same principle applies to R): `processing.py`, `modelling.py` and `reporting.py`. Their directory now looks something similar to:
+```{note}
+We will be using Python for the illustration, however the same principles apply in R.
+```
+
+Imagine a project where an analyst has created a massive script in a pipeline and then upon reflection split up their data analysis pipeline into functions relating to `data processing`, `data modelling` and `result presentation`. They might decide they want to have a pipeline script called `main` but they also might want to keep it readible and simple. First they create 3 files: `processing.py`, `modelling.py` and `reporting.py`. Their directory now looks something similar to:
 
 ```
 project
@@ -139,19 +147,21 @@ report = generate_report(results)
 export(report)
 ```
 
-In general this allows us to have nice conceptual boundaries between each module and between the modules and the `main` script.
-
 ````
+
+(packages)=
 
 ### Packages
 
-Programming languages often ship with quite a few in-built functions and procedures available to the end-users. However, when it comes to solving specialised problems, these in-built functions are often not enough and you will have to build functionality to address a given problem from scratch. If the solutions you build are useful you can then wrap it up in a package and allow other users to install it. They can then reuse the work you have put in within their own code to solve similar problems.
+Programming languages often ship with quite a few in-built functions and procedures available to the end-users. However, when it comes to solving specialised problems, these in-built functions are often not enough and you will have to build functionality to address a given problem from scratch. If the solutions you build are useful you can then wrap them up in a package and allow other users to install it. They can then reuse the work you have put in within their own code to solve similar problems.
 
-In short, packages are _self-contained collections of code written by someone else to achieve some purpose_. For example, packages like `dplyr` and `pandas` are essential when performing data wrangling and contain a myriad of functions that allows us to avoid rewriting this functionality from scratch every time. Under the hood this is likely to be a set of [modules](modules) containing relevant functions, classes and other code that someone has written and wrapped up in a particular way that the programming language you use can understand, install and make available to you to import.
+In short, packages are **self-contained collections of code written by someone else to achieve some purpose**. For example, packages like `dplyr` and `pandas` are essential when performing data wrangling and contain a myriad of functions that allows us to avoid rewriting this functionality from scratch every time. Under the hood this is likely to be a set of [modules](modules) containing relevant functions, classes and other code that someone has written and wrapped up in a particular way that the programming language you use can understand, install and make available to you for import.
 
+```{note}
 This section will not cover the practices required to package up and distribute your code as a package. However if you would like to know more please seek out the packaging guides for your respective language.
+```
 
-That said, do keep in mind the question: **is my code solving a problem that someone else has not provided a solution in my language?**
+It is useful to keep in mind the question: **is my code solving a problem that someone else has not provided a solution in my language?**
 If the answer is 'Yes' then perhaps it is worth considering wrapping up your code and distributing it wider.
 
 ```{note}
@@ -162,17 +172,46 @@ You will have to consider how to test, document and lay out your code for it to 
 If you feel like you are writing code that you might consider turning into a package, consult this book and strive to apply as many of the recommendations as you go. This will make the final polish and packaging much simpler and will produce packages that are easier for third-parties to trust and use.
 ```
 
-### Notebooks
+### Modularised analysis and layout
+
+With all the other guidance in mind, it is worth considering how these tips can be applied in structuring your codebase and enhancing your end-user experience.
+
+In practice throughout exploratory development it is hard to know what the final product will look like, but often the following pattern is sufficiently flexible for final publication.
+
+1.  Explore the data or problem space in either notebooks or scripts
+2.  Once results and outputs become clearer, extract the core parts of the experiments into their own set of modules.
+
+    ```{admonition} Example
+    After working on a computer vision problem, an analysts notices that aquiring the images from some form of online source is a common function used in many places in the exploratory notebooks.
+    <br><br>She then extracts that functionality into the `loaders.py` module of her Python project, documents it, decides to write a simple test for it and imports it back into her notebook to be used down the line.
+    ```
+
+3.  Decide what is the appropriate output of this analysis.
+
+    ```{admonition} Example
+    The same analyst from point the previous example, decides that she is done solving her computer vision problem. The code works in a notebook and she is confident that it is ready to be used as a pipeline. <br><br>She then uses the modules and functions she has built up from her analysis to create a final script that she calls `process.py` that she can configure using a configuration file and re-run as needed to produce required results.
+
+    ```
+
+Ultimately, our example analyst might decide that she wants to guide the user through what is happening in her pipeline, so she might grab a copy of the exploratory notebook she used and adapt it into a step by step explanation (written in Markdown cells) of what the method she developed does alongside the Python code driven examples.
+
+This sort of approach allows for a collection of modules to be testable and easily documentable, allows for a reproducible single script to orchestrate the whole process and also allows for more in-depth and interactive presentations using notebooks or rendered notebooks to the end-user for methods that feel like they need extra explanation.
+
+In short, writing analysis like this is like bootstraping yourself from scratch. You explore what you need to do, write the code to do it, when the code is ready you extract it from your experimental environment into your own [module](modules), test it and document it.
+
+Once you're done, you then use your own code to further your analysis. This one-off cost of refactoring is likely to be absorbed by the time savings of having more robust code during further exploration.
+
+## Notebooks
 
 It is worth touching upon using Jupyter or other kinds of Notebooks that allow running of your code.
 
 Although individual notebooks could seem like a good way to containerise your analysis for distribution, for larger projects this is perhaps not the best idea.
 
-Notebooks are inherantly opaque to version control software like `git`. Simple text files like scripts can be version controlled easily as you can see which lines changed from one version to another. Notebooks store their internal workings in a much more complicated form, hence seeing the changes from one notebook to another as differences line by line is not possible in common version control tools.
+Notebooks are inherently opaque to version control software like `git`. Simple text files like scripts can be version controlled easily as you can see which lines changed from one version to another. Notebooks store their internal workings in a much more complicated form, hence seeing the changes from one notebook to another as differences line by line is not possible in common version control tools.
 
 Furthermore, defining and keeping functions within notebooks is prohibitive to testing. It is not really possible to test individual cells of a notebook with standard external tooling.
 
-Lastly, one of the key issues with notebooks when they are used as methods for running a pipeline is the ability to run cells out of order. In practice this means a user can by accident execute steps in the wrong order causing issues and different results.
+Lastly, one of the key issues with notebooks when they are used as methods for running a pipeline is the ability to run cells out of order. In practice this means a user can accidentally execute steps in the wrong order causing issues and different results.
 
 However the great strength of notebooks is their flexibility in displaying results while you are exploring data and their ability to present final research code alongside a narrative written in markdown. Therefore the top 2 reasons to use notebooks in the project lifecycle is to:
 
@@ -190,20 +229,6 @@ In short, **notebooks are not a great way to modularise your code** however they
 What you do after this, either turn the notebooks into HTML to send to stakeholders or save them as is so qualified analysts can re-run your notebooks, the steps you've taken will make your code much easier to comprehend and less likely to be bloated.
 
 That said, unless you store only the rendered HTML versions, the notebooks can still be run out of order by some other analysts and **they should not be used as the main method of actually generating outputs**. That orchestration is better placed in scripts that do not have human input as a factor during runtime.
-
-### Modularised analysis and layout
-
-With all the other guidance in mind, it is worth considering how these tips can be applied in structuring your codebase and enhancing your end end-user experience.
-
-In practice throughout exploratory development it is hard to know what the final product will look like, but often the following pattern is sufficiently flexible for final publication.
-
-1. Explore the data or problem space in either notebooks or scripts
-2. Once results and outputs become clearer, extract the core parts of the experiments into their own set of modules. For example - after working on a computer vision problem, an analysts notices that aquiring the images from some form of online source is a common function used in many places in the exploratory notebooks. She then extracts that functionality into the `loaders.py` module of her Python project, documents it, decides to write a simple test for it and imports it back into her notebook to be used down the line.
-3. Decide what is the appropriate output of this analysis. For example, the same analyst from point the previous example, decides that she is done establishing her computer vision problem. The code works in a notebook and she is confident that it is ready to be used as a pipeline. She then uses the modules and functions she has built up from her analysis to create a final script that she calls `process.py` that she can configure using a configuration file and re-run as needed.
-
-Ultimately, our example analyst might decide that she wants to guide the user through what is happening in her pipeline, so she might grab a copy of the exploratory notebook she used and adapt it into a step by step explanation (written in Markdown cells) of what the method she developed does (implemented in Python code). This sort of approach allows for a collection of modules to be testable and easily documentable, allows for a reproducible single script to orchestrate the whole process and also allows for more in-depth and interactive presentations using notebooks or rendered notebooks to the end-user for methods that feel like they need extra explanation.
-
-In short, writing analysis like this is like bootstraping yourself from scratch. You explore what you need to do, write the code to do it, when the code is ready you extract it from your experimental environment, test it and document it. Once you've done that you use your own code to further your analysis. This one of cost of refactoring is likely to be absorbed by the time savings of having more robust code during further exploration.
 
 ## Clean code
 
