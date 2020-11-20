@@ -1012,7 +1012,7 @@ The function should not look outside of its own environment for data.
 
 (resources)=
 
-# Resoures
+# Resources
 
 This section contains a few resources that might help understanding the concepts and guidance presented in this section.
 
