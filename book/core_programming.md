@@ -550,7 +550,7 @@ This might mean simplifying complex and perhaps hard to read patterns into a sim
 i = 0
 my_data = []
 while i < 100:
-  my_data + [i * i / 356]
+  my_data += [i * i / 356]
   i += 1
 
 # example 2 - more use of python features such as range and append
