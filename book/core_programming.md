@@ -541,7 +541,7 @@ There is perhaps a misconception that following style guidelines and formatting 
 
 In reality, not only do the guidelines sometimes force code-reviews to tunnel vision style over more fundamental problems with the code, they also detract from assess whether the code is make the best use of a given language.
 
-We can expand the notion of style to go beyond simple spacing or capitalization. In the same way that knowing and using common idioms such as 'over the moon' or 'cold feet' make you seem like a more fluent speaker of English, a part of being fluent in a programming language is being able to write idiomatic code. Idiomatic stands for - /using, containing, or denoting expressions that are natural to a native speaker/.
+We can expand the notion of style to go beyond simple spacing or capitalization. In the same way that knowing and using common idioms such as 'over the moon' or 'cold feet' make you seem like a more fluent speaker of English, a part of being fluent in a programming language is being able to write idiomatic code. Idiomatic stands for - _using, containing, or denoting expressions that are natural to a native speaker_.
 
 This might mean simplifying complex and perhaps hard to read patterns into a simpler, but well established alternative. In Python for example these two pieces of code are equivalent:
 
