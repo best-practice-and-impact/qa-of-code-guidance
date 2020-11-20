@@ -238,9 +238,8 @@ Programs are meant to be read by humans and only incidentally for computers to e
 -- Donald Knuth, The Art of Computer Programming
 ```
 
-Code with high readability is often referred to as "Clean Code".
-Clean code helps us to understand a program faster.
-The code itself often sounds quite natural when spoken aloud.
+Code with high readability is often referred to as "clean code".
+Clean code helps us understand a program faster as it tries to remove points of confusion and ambiguity.
 
 ```{admonition} Key Learning
 :class: admonition-learning
@@ -248,26 +247,34 @@ The code itself often sounds quite natural when spoken aloud.
 These concepts are also applied in the [self-led learning course on clean code](https://learninghub.ons.gov.uk/enrol/index.php?id=537) (government analysts only).
 ```
 
+The following sections will present some key aspects of writing clean code that are fairly widely applicable. That said each individual programming language has idiomatic ways of writing code that are specific to its features and each language usually has some form of accepted style guides for it.
+
+**Make sure to consult the style guides for your language as first point of call.** This is an important point to stress as these guides will capture the most up to date guidance for your language of choice and will usually provide in-depth guidance that is not going to be available in this document.
+
+```{admonition} Be careful!
+While reviewing your own or other peoples code it is often tempting to focus on the code style as the first point of call to provide easy feedback. However, the approach of pointing out the deviations between the code and the style guide for the language only addresses the fundamental question - would you say this code is tidy?
+
+What it does not do is ask - does this code do what it needs to and how well is it managing the complexity of the problem?
+
+Always **make sure to not get tunnel visioned on clean code as the only source of feedback** for the codebase. Reflect first and foremost on the functionality of the code and how it solves a given problem. Then address the issues that make it less readible.
+```
+
 (naming)=
 
 ### Naming
 
-```{epigraph}
-There are only two hard things in Computer Science: cache invalidation and naming things.
-
--- Phil Karlton
-```
-
-The most important aspect of clean code is the naming of identifiers within your code. This includes variables, functions and classes.
+The most important aspect of clean code is the naming of identifiers within your code. This includes variables, functions and classes and any other code constructs that can be assigned a name.
 
 Someone reading your code will benefit greatly if you use names that are:
 
 - informative and not misleading
 - concise but not cryptic
 
+(naming-variables)=
+
 #### Naming variables
 
-You may have previously come across code that contains variable names that are meaningless, or that infer an incorrect purpose:
+You may have previously come across code that contains variable names that are meaningless, or that imply an incorrect purpose:
 
 ````{tabs}
 
@@ -295,20 +302,13 @@ my_favourite_number <- "ssh, I'm a string"
 
 ````
 
-Another developer, or even "future you", would be unable to correctly understand what you intended these variable names to represent.
+Another developer, or even "future you", would be unable to correctly understand what you intended these variable names to represent. Therefore **strive to avoid cryptic and single letter identifiers**.
 
-Using single letters to name variables is suitable when they are representing well-known mathematical entities (e.g. $y = mx + c$), but you should avoid them in other situations.
+That said, there are situations where some seemingly cryptic identifiers make sense. Using single letters to name variables is suitable when implementing methodologies from underlying mathematical notation.
 
-```{figure} ./_static/dirty_code_gandalf.png
----
-width: 40%
-name: gandalf
-alt: Gandalf the wizard saying that he can't remember writing this code.
----
-Gandalf regrets writing poor quality code
-```
+However, even in these cases one must make sure that the formulas being implemented are clear, readily available to the reader and are consistently reflected in the code throughout the implementation of the mathematical portion.
 
-Using variable names that contain a few (3 or so) informative words can drastically improve the readability of your code:
+In other cases, using variable names that contain a few (3 or so) informative words can drastically improve the readability of your code. How these words are seperated (be it `CamelCase` or `snake_case`) will depend on your language of choice.
 
 ````{tabs}
 
@@ -350,13 +350,10 @@ plyr::empty(empty_dataframe)
 
 ````
 
-The purpose of these variables is clear from just reading their names.
-In addition, the variable names make logical sense in the context that they are used later on in the code.
-This removes the need for explanatory comments, as your intentions can be interpreted from the code itself.
+Ideally, the **purpose of variables should be clear from just reading their names**.
+In addition, the variable names **should make logical sense in the context that they are used later on in the code**. This removes the need for explanatory comments, as your intentions can be interpreted from the code itself - `self-documenting` code.
 
-Naming is important for distinguishing between similar variables.
-It can be tempting to use a number or character to reflect these differences.
-However, this results in identifiers that are not informative.
+Naming is important for distinguishing between similar variables. A first instict might be to assign numerical suffixes or other similar tags to differentiate these variables, however unless the suffix itself is meaningful within the context of the rest of the code, it will not make the code more understandable.
 
 For instance, in:
 
@@ -399,159 +396,121 @@ letters_first_three_reversed <- rev(first_three_letters)
 Here the naming convention indicates that both lists are similar, but also describes the differences between them.
 It is also clear how the third, new list relates to the first list that was used to create it.
 
-Now, you're probably thinking that this could rapidly extend to something like:
+With more informative names, we obviously loose the brevity of variable names:
 
 ```
 letters_first_three_reversed_plus_t_minus_a_converted_to_greek
 ```
 
-You're not wrong, and longer variable names can make it more awkward to use them further down the line.
 There is a clear trade-off between the usability and informativeness of variable names.
 You'll need to use your best judgement to adapt variable names in order to keep them informative but reasonably concise.
 
+```{note}
+In a language like Python where indentation is part of the syntax to denote code blocks, you will be much more aware of this trade-off. <br><br>In practice the PEP8 style guide for Python recommends line widths of 79 characters and having overly descriptive names might impact your complience with a style guide like that.
+```
+
+#### Naming classes
+
+TODO: IAN
+
 #### Naming functions
 
-When naming functions, you should consider a user's point of view.
-Your user should be able to infer the purpose or action of the function from its name.
-If you can't describe the overall task performed by the function in a few words, then it may be that your function is overly complex.
-In this case, you could consider breaking the function down into a number of smaller functions that perform individual tasks.
+Naming functions should respect the best practices already covered in the [Naming variables](naming-variables), however there are a few other points worth raising that are exclusive to function and method names.
 
-Where a function performs a specific task, it can be effective to describe this task in the function name, starting with a verb like so:
+Firstly, your user should be able to infer the purpose or action of the function from its name.
+If you can't describe the overall task performed by the function in a few words, then it may be that your function is overly complex or it might require further detail in its documentation.
+
+Where a function performs a specific task, it can be effective to describe this task in the function name, starting with a verb:
 
 ````{tabs}
 
 ```{code-tab} py
-def peel_potato(vegetable):
-    if vegetable == "potato":
-        return "peeled_potato"
-    else:
-        raise ValueError("That's not a potato!")
-
-prepared_potato = peel_potato("potato")
+def process_text(data):
+    ...
+text = process_text("The following document was handled using...")
 ```
 
 ```{code-tab} r R
-peel_potato <- function(vegetable) {
-  if (vegetable == "potato") {
-    "peeled_potato"
-  } else {
-    stop("That's not a potato!")
-  }
+process_text <- function(data) {
+    ...
 }
 
-prepared_potato = peel_potato("potato")
+text = process_text("The following document was handled using...")
 ```
 
 ````
 
-Sometimes a function might be used to provide a Boolean response to a decision.
-In this case, it can be helpful to name a function as a question that is being posed.
+This is often a nice and tidy way to structure your high-level functions in your pipeline. Well defined, verb based names often lead to clear pipelines such as:
+
+```python
+datapath = "path/to/data"
+
+# in short
+report_data = generate_report( model( clean( load( datapath ))))
+
+# or, more explicitly
+data = load(datapath)
+clean_data = clean(data)
+model_results = model(clean_data)
+report_data = generate_report(model_results)
+```
+
+In cases where a function responds with a BOOLEAN (True/False) value, it is often useful to name this function in the form of a question.
 
 ````{tabs}
 
 ```{code-tab} py
-def is_clean(cleanliness):
-    if cleanliness > 5:
+def is_clean(data):
+    if mean(data) > 0:
         return True
     else:
         return False
-
-if is_clean(6):
-    print("Nice!")
 ```
 
 ```{code-tab} r R
-is_clean <- function(cleanliness) {
-  if (cleanliness > 5){
+is_clean <- function(data) {
+  if (mean(data) > 0){
       TRUE
   } else {
       FALSE
   }
 }
-
-if (is_clean(6)) {
-    print("Nice!")
-}
 ```
 
 ````
 
-This improves the readability of code that applies these functions, as seen in this example.
-
-#### Naming classes and objects
-
-Class and object names should be concise and descriptive, like variable names.
+This improves the readability of code that applies these functions.
 
 ````{tabs}
-
 ```{code-tab} py
-class SportsCar(colour):
-
-    def __init__():
-        self.colour = colour
-
-    def drive(self):
-        print("VROOOOM!")
-
-
-fast_car = SportsCar("yellow")
-fast_car.colour
-fast_car.drive()
+if is_clean(data):
+   model(data)
 ```
 
-```{code-tab} r R (S3 class)
-drive <- function(x) {
-  UseMethod("drive", x)
+```{code-tab} r R
+if (is_clean(data)) {
+    model(data)
 }
-drive.SportsCar <- function(x) {
-  print("VROOOOOOM!")
-}
-
-
-fast_car <- list(colour = "yellow")
-class(fast_car) <- "SportsCar"
-fast_car$colour
-drive(fast_car)
 ```
-
-```{code-tab} r R (S4 class)
-setClass(
-  "SportsCar",
-  slots = list(colour = "character")
-)
-drive <- function(object) {
-  print("VROOOOM!")
-}
-setMethod(
-  "drive",
-  signature("SportsCar"),
-  function(object) {print("VROOOOM!")}
-)
-
-
-fast_car <- new("SportsCar", colour = "yellow")
-fast_car@colour
-drive(fast_car)
-```
-
 ````
 
 (code-style)=
 
 ### Code style
 
-When the syntax of a programming language is not strict (as with python and R), it can be difficult to know how to "correctly" format code.
-Code style guides provide a standard or convention to work towards, with the intention of increase consistency across a programming community.
-Agreed style guides (within a team or project) might improve your ability to read other peoples code and vice versa.
-Guides might include how to appropriately:
+Programming languages can differ in a myriad of ways. One way R and Python differ for example is their use of indentation. Indentation is part of the well defined syntax of Python while it is not in the case of R. This does not mean that you shouldn't use indentation in R to make your code more readible. If in doubt it is often wise to consult how to use formatting to write more readible code by finding the style guidelines for your language.
+
+Generally, code style guides provide a standard or convention for formatting and laying out your code. The purpose of these style guides is to increase consistency across the programming community for a given language.
+
+They might include how to appropriately:
 
 - comment or document your code
-- follow naming conventions
+- name your functions, variables or classes
 - separate elements of your code with whitespace
+- use indentation to make sure your code is readible
+- other useful guidance regarding formatting
 
-Don't code in fear of breaching style guidance or showing a little flair in your programming style.
-Guides cannot account for every possibility and may decrease readability of code in some cases.
-In any case, use your best judgement.
+The existance of such style guides does not necessarily mean that each individual or team will apply these conventions when writing their code to the letter. Institutions and developer teams often have needs that might not be addressed in a guidance document aiming to capture the needs of such a diverse group of developers. Therefore, these guides are **more useful as starting points** in a discussion on **'how should our team be consistent internally in the way we write code?'**.
 
 ```{figure} ./_static/code_quality.png
 ---
@@ -562,13 +521,48 @@ alt: Comic strip describing a brutal code review.
 Code Quality, from [xkcd](https://xkcd.com/1513/)
 ```
 
-Strive to be **consistent** in your style. This is especially important when working in a coding team where you need to develop code as a group or when you are developing your own code that others might re-use.
+The core idea to remember about these guides is that individual teams have to either adopt them or adapt them and then **use them** while writing code. The goals are **readability and consistency**.
+This intra-developer consistency will most likely aid speed of developement and review as well as the ability of one developer to comprehend code written by their collegues.
+
+```{note}
+That last point is particularly important when a team member might suddenly become unavailable and the work needs to picked up.
+```
+
 Even if others take a dislike to your use of whitespace or `mixedCase`, as long as you follow a consistent style within a project other programmers will soon get used to it.
 
 ```{admonition} Common Style Guides
 [PEP8](https://www.python.org/dev/peps/pep-0008/) is an official Python style guide, which is widely used.
 The [Google](https://google.github.io/styleguide/Rguide.html) and [tidyverse](https://style.tidyverse.org/) style guides are commonly used for R.
 ```
+
+##### Pythonic and R-esque - idiomatic code
+
+There is perhaps a misconception that following style guidelines and formatting your code accordingly is the fundamental goal of writing good code in a given language.
+
+In reality, not only do the guidelines sometimes force code-reviews to tunnel vision style over more fundamental problems with the code, they also detract from assess whether the code is make the best use of a given language.
+
+We can expand the notion of style to go beyond simple spacing or capitalization. In the same way that knowing and using common idioms such as 'over the moon' or 'cold feet' make you seem like a more fluent speaker of English, a part of being fluent in a programming language is being able to write idiomatic code. Idiomatic stands for - /using, containing, or denoting expressions that are natural to a native speaker/.
+
+This might mean simplifying complex and perhaps hard to read patterns into a simpler, but well established alternative. In Python for example these two pieces of code are equivalent:
+
+```python
+# example 1 - very unpythonic
+i = 0
+my_data = []
+while i < 100:
+  my_data + [i * i / 356]
+  i += 1
+
+# example 2 - more use of python features such as range and append
+my_data = []
+for i in range(100):
+  my_data.append(i**2 / 356)
+
+# example 3 - making full use pythonic idioms - range * list comprehension
+my_data = [i**2 / 356 for i in range(100)]
+```
+
+The ability to write idiomatic code in a given language comes with time. However it is important to think about it while looking at a given codebase and the way it is written - is it leveraging everything language `X` has to offer?
 
 #### Checking code style
 
