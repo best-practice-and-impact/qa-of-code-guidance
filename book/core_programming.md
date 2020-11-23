@@ -535,7 +535,7 @@ Even if others take a dislike to your use of whitespace or `mixedCase`, as long 
 The [Google](https://google.github.io/styleguide/Rguide.html) and [tidyverse](https://style.tidyverse.org/) style guides are commonly used for R.
 ```
 
-##### Pythonic and R-esque - idiomatic code
+#### Pythonic and R-esque - idiomatic code
 
 There is perhaps a misconception that following style guidelines and formatting your code accordingly is the fundamental goal of writing good code in a given language.
 
@@ -566,11 +566,12 @@ The ability to write idiomatic code in a given language comes with time. However
 
 #### Checking code style
 
-Manually checking that code complies with a given style is laborious and a waste of your time - programmers like to automate things after all.
-Two main types of tool exist for this task, which automate validation and repair of code style:
+Someone who is able and keen on making sure their code is readable would have hopefully addressed this during the process of writing it, hence the codebases that have not had this treatment from the ground up might be already difficult to read and will be laborious to check through in detail by hand. Hence, more automated support might be required to speed up such tedious work either by providing suggestions on the fly as the code is written or by outright reformatting your work to comply with some style.
 
-- Linters - these analyse your code to flag sylistic errors (and sometimes bugs or security issues too)
-- Formatter - these not only detect when you have diverged from a style, but will automatically correct the formatting of your code
+Two main types of tool exist for these tasks are known as:
+
+- Linter - these analyse your code to flag stylistic errors (and sometimes bugs or security issues too)
+- Formatter - these not only detect when you have diverged from a style, but will automatically correct the formatting of your code to conform to some predefined style
 
 ```{list-table} Packages that can be used for linting or formatting in Python and R
 :header-rows: 1
@@ -591,7 +592,7 @@ Be sure to read the documentation for any of these tools, to understand what the
 Some can be configured to ignore or detect specific types of formatting error.
 You can run multiple of these, to catch a broader range of stylistic or programmatic errors.
 
-If you're considering these tools as part of a project, see [Continuous Integration](continuous-integration) for advice on automating them.
+If you're considering these tools as part of a project, see [Continuous Integration](continuous-integration) for advice on automating them or explore other options such as [pre-commits](https://pre-commit.com/) that do the formatting and checking prior to a git commit.
 
 ## KISS <span role="image" aria-label="difficulty rating: 2 out of 5">★★☆☆☆</span>
 
