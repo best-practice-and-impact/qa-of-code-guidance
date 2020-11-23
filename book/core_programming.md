@@ -20,6 +20,8 @@ This chapter highlights some good coding practices that will improve the readabi
 Here, readability refers how easily another analyst can gain a decent understand of how your code works, within a reasonable amount of time.
 While maintainability refers to how easily another analysts can understand your code well enough to modify and repair it.
 
+(modular)=
+
 ## Modular code
 
 Breaking your code down into smaller, more manageable chunks is a sensible way to improve readability. Regardless of the language, there are often methods to containerise your code into self-contained parts such as modules, classes or functions.
@@ -594,25 +596,42 @@ You can run multiple of these, to catch a broader range of stylistic or programm
 
 If you're considering these tools as part of a project, see [Continuous Integration](continuous-integration) for advice on automating them or explore other options such as [pre-commits](https://pre-commit.com/) that do the formatting and checking prior to a git commit.
 
-## KISS <span role="image" aria-label="difficulty rating: 2 out of 5">★★☆☆☆</span>
+## Software ideas for Analysts
 
-**K**eep **I**t **S**imple and **S**traightforward
+Over many years software engineering teams have followed practices such as KISS (Keep it Simple and Straightforward) and SOLID.
+These practices allow for more robustly written code and provide other benefits such as easier maintenance of software projects.
+Analysts using code as a means to perform analysis could heavily benefit from at least partially applying such practices in their own codebases.
 
-```{epigraph}
-Make everything as simple as possible, but not simpler.
+This chapter will try to condense some key messages and guidelines from these practices for use by code writing analysts.
+That said, reading and learning more about these practices is likely to benefit the quality of your code and is **highly encouraged**.
 
--- Albert Einstein, probably
-```
+### Simplicity
 
-The KISS principle applies to all forms of communication, including coding.
-You are aiming to communicate a complex series of steps to your reader.
-Keeping the overall design of your code simple will improve the clarity of this communication.
-Many principles that support good programming practices share this common theme - **simplicity**.
+The ability to convey information in simple and clear way matters.
+This is particularly true when exchanging information that is already complex.
+When writing code you often trying to solve problems that are complex in nature.
+You should avoid introducing extra complexity to the problem by making your code unmaintainable, hard to run or uncomprehendable.
 
-Simple programs are more likely to run. Bugs in the code will be easier to track down.
+A good guideline would be to seek out the simplest solution wherever possible.
+More generally here are a few tips to make sure you keep your project nice and simple:
 
-While you should strive towards simplicity, this should not compromise the usability of your code.
-It should still perform the desired task, just in a way that is no more complex than necessary.
+- solve the problem - do not get distracted and make sure you have a clear outcome in mind that you are trying to reach with a given piece of code
+- try not to 'reinvent the wheel' - use available packages when they solve the problem, they will most likely be better documented and won't need extra maintenance
+- split your code into understandable parts - consider how to lay out your [code into self-contained parts](modular)
+- solve the problem without over-engineering
+
+It is worth picking up and expanding on that later point around over-engineering.
+If your project has potential to be reused as a third party library by someone else or in cases where you have time and resource to add more features to your project
+it is often tempting to keep adding more 'bells and whistles' to your code.
+
+However every new 'bell' and every new 'whistle' means you will have to write one more test, one more docstring and it will be one more thing your future self or someone else
+will have to read to understand your code.
+Really consider if adding these extras in a resource constrained environment will make your code more or less maintainable, user-friendly and correct.
+After all, with more to check, there is always more to go wrong.
+In other words, make sure to **focus on what needs to be done**, implement that and make sure to keep it simple.
+
+Lastly it is worth stressing that in the end you are still solving complex problems that might require complex solutions.
+In those cases make sure to introduce complexity only where needed and be aware that any complexity you add will be reflected somewhere.
 
 ### Don't Repeat Yourself (DRY)
 
