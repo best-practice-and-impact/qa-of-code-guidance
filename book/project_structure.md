@@ -82,18 +82,18 @@ You should use folders within each project to separate raw data, documentation, 
 A typical analytical project folder might look like:
 
 ```
-|-- README
-|--requirements.txt
-|-- data
+|-- README.md
+|-- requirements.txt
+|-- data/
 |   -- incident_counts.csv
-|-- docs
+|-- docs/
 |   -- notebook.md
 |   -- manuscript.md
 |   -- changelog.md
-|-- results
+|-- results/
 |   -- incident_counts_by_age.csv
 |   -- incidents_over_time.svg
-|-- src
+|-- src/
 |   -- data_cleaning.py
 |   -- main_analysis.py
 |   -- generate_plots.py
