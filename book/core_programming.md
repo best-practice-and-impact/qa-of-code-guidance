@@ -608,11 +608,12 @@ That said, reading and learning more about these practices is likely to benefit 
 ### Simplicity
 
 The ability to convey information in simple and clear way matters.
-This is particularly true when exchanging information that is already complex.
-When writing code you often trying to solve problems that are complex in nature.
-You should avoid introducing extra complexity to the problem by making your code unmaintainable, hard to run or uncomprehendable.
 
-A good guideline would be to seek out the simplest solution wherever possible.
+This is particularly true when exchanging information that is already complex.
+When writing code you are often trying to solve problems that are complex in nature.
+You should **avoid introducing extra complexity** to the problem.
+A good guideline to achieve this would be to seek out the simplest solution wherever possible.
+
 More generally here are a few tips to make sure you keep your project nice and simple:
 
 - solve the problem - do not get distracted and make sure you have a clear outcome in mind that you are trying to reach with a given piece of code
@@ -626,12 +627,13 @@ it is often tempting to keep adding more 'bells and whistles' to your code.
 
 However every new 'bell' and every new 'whistle' means you will have to write one more test, one more docstring and it will be one more thing your future self or someone else
 will have to read to understand your code.
+
 Really consider if adding these extras in a resource constrained environment will make your code more or less maintainable, user-friendly and correct.
 After all, with more to check, there is always more to go wrong.
 In other words, make sure to **focus on what needs to be done**, implement that and make sure to keep it simple.
 
 Lastly it is worth stressing that in the end you are still solving complex problems that might require complex solutions.
-In those cases make sure to introduce complexity only where needed and be aware that any complexity you add will be reflected somewhere.
+In those cases make sure to introduce complexity only where needed and be aware that any complexity you add will be reflected somewhere else (more documentation, more tests etc.).
 
 ### Don't Repeat Yourself (DRY)
 
