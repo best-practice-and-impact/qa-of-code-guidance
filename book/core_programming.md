@@ -20,6 +20,8 @@ This chapter highlights some good coding practices that will improve the readabi
 Here, readability refers how easily another analyst can gain a decent understand of how your code works, within a reasonable amount of time.
 While maintainability refers to how easily another analysts can understand your code well enough to modify and repair it.
 
+(modular)=
+
 ## Modular code
 
 Breaking your code down into smaller, more manageable chunks is a sensible way to improve readability. Regardless of the language, there are often methods to containerise your code into self-contained parts such as modules, classes or functions.
@@ -535,7 +537,7 @@ Even if others take a dislike to your use of whitespace or `mixedCase`, as long 
 The [Google](https://google.github.io/styleguide/Rguide.html) and [tidyverse](https://style.tidyverse.org/) style guides are commonly used for R.
 ```
 
-##### Pythonic and R-esque - idiomatic code
+#### Pythonic and R-esque - idiomatic code
 
 There is perhaps a misconception that following style guidelines and formatting your code accordingly is the fundamental goal of writing good code in a given language.
 
@@ -566,11 +568,12 @@ The ability to write idiomatic code in a given language comes with time. However
 
 #### Checking code style
 
-Manually checking that code complies with a given style is laborious and a waste of your time - programmers like to automate things after all.
-Two main types of tool exist for this task, which automate validation and repair of code style:
+Someone who is able and keen on making sure their code is readable would have hopefully addressed this during the process of writing it, hence the codebases that have not had this treatment from the ground up might be already difficult to read and will be laborious to check through in detail by hand. Hence, more automated support might be required to speed up such tedious work either by providing suggestions on the fly as the code is written or by outright reformatting your work to comply with some style.
 
-- Linters - these analyse your code to flag sylistic errors (and sometimes bugs or security issues too)
-- Formatter - these not only detect when you have diverged from a style, but will automatically correct the formatting of your code
+Two main types of tool exist for these tasks are known as:
+
+- Linter - these analyse your code to flag stylistic errors (and sometimes bugs or security issues too)
+- Formatter - these not only detect when you have diverged from a style, but will automatically correct the formatting of your code to conform to some predefined style
 
 ```{list-table} Packages that can be used for linting or formatting in Python and R
 :header-rows: 1
@@ -591,120 +594,152 @@ Be sure to read the documentation for any of these tools, to understand what the
 Some can be configured to ignore or detect specific types of formatting error.
 You can run multiple of these, to catch a broader range of stylistic or programmatic errors.
 
-If you're considering these tools as part of a project, see [Continuous Integration](continuous-integration) for advice on automating them.
+If you're considering these tools as part of a project, see [Continuous Integration](continuous-integration) for advice on automating them or explore other options such as [pre-commits](https://pre-commit.com/) that do the formatting and checking prior to a git commit.
 
-## KISS <span role="image" aria-label="difficulty rating: 2 out of 5">★★☆☆☆</span>
+## Software ideas for Analysts
 
-**K**eep **I**t **S**imple and **S**traightforward
+Over many years software engineering teams have followed practices such as KISS (Keep it Simple and Straightforward) and SOLID.
+These practices allow for more robustly written code and provide other benefits such as easier maintenance of software projects.
+Analysts using code as a means to perform analysis could heavily benefit from at least partially applying such practices in their own codebases.
 
-```{epigraph}
-Make everything as simple as possible, but not simpler.
+This chapter will try to condense some key messages and guidelines from these practices for use by code writing analysts.
+That said, reading and learning more about these practices is likely to benefit the quality of your code and is **highly encouraged**.
 
--- Albert Einstein, probably
+### Simplicity
+
+The ability to convey information in simple and clear way matters.
+
+This is particularly true when exchanging information that is already complex.
+When writing code you are often trying to solve problems that are complex in nature.
+You should **avoid introducing extra complexity** to the problem.
+A good guideline to achieve this would be to seek out the simplest solution wherever possible.
+
+More generally here are a few tips to make sure you keep your project nice and simple:
+
+- solve the problem - do not get distracted and make sure you have a clear outcome in mind that you are trying to reach with a given piece of code
+- try not to 'reinvent the wheel' - use available packages when they solve the problem, they will most likely be better documented and won't need extra maintenance
+- split your code into understandable parts - consider how to lay out your [code into self-contained parts](modular)
+- solve the problem without over-engineering
+
+It is worth picking up and expanding on that later point around over-engineering.
+If your project has potential to be reused as a third party library by someone else or in cases where you have time and resource to add more features to your project
+it is often tempting to keep adding more 'bells and whistles' to your code.
+
+However every new 'bell' and every new 'whistle' means you will have to write one more test, one more docstring and it will be one more thing your future self or someone else
+will have to read to understand your code.
+
+Really consider if adding these extras in a resource constrained environment will make your code more or less maintainable, user-friendly and correct.
+After all, with more to check, there is always more to go wrong.
+In other words, make sure to **focus on what needs to be done**, implement that and make sure to keep it simple.
+
+```{note}
+**You ain't gonna need it**
+
+It's important to capture the requirements of your code before writing it.
+This includes when your code needs to be adapted to meet changing needs.
+
+You should then aim to meet these requirements in the functionality that your code provides.
+Developing anything more than this may not be beneficial.
+It can be tempting to try to account for every eventuality in your program.
+As there's a good chance that many cases that you account for will never occur, you should try to prioritise based on what you're certain is needed from your code.
 ```
 
-The KISS principle applies to all forms of communication, including coding.
-You are aiming to communicate a complex series of steps to your reader.
-Keeping the overall design of your code simple will improve the clarity of this communication.
-Many principles that support good programming practices share this common theme - **simplicity**.
-
-Simple programs are more likely to run. Bugs in the code will be easier to track down.
-
-While you should strive towards simplicity, this should not compromise the usability of your code.
-It should still perform the desired task, just in a way that is no more complex than necessary.
+Lastly it is worth stressing that in the end you are still solving complex problems that might require complex solutions.
+In those cases make sure to introduce complexity only where needed and be aware that any complexity you add will be reflected somewhere else (more documentation, more tests etc.).
 
 ### Don't Repeat Yourself (DRY)
 
-Repetition not only wastes your time, writing redundant lines of code, but it makes code more difficult to read and maintain.
-You can use modular code to tackle repetition.
+As you can see from the section on [modular code](modular), you are encouraged to refactor your code into more self contained components for ease of testing, reproducibility and other nice properties of such code.
+However, it is worth stressing that often times 'quick and dirty' solutions involve copy-pasted and tweaked code in several places that is functionality identical.
+This is expected and natural in the initial stages of a project, however repetition not only wastes your time if the code in question keeps getting copied further into the code, but it also makes your code more difficult to read.
 
 Consider a script that contains three copies of a similar piece of code.
 If the code that is used to perform the repetitive task is found to be incorrect, or if a developer wishes to modify the task being performed by this code, they must implement a similar change in each of the three copies.
-In the example below, we want to get the odd numbers from three different lists of numbers.
+
+Furthermore imagine yourself in a situation where you are reading a codebase you have never seen before.
+Having to validate that each similar section of code has the same functionality as the ones you have already seen adds a noticeable mental strain to the reader.
+
+To put this in context, let us use an example where the developer wants to get the odd numbers from three different lists of numbers.
 
 ````{tabs}
 
 ```{code-tab} py
 first_ten_numbers = list(range(1, 11))
-odd_first_ten_numbers = []
+second_ten_numbers = list(range(10, 21))
+third_ten_numbers = list(range(20, 31))
+
+odd_first = []
 for number in first_ten_numbers:
     if number % 2 == 1:
-    odd_first_ten_numbers.append(number)
+        odd_first.append(number)
 
-second_ten_numbers = list(range(10, 21))
-odd_second_ten_numbers = []
+odd_second = []
 for number in second_ten_numbers:
     if number % 2 == 1:
-    odd_second_ten_numbers.append(number)
+        odd_second.append(number)
 
-third_ten_numbers = list(range(20, 31))
-odd_third_ten_numbers = []
+odd_third = []
 for number in third_ten_numbers:
     if number % 2 == 0:
-    odd_third_ten_numbers.append(number)
+        odd_third.append(number)
 ```
 
 ```{code-tab} r R
 first_ten_numbers = 1:10
-odd_first_ten_numbers <- c()
+second_ten_numbers = 11:20
+third_ten_numbers = 21:30
+
+odd_first <- c()
 for (number in first_ten_numbers) {
   if (number %% 2 == 1) {
-    odd_first_ten_numbers <- c(odd_first_ten_numbers, number)
+    odd_first <- c(odd_first, number)
   }
 }
 
 
-second_ten_numbers = 11:20
-odd_second_ten_numbers = c()
+odd_second = c()
 for (number in second_ten_numbers) {
   if (number %% 2 == 1) {
-    odd_second_ten_numbers <- c(odd_second_ten_numbers, number)
+    odd_second <- c(odd_second, number)
   }
 }
 
-third_ten_numbers = 21:30
-odd_third_ten_numbers = c()
+odd_third = c()
 for (number in third_ten_numbers) {
   if (number %% 2 == 0) {
-    odd_third_ten_numbers <- c(odd_third_ten_numbers, number)
+    odd_third <- c(odd_third, number)
   }
 }
 ```
 
 ````
 
-In the example the third repeated snippet of code actually collects the even numbers, but assigns them to the `odd_third_ten_numbers` variable.
-A naive user or developer may assume that all copies of the similar code are performing the same task.
-Even if they are aware of the difference, they may be unable to tell if a difference between these copies is intentional or a mistake.
+In the example the third repeated snippet of code actually collects the even numbers, but assigns them to the `odd_third` variable.
+A developer may assume that all copies of the similar code are performing the same task.
+Even if they are aware of the difference, they may be unable to tell if a difference between these copies is intentional or a mistake without explicit comments.
+Generally, the example above has several issues, however it shows how **repetition can add to confusion** in circumstances like this.
 
-Modifying multiple copies of a code snippet is laborious and presents a risk - some copies of the repeated code may be modified while others erroneously remain the same.
+Modifying multiple copies of a code snippet is laborious and presents a risk - **some copies of the repeated code may be modified while others erroneously remain the same**.
 This is analogous to modifying the formula in individual cells of a spreadsheet.
-
-**Refactoring** is the process of restructuring code without changing its behaviour.
-For example, converting a few lines of code with a common overall task into a function or class.
-
 If you refactor repetitive code into functions or classes, then bug fixes or modifications need only be carried out once to change all implementations.
-New, intended behaviour is then consistently given by each call to the reusable function or class.
-The intended functionality should be reflected in the function name.
+New, intended behaviour is then consistently given by each call of the function or method.
+
+The following presents how one could change the previous example for the better:
 
 ````{tabs}
 
 ```{code-tab} py
 def get_odd(numbers):
-    odd_numbers = []
-    for number in numbers:
-        if number % 2 == 1:
-        odd_numbers.append(number)
-    return odd_numbers
+    "Get only the odd numbers"
+    return [number for number in numbers if number % 2 == 1]
 
 first_ten_numbers = list(range(1, 11))
-odd_first_ten_numbers = get_odd(first_ten_numbers)
-
 second_ten_numbers = list(range(20, 21))
-odd_second_ten_numbers = get_odd(second_ten_numbers)
-
 third_ten_numbers = list(range(20, 21))
-odd_third_ten_numbers = get_odd(third_ten_numbers)
+
+odd_first = get_odd(first_ten_numbers)
+odd_second = get_odd(second_ten_numbers)
+odd_third = get_odd(third_ten_numbers)
 ```
 
 ```{code-tab} r R
@@ -720,22 +755,21 @@ get_odd <- function(numbers) {
 
 
 first_ten_numbers = 1:10
-odd_first_ten_numbers = get_odd(first_ten_numbers)
-
 second_ten_numbers = 11:20
-odd_second_ten_numbers = get_odd(second_ten_numbers)
-
 third_ten_numbers = 21:30
-odd_third_ten_numbers = get_odd(third_ten_numbers)
+
+odd_first = get_odd(first_ten_numbers)
+odd_second = get_odd(second_ten_numbers)
+odd_third = get_odd(third_ten_numbers)
 ```
 
 ````
 
-Here we've refactored the repetitive code into a function to get odd numbers, called `get_odd`.
 If the functionality of `get_odd` needs to be modified, it now need only be done once.
 Additionally, this code is more concise and it's purpose is easier to interpret.
 
-If two slightly different tasks must be carried out, you might approach this in one of two ways:
+`````{note}
+If two slightly different tasks must be carried out, as in you need both the odd and the even numbers, you might approach this in one of two ways:
 
 - develop two functions containing the different elements of code, with names that express the difference in their purpose
 - add a parameter to your function that will allow a user to differentiate between the two tasks
@@ -751,29 +785,21 @@ def is_odd(number):
         return False
 
 def get_odd(numbers):
-    odd_numbers = []
-    for number in numbers:
-        if is_odd(number):
-            odd_numbers.append(number)
-    return odd_numbers
+    "Get only the odd numbers"
+    return [number for number in numbers if number % 2 == 1]
 
 def get_even(numbers):
-    even_numbers = []
-    for number in numbers:
-        if not is_odd(number):
-            even_numbers.append(number)
-    return even_numbers
+    "Get only the even numbers"
+    return [number for number in numbers if number % 2 == 0]
 
 
 # More concise, but also more complex - not always best
 def get_numbers_with_parity(numbers, parity):
-    if parity == "odd":
-        remainder = 1
-    elif parity == "even":
-        remainder = 0
-    else:
+    if parity not in ["odd", "even"]:
         raise ValueError("parity must be 'odd' or 'even'")
+    remainder = 1 if parity == "odd" else 0:
     return [number for number in numbers if number % 2 == remainder]
+
 odd_numbers = get_numbers_with_parity(list(range(1, 11), "odd"))
 ```
 
@@ -827,18 +853,12 @@ odd_numbers <- get_numbers_with_parity(1:10, "odd")
 
 You should use your best judgement to decide which is most appropriate in a given situation.
 
+`````
+
 It can be difficult to decide when repetition warrants refactoring of code into reusable functions/classes.
 The "Rule of Three" suggests that if similar code has been written more than two times, then it is worth extracting its operation to a reproducible procedure like a function or class.
-
-### You ain't gonna need it
-
-It's important to capture the requirements of your code before writing it.
-This includes when your code needs to be adapted to meet changing needs.
-
-You should then aim to meet these requirements in the functionality that your code provides.
-Developing anything more than this may not be beneficial.
-It can be tempting to try to account for every eventuality in your program.
-As there's a good chance that many cases that you account for will never occur, you should try to prioritise based on what you're certain is needed from your code.
+However, consider if you have already written the code twice or are about to write it for the second time, whether it is a piece code you might use a lot in future. If the answer is yes,
+turn it into something more modular and reusable.
 
 ### Be explicit
 
