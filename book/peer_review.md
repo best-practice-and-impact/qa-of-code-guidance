@@ -2,6 +2,13 @@
 
 Peer review of code is a quality assurance activity, where a developer other than the code's author views and tests the usage of a piece of code.
 
+```{admonition} Key strategies
+:class: admonition-strategies
+
+As a core component of any quality assurance, this section on peer review draws from the [Aqua book](https://www.gov.uk/government/publications/the-aqua-book-guidance-on-producing-quality-analysis-for-government) guidance on producing quality analysis for government.
+```
+
+
 ## Motivation
 
 ### Why do we need peer review?
@@ -9,6 +16,14 @@ Peer review of code is a quality assurance activity, where a developer other tha
 Peer review allows a fresh pair of eyes to take a look at your work.
 This form of systematic check helps to identify errors in your code and provides feedback on your approach to tackling a problem.
 This constructive feedback helps you to improve your code quality and provides confidence in your work.
+It acts to make sure that our analysis is fit for purpose.
+
+```{epigraph}
+Continuous challenge and improvement is essential to ensure that the people we serve – ministers and, of course, the public – have trust in our analysis. 
+
+-- Nick Macphereson, former Permanent Secretary to the Treasury
+```
+
 
 ```{todo}
 Must include reference to the AQUA book
@@ -45,10 +60,10 @@ When reviewing code, you should ask yourself the following questions:
 * Is the required functionality tested sufficiently?
 * How easy will it be to alter this code when requirements change? They always do.
     * Are high level parameters kept in a dedicated configuration file, or Would somebody need to work their way through the code with lots of manual edits to reconfigure for a new run?
-* Is the code style consistent?
 * Can I generate the same outputs that the analysis claims to produce?
     * Have dependencies been sufficiently documented?
     * Is the code version, data version and configuration recorded?
+* Is the code style consistent?
 
 You might use a review template to formalise review in your development process.
 This example is written in Markdown, so that it can be used in Git platform Pull/Merge requests:
