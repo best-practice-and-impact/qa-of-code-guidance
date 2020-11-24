@@ -45,12 +45,13 @@ Please:
 * Keep text as simple as possible
 * Provide alt text for all images
 * Explain informative image content in text, where possible
+* Attach hyperlinks to informative anchor text (e.g. 'blog post on reproducibility' instead of 'this link')
 * Provide examples of good and/or bad practices to support your content
 * Take on feedback from users and other developers
 
-Any content that is in early development, should be kept under the `early_development` directory.
-While content that is ready for publication belongs under `book`.
-All pages in `book` must be referenced in `_toc.yml` or a warning will be raised and the changes will not be published.
+Any content that is in early development, should be kept under the `early_development/` directory.
+While content that is ready for publication belongs under `book/`.
+All pages in `book/` must be referenced in `_toc.yml` or a warning will be raised and the changes will not be published.
 
 
 ### Submitting contributions
@@ -58,14 +59,6 @@ All pages in `book` must be referenced in `_toc.yml` or a warning will be raised
 If you are not a member of BPI and would like to contribute, please create a fork of the repository.
 You should create a new branch to collect related changes that you make.
 Once you're happy with any changes you've made to the book, you should raise a [Pull Request](https://github.com/best-practice-and-impact/qa-of-code-guidance/pulls) to the `master` branch of the book's repository.
-
-Please start your pull request title with a keyword to indicate the type of change(s):
-
-* Add - Added entirely new content
-* Improve - Improved existing content
-* Fix - Fix typo's or other mistakes in existing content
-* Document - Changes to the documentation of the project
-
 
 ## Publishing changes
 
