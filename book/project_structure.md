@@ -82,18 +82,18 @@ You should use folders within each project to separate raw data, documentation, 
 A typical analytical project folder might look like:
 
 ```
-|-- README
-|--requirements.txt
-|-- data
+|-- README.md
+|-- requirements.txt
+|-- data/
 |   -- incident_counts.csv
-|-- docs
+|-- docs/
 |   -- notebook.md
 |   -- manuscript.md
 |   -- changelog.md
-|-- results
+|-- results/
 |   -- incident_counts_by_age.csv
 |   -- incidents_over_time.svg
-|-- src
+|-- src/
 |   -- data_cleaning.py
 |   -- main_analysis.py
 |   -- generate_plots.py
@@ -151,8 +151,9 @@ It can save time by creating common folder structures, laying out essential docu
 Layout out a structure to include documentation and code testing encourages these good practices.
 
 Useful cookiecutters include:
-* The comprehensive Python data science project template [cookiecutter-data-science](http://drivendata.github.io/cookiecutter-data-science/)
-* The Python package template [cookiecutter-pypackage](https://cookiecutter-pypackage.readthedocs.io/en/latest/)
+* The Government data science [govcookiecutter](https://github.com/ukgovdatascience/govcookiecutter), including data security features.
+* The comprehensive Python data science project template [cookiecutter-data-science](http://drivendata.github.io/cookiecutter-data-science/).
+* The Python package template [cookiecutter-pypackage](https://cookiecutter-pypackage.readthedocs.io/en/latest/).
 
 Rstudio provides a standard template for R packages via `File > New Project... > New Directory > R Package`.  We have created some basic templates for an [R package](https://github.com/best-practice-and-impact/example-package-r) and a [Python package](https://github.com/best-practice-and-impact/example-package-python) that may be helpful.
 R project structures can also be set up or extended, one component at a time, using the [`usethis` workflow package](https://usethis.r-lib.org/).
