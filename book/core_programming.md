@@ -28,11 +28,11 @@ Breaking your code down into smaller, more manageable chunks is a sensible way t
 
 ### Functions
 
-When prototyping we often copy paste code to 'make things work' but when time comes to wrap that work up, it is worth taking repetative code that can be easily parametrised and turning it into functions. Writing functions as well-sealed and reusable containers helps them be easily testable and readible.
+When prototyping we often copy paste code to 'make things work' but when time comes to wrap that work up, it is worth taking repetitive code that can be easily parameterised and turning it into functions. Writing functions as well-sealed and reusable containers helps them be easily testable and readable.
 
-When starting to write functions consider what is the right **level of abstraction**. Namely, can this large piece of code be turned into concise and readible function as it is, without having to pass the resulting function too many arguments? If not, perhaps you need to break the code into even smaller helper functions (that can also be reused in other places across the codebase) and then **use these smaller functions to build up a larger function that performs the actions you need**.
+When starting to write functions consider what is the right **level of abstraction**. Namely, can this large piece of code be turned into concise and readable function as it is, without having to pass the resulting function too many arguments? If not, perhaps you need to break the code into even smaller helper functions (that can also be reused in other places across the codebase) and then **use these smaller functions to build up a larger function that performs the actions you need**.
 
-This helps you break the complexity down into small and easily comprehendable chunks that can be documented, tested and understood much easier.
+This helps you break the complexity down into small and easily comprehendible chunks that can be documented, tested and understood much easier.
 
 Another thing to consider is the idea of `referential transparency`. Without going into that much detail, the core rule of thumb to follow is: **can I take my function and replace it by the value that it would return?**
 
@@ -42,7 +42,7 @@ In cases where your function alters some external values to that it was not expl
 
 However this is not always possible or practical in languages that are not designed in a way that encourages this type of programming. And sometimes you **want** a function to capture and affect values outside of the ones provided to it as arguments (i.e. adding data to a database or writing to file). Make sure to control this type of behaviour and to signal to the end-user to expect these things to happen. This is usually communicated in documentation for end-users and also in comments for fellow developers.
 
-Ultimately, if you do signal where these kind of things might happend, someone trying to debug issues that might be caused by this behaviour will know where to look.
+Ultimately, if you do signal where these kind of things might happen, someone trying to debug issues that might be caused by this behaviour will know where to look.
 
 **To summarise**:
 
@@ -52,9 +52,34 @@ Ultimately, if you do signal where these kind of things might happend, someone t
 
 ### Classes
 
-TODO: IAN
+With a more complex system, object-orientated programming (OOP) can help to reduce complexity by hiding low-level details from the developer when they don't need to know. The private "state" can be stored in a `class` instance that only the class `methods` (functions defined with the class) need to know about. Different implementations can then be used by the end user - if the classes support the same methods. You can also add "private" methods as helper methods which aren't exposed to users, to enable reuse of code within an object.
 
-### Scripts:
+In Python, this is known as **duck typing** (if it looks like a duck, and quacks like a duck - its a duck); here, if a class has the same methods that you require as another class, you can use either class. With other languages `interfaces` are defined to record exactly what a class should supply to be considered equivalent. Perhaps we need a class to store data - it could have several "write" methods; one implementation could deal with storing data into a database, but you also have a variant that stores data in local CSV files instead. In your code, you could switch which class you provide to your functions - the functions don't need to know if they are updating CSV or SQL files, they'll work regardless.
+
+If objects have a similar API (i.e. the methods they supply), then you can switch between them easily; a good example of this is `scikit-learn`, where the different linear model types are represented by different classes that all support a common set of methods. Any model can then be used in a library pipeline and swapped out with minimal effort - they all have methods `fit()` and `predict()`.
+
+A word of caution, however, when creating classes; it is very easy when starting to consider nouns as classes, and any adjectives applied to the nouns as methods. For example: "the model loads the data" would imply "model" is a class, and it should have a "load_data" method. This will work fine for small systems, but you will find one of your classes gains all of the underlying logic with many methods, whilst other classes just store data with few methods. This can be considered **Data Driven Design**; a better approach is **[Responsibility Driven Design](https://en.wikipedia.org/wiki/Responsibility-driven_design)** (linked to SOLID, covered later in this document).
+
+```{note}
+If all of your code is in one class, it can become overly complex and hence difficult to maintain. You want your classes to know as little as possible to reduce dependencies on other systems - and hence avoid being affected if other systems change. The challenge is to trade maintainability and reuse against complexity.
+```
+
+**Responsibility Driven Design** makes objects that are normally "passive" become "active" - for example, with a banking system, rather than having an overly complex object representing a bank account (and handling all money movements), instead objects representing "cheques" and "cash" gain payment methods. Hence a cheque knows how to pay itself into an account; if we later needed to add new payment methods, the existing classes will unlikely to be affected. The bank account's responsibility is holding money, receiving it and paying it out. A cheque's responsibility is to pay itself in to a bank account and retrieve money from its associated account.
+
+Many **[Design Patterns](https://en.wikipedia.org/wiki/Software_design_pattern)** are available with OOP - reusable solutions to common problems. An example is if you have an `Orange` class, and an `OrangePeeler` class. You've been given an `Apple` class, but would really love to be able to peel it - use an adapter pattern. Create an `OrangeAdapter` class that has the same methods as an `Orange` but accepts an `Apple` at construction. `OrangeAdapter` then takes all the `Orange` methods and translates them into equivalent method calls to the `Apple` class it was told about at construction. The `Apple` now looks like an `Orange`.
+
+Object-Orientated Programming introduces the concept on **inheritance** - where a class can "inherit" its methods from another class. This enables extension of existing classes, but can cause problems for the unwary. Its an in-depth topic for a different training course, but be aware that inheritance locks you in to the object you inherit from - if this object changes, you are dragged along with it. If you're using inheritance to reuse code from another class, prefer **encapsulation** instead. This means keep a private instance of the class you wish to re-use, and delegate the work down to it within your own methods - rather than inheriting the methods. Now, if you change your mind about using this reused object - you aren't tied in to it, as no-one outside your class knows you've used it.
+
+**To summarise**:
+
+- classes hide implementation detail from developers, enabling implementation to be changed without affecting users
+- look to use consistent methods in a group of related classes to enable switching between them without affecting the code using it (consider Python **duck typing** or other languages' **interfaces**)
+- avoid all logic arriving in a single class, surrounded by minimal holding classes - distribute logic around to ease maintenance (changes will affect smaller areas of code)
+- be aware of trading maintainability for complexity - too many classes can be hard to understand
+- Design Patterns have solutions to many common problems and are a useful toolbox
+- prefer encapsulation over inheritance, especially with code reuse (see **Liskov Substition Principle** in the SOLID section later)
+
+### Scripts
 
 Scripts are simply files containing code that you would like to execute. In Python you commonly have a `main.py` script that orchestrates part of your codebase to achieve an outcome. In machine-learning projects, you sometimes have `train.py` and `test.py` which are scripts that train the model and produce performance metrics.
 
