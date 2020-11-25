@@ -72,6 +72,8 @@ Many **[Design Patterns](https://en.wikipedia.org/wiki/Software_design_pattern)*
 
 Object-Orientated Programming introduces the concept of **inheritance** - where a class can "inherit" its methods from another class. This enables extension of existing classes, but can cause problems for the unwary. Its an in-depth topic for a different training course, but be aware that inheritance locks you in to the object you inherit from - if this object changes, you are dragged along with it. If you're using inheritance to reuse code from another class, prefer **encapsulation** instead. This means keep a private instance of the class you wish to re-use, and delegate the work down to it within your own methods - rather than inheriting the methods and directly using the other class. Now, if you change your mind about using this reused object - you aren't tied in to it, as no-one outside your class knows you've used it.
 
+Finally, be wary when using classes to "chain" items together; for instance, if a "book" has a "publisher" and the publisher has an "address", you could: `book.publisher().address().postcode()`. However, chains like this are fragile as they depend on multiple parts of the system not changing. The "Demeter" research project found that this style of code produce a high proportion of bugs, resulting in the **(Law of Demeter)[https://en.wikipedia.org/wiki/Law_of_Demeter]**: "Only talk to your immediate friends". Namely, only access the objects you know about directly within a class - delegate the refined knowledge to the class you know about. Your code is then exposed to fewer opportunities to get damaged by a change in the codebase. There is a penalty for this - you replace with `book.publisherPostcode()` which internally would call `publisher.postcode()`, so we've added a method to `publisher` as well as `book`; we're trading maintainability for complexity, so consider if it is worthwhile.
+
 **To summarise**:
 
 - classes hide implementation detail from developers, enabling implementation to be changed without affecting users and reducing visual noise
@@ -96,20 +98,20 @@ Having something that is not reproducible in a script will not make it more repr
 **To summarise**:
 
 - scripts are a good way to orchestrate your functions and classes in order to build a simple, yet effective pipeline
-- are text documents containing source code which makes them easily human readible and auditable
+- are text documents containing source code which makes them easily human readable and auditable
 - may be broken down into sections using comments for readability
 
 (modules)=
 
 ### Modules
 
-Simply put, **modules are scripts which house the functions that you want to use in other scripts**. As you write you code and find opportunities to create classes or functions that reduce repetition and promote easier code comprehension, you might eventually decide that you want these functions to sit outside of your `main.py` script and you might decide that they can be grouped into consistent groupings. This is where modules come in. An example will help comprehend how this might work in practice.
+Simply put, **modules are scripts which house the functions that you want to use in other scripts**. As you write your code and find opportunities to create classes or functions that reduce repetition and promote easier code comprehension, you might eventually decide that you want these functions to sit outside of your `main.py` script and you might decide that they would fit into consistent groupings. This is where modules come in; an example will help comprehend how this might work in practice.
 
 ```{note}
 We will be using Python for the illustration, however the same principles apply in R.
 ```
 
-Imagine a project where an analyst has created a massive script in a pipeline and then upon reflection split up their data analysis pipeline into functions relating to `data processing`, `data modelling` and `result presentation`. They might decide they want to have a pipeline script called `main` but they also might want to keep it readible and simple. First they create 3 files: `processing.py`, `modelling.py` and `reporting.py`. Their directory now looks something similar to:
+Imagine a project where an analyst has created a massive script in a pipeline and then upon reflection split up their data analysis pipeline into functions relating to `data processing`, `data modelling` and `result presentation`. They might decide they want to have a pipeline script called `main` but they also might want to keep it readable and simple. First they create 3 files: `processing.py`, `modelling.py` and `reporting.py`. Their directory now looks something similar to:
 
 ```
 project
@@ -142,7 +144,7 @@ This is not the de facto example of a main script and it is just to illustrate h
 ```
 
 ````{admonition} A step further
-Another step that can be taken to introduce a bit of clarity is to further wrap these modules into their own folder like so:
+Another step that can be taken to introduce clarity is to further wrap these modules into their own folder like so:
 
 ```
 project
@@ -156,7 +158,7 @@ project
 | README.md
 ```
 
-And the expected python code then can be structured as follows
+And the expected python code then can be structured as follows:
 
 ```python
 import pandas as pd
@@ -184,13 +186,13 @@ export(report)
 
 Programming languages often ship with quite a few in-built functions and procedures available to the end-users. However, when it comes to solving specialised problems, these in-built functions are often not enough and you will have to build functionality to address a given problem from scratch. If the solutions you build are useful you can then wrap them up in a package and allow other users to install it. They can then reuse the work you have put in within their own code to solve similar problems.
 
-In short, packages are **self-contained collections of code written by someone else to achieve some purpose**. For example, packages like `dplyr` and `pandas` are essential when performing data wrangling and contain a myriad of functions that allows us to avoid rewriting this functionality from scratch every time. Under the hood this is likely to be a set of [modules](modules) containing relevant functions, classes and other code that someone has written and wrapped up in a particular way that the programming language you use can understand, install and make available to you for import.
+In short, packages are **self-contained collections of code written by someone else to achieve some purpose**. For example, packages like `dplyr` and `pandas` are essential when performing data wrangling and contain a myriad of functions that allows us to avoid rewriting this functionality from scratch every time. Inside these packages is likely to be a set of [modules](modules) containing relevant functions, classes and other code that someone has written and wrapped up in a particular way that the programming language you use can understand, install and make available to you for import.
 
 ```{note}
-This section will not cover the practices required to package up and distribute your code as a package. However if you would like to know more please seek out the packaging guides for your respective language.
+This section will not cover the practices required to package and distribute your code as a package. However if you would like to know more please seek out the packaging guides for your respective language.
 ```
 
-It is useful to keep in mind the question: **is my code solving a problem that someone else has not provided a solution in my language?**
+It is useful to keep in mind the question: **is my code solving a problem that someone else has not provided a solution to in my language?**
 If the answer is 'Yes' then perhaps it is worth considering wrapping up your code and distributing it wider.
 
 ```{note}
@@ -205,20 +207,20 @@ If you feel like you are writing code that you might consider turning into a pac
 
 With all the other guidance in mind, it is worth considering how these tips can be applied in structuring your codebase and enhancing your end-user experience.
 
-In practice throughout exploratory development it is hard to know what the final product will look like, but often the following pattern is sufficiently flexible for final publication.
+In practice throughout exploratory development it is hard to know what the final product will look like, but often the following pattern is sufficiently flexible for final publication:
 
 1.  Explore the data or problem space in either notebooks or scripts
 2.  Once results and outputs become clearer, extract the core parts of the experiments into their own set of modules.
 
     ```{admonition} Example
-    After working on a computer vision problem, an analysts notices that aquiring the images from some form of online source is a common function used in many places in the exploratory notebooks.
+    After working on a computer vision problem, an analyst notices that acquiring the images from some form of online source is a common function used in many places in the exploratory notebooks.
     <br><br>She then extracts that functionality into the `loaders.py` module of her Python project, documents it, decides to write a simple test for it and imports it back into her notebook to be used down the line.
     ```
 
 3.  Decide what is the appropriate output of this analysis.
 
     ```{admonition} Example
-    The same analyst from point the previous example, decides that she is done solving her computer vision problem. The code works in a notebook and she is confident that it is ready to be used as a pipeline. <br><br>She then uses the modules and functions she has built up from her analysis to create a final script that she calls `process.py` that she can configure using a configuration file and re-run as needed to produce required results.
+    The same analyst from the previous example, decides that she is done solving her computer vision problem. The code works in a notebook and she is confident that it is ready to be used as a pipeline. <br><br>She then uses the modules and functions she has built up from her analysis to create a final script that she calls `process.py` that she can configure using a configuration file and re-run as needed to produce required results.
 
     ```
 
@@ -226,7 +228,7 @@ Ultimately, our example analyst might decide that she wants to guide the user th
 
 This sort of approach allows for a collection of modules to be testable and easily documentable, allows for a reproducible single script to orchestrate the whole process and also allows for more in-depth and interactive presentations using notebooks or rendered notebooks to the end-user for methods that feel like they need extra explanation.
 
-In short, writing analysis like this is like bootstraping yourself from scratch. You explore what you need to do, write the code to do it, when the code is ready you extract it from your experimental environment into your own [module](modules), test it and document it.
+In short, writing analysis like this is akin to bootstrapping yourself from scratch. You explore what you need to do, write the code to do it, when the code is ready you extract it from your experimental environment into your own [module](modules), test it and document it.
 
 Once you're done, you then use your own code to further your analysis. This one-off cost of refactoring is likely to be absorbed by the time savings of having more robust code during further exploration.
 
@@ -249,7 +251,7 @@ However the great strength of notebooks is their flexibility in displaying resul
 
 In short, **notebooks are not a great way to modularise your code** however they are a great way to do research analytics and to present results. Therefore as the exploratory part of the analytical project draws to a close or when the notebooks become incredibly large due to function definitions, it is wise to stop and refactor the notebooks. Here are a few suggestions to consider:
 
-- review the repetative cells and assess which of them can be turned into reusable functions
+- review the repetitive cells and assess which of them can be turned into reusable functions
 - extract all the existing function definitions into their own modules
 - test, document and further refactor these functions and modules following the guidance laid out in this book
 - import the required functionality from the modules you have just made into the notebook
@@ -285,7 +287,7 @@ While reviewing your own or other peoples code it is often tempting to focus on 
 
 What it does not do is ask - does this code do what it needs to and how well is it managing the complexity of the problem?
 
-Always **make sure to not get tunnel visioned on clean code as the only source of feedback** for the codebase. Reflect first and foremost on the functionality of the code and how it solves a given problem. Then address the issues that make it less readible.
+Always **make sure to not get tunnel vision on clean code as the only source of feedback** for the codebase. Reflect first and foremost on the functionality of the code and how it solves a given problem. Then address the issues that make it less readable.
 ```
 
 (naming)=
@@ -335,9 +337,9 @@ Another developer, or even "future you", would be unable to correctly understand
 
 That said, there are situations where some seemingly cryptic identifiers make sense. Using single letters to name variables is suitable when implementing methodologies from underlying mathematical notation.
 
-However, even in these cases one must make sure that the formulas being implemented are clear, readily available to the reader and are consistently reflected in the code throughout the implementation of the mathematical portion.
+However, even in these cases one must make sure that the formulas being implemented are clear, readily available to the reader and are consistently reflected in the code throughout the implementation of the mathematical portion. Citing the source o
 
-In other cases, using variable names that contain a few (3 or so) informative words can drastically improve the readability of your code. How these words are seperated (be it `CamelCase` or `snake_case`) will depend on your language of choice.
+In other cases, using variable names that contain a few (3 or so) informative words can drastically improve the readability of your code. How these words are separated (be it `CamelCase` or `snake_case`) will depend on your language of choice.
 
 ````{tabs}
 
@@ -382,7 +384,7 @@ plyr::empty(empty_dataframe)
 Ideally, the **purpose of variables should be clear from just reading their names**.
 In addition, the variable names **should make logical sense in the context that they are used later on in the code**. This removes the need for explanatory comments, as your intentions can be interpreted from the code itself - `self-documenting` code.
 
-Naming is important for distinguishing between similar variables. A first instict might be to assign numerical suffixes or other similar tags to differentiate these variables, however unless the suffix itself is meaningful within the context of the rest of the code, it will not make the code more understandable.
+Naming is important for distinguishing between similar variables. A first instinct might be to assign numerical suffixes or other similar tags to differentiate these variables, however unless the suffix itself is meaningful within the context of the rest of the code, it will not make the code more understandable.
 
 For instance, in:
 
@@ -425,7 +427,7 @@ letters_first_three_reversed <- rev(first_three_letters)
 Here the naming convention indicates that both lists are similar, but also describes the differences between them.
 It is also clear how the third, new list relates to the first list that was used to create it.
 
-With more informative names, we obviously loose the brevity of variable names:
+With more informative names, we obviously lose the brevity of variable names:
 
 ```
 letters_first_three_reversed_plus_t_minus_a_converted_to_greek
@@ -435,7 +437,7 @@ There is a clear trade-off between the usability and informativeness of variable
 You'll need to use your best judgement to adapt variable names in order to keep them informative but reasonably concise.
 
 ```{note}
-In a language like Python where indentation is part of the syntax to denote code blocks, you will be much more aware of this trade-off. <br><br>In practice the PEP8 style guide for Python recommends line widths of 79 characters and having overly descriptive names might impact your complience with a style guide like that.
+In a language like Python where indentation is part of the syntax to denote code blocks, you will be much more aware of this trade-off. <br><br>In practice the PEP8 style guide for Python recommends line widths of 79 characters and having overly descriptive names might impact your compliance with a style guide like that.
 ```
 
 (naming-functions)=
@@ -525,13 +527,13 @@ if (is_clean(data)) {
 
 Class names are usually started with a capital letter, and in `CamelCase`, as this differentiates them from `variableNames` and `variable_names`. The names follow the same advice as for [Naming functions](naming-functions) - namely, is it obvious from the class name what it does? If its too complex to name concisely, it is an indication of too many **(responsibilities)[class-responsibilities]** and you should refactor your design to use more classes that are smaller.
 
-Method names in a class follow closely the requirements for [Naming functions](naming-functions), as methods are just functions that are tied to a class. The method names ideally need to read clearly when called from a class instance - such as `bookParser = TextParser(...some book dataset...)` followed with `bookParser.getNextWord()`. Compare this against `bp = Reader(..some book dataset...)` then `bp.fetch()` - there isn't enough context.
+Method names in a class closely follow the requirements for [Naming functions](naming-functions), as methods are just functions that are tied to a class. The method names ideally need to read clearly when called from a class instance - such as `bookParser = TextParser(...some book dataset...)` followed with `bookParser.getNextWord()`. Compare this against `bp = Reader(..some book dataset...)` then `bp.fetch()` - there isn't enough context.
 
 (code-style)=
 
 ### Code style
 
-Programming languages can differ in a myriad of ways. One way R and Python differ for example is their use of indentation. Indentation is part of the well defined syntax of Python while it is not in the case of R. This does not mean that you shouldn't use indentation in R to make your code more readible. If in doubt it is often wise to consult how to use formatting to write more readible code by finding the style guidelines for your language.
+Programming languages can differ in a myriad of ways. One way R and Python differ for example is their use of indentation. Indentation is part of the well defined syntax of Python while it is not in the case of R. This does not mean that you shouldn't use indentation in R to make your code more readable. If in doubt it is often wise to consult how to use formatting to write more readable code by finding the style guidelines for your language.
 
 Generally, code style guides provide a standard or convention for formatting and laying out your code. The purpose of these style guides is to increase consistency across the programming community for a given language.
 
@@ -540,10 +542,10 @@ They might include how to appropriately:
 - comment or document your code
 - name your functions, variables or classes
 - separate elements of your code with whitespace
-- use indentation to make sure your code is readible
+- use indentation to make sure your code is readable
 - other useful guidance regarding formatting
 
-The existance of such style guides does not necessarily mean that each individual or team will apply these conventions when writing their code to the letter. Institutions and developer teams often have needs that might not be addressed in a guidance document aiming to capture the needs of such a diverse group of developers. Therefore, these guides are **more useful as starting points** in a discussion on **'how should our team be consistent internally in the way we write code?'**.
+The existence of such style guides does not necessarily mean that each individual or team will apply these conventions when writing their code to the letter. Institutions and developer teams often have needs that might not be addressed in a guidance document aiming to capture the needs of such a diverse group of developers. Therefore, these guides are **more useful as starting points** in a discussion on **'how should our team be consistent internally in the way we write code?'**.
 
 ```{figure} ./_static/code_quality.png
 ---
@@ -555,7 +557,7 @@ Code Quality, from [xkcd](https://xkcd.com/1513/)
 ```
 
 The core idea to remember about these guides is that individual teams have to either adopt them or adapt them and then **use them** while writing code. The goals are **readability and consistency**.
-This intra-developer consistency will most likely aid speed of developement and review as well as the ability of one developer to comprehend code written by their collegues.
+This intra-developer consistency will most likely aid speed of development and review as well as the ability of one developer to comprehend code written by their colleagues.
 
 ```{note}
 That last point is particularly important when a team member might suddenly become unavailable and the work needs to picked up.
@@ -574,7 +576,7 @@ There is perhaps a misconception that following style guidelines and formatting 
 
 In reality, not only do the guidelines sometimes force code-reviews to tunnel vision style over more fundamental problems with the code, they also detract from assess whether the code is make the best use of a given language.
 
-We can expand the notion of style to go beyond simple spacing or capitalization. In the same way that knowing and using common idioms such as 'over the moon' or 'cold feet' make you seem like a more fluent speaker of English, a part of being fluent in a programming language is being able to write idiomatic code. Idiomatic stands for - _using, containing, or denoting expressions that are natural to a native speaker_.
+We can expand the notion of style to go beyond simple spacing or capitalisation. In the same way that knowing and using common idioms such as 'over the moon' or 'cold feet' make you seem like a more fluent speaker of English, a part of being fluent in a programming language is being able to write idiomatic code. Idiomatic stands for - _using, containing, or denoting expressions that are natural to a native speaker_.
 
 This might mean simplifying complex and perhaps hard to read patterns into a simpler, but well established alternative. In Python for example these two pieces of code are equivalent:
 
@@ -598,17 +600,17 @@ my_data = [i**2 / 356 for i in range(100)]
 The ability to write idiomatic code in a given language comes with time. However it is important to think about it while looking at a given codebase and the way it is written - is it leveraging everything language `X` has to offer?
 
 ```{note}
-Prefer readability over using highly complex idioms - think KISS (refer to (Software Ideas for Analysts)[software-ideas-for-analysts] later in this document).
+Prefer readability over using highly complex idioms - think KISS (refer to (Software Ideas for Analysts)[software-ideas-for-analysts] later in this document). Don't obfuscate the meaning behind your code.
 ```
 
 #### Checking code style
 
-Someone who is able and keen on making sure their code is readable would have hopefully addressed this during the process of writing it, hence the codebases that have not had this treatment from the ground up might be already difficult to read and will be laborious to check through in detail by hand. Hence, more automated support might be required to speed up such tedious work either by providing suggestions on the fly as the code is written or by outright reformatting your work to comply with some style.
+Someone who is able and keen on making sure their code is readable would have hopefully addressed this during the process of writing it; hence codebases that have not had this treatment from the ground up might be difficult to read and will be laborious to check through in detail by hand. Hence, more automated support might be required to speed up such tedious work either by providing suggestions as the code is written or by outright reformatting your work to comply with some style.
 
 Two main types of tool exist for these tasks are known as:
 
-- Linter - these analyse your code to flag stylistic errors (and sometimes bugs or security issues too)
-- Formatter - these not only detect when you have diverged from a style, but will automatically correct the formatting of your code to conform to some predefined style
+- linter - these analyse your code to flag stylistic errors (and sometimes bugs or security issues too)
+- formatter - these not only detect when you have diverged from a style, but will automatically correct the formatting of your code to conform to some predefined style
 
 ```{list-table} Packages that can be used for linting or formatting in Python and R
 :header-rows: 1
@@ -656,7 +658,7 @@ More generally here are a few tips to make sure you keep your project nice and s
 - solve the problem - do not get distracted and make sure you have a clear outcome in mind that you are trying to reach with a given piece of code
 - try not to 'reinvent the wheel' - use available packages when they solve the problem, they will most likely be better documented and won't need extra maintenance
 - split your code into understandable parts - consider how to lay out your [code into self-contained parts](modular)
-- solve the problem without over-engineering
+- solve the problem without over-engineering - if it is understandable and works, refrain from over-complicating it to make it 5% faster...
 
 It is worth picking up and expanding on that later point around over-engineering.
 If your project has potential to be reused as a third party library by someone else or in cases where you have time and resource to add more features to your project
@@ -670,7 +672,7 @@ After all, with more to check, there is always more to go wrong.
 In other words, make sure to **focus on what needs to be done**, implement that and make sure to keep it simple.
 
 ```{note}
-**You ain't gonna need it**
+**You ain't gonna need it (YAGNI)**
 
 It's important to capture the requirements of your code before writing it.
 This includes when your code needs to be adapted to meet changing needs.
@@ -682,16 +684,16 @@ As there's a good chance that many cases that you account for will never occur, 
 ```
 
 Lastly it is worth stressing that in the end you are still solving complex problems that might require complex solutions.
-In those cases make sure to introduce complexity only where needed and be aware that any complexity you add will be reflected somewhere else (more documentation, more tests etc.).
+In those cases make sure to introduce complexity only where needed and be aware that any complexity you add will be reflected somewhere else (more documentation, more tests etc.). For instance, if the code is execution time critical, then making the code more complex to achieve a faster runtime may be an acceptable trade-off.
 
 ### Don't Repeat Yourself (DRY)
 
 As you can see from the section on [modular code](modular), you are encouraged to refactor your code into more self contained components for ease of testing, reproducibility and other nice properties of such code.
-However, it is worth stressing that often times 'quick and dirty' solutions involve copy-pasted and tweaked code in several places that is functionality identical.
+However, it is worth stressing that often times 'quick and dirty' solutions involve copy-pasted and tweaked code in several places that is functionaly identical.
 This is expected and natural in the initial stages of a project, however repetition not only wastes your time if the code in question keeps getting copied further into the code, but it also makes your code more difficult to read.
 
 Consider a script that contains three copies of a similar piece of code.
-If the code that is used to perform the repetitive task is found to be incorrect, or if a developer wishes to modify the task being performed by this code, they must implement a similar change in each of the three copies.
+If the code that is used to perform the repetitive task is found to be incorrect, or if a developer wishes to modify the task being performed by this code, they must implement a similar change in each of the three copies. If only two copies were spotted and amended, there is now a bug sleeping in the code waiting to be triggered...
 
 Furthermore imagine yourself in a situation where you are reading a codebase you have never seen before.
 Having to validate that each similar section of code has the same functionality as the ones you have already seen adds a noticeable mental strain to the reader.
@@ -803,7 +805,7 @@ odd_third = get_odd(third_ten_numbers)
 ````
 
 If the functionality of `get_odd` needs to be modified, it now need only be done once.
-Additionally, this code is more concise and it's purpose is easier to interpret.
+Additionally, this code is more concise and its purpose is easier to interpret.
 
 `````{note}
 If two slightly different tasks must be carried out, as in you need both the odd and the even numbers, you might approach this in one of two ways:
@@ -934,7 +936,7 @@ if (coconut_count) {
 ````
 
 In the example above, the coconut count is not printed because `None` and `FALSE` evaluate to false.
-In python and R, 0 will also evaluate to False.
+In Python and R, 0 will also evaluate to False.
 Therefore, it is unclear whether the programmer intended that the statement is printed when the count is 0.
 If a count of 0 should be printed, then this lack of specificity has created a bug.
 
@@ -966,7 +968,7 @@ It's clear that we intend for this to be the case.
 
 ## SOLID <span role="image" aria-label="difficulty rating: 4 out of 5">★★★★☆</span>
 
-SOLID is an acronym that encompasses 5 software design principles that are intended to increase the readability and extensibility of software source code.
+SOLID is an acronym that encompasses five software design principles that are intended to increase the readability and extensibility of software source code.
 These principles are designed to improve object-oriented programs, but can be roughly applied to functional programs too.
 
 ```{todo}
@@ -982,7 +984,7 @@ Not necessarily code-based.
 > An object should have a single responsibility.
 > Only changes to one part of the software's specification should be able to affect the specification of the class.
 
-This principle suggests that a single element of your code (a function or class) should be responsible for a single part of your software's functionality.
+This principle suggests that a single element of your code (a function or class) should be responsible for a single part of your software's functionality. Consider a "responsibility" as an "axis of change" - you want one reason for the code to be changed.
 It should take on one task and perform it well.
 
 A piece of code is more robust if there are fewer reasons to change it in the future.
@@ -1036,7 +1038,7 @@ In functional programming we can use the concepts of function composition and hi
 > Functions should be replaceable with similar functions that observe the same interface contract.
 
 Subclasses should not damage the functionality of their parent class in their implementation.
-They should extend their usefulness, but retain their original functionality.
+They should extend their usefulness, but retain their original functionality. In terms of OOP, if class B inherits from class A, it is said consider "B is an A"; Liskov substitution strengthens this to "B is interchangeable with an A".
 
 If you were to increase the domain and range of a function to account for new cases then this function should observe the same interface as the previous function.
 
