@@ -60,8 +60,10 @@ If objects have a similar API (i.e. the methods they supply), then you can switc
 
 A word of caution, however, when creating classes; it is very easy when starting to consider nouns as classes, and any adjectives applied to the nouns as methods. For example: "the model loads the data" would imply "model" is a class, and it should have a "load_data" method. This will work fine for small systems, but you will find one of your classes gains all of the underlying logic with many methods, whilst other classes just store data with few methods. This can be considered **Data Driven Design**; a better approach is **[Responsibility Driven Design](https://en.wikipedia.org/wiki/Responsibility-driven_design)** (linked to SOLID, covered later in this document).
 
+(class-responsibilities)=
+
 ```{note}
-If all of your code is in one class, it can become overly complex and hence difficult to maintain. You want your classes to know as little as possible to reduce dependencies on other systems - and hence avoid being affected if other systems change. The challenge is to trade maintainability and reuse against complexity.
+If a single class is responsible for too much, then most of your code will be in one class; it can become overly complex and hence difficult to maintain. You need your classes to know as little as possible to reduce dependencies on other systems - so small classes with a focussed responsibility - and hence avoid being affected if other systems change. The challenge is to trade maintainability and reuse against complexity.
 ```
 
 **Responsibility Driven Design** makes objects that are normally "passive" become "active" - for example, with a banking system, rather than having an overly complex object representing a bank account (and handling all money movements), instead objects representing "cheques" and "cash" gain payment methods. Hence a cheque knows how to pay itself into an account; if we later needed to add new payment methods, the existing classes will unlikely to be affected. The bank account's responsibility is holding money, receiving it and paying it out. A cheque's responsibility is to pay itself in to a bank account and retrieve money from its associated account.
@@ -77,7 +79,7 @@ Object-Orientated Programming introduces the concept on **inheritance** - where 
 - avoid all logic arriving in a single class, surrounded by minimal holding classes - distribute logic around to ease maintenance (changes will affect smaller areas of code)
 - be aware of trading maintainability for complexity - too many classes can be hard to understand
 - Design Patterns have solutions to many common problems and are a useful toolbox
-- prefer encapsulation over inheritance, especially with code reuse (see **Liskov Substition Principle** in the SOLID section later)
+- prefer encapsulation over inheritance, especially with code reuse (see **Liskov Substitution Principle** in the SOLID section later)
 
 ### Scripts
 
@@ -436,9 +438,7 @@ You'll need to use your best judgement to adapt variable names in order to keep 
 In a language like Python where indentation is part of the syntax to denote code blocks, you will be much more aware of this trade-off. <br><br>In practice the PEP8 style guide for Python recommends line widths of 79 characters and having overly descriptive names might impact your complience with a style guide like that.
 ```
 
-#### Naming classes
-
-TODO: IAN
+(naming-functions)=
 
 #### Naming functions
 
@@ -520,6 +520,12 @@ if (is_clean(data)) {
 }
 ```
 ````
+
+#### Naming classes
+
+Class names are usually started with a capital letter, and in `CamelCase`, as this differentiates them from `variableNames` and `variable_names`. The names follow the same advice as for [Naming functions](naming-functions) - namely, is it obvious from the class name what it does? If its too complex to name concisely, it is an indication of too many **(responsibilities)[class-responsibilities]** and you should refactor your design to use more classes that are smaller.
+
+Method names in a class follow closely the requirements for [Naming functions](naming-functions), as methods are just functions that are tied to a class. The method names ideally need to read clearly when called from a class instance - such as `bookParser = TextParser(...some book dataset...)` followed with `bookParser.getNextWord()`. Compare this against `bp = Reader(..some book dataset...)` then `bp.fetch()` - there isn't enough context.
 
 (code-style)=
 
