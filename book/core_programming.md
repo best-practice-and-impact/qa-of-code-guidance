@@ -52,25 +52,127 @@ Ultimately, if you do signal where these kind of things might happen, someone tr
 
 ### Classes
 
-With a more complex system, object-orientated programming (OOP) can help to reduce complexity by hiding low-level details from the developer (which they don't need to know). The private "state" can be stored in a `class` instance that only the class `methods` (functions defined with the class) have access to. Different implementations can then be used by the end user - if the classes support the same methods. You can also add "private" methods as helper methods which aren't exposed to users, to enable reuse of code within an object, analogous to breaking down larger functions.
+Classes are fundamental parts of object-orientated programming (OOP). And although they exist in R, they are more widely used in Python (and other OOP enabling languages). Hence the following chapter and the examples presented will be less focused on R.
 
-In Python, this is known as **duck typing** (if it looks like a duck, and quacks like a duck - it must be a duck); here, if a class has the same methods that you require as another class, you can use either class. With other languages `interfaces` are defined to record exactly what a class should supply to be considered equivalent. Perhaps we need a class to store data - it could have several "write" methods; one implementation could deal with storing data into a database, but you also have a variant that stores data in local CSV files instead. In your code, you could switch which class you provide to your functions - the functions don't need to know if they are updating CSV or SQL files, they'll work regardless.
+With a more complex system, OOP can help to reduce complexity by hiding low-level details from the developer (which they don't need to know) such as internal `state`.
 
-If objects have a similar API (i.e. the methods they supply), then you can easily switch between them; a good example of this is `scikit-learn`, where the different linear model types are represented by different classes that all support a common set of methods. Any model can then be used in a library pipeline and swapped out with minimal effort - they all have methods `fit()` and `predict()`.
+```{note}
+The `state` of an object is usually a set of variables that are particular to a given instance of a class. To illustrate imagine a bank account and a `Account` class. You can have many _instances_ of this class (many unique bank accounts), each defined by the following internal state:
+- owner name
+- account number
+- balance
+```
 
-A word of caution, however, when creating classes; it is very easy to start to mapping nouns in system descriptions to classes, and any adjectives applied to the nouns as methods. For example: "the model loads the data" would imply "model" is a class, and it should have a "load_data" method. This will work fine for small systems, but you will find one of your classes gains all of the underlying logic with many methods, whilst other classes just store data with few methods. This can be considered **Data Driven Design**; a better approach is **[Responsibility Driven Design](https://en.wikipedia.org/wiki/Responsibility-driven_design)** (linked to SOLID, covered later in this document).
+Since the end user, does not need to know all of the state associated with an object, when writing classes consider you to marking such state as `private` and only accessing it from the class `methods` (functions defined with the class).
+
+````{admonition} Method vs Function
+When talking about methods software engineers mean functions that are strictly 'attached' to a given class. The following example illustrates the difference between the two:
+
+```python
+class Car:
+    "A car class"
+    wheels = 4
+    def __init__(self, brand):
+        self.brand = brand
+
+    def diagnose(self):
+        ...
+
+# versus
+
+def diagnose(car, ...):
+    "A car diagnosis function"
+    ...
+
+# calling a method on a class holding the state
+cadillac = Car(brand="Cadillac")
+cadillac.diagnose()
+
+
+# calling a function
+# note: here for the sake of variety the information about the car is a dictionary
+diagnose({"brand":"Cadillac", "wheels":4})
+
+```
+
+````
+
+In some languages private state is in-built in the language while in Python [private instance variables do not exist](https://docs.python.org/3/tutorial/classes.html#private-variables). You can however mark them with underscores and they will be less noticable and mildly harder to accidentally use. You can also add "private" methods as helper methods which aren't exposed to users, to enable reuse of code within an object, analogous to breaking down larger functions.
+
+```python
+class BankAccount:
+    def __init__(self, balance, credentials):
+        self._balance = balance # note: single underscore
+        self.__balance = balance # note: double underscore
+        # both of these make these values 'private' but the second one also
+        # mangles the name of the method
+
+        self.__credentials = credentials
+
+    def __private_withdraw(self, amount):
+        "Private withdrawal helper"
+        self.__balance -= amount
+
+    def withdraw(self, credentials, amount):
+        "Public withdrawal method."
+        if check(self.__credentials, credentials):
+            self.__private_withdraw(amount)
+```
+
+```{note}
+The notion of private does not mean secure in Python. The main goal is to _expose less information to the other developers using your class_.
+```
+
+Different implementations can be used by the end user - if the classes support the same methods. In Python, this is known as **duck typing** (if it looks like a duck, and quacks like a duck - it must be a duck); here, if a class has the same methods that you require as another class, you can use either class. In the above example, if we created a class `LoyaltyAccount` with the same methods of withdrawing points, we could foreseeably slot that class in instead of the `BankAccount` class.
+
+With other languages `interfaces` are defined to record exactly what a class should supply to be considered equivalent. Perhaps we need a class to store data - it could have several "write" methods; one implementation could deal with storing data into a database, but you also have a variant that stores data in local CSV files instead. In your code, you could switch which class you provide to your functions - the functions don't need to know if they are updating CSV or SQL files, they'll work regardless. Python does not support explicit interfaces by default but we can illustrate the concept in the following example:
+
+```python
+# Interface: My Classes Should have these methods:
+# write(data: [int]) -> bool
+# read(str) -> [int]
+
+class CsvHandler:
+    ...
+    def write(self, data):
+       return write_to_file(data, self.filename)
+
+    def read(self, query):
+       data = read_csv(self.filename)
+       data = parse(data)
+       data = process(query, data)
+       return data
+
+class SqlHandler:
+    ...
+    def write(self, data):
+       connect_to_database(self.connection_url)
+       return write_to_database(data)
+
+    def read(self, query):
+       data = read_from_database(self.connection_url)
+       data = process(query, data)
+       return data
+```
+
+If objects have a similar API (i.e. the methods they supply), then you can easily switch between them; a good real-world example of this is `scikit-learn`, where the different linear model types are represented by different classes that all support a common set of methods. Any model can then be used in a library pipeline and swapped out with minimal effort - they all have methods `fit()` and `predict()`. **Therefore, when thinking about how to break you code up into classes consider the use of standardised methods across similar objects to make them interchangeable.**
 
 (class-responsibilities)=
 
 ```{note}
+A word of caution, however, when creating classes; it is very easy to start to mapping nouns in system descriptions to classes, and any adjectives applied to the nouns as methods. For example: "the model loads the data" would imply "model" is a class, and it should have a "load_data" method. This will work fine for small systems, but you will find one of your classes gains all of the underlying logic with many methods, whilst other classes just store data with few methods. This can be considered **Data Driven Design**; a better approach is **[Responsibility Driven Design](https://en.wikipedia.org/wiki/Responsibility-driven_design)**.
+
 If a single class is responsible for too much, then most of your code will be in one class; it can become overly complex and hence difficult to maintain, and any changes to requirements will cause this one class to change. You need your classes to know as little as possible to reduce dependencies on other systems and requirements - so small classes with a focussed responsibility - and hence avoid being affected if other systems change. The challenge is to trade maintainability and reuse against complexity.
 ```
 
 **Responsibility Driven Design** makes objects that are normally "passive" become "active" - for example, with a banking system, rather than having an overly complex object representing a bank account (and handling all money movements), instead objects representing "cheques" and "cash" gain payment methods. Hence a cheque knows how to pay itself into an account; if we later needed to add new payment methods, the existing classes will unlikely to be affected. The bank account's responsibility is holding money, receiving it and paying it out. A cheque's responsibility is to pay itself in to a bank account and retrieve money from its associated account.
 
+```{note}
 Many **[Design Patterns](https://en.wikipedia.org/wiki/Software_design_pattern)** are available with OOP - reusable solutions to common problems. An example is if you have an `Orange` class, and an `OrangePeeler` class. You've been given an `Apple` class, but would really love to be able to peel it - use an **adapter pattern**. Create an `OrangeAdapter` class that has the same methods as an `Orange` but accepts an `Apple` at construction. `OrangeAdapter` then takes all the `Orange` methods and translates them into equivalent method calls to the `Apple` class it was told about at construction. The `Apple` now looks like an `Orange`.
 
-Object-Orientated Programming introduces the concept of **inheritance** - where a class can "inherit" its methods from another class. This enables extension of existing classes, but can cause problems for the unwary. Its an in-depth topic for a different training course, but be aware that inheritance locks you in to the object you inherit from - if this object changes, you are dragged along with it. If you're using inheritance to reuse code from another class, prefer **encapsulation** instead. This means keep a private instance of the class you wish to re-use, and delegate the work down to it within your own methods - rather than inheriting the methods and directly using the other class. Now, if you change your mind about using this reused object - you aren't tied in to it, as no-one outside your class knows you've used it.
+```
+
+Object-Orientated Programming introduces the concept of **inheritance** - where a class can "inherit" its methods from another class. This enables extension of existing classes, but can cause problems for the unwary. Its an in-depth topic, but be aware that inheritance locks you in to the object you inherit from - if this object changes, you are dragged along with it. If you're using inheritance to reuse code from another class, prefer **encapsulation** instead. This means keep a private instance of the class you wish to re-use, and delegate the work down to it within your own methods - rather than inheriting the methods and directly using the other class. Now, if you change your mind about using this reused object - you aren't tied in to it, as no-one outside your class knows you've used it.
 
 Finally, be wary when using classes to "chain" items together; for instance, if a "book" has a "publisher" and the publisher has an "address", you could: `book.publisher().address().postcode()`. However, chains like this are fragile as they depend on multiple parts of the system not changing. The "Demeter" research project found that this style of code produce a high proportion of bugs, resulting in the **(Law of Demeter)[https://en.wikipedia.org/wiki/Law_of_Demeter]**: "Only talk to your immediate friends". Namely, only access the objects you know about directly within a class - delegate the refined knowledge to the class you know about. Your code is then exposed to fewer opportunities to get damaged by a change in the codebase. There is a penalty for this - you replace with `book.publisherPostcode()` which internally would call `publisher.postcode()`, so we've added a method to `publisher` as well as `book`; we're trading maintainability for complexity, so consider if it is worthwhile.
 
@@ -81,7 +183,7 @@ Finally, be wary when using classes to "chain" items together; for instance, if 
 - avoid all logic arriving in a single class, surrounded by minimal holding classes - distribute logic around to ease maintenance (changes will affect smaller areas of code)
 - be aware of trading maintainability for complexity - too many classes can be hard to understand
 - **Design Patterns** have solutions to many common problems and are a useful toolbox - a shared design language
-- prefer encapsulation over inheritance, especially with code reuse (see **Liskov Substitution Principle** in the **SOLID** section later)
+- prefer encapsulation over inheritance, especially with code reuse (see **Liskov Substitution Principle** in the **SOLID** guidance)
 
 ### Scripts
 
