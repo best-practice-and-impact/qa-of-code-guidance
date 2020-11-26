@@ -96,10 +96,6 @@ Be critical and clear, but not mean. Ask questions and set actions.
 
 ```
 
-Here we discuss an example from [rOpenSci](https://ropensci.org/); a community led initiative that curates open source, statistical R packages. rOpenSci apply a rigorous, open peer review process to assure the quality of packages before including them in their collection.
-
-In this example, from colleagues at Public Health England, [the `fingertipsR` package is reviewed](https://github.com/ropensci/software-review/issues/168). The initial comment, which describes the package, includes a check against a list of minimum requirements. Two detailed external reviews are then conducted before the package is accepted - these reviews include additional checks for common aspects of code packages, like documentation, example and automated testing. Perhaps the most informative part of these reviews, however, is the detailed comments. Here the reviewers highlight problems, ask questions to clarify aspects of the package design and suggest improvements to the implementation of the code (with examples). Following the reviews, additional comments describe how the reviewers requested changes have been addressed. And finally, there is a sign off to confirm that the reviewers are satisfied with the package.
-
 Internal review should be carried out within your teams. Reviewing code from those with more and less experience is beneficial.
 
 
@@ -120,19 +116,14 @@ If used regularly, this approach can help you to get used to receiving construct
 
 This approach essentially involves sharing your code with a reviewer, and receiving constructive comments following the review. This may be an iterative process, until the reviewer is satisfied with the resulting code.
 
-This can work best where changes are small and frequent. Requesting review of small but regular changes reduces the burden on reviewers, relative to large review of a complete project.
-When reviewing larger pieces of work, it may be worth reviewing different aspects of the code is separate passes. For example, focussing on documentation in one session and then functionality in the next.
+This can work best where changes are small and frequent. Requesting review of small but regular changes reduces the burden on reviewers, relative to large review of a complete project. When reviewing larger pieces of work, it may be worth reviewing different aspects of the code is separate passes. For example, focussing on documentation in one session and then functionality in the next.
 
 The thought of someone else reviewing your code in this way encourages good practices from the outset:
 * Clear code and documentation - so that others with no experience can use and test your code
 * Usable dependency management - so that others can run your code in their own environment
 
-This form of review is aided by features of most version control platforms, namely the Pull request (or equivalent). See [](version_control.md) for more information.
+This form of review is aided by features of most version control platforms, namely the Pull Request (or equivalent). See [](version_control.md) for more information.
 
-```{todo}
-There's probably an example from ROpenSci we can point people to for peer review
+Here we discuss an example from [rOpenSci](https://ropensci.org/); a community led initiative that curates open source, statistical R packages. rOpenSci apply a rigorous peer review process to assure the quality of packages before including them in their collection. This peer review process is entirely remote and is performed in the open, via GitHub Pull Requests.
 
-https://github.com/ropensci/software-review/issues/168
-
-[#26](https://github.com/best-practice-and-impact/qa-of-code-guidance/issues/26)
-```
+In this example, from colleagues at Public Health England, [the `fingertipsR` package is reviewed](https://github.com/ropensci/software-review/issues/168). The initial comment, which describes the package, includes a check against a list of minimum requirements. Two detailed external reviews are then conducted before the package is accepted - these reviews include additional checks for common aspects of code packages, like documentation, example and automated testing. Perhaps the most informative part of these reviews, however, is the detailed comments. Here the reviewers highlight problems, ask questions to clarify aspects of the package design and suggest improvements to the implementation of the code (with examples). Following the reviews, additional comments describe how the reviewers requested changes have been addressed. And finally, there is a sign off to confirm that the reviewers are satisfied with the package.
