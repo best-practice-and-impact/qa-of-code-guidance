@@ -1,11 +1,17 @@
-file: index
-sections:
-- file: principles
-- file: core_programming
-- file: project_structure
-- file: code_documentation
-- file: project_documentation
-- file: version_control
-- file: data
-- file: peer_review
-- file: testing_code
+- file: intro
+
+- part: Guidance
+  chapters:
+  - file: principles
+  - file: core_programming
+  - file: project_structure
+  - file: code_documentation
+  - file: project_documentation
+  - file: version_control
+  - file: data
+  - file: peer_review
+  - file: testing_code
+
+- part: Resources
+  chapters:
+  - file: learning.md

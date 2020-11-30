@@ -8,6 +8,7 @@ repository:
   url: https://github.com/best-practice-and-impact/qa-of-code-guidance
 
 html:
+  home_page_in_navbar: false
   favicon: "./_static/favicon.ico"
   use_repository_button: true
   use_issues_button: true

@@ -1,7 +1,4 @@
-
-# Introduction
-
-## Quality Assurance of Code for Analysis and Research
+# Quality Assurance of Code for Analysis and Research
 
 This is an early draft of Government Statistical Service (GSS) and Analysis Function guidance.
 It is produced by the [Best Practice and Impact division](https://gss.civilservice.gov.uk/about-us/support-for-the-gss/) of the Office for National Statistics.
@@ -26,14 +23,6 @@ You can find us on:
 - Slack: [Government Data Science](https://govdatascience.slack.com) and [GSS](https://gov-stats-service.slack.com)
 - Twitter: [Government Analysis Function](https://twitter.com/gov_analysis),  [GSS Good Practice Team](https://twitter.com/gssgoodpractice) and [UK GSS](https://twitter.com/ukgss)
 
-
-## Structure of the book
-
-The content of the book is ordered roughly in increasing depth. 
-Each chapter is also broken down into sections that gradually increase in difficulty. 
-We have noted a rough guide to difficulty for each section using a ★★★★★ rating system.
-
-
 ## Citing the book
 
 The following structure can be used to reference the current version of the book:
@@ -42,8 +31,7 @@ The following structure can be used to reference the current version of the book
 
 ## How to get the most out of the book
 
-This guidance is tailored to government analysts who would like to quality assure their code and increase the reproducibility of their analyses.
-We have tried to interpret the requirements of pieces of guidance (the [principles](/principles.md)) into actions and deliverables for analytical programming.
+This guidance is tailored to government analysts who would like to quality assure their code and increase the reproducibility of their analyses. We have tried to interpret the requirements of pieces of guidance (the [principles](/principles.md)) into actions and deliverables for analytical programming.
 
 However, the practices outlined in the book are general to many applications of programming, so may also be insightful for those outside of government.
 
@@ -54,17 +42,9 @@ This book might be most useful for you if you are:
 - developing data science techniques and would like your code to be useful to others
 - looking for a high level introduction to software engineering practices in the context of analysis and research
 
-This book can be used to guide your learning and as a reference.
-The start of each chapter describes the risks which the described practices may help to address.
-Therefore, you should strive to apply the most appropriate practices given the risks associated with your work.
+This book can be used to guide your learning and as a reference. The start of each chapter describes the risks which the described practices may help to address. Therefore, you should strive to apply the most appropriate practices given the risks associated with your work.
 
-The principles in this book are language agnostic.  
-It does not form a comprehensive learning resource and you may often need to study further resources to implement these practices.
-That said, examples and useful references are provided for **Python** and **R**, as open source languages that are commonly applied across government.
-
-Many of the learning resources referenced in this book point to the UK Statistics Authority Learning Hub, which are labelled as "government analysts only".
-Government analysts can request an account for the Hub via [gss.capability@ons.gov.uk](mailto:gss.capability@ons.gov.uk).
-
+The principles in this book are language agnostic. It does not form a comprehensive learning resource and you may often need to study further resources to implement these practices. That said, examples and useful references are provided for **Python** and **R**, as open source languages that are commonly applied across government.
 
 ## Accessibility statement
 
