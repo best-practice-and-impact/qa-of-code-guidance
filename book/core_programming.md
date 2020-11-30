@@ -12,7 +12,7 @@ Code is read more often than it is written.
 -- Guido van Rossum (creator of Python)
 ```
 
-When writing non-trivial code it is wise to assume that at some point someone else will need to understand, use and adapt your code. It might be yourself in six months time - after you've forgotten how the code works, or its design intent. Therefore every time you write such code, it is incredibly important to empathise with these potential users and produce code that is tidy, understandable and does not add unnecessary complexity.
+When writing code that at some point someone else will need to understand, use and adapt (might be yourself in six months time), it is important to empathise with these potential users and produce code that is tidy, understandable and does not add unnecessary complexity.
 
 Common barriers to writing readable codebases include documentation that is hard to understand or absent, walls of code with repeating functionality that is hard to absorb in 'chunks' or over-complicated solutions that solve the problem in ways that could be simplified. Avoiding these issues is essential to make sure that your analysis is reproducible, auditable and assured. Therefore it is our professional responsibility to avoid putting such barriers in place whenever possible.
 
@@ -498,8 +498,8 @@ plyr::empty(empty_dataframe)
 
 ````
 
-Ideally, the **purpose of variables should be clear from just reading their names**.
-In addition, the variable names **should make logical sense in the context that they are used later on in the code**. This removes the need for explanatory comments, as your intentions can be interpreted from the code itself - `self-documenting` code.
+Ideally, the purpose of variables should be clear from just reading their names.
+In addition, the variable names should make logical sense in the context that they are used later on in the code. This removes the need for explanatory comments, as your intentions can be interpreted from the code itself - `self-documenting` code.
 
 Naming is important for distinguishing between similar variables. A first instinct might be to assign numerical suffixes or other similar tags to differentiate these variables, however unless the suffix itself is meaningful within the context of the rest of the code, it will not make the code more understandable.
 
@@ -662,7 +662,7 @@ They might include how to appropriately:
 - use indentation to make sure your code is readable
 - other useful guidance regarding formatting
 
-The existence of such style guides does not necessarily mean that each individual or team will apply these conventions when writing their code to the letter. Institutions and developer teams often have needs that might not be addressed in a guidance document aiming to capture the needs of such a diverse group of developers. Therefore, these guides are **more useful as starting points** in a discussion on **'how should our team be consistent internally in the way we write code?'**.
+The existence of such style guides does not necessarily mean that each individual or team will apply these conventions when writing their code to the letter. Institutions and developer teams often have needs that might not be addressed in a guidance document aiming to capture the needs of such a diverse group of developers. Therefore, these guides are more useful as starting points in a discussion on 'how should our team be consistent internally in the way we write code?'.
 
 ```{figure} ./_static/code_quality.png
 ---
@@ -673,7 +673,7 @@ alt: Comic strip describing a brutal code review.
 Code Quality, from [xkcd](https://xkcd.com/1513/)
 ```
 
-The core idea to remember about these guides is that individual teams have to either adopt them or adapt them and then **use them** while writing code. The goals are **readability and consistency**.
+The core idea to remember about these guides is that individual teams have to either adopt them or adapt them and then use them while writing code. The goals are readability and consistency.
 This intra-developer consistency will most likely aid speed of development and review as well as the ability of one developer to comprehend code written by their colleagues.
 
 ```{note}
@@ -759,7 +759,7 @@ These practices allow for more robustly written code and provide other benefits 
 Analysts using code as a means to perform analysis could heavily benefit from at least partially applying such practices in their own codebases.
 
 This chapter will try to condense some key messages and guidelines from these practices for use by code writing analysts.
-That said, reading and learning more about these practices is likely to benefit the quality of your code and is **highly encouraged**.
+That said, reading and learning more about these practices is likely to benefit the quality of your code and is highly encouraged.
 
 ### Simplicity
 
@@ -767,7 +767,7 @@ The ability to convey information in simple and clear way matters.
 
 This is particularly true when exchanging information that is already complex.
 When writing code you are often trying to solve problems that are complex in nature.
-You should **avoid introducing extra complexity** to the problem.
+You should avoid introducing extra complexity to the problem.
 A good guideline to achieve this would be to seek out the simplest solution wherever possible.
 
 More generally here are a few tips to make sure you keep your project nice and simple:
@@ -786,7 +786,7 @@ will have to read to understand your code.
 
 Really consider if adding these extras in a resource constrained environment will make your code more or less maintainable, user-friendly and correct.
 After all, with more to check, there is always more to go wrong.
-In other words, make sure to **focus on what needs to be done**, implement that and make sure to keep it simple.
+In other words, make sure to focus on what needs to be done, implement that and make sure to keep it simple.
 
 ```{note}
 **You ain't gonna need it (YAGNI)**
@@ -873,9 +873,9 @@ for (number in third_ten_numbers) {
 In the example the third repeated snippet of code actually collects the even numbers, but assigns them to the `odd_third` variable.
 A developer may assume that all copies of the similar code are performing the same task.
 Even if they are aware of the difference, they may be unable to tell if a difference between these copies is intentional or a mistake without explicit comments.
-Generally, the example above has several issues, however it shows how **repetition can add to confusion** in circumstances like this.
+Generally, the example above has several issues, however it shows how repetition can add to confusion in circumstances like this.
 
-Modifying multiple copies of a code snippet is laborious and presents a risk - **some copies of the repeated code may be modified while others erroneously remain the same**.
+Modifying multiple copies of a code snippet is laborious and presents a risk - some copies of the repeated code may be modified while others erroneously remain the same.
 This is analogous to modifying the formula in individual cells of a spreadsheet.
 If you refactor repetitive code into functions or classes, then bug fixes or modifications need only be carried out once to change all implementations.
 New, intended behaviour is then consistently given by each call of the function or method.
@@ -1099,13 +1099,13 @@ Imagine that you have created a class that represents a whole country - `Country
 
 Based on the other chapters in this guidance, you might eventually realise that you need to break it down further, however if you had applied the idea of single responsibility with a bit more depth, you might have broken down the `Country` class into smaller components modelling `UnemploymentModel`, `InflationModel` and making them responsible for doing the modelling while the `Country` class is only responsible for presenting the results to, lets say, a higher level economy model that tries to model cross-country trade.
 
-This simplicity also increases usability, by **minimising the number of parameters that each function or class might require.**
+This simplicity also increases usability, by minimising the number of parameters that each function or class might require.
 
 ```{note}
 If you remember the [section on interfaces](interfaces), the different modellers classes are a prime example where defining an interface would help you make sure each `___Model`  object is interchangeable.
 ```
 
-The **Separation of Concerns principle** captures a similar concept to Single Responsibility, but on a higher level.
+The Separation of Concerns principle captures a similar concept to Single Responsibility, but on a higher level.
 This principle suggests that your software should be separated into distinct sections that each address a single concern.
 
 In the previous economic modelling example, you might establish your concerns to be:
