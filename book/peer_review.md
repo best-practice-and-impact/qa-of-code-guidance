@@ -20,7 +20,7 @@ Continuous challenge and improvement is essential to ensure that the people we s
 
 [The Aqua book](https://www.gov.uk/government/publications/the-aqua-book-guidance-on-producing-quality-analysis-for-government) tells us that quality of assurance of our analysis should be proportional to the complexity and business risk of the analysis. This means that both internal and external peer review may be required to adequately assure your analysis. Particularly if your analysis uses novel or complex techniques, where comparison with other analyses cannot be used to challenge your results, or if the analysis is business critical.
 
-Most analysis stems from some form of customer engagement. Throughout design, implementation and review of analysis we must continue to assess whether our analysis is fit for purpose. **Does it meet the needs of our customer?** Your project should document the scope of your analysis and any requirements, to make this assessment as easy as possible. Regular contact with customers helps to keep these requirements up to date. Additional documentation that supports the auditability of your analysis includes assumption logs, technical reports describing the analysis and documentation on any verification or validation that has already been carried out.
+Most analysis stems from some form of customer engagement. Throughout design, implementation and review of analysis we must continue to assess whether our analysis is fit for purpose: Does it meet the needs of the customer? Your project should document the scope of your analysis and any requirements, to make this assessment as easy as possible. Regular contact with customers helps to keep these requirements up to date. Additional documentation that supports the auditability of your analysis includes assumption logs, technical reports describing the analysis and documentation on any verification or validation that has already been carried out.
 
 As we discussed in [](core_programming.md), good quality code is easier to read, understand and maintain. Peer review improves the quality of our code through the constructive challenges from the reviewer. A reviewer might do this by suggesting alternative ways to represent your analysis or they may ask questions to check the reasons behind decisions in your coding approach and analysis as a whole.
 
@@ -98,19 +98,17 @@ Be critical and clear, but not mean. Ask questions and set actions.
 
 Internal review should be carried out within your teams. Reviewing code from those with more and less experience is beneficial.
 
-
 ## How do we approach code review?
 
 ### Pair programming
 
 > Two heads are better than one.
 
-This practice combines the code writing and review process into one step. Here, two or three developers work together on a writing a single piece of code. Each developer takes turns to actively author parts of the code, while others provide real time feedback on the code being written.
+This practice combines the code writing and the review process into one step. Here, two or three developers work together on a writing a single piece of code. Each developer takes turns to actively author parts of the code, while others provide real time feedback on the code being written.
 
 This encourages developers to think about and vocalise why they are writing code in a particular way. It gives reviewers a chance to suggest improvements and question the author's approach as they write the code. The rotational aspect of this practice ensures that all team members gain experience from both the author and review perspective. From both angles, you'll learn new techniques and practices.
 
 If used regularly, this approach can help you to get used to receiving constructive feedback and being more open to improve your coding practices.
-
 
 ### Remote review
 
@@ -127,3 +125,5 @@ This form of review is aided by features of most version control platforms, name
 Here we discuss an example from [rOpenSci](https://ropensci.org/); a community led initiative that curates open source, statistical R packages. rOpenSci apply a rigorous peer review process to assure the quality of packages before including them in their collection. This peer review process is entirely remote and is performed in the open, via GitHub Pull Requests.
 
 In this example, from colleagues at Public Health England, [the `fingertipsR` package is reviewed](https://github.com/ropensci/software-review/issues/168). The initial comment, which describes the package, includes a check against a list of minimum requirements. Two detailed external reviews are then conducted before the package is accepted - these reviews include additional checks for common aspects of code packages, like documentation, example and automated testing. Perhaps the most informative part of these reviews, however, is the detailed comments. Here the reviewers highlight problems, ask questions to clarify aspects of the package design and suggest improvements to the implementation of the code (with examples). Following the reviews, additional comments describe how the reviewers requested changes have been addressed. And finally, there is a sign off to confirm that the reviewers are satisfied with the package.
+
+Although this review covers an entire, mature package, we can apply parts of this review process to smaller pieces of code as required.
