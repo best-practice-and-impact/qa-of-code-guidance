@@ -57,13 +57,13 @@ Classes are fundamental parts of object-orientated programming (OOP). And althou
 With a more complex system, OOP can help to reduce complexity by hiding low-level details from the developer (which they don't need to know) such as internal `state`.
 
 ```{note}
-The `state` of an object is usually a set of variables that are particular to a given instance of a class. To illustrate imagine a bank account and a `Account` class. You can have many _instances_ of this class (many unique bank accounts), each defined by the following internal state:
+The `state` of an object is usually a set of variables that are particular to a given instance of a class. To illustrate, imagine a bank account and an `Account` class. You can have many _instances_ of this class (many unique bank accounts), each defined by the following internal state:
 - owner name
 - account number
 - balance
 ```
 
-Since the end user, does not need to know all of the state associated with an object, when writing classes consider you to marking such state as `private` and only accessing it from the class `methods` (functions defined with the class).
+Since the end user does not need to know all of the state associated with an object, when writing classes consider marking such state as `private` and only accessing it from the class `methods` (functions defined with the class).
 
 ````{admonition} Method vs Function
 When talking about methods software engineers mean functions that are strictly 'attached' to a given class. The following example illustrates the difference between the two:
@@ -125,7 +125,23 @@ The notion of private does not mean secure in Python. The main goal is to _expos
 
 Different implementations can be used by the end user - if the classes support the same methods. In Python, this is known as **duck typing** (if it looks like a duck, and quacks like a duck - it must be a duck); here, if a class has the same methods that you require as another class, you can use either class. In the above example, if we created a class `LoyaltyAccount` with the same methods of withdrawing points, we could foreseeably slot that class in instead of the `BankAccount` class.
 
-With other languages `interfaces` are defined to record exactly what a class should supply to be considered equivalent. Perhaps we need a class to store data - it could have several "write" methods; one implementation could deal with storing data into a database, but you also have a variant that stores data in local CSV files instead. In your code, you could switch which class you provide to your functions - the functions don't need to know if they are updating CSV or SQL files, they'll work regardless. Python does not support explicit interfaces by default but we can illustrate the concept in the following example:
+```{admonition} Liskov Substitution
+
+
+[Liskov substitution](https://en.wikipedia.org/wiki/Liskov_substitution_principle) states that subclasses should not damage the functionality of their parent class in their implementation.
+They should extend their usefulness, but retain their original functionality. In terms of OOP, if class B inherits from class A, it is said consider "B is an A"; Liskov substitution strengthens this to "B is interchangeable with an A".
+
+If you were to increase the domain and range of a function to account for new cases then this function should observe the same interface as the previous function.
+
+**In short:**
+- Objects should be replaceable with instances of their subclasses, without altering the correctness of that program
+- Functions should be replaceable with similar functions that observe the same interface contract.
+
+```
+
+(interfaces)=
+
+With other languages `interfaces` are defined to record exactly what a class should supply to be considered equivalent. Perhaps we need a class to store data - it could have several "write" methods; one implementation could deal with storing data into a database, another could store data in local CSV files instead. In your code, you could switch which class you provide to your functions - the functions don't need to know if they are updating CSV or SQL files, they'll work regardless. Python does not support explicit interfaces by default but we can illustrate the concept in the following example:
 
 ```python
 # Interface: My Classes Should have these methods:
@@ -168,11 +184,10 @@ If a single class is responsible for too much, then most of your code will be in
 **Responsibility Driven Design** makes objects that are normally "passive" become "active" - for example, with a banking system, rather than having an overly complex object representing a bank account (and handling all money movements), instead objects representing "cheques" and "cash" gain payment methods. Hence a cheque knows how to pay itself into an account; if we later needed to add new payment methods, the existing classes will unlikely to be affected. The bank account's responsibility is holding money, receiving it and paying it out. A cheque's responsibility is to pay itself in to a bank account and retrieve money from its associated account.
 
 ```{note}
-Many **[Design Patterns](https://en.wikipedia.org/wiki/Software_design_pattern)** are available with OOP - reusable solutions to common problems. An example is if you have an `Orange` class, and an `OrangePeeler` class. You've been given an `Apple` class, but would really love to be able to peel it - use an **adapter pattern**. Create an `OrangeAdapter` class that has the same methods as an `Orange` but accepts an `Apple` at construction. `OrangeAdapter` then takes all the `Orange` methods and translates them into equivalent method calls to the `Apple` class it was told about at construction. The `Apple` now looks like an `Orange`.
-
+Many **[Design Patterns](https://en.wikipedia.org/wiki/Software_design_pattern)** are available with OOP - reusable solutions to common problems.
 ```
 
-Object-Orientated Programming introduces the concept of **inheritance** - where a class can "inherit" its methods from another class. This enables extension of existing classes, but can cause problems for the unwary. Its an in-depth topic, but be aware that inheritance locks you in to the object you inherit from - if this object changes, you are dragged along with it. If you're using inheritance to reuse code from another class, prefer **encapsulation** instead. This means keep a private instance of the class you wish to re-use, and delegate the work down to it within your own methods - rather than inheriting the methods and directly using the other class. Now, if you change your mind about using this reused object - you aren't tied in to it, as no-one outside your class knows you've used it.
+Object-Orientated Programming introduces the concept of **inheritance** - where a class can "inherit" its methods from another class. This enables extension of existing classes, but can cause problems for the unwary. Its an in-depth topic, but be aware that **inheritance locks you in to the object you inherit from** - if this object changes, you are dragged along with it. If you're using inheritance to reuse code from another class, prefer **encapsulation** instead. This means keep a private instance of the class you wish to re-use, and delegate the work down to it within your own methods - rather than inheriting the methods and directly using the other class. Now, if you change your mind about using this reused object - you aren't tied in to it, as no-one outside your class knows you've used it.
 
 Finally, be wary when using classes to "chain" items together; for instance, if a "book" has a "publisher" and the publisher has an "address", you could: `book.publisher().address().postcode()`. However, chains like this are fragile as they depend on multiple parts of the system not changing. The "Demeter" research project found that this style of code produce a high proportion of bugs, resulting in the **(Law of Demeter)[https://en.wikipedia.org/wiki/Law_of_Demeter]**: "Only talk to your immediate friends". Namely, only access the objects you know about directly within a class - delegate the refined knowledge to the class you know about. Your code is then exposed to fewer opportunities to get damaged by a change in the codebase. There is a penalty for this - you replace with `book.publisherPostcode()` which internally would call `publisher.postcode()`, so we've added a method to `publisher` as well as `book`; we're trading maintainability for complexity, so consider if it is worthwhile.
 
@@ -1068,48 +1083,48 @@ if (coconut_count >= 0) {
 Now the count is printed if it is more than or equal to 0.
 It's clear that we intend for this to be the case.
 
-## SOLID <span role="image" aria-label="difficulty rating: 4 out of 5">★★★★☆</span>
-
-SOLID is an acronym that encompasses five software design principles that are intended to increase the readability and extensibility of software source code.
-These principles are designed to improve object-oriented programs, but can be roughly applied to functional programs too.
-
-```{todo}
-Extend SOLID subsections with analytical examples.
-
-Not necessarily code-based.
-
-[#21](https://github.com/best-practice-and-impact/qa-of-code-guidance/issues/21)
-```
-
 ### Single responsibility
 
 > An object should have a single responsibility.
 > Only changes to one part of the software's specification should be able to affect the specification of the class.
 
-This principle suggests that a single element of your code (a function or class) should be responsible for a single part of your software's functionality. Consider a "responsibility" as an "axis of change" - you want one reason for the code to be changed.
-It should take on one task and perform it well.
+This principle suggests that a single element of your code (a function or class) should be responsible for a single part of your software's functionality.
+It should take on one task and perform it well and piece of code is likely more robust if there are fewer reasons to change it in the future.
 
-A piece of code is more robust if there are fewer reasons to change it in the future.
-Code that is responsible for multiple aspects of your software's functionality might need modifying for several reasons.
-Because of this multitasking design, it is also likely to be more difficult to modify this code without having an unintentional effect on other aspects of the software.
+When you work with code that is designed to multitask, it is often difficult to modify this code without having an unintentional effect on other aspects of the software.
 
-Applying this principle reduces the complexity of your code, as the task assigned to each function or class is clearly defined and is independent of other functions or classes.
-This simplicity also increases usability, by minimising the number of parameters that each function or class might require.
+Imagine trying to create a model of the economy which is a complex web of interconnected interactions. Creating 'abstractions' in the form of classes or functions that try to model multiple aspects of the economy at once might seem helpful, but when used incorrectly might instead add to the complexity.
 
-The Separation of Concerns principle captures a similar concept to Single Responsibility, but on a higher level.
+Imagine that you have created a class that represents a whole country - `Country` which will be representing a model trying to predict economic statistics for a country such as unemployment, inflation etc. One can imagine that this class will grow really quickly into something unmanageable as its responsibilities grow in the form of added methods and attributes.
+
+Based on the other chapters in this guidance, you might eventually realise that you need to break it down further, however if you had applied the idea of single responsibility with a bit more depth, you might have broken down the `Country` class into smaller components modelling `UnemploymentModel`, `InflationModel` and making them responsible for doing the modelling while the `Country` class is only responsible for presenting the results to, lets say, a higher level economy model that tries to model cross-country trade.
+
+This simplicity also increases usability, by **minimising the number of parameters that each function or class might require.**
+
+```{note}
+If you remember the [section on interfaces](interfaces), the different modellers classes are a prime example where defining an interface would help you make sure each `___Model`  object is interchangeable.
+```
+
+The **Separation of Concerns principle** captures a similar concept to Single Responsibility, but on a higher level.
 This principle suggests that your software should be separated into distinct sections that each address a single concern.
 
-For example, if your software is responsible for managing sales of a product, then your concerns might include:
+In the previous economic modelling example, you might establish your concerns to be:
 
-- Presenting information to the customer, to allow them to select a product.
-- Taking payment from the customer.
-- Arranging dispatch and delivery of the product.
+- Model economy at low level: `UnemploymentModel` & `InflationModel`.
 
-Within the section of you software that is responsible for taking payment, you might have multiple responsibilities:
+  They are concerned with the 'low-level' details of giving estimates of economic output. They are nicely independent of each other and concerned only by what they are trying to estimate.
 
-- Collect the users input, to capture payment details.
-- Pass the payment information on to a third party, to process the payment.
-- Report the status of the payment to the user.
+- Model country level interactions and trade blocks: `Country` & `TradeBlock`.
+
+  These parts of your code almost sit higher in the concept hierarchy. They will be using the `Model` classes, however this is primarily concerned about the interactions in trade between countries.
+
+- Run simulations given a description of the desired economy
+
+  Once the model is there, there could be a SimulationRunner that takes in your model of the world economy and runs simulations. In this case, this part of your codebase will only revolve around running the actual simulations.
+
+In each of these distinct sections of your codebase there will be numerous classes and functions that should follow the single responsibility concepts outlined earlier.
+
+For example, within the section of your code concerned on modelling data, you might have a set of functions to download data from an external data store - those functions should only be responsible for receiving the required data safely and providing it to the `Model` object. If you had the need to download data from different sources online (i.e. Database, CSV or other), you might create several download functions. To pick the right function for each model you might create a [LoaderFactory](<https://en.wikipedia.org/wiki/Factory_(object-oriented_programming)>) who's only responsibility is to provide the `Model` with the right loading function for the right data source.
 
 ```{figure} ./_static/separation_of_concerns.png
 ---
@@ -1123,53 +1138,81 @@ Representation of concerns and responsibilities within a piece of software
 As such, separate sections of your software should be responsible for each of the concerns.
 Within each section of your software, distinct functions or classes should be responsible for each task that is required for that sections overall functionality.
 
+```{admonition} In the context of functions
+The previous example was heavily focused on classes and Object-Oriented Programming. The same equally applies in the world of functions. You define each concern which is addressed by a module containing functions who follow the single responsibility principle.
+
+So the previous example rephrased could be:
+- `uneployment_model` - function running the unemployment modelling
+- `inflation_model` - function running the unemployment modelling
+- etc.
+
+These functions then produce data about a given country stored somewhere (this could be stored as state of a class in the OOP approach) and then another function takes all this data for multiple countries and starts modelling it across country boundaries.
+
+The same core concepts still fully apply.
+```
+
 ### Open-closed
 
 > Objects and functions should be open for extension, but closed for modification.
 
 This means that it should be possible to extend the functionality of classes or functions, without modifying their source code or how they work.
-For example, extension of a class or function could be carried out through sub-classing or wrapper functions and decorators, respectively.
 
-This makes managing dependencies much easier between packages and projects.
+```python
+# some function that we want to keep closed for modification
+def core_method(data):
+    ...
+    return result
 
-In functional programming we can use the concepts of function composition and higher-order functions to enact the open-closed principle.
+# if we want to extend it without modifying it, we can always do the following
+def extended_methodology(data):
+     core_results = core_method(data)
+     return extended_functionality(core_results)
 
-### [Liskov substitution](https://en.wikipedia.org/wiki/Liskov_substitution_principle)
+```
 
-> Objects should be replaceable with instances of their subtypes, without altering the correctness of that program
-> Functions should be replaceable with similar functions that observe the same interface contract.
+Same would apply with classes through ideas like `inheritance`.
 
-Subclasses should not damage the functionality of their parent class in their implementation.
-They should extend their usefulness, but retain their original functionality. In terms of OOP, if class B inherits from class A, it is said consider "B is an A"; Liskov substitution strengthens this to "B is interchangeable with an A".
+When you think about the consequences of this you realise that taking into account this open-closed idea gives you:
 
-If you were to increase the domain and range of a function to account for new cases then this function should observe the same interface as the previous function.
+1. the confidence the parts of your code who's behaviour is not expected to change - closed for modification
+2. the ability to add more functionality as your code evolves
 
-### Interface segregation
+````{admonition} Functional composition
+In functional programming we use higher-order functions and functional composition to enact said principles. Functional composition deserves a brief detour as it is a concept that might be keenly used in a data analytics pipeline.
 
-> Many client-specific interfaces are better than one general-purpose interface.
+In simple terms, functional composition is a mathematical idea that takes two functions $f$ and $g$ and produces function $h$ such that $h(x) = g(f(x))$. People familiar with R's `%>%` operator will find this idea familiar.
 
-An interface describes the interaction between multiple elements of code.
-This might be a piece of your code that uses another piece of your code or someone else's.
+Imagine you have a task to perform some report generation and modelling from data. You can lay out your code to be easily composable with the following functions with single responsibility.
+- `load` - loads data
+- `model` - runs the model on data
+- `report` - runs report generation
 
-As you add more and more functionality into a single interface, between parts of a program or from the program to customers, it becomes more difficult to extend or maintain.
-Separating these into multiple interfaces increases simplicity and maintainability.
+So when it comes to creating a pipeline you end up with something like
 
-It can be tempting to generalise your program to as many use cases as possible.
-However, this can overwhelm your users.
-It is better that each user persona gets an interface that is meant for them rather than a complicated one which doesn't satisfy any user persona.
+`report= report(model(load(filepath)))`
 
-### Dependency inversion
+We will now assume that these individual functions are closed for modification, however we can extend the functionality of load by adding a `clean` function that cleans the data so we end up with:
 
-> Depend on abstractions, not concretions.
+```python
+# very simply we can extend this without modifying the source code of load
+report = report(model(clean(load(filepath))))
 
-High level modules should not depend on low-level modules.
-Both should depend on interfaces - i.e. be built with this interaction in mind.
+# or we can first define a new load as follows
+def new_load(filepath):
+    return clean(load(filepath))
 
-Abstractions should not depend on specific details, but should outline a general concept.
-Concrete implementations should depend on these abstractions.
+report = report(model(new_load(filepath)))
 
-Specify parameters to a function (or a higher order function to retrieve them) rather than hard coding the function to get some value.
-The function should not look outside of its own environment for data.
+# or with the help of anonymous (lambda)
+new_load = lambda data: clean(load(data))
+report = report(model(new_load(filepath)))
+
+# or
+pipeline = lambda data: report(model(clean(load(filepath))))
+report = pipeline(filepath)
+```
+
+````
 
 (resources)=
 
