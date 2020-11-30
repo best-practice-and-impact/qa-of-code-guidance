@@ -14,33 +14,33 @@ Code is read more often than it is written.
 
 When writing non-trivial code it is wise to assume that at some point someone else will need to understand, use and adapt your code. It might be yourself in six months time - after you've forgotten how the code works, or its design intent. Therefore every time you write such code, it is incredibly important to empathise with these potential users and produce code that is tidy, understandable and does not add unnecessary complexity.
 
-Common barriers to writing readable codebases include documentation that is hard to understand or absent, walls of code with repeating functionality that is hard to absorb in 'chunks' or overcomplicated solutions that solve the problem in ways that could be simplified. Avoiding these issues is essential to make sure that your analysis is reproducible, auditable and assured. Therefore it is our professional responsibility to avoid putting such barriers in place whenever possible.
+Common barriers to writing readable codebases include documentation that is hard to understand or absent, walls of code with repeating functionality that is hard to absorb in 'chunks' or over-complicated solutions that solve the problem in ways that could be simplified. Avoiding these issues is essential to make sure that your analysis is reproducible, auditable and assured. Therefore it is our professional responsibility to avoid putting such barriers in place whenever possible.
 
 This chapter highlights some good coding practices that will improve the readability and maintainability of your code.
-Here, readability refers how easily another analyst can gain a decent understand of how your code works, within a reasonable amount of time.
+Here, readability refers to how easily another analyst can gain a decent understand of how your code works, within a reasonable amount of time.
 Maintainability refers to how easily other analysts can understand your code well enough to modify and repair it.
 
 (modular)=
 
 ## Modular code
 
-Breaking your code down into smaller, more manageable chunks is a sensible way to improve readability. Regardless of the language, there are often methods to containerise your code into self-contained parts such as modules, classes or functions.
+Breaking your code down into smaller, more manageable chunks is a sensible way to improve readability. Regardless of the language, there are often techniques to containerise your code into self-contained parts such as modules, classes or functions.
 
 ### Functions
 
 When prototyping we often copy and paste code to 'make things work' but when time comes to wrap that work up, it is worth taking repetitivee code that can be easily parameterised and turning it into functions. Writing functions as well-sealed and reusable containers helps them be easily testable and readable.
 
-When starting to write functions consider what is the right **level of abstraction**. Namely, can this large piece of code be turned into concise and readable function as it is, without having to pass too many arguments to the resulting function? If not, perhaps you need to break the code into smaller helper functions (that can also be reused in other places across the codebase) and then **use these smaller functions to build up a larger function that performs the actions you need**.
+When starting to write functions consider what is the right level of abstraction. Namely, can this large piece of code be turned into concise and readable function as it is, without having to pass too many arguments to the resulting function? If not, perhaps you need to break the code into smaller helper functions (that can also be reused in other places across the codebase) and then use these smaller functions to build up a larger function that performs the actions you need.
 
 This helps you break the complexity down into small and easily comprehendible chunks that can be documented, tested and understood much easier.
 
-Another thing to consider is the idea of `referential transparency`. Without going into that much detail, the core rule of thumb to follow is: **can I take my function and replace it by the value that it would return?**
+Another thing to consider is the idea of `referential transparency`. Without going into that much detail, the core rule of thumb to follow is: can I take my function and replace it by the value that it would return?
 
-In practice, this means your functions should try to completely **remove any effects they have on values that you have not explicitly fed into it as arguments**. For instance, adding columns in a lingering data table that is not passed explicitly as an argument. Avoiding such behaviour makes your code more transparent and users can quickly pick out which functions affect what data without being concerned about these hidden behaviours.
+In practice, this means your functions should try to completely remove any effects they have on values that you have not explicitly fed into it as arguments. For instance, adding columns in a lingering data table that is not passed explicitly as an argument. Avoiding such behaviour makes your code more transparent and users can quickly pick out which functions affect what data without being concerned about these hidden behaviours.
 
-In cases where your function alters some external values to that it was not explicitly passed, running that function twice might even produce different results and will make issues harder to debug. Thus, **strive to make sure that running the same function twice with the same inputs produces the same results**.
+In cases where your function alters some external values to that it was not explicitly passed, running that function twice might even produce different results and will make issues harder to debug. Thus, strive to make sure that running the same function twice with the same inputs produces the same results.
 
-However this is not always possible or practical in languages that are not designed in a way that encourages this type of programming. Sometimes you **want** a function to capture and affect values outside of the ones provided to it as arguments (i.e. adding data to a database or writing to file). Make sure to control this type of behaviour - ideally pass these values through as parameters to "name and shame" all dependencies and avoid this in the first place - otherwise signal to the end-user to expect these things to happen. This is usually communicated in documentation for end-users and also in comments for fellow developers.
+However this is not always possible or practical in languages that are not designed in a way that encourages this type of programming. Sometimes you want a function to capture and affect values outside of the ones provided to it as arguments (i.e. adding data to a database or writing to file). Make sure to control this type of behaviour - ideally pass these values through as parameters to "name and shame" all dependencies and avoid this in the first place - otherwise signal to the end-user to expect these things to happen. This is usually communicated in documentation for end-users and also in comments for fellow developers.
 
 Ultimately, if you do signal where these kind of things might happen, someone trying to debug issues that might be caused by this behaviour will know where to look.
 
@@ -123,7 +123,7 @@ class BankAccount:
 The notion of private does not mean secure in Python. The main goal is to _expose less information to the other developers using your class_.
 ```
 
-Different implementations can be used by the end user - if the classes support the same methods. In Python, this is known as **duck typing** (if it looks like a duck, and quacks like a duck - it must be a duck); here, if a class has the same methods that you require as another class, you can use either class. In the above example, if we created a class `LoyaltyAccount` with the same methods of withdrawing points, we could foreseeably slot that class in instead of the `BankAccount` class.
+Different implementations can be used by the end user - if the classes support the same methods. In Python, this is known as 'duck typing' (if it looks like a duck, and quacks like a duck - it must be a duck); here, if a class has the same methods that you require as another class, you can use either class. In the above example, if we created a class `LoyaltyAccount` with the same methods of withdrawing points, we could foreseeably slot that class in instead of the `BankAccount` class.
 
 ```{admonition} Liskov Substitution
 
@@ -171,34 +171,34 @@ class SqlHandler:
        return data
 ```
 
-If objects have a similar API (i.e. the methods they supply), then you can easily switch between them; a good real-world example of this is `scikit-learn`, where the different linear model types are represented by different classes that all support a common set of methods. Any model can then be used in a library pipeline and swapped out with minimal effort - they all have methods `fit()` and `predict()`. **Therefore, when thinking about how to break you code up into classes consider the use of standardised methods across similar objects to make them interchangeable.**
+If objects have a similar API (i.e. the methods they supply), then you can easily switch between them; a good real-world example of this is `scikit-learn`, where the different linear model types are represented by different classes that all support a common set of methods. Any model can then be used in a library pipeline and swapped out with minimal effort - they all have methods `fit()` and `predict()`. Therefore, when thinking about how to break you code up into classes consider the use of standardised methods across similar objects to make them interchangeable.
 
 (class-responsibilities)=
 
 ```{note}
-A word of caution, however, when creating classes; it is very easy to start to mapping nouns in system descriptions to classes, and any adjectives applied to the nouns as methods. For example: "the model loads the data" would imply "model" is a class, and it should have a "load_data" method. This will work fine for small systems, but you will find one of your classes gains all of the underlying logic with many methods, whilst other classes just store data with few methods. This can be considered **Data Driven Design**; a better approach is **[Responsibility Driven Design](https://en.wikipedia.org/wiki/Responsibility-driven_design)**.
+A word of caution, however, when creating classes; it is very easy to start to mapping nouns in system descriptions to classes, and any adjectives applied to the nouns as methods. For example: "the model loads the data" would imply "model" is a class, and it should have a "load_data" method. This will work fine for small systems, but you will find one of your classes gains all of the underlying logic with many methods, whilst other classes just store data with few methods. This can be considered Data Driven Design; a better approach is [Responsibility Driven Design](https://en.wikipedia.org/wiki/Responsibility-driven_design).
 
 If a single class is responsible for too much, then most of your code will be in one class; it can become overly complex and hence difficult to maintain, and any changes to requirements will cause this one class to change. You need your classes to know as little as possible to reduce dependencies on other systems and requirements - so small classes with a focussed responsibility - and hence avoid being affected if other systems change. The challenge is to trade maintainability and reuse against complexity.
 ```
 
-**Responsibility Driven Design** makes objects that are normally "passive" become "active" - for example, with a banking system, rather than having an overly complex object representing a bank account (and handling all money movements), instead objects representing "cheques" and "cash" gain payment methods. Hence a cheque knows how to pay itself into an account; if we later needed to add new payment methods, the existing classes will unlikely to be affected. The bank account's responsibility is holding money, receiving it and paying it out. A cheque's responsibility is to pay itself in to a bank account and retrieve money from its associated account.
+Responsibility Driven Design makes objects that are normally "passive" become "active" - for example, with a banking system, rather than having an overly complex object representing a bank account (and handling all money movements), instead objects representing "cheques" and "cash" gain payment methods. Hence a cheque knows how to pay itself into an account; if we later needed to add new payment methods, the existing classes will unlikely to be affected. The bank account's responsibility is holding money, receiving it and paying it out. A cheque's responsibility is to pay itself in to a bank account and retrieve money from its associated account.
 
 ```{note}
-Many **[Design Patterns](https://en.wikipedia.org/wiki/Software_design_pattern)** are available with OOP - reusable solutions to common problems.
+Many [Design Patterns](https://en.wikipedia.org/wiki/Software_design_pattern) are available with OOP - reusable solutions to common problems.
 ```
 
-Object-Orientated Programming introduces the concept of **inheritance** - where a class can "inherit" its methods from another class. This enables extension of existing classes, but can cause problems for the unwary. Its an in-depth topic, but be aware that **inheritance locks you in to the object you inherit from** - if this object changes, you are dragged along with it. If you're using inheritance to reuse code from another class, prefer **encapsulation** instead. This means keep a private instance of the class you wish to re-use, and delegate the work down to it within your own methods - rather than inheriting the methods and directly using the other class. Now, if you change your mind about using this reused object - you aren't tied in to it, as no-one outside your class knows you've used it.
+Object-Orientated Programming introduces the concept of inheritance - where a class can "inherit" its methods from another class. This enables extension of existing classes, but can cause problems for the unwary. Its an in-depth topic, but be aware that inheritance locks you in to the object you inherit from - if this object changes, you are dragged along with it. If you're using inheritance to reuse code from another class, prefer encapsulation instead. This means keep a private instance of the class you wish to re-use, and delegate the work down to it within your own methods - rather than inheriting the methods and directly using the other class. Now, if you change your mind about using this reused object - you aren't tied in to it, as no-one outside your class knows you've used it.
 
-Finally, be wary when using classes to "chain" items together; for instance, if a "book" has a "publisher" and the publisher has an "address", you could: `book.publisher().address().postcode()`. However, chains like this are fragile as they depend on multiple parts of the system not changing. The "Demeter" research project found that this style of code produce a high proportion of bugs, resulting in the **(Law of Demeter)[https://en.wikipedia.org/wiki/Law_of_Demeter]**: "Only talk to your immediate friends". Namely, only access the objects you know about directly within a class - delegate the refined knowledge to the class you know about. Your code is then exposed to fewer opportunities to get damaged by a change in the codebase. There is a penalty for this - you replace with `book.publisherPostcode()` which internally would call `publisher.postcode()`, so we've added a method to `publisher` as well as `book`; we're trading maintainability for complexity, so consider if it is worthwhile.
+Finally, be wary when using classes to "chain" items together; for instance, if a "book" has a "publisher" and the publisher has an "address", you could: `book.publisher().address().postcode()`. However, chains like this are fragile as they depend on multiple parts of the system not changing. The "Demeter" research project found that this style of code produce a high proportion of bugs, resulting in the (Law of Demeter)[https://en.wikipedia.org/wiki/Law_of_Demeter]: "Only talk to your immediate friends". Namely, only access the objects you know about directly within a class - delegate the refined knowledge to the class you know about. Your code is then exposed to fewer opportunities to get damaged by a change in the codebase. There is a penalty for this - you replace with `book.publisherPostcode()` which internally would call `publisher.postcode()`, so we've added a method to `publisher` as well as `book`; we're trading maintainability for complexity, so consider if it is worthwhile.
 
 **To summarise**:
 
 - classes hide implementation detail from developers, enabling implementation to be changed without affecting users and reducing visual noise
-- look to use consistent methods in a group of related classes to enable switching between them without affecting the code using it (consider Python **duck typing** or other languages' **interfaces**)
+- look to use consistent methods in a group of related classes to enable switching between them without affecting the code using it (consider Python duck typing or other languages' interfaces)
 - avoid all logic arriving in a single class, surrounded by minimal holding classes - distribute logic around to ease maintenance (changes will affect smaller areas of code)
 - be aware of trading maintainability for complexity - too many classes can be hard to understand
-- **Design Patterns** have solutions to many common problems and are a useful toolbox - a shared design language
-- prefer encapsulation over inheritance, especially with code reuse (see **Liskov Substitution Principle** in the **SOLID** guidance)
+- Design Patterns have solutions to many common problems and are a useful toolbox - a shared design language
+- prefer encapsulation over inheritance, especially with code reuse (see Liskov Substitution Principle)
 
 ### Scripts
 
@@ -222,7 +222,7 @@ Having something that is not reproducible in a script will not make it more repr
 
 ### Modules
 
-Simply put, **modules are scripts which house the functions that you want to use in other scripts**. As you write your code and find opportunities to create classes or functions that reduce repetition and promote easier code comprehension, you might eventually decide that you want these functions to sit outside of your `main.py` script and you might decide that they would fit into consistent groupings. This is where modules come in; an example will help comprehend how this might work in practice.
+Simply put, modules are scripts which house the functions that you want to use in other scripts. As you write your code and find opportunities to create classes or functions that reduce repetition and promote easier code comprehension, you might eventually decide that you want these functions to sit outside of your `main.py` script and you might decide that they would fit into consistent groupings. This is where modules come in; an example will help comprehend how this might work in practice.
 
 ```{note}
 We will be using Python for the illustration, however the same principles apply in R.
@@ -303,17 +303,17 @@ export(report)
 
 Programming languages often ship with quite a few in-built functions and procedures available to the end-users. However, when it comes to solving specialised problems, these in-built functions are often not enough and you will have to build functionality to address a given problem from scratch. If the solutions you build are useful you can then wrap them up in a package and allow other users to install it. They can then reuse the work you have put in within their own code to solve similar problems.
 
-In short, packages are **self-contained collections of code written by someone else to achieve some purpose**. For example, packages like `dplyr` and `pandas` are essential when performing data wrangling and contain a myriad of functions that allows us to avoid rewriting this functionality from scratch every time. Inside these packages is likely to be a set of [modules](modules) containing relevant functions, classes and other code that someone has written and wrapped up in a particular way that the programming language you use can understand, install and make available to you for import.
+In short, packages are self-contained collections of code written by someone else to achieve some purpose. For example, packages like `dplyr` and `pandas` are essential when performing data wrangling and contain a myriad of functions that allows us to avoid rewriting this functionality from scratch every time. Inside these packages is likely to be a set of [modules](modules) containing relevant functions, classes and other code that someone has written and wrapped up in a particular way that the programming language you use can understand, install and make available to you for import.
 
 ```{note}
 This section will not cover the practices required to package and distribute your code as a package. However if you would like to know more please seek out the packaging guides for your respective language.
 ```
 
-It is useful to keep in mind the question: **is my code solving a problem that someone else has not provided a solution to in my language?**
+It is useful to keep in mind the question: is my code solving a problem that someone else has not provided a solution to in my language?
 If the answer is 'Yes' then perhaps it is worth considering wrapping up your code and distributing it wider.
 
 ```{note}
-**Packaging code up properly will involve applying a lot of the recommendations from this book.**
+Packaging code up properly will involve applying a lot of the recommendations from this book.
 
 You will have to consider how to test, document and lay out your code for it to be usable and packagable. In the end, high quality packages are the cornerstone of open-source package ecosystems, however it is not trivial to be a maintainer and developer of well-regarded open-source packages.
 
@@ -366,7 +366,7 @@ However the great strength of notebooks is their flexibility in displaying resul
 - explore and 'play' with the data while developing your methods
 - turn notebooks into HTML reports to show end users as a way of reporting
 
-In short, **notebooks are not a great way to modularise your code** however they are a great way to do research analytics and to present results. Therefore as the exploratory part of the analytical project draws to a close or when the notebooks become incredibly large due to function definitions, it is wise to stop and refactor the notebooks. Here are a few suggestions to consider:
+In short, notebooks are not a great way to modularise your code however they are a great way to do research analytics and to present results. Therefore as the exploratory part of the analytical project draws to a close or when the notebooks become incredibly large due to function definitions, it is wise to stop and refactor the notebooks. Here are a few suggestions to consider:
 
 - review the repetitive cells and assess which of them can be turned into reusable functions
 - extract all the existing function definitions into their own modules
@@ -376,7 +376,7 @@ In short, **notebooks are not a great way to modularise your code** however they
 
 What you do after this, either turn the notebooks into HTML to send to stakeholders or save them as is so qualified analysts can re-run your notebooks, the steps you've taken will make your code much easier to comprehend and less likely to be bloated.
 
-That said, unless you store only the rendered HTML versions, the notebooks can still be run out of order by some other analysts and **they should not be used as the main method of actually generating outputs**. That orchestration is better placed in scripts that do not have human input as a factor during runtime.
+That said, unless you store only the rendered HTML versions, the notebooks can still be run out of order by some other analysts and they should not be used as the main method of actually generating outputs. That orchestration is better placed in scripts that do not have human input as a factor during runtime.
 
 ## Clean code
 
@@ -397,14 +397,14 @@ These concepts are also applied in the [self-led learning course on clean code](
 
 The following sections will present some key aspects of writing clean code that are fairly widely applicable. That said each individual programming language has idiomatic ways of writing code that are specific to its features and each language usually has some form of accepted style guides for it.
 
-**Make sure to consult the style guides for your language as first point of call.** This is an important point to stress as these guides will capture the most up to date guidance for your language of choice and will usually provide in-depth guidance that is not going to be available in this document.
+Make sure to consult the style guides for your language as first point of call. This is an important point to stress as these guides will capture the most up to date guidance for your language of choice and will usually provide in-depth guidance that is not going to be available in this document.
 
 ```{admonition} Be careful!
 While reviewing your own or other peoples code it is often tempting to focus on the code style as the first point of call to provide easy feedback. However, the approach of pointing out the deviations between the code and the style guide for the language only addresses the fundamental question - would you say this code is tidy?
 
 What it does not do is ask - does this code do what it needs to and how well is it managing the complexity of the problem?
 
-Always **make sure to not get tunnel vision on clean code as the only source of feedback** for the codebase. Reflect first and foremost on the functionality of the code and how it solves a given problem. Then address the issues that make it less readable.
+Always make sure to not get tunnel vision on clean code as the only source of feedback for the codebase. Reflect first and foremost on the functionality of the code and how it solves a given problem. Then address the issues that make it less readable.
 ```
 
 (naming)=
@@ -450,7 +450,7 @@ my_favourite_number <- "ssh, I'm a string"
 
 ````
 
-Another developer, or even "future you", would be unable to correctly understand what you intended these variable names to represent. Therefore **strive to avoid cryptic and single letter identifiers**.
+Another developer, or even "future you", would be unable to correctly understand what you intended these variable names to represent. Therefore - strive to avoid cryptic and single letter identifiers.
 
 That said, there are situations where some seemingly cryptic identifiers make sense. Using single letters to name variables is suitable when implementing methodologies from underlying mathematical notation.
 
