@@ -2,7 +2,7 @@
 
 The principles outlined in this chapter represent good practices for general programming and software development.
 
-However, they are tailored to a more analytical workflow and would benefit analysts with understanding of core programming concepts such as variables, functions and classes. You can find more information and helpful resources in the [resources](resources) section.
+However, they are tailored to a more analytical workflow and would benefit analysts with understanding of core programming concepts such as variables, functions and classes. You can find more information and links to training in the [](learning.md) section.
 
 ## Motivation
 
@@ -388,12 +388,6 @@ Programs are meant to be read by humans and only incidentally for computers to e
 
 Code with high readability is often referred to as "clean code".
 Clean code helps us understand a program faster as it tries to remove points of confusion and ambiguity.
-
-```{admonition} Key Learning
-:class: admonition-learning
-
-These concepts are also applied in the [self-led learning course on clean code](https://learninghub.ons.gov.uk/enrol/index.php?id=537) (government analysts only).
-```
 
 The following sections will present some key aspects of writing clean code that are fairly widely applicable. That said each individual programming language has idiomatic ways of writing code that are specific to its features and each language usually has some form of accepted style guides for it.
 
