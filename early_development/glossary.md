@@ -1,3 +1,14 @@
+
+
+* Referential transparency - the fact that a function can be replaced with it's output value without changing the result of the program.
+* Parameter - the arguments that a function or method expects to be provided when it is called.
+* Argument - a value which is being passed to a program, function or class.
+
+* Object-oriented programming (OOP) - defining and using objects that contain both data (attributes) and logic (methods).
+
+
+* Application Programming Interface (API) - an interface that defines how you can interact with software. For example, the functions or methods from a package that a typical user will interact with.
+
 * Assured -
 * Auditable - 
 * Reproducibile - produces the same results, given the same analysis and the same data.

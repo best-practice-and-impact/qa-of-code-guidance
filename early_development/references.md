@@ -40,7 +40,7 @@ These links detail application of good practices to machine learning.
 * [The Hitchhiker's Guide to Python](https://docs.python-guide.org/) - everything Python
 * [An introduction to R Markdown - writing dynamic and reproducible documents, by Olivier Gimenez](https://oliviergimenez.github.io/intro_rmarkdown/#1)
 * [Contributing to open source: A short guide for organizations, by Chris Holdgraf](https://predictablynoisy.com/posts/2020/organizations-help-oss-guide/)
-
+* [Abstract Base Classes in Python](https://pymotw.com/3/abc/)
 
 ## Challenge yourself
 

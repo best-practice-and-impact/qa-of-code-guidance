@@ -22,65 +22,64 @@ Code is read more often than it is written.
 -- Guido van Rossum (creator of Python)
 ```
 
-When writing code that at some point someone else will need to understand, use and adapt (might be yourself in six months time), it is important to empathise with these potential users and produce code that is tidy, understandable and does not add unnecessary complexity.
+When writing code, we should expect that at some point someone else will need to understand, use and adapt it. This might be yourself in six months time. As such, it is important to empathise with these potential users and write code that is tidy, understandable and does not add unnecessary complexity.
 
-Common barriers to writing readable codebases include documentation that is hard to understand or absent, walls of code with repeating functionality that is hard to absorb in 'chunks' or over-complicated solutions that solve the problem in ways that could be simplified. Avoiding these issues is essential to make sure that your analysis is reproducible, auditable and assured. Therefore it is our professional responsibility to avoid putting such barriers in place whenever possible.
+Common barriers to writing readable code include: documentation that is hard to understand or absent, walls of repetitive code that is hard to absorb, or over-complicated code where a simpler solution could be used. Avoiding these issues is essential to make sure that your analysis is reproducible, auditable and assured. Therefore it is our professional responsibility to avoid putting such barriers in place whenever possible.
 
-This chapter highlights some good coding practices that will improve the readability and maintainability of your code.
-Here, readability refers to how easily another analyst can gain a decent understand of how your code works, within a reasonable amount of time.
-Maintainability refers to how easily other analysts can understand your code well enough to modify and repair it.
+This chapter highlights good coding practices that will improve the readability and maintainability of your code. Here, readability refers to how easily another analyst can gain a decent understand of how your code works, within a reasonable amount of time. Maintainability refers to how easily other analysts can understand your code well enough to modify and repair it.
 
 (modular)=
-
 ## Modular code
 
 Breaking your code down into smaller, more manageable chunks is a sensible way to improve readability. Regardless of the language, there are often techniques to containerise your code into self-contained parts such as modules, classes or functions.
 
 ### Functions
 
-When prototyping we often copy and paste code to 'make things work' but when time comes to wrap that work up, it is worth taking repetitivee code that can be easily parameterised and turning it into functions. Writing functions as well-sealed and reusable containers helps them be easily testable and readable.
+In the early stages of analysis we often copy and paste code to 'make it work'. As this work matures, it is worth taking repetitive code and turning it into functions. Functions allow us to make a  piece of logic reusable in a consistent and readable way, and also makes it easier for us to [test our logic](testing_code.md).
 
-When starting to write functions consider what is the right level of abstraction. Namely, can this large piece of code be turned into concise and readable function as it is, without having to pass too many arguments to the resulting function? If not, perhaps you need to break the code into smaller helper functions (that can also be reused in other places across the codebase) and then use these smaller functions to build up a larger function that performs the actions you need.
+When starting to write functions, you should consider what is the right level of complexity for a single function. Namely, can the code containing my logic be turned into a concise and readable function as it is, without having to pass too many arguments to the resulting function? If not, it might be better to break the code into multiple smaller functions and then use these smaller functions to build up a larger high-level function that performs the group of actions that you need. These smaller functions might also be used in other places in your code. For example, in other high-level functions that perform similar tasks.
 
-This helps you break the complexity down into small and easily comprehendible chunks that can be documented, tested and understood much easier.
+This approach helps you break complex logic down into small, understandable chunks that can be documented and tested more easily.
 
-Another thing to consider is the idea of `referential transparency`. Without going into that much detail, the core rule of thumb to follow is: can I take my function and replace it by the value that it would return?
+When writing functions, it's also important to consider how they interact with other parts of your code. As a general rule of thumb, your code should run in the same way if a call to your function was replaced by the value that it would have returned. This is referred to as 'referential transparency'.
 
-In practice, this means your functions should try to completely remove any effects they have on values that you have not explicitly fed into it as arguments. For instance, adding columns in a lingering data table that is not passed explicitly as an argument. Avoiding such behaviour makes your code more transparent and users can quickly pick out which functions affect what data without being concerned about these hidden behaviours.
+In practice, this means that your functions should not depend-on or affect variables that have not been explicitly fed into them as arguments. For instance, a function should not add columns to a data table that has not been passed as an input to the function. Nor should the action of a function be affected by anything other than arguments that are passed to it. For example, running your function twice with the same inputs should always produce the same results.
 
-In cases where your function alters some external values to that it was not explicitly passed, running that function twice might even produce different results and will make issues harder to debug. Thus, strive to make sure that running the same function twice with the same inputs produces the same results.
+Avoiding such behaviours makes your code more transparent; it will be easier for users and developers to understand which functions affect which data without being concerned about hidden behaviours.
+In turn, this makes it easier to locate bugs in the code and assure its function by peer review.
 
-However this is not always possible or practical in languages that are not designed in a way that encourages this type of programming. Sometimes you want a function to capture and affect values outside of the ones provided to it as arguments (i.e. adding data to a database or writing to file). Make sure to control this type of behaviour - ideally pass these values through as parameters to "name and shame" all dependencies and avoid this in the first place - otherwise signal to the end-user to expect these things to happen. This is usually communicated in documentation for end-users and also in comments for fellow developers.
+When it is not possible or practical to follow these practices, you should ensure that any 'side-effects' are adequately documented for both users and developers. This may be the case where your code interacts with a file, database or an external service. Ultimately, if you do signal where these kind of things might happen, someone trying to debug issues will know where to look.
 
-Ultimately, if you do signal where these kind of things might happen, someone trying to debug issues that might be caused by this behaviour will know where to look.
+To summarise:
 
-**To summarise**:
-
-- make sure functions are not too overcomplicated; break down the code into even smaller helper functions and build up your functionality with larger functions from these small building blocks
-- minimise the 'side-effects' of functions where at all possible in order to make sure that your code is easy to debug and is transparent in its functionality
-- similarly, strive to make sure that running your function with the same inputs will produce the same results every time
+- Make sure that functions are not too overcomplicated; break down your code into smaller functions and build up your functionality with larger functions from these small building blocks.
+- Minimise the 'side-effects' of functions in order to make sure that your code is easy to debug and is transparent in its functionality.
+- Strive to make sure that running your function with the same inputs will produce the same results every time.
 
 ### Classes
 
-Classes are fundamental parts of object-orientated programming (OOP). And although they exist in R, they are more widely used in Python (and other OOP enabling languages). Hence the following chapter and the examples presented will be less focused on R.
+Classes are fundamental parts of [object-orientated programming (OOP)](https://en.wikipedia.org/wiki/Object-oriented_programming). They create an association between data (attributes of the class) and logic (methods of the class). As you will see in the examples below, classes can be useful when representing real objects in our code.
 
-With a more complex system, OOP can help to reduce complexity by hiding low-level details from the developer (which they don't need to know) such as internal `state`.
+Although classes do exist in R, they are more widely used in Python (and other OOP enabling languages). Hence the following sub-section will focus primarily on Python classes.
+
+With a more complex system, OOP can help to reduce complexity by hiding low-level details from users, such as internal state.
 
 ```{note}
-The `state` of an object is usually a set of variables that are particular to a given instance of a class. To illustrate, imagine a bank account and an `Account` class. You can have many _instances_ of this class (many unique bank accounts), each defined by the following internal state:
+The 'state' of an object is usually a set of variables that are particular to a given instance of a class. To illustrate, imagine a bank account that is represented by an `Account` class. You can have many _instances_ of this class (many unique bank accounts), each defined by the following internal state:
 - owner name
 - account number
 - balance
 ```
 
-Since the end user does not need to know all of the state associated with an object, when writing classes consider marking such state as `private` and only accessing it from the class `methods` (functions defined with the class).
+Since the end user does not need to know all of the state associated with an object, when writing classes consider marking such state as 'private'. This prevents users from accessing attributes directly, instead accessing them through class methods (functions defined with the class).
 
 ````{admonition} Method vs Function
-When talking about methods software engineers mean functions that are strictly 'attached' to a given class. The following example illustrates the difference between the two:
+When talking about methods, we mean functions that are strictly 'attached' to a given class. The following example illustrates the difference between the two:
 
 ```python
+# Defining a class with a diagnose method
 class Car:
-    "A car class"
+    """A car class"""
     wheels = 4
     def __init__(self, brand):
         self.brand = brand
@@ -88,77 +87,95 @@ class Car:
     def diagnose(self):
         ...
 
-# versus
-
+# versus defining a standalone diagnosis function
 def diagnose(car, ...):
-    "A car diagnosis function"
+    """A car diagnosis function"""
     ...
 
-# calling a method on a class holding the state
+
+# Calling a method on a class instance that holds it's own state
 cadillac = Car(brand="Cadillac")
 cadillac.diagnose()
 
-
-# calling a function
-# note: here for the sake of variety the information about the car is a dictionary
+# Calling a function by passing all relevant information explicitly
+# Note: for the sake of variety the information about the car is represented in a dictionary
 diagnose({"brand":"Cadillac", "wheels":4})
-
 ```
 
 ````
 
-In some languages private state is in-built in the language while in Python [private instance variables do not exist](https://docs.python.org/3/tutorial/classes.html#private-variables). You can however mark them with underscores and they will be less noticable and mildly harder to accidentally use. You can also add "private" methods as helper methods which aren't exposed to users, to enable reuse of code within an object, analogous to breaking down larger functions.
+In some languages 'private' state can be used to prevent access to parts of your class. In Python [truly private instance variables do not exist](https://docs.python.org/3/tutorial/classes.html#private-variables), so it is not possible to prevent access to any part of your class. The standard convention in Python is to prefix attribute names with a single underscores (`_my_class_attribute`) to indicate that users shouldn't be concerned with these attributes.
+
+In addition to private attributes, you can use the same naming convention to indicate that a method is 'private' and should not be used by users. This can be useful when writing reusable low-level methods within an object, analogous to breaking a large function down into multiple smaller functions. These private methods can then be called by high-level methods that are exposed to users.
+
+```{caution}
+In Python, the notion of 'private' does not mean secure. The main goal of private attributes and methods is to expose less unnecessary information to the anyone using your class in their code.
+```
+
 
 ```python
 class BankAccount:
     def __init__(self, balance, credentials):
-        self._balance = balance # note: single underscore
-        self.__balance = balance # note: double underscore
-        # both of these make these values 'private' but the second one also
-        # mangles the name of the method
+        self._balance = balance
+        self._credentials = credentials
 
-        self.__credentials = credentials
+    def _private_withdraw(self, amount):
+        """Private withdrawal helper method."""
+        self._balance -= amount
 
-    def __private_withdraw(self, amount):
-        "Private withdrawal helper"
-        self.__balance -= amount
+    def _check_credentials(self, credentials):
+        """Private check helper method."""
+        if credentials == self._credentials:
+            return True
+        else:
+            return False
 
     def withdraw(self, credentials, amount):
-        "Public withdrawal method."
-        if check(self.__credentials, credentials):
-            self.__private_withdraw(amount)
+        """Public withdrawal method."""
+        if _check_credentials(credentials):
+            self._private_withdraw(amount)
 ```
 
-```{note}
-The notion of private does not mean secure in Python. The main goal is to _expose less information to the other developers using your class_.
-```
+> If it walks like a duck, and it quacks like a duck, then it must be a duck.
 
-Different implementations can be used by the end user - if the classes support the same methods. In Python, this is known as 'duck typing' (if it looks like a duck, and quacks like a duck - it must be a duck); here, if a class has the same methods that you require as another class, you can use either class. In the above example, if we created a class `LoyaltyAccount` with the same methods of withdrawing points, we could foreseeably slot that class in instead of the `BankAccount` class.
+When using classes in our code, we care more about what methods a class provides than what `type` it is defined as. This is known as 'duck typing'; if a class has the same methods as another class, then you can use either class in your code. Given the example above, if we created a class `LoyaltyAccount` with the same `withdraw` method for withdrawing points, we could feasible switch between using the `BankAccount` and `LoyaltyAccount` classes without affecting how our code runs.
 
-```{admonition} Liskov Substitution
+When defining multiple classes with similar functionality, it can be useful to store the shared logic in a separate class type, which we can extend by subclassing. For example, we might create an `Account` class to store a `balance` and the logic behind `withdraw`. Our `BankAccount` and `LoyaltyAccount` could then subclass `Account` to extend it with any additional logic that is specific to their account types. 
 
-
+```{admonition}
 [Liskov substitution](https://en.wikipedia.org/wiki/Liskov_substitution_principle) states that subclasses should not damage the functionality of their parent class in their implementation.
-They should extend their usefulness, but retain their original functionality. In terms of OOP, if class B inherits from class A, it is said consider "B is an A"; Liskov substitution strengthens this to "B is interchangeable with an A".
+They should extend their usefulness, but retain their original functionality. In terms of OOP, if class `BankAccount` inherits from class `Account` we should consider that 'BankAccount is an Account'. Liskov substitution strengthens this statement to 'BankAccount is interchangeable with an Account'; we can replace any `Account` with `BankAccount` without changing how our code runs.
 
-If you were to increase the domain and range of a function to account for new cases then this function should observe the same interface as the previous function.
+This can be similarly applied to functions. If you were to increase the domain and range of a function, to account for new cases, then this function should observe the same interface as the previous function.
 
-**In short:**
-- Objects should be replaceable with instances of their subclasses, without altering the correctness of that program
-- Functions should be replaceable with similar functions that observe the same interface contract.
+In short:
+- Objects should be replaceable with instances of their subclasses, without altering the correctness of that program.
+- Functions should be replaceable with similar functions with the same interface.
 
 ```
 
 (interfaces)=
 
-With other languages `interfaces` are defined to record exactly what a class should supply to be considered equivalent. Perhaps we need a class to store data - it could have several "write" methods; one implementation could deal with storing data into a database, another could store data in local CSV files instead. In your code, you could switch which class you provide to your functions - the functions don't need to know if they are updating CSV or SQL files, they'll work regardless. Python does not support explicit interfaces by default but we can illustrate the concept in the following example:
+In OOP, an 'interface' can be defined to act a blueprint or specification for writing classes. An interface outlines the attributes and methods that a class must provide to be considered equivalent to a group of classes. Perhaps we want to use classes to read and write data - this might require several different classes, with `read` and `write` methods for different file formats. For example, one class could deal with storing data into a database, and another could store data in local `.csv` files instead. In our code, we could switch which class is provided to downstream functions. Our functions don't need to know if they are reading or writing from databases or `.csv` files, however, they do require the `read` and `write` methods of the class to work in a standard way. An `interface` would help to define the standard for interacting with this group of classes.
+
+In Python, the `abc` module allows us to define ['abstract' base classes and methods](https://docs.python.org/3/library/abc.html) to enforce that our classes provide the required methods. When a subclass does not implement the required abstract methods, instances of the class cannot be created. These abstract base classes achieve the same as interfaces in other object-based languages. We can illustrate this concept in the following example:
 
 ```python
-# Interface: My Classes Should have these methods:
-# write(data: [int]) -> bool
-# read(str) -> [int]
+from abc import ABC, abstractmethod
 
-class CsvHandler:
+
+class FileHandler(ABC):
+    """An abstract class for reading and writing"""
+    @abstractmethod
+    def write(self, data):
+        pass
+
+    @abstractmethod
+    def read(self, query):
+        pass
+
+
+class CsvHandler(FileHandler):
     ...
     def write(self, data):
        return write_to_file(data, self.filename)
@@ -169,7 +186,8 @@ class CsvHandler:
        data = process(query, data)
        return data
 
-class SqlHandler:
+
+class SqlHandler(FileHandler):
     ...
     def write(self, data):
        connect_to_database(self.connection_url)
@@ -181,11 +199,11 @@ class SqlHandler:
        return data
 ```
 
-If objects have a similar API (i.e. the methods they supply), then you can easily switch between them; a good real-world example of this is `scikit-learn`, where the different linear model types are represented by different classes that all support a common set of methods. Any model can then be used in a library pipeline and swapped out with minimal effort - they all have methods `fit()` and `predict()`. Therefore, when thinking about how to break you code up into classes consider the use of standardised methods across similar objects to make them interchangeable.
+If objects have a similar application programming interface (API, i.e. the methods they supply for users), then you can easily switch between them. A good real-world example of this is `scikit-learn`, where the different linear model types are represented by different classes. Each linear model class supports a common set of methods, e.g. `fit()` and `predict()`. Any model can then be used in a library pipeline and swapped out with minimal effort. Therefore, when thinking about how to break you code up into classes consider the use of standardised methods across similar objects to make them interchangeable.
 
 (class-responsibilities)=
 
-```{note}
+```{caution}
 A word of caution, however, when creating classes; it is very easy to start to mapping nouns in system descriptions to classes, and any adjectives applied to the nouns as methods. For example: "the model loads the data" would imply "model" is a class, and it should have a "load_data" method. This will work fine for small systems, but you will find one of your classes gains all of the underlying logic with many methods, whilst other classes just store data with few methods. This can be considered Data Driven Design; a better approach is [Responsibility Driven Design](https://en.wikipedia.org/wiki/Responsibility-driven_design).
 
 If a single class is responsible for too much, then most of your code will be in one class; it can become overly complex and hence difficult to maintain, and any changes to requirements will cause this one class to change. You need your classes to know as little as possible to reduce dependencies on other systems and requirements - so small classes with a focussed responsibility - and hence avoid being affected if other systems change. The challenge is to trade maintainability and reuse against complexity.
