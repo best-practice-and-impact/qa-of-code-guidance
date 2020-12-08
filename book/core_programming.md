@@ -1,8 +1,18 @@
 # Core programming practices
 
-The principles outlined in this chapter represent good practices for general programming and software development.
+The principles outlined in this chapter represent good practices for general programming and software development. These have been tailored to a more analytical workflow.
 
-However, they are tailored to a more analytical workflow and would benefit analysts with understanding of core programming concepts such as variables, functions and classes. You can find more information and links to training in the [](learning.md) section.
+```{admonition} Pre-requisites
+:class: admonition-learning
+
+To get the most benefit from this section, you should have an understanding of core programming concepts such as:
+* storing information in variables
+* using control flow, such as if-statements and for-loops
+* writing code as functions or classes
+* using functions or classes in your code
+
+You can find links to relevant training in the [](learning.md) section of the book.
+```
 
 ## Motivation
 
