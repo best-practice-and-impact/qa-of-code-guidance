@@ -131,9 +131,7 @@ For example, installing additional functionality for Python using `pip install <
 ```{admonition} Key Learning
 :class: admonition-learning
 
-The [Python Packaging User Guide](https://python-packaging-user-guide.readthedocs.io/) describes good packaging practices using the most up-to-date Python tools.
-[R Packages](https://r-pkgs.org/) provides a comprehensive summary of packaging in R.
-This [step by step guide to creating R package](http://web.mit.edu/insong/www/pdf/rpackage_instructions.pdf) from MIT might also be useful.
+[The Python Packaging User Guide](https://python-packaging-user-guide.readthedocs.io/) describes good packaging practices using the most up-to-date Python tools. While [the R Packages book](https://r-pkgs.org/) provides a comprehensive summary of packaging in R. [The rOpenSci packaging guide](https://devguide.ropensci.org/building.html) also contains useful tips for packaging in R.
 ```
 
 See [](project_documentation.md) for a summary of common package and project documentation types.

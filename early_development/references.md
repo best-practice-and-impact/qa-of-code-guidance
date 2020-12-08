@@ -7,6 +7,11 @@ Here we point to examples which apply good practices, from across government.
 Other guidance from across government:
 * [Department for Education good code practice](https://dfe-analytical-services.github.io/good-code-practice/index.html)
 
+
+## Government blog posts
+
+* [Pair programming](https://gds.blog.gov.uk/2018/02/06/how-to-pair-program-effectively-in-6-steps/)
+
 ## Troubleshooting code
 
 When asking for help from your peers or online communities like [stackoverflow](https://stackoverflow.com/), it's best to provide a [minimal, reproducible example](https://stackoverflow.com/help/minimal-reproducible-example).
@@ -27,7 +32,7 @@ These links detail application of good practices to machine learning.
 
 * [Interpretable Machine Learning](https://christophm.github.io/interpretable-ml-book/index.html) - a guide to making black box models explainable
 * [Effective testing for machine learning systems](https://www.jeremyjordan.me/testing-ml/)
-
+* [Machine learning with limited data](https://www.gov.uk/government/publications/machine-learning-with-limited-data)
 
 ## Miscellaneous learning
 
