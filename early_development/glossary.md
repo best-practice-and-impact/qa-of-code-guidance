@@ -6,6 +6,7 @@
 
 * Object-oriented programming (OOP) - defining and using objects that contain both data (attributes) and logic (methods).
 
+* Dependencies - something that your analysis depends on. This includes your operating system, environment, software and packages (and their versions), if these are needed to reproducibly run your analysis code.
 
 * Application Programming Interface (API) - an interface that defines how you can interact with software. For example, the functions or methods from a package that a typical user will interact with.
 
