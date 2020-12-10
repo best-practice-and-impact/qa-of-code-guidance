@@ -11,7 +11,7 @@ Some structures have been found to be generally quite effective through trial an
 Others are more specific, and - as with all guidelines - should not be taken as mandatory.
 
 
-## Scripts <span role="image" aria-label="difficulty rating: 1 out of 5">★☆☆☆☆</span>
+## Scripts
 
 As you begin developing your project it's a good idea to save your working code in a script file.
 In R these are saved as `.R` files, and in Python as `.py`.
@@ -32,7 +32,7 @@ Running your analysis files from end to end ensures that your code is executed i
 It also runs the code with a clean environment, not containing variables or other objects from previous runs that can be a common source of errors.
 
 
-## Clean directories <span role="image" aria-label="difficulty rating: 1 out of 5">★☆☆☆☆</span>
+## Clean directories
 
 As your analysis project grows it becomes more important to keep your project structure clean.
 Every project is different and the right way to organise your project might differ from another project.
@@ -119,7 +119,7 @@ If you are worried about deleting your outputs (i.e. results) then it is unlikel
 It is good practice to delete and regenerate your outputs frequently when developing analysis.
 
 
-## Modules and packages <span role="image" aria-label="difficulty rating: 2 out of 5">★★☆☆☆</span>
+## Modules and packages
 
 Code that is more complex, high risk or reusable between projects can benefit from being structured into a package.
 Modules are single files that contain one or more reusable units of code.
@@ -137,7 +137,7 @@ For example, installing additional functionality for Python using `pip install <
 See [](project_documentation.md) for a summary of common package and project documentation types.
 
 
-## Project templates <span role="image" aria-label="difficulty rating: 2 out of 5">★★☆☆☆</span>
+## Project templates
 
 Although project structure is flexible, you might recognise that many analysts choose to use similar structures for multiple projects.
 Consistency in structure makes it easier to navigate unfamiliar projects.
@@ -158,7 +158,7 @@ R project structures can also be set up or extended, one component at a time, us
 For example, `use_test()` will add the directories necessary for testing using `testthat` and generate basic test file templates for a given function name.
 
 
-## Repositories <span role="image" aria-label="difficulty rating: 2 out of 5">★★☆☆☆</span>
+## Repositories
 
 Repositories or "repos" are typically project folders that are version controlled using Git or a similar version control system.
 One repository usually contains a single project.

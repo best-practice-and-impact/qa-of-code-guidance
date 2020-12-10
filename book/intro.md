@@ -42,7 +42,7 @@ This book might be most useful for you if you are:
 - developing data science techniques and would like your code to be useful to others
 - looking for a high level introduction to software engineering practices in the context of analysis and research
 
-This book can be used to guide your learning and as a reference. The start of each chapter describes the risks which the described practices may help to address. Therefore, you should strive to apply the most appropriate practices given the risks associated with your work.
+This book can be used to guide your learning and as a reference. Each chapter describes the risks which the described practices may help to address. Therefore, you should strive to apply the most appropriate practices given the risks associated with your work.
 
 The principles in this book are language agnostic. It does not form a comprehensive learning resource and you may often need to study further resources to implement these practices. That said, examples and useful references are provided for **Python** and **R**, as open source languages that are commonly applied across government.
 
