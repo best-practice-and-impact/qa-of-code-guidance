@@ -720,70 +720,45 @@ If you're considering these tools as part of a project, see [Continuous Integrat
 
 (software-ideas-for-analysts)=
 
-## Software ideas for Analysts
+## Software ideas for analysts
 
-Over many years software engineering teams have followed practices such as KISS (Keep it Simple, Stupid) and SOLID.
-These practices allow for more robustly written code and provide other benefits such as easier maintenance of software projects.
-Analysts using code as a means to perform analysis could heavily benefit from at least partially applying such practices in their own codebases.
+It's important to remember that when we write code for analysis, we are developing software. Over many years, software engineering teams have developed good practices for developing robust software. These practices help to make our code simple, readable and easier to maintain. Analysts using code as a means to perform analysis can benefit from at least partially applying such practices in their own codebases.
 
-This chapter will try to condense some key messages and guidelines from these practices for use by code writing analysts.
-That said, reading and learning more about these practices is likely to benefit the quality of your code and is highly encouraged.
+This chapter will try to condense key messages and guidelines from these practices, for use by analysts who write code. That said, reading and learning more about these practices is likely to benefit the quality of your code and is highly encouraged.
 
-### Simplicity
+### Keep it simple
 
-The ability to convey information in simple and clear way matters.
+The ability to convey information in a simple and clear way matters.
 
-This is particularly true when exchanging information that is already complex.
-When writing code you are often trying to solve problems that are complex in nature.
-You should avoid introducing extra complexity to the problem.
-A good guideline to achieve this would be to seek out the simplest solution wherever possible.
+This is particularly true when explaining concepts that are already complex. When writing code you are often trying to solve problems that are complex in nature. You should avoid introducing extra complexity to these problem, wherever possible. A good guideline to achieve this is to seek out the simplest solution wherever possible.
 
 More generally here are a few tips to make sure you keep your project nice and simple:
 
-- solve the problem - do not get distracted and make sure you have a clear outcome in mind that you are trying to reach with a given piece of code
-- try not to 'reinvent the wheel' - use available packages when they solve the problem, they will most likely be better documented and won't need extra maintenance
-- split your code into understandable parts - consider how to lay out your [code into self-contained parts](modular)
-- solve the problem without over-engineering - if it is understandable and works, refrain from over-complicating it to make it 5% faster...
+- Solve the problem - do not get distracted and make sure you have a clear outcome in mind.
+- Try not to 'reinvent the wheel' - use existing packages when they solve the problem. They will most likely be better documented and won't need extra maintenance.
+- Split your code into understandable parts - consider how to [make your code modular](modular).
+- Don't over-engineer your solution - if it is understandable and works, refrain from over-complicating for the sake of small increases in efficiency.
 
-It is worth picking up and expanding on that later point around over-engineering.
-If your project has potential to be reused as a third party library by someone else or in cases where you have time and resource to add more features to your project
-it is often tempting to keep adding more 'bells and whistles' to your code.
-
-However every new 'bell' and every new 'whistle' means you will have to write one more test, one more docstring and it will be one more thing your future self or someone else
-will have to read to understand your code.
-
-Really consider if adding these extras in a resource constrained environment will make your code more or less maintainable, user-friendly and correct.
-After all, with more to check, there is always more to go wrong.
-In other words, make sure to focus on what needs to be done, implement that and make sure to keep it simple.
 
 ```{note}
-**You ain't gonna need it (YAGNI)**
+It's important to capture the requirements of your code before writing it. This includes when your code needs to be adapted to meet changing needs. You should then aim to meet these requirements in the functionality that your code provides.
 
-It's important to capture the requirements of your code before writing it.
-This includes when your code needs to be adapted to meet changing needs.
+It can be tempting to try to account for every eventuality in your program, but developing anything more than these requirements may not be beneficial. There's a good chance that many cases that you account for will never occur, so you should try to prioritise based on what you're certain is needed from your code.
 
-You should then aim to meet these requirements in the functionality that your code provides.
-Developing anything more than this may not be beneficial.
-It can be tempting to try to account for every eventuality in your program.
-As there's a good chance that many cases that you account for will never occur, you should try to prioritise based on what you're certain is needed from your code.
+> You ain't gonna need it
+
+Remember that additional features will require more documentation and testing to ensure that they ae working correctly. Really consider if adding these extras will make your code more or less maintainable, user-friendly and correct. 
 ```
 
-Lastly it is worth stressing that in the end you are still solving complex problems that might require complex solutions.
-In those cases make sure to introduce complexity only where needed and be aware that any complexity you add will be reflected somewhere else (more documentation, more tests etc.). For instance, if the code is execution time critical, then making the code more complex to achieve a faster runtime may be an acceptable trade-off.
+Lastly, it is worth stressing that complex problems might require complex solutions. In those cases make sure that you only introduce complexity where it is needed. You should address necessary complexity with proportionate quality assurance - through documentation, testing and review. For instance, if the execution time of your code is critical, then making the code more complex to achieve a faster runtime may be an acceptable trade-off.
 
-### Don't Repeat Yourself (DRY)
+### Don't Repeat Yourself
 
-As you can see from the section on [modular code](modular), you are encouraged to refactor your code into more self contained components for ease of testing, reproducibility and other nice properties of such code.
-However, it is worth stressing that often times 'quick and dirty' solutions involve copy-pasted and tweaked code in several places that is functionaly identical.
-This is expected and natural in the initial stages of a project, however repetition not only wastes your time if the code in question keeps getting copied further into the code, but it also makes your code more difficult to read.
+In the section on [modular code](modular), you were encouraged to refactor your code into more self-contained components for ease of testing, reproducibility and reusability. However, it is worth stressing that 'quick and dirty' solutions often involve copy-pasted code that is functionally identical. This is expected and is natural in the initial stages of a project. Nonetheless, repetition not only wastes your time, but it also makes your code more difficult to read.
+ 3*QA
+Consider a script that contains three copies of a similar piece of code. If the code that is used to perform the repetitive task is found to be incorrect, or if a developer wishes to modify the task being performed by this code, they must implement a similar change in each of the three copies. If only two copies were spotted and amended, there is now a bug sleeping in the code waiting to be triggered... Moreover, anyone reviewing the code would need to check that the right logic is being used three times over.
 
-Consider a script that contains three copies of a similar piece of code.
-If the code that is used to perform the repetitive task is found to be incorrect, or if a developer wishes to modify the task being performed by this code, they must implement a similar change in each of the three copies. If only two copies were spotted and amended, there is now a bug sleeping in the code waiting to be triggered...
-
-Furthermore imagine yourself in a situation where you are reading a codebase you have never seen before.
-Having to validate that each similar section of code has the same functionality as the ones you have already seen adds a noticeable mental strain to the reader.
-
-To put this in context, let us use an example where the developer wants to get the odd numbers from three different lists of numbers.
+To put this in context, let us use an example where the developer wants to get the odd numbers from three different lists of numbers:
 
 ````{tabs}
 
@@ -838,15 +813,9 @@ for (number in third_ten_numbers) {
 
 ````
 
-In the example the third repeated snippet of code actually collects the even numbers, but assigns them to the `odd_third` variable.
-A developer may assume that all copies of the similar code are performing the same task.
-Even if they are aware of the difference, they may be unable to tell if a difference between these copies is intentional or a mistake without explicit comments.
-Generally, the example above has several issues, however it shows how repetition can add to confusion in circumstances like this.
+In this example, the third repeated snippet of code actually collects even numbers, but incorrectly assigns them to the `odd_third` variable. Because each copy looks very similar, you might assume that all copies of the code are performing the same task. Even when you are aware of the difference between the copies, you might be unable to tell if the difference is intentional or a mistake. The example demonstrates how repetition can add confusion when trying to maintain or review code.
 
-Modifying multiple copies of a code snippet is laborious and presents a risk - some copies of the repeated code may be modified while others erroneously remain the same.
-This is analogous to modifying the formula in individual cells of a spreadsheet.
-If you refactor repetitive code into functions or classes, then bug fixes or modifications need only be carried out once to change all implementations.
-New, intended behaviour is then consistently given by each call of the function or method.
+Modifying multiple copies of a code snippet is laborious and presents a risk - some copies of the repeated code may be modified while others erroneously remain the same. This is analogous to modifying the formula in individual cells of a spreadsheet. If you refactor repetitive code into functions or classes, then bug fixes or modifications need only be carried out once to change all uses of that code. New, intended behaviour is then consistently given by each call of the function or method.
 
 The following presents how one could change the previous example for the better:
 
@@ -854,7 +823,7 @@ The following presents how one could change the previous example for the better:
 
 ```{code-tab} py
 def get_odd(numbers):
-    "Get only the odd numbers"
+    """Get only the odd numbers"""
     return [number for number in numbers if number % 2 == 1]
 
 first_ten_numbers = list(range(1, 11))
@@ -889,36 +858,37 @@ odd_third = get_odd(third_ten_numbers)
 
 ````
 
-If the functionality of `get_odd` needs to be modified, it now need only be done once.
-Additionally, this code is more concise and its purpose is easier to interpret.
+If the functionality of `get_odd` needs to be modified, it now need only be done once. Additionally, this code is more concise and its purpose is easier to interpret.
 
 `````{note}
-If two slightly different tasks must be carried out, as in you need both the odd and the even numbers, you might approach this in one of two ways:
+If two slightly different tasks must be carried out, for example you need both the odd and the even numbers, you might approach this in one of two ways:
 
-- develop two functions containing the different elements of code, with names that express the difference in their purpose
-- add a parameter to your function that will allow a user to differentiate between the two tasks
+- Develop two functions containing the different elements of code, with names that express the difference in their purpose.
+- Add a parameter to your function that will allow a user to differentiate between the two tasks.
 
 ````{tabs}
 
 ```{code-tab} py
 # Simple and modular
 def is_odd(number):
+    """Check if a number is odd."""
     if number % 2 == 1:
         return True
     else:
         return False
 
 def get_odd(numbers):
-    "Get only the odd numbers"
+    """Get only the odd numbers."""
     return [number for number in numbers if number % 2 == 1]
 
 def get_even(numbers):
-    "Get only the even numbers"
+    """Get only the even numbers."""
     return [number for number in numbers if number % 2 == 0]
 
 
 # More concise, but also more complex - not always best
 def get_numbers_with_parity(numbers, parity):
+    """Get numbers with a given parity ('odd' or 'even')."""
     if parity not in ["odd", "even"]:
         raise ValueError("parity must be 'odd' or 'even'")
     remainder = 1 if parity == "odd" else 0:
@@ -979,10 +949,7 @@ You should use your best judgement to decide which is most appropriate in a give
 
 `````
 
-It can be difficult to decide when repetition warrants refactoring of code into reusable functions/classes.
-The 'Rule of Three' suggests that if similar code has been written more than two times, then it is worth extracting its operation to a reproducible procedure like a function or class.
-However, consider if you have already written the code twice or are about to write it for the second time, whether it is a piece code you might use a lot in future. If the answer is yes,
-turn it into something more modular and reusable.
+It can be difficult to decide when repetition warrants refactoring of code into reusable functions or classes. The 'Rule of Three' suggests that if similar code has been written more than two times, then it is worth extracting its logic to a reproducible procedure like a function or class. However, as you write code you should try to anticipate whether it is likely to be reused in future. If the answer is yes, you might opt to write it straight into something more modular and reusable.
 
 ### Be explicit
 
@@ -1002,47 +969,47 @@ To make your intentions clear, you should explicitly state your intended compari
 ````{tabs}
 
 ```{code-tab} py
-coconut_count = None
+student_count = None
 
 # Relying on falseness of None
-if coconut_count:
-    print("There are " + coconut_count + " coconuts!")
+if student_count:
+    print("There are " + student_count + " students!")
 ```
 
 ```{code-tab} r R
-coconut_count <- FALSE
+student_count <- FALSE
 
 # Relying on falseness of FALSE
-if (coconut_count) {
-  print("There are " + coconut_count + " coconuts!")
+if (student_count) {
+  print("There are " + student_count + " students!")
 }
 ```
 
 ````
 
-In the example above, the coconut count is not printed because `None` and `FALSE` evaluate to false.
+In the example above, the student count is not printed because `None` and `FALSE` evaluate to false.
 In Python and R, 0 will also evaluate to False.
 Therefore, it is unclear whether the programmer intended that the statement is printed when the count is 0.
 If a count of 0 should be printed, then this lack of specificity has created a bug.
 
-To perform the same decision explicitly, we should specify the exact condition under which the coconut count should be printed.
+To perform the same decision explicitly, we should specify the exact condition under which the student count should be printed.
 
 ````{tabs}
 
 ```{code-tab} py
-coconut_count = 0
+student_count = 0
 
 # Explicitly print only if more than 0
-if coconut_count >= 0:
-    print("There are " + coconut_count + " coconuts!")
+if student_count >= 0:
+    print("There are " + student_count + " students!")
 ```
 
 ```{code-tab} r R
-coconut_count = 0
+student_count = 0
 
 # Explicitly only print if more than 0
-if (coconut_count >= 0) {
-  print("There are " + coconut_count + " coconuts!")
+if (student_count >= 0) {
+  print("There are " + student_count + " students!")
 }
 ```
 
@@ -1051,48 +1018,46 @@ if (coconut_count >= 0) {
 Now the count is printed if it is more than or equal to 0.
 It's clear that we intend for this to be the case.
 
-### Single responsibility
+### Separate responsibilities
 
 > An object should have a single responsibility.
 > Only changes to one part of the software's specification should be able to affect the specification of the class.
 
-This principle suggests that a single element of your code (a function or class) should be responsible for a single part of your software's functionality.
-It should take on one task and perform it well and piece of code is likely more robust if there are fewer reasons to change it in the future.
+Th 'single responsibility' principle suggests that a single element of your code (a function or class) should be responsible for a single part of your software's functionality. It should take on one task and perform it well. This is because each piece of code is more robust if there are fewer reasons to change it in the future.
 
 When you work with code that is designed to multitask, it is often difficult to modify this code without having an unintentional effect on other aspects of the software.
 
-Imagine trying to create a model of the economy which is a complex web of interconnected interactions. Creating 'abstractions' in the form of classes or functions that try to model multiple aspects of the economy at once might seem helpful, but when used incorrectly might instead add to the complexity.
+Imagine trying to create a model of the economy, which is a complex web of interconnected interactions. Creating 'abstractions' in the form of classes or functions that try to model multiple aspects of the economy at once might seem helpful, but when used incorrectly might instead add to the complexity.
 
-Imagine that you have created a class that represents a whole country - `Country` which will be representing a model trying to predict economic statistics for a country such as unemployment, inflation etc. One can imagine that this class will grow really quickly into something unmanageable as its responsibilities grow in the form of added methods and attributes.
+For example, consider a class that represents a whole country (`Country`). This would represent a model that is trying to predict economic statistics for a country such as unemployment or inflation. One can imagine that this class will quickly grow into something unmanageable, as its responsibilities grow in the form of additional methods and attributes.
 
-Based on the other chapters in this guidance, you might eventually realise that you need to break it down further, however if you had applied the idea of single responsibility with a bit more depth, you might have broken down the `Country` class into smaller components modelling `UnemploymentModel`, `InflationModel` and making them responsible for doing the modelling while the `Country` class is only responsible for presenting the results to, lets say, a higher level economy model that tries to model cross-country trade.
+Based on the other chapters in this guidance, you might eventually realise that you need to break this class down further. However, if you had applied the idea of single responsibility, you might have broken the `Country` class down into smaller components such as `UnemploymentModel`, `InflationModel`. These classes would be responsible for doing specific modelling, while the `Country` class might only responsible for presenting the results to, lets say, a higher level economy model that tries to model cross-country trade.
 
 This simplicity also increases usability, by minimising the number of parameters that each function or class might require.
 
 ```{note}
-If you remember the [section on interfaces](interfaces), the different modellers classes are a prime example where defining an interface would help you make sure each `___Model`  object is interchangeable.
+If you remember the [section on interfaces](interfaces), the different model classes here are a prime example where defining an interface would help you make sure each `*Model` object is interchangeable.
 ```
 
-The Separation of Concerns principle captures a similar concept to Single Responsibility, but on a higher level.
-This principle suggests that your software should be separated into distinct sections that each address a single concern.
+The 'separation of concerns' principle captures a similar concept to single responsibility, but on a higher level. This principle suggests that your software should be separated into distinct sections that each address a single concern.
 
 In the previous economic modelling example, you might establish your concerns to be:
 
-- Model economy at low level: `UnemploymentModel` & `InflationModel`.
+- Model economy at low level: `UnemploymentModel` and `InflationModel`.
 
-  They are concerned with the 'low-level' details of giving estimates of economic output. They are nicely independent of each other and concerned only by what they are trying to estimate.
+  These are concerned with the 'low-level' details of giving estimates of economic output. They are independent of each other and concerned only by what they are trying to estimate.
 
-- Model country level interactions and trade blocks: `Country` & `TradeBlock`.
+- Model country level interactions and trade blocks: `Country` and `TradeBlock`.
 
-  These parts of your code almost sit higher in the concept hierarchy. They will be using the `Model` classes, however this is primarily concerned about the interactions in trade between countries.
+  These parts of your code relate to higher level concepts. They will be using the lower level `Model` classes, but are primarily concerned with interactions between countries.
 
-- Run simulations given a description of the desired economy
+- Run simulations given a description of the desired economy.
 
-  Once the model is there, there could be a SimulationRunner that takes in your model of the world economy and runs simulations. In this case, this part of your codebase will only revolve around running the actual simulations.
+  Once the model is ready, there might be a 'SimulationRunner' that takes in your model of the world economy and runs simulations. In this case, this part of your codebase will only revolve around running the actual simulations.
 
-In each of these distinct sections of your codebase there will be numerous classes and functions that should follow the single responsibility concepts outlined earlier.
+In each of these distinct sections of your codebase there will be multiple classes and functions, which should follow the single responsibility concepts outlined earlier.
 
-For example, within the section of your code concerned on modelling data, you might have a set of functions to download data from an external data store - those functions should only be responsible for receiving the required data safely and providing it to the `Model` object. If you had the need to download data from different sources online (i.e. Database, CSV or other), you might create several download functions. To pick the right function for each model you might create a [LoaderFactory](<https://en.wikipedia.org/wiki/Factory_(object-oriented_programming)>) who's only responsibility is to provide the `Model` with the right loading function for the right data source.
+For example, within the section of your code concerned with modelling data, you might have a set of functions to download data from an external data store. These functions should only be responsible for receiving the required data safely and providing it to the `Model` object. If you had the need to download data from different sources online (i.e. Database, CSV or other), you might create several download functions. To pick the right function for each model you might create a ['LoaderFactory'](<https://en.wikipedia.org/wiki/Factory_(object-oriented_programming)>) who's only responsibility is to provide the `Model` with the right loading function for the right data source.
 
 ```{figure} ./_static/separation_of_concerns.png
 ---
@@ -1107,14 +1072,13 @@ As such, separate sections of your software should be responsible for each of th
 Within each section of your software, distinct functions or classes should be responsible for each task that is required for that sections overall functionality.
 
 ```{admonition} In the context of functions
-The previous example was heavily focused on classes and Object-Oriented Programming. The same equally applies in the world of functions. You define each concern which is addressed by a module containing functions who follow the single responsibility principle.
+The previous example was heavily focused on classes and Object-Oriented Programming. The same principles apply in the world of functions. You define each concern which is addressed by a module containing functions who follow the single responsibility principle.
 
-So the previous example rephrased could be:
-- `uneployment_model` - function running the unemployment modelling
-- `inflation_model` - function running the unemployment modelling
-- etc.
+So the previous example could equally include:
+- An `unemployment_model` - function running the unemployment modelling.
+- An `inflation_model` - function running the unemployment modelling.
 
-These functions then produce data about a given country stored somewhere (this could be stored as state of a class in the OOP approach) and then another function takes all this data for multiple countries and starts modelling it across country boundaries.
+These functions would produce data about a given country, to be stored in an object. Another function might then take this data for multiple countries and start modelling it across country boundaries.
 
 The same core concepts still fully apply.
 ```
@@ -1131,39 +1095,42 @@ def core_method(data):
     ...
     return result
 
-# if we want to extend it without modifying it, we can always do the following
+# if we want to extend a function without modifying it, we can always do the following
 def extended_methodology(data):
      core_results = core_method(data)
      return extended_functionality(core_results)
 
 ```
 
-Same would apply with classes through ideas like `inheritance`.
+Same would apply with classes through ideas like inheritance.
 
-When you think about the consequences of this you realise that taking into account this open-closed idea gives you:
+When you think about the consequences of this, the open-closed principle gives you:
 
-1. the confidence the parts of your code who's behaviour is not expected to change - closed for modification
-2. the ability to add more functionality as your code evolves
+1. Confidence that essential behaviour of parts of your code should not be expected to change.
+2. The ability to easily add more functionality, as your code evolves.
 
-````{admonition} Functional composition
-In functional programming we use higher-order functions and functional composition to enact said principles. Functional composition deserves a brief detour as it is a concept that might be keenly used in a data analytics pipeline.
+````{note}
+In functional programming we use higher-order functions and functional composition to enact these principles. 'Functional composition' deserves a brief explanation, as a concept that might be keenly used in a data analytics pipeline.
 
-In simple terms, functional composition is a mathematical idea that takes two functions $f$ and $g$ and produces function $h$ such that $h(x) = g(f(x))$. People familiar with R's `%>%` operator will find this idea familiar.
+In simple terms, functional composition is a mathematical idea that takes two functions $f$ and $g$ and produces function $h$, such that $h(x) = g(f(x))$. Analysts familiar with R's `%>%` operator will find this idea familiar.
 
-Imagine you have a task to perform some report generation and modelling from data. You can lay out your code to be easily composable with the following functions with single responsibility.
-- `load` - loads data
-- `model` - runs the model on data
-- `report` - runs report generation
+Imagine you have a task to perform modelling and report generation from data. You can lay out your code to be easily composable with the following functions, with single responsibilities:
+- `load` - loads data.
+- `model` - runs the model on data.
+- `report` - runs report generation.
 
-So when it comes to creating a pipeline you end up with something like
-
-`report= report(model(load(filepath)))`
-
-We will now assume that these individual functions are closed for modification, however we can extend the functionality of load by adding a `clean` function that cleans the data so we end up with:
+So when it comes to creating a pipeline you end up with something like:
 
 ```python
-# very simply we can extend this without modifying the source code of load
+report = report(model(load(filepath)))
+```
+
+We will now assume that these individual functions are closed for modification. However, we can extend the functionality of `load` by adding a `clean` function that cleans the data. In which case, we end up with:
+
+```python
+# We can extend this without modifying the source code of `load`
 report = report(model(clean(load(filepath))))
+
 
 # or we can first define a new load as follows
 def new_load(filepath):
@@ -1171,11 +1138,13 @@ def new_load(filepath):
 
 report = report(model(new_load(filepath)))
 
+
 # or with the help of anonymous (lambda)
 new_load = lambda data: clean(load(data))
 report = report(model(new_load(filepath)))
 
-# or
+
+# We can even use this to create a single function to run our defined pipeline
 pipeline = lambda data: report(model(clean(load(filepath))))
 report = pipeline(filepath)
 ```
