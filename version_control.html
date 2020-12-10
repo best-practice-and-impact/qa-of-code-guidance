@@ -32,9 +32,9 @@
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="_static/tabs.css" />
-    <link rel="stylesheet" type="text/css" href="_static/logo.css" />
     <link rel="stylesheet" type="text/css" href="_static/admonitions.css" />
     <link rel="stylesheet" type="text/css" href="_static/markdown_within_tabs.css" />
+    <link rel="stylesheet" type="text/css" href="_static/logo.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
@@ -43,10 +43,12 @@
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
     <script src="_static/language_data.js"></script>
     <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
+    <script src="_static/tabs.js"></script>
     <script src="_static/doctools.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
@@ -93,13 +95,11 @@
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form>
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-    <ul class="nav sidenav_l1">
- <li class="toctree-l1">
-  <a class="reference internal" href="index.html">
-   Introduction
-  </a>
- </li>
-</ul>
+    <p class="caption collapsible-parent">
+ <span class="caption-text">
+  Guidance
+ </span>
+</p>
 <ul class="current nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="principles.html">
@@ -147,11 +147,23 @@
   </a>
  </li>
 </ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Resources
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="learning.html">
+   Learning Resources
+  </a>
+ </li>
+</ul>
 
 </nav> <!-- To handle the deprecated key -->
 
 <div class="navbar_extra_footer">
-  <p>Book version 2020.11</><a href='https://gss.civilservice.gov.uk/' target='_blank'><img src='./_static/GSS_logo.jpg' alt='The Government Statistical Service logo' style='width:100%'></a>
+  <p>Book version 2020.12</><a href='https://gss.civilservice.gov.uk/' target='_blank'><img src='./_static/GSS_logo.jpg' alt='The Government Statistical Service logo' style='width:100%'></a>
 </div>
 
 </div>
@@ -272,6 +284,11 @@
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#gitignore-files">
        .gitignore files
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#using-environmental-variables">
+       Using environmental variables
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
@@ -410,7 +427,7 @@
 </ul>
 <div class="figure align-default" id="file-names">
 <a class="reference internal image-reference" href="https://imgs.xkcd.com/comics/documents.png"><img alt="Comic demonstrating poor file naming, like &quot;Untitled 138 Copy.docx&quot;." src="https://imgs.xkcd.com/comics/documents.png" style="width: 30%;" /></a>
-<p class="caption"><span class="caption-number">Fig. 10 </span><span class="caption-text">Documents, from <a class="reference external" href="https://xkcd.com/1459/">xkcd</a></span><a class="headerlink" href="#file-names" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 6 </span><span class="caption-text">Documents, from <a class="reference external" href="https://xkcd.com/1459/">xkcd</a></span><a class="headerlink" href="#file-names" title="Permalink to this image">¶</a></p>
 </div>
 <p>As discussed in <a class="reference internal" href="principles.html"><span class="doc std std-doc">Principles</span></a>, an audit trail is essential for quality analysis.</p>
 <p>It’s important for us to be able to answer the following questions about our analysis:</p>
@@ -617,6 +634,36 @@ Ensure that you set up your <code class="docutils literal notranslate"><span cla
 <p>Please see the <a class="reference external" href="https://git-scm.com/docs/gitignore">Git documentation for <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code></a> for more details.</p>
 <p>While we may not want to share files containing credentials, configuration and data, it can be useful to provide dummy examples of these files.
 Demonstrating the format of these files can help others to reuse your code, without sharing sensitive information.</p>
+</div>
+<div class="section" id="using-environmental-variables">
+<h4>Using environmental variables<a class="headerlink" href="#using-environmental-variables" title="Permalink to this headline">¶</a></h4>
+<p>If your code depends on credentials of some kind, these should not be explicitly written in your code.
+They can be stored in configuration files, which should be excluded from version control, or better still in local environment variables.</p>
+<p>Environment variables are variables which are available in a particular environment.
+In this context, our environment is the user environment that we are running our code from.</p>
+<p>In Unix systems (e.g. Linux and Mac), environment variables can be set in the terminal using <code class="docutils literal notranslate"><span class="pre">export</span></code> and deleted using <code class="docutils literal notranslate"><span class="pre">unset</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">export</span> <span class="n">SECRET_KEY</span><span class="o">=</span><span class="s2">&quot;mysupersecretpassword&quot;</span>
+<span class="n">unset</span> <span class="n">SECRET_KEY</span>
+</pre></div>
+</div>
+<p>In Windows, the equivalent to this is:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">setx</span> <span class="n">SECRET_KEY</span> <span class="s2">&quot;mysupersecretpassword&quot;</span>
+<span class="n">reg</span> <span class="n">delete</span> <span class="n">HKCU</span>\<span class="n">Environment</span> <span class="o">/</span><span class="n">F</span> <span class="o">/</span><span class="n">V</span> <span class="n">SECRET_KEY</span>
+</pre></div>
+</div>
+<p>Once stored in environmental variables, these variables will remain available on your machine until they are removed.
+You can access this variable in your code like so:</p>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" role="tablist"><button aria-controls="panel-0-UHl0aG9u" aria-selected="true" class="sphinx-tabs-tab code-tab group-tab" id="tab-0-UHl0aG9u" name="UHl0aG9u" role="tab" tabindex="0">Python</button><button aria-controls="panel-0-Ug==" aria-selected="false" class="sphinx-tabs-tab code-tab group-tab" id="tab-0-Ug==" name="Ug==" role="tab" tabindex="-1">R</button></div><div aria-labelledby="tab-0-UHl0aG9u" class="sphinx-tabs-panel code-tab group-tab" id="panel-0-UHl0aG9u" name="UHl0aG9u" role="tabpanel" tabindex="0"><div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+
+<span class="n">my_key</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;SECRET_KEY&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-0-Ug==" class="sphinx-tabs-panel code-tab group-tab" hidden="true" id="panel-0-Ug==" name="Ug==" role="tabpanel" tabindex="0"><div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">my_key</span> <span class="o">&lt;-</span> <span class="nf">Sys.getenv</span><span class="p">(</span><span class="s">&quot;SECRET_KEY&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div></div>
+<p>Note that you may need to open a new terminal to show that a variable has been removed.</p>
 </div>
 <div class="section" id="excluding-rdata-and-rhistory-files">
 <h4>Excluding <code class="docutils literal notranslate"><span class="pre">.Rdata</span></code> and <code class="docutils literal notranslate"><span class="pre">.Rhistory</span></code> files<a class="headerlink" href="#excluding-rdata-and-rhistory-files" title="Permalink to this headline">¶</a></h4>
@@ -963,7 +1010,7 @@ You might not benefit from following these patterns to the the word, but should 
 This mode of release provides an extra opportunity for discussion and quality assurance, before changes are added to the most stable branch.</p>
 <div class="figure align-default" id="id2">
 <a class="reference internal image-reference" href="https://nvie.com/img/git-model&#64;2x.png"><img alt="Branching structure when using the gitflow workflow. Features are branched from develop, which is branched from master." src="https://nvie.com/img/git-model&#64;2x.png" style="width: 65%;" /></a>
-<p class="caption"><span class="caption-number">Fig. 11 </span><span class="caption-text">Branching diagram to demonstrate gitflow. From <a class="reference external" href="https://nvie.com/posts/a-successful-git-branching-model/">A successful Git branching model</a> by Vincent Driessen.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 7 </span><span class="caption-text">Branching diagram to demonstrate gitflow. From <a class="reference external" href="https://nvie.com/posts/a-successful-git-branching-model/">A successful Git branching model</a> by Vincent Driessen.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
 <p>This <a class="reference external" href="https://nvie.com/posts/a-successful-git-branching-model/">blog post</a> and the <a class="reference external" href="https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow">Atlassian Gitflow guide</a> describe the workflow, with useful images to depict the branching model.</p>
 </div>
@@ -979,7 +1026,7 @@ This mode of release provides an extra opportunity for discussion and quality as
 <p>This workflow might be more suited to projects with rapid development cycles.</p>
 <div class="figure align-default" id="id3">
 <a class="reference internal image-reference" href="https://files.programster.org/tutorials/git/flows/github-flow.png"><img alt="Branching structure when using the GitHub flow workflow. Features branch directly from Master." src="https://files.programster.org/tutorials/git/flows/github-flow.png" style="width: 75%;" /></a>
-<p class="caption"><span class="caption-number">Fig. 12 </span><span class="caption-text">Branching diagram to demonstrate GitHub, from <a class="reference external" href="https://blog.programster.org/git-workflows">Programster’s blog post of git workflows</a>.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 8 </span><span class="caption-text">Branching diagram to demonstrate GitHub, from <a class="reference external" href="https://blog.programster.org/git-workflows">Programster’s blog post of git workflows</a>.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
 </div>
 <p>This simple guide from GitHub also outlines <a class="reference external" href="https://guides.github.com/introduction/flow/#:~:text=GitHub%20flow%20is%20a%20lightweight,Created%20with%20Snap">GitHub flow</a>.</p>
 </div>

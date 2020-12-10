@@ -11,7 +11,7 @@ The most common pattern for writing these tests is:
 3. Assert - verify that the code performed the expected action
 
 
-## Why test code? <span role="image" aria-label="difficulty rating: 1 out of 5">★☆☆☆☆</span>
+## Why test code?
 
 You can't be sure that your code works without having run it with realistic examples. Tests can verify that users expectations are met by the code.
 They let you know when you've broken the expected functionality of your code - or when users have.
@@ -21,7 +21,7 @@ Well-structured code is easier to write tests for, so testing incentivises good 
 Testing is crucial to assuring quality in your code and will also increase efficiency in the development of your code.
 
 
-## What to test <span role="image" aria-label="difficulty rating: 1 out of 5">★☆☆☆☆</span>
+## What to test
 
 > A quality assurance engineer walks into a bar. They order 1 beer. They order 3.14 beers. They order -1 beers. They order 99999999999 beers. They order a lizard. They order `NULL`.  
 
@@ -74,7 +74,7 @@ including https://www.jeremyjordan.me/testing-ml/
 [#15](https://github.com/best-practice-and-impact/qa-of-code-guidance/issues/15)
 ```
 
-## When to run tests <span role="image" aria-label="difficulty rating: 1 out of 5">★☆☆☆☆</span>
+## When to run tests
 
 Tests should be run whenever you make changes to your project.
 This ensures that changes do not break the existing, intended functionality of your code.
@@ -101,7 +101,7 @@ For example, we might set up a `pre-commit` or `pre-push` hook that runs our tes
 This might stop our commit/push if the tests fail, so that we don't push breaking changes to our remote repository.
 
 
-## Layers of testing <span role="image" aria-label="difficulty rating: 1 out of 5">★☆☆☆☆</span>
+## Layers of testing
 
 Testing comes in many shapes and sizes.
 
@@ -136,7 +136,7 @@ The following sections will climb through these layers of testing.
 Please note that the principles covered early on also apply at subsequent levels.
 
 
-## Structuring test code <span role="image" aria-label="difficulty rating: 1 out of 5">★☆☆☆☆</span>
+## Structuring test code
 
 ```{todo}
 Need to write structure test code
@@ -150,7 +150,7 @@ Lots of content needed below
 ```
 
 
-## Unit testing <span role="image" aria-label="difficulty rating: 2 out of 5">★★☆☆☆</span>
+## Unit testing
 
 
 ```{admonition} Key Learning
@@ -165,26 +165,13 @@ Other resources include:
 * Real Python [Getting Started With Testing in Python](https://realpython.com/python-testing/)
 ```
 
-<!-- 
-````{tabs}
-
-```{code-tab} py
-
-```
-
-```{code-tab} r R
-```
-
-````
--->
-
 ```{todo}
 These testing sections all need more content/examples.
 
 [#28](https://github.com/best-practice-and-impact/qa-of-code-guidance/issues/28)
 ```
 
-## Integration testing <span role="image" aria-label="difficulty rating: 3 out of 5">★★★☆☆</span>
+## Integration testing
 
 Your analysis likely involves multiple units working together to perform a high level task.
 Assuring that individual units work as expected, using unit testing, does not guarantee that multiple units interact with one another as expected.
@@ -208,7 +195,7 @@ You might use Stubs or Mocks for this purpose:
 * Mocks require additional setup in your test code, to define your expectations. Use these when your test needs to verify that your code interacts with the Mock in a specific way.
 
 
-## End-to-end testing <span role="image" aria-label="difficulty rating: 3 out of 5">★★★☆☆</span>
+## End-to-end testing
 
 As the name suggests, these tests cover the entire process.
 The motivation for using end-to-end tests is similar to that of integration tests.
@@ -229,7 +216,7 @@ This should validate that your user requirements are met.
 
 
 
-## Reducing repetition in tests <span role="image" aria-label="difficulty rating: 3 out of 5">★★★☆☆</span>
+## Reducing repetition in tests
 
 Repetitive test code violates the "Don't repeat yourself" rule.
 As with functional code, test code is much easier to maintain when it is modular and reusable.

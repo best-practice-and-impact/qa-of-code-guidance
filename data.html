@@ -32,9 +32,9 @@
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="_static/tabs.css" />
-    <link rel="stylesheet" type="text/css" href="_static/logo.css" />
     <link rel="stylesheet" type="text/css" href="_static/admonitions.css" />
     <link rel="stylesheet" type="text/css" href="_static/markdown_within_tabs.css" />
+    <link rel="stylesheet" type="text/css" href="_static/logo.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
@@ -93,13 +93,11 @@
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form>
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-    <ul class="nav sidenav_l1">
- <li class="toctree-l1">
-  <a class="reference internal" href="index.html">
-   Introduction
-  </a>
- </li>
-</ul>
+    <p class="caption collapsible-parent">
+ <span class="caption-text">
+  Guidance
+ </span>
+</p>
 <ul class="current nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="principles.html">
@@ -147,11 +145,23 @@
   </a>
  </li>
 </ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Resources
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="learning.html">
+   Learning Resources
+  </a>
+ </li>
+</ul>
 
 </nav> <!-- To handle the deprecated key -->
 
 <div class="navbar_extra_footer">
-  <p>Book version 2020.11</><a href='https://gss.civilservice.gov.uk/' target='_blank'><img src='./_static/GSS_logo.jpg' alt='The Government Statistical Service logo' style='width:100%'></a>
+  <p>Book version 2020.12</><a href='https://gss.civilservice.gov.uk/' target='_blank'><img src='./_static/GSS_logo.jpg' alt='The Government Statistical Service logo' style='width:100%'></a>
 </div>
 
 </div>
@@ -235,11 +245,8 @@
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#data-storage-span-role-image-aria-label-difficulty-rating-1-out-of-5-span">
+  <a class="reference internal nav-link" href="#data-storage">
    Data storage
-   <span aria-label="difficulty rating: 1 out of 5" role="image">
-    ★☆☆☆☆
-   </span>
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -255,11 +262,8 @@
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#documenting-data-span-role-image-aria-label-difficulty-rating-1-out-of-5-span">
+  <a class="reference internal nav-link" href="#documenting-data">
    Documenting data
-   <span aria-label="difficulty rating: 1 out of 5" role="image">
-    ★☆☆☆☆
-   </span>
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -275,19 +279,13 @@
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#data-versioning-span-role-image-aria-label-difficulty-rating-2-out-of-5-span">
+  <a class="reference internal nav-link" href="#data-versioning">
    Data versioning
-   <span aria-label="difficulty rating: 2 out of 5" role="image">
-    ★★☆☆☆
-   </span>
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#releasing-data-span-role-image-aria-label-difficulty-rating-2-out-of-5-span">
+  <a class="reference internal nav-link" href="#releasing-data">
    Releasing data
-   <span aria-label="difficulty rating: 2 out of 5" role="image">
-    ★★☆☆☆
-   </span>
   </a>
  </li>
 </ul>
@@ -308,8 +306,8 @@ This management is typically handled by dedicated data architects and engineers,
 This section aims to highlight good data management practices, so that you can either appreciate how your organisation handles its data or implement your own data management solutions.</p>
 <p>In order to reproduce a piece of analysis we need to be able to identify and access the same data that our analysis used.
 This requires suitable storage of data, with documentation and versioning of the data where it may change over time.</p>
-<div class="section" id="data-storage-span-role-image-aria-label-difficulty-rating-1-out-of-5-span">
-<h2>Data storage <span role="image" aria-label="difficulty rating: 1 out of 5">★☆☆☆☆</span><a class="headerlink" href="#data-storage-span-role-image-aria-label-difficulty-rating-1-out-of-5-span" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="data-storage">
+<h2>Data storage<a class="headerlink" href="#data-storage" title="Permalink to this headline">¶</a></h2>
 <p>It is assumed that most data are now stored digitally.</p>
 <p>Digital data risk becoming inaccessible as technology develops and commonly used software changes.
 Long term data storage should use open or standard file formats.
@@ -322,7 +320,7 @@ However, most analysis tools should support reading data directly from safe long
 The cost of their easy to use interface and flexibility is increased difficulty of quality assurance.</p>
 <div class="figure align-default" id="spreadsheets-comic">
 <a class="reference internal image-reference" href="https://assets.amuniversal.com/7f343ac0870a01332a13005056a9545d"><img alt="A comic strip joking that it doesn't matter if a spreadsheet if wrong, &quot;as long as it gives me the answer I want&quot;." src="https://assets.amuniversal.com/7f343ac0870a01332a13005056a9545d" style="width: 75%;" /></a>
-<p class="caption"><span class="caption-number">Fig. 13 </span><span class="caption-text">Does it matter if the spreadsheet is wrong, from <a class="reference external" href="https://dilbert.com/strip/2016-01-07">Dilbert by Scott Adams</a></span><a class="headerlink" href="#spreadsheets-comic" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 9 </span><span class="caption-text">Does it matter if the spreadsheet is wrong, from <a class="reference external" href="https://dilbert.com/strip/2016-01-07">Dilbert by Scott Adams</a></span><a class="headerlink" href="#spreadsheets-comic" title="Permalink to this image">¶</a></p>
 </div>
 <p>Spreadsheets are not suitable for storage of data (or statistics production and modelling processes).
 Issues when using spreadsheets for data storage include:</p>
@@ -390,8 +388,8 @@ While this Software Carpentry course covers <a class="reference external" href="
 </ul>
 </div>
 </div>
-<div class="section" id="documenting-data-span-role-image-aria-label-difficulty-rating-1-out-of-5-span">
-<h2>Documenting data <span role="image" aria-label="difficulty rating: 1 out of 5">★☆☆☆☆</span><a class="headerlink" href="#documenting-data-span-role-image-aria-label-difficulty-rating-1-out-of-5-span" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="documenting-data">
+<h2>Documenting data<a class="headerlink" href="#documenting-data" title="Permalink to this headline">¶</a></h2>
 <p>Without documentation, it is difficult to understand and work with new dataset.</p>
 <p>For our analysis, we should be able to quickly grasp:</p>
 <ul class="simple">
@@ -437,8 +435,8 @@ An IAR may include:</p>
 <p>GOV.UK provides <a class="reference external" href="https://www.gov.uk/government/publications/information-asset-register">IAR templates</a> that your department might use to structure their IAR.</p>
 </div>
 </div>
-<div class="section" id="data-versioning-span-role-image-aria-label-difficulty-rating-2-out-of-5-span">
-<h2>Data versioning <span role="image" aria-label="difficulty rating: 2 out of 5">★★☆☆☆</span><a class="headerlink" href="#data-versioning-span-role-image-aria-label-difficulty-rating-2-out-of-5-span" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="data-versioning">
+<h2>Data versioning<a class="headerlink" href="#data-versioning" title="Permalink to this headline">¶</a></h2>
 <p>A key requirement for reproducing your analysis is the ability to identify the data that you used.
 Data change over time;
 Open data and other secondary data may be revised over time or cease to be available with no notice.
@@ -467,8 +465,8 @@ All modifications to the data should result in new versions.</p>
 <p>Finally, for this to be effective, your analysis should record the version of data used to generate a specified set of outputs.
 This might be documented in analysis reports or automatically logged by your code.</p>
 </div>
-<div class="section" id="releasing-data-span-role-image-aria-label-difficulty-rating-2-out-of-5-span">
-<h2>Releasing data <span role="image" aria-label="difficulty rating: 2 out of 5">★★☆☆☆</span><a class="headerlink" href="#releasing-data-span-role-image-aria-label-difficulty-rating-2-out-of-5-span" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="releasing-data">
+<h2>Releasing data<a class="headerlink" href="#releasing-data" title="Permalink to this headline">¶</a></h2>
 <div class="admonition-todo admonition" id="id2">
 <p class="admonition-title">Todo</p>
 <p>Open Linked Data ratings</p>

@@ -3,7 +3,7 @@
 Whether you're developing a package or collaborating on a piece of analysis, documenting your project well makes it much easier for others to understand your goal and ways of working.
 
 
-## README <span role="image" aria-label="difficulty rating: 1 out of 5">★☆☆☆☆</span>
+## README
 
 When working on a collaborative or open coding project, it's good practice to describe an overview of your project in a README file.
 This allows users or developers to grasp the overall goal of your project.
@@ -20,7 +20,7 @@ We suggest the following for a good README:
 - Links to related projects
 
 
-## Contributing guidance <span role="image" aria-label="difficulty rating: 1 out of 5">★☆☆☆☆</span>
+## Contributing guidance
 
 When collaborating, it is also useful to outline the standards used within your project.
 This might include particular packages that should used for certain tasks and guidance on the [code style](code-style) used in the project.
@@ -125,7 +125,7 @@ In this case we have outlined our standard practices for using version control o
 We have used the [Markdown](https://daringfireball.net/projects/markdown/syntax) (`.md`) markup language for this document, which is formatted into HTML when viewed on our repository.
 
 
-## User desk instructions <span role="image" aria-label="difficulty rating: 1 out of 5">★☆☆☆☆</span>
+## User desk instructions
 
 If your project is very user focussed for one particular task, for example developing a statistic production pipeline for other analysts to execute, it is very important that the code users understand how to appropriately run your code.
 
@@ -138,7 +138,7 @@ These instructions should include:
 - How to maintain your project (including how to update data sources)
 
 
-## Dependencies <span role="image" aria-label="difficulty rating: 1 out of 5">★☆☆☆☆</span>
+## Dependencies
 
 The environment that your code runs in includes the machine, the operating system (Windows, Mac, Linux...), the programming language, and any external packages.
 It is important to record this information to ensure reproducibility.
@@ -156,7 +156,7 @@ You can get a list of your installed R packages using the `installed.packages()`
 Environment management tools, such as [`renv`](https://rstudio.github.io/renv/articles/renv.html) for R or [`pyenv`](https://github.com/pyenv/pyenv) for python, are very useful for keeping track of software and package versions used in a project.
 
 
-## Citation <span role="image" aria-label="difficulty rating: 1 out of 5">★☆☆☆☆</span>
+## Citation
 
 For research or analytical code that is likely to be referenced by others, it can be helpful to provide a citation template.
 This can be included in your code repository as a `CITATION` file or part of your `README`.
@@ -185,7 +185,7 @@ This might include multiple citations, if your project includes multiple dataset
 See this [GitHub guide for more information on making your public code citable](https://guides.github.com/activities/citable-code/).
 
 
-## Vignettes <span role="image" aria-label="difficulty rating: 2 out of 5">★★☆☆☆</span>
+## Vignettes
 
 Vignettes are a form of supplementary documentation, containing applied examples that demonstrate the intended use of the code in your project or package.
 Docstrings may contain examples applying individual functional units, while vignettes may show multiple units being used together.
@@ -202,7 +202,7 @@ You can produce this type of documentation in any format, though Rmarkdown is pa
 You might also consider providing examples in an interactive notebook, that users can run for themselves.
 
 
-## Versioning <span role="image" aria-label="difficulty rating: 2 out of 5">★★☆☆☆</span>
+## Versioning
 
 Documenting the version of your code provides distinct points of reference in the code's development.
 Recording the version of code used for analysis is important for reproducing your work.
@@ -232,7 +232,7 @@ The incremental number following the full stop indicates how many versions of th
 As this guidance will change over time, this version number provides users with a reference for citing a specific state of the guidance.
 
 
-## Changelog <span role="image" aria-label="difficulty rating: 2 out of 5">★★☆☆☆</span>
+## Changelog
 
 A changelog records the major changes that have occurred to a project or package, between versioned releases of the code.
 
@@ -266,7 +266,7 @@ Your changelog can be in any format and should be associated with your code docu
 [keep a changelog](https://keepachangelog.com/en/1.0.0/) provides a simple but effective template for recording changes to your code.
 
 
-## Copyright and Licenses <span role="image" aria-label="difficulty rating: 2 out of 5">★★☆☆☆</span>
+## Copyright and Licenses
 
 Copyright indicates ownership of work.
 All material created by civil servants, ministers, government departments and their agencies are covered by [Crown copyright](https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/).
@@ -289,7 +289,7 @@ For example, an MIT LICENSE file might look like:
 > THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 
-## Open source your code <span role="image" aria-label="difficulty rating: 2 out of 5">★★☆☆☆</span>
+## Open source your code
 
 In government, we [support and promote open source](https://www.gov.uk/service-manual/service-standard/point-12-make-new-source-code-open) whenever possible.
 [Open source](https://opensource.com/resources/what-open-source) software is software with source code that anyone can freely inspect, modify and enhance.

@@ -32,9 +32,9 @@
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="_static/tabs.css" />
-    <link rel="stylesheet" type="text/css" href="_static/logo.css" />
     <link rel="stylesheet" type="text/css" href="_static/admonitions.css" />
     <link rel="stylesheet" type="text/css" href="_static/markdown_within_tabs.css" />
+    <link rel="stylesheet" type="text/css" href="_static/logo.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
@@ -93,13 +93,11 @@
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form>
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-    <ul class="nav sidenav_l1">
- <li class="toctree-l1">
-  <a class="reference internal" href="index.html">
-   Introduction
-  </a>
- </li>
-</ul>
+    <p class="caption collapsible-parent">
+ <span class="caption-text">
+  Guidance
+ </span>
+</p>
 <ul class="current nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="principles.html">
@@ -147,11 +145,23 @@
   </a>
  </li>
 </ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Resources
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="learning.html">
+   Learning Resources
+  </a>
+ </li>
+</ul>
 
 </nav> <!-- To handle the deprecated key -->
 
 <div class="navbar_extra_footer">
-  <p>Book version 2020.11</><a href='https://gss.civilservice.gov.uk/' target='_blank'><img src='./_static/GSS_logo.jpg' alt='The Government Statistical Service logo' style='width:100%'></a>
+  <p>Book version 2020.12</><a href='https://gss.civilservice.gov.uk/' target='_blank'><img src='./_static/GSS_logo.jpg' alt='The Government Statistical Service logo' style='width:100%'></a>
 </div>
 
 </div>
@@ -235,19 +245,13 @@
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#scripts-span-role-image-aria-label-difficulty-rating-1-out-of-5-span">
+  <a class="reference internal nav-link" href="#scripts">
    Scripts
-   <span aria-label="difficulty rating: 1 out of 5" role="image">
-    ★☆☆☆☆
-   </span>
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#clean-directories-span-role-image-aria-label-difficulty-rating-1-out-of-5-span">
+  <a class="reference internal nav-link" href="#clean-directories">
    Clean directories
-   <span aria-label="difficulty rating: 1 out of 5" role="image">
-    ★☆☆☆☆
-   </span>
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -273,27 +277,18 @@
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#modules-and-packages-span-role-image-aria-label-difficulty-rating-2-out-of-5-span">
+  <a class="reference internal nav-link" href="#modules-and-packages">
    Modules and packages
-   <span aria-label="difficulty rating: 2 out of 5" role="image">
-    ★★☆☆☆
-   </span>
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#project-templates-span-role-image-aria-label-difficulty-rating-2-out-of-5-span">
+  <a class="reference internal nav-link" href="#project-templates">
    Project templates
-   <span aria-label="difficulty rating: 2 out of 5" role="image">
-    ★★☆☆☆
-   </span>
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#repositories-span-role-image-aria-label-difficulty-rating-2-out-of-5-span">
+  <a class="reference internal nav-link" href="#repositories">
    Repositories
-   <span aria-label="difficulty rating: 2 out of 5" role="image">
-    ★★☆☆☆
-   </span>
   </a>
  </li>
 </ul>
@@ -317,8 +312,8 @@ The messier the programs, the harder they are to maintain and change in future.<
 It will help others to read your code more easily, and you will write better code into the bargain.
 Some structures have been found to be generally quite effective through trial and error.
 Others are more specific, and - as with all guidelines - should not be taken as mandatory.</p>
-<div class="section" id="scripts-span-role-image-aria-label-difficulty-rating-1-out-of-5-span">
-<h2>Scripts <span role="image" aria-label="difficulty rating: 1 out of 5">★☆☆☆☆</span><a class="headerlink" href="#scripts-span-role-image-aria-label-difficulty-rating-1-out-of-5-span" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="scripts">
+<h2>Scripts<a class="headerlink" href="#scripts" title="Permalink to this headline">¶</a></h2>
 <p>As you begin developing your project it’s a good idea to save your working code in a script file.
 In R these are saved as <code class="docutils literal notranslate"><span class="pre">.R</span></code> files, and in Python as <code class="docutils literal notranslate"><span class="pre">.py</span></code>.
 Scripts can be used within an integrated development environment (IDE) like <a class="reference external" href="https://code.visualstudio.com/">Visual Studio Code</a>, <a class="reference external" href="https://rstudio.com/">RStudio</a>, or <a class="reference external" href="https://www.jetbrains.com/pycharm/">PyCharm</a>.
@@ -334,8 +329,8 @@ For example you can use the <code class="docutils literal notranslate"><span cla
 <p>Running your analysis files from end to end ensures that your code is executed in the same order each time.
 It also runs the code with a clean environment, not containing variables or other objects from previous runs that can be a common source of errors.</p>
 </div>
-<div class="section" id="clean-directories-span-role-image-aria-label-difficulty-rating-1-out-of-5-span">
-<h2>Clean directories <span role="image" aria-label="difficulty rating: 1 out of 5">★☆☆☆☆</span><a class="headerlink" href="#clean-directories-span-role-image-aria-label-difficulty-rating-1-out-of-5-span" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="clean-directories">
+<h2>Clean directories<a class="headerlink" href="#clean-directories" title="Permalink to this headline">¶</a></h2>
 <p>As your analysis project grows it becomes more important to keep your project structure clean.
 Every project is different and the right way to organise your project might differ from another project.
 However, there are some principles that are useful to consider.</p>
@@ -365,7 +360,7 @@ Don’t let the name scare you off!
 All we mean by this is that you start off with the input data, you finish with the output(s), and in between there are no lines that link backwards.</p>
 <div class="figure align-default" id="dag">
 <a class="reference internal image-reference" href="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Tred-G.svg/800px-Tred-G.svg.png"><img alt="Analysis is a directed, acyclic graph that links the input data through a series of steps to the outputs." src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Tred-G.svg/800px-Tred-G.svg.png" style="width: 50%;" /></a>
-<p class="caption"><span class="caption-number">Fig. 8 </span><span class="caption-text">Defining analysis as a DAG - linking the input data at (a) to the output at (e).</span><a class="headerlink" href="#dag" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 4 </span><span class="caption-text">Defining analysis as a DAG - linking the input data at (a) to the output at (e).</span><a class="headerlink" href="#dag" title="Permalink to this image">¶</a></p>
 </div>
 <p>When thinking about how to structure your project it is useful to think in terms of what your project’s DAG looks like.
 Each project should be kept in its own folder, with a descriptive name.
@@ -405,8 +400,8 @@ If you are worried about deleting your outputs (i.e. results) then it is unlikel
 <p>It is good practice to delete and regenerate your outputs frequently when developing analysis.</p>
 </div>
 </div>
-<div class="section" id="modules-and-packages-span-role-image-aria-label-difficulty-rating-2-out-of-5-span">
-<h2>Modules and packages <span role="image" aria-label="difficulty rating: 2 out of 5">★★☆☆☆</span><a class="headerlink" href="#modules-and-packages-span-role-image-aria-label-difficulty-rating-2-out-of-5-span" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="modules-and-packages">
+<h2>Modules and packages<a class="headerlink" href="#modules-and-packages" title="Permalink to this headline">¶</a></h2>
 <p>Code that is more complex, high risk or reusable between projects can benefit from being structured into a package.
 Modules are single files that contain one or more reusable units of code.
 Multiple related modules are typically collected together within a package.</p>
@@ -414,14 +409,12 @@ Multiple related modules are typically collected together within a package.</p>
 For example, installing additional functionality for Python using <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">&lt;package&gt;</span></code> on the command line or running <code class="docutils literal notranslate"><span class="pre">install.packages(&quot;&lt;package&gt;&quot;)</span></code> in an R interpreter.</p>
 <div class="admonition-learning admonition">
 <p class="admonition-title">Key Learning</p>
-<p>The <a class="reference external" href="https://python-packaging-user-guide.readthedocs.io/">Python Packaging User Guide</a> describes good packaging practices using the most up-to-date Python tools.
-<a class="reference external" href="https://r-pkgs.org/">R Packages</a> provides a comprehensive summary of packaging in R.
-This <a class="reference external" href="http://web.mit.edu/insong/www/pdf/rpackage_instructions.pdf">step by step guide to creating R package</a> from MIT might also be useful.</p>
+<p><a class="reference external" href="https://python-packaging-user-guide.readthedocs.io/">The Python Packaging User Guide</a> describes good packaging practices using the most up-to-date Python tools. While <a class="reference external" href="https://r-pkgs.org/">the R Packages book</a> provides a comprehensive summary of packaging in R. <a class="reference external" href="https://devguide.ropensci.org/building.html">The rOpenSci packaging guide</a> also contains useful tips for packaging in R.</p>
 </div>
 <p>See <a class="reference internal" href="project_documentation.html"><span class="doc std std-doc">Project documentation</span></a> for a summary of common package and project documentation types.</p>
 </div>
-<div class="section" id="project-templates-span-role-image-aria-label-difficulty-rating-2-out-of-5-span">
-<h2>Project templates <span role="image" aria-label="difficulty rating: 2 out of 5">★★☆☆☆</span><a class="headerlink" href="#project-templates-span-role-image-aria-label-difficulty-rating-2-out-of-5-span" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="project-templates">
+<h2>Project templates<a class="headerlink" href="#project-templates" title="Permalink to this headline">¶</a></h2>
 <p>Although project structure is flexible, you might recognise that many analysts choose to use similar structures for multiple projects.
 Consistency in structure makes it easier to navigate unfamiliar projects.
 It means that members of the team can quickly orient themselves when joining an existing project or starting a new one.</p>
@@ -431,15 +424,16 @@ It can save time by creating common folder structures, laying out essential docu
 Layout out a structure to include documentation and code testing encourages these good practices.</p>
 <p>Useful cookiecutters include:</p>
 <ul class="simple">
-<li><p>The comprehensive Python data science project template <a class="reference external" href="http://drivendata.github.io/cookiecutter-data-science/">cookiecutter-data-science</a></p></li>
-<li><p>The Python package template <a class="reference external" href="https://cookiecutter-pypackage.readthedocs.io/en/latest/">cookiecutter-pypackage</a></p></li>
+<li><p>The Government data science <a class="reference external" href="https://github.com/ukgovdatascience/govcookiecutter">govcookiecutter</a>, including data security features.</p></li>
+<li><p>The comprehensive Python data science project template <a class="reference external" href="http://drivendata.github.io/cookiecutter-data-science/">cookiecutter-data-science</a>.</p></li>
+<li><p>The Python package template <a class="reference external" href="https://cookiecutter-pypackage.readthedocs.io/en/latest/">cookiecutter-pypackage</a>.</p></li>
 </ul>
 <p>Rstudio provides a standard template for R packages via <code class="docutils literal notranslate"><span class="pre">File</span> <span class="pre">&gt;</span> <span class="pre">New</span> <span class="pre">Project...</span> <span class="pre">&gt;</span> <span class="pre">New</span> <span class="pre">Directory</span> <span class="pre">&gt;</span> <span class="pre">R</span> <span class="pre">Package</span></code>.  We have created some basic templates for an <a class="reference external" href="https://github.com/best-practice-and-impact/example-package-r">R package</a> and a <a class="reference external" href="https://github.com/best-practice-and-impact/example-package-python">Python package</a> that may be helpful.
 R project structures can also be set up or extended, one component at a time, using the <a class="reference external" href="https://usethis.r-lib.org/"><code class="docutils literal notranslate"><span class="pre">usethis</span></code> workflow package</a>.
 For example, <code class="docutils literal notranslate"><span class="pre">use_test()</span></code> will add the directories necessary for testing using <code class="docutils literal notranslate"><span class="pre">testthat</span></code> and generate basic test file templates for a given function name.</p>
 </div>
-<div class="section" id="repositories-span-role-image-aria-label-difficulty-rating-2-out-of-5-span">
-<h2>Repositories <span role="image" aria-label="difficulty rating: 2 out of 5">★★☆☆☆</span><a class="headerlink" href="#repositories-span-role-image-aria-label-difficulty-rating-2-out-of-5-span" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="repositories">
+<h2>Repositories<a class="headerlink" href="#repositories" title="Permalink to this headline">¶</a></h2>
 <p>Repositories or “repos” are typically project folders that are version controlled using Git or a similar version control system.
 One repository usually contains a single project.
 Developing your project using a version controlled repository has significant benefits for reproducibility.</p>

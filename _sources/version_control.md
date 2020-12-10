@@ -263,6 +263,48 @@ While we may not want to share files containing credentials, configuration and d
 Demonstrating the format of these files can help others to reuse your code, without sharing sensitive information.
 
 
+#### Using environmental variables
+
+If your code depends on credentials of some kind, these should not be explicitly written in your code.
+They can be stored in configuration files, which should be excluded from version control, or better still in local environment variables.
+
+Environment variables are variables which are available in a particular environment.
+In this context, our environment is the user environment that we are running our code from.
+
+In Unix systems (e.g. Linux and Mac), environment variables can be set in the terminal using `export` and deleted using `unset`:
+
+```
+export SECRET_KEY="mysupersecretpassword"
+unset SECRET_KEY
+```
+
+In Windows, the equivalent to this is:
+
+```
+setx SECRET_KEY "mysupersecretpassword"
+reg delete HKCU\Environment /F /V SECRET_KEY
+```
+
+Once stored in environmental variables, these variables will remain available on your machine until they are removed.
+You can access this variable in your code like so:
+
+````{tabs}
+
+```{code-tab} py
+import os
+
+my_key = os.environ.get("SECRET_KEY")
+```
+
+```{code-tab} r R
+my_key <- Sys.getenv("SECRET_KEY")
+```
+
+````
+
+Note that you may need to open a new terminal to show that a variable has been removed.
+
+
 #### Excluding `.Rdata` and `.Rhistory` files
 
 R saves objects from your workspace (working environment) into an `.RData` file at the end of your session.

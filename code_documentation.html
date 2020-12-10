@@ -32,9 +32,9 @@
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="_static/tabs.css" />
-    <link rel="stylesheet" type="text/css" href="_static/logo.css" />
     <link rel="stylesheet" type="text/css" href="_static/admonitions.css" />
     <link rel="stylesheet" type="text/css" href="_static/markdown_within_tabs.css" />
+    <link rel="stylesheet" type="text/css" href="_static/logo.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
@@ -95,13 +95,11 @@
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form>
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-    <ul class="nav sidenav_l1">
- <li class="toctree-l1">
-  <a class="reference internal" href="index.html">
-   Introduction
-  </a>
- </li>
-</ul>
+    <p class="caption collapsible-parent">
+ <span class="caption-text">
+  Guidance
+ </span>
+</p>
 <ul class="current nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="principles.html">
@@ -149,11 +147,23 @@
   </a>
  </li>
 </ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Resources
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="learning.html">
+   Learning Resources
+  </a>
+ </li>
+</ul>
 
 </nav> <!-- To handle the deprecated key -->
 
 <div class="navbar_extra_footer">
-  <p>Book version 2020.11</><a href='https://gss.civilservice.gov.uk/' target='_blank'><img src='./_static/GSS_logo.jpg' alt='The Government Statistical Service logo' style='width:100%'></a>
+  <p>Book version 2020.12</><a href='https://gss.civilservice.gov.uk/' target='_blank'><img src='./_static/GSS_logo.jpg' alt='The Government Statistical Service logo' style='width:100%'></a>
 </div>
 
 </div>
@@ -237,33 +247,36 @@
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#comments-span-role-image-aria-label-difficulty-rating-1-out-of-5-span">
+  <a class="reference internal nav-link" href="#comments">
    Comments
-   <span aria-label="difficulty rating: 1 out of 5" role="image">
-    ★☆☆☆☆
-   </span>
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#docstrings-span-role-image-aria-label-difficulty-rating-2-out-of-5-span">
+  <a class="reference internal nav-link" href="#docstrings">
    Docstrings
-   <span aria-label="difficulty rating: 2 out of 5" role="image">
-    ★★☆☆☆
-   </span>
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#automatic-documentation-generation-span-role-image-aria-label-difficulty-rating-2-out-of-5-span">
+  <a class="reference internal nav-link" href="#automatic-documentation-generation">
    Automatic documentation generation
-   <span aria-label="difficulty rating: 2 out of 5" role="image">
-    ★★☆☆☆
-   </span>
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#generating-html-documentation">
      Generating HTML documentation
     </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#python">
+       Python
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#r">
+       R
+      </a>
+     </li>
+    </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#hosting-html-documentation">
@@ -289,11 +302,18 @@
 <div><p>Documentation is a love letter that you write to your future self.</p>
 <p class="attribution">—Damian Conway</p>
 </div></blockquote>
-<div class="section" id="comments-span-role-image-aria-label-difficulty-rating-1-out-of-5-span">
-<h2>Comments <span role="image" aria-label="difficulty rating: 1 out of 5">★☆☆☆☆</span><a class="headerlink" href="#comments-span-role-image-aria-label-difficulty-rating-1-out-of-5-span" title="Permalink to this headline">¶</a></h2>
-<p>A common form of documentation is code comments, which are found throughout source code files.</p>
-<p>Comments are essential for explaining the logic behind sections of your code.
-However, excessive use of code comments often leads to redundancy and can ironically make your code harder to read.</p>
+<div class="section" id="comments">
+<h2>Comments<a class="headerlink" href="#comments" title="Permalink to this headline">¶</a></h2>
+<blockquote class="epigraph">
+<div><p>Use comments sparingly and with purpose</p>
+</div></blockquote>
+<p>Comments are lines of text in source code files which typically aren’t executed as part of the program. They are small notes or annotations written by those working on the code. Often, they provide context or explain the reasoning behind implementation decisions.</p>
+<p>Comments are essential to help those working on the code in the future to understand any non-obvious details around how and why the code has been written in a particular way. As such, when it comes to providing relevant and perhaps higher-level documentation to the end consumer on the functionality of your code, there are much more appropriate solutions such as <a class="reference internal" href="#docstrings"><span class="std std-ref">docstrings</span></a>.</p>
+<p>Although extremely useful, comments should be used sparingly. Excessive use of code comments often leads to redundancy and can, ironically, make your code harder to read. It is easy for comments to not be updated as changes are made to the code. Additionally, outdated, or irrelevant comments can confuse or mislead.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Remember</strong>: the only point of “truth” is the code that is executed - if the comments are out of date compared to the actual code, it may not be immediately apparent.</p>
+</div>
 <div class="sphinx-tabs docutils container">
 <div aria-label="Tabbed content" role="tablist"><button aria-controls="panel-0-UHl0aG9u" aria-selected="true" class="sphinx-tabs-tab code-tab group-tab" id="tab-0-UHl0aG9u" name="UHl0aG9u" role="tab" tabindex="0">Python</button><button aria-controls="panel-0-Ug==" aria-selected="false" class="sphinx-tabs-tab code-tab group-tab" id="tab-0-Ug==" name="Ug==" role="tab" tabindex="-1">R</button></div><div aria-labelledby="tab-0-UHl0aG9u" class="sphinx-tabs-panel code-tab group-tab" id="panel-0-UHl0aG9u" name="UHl0aG9u" role="tabpanel" tabindex="0"><div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set number_1 to 5</span>
 <span class="n">number_1</span> <span class="o">=</span> <span class="mi">5</span>
@@ -316,14 +336,19 @@ However, excessive use of code comments often leads to redundancy and can ironic
 </pre></div>
 </div>
 </div></div>
-<p>Comments that describe exactly <strong>what</strong> is occurring in the code, as above, are often not necessary.
-They may be redundant, if <a class="reference internal" href="core_programming.html#naming"><span class="std std-ref">good naming practices</span></a> are followed to self-document the steps that occur in your code.</p>
-<p>A developer or user can read your code and other more appropriate forms of documentation (see <a class="reference internal" href="#docstrings"><span class="std std-ref">Docstrings</span></a> below) for more detailed description of the logic behind your code.
-If it is difficult to understand your code without comments, this can indicate that your code is overly complex and might benefit from being refactored into smaller units.</p>
-<p>Comments can be used more effectively to explain <strong>why</strong> you might have written code in a certain way.
-For example, you might explain to other analysts and developers why a section of your code doesn’t follow standard practices, perhaps because the typical method didn’t work.
-This type of comment can help to clarify your choice of logic, without needing to describe the individual steps taken.
-Comments explaining <strong>why</strong> you made programming choices will help your future self and other developers to understand your intentions.</p>
+<p>Comments that describe exactly <strong>what</strong> is occurring in the code, as above, are often not necessary. They may be redundant, if <a class="reference internal" href="core_programming.html#naming"><span class="std std-ref">good naming practices</span></a> are followed to self-document the steps that occur in your code. For a more detailed description of <strong>what</strong> the code does, the developer can also read more appropriate forms of documentation (see <a class="reference internal" href="#docstrings"><span class="std std-ref">docstrings</span></a> below).</p>
+<p>If it is difficult to understand your code without comments, this can indicate that your code is overly complex and might benefit from being broken down, or ‘refactored’, into smaller units. That said, sometimes you will be faced with functions and classes that are complex for a reason. Stopping to reflect on why your documentation is so large is a good prompt to consider whether refactoring is in order.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<blockquote class="epigraph">
+<div><p>Simple is better than complex.
+Complex is better than complicated.</p>
+<p class="attribution">—Zen of Python</p>
+</div></blockquote>
+<p>For complex methodologies, it is hard to completely eliminate complexity and it will eventually have to ‘sit’ somewhere. This is natural, as real-world problems can be complex. The key is to manage that complexity without adding to it.</p>
+</div>
+<p>Comments can be used more effectively to explain <strong>why</strong> you might have written code in a certain way. For example, you might explain to other analysts and developers why a section of your code doesn’t follow standard practices, perhaps because the typical method didn’t work. This type of comment can help to clarify your decision-making process, without needing to describe the individual steps taken.</p>
+<p>In short, comments explaining <strong>why</strong> you made programming choices will help your future self and other developers to understand your intentions.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Tried solution X, but Y worked better because of Z</span>
 
 <span class="c1"># Don&#39;t use function X here, because of Y</span>
@@ -334,8 +359,7 @@ Comments explaining <strong>why</strong> you made programming choices will help 
 <span class="c1"># This section of code is commented out because of X</span>
 </pre></div>
 </div>
-<p>Comments can also be used effectively to divide long sections of code into sub-sections that relate to their overall functionality.
-For example, an analysis script might be broken down into sections that describe each part of the analysis process:</p>
+<p>Comments are sometimes used to divide long sections of code into sub-sections that relate to their overall functionality. That said, the merit of doing so will depend on the value added. For example, the code below is already fairly self-documenting and therefore adding the section headings does not add much value.</p>
 <div class="sphinx-tabs docutils container">
 <div aria-label="Tabbed content" role="tablist"><button aria-controls="panel-1-UHl0aG9u" aria-selected="true" class="sphinx-tabs-tab code-tab group-tab" id="tab-1-UHl0aG9u" name="UHl0aG9u" role="tab" tabindex="0">Python</button><button aria-controls="panel-1-Ug==" aria-selected="false" class="sphinx-tabs-tab code-tab group-tab" id="tab-1-Ug==" name="Ug==" role="tab" tabindex="-1">R</button></div><div aria-labelledby="tab-1-UHl0aG9u" class="sphinx-tabs-panel code-tab group-tab" id="panel-1-UHl0aG9u" name="UHl0aG9u" role="tabpanel" tabindex="0"><div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
@@ -361,8 +385,8 @@ For example, an analysis script might be broken down into sections that describe
 <span class="n">penguins_data</span> <span class="o">&lt;-</span> <span class="n">penguins</span>
 
 <span class="c1">## Analyse</span>
-<span class="n">species_means</span> <span class="o">&lt;-</span> <span class="n">penguins_data</span> <span class="o">%&gt;%</span> 
-  <span class="n">dplyr</span><span class="o">::</span><span class="nf">group_by</span><span class="p">(</span><span class="n">species</span><span class="p">)</span> <span class="o">%&gt;%</span> 
+<span class="n">species_means</span> <span class="o">&lt;-</span> <span class="n">penguins_data</span> <span class="o">%&gt;%</span>
+  <span class="n">dplyr</span><span class="o">::</span><span class="nf">group_by</span><span class="p">(</span><span class="n">species</span><span class="p">)</span> <span class="o">%&gt;%</span>
   <span class="n">dplyr</span><span class="o">::</span><span class="nf">summarize</span><span class="p">(</span><span class="n">dplyr</span><span class="o">::</span><span class="nf">across</span><span class="p">(</span><span class="nf">where</span><span class="p">(</span><span class="n">is.numeric</span><span class="p">),</span> <span class="n">mean</span><span class="p">,</span> <span class="n">na.rm</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">))</span>
 
 <span class="c1">## Report</span>
@@ -371,8 +395,7 @@ For example, an analysis script might be broken down into sections that describe
 </pre></div>
 </div>
 </div></div>
-<p>But note that in simple cases, such as the example above, these steps may already be apparent from the code.</p>
-<p>Comments should not be used to alter your code’s behaviour.</p>
+<p>Leaving unused code in your scripts makes them more difficult to read and understand, as they add visual noise to anyone trying to understand your code at pace. Furthermore, relying on someone to comment and uncomment things to alter the functionality of the code is <strong>highly discouraged</strong>. Doing so reduces the reproducibility of your analysis.</p>
 <div class="sphinx-tabs docutils container">
 <div aria-label="Tabbed content" role="tablist"><button aria-controls="panel-2-UHl0aG9u" aria-selected="true" class="sphinx-tabs-tab code-tab group-tab" id="tab-2-UHl0aG9u" name="UHl0aG9u" role="tab" tabindex="0">Python</button><button aria-controls="panel-2-Ug==" aria-selected="false" class="sphinx-tabs-tab code-tab group-tab" id="tab-2-Ug==" name="Ug==" role="tab" tabindex="-1">R</button></div><div aria-labelledby="tab-2-UHl0aG9u" class="sphinx-tabs-panel code-tab group-tab" id="panel-2-UHl0aG9u" name="UHl0aG9u" role="tabpanel" tabindex="0"><div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Run me!&quot;</span><span class="p">)</span>
 <span class="c1"># print(&quot;Don&#39;t run me...&quot;)</span>
@@ -383,31 +406,35 @@ For example, an analysis script might be broken down into sections that describe
 </pre></div>
 </div>
 </div></div>
-<p>Leaving unused code in your scripts makes them more difficult to read and understand.
-It is easy to forget which parts of code have been commented out and why they has been commented.
-You should instead use appropriate control flow to determine when these sections should be run, for example <code class="docutils literal notranslate"><span class="pre">if/else</span></code> statements.
-When changes are required between individual runs of your analysis, you should define these options via a configuration file.</p>
+<p>It is easy to forget which parts of code have been commented out and why they have been commented. It introduces a human factor into the equation, which might not be accounted for if someone in the future is not aware of the commented-out code. This is likely to produce inconsistent runs of the same piece of code. This code might quickly become out of sync with the rest of the changes in the codebase, as developers may not consider updating code that is commented out if they assume it is obsolete.</p>
+<p>You should instead use appropriate control flow (such as <code class="docutils literal notranslate"><span class="pre">if/else</span></code> statements) to determine when these sections should be run. When changes are required between individual runs of your analysis, you should define these options via a configuration file.</p>
 <div class="admonition-todo admonition" id="id1">
 <p class="admonition-title">Todo</p>
 <p>Reference configuration file section.
 <a class="reference external" href="https://github.com/best-practice-and-impact/qa-of-code-guidance/issues/30">#30</a></p>
 </div>
-<p>In summary, you should use comments sparingly but purposefully.</p>
+<p>In summary, you should use comments sparingly but purposefully. Make sure to:</p>
+<ul class="simple">
+<li><p>explain <strong>why</strong> certain things are done, in order to provide context around the decisions that you have made.</p></li>
+<li><p>not use commenting to echo what your code is already telling the reader.</p></li>
+<li><p>and as with any other documentation, make sure comments are accurate and still relevant after code changes.</p></li>
+</ul>
 </div>
-<div class="section" id="docstrings-span-role-image-aria-label-difficulty-rating-2-out-of-5-span">
-<span id="docstrings"></span><h2>Docstrings <span role="image" aria-label="difficulty rating: 2 out of 5">★★☆☆☆</span><a class="headerlink" href="#docstrings-span-role-image-aria-label-difficulty-rating-2-out-of-5-span" title="Permalink to this headline">¶</a></h2>
-<p>When your code is structured as functions or classes, these functional units can be efficiently documented using docstrings.
-Docstrings are multi-line comments that appear at the start of a function definition.
-Use of these comments keeps the documentation of your code closely associated with the relevant sections of code.
-This close association means it is easier to keep documentation up-to-date.
-Docstrings commonly describe:</p>
+<div class="section" id="docstrings">
+<span id="id2"></span><h2>Docstrings<a class="headerlink" href="#docstrings" title="Permalink to this headline">¶</a></h2>
+<p>When your code is structured as functions or classes, these functional units can be efficiently documented using docstrings. Docstrings are specialised multi-line descriptions that appear at the start of a function definition and are the de facto way of documenting these individual components. In practice they can be either strings (as in Python docstrings) or comments (as in R). Note that module or script level docstrings are also commonly used (usually at the top of the module file in the case of Python). Use of docstrings keeps the documentation of your code closely associated with the relevant sections of code. This close association means it is easier to keep documentation up to date as changes are introduced to the code.</p>
+<p>An end-user can access these docstrings by typing <code class="docutils literal notranslate"><span class="pre">help(function_name)</span></code> after they have imported your library, so they are handily available without needing to have the source code files open in another window. Other tools, like Jupyter for Python, allow users to easily access these docstrings for quick reference. Hence the focus on detail and comprehensiveness is key - this is the first point of call for an end-user trying to understand what a given function does.</p>
+<p>Docstrings commonly describe:</p>
 <ul class="simple">
 <li><p>what the function or class does</p></li>
-<li><p>what parameters the function or class takes as arguments</p></li>
+<li><p>what parameters the function or class takes as arguments and their types</p></li>
 <li><p>what the code returns</p></li>
-<li><p>how to use section of code</p></li>
-<li><p>references to other functions or classes that carry out similar tasks</p></li>
+<li><p>what common errors can occur and the exceptions they’ll raise</p></li>
+<li><p>links to or descriptions of the methodology the function implements</p></li>
+<li><p>example usage of the function</p></li>
+<li><p>references to other functions or classes that are related to this function</p></li>
 </ul>
+<p>But in general, there is scope to add any information that you consider relevant to an end-user of this particular function.</p>
 <div class="sphinx-tabs docutils container">
 <div aria-label="Tabbed content" role="tablist"><button aria-controls="panel-3-UHl0aG9u" aria-selected="true" class="sphinx-tabs-tab code-tab group-tab" id="tab-3-UHl0aG9u" name="UHl0aG9u" role="tab" tabindex="0">Python</button><button aria-controls="panel-3-Ug==" aria-selected="false" class="sphinx-tabs-tab code-tab group-tab" id="tab-3-Ug==" name="Ug==" role="tab" tabindex="-1">R</button></div><div aria-labelledby="tab-3-UHl0aG9u" class="sphinx-tabs-panel code-tab group-tab" id="panel-3-UHl0aG9u" name="UHl0aG9u" role="tabpanel" tabindex="0"><div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">add_to_each</span><span class="p">(</span><span class="n">numbers</span><span class="p">,</span> <span class="n">add</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
@@ -435,10 +462,10 @@ Docstrings commonly describe:</p>
 <span class="sd">    &gt;&gt;&gt; my_numbers = [2, 4, 6, 8]</span>
 <span class="sd">    &gt;&gt;&gt; add_to_each_in_list(my_numbers, 3)</span>
 <span class="sd">    [5, 7, 9, 11]</span>
-<span class="sd">    </span>
+
 <span class="sd">    See Also</span>
 <span class="sd">    --------</span>
-<span class="sd">    add : Adds two numbers </span>
+<span class="sd">    add : Adds two numbers</span>
 <span class="sd">   &quot;&quot;&quot;</span>
    <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">numbers</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
        <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;numbers must be a list&quot;</span><span class="p">)</span>
@@ -471,53 +498,48 @@ Docstrings commonly describe:</p>
 </pre></div>
 </div>
 </div></div>
-<p>In this example, the function docstring starts with a brief description of the overall function.
-It then lists the parameters that our function takes, along with the suggested type of each and a brief description.
-It also tells us that the function will raise an error if the wrong type is provided for the first parameter.
-Then there is a description of the object that is returned from the function, followed by an example of the function in use.
-Finally, it references a similar related function.</p>
-<p>The Python example follows the <a class="reference external" href="https://numpydoc.readthedocs.io/en/latest/format.html">numpydocs style</a>, which is particularly readable in code files.
-While the R example uses the <a class="reference external" href="https://cran.r-project.org/web/packages/roxygen2/vignettes/roxygen2.html">roxygen2 package</a> and follows the <a class="reference external" href="https://style.tidyverse.org/documentation.html">tidyverse style guide</a>.</p>
-<p>You might find that writing function, class or package descriptions prior to writing their code helps you to focus on the task at hand.
-The documentation should be a specification of what the code is expected to do.
-As documentation tends to be user-focussed, this approach helps you to keep the user’s needs in mind when developing code.</p>
+<p>In this example, the function docstring starts with a brief description. It then lists the parameters that our function takes, along with the suggested type for each parameter and a brief description of what they control. It also tells us that the function will raise an error if the wrong type is provided for the first parameter. Note that the listed errors are the errors that are expected by the writer of the documentation, other unexpected issues can still occur if the function is not properly tested and will not be signposted in the docstring. Then there is a description of the object that is returned from the function, followed by an example of the functions use. Finally, it references a similar related function that might be of interest to the end-user.</p>
+<p>You might find that writing function, class or package descriptions prior to writing their code helps you to focus on the task at hand. The documentation should be a specification of what the code is expected to do. As documentation tends to be user-focussed, this approach helps you to keep the user’s needs in mind when developing code and provides a quick reference when more information on its capabilities are required.</p>
+<p>Lastly, perhaps one of the key things to remember when writing docstrings is to <strong>keep them up to date</strong>. If these crucial bits of information no longer represent what the code actually does, the end-user will be misled. This might lead to various issues ranging from wasted time to serious methodological implications.</p>
+<p>Therefore, write these docstrings early, preferably as you go along or even beforehand when you have a clear idea of what you want to implement. Make sure to update them as you change the functionality of the code. Good function or class level documentation is a good habit to develop for writing professional working code.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Docstrings conventions and styles</strong></p>
+<p>The Python example above follows the <a class="reference external" href="https://numpydoc.readthedocs.io/en/latest/format.html">numpydocs style</a> and is a common sight when using the <code class="docutils literal notranslate"><span class="pre">numpy</span></code> python package. However, there are various other standards such as <a class="reference external" href="https://google.github.io/styleguide/">the Google style guides for docstrings</a> as well as official <a class="reference external" href="https://www.python.org/dev/peps/pep-0257/">docstring specification for Python</a>. The R example uses the <a class="reference external" href="https://cran.r-project.org/web/packages/roxygen2/vignettes/roxygen2.html">roxygen2 package</a> and follows the <a class="reference external" href="https://style.tidyverse.org/documentation.html">tidyverse style guide</a>.</p>
+<p>In general, the core idea behind style is <strong>consistency</strong>. Whatever alterations to these conventions are in use for your particular area, it is much more important to keep them up to date and consistent between your collaborators than the exact choice of a style guide. However, as you will see in the section on <a class="reference internal" href="#generating-docs"><span class="std std-ref">generating documentation</span></a>, having a well-known standard in place helps you to find tools that can generate nice and hostable documentation automatically.</p>
 <p>Other useful resources include:</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://www.python.org/dev/peps/pep-0257/">Python docstring convention</a></p></li>
 <li><p>Guidance for <a class="reference external" href="http://r-pkgs.had.co.nz/man.html">documenting objects and functions in R</a></p></li>
 </ul>
 </div>
-<div class="section" id="automatic-documentation-generation-span-role-image-aria-label-difficulty-rating-2-out-of-5-span">
-<h2>Automatic documentation generation <span role="image" aria-label="difficulty rating: 2 out of 5">★★☆☆☆</span><a class="headerlink" href="#automatic-documentation-generation-span-role-image-aria-label-difficulty-rating-2-out-of-5-span" title="Permalink to this headline">¶</a></h2>
-<p>Sadly this section does not describe a tool that miraculously writes your documentation for you (though tools for <a class="reference external" href="https://kite.com">auto-completing your code</a> do exist!).
-It does, however, describe tools that automate generation of searchable, user-friendly HTML documentation.
-You should ensure that the resulting documentation remains associated with the source code of your project.</p>
-<p>Great, so you’ve embedded documentation into your code, in the form of <a class="reference internal" href="#docstrings"><span class="std std-ref">docstrings</span></a>.
-These docstrings are ideal for technical users looking for a quick understanding of how to use your code.
-However, this is not the nicest format to read documentation in and it may require users to navigate the files containing the code to find the relevant documentation.
-Thankfully tools are available to extract this information from your code and reproduce it in HTML.</p>
+</div>
+<div class="section" id="automatic-documentation-generation">
+<span id="generating-docs"></span><h2>Automatic documentation generation<a class="headerlink" href="#automatic-documentation-generation" title="Permalink to this headline">¶</a></h2>
+<p>This section does not describe a tool that writes your documentation for you. It does, however, describe tools that automate generation of searchable, user-friendly HTML documentation that can really provide a great user experience for end-users. Accurate, up to date and accessible documentation is one of the cornerstones of well-adopted, open-source packages.</p>
+<p>Perhaps it is worth reflecting on truly how much we use well-rendered documentation for our favourite programming packages. It would be much harder it to adopt these packages to solve hard programming problems if they were not well-documented and their documentation was not easily accessible.</p>
+<p>The information presented in this section seeks inform you of how you can take your well-crafted <a class="reference internal" href="#docstrings"><span class="std std-ref">docstrings</span></a> and turn them into more widely accessible hosted documentation.</p>
 <div class="section" id="generating-html-documentation">
 <h3>Generating HTML documentation<a class="headerlink" href="#generating-html-documentation" title="Permalink to this headline">¶</a></h3>
-<p>For Python, we recommend the <a class="reference external" href="https://www.sphinx-doc.org/en/master/">Python package <code class="docutils literal notranslate"><span class="pre">sphinx</span></code></a> for generating HTML documentation.
-Sphinx primarily uses the <a class="reference external" href="https://docutils.sourceforge.io/docs/user/rst/quickstart.html">reStructuredText</a> markup language, but can be extended to also support <a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/markdown.html">Markdown</a>.
-Sphinx supports code highlighting for multiple programming languages within a project, however, other tools may be required to automatically collate documentation from code in languages other than Python.
-You can format your documentation using an <a class="reference external" href="https://www.writethedocs.org/guide/tools/sphinx-themes/">existing theme</a>, or design your own.</p>
-<p>Many <a class="reference external" href="https://github.com/yoloseem/awesome-sphinxdoc"><code class="docutils literal notranslate"><span class="pre">sphinx</span></code> extensions</a> are available to add features to your documentation.
-For example, the <a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/extensions/doctest.html">doctest extension</a> allows you to run examples that are found within <a class="reference internal" href="#docstrings"><span class="std std-ref">docstrings</span></a>.
-These examples test that your documentation is accurate and up-to-date, but may also flag when your code does not work as expected.</p>
-<p>For R projects, you may find <a class="reference external" href="https://pkgdown.r-lib.org/"><code class="docutils literal notranslate"><span class="pre">pkgdown</span></code></a> more suitable.
-This package will create a HTML references section, containing your code documentation.
-It uses your project’s README file as a home page for the site and you can add additional content to the site in the form of <a class="reference external" href="https://r-pkgs.org/vignettes.html">vignettes</a>.
-The <a class="reference external" href="https://pkgdown.r-lib.org/">package’s website</a> and <a class="reference external" href="https://github.com/r-lib/pkgdown/">its source code</a> provide a good demonstration of the package being applied.</p>
+<div class="section" id="python">
+<h4>Python<a class="headerlink" href="#python" title="Permalink to this headline">¶</a></h4>
+<p>For Python, we recommend the Python package <a class="reference external" href="https://www.sphinx-doc.org/en/master/"><code class="docutils literal notranslate"><span class="pre">sphinx</span></code></a> for generating HTML documentation. Sphinx primarily uses the <a class="reference external" href="https://docutils.sourceforge.io/docs/user/rst/quickstart.html"><code class="docutils literal notranslate"><span class="pre">reStructuredText</span></code></a> markup language, which is similar to <code class="docutils literal notranslate"><span class="pre">markdown</span></code>. That said, for those more familiar with <code class="docutils literal notranslate"><span class="pre">markdown</span></code> and in teams/environments where learning a new markup language is not a top priority, <a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/markdown.html"><code class="docutils literal notranslate"><span class="pre">sphinx</span></code> can be extended to also support <code class="docutils literal notranslate"><span class="pre">markdown</span></code></a>.</p>
+<p>Sphinx supports code highlighting for multiple programming languages within a project, however, other tools may be required to automatically collate documentation from code in languages other than Python. These are not addressed here.</p>
+<p>Sphinx also supports theming, with a <a class="reference external" href="https://www.writethedocs.org/guide/tools/sphinx-themes/">myriad of themes</a> available out of the box. With a little bit of extra time you can even develop and adapt the existing themes into a custom theme suitable for your work.</p>
+<p>As well as theming support, <code class="docutils literal notranslate"><span class="pre">sphinx</span></code> allows users to develop extensions that extend its functionality. This GitHub repository provides a list of <a class="reference external" href="https://github.com/yoloseem/awesome-sphinxdoc">useful ways to extend the functionality of <code class="docutils literal notranslate"><span class="pre">sphinx</span></code></a> to suit your needs.</p>
+<p>To illustrate how this can be extremely useful, we will introduce the <a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/extensions/doctest.html">doctest extension</a>. It searches your existing docstrings for the <code class="docutils literal notranslate"><span class="pre">Examples</span></code> section and runs all of the included snippets of code, warning you if they do not run successfully. This means that you can ensure that your examples written in the documentation run to completion. Although this replace thorough code testing testing, it may help you to can spot a whole slew of issue stemming from potentially out of date documentation and examples that no longer apply when the code has been fundamentally altered.</p>
+</div>
+<div class="section" id="r">
+<h4>R<a class="headerlink" href="#r" title="Permalink to this headline">¶</a></h4>
+<p>For R projects, you might want to consider <a class="reference external" href="https://pkgdown.r-lib.org/"><code class="docutils literal notranslate"><span class="pre">pkgdown</span></code></a>. This package will create a HTML references section, containing your code documentation. It uses your project’s README file as a home page for the site and you can add additional content to the site in the form of <a class="reference external" href="https://r-pkgs.org/vignettes.html">vignettes</a>.</p>
+<p>The <a class="reference external" href="https://pkgdown.r-lib.org/">package’s website</a> and <a class="reference external" href="https://github.com/r-lib/pkgdown/">its source code</a> provide a good demonstration of how you would apply it in practice.</p>
+</div>
 </div>
 <div class="section" id="hosting-html-documentation">
 <h3>Hosting HTML documentation<a class="headerlink" href="#hosting-html-documentation" title="Permalink to this headline">¶</a></h3>
-<p>Once built, the HTML files containing your documentation can be opened in any browser.
-Rather than pass around copies of these files, you may want to host your documentation.</p>
-<p>Your version control platform might support hosting documentation in the form of Wiki.
-The GitHub platform provides this hosting via <a class="reference external" href="https://pages.github.com/">GitHub Pages</a>.
-In many cases, you may be able to automatically update your hosted documentation using <a class="reference internal" href="version_control.html#continuous-integration"><span class="std std-ref">Continuous integration</span></a>.</p>
-<p><a class="reference external" href="https://readthedocs.org/">Read the docs</a> is a community-funded project that provides hosting for open source projects.</p>
+<p>Once built, the HTML files containing your documentation can be opened in any browser. Usually this means looking for an <code class="docutils literal notranslate"><span class="pre">index.html</span></code> file in the output directory and opening it with your browser. This is sufficient for local usage, however, in order to improve the end-user experience and remove the need to browse the files looking for <code class="docutils literal notranslate"><span class="pre">index.html</span></code>, it is wise to host this documentation somewhere where it will be publicly available.</p>
+<p>Your version control platform might support hosting web pages already. GitHub provides this hosting via <a class="reference external" href="https://pages.github.com/">GitHub Pages</a> and is able to host not only documentation, but any web page virtually for free. The book that you’re reading right now is hosted in this way. In many cases, you may also be able to automatically update your hosted documentation using <a class="reference internal" href="version_control.html#continuous-integration"><span class="std std-ref">CI</span></a> practices.</p>
+<p><a class="reference external" href="https://readthedocs.org/">Read the docs</a> is a community-funded project that provides hosting for open source projects and is a great place to host any rendered documentation.</p>
 </div>
 </div>
 </div>

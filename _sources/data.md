@@ -8,7 +8,7 @@ In order to reproduce a piece of analysis we need to be able to identify and acc
 This requires suitable storage of data, with documentation and versioning of the data where it may change over time.
 
 
-## Data storage <span role="image" aria-label="difficulty rating: 1 out of 5">★☆☆☆☆</span>
+## Data storage
 
 It is assumed that most data are now stored digitally.
 
@@ -99,7 +99,7 @@ Other resources:
 * A guide to [using the `sqldf` R package](https://dept.stat.lsa.umich.edu/~jerrick/courses/stat701/notes/sql.html).
 
 
-## Documenting data <span role="image" aria-label="difficulty rating: 1 out of 5">★☆☆☆☆</span>
+## Documenting data
 
 Without documentation, it is difficult to understand and work with new dataset.
 
@@ -150,7 +150,7 @@ An IAR may include:
 GOV.UK provides [IAR templates](https://www.gov.uk/government/publications/information-asset-register) that your department might use to structure their IAR.
 
 
-## Data versioning <span role="image" aria-label="difficulty rating: 2 out of 5">★★☆☆☆</span>
+## Data versioning
 
 A key requirement for reproducing your analysis is the ability to identify the data that you used.
 Data change over time;
@@ -188,7 +188,7 @@ Finally, for this to be effective, your analysis should record the version of da
 This might be documented in analysis reports or automatically logged by your code.
 
 
-## Releasing data <span role="image" aria-label="difficulty rating: 2 out of 5">★★☆☆☆</span>
+## Releasing data
 
 ```{todo}
 Open Linked Data ratings

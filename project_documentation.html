@@ -32,9 +32,9 @@
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="_static/tabs.css" />
-    <link rel="stylesheet" type="text/css" href="_static/logo.css" />
     <link rel="stylesheet" type="text/css" href="_static/admonitions.css" />
     <link rel="stylesheet" type="text/css" href="_static/markdown_within_tabs.css" />
+    <link rel="stylesheet" type="text/css" href="_static/logo.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
@@ -95,13 +95,11 @@
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form>
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-    <ul class="nav sidenav_l1">
- <li class="toctree-l1">
-  <a class="reference internal" href="index.html">
-   Introduction
-  </a>
- </li>
-</ul>
+    <p class="caption collapsible-parent">
+ <span class="caption-text">
+  Guidance
+ </span>
+</p>
 <ul class="current nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="principles.html">
@@ -149,11 +147,23 @@
   </a>
  </li>
 </ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Resources
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="learning.html">
+   Learning Resources
+  </a>
+ </li>
+</ul>
 
 </nav> <!-- To handle the deprecated key -->
 
 <div class="navbar_extra_footer">
-  <p>Book version 2020.11</><a href='https://gss.civilservice.gov.uk/' target='_blank'><img src='./_static/GSS_logo.jpg' alt='The Government Statistical Service logo' style='width:100%'></a>
+  <p>Book version 2020.12</><a href='https://gss.civilservice.gov.uk/' target='_blank'><img src='./_static/GSS_logo.jpg' alt='The Government Statistical Service logo' style='width:100%'></a>
 </div>
 
 </div>
@@ -237,83 +247,53 @@
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#readme-span-role-image-aria-label-difficulty-rating-1-out-of-5-span">
+  <a class="reference internal nav-link" href="#readme">
    README
-   <span aria-label="difficulty rating: 1 out of 5" role="image">
-    ★☆☆☆☆
-   </span>
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#contributing-guidance-span-role-image-aria-label-difficulty-rating-1-out-of-5-span">
+  <a class="reference internal nav-link" href="#contributing-guidance">
    Contributing guidance
-   <span aria-label="difficulty rating: 1 out of 5" role="image">
-    ★☆☆☆☆
-   </span>
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#user-desk-instructions-span-role-image-aria-label-difficulty-rating-1-out-of-5-span">
+  <a class="reference internal nav-link" href="#user-desk-instructions">
    User desk instructions
-   <span aria-label="difficulty rating: 1 out of 5" role="image">
-    ★☆☆☆☆
-   </span>
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#dependencies-span-role-image-aria-label-difficulty-rating-1-out-of-5-span">
+  <a class="reference internal nav-link" href="#dependencies">
    Dependencies
-   <span aria-label="difficulty rating: 1 out of 5" role="image">
-    ★☆☆☆☆
-   </span>
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#citation-span-role-image-aria-label-difficulty-rating-1-out-of-5-span">
+  <a class="reference internal nav-link" href="#citation">
    Citation
-   <span aria-label="difficulty rating: 1 out of 5" role="image">
-    ★☆☆☆☆
-   </span>
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#vignettes-span-role-image-aria-label-difficulty-rating-2-out-of-5-span">
+  <a class="reference internal nav-link" href="#vignettes">
    Vignettes
-   <span aria-label="difficulty rating: 2 out of 5" role="image">
-    ★★☆☆☆
-   </span>
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#versioning-span-role-image-aria-label-difficulty-rating-2-out-of-5-span">
+  <a class="reference internal nav-link" href="#versioning">
    Versioning
-   <span aria-label="difficulty rating: 2 out of 5" role="image">
-    ★★☆☆☆
-   </span>
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#changelog-span-role-image-aria-label-difficulty-rating-2-out-of-5-span">
+  <a class="reference internal nav-link" href="#changelog">
    Changelog
-   <span aria-label="difficulty rating: 2 out of 5" role="image">
-    ★★☆☆☆
-   </span>
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#copyright-and-licenses-span-role-image-aria-label-difficulty-rating-2-out-of-5-span">
+  <a class="reference internal nav-link" href="#copyright-and-licenses">
    Copyright and Licenses
-   <span aria-label="difficulty rating: 2 out of 5" role="image">
-    ★★☆☆☆
-   </span>
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#open-source-your-code-span-role-image-aria-label-difficulty-rating-2-out-of-5-span">
+  <a class="reference internal nav-link" href="#open-source-your-code">
    Open source your code
-   <span aria-label="difficulty rating: 2 out of 5" role="image">
-    ★★☆☆☆
-   </span>
   </a>
  </li>
 </ul>
@@ -330,8 +310,8 @@
   <div class="section" id="project-documentation">
 <h1>Project documentation<a class="headerlink" href="#project-documentation" title="Permalink to this headline">¶</a></h1>
 <p>Whether you’re developing a package or collaborating on a piece of analysis, documenting your project well makes it much easier for others to understand your goal and ways of working.</p>
-<div class="section" id="readme-span-role-image-aria-label-difficulty-rating-1-out-of-5-span">
-<h2>README <span role="image" aria-label="difficulty rating: 1 out of 5">★☆☆☆☆</span><a class="headerlink" href="#readme-span-role-image-aria-label-difficulty-rating-1-out-of-5-span" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="readme">
+<h2>README<a class="headerlink" href="#readme" title="Permalink to this headline">¶</a></h2>
 <p>When working on a collaborative or open coding project, it’s good practice to describe an overview of your project in a README file.
 This allows users or developers to grasp the overall goal of your project.
 As well as a description of the project, it might include examples using your code or references to other associated projects.
@@ -346,8 +326,8 @@ This file can be any text type, including <code class="docutils literal notransl
 <li><p>Links to related projects</p></li>
 </ul>
 </div>
-<div class="section" id="contributing-guidance-span-role-image-aria-label-difficulty-rating-1-out-of-5-span">
-<h2>Contributing guidance <span role="image" aria-label="difficulty rating: 1 out of 5">★☆☆☆☆</span><a class="headerlink" href="#contributing-guidance-span-role-image-aria-label-difficulty-rating-1-out-of-5-span" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="contributing-guidance">
+<h2>Contributing guidance<a class="headerlink" href="#contributing-guidance" title="Permalink to this headline">¶</a></h2>
 <p>When collaborating, it is also useful to outline the standards used within your project.
 This might include particular packages that should used for certain tasks and guidance on the <a class="reference internal" href="core_programming.html#code-style"><span class="std std-ref">code style</span></a> used in the project.
 If you plan to have contributors from outside your organisation it is useful to include a code of conduct too.
@@ -435,8 +415,8 @@ non-minor changes.</p></li>
 <p>In this case we have outlined our standard practices for using version control on GitHub, the code style that we are using in the project and the review process that we follow.
 We have used the <a class="reference external" href="https://daringfireball.net/projects/markdown/syntax">Markdown</a> (<code class="docutils literal notranslate"><span class="pre">.md</span></code>) markup language for this document, which is formatted into HTML when viewed on our repository.</p>
 </div>
-<div class="section" id="user-desk-instructions-span-role-image-aria-label-difficulty-rating-1-out-of-5-span">
-<h2>User desk instructions <span role="image" aria-label="difficulty rating: 1 out of 5">★☆☆☆☆</span><a class="headerlink" href="#user-desk-instructions-span-role-image-aria-label-difficulty-rating-1-out-of-5-span" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="user-desk-instructions">
+<h2>User desk instructions<a class="headerlink" href="#user-desk-instructions" title="Permalink to this headline">¶</a></h2>
 <p>If your project is very user focussed for one particular task, for example developing a statistic production pipeline for other analysts to execute, it is very important that the code users understand how to appropriately run your code.</p>
 <p>These instructions should include:</p>
 <ul class="simple">
@@ -447,8 +427,8 @@ We have used the <a class="reference external" href="https://daringfireball.net/
 <li><p>How to maintain your project (including how to update data sources)</p></li>
 </ul>
 </div>
-<div class="section" id="dependencies-span-role-image-aria-label-difficulty-rating-1-out-of-5-span">
-<h2>Dependencies <span role="image" aria-label="difficulty rating: 1 out of 5">★☆☆☆☆</span><a class="headerlink" href="#dependencies-span-role-image-aria-label-difficulty-rating-1-out-of-5-span" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="dependencies">
+<h2>Dependencies<a class="headerlink" href="#dependencies" title="Permalink to this headline">¶</a></h2>
 <p>The environment that your code runs in includes the machine, the operating system (Windows, Mac, Linux…), the programming language, and any external packages.
 It is important to record this information to ensure reproducibility.</p>
 <p>The simplest way to document which packages your code is dependent on, is to record them in a text file.
@@ -460,8 +440,8 @@ Packages are listed under the <code class="docutils literal notranslate"><span c
 You can get a list of your installed R packages using the <code class="docutils literal notranslate"><span class="pre">installed.packages()</span></code> function.</p>
 <p>Environment management tools, such as <a class="reference external" href="https://rstudio.github.io/renv/articles/renv.html"><code class="docutils literal notranslate"><span class="pre">renv</span></code></a> for R or <a class="reference external" href="https://github.com/pyenv/pyenv"><code class="docutils literal notranslate"><span class="pre">pyenv</span></code></a> for python, are very useful for keeping track of software and package versions used in a project.</p>
 </div>
-<div class="section" id="citation-span-role-image-aria-label-difficulty-rating-1-out-of-5-span">
-<h2>Citation <span role="image" aria-label="difficulty rating: 1 out of 5">★☆☆☆☆</span><a class="headerlink" href="#citation-span-role-image-aria-label-difficulty-rating-1-out-of-5-span" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="citation">
+<h2>Citation<a class="headerlink" href="#citation" title="Permalink to this headline">¶</a></h2>
 <p>For research or analytical code that is likely to be referenced by others, it can be helpful to provide a citation template.
 This can be included in your code repository as a <code class="docutils literal notranslate"><span class="pre">CITATION</span></code> file or part of your <code class="docutils literal notranslate"><span class="pre">README</span></code>.
 For example, the R package <code class="docutils literal notranslate"><span class="pre">ggplot2</span></code> provides the following:</p>
@@ -485,8 +465,8 @@ For example, the R package <code class="docutils literal notranslate"><span clas
 <p>This might include multiple citations, if your project includes multiple datasets, pieces of code or outputs with their own <a class="reference external" href="https://en.wikipedia.org/wiki/Digital_object_identifier">DOI’s</a>.</p>
 <p>See this <a class="reference external" href="https://guides.github.com/activities/citable-code/">GitHub guide for more information on making your public code citable</a>.</p>
 </div>
-<div class="section" id="vignettes-span-role-image-aria-label-difficulty-rating-2-out-of-5-span">
-<h2>Vignettes <span role="image" aria-label="difficulty rating: 2 out of 5">★★☆☆☆</span><a class="headerlink" href="#vignettes-span-role-image-aria-label-difficulty-rating-2-out-of-5-span" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="vignettes">
+<h2>Vignettes<a class="headerlink" href="#vignettes" title="Permalink to this headline">¶</a></h2>
 <p>Vignettes are a form of supplementary documentation, containing applied examples that demonstrate the intended use of the code in your project or package.
 Docstrings may contain examples applying individual functional units, while vignettes may show multiple units being used together.
 The term vignette is usually used with reference to R packages, for example this introduction to the <a class="reference external" href="https://cran.r-project.org/web/packages/dplyr/vignettes/dplyr.html"><code class="docutils literal notranslate"><span class="pre">dplyr</span></code> package</a> for data manipulation.
@@ -498,8 +478,8 @@ This can help users to understand how different code elements interact, and how 
 You can produce this type of documentation in any format, though Rmarkdown is particularly effectively at combining sections of code, code outputs and descriptive text.</p>
 <p>You might also consider providing examples in an interactive notebook, that users can run for themselves.</p>
 </div>
-<div class="section" id="versioning-span-role-image-aria-label-difficulty-rating-2-out-of-5-span">
-<h2>Versioning <span role="image" aria-label="difficulty rating: 2 out of 5">★★☆☆☆</span><a class="headerlink" href="#versioning-span-role-image-aria-label-difficulty-rating-2-out-of-5-span" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="versioning">
+<h2>Versioning<a class="headerlink" href="#versioning" title="Permalink to this headline">¶</a></h2>
 <p>Documenting the version of your code provides distinct points of reference in the code’s development.
 Recording the version of code used for analysis is important for reproducing your work.
 When used in combination with <a class="reference internal" href="version_control.html"><span class="doc std std-doc">Version control</span></a>, versioning allows you to recover the exact code used to run your analysis and thus reproduce the same results.</p>
@@ -510,7 +490,7 @@ Changes to the major version number indicate changes to the API that are not com
 While changes is the minor and patch numbers indicate changes that are either compatible or have no effect on the use of the code, respectively.</p>
 <div class="figure align-default" id="semantic-versioning">
 <a class="reference internal image-reference" href="_images/semantic_versioning.png"><img alt="_images/semantic_versioning.png" src="_images/semantic_versioning.png" style="width: 70%;" /></a>
-<p class="caption"><span class="caption-number">Fig. 9 </span><span class="caption-text"><a class="reference external" href="https://semver.org/">Semantic versioning</a></span><a class="headerlink" href="#semantic-versioning" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 5 </span><span class="caption-text"><a class="reference external" href="https://semver.org/">Semantic versioning</a></span><a class="headerlink" href="#semantic-versioning" title="Permalink to this image">¶</a></p>
 </div>
 <p>You’ll see this, or a similar version numbering, on packages that you install for Python and R.</p>
 <p>Changes to this book don’t cause backwards-compatibility issues in the same sense as code.
@@ -519,8 +499,8 @@ You’ll see the current version below the site’s table of contents, where the
 The incremental number following the full stop indicates how many versions of the guidance have been published in that year.
 As this guidance will change over time, this version number provides users with a reference for citing a specific state of the guidance.</p>
 </div>
-<div class="section" id="changelog-span-role-image-aria-label-difficulty-rating-2-out-of-5-span">
-<h2>Changelog <span role="image" aria-label="difficulty rating: 2 out of 5">★★☆☆☆</span><a class="headerlink" href="#changelog-span-role-image-aria-label-difficulty-rating-2-out-of-5-span" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="changelog">
+<h2>Changelog<a class="headerlink" href="#changelog" title="Permalink to this headline">¶</a></h2>
 <p>A changelog records the major changes that have occurred to a project or package, between versioned releases of the code.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span># Changelog
 All notable changes to this project will be documented in this file.
@@ -549,8 +529,8 @@ It can also document which parts of your code will no longer be supported in fut
 Your changelog can be in any format and should be associated with your code documentation, so that it is easy for users and other contributors to find.</p>
 <p><a class="reference external" href="https://keepachangelog.com/en/1.0.0/">keep a changelog</a> provides a simple but effective template for recording changes to your code.</p>
 </div>
-<div class="section" id="copyright-and-licenses-span-role-image-aria-label-difficulty-rating-2-out-of-5-span">
-<h2>Copyright and Licenses <span role="image" aria-label="difficulty rating: 2 out of 5">★★☆☆☆</span><a class="headerlink" href="#copyright-and-licenses-span-role-image-aria-label-difficulty-rating-2-out-of-5-span" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="copyright-and-licenses">
+<h2>Copyright and Licenses<a class="headerlink" href="#copyright-and-licenses" title="Permalink to this headline">¶</a></h2>
 <p>Copyright indicates ownership of work.
 All material created by civil servants, ministers, government departments and their agencies are covered by <a class="reference external" href="https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/">Crown copyright</a>.
 It is not essential to include a copyright notice on your work, but doing so can help to avoid confusion around ownership.</p>
@@ -567,8 +547,8 @@ For example, an MIT LICENSE file might look like:</p>
 <p>THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
 </div></blockquote>
 </div>
-<div class="section" id="open-source-your-code-span-role-image-aria-label-difficulty-rating-2-out-of-5-span">
-<h2>Open source your code <span role="image" aria-label="difficulty rating: 2 out of 5">★★☆☆☆</span><a class="headerlink" href="#open-source-your-code-span-role-image-aria-label-difficulty-rating-2-out-of-5-span" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="open-source-your-code">
+<h2>Open source your code<a class="headerlink" href="#open-source-your-code" title="Permalink to this headline">¶</a></h2>
 <p>In government, we <a class="reference external" href="https://www.gov.uk/service-manual/service-standard/point-12-make-new-source-code-open">support and promote open source</a> whenever possible.
 <a class="reference external" href="https://opensource.com/resources/what-open-source">Open source</a> software is software with source code that anyone can freely inspect, modify and enhance.
 As a government analyst, you should aim to make all new source code open, unless justification can be provided for withholding part of your source code.</p>

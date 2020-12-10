@@ -32,9 +32,9 @@
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="_static/tabs.css" />
-    <link rel="stylesheet" type="text/css" href="_static/logo.css" />
     <link rel="stylesheet" type="text/css" href="_static/admonitions.css" />
     <link rel="stylesheet" type="text/css" href="_static/markdown_within_tabs.css" />
+    <link rel="stylesheet" type="text/css" href="_static/logo.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
@@ -64,6 +64,7 @@
     <link rel="shortcut icon" href="_static/favicon.ico"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Learning Resources" href="learning.html" />
     <link rel="prev" title="Peer review" href="peer_review.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -94,13 +95,11 @@
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form>
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-    <ul class="nav sidenav_l1">
- <li class="toctree-l1">
-  <a class="reference internal" href="index.html">
-   Introduction
-  </a>
- </li>
-</ul>
+    <p class="caption collapsible-parent">
+ <span class="caption-text">
+  Guidance
+ </span>
+</p>
 <ul class="current nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="principles.html">
@@ -148,11 +147,23 @@
   </a>
  </li>
 </ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Resources
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="learning.html">
+   Learning Resources
+  </a>
+ </li>
+</ul>
 
 </nav> <!-- To handle the deprecated key -->
 
 <div class="navbar_extra_footer">
-  <p>Book version 2020.11</><a href='https://gss.civilservice.gov.uk/' target='_blank'><img src='./_static/GSS_logo.jpg' alt='The Government Statistical Service logo' style='width:100%'></a>
+  <p>Book version 2020.12</><a href='https://gss.civilservice.gov.uk/' target='_blank'><img src='./_static/GSS_logo.jpg' alt='The Government Statistical Service logo' style='width:100%'></a>
 </div>
 
 </div>
@@ -236,75 +247,48 @@
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#why-test-code-span-role-image-aria-label-difficulty-rating-1-out-of-5-span">
+  <a class="reference internal nav-link" href="#why-test-code">
    Why test code?
-   <span aria-label="difficulty rating: 1 out of 5" role="image">
-    ★☆☆☆☆
-   </span>
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#what-to-test-span-role-image-aria-label-difficulty-rating-1-out-of-5-span">
+  <a class="reference internal nav-link" href="#what-to-test">
    What to test
-   <span aria-label="difficulty rating: 1 out of 5" role="image">
-    ★☆☆☆☆
-   </span>
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#when-to-run-tests-span-role-image-aria-label-difficulty-rating-1-out-of-5-span">
+  <a class="reference internal nav-link" href="#when-to-run-tests">
    When to run tests
-   <span aria-label="difficulty rating: 1 out of 5" role="image">
-    ★☆☆☆☆
-   </span>
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#layers-of-testing-span-role-image-aria-label-difficulty-rating-1-out-of-5-span">
+  <a class="reference internal nav-link" href="#layers-of-testing">
    Layers of testing
-   <span aria-label="difficulty rating: 1 out of 5" role="image">
-    ★☆☆☆☆
-   </span>
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#structuring-test-code-span-role-image-aria-label-difficulty-rating-1-out-of-5-span">
+  <a class="reference internal nav-link" href="#structuring-test-code">
    Structuring test code
-   <span aria-label="difficulty rating: 1 out of 5" role="image">
-    ★☆☆☆☆
-   </span>
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#unit-testing-span-role-image-aria-label-difficulty-rating-2-out-of-5-span">
+  <a class="reference internal nav-link" href="#unit-testing">
    Unit testing
-   <span aria-label="difficulty rating: 2 out of 5" role="image">
-    ★★☆☆☆
-   </span>
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#integration-testing-span-role-image-aria-label-difficulty-rating-3-out-of-5-span">
+  <a class="reference internal nav-link" href="#integration-testing">
    Integration testing
-   <span aria-label="difficulty rating: 3 out of 5" role="image">
-    ★★★☆☆
-   </span>
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#end-to-end-testing-span-role-image-aria-label-difficulty-rating-3-out-of-5-span">
+  <a class="reference internal nav-link" href="#end-to-end-testing">
    End-to-end testing
-   <span aria-label="difficulty rating: 3 out of 5" role="image">
-    ★★★☆☆
-   </span>
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#reducing-repetition-in-tests-span-role-image-aria-label-difficulty-rating-3-out-of-5-span">
+  <a class="reference internal nav-link" href="#reducing-repetition-in-tests">
    Reducing repetition in tests
-   <span aria-label="difficulty rating: 3 out of 5" role="image">
-    ★★★☆☆
-   </span>
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -341,16 +325,16 @@ Where code documentation specifies what code should do, testing assures that thi
 <li><p>Act - run the code that you are testing</p></li>
 <li><p>Assert - verify that the code performed the expected action</p></li>
 </ol>
-<div class="section" id="why-test-code-span-role-image-aria-label-difficulty-rating-1-out-of-5-span">
-<h2>Why test code? <span role="image" aria-label="difficulty rating: 1 out of 5">★☆☆☆☆</span><a class="headerlink" href="#why-test-code-span-role-image-aria-label-difficulty-rating-1-out-of-5-span" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="why-test-code">
+<h2>Why test code?<a class="headerlink" href="#why-test-code" title="Permalink to this headline">¶</a></h2>
 <p>You can’t be sure that your code works without having run it with realistic examples. Tests can verify that users expectations are met by the code.
 They let you know when you’ve broken the expected functionality of your code - or when users have.
 They can be used to report or flag poor performance (e.g. modelling).
 Well-structured code is easier to write tests for, so testing incentivises good code structure.</p>
 <p>Testing is crucial to assuring quality in your code and will also increase efficiency in the development of your code.</p>
 </div>
-<div class="section" id="what-to-test-span-role-image-aria-label-difficulty-rating-1-out-of-5-span">
-<h2>What to test <span role="image" aria-label="difficulty rating: 1 out of 5">★☆☆☆☆</span><a class="headerlink" href="#what-to-test-span-role-image-aria-label-difficulty-rating-1-out-of-5-span" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="what-to-test">
+<h2>What to test<a class="headerlink" href="#what-to-test" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><p>A quality assurance engineer walks into a bar. They order 1 beer. They order 3.14 beers. They order -1 beers. They order 99999999999 beers. They order a lizard. They order <code class="docutils literal notranslate"><span class="pre">NULL</span></code>.</p>
 </div></blockquote>
@@ -402,8 +386,8 @@ including https://www.jeremyjordan.me/testing-ml/</p>
 <p><a class="reference external" href="https://github.com/best-practice-and-impact/qa-of-code-guidance/issues/15">#15</a></p>
 </div>
 </div>
-<div class="section" id="when-to-run-tests-span-role-image-aria-label-difficulty-rating-1-out-of-5-span">
-<h2>When to run tests <span role="image" aria-label="difficulty rating: 1 out of 5">★☆☆☆☆</span><a class="headerlink" href="#when-to-run-tests-span-role-image-aria-label-difficulty-rating-1-out-of-5-span" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="when-to-run-tests">
+<h2>When to run tests<a class="headerlink" href="#when-to-run-tests" title="Permalink to this headline">¶</a></h2>
 <p>Tests should be run whenever you make changes to your project.
 This ensures that changes do not break the existing, intended functionality of your code.
 When tests fail, you should endeavour to fix these before adding these changes to a stable or production version of your code.</p>
@@ -424,8 +408,8 @@ Additionally, it allows others that are reviewing your code to see the results o
 For example, we might set up a <code class="docutils literal notranslate"><span class="pre">pre-commit</span></code> or <code class="docutils literal notranslate"><span class="pre">pre-push</span></code> hook that runs our tests before we make each commit or push to the remote repository.
 This might stop our commit/push if the tests fail, so that we don’t push breaking changes to our remote repository.</p>
 </div>
-<div class="section" id="layers-of-testing-span-role-image-aria-label-difficulty-rating-1-out-of-5-span">
-<h2>Layers of testing <span role="image" aria-label="difficulty rating: 1 out of 5">★☆☆☆☆</span><a class="headerlink" href="#layers-of-testing-span-role-image-aria-label-difficulty-rating-1-out-of-5-span" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="layers-of-testing">
+<h2>Layers of testing<a class="headerlink" href="#layers-of-testing" title="Permalink to this headline">¶</a></h2>
 <p>Testing comes in many shapes and sizes.</p>
 <p>In its simplest form, a test asserts that an expectation is true:</p>
 <div class="sphinx-tabs docutils container">
@@ -449,8 +433,8 @@ This might stop our commit/push if the tests fail, so that we don’t push break
 <p>The following sections will climb through these layers of testing.
 Please note that the principles covered early on also apply at subsequent levels.</p>
 </div>
-<div class="section" id="structuring-test-code-span-role-image-aria-label-difficulty-rating-1-out-of-5-span">
-<h2>Structuring test code <span role="image" aria-label="difficulty rating: 1 out of 5">★☆☆☆☆</span><a class="headerlink" href="#structuring-test-code-span-role-image-aria-label-difficulty-rating-1-out-of-5-span" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="structuring-test-code">
+<h2>Structuring test code<a class="headerlink" href="#structuring-test-code" title="Permalink to this headline">¶</a></h2>
 <div class="admonition-todo admonition" id="id2">
 <p class="admonition-title">Todo</p>
 <p>Need to write structure test code</p>
@@ -459,8 +443,8 @@ Please note that the principles covered early on also apply at subsequent levels
 <p><a class="reference external" href="https://github.com/best-practice-and-impact/qa-of-code-guidance/issues/27">#27</a></p>
 </div>
 </div>
-<div class="section" id="unit-testing-span-role-image-aria-label-difficulty-rating-2-out-of-5-span">
-<h2>Unit testing <span role="image" aria-label="difficulty rating: 2 out of 5">★★☆☆☆</span><a class="headerlink" href="#unit-testing-span-role-image-aria-label-difficulty-rating-2-out-of-5-span" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="unit-testing">
+<h2>Unit testing<a class="headerlink" href="#unit-testing" title="Permalink to this headline">¶</a></h2>
 <div class="admonition-learning admonition">
 <p class="admonition-title">Key Learning</p>
 <p>You should follow the <a class="reference external" href="https://learninghub.ons.gov.uk/enrol/index.php?id=539">Introduction to Unit Testing course</a> (GSS only) for applied examples in Python and R.
@@ -472,31 +456,19 @@ The course also covers writing and documenting functions, and error handling.</p
 <li><p>Real Python <a class="reference external" href="https://realpython.com/python-testing/">Getting Started With Testing in Python</a></p></li>
 </ul>
 </div>
-<!-- 
-````{tabs}
-
-```{code-tab} py
-
-```
-
-```{code-tab} r R
-```
-
-````
--->
 <div class="admonition-todo admonition" id="id3">
 <p class="admonition-title">Todo</p>
 <p>These testing sections all need more content/examples.</p>
 <p><a class="reference external" href="https://github.com/best-practice-and-impact/qa-of-code-guidance/issues/28">#28</a></p>
 </div>
 </div>
-<div class="section" id="integration-testing-span-role-image-aria-label-difficulty-rating-3-out-of-5-span">
-<h2>Integration testing <span role="image" aria-label="difficulty rating: 3 out of 5">★★★☆☆</span><a class="headerlink" href="#integration-testing-span-role-image-aria-label-difficulty-rating-3-out-of-5-span" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="integration-testing">
+<h2>Integration testing<a class="headerlink" href="#integration-testing" title="Permalink to this headline">¶</a></h2>
 <p>Your analysis likely involves multiple units working together to perform a high level task.
 Assuring that individual units work as expected, using unit testing, does not guarantee that multiple units interact with one another as expected.</p>
 <div class="figure align-default" id="no-integration-tests">
 <a class="reference internal image-reference" href="_images/no_integration_tests.png"><img alt="Two drawers that open into each other's handles." src="_images/no_integration_tests.png" style="width: 40%;" /></a>
-<p class="caption"><span class="caption-number">Fig. 14 </span><span class="caption-text">Two unit tests, no integration tests.</span><a class="headerlink" href="#no-integration-tests" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 10 </span><span class="caption-text">Two unit tests, no integration tests.</span><a class="headerlink" href="#no-integration-tests" title="Permalink to this image">¶</a></p>
 </div>
 <p>Integration tests incorporate two or more units and check that they work together correctly.
 These tests are also used to test the interface between your code and external dependencies, such as a database or web-based API.</p>
@@ -508,21 +480,21 @@ You might use Stubs or Mocks for this purpose:</p>
 <li><p>Mocks require additional setup in your test code, to define your expectations. Use these when your test needs to verify that your code interacts with the Mock in a specific way.</p></li>
 </ul>
 </div>
-<div class="section" id="end-to-end-testing-span-role-image-aria-label-difficulty-rating-3-out-of-5-span">
-<h2>End-to-end testing <span role="image" aria-label="difficulty rating: 3 out of 5">★★★☆☆</span><a class="headerlink" href="#end-to-end-testing-span-role-image-aria-label-difficulty-rating-3-out-of-5-span" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="end-to-end-testing">
+<h2>End-to-end testing<a class="headerlink" href="#end-to-end-testing" title="Permalink to this headline">¶</a></h2>
 <p>As the name suggests, these tests cover the entire process.
 The motivation for using end-to-end tests is similar to that of integration tests.
 Despite assurance that small sections of the code are functioning correctly, it’s important to validate that your overall system is fit for purpose.</p>
 <div class="figure align-default" id="sinking-ship">
 <a class="reference internal image-reference" href="https://i.stack.imgur.com/Nirxy.jpg"><img alt="A sinking ship would still report passing unit tests." src="https://i.stack.imgur.com/Nirxy.jpg" style="width: 50%;" /></a>
-<p class="caption"><span class="caption-number">Fig. 15 </span><span class="caption-text">A sinking ship would still report a number of passing unit and integration tests, while the system is failing overall.</span><a class="headerlink" href="#sinking-ship" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 11 </span><span class="caption-text">A sinking ship would still report a number of passing unit and integration tests, while the system is failing overall.</span><a class="headerlink" href="#sinking-ship" title="Permalink to this image">¶</a></p>
 </div>
 <p>These tests are much slower to run and can take longer to develop for complex processes.
 Having at least one end-to-end test for your process will ensure that the high-level specification of your code is met.
 This should validate that your user requirements are met.</p>
 </div>
-<div class="section" id="reducing-repetition-in-tests-span-role-image-aria-label-difficulty-rating-3-out-of-5-span">
-<h2>Reducing repetition in tests <span role="image" aria-label="difficulty rating: 3 out of 5">★★★☆☆</span><a class="headerlink" href="#reducing-repetition-in-tests-span-role-image-aria-label-difficulty-rating-3-out-of-5-span" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="reducing-repetition-in-tests">
+<h2>Reducing repetition in tests<a class="headerlink" href="#reducing-repetition-in-tests" title="Permalink to this headline">¶</a></h2>
 <p>Repetitive test code violates the “Don’t repeat yourself” rule.
 As with functional code, test code is much easier to maintain when it is modular and reusable.</p>
 <div class="admonition-todo admonition" id="id4">
@@ -599,6 +571,7 @@ However, using functionality from test packages may improve running efficiency a
     <div class='prev-next-bottom'>
         
     <a class='left-prev' id="prev-link" href="peer_review.html" title="previous page">Peer review</a>
+    <a class='right-next' id="next-link" href="learning.html" title="next page">Learning Resources</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
