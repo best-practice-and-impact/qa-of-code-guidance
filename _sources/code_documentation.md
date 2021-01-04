@@ -134,12 +134,8 @@ print("Run me!")
 
 It is easy to forget which parts of code have been commented out and why they have been commented. It introduces a human factor into the equation, which might not be accounted for if someone in the future is not aware of the commented-out code. This is likely to produce inconsistent runs of the same piece of code. This code might quickly become out of sync with the rest of the changes in the codebase, as developers may not consider updating code that is commented out if they assume it is obsolete.
 
-You should instead use appropriate control flow (such as `if/else` statements) to determine when these sections should be run. When changes are required between individual runs of your analysis, you should define these options via a configuration file.
+You should instead use appropriate control flow (such as `if/else` statements) to determine when these sections should be run. When changes are required between individual runs of your analysis, you should consider [defining these options in a dedicated configuration file](configuration.md).
 
-```{todo}
-Reference configuration file section.
-[#30](https://github.com/best-practice-and-impact/qa-of-code-guidance/issues/30)
-```
 
 In summary, you should use comments sparingly but purposefully. Make sure to:
 

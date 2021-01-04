@@ -105,7 +105,7 @@ Producing analysis, such as official statistics, can be time-consuming and pains
 We need to make sure that our outputs are both accurate and timely.
 We aim to develop effective and efficient analytical workflows that are repeatable and sustainable over time.
 These workflows should follow the principles of reproducible analysis. 
-We call these [Reproducible Analytical Pipelines (RAP)](https://dataingovernment.blog.gov.uk/2017/03/27/reproducible-analytical-pipeline/).
+We call these [Reproducible Analytical Pipelines (RAP)](https://gss.civilservice.gov.uk/reproducible-analytical-pipelines/).
 
 Reproducible analysis is still not widely practised across government.
 Many analysts use proprietary (paid-for) analytical tools like SAS or SPSS in combination with programs like Excel, Word or Acrobat to create statistical products. 
@@ -127,37 +127,3 @@ They collaborated with data scientists from the Government Digital Service (GDS)
 
 To support the adoption of RAP across government, there is a network of [RAP champions](https://gss.civilservice.gov.uk/about-us/champion-networks/reproducible-analytical-pipeline-rap-champions/). 
 RAP champions are responsible for promoting reproducible analysis through the use of reproducible analytical pipelines, and supporting others who want to develop RAP in their own departments.
-
-
-## Further development
-
-```{epigraph}
-Automation *is* documentation.
-
--- [Edwin Thoen (Agile Data Science with R)](https://edwinth.github.io/ADSwR/automation.html#automation-is-documentation)
-```
-
-The founding three principles above are reliant on a wider context.
-Analysis does not sit in a vacuum - it relies on a culture that values high quality analysis and supports it.
-In addition to reproducibility, auditability and quality assurance, we value adaptability and sustainability too.
-Adaptability guarantees that work done now will have value in the future.
-Sustainability guarantees that work done now will not diminish in quality or relevance over time.
-
-### Adaptable
-
-Analysis must be available to be reused or repurposed for other needs.
-
-Data sources change in shape or substance frequently.
-Analysis products should be able to adapt to those changes in the data source.
-
-```{todo}
-Complete the Adaptable principles.
-[#18](https://github.com/best-practice-and-impact/qa-of-code-guidance/issues/18)
-```
-
-### Sustainable
-
-```{todo}
-Write the sustainable principles.
-[#19](https://github.com/best-practice-and-impact/qa-of-code-guidance/issues/19)
-```

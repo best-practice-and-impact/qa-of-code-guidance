@@ -32,9 +32,9 @@
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="_static/tabs.css" />
-    <link rel="stylesheet" type="text/css" href="_static/admonitions.css" />
     <link rel="stylesheet" type="text/css" href="_static/markdown_within_tabs.css" />
     <link rel="stylesheet" type="text/css" href="_static/logo.css" />
+    <link rel="stylesheet" type="text/css" href="_static/admonitions.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
@@ -43,7 +43,6 @@
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
-    <script src="_static/language_data.js"></script>
     <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
@@ -130,6 +129,11 @@
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="configuration.html">
+   Configuration
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="data.html">
    Data Management
   </a>
@@ -156,12 +160,17 @@
    Learning Resources
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="tools.html">
+   Tools
+  </a>
+ </li>
 </ul>
 
 </nav> <!-- To handle the deprecated key -->
 
 <div class="navbar_extra_footer">
-  <p>Book version 2020.12</><a href='https://gss.civilservice.gov.uk/' target='_blank'><img src='./_static/GSS_logo.jpg' alt='The Government Statistical Service logo' style='width:100%'></a>
+  <p>Book version 2021.0</><a href='https://gss.civilservice.gov.uk/' target='_blank'><img src='./_static/GSS_logo.jpg' alt='The Government Statistical Service logo' style='width:100%'></a>
 </div>
 
 </div>
@@ -264,23 +273,6 @@
    Reproducible analytical pipelines
   </a>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#further-development">
-   Further development
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#adaptable">
-     Adaptable
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#sustainable">
-     Sustainable
-    </a>
-   </li>
-  </ul>
- </li>
 </ul>
 
         </nav>
@@ -378,7 +370,7 @@ In particularly high risk analysis, dual running should be considered.</p>
 We need to make sure that our outputs are both accurate and timely.
 We aim to develop effective and efficient analytical workflows that are repeatable and sustainable over time.
 These workflows should follow the principles of reproducible analysis.
-We call these <a class="reference external" href="https://dataingovernment.blog.gov.uk/2017/03/27/reproducible-analytical-pipeline/">Reproducible Analytical Pipelines (RAP)</a>.</p>
+We call these <a class="reference external" href="https://gss.civilservice.gov.uk/reproducible-analytical-pipelines/">Reproducible Analytical Pipelines (RAP)</a>.</p>
 <p>Reproducible analysis is still not widely practised across government.
 Many analysts use proprietary (paid-for) analytical tools like SAS or SPSS in combination with programs like Excel, Word or Acrobat to create statistical products.
 The processes for creating statistics in this way are usually manual or semi-manual.
@@ -394,37 +386,6 @@ In a recent case, use of legacy analytical tools lead to <a class="reference ext
 They collaborated with data scientists from the Government Digital Service (GDS) to automate the production of statistical bulletins.</p>
 <p>To support the adoption of RAP across government, there is a network of <a class="reference external" href="https://gss.civilservice.gov.uk/about-us/champion-networks/reproducible-analytical-pipeline-rap-champions/">RAP champions</a>.
 RAP champions are responsible for promoting reproducible analysis through the use of reproducible analytical pipelines, and supporting others who want to develop RAP in their own departments.</p>
-</div>
-<div class="section" id="further-development">
-<h2>Further development<a class="headerlink" href="#further-development" title="Permalink to this headline">¶</a></h2>
-<blockquote class="epigraph">
-<div><p>Automation <em>is</em> documentation.</p>
-<p class="attribution">—<a class="reference external" href="https://edwinth.github.io/ADSwR/automation.html#automation-is-documentation">Edwin Thoen (Agile Data Science with R)</a></p>
-</div></blockquote>
-<p>The founding three principles above are reliant on a wider context.
-Analysis does not sit in a vacuum - it relies on a culture that values high quality analysis and supports it.
-In addition to reproducibility, auditability and quality assurance, we value adaptability and sustainability too.
-Adaptability guarantees that work done now will have value in the future.
-Sustainability guarantees that work done now will not diminish in quality or relevance over time.</p>
-<div class="section" id="adaptable">
-<h3>Adaptable<a class="headerlink" href="#adaptable" title="Permalink to this headline">¶</a></h3>
-<p>Analysis must be available to be reused or repurposed for other needs.</p>
-<p>Data sources change in shape or substance frequently.
-Analysis products should be able to adapt to those changes in the data source.</p>
-<div class="admonition-todo admonition" id="id1">
-<p class="admonition-title">Todo</p>
-<p>Complete the Adaptable principles.
-<a class="reference external" href="https://github.com/best-practice-and-impact/qa-of-code-guidance/issues/18">#18</a></p>
-</div>
-</div>
-<div class="section" id="sustainable">
-<h3>Sustainable<a class="headerlink" href="#sustainable" title="Permalink to this headline">¶</a></h3>
-<div class="admonition-todo admonition" id="id2">
-<p class="admonition-title">Todo</p>
-<p>Write the sustainable principles.
-<a class="reference external" href="https://github.com/best-practice-and-impact/qa-of-code-guidance/issues/19">#19</a></p>
-</div>
-</div>
 </div>
 </div>
 

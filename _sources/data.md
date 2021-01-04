@@ -8,6 +8,12 @@ In order to reproduce a piece of analysis we need to be able to identify and acc
 This requires suitable storage of data, with documentation and versioning of the data where it may change over time.
 
 
+```{admonition} Key strategies
+:class: admonition-strategies
+
+[The Government Data Quality Framework](https://www.gov.uk/government/publications/the-government-data-quality-framework/the-government-data-quality-framework) focuses primarily on assessing and improving the quality of input data. It should be primary resource for all analysts working with data in the public sector.
+```
+
 ## Data storage
 
 It is assumed that most data are now stored digitally.

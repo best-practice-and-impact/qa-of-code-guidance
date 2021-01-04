@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Learning Resources &#8212; DRAFT: Quality Assurance of Code for Analysis and Research</title>
+    <title>Tools &#8212; DRAFT: Quality Assurance of Code for Analysis and Research</title>
     
   <link rel="stylesheet" href="_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
 
@@ -61,8 +61,7 @@
     <link rel="shortcut icon" href="_static/favicon.ico"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Tools" href="tools.html" />
-    <link rel="prev" title="Testing code" href="testing_code.html" />
+    <link rel="prev" title="Learning Resources" href="learning.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -155,13 +154,13 @@
  </span>
 </p>
 <ul class="current nav sidenav_l1">
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="learning.html">
    Learning Resources
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="tools.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Tools
   </a>
  </li>
@@ -205,7 +204,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/learning.md"><button type="button"
+        <a class="dropdown-buttons" href="_sources/tools.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -225,10 +224,10 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/best-practice-and-impact/qa-of-code-guidance/issues/new?title=Issue%20on%20page%20%2Flearning.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/best-practice-and-impact/qa-of-code-guidance/issues/new?title=Issue%20on%20page%20%2Ftools.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        <a class="edit-button" href="https://github.com/best-practice-and-impact/qa-of-code-guidance/edit/master/learning.md"><button
+        <a class="edit-button" href="https://github.com/best-practice-and-impact/qa-of-code-guidance/edit/master/tools.md"><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
     </div>
@@ -254,8 +253,8 @@
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#core-programming">
-   Core programming
+  <a class="reference internal nav-link" href="#testing">
+   Testing
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -268,16 +267,11 @@
      R
     </a>
    </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#general">
-     General
-    </a>
-   </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#data-manipulation">
-   Data manipulation
+  <a class="reference internal nav-link" href="#test-coverage">
+   Test Coverage
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -290,33 +284,91 @@
      R
     </a>
    </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#sql">
-     SQL
-    </a>
-   </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#command-line-tools">
-   Command line tools
+  <a class="reference internal nav-link" href="#code-linters">
+   Code Linters
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id3">
-     General
+     Python
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#git">
-     Git
+    <a class="reference internal nav-link" href="#id4">
+     R
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#testing">
-   Testing
+  <a class="reference internal nav-link" href="#code-formatters">
+   Code Formatters
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id5">
+     Python
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id6">
+     R
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#code-complexity">
+   Code Complexity
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id7">
+     Python
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#packaging-code">
+   Packaging Code
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id8">
+     Python
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id9">
+     R
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#static-type-checking">
+   Static Type Checking
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id10">
+     Python
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pipeline-orchestration">
+   Pipeline Orchestration
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#continuous-integration-platforms">
+   Continuous Integration Platforms
   </a>
  </li>
 </ul>
@@ -330,94 +382,135 @@
         
               <div>
                 
-  <div class="section" id="learning-resources">
-<h1>Learning Resources<a class="headerlink" href="#learning-resources" title="Permalink to this headline">¶</a></h1>
-<p>This section links to training and self-led learning resources, which relate to the sections of the guidance.</p>
-<p>Many of these learning resources point to the UK Statistics Authority Learning Hub. Government analysts can <a class="reference external" href="mailto:gss&#46;capability&#37;&#52;&#48;ons&#46;gov&#46;uk">request an account for the Hub via gss<span>&#46;</span>capability<span>&#64;</span>ons<span>&#46;</span>gov<span>&#46;</span>uk</a>.</p>
-<p>Please note that learning resources from non-government training providers (i.e. not accessed through the Hub) may not always follow best practices. However, exposure to a range of applied examples will still benefit your learning. You should compare and contrast your learning to the good practices outlined in the guidance.</p>
-<div class="section" id="core-programming">
-<h2>Core programming<a class="headerlink" href="#core-programming" title="Permalink to this headline">¶</a></h2>
+  <div class="section" id="tools">
+<h1>Tools<a class="headerlink" href="#tools" title="Permalink to this headline">¶</a></h1>
+<p>This section points you to useful tools that support reproducible analysis.</p>
+<div class="section" id="testing">
+<h2>Testing<a class="headerlink" href="#testing" title="Permalink to this headline">¶</a></h2>
+<p>Implementing automated code testing.</p>
 <div class="section" id="python">
 <h3>Python<a class="headerlink" href="#python" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li><p><a class="reference external" href="https://learninghub.ons.gov.uk/enrol/index.php?id=536">Introduction to Python</a></p></li>
-<li><p><a class="reference external" href="https://learninghub.ons.gov.uk/enrol/index.php?id=525">Aggregation, functions and control flow in Python</a></p></li>
-<li><p><a class="reference external" href="https://www.python.org/about/gettingstarted/">The Official Python Getting Started Guide</a></p></li>
-<li><p><a class="reference external" href="https://www.learnpython.org/">Learn Python</a>, supported by DataCamp</p></li>
+<li><p><a class="reference external" href="https://docs.pytest.org/en/stable/">pytest</a></p></li>
+<li><p><a class="reference external" href="https://hypothesis.readthedocs.io/en/latest/">hypothesis</a></p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/library/unittest.html">unittest</a></p></li>
+<li><p><a class="reference external" href="https://tox.readthedocs.io/en/latest/">tox</a></p></li>
+<li><p><a class="reference external" href="https://nox.thea.codes/en/stable/">nox</a></p></li>
 </ul>
 </div>
 <div class="section" id="r">
 <h3>R<a class="headerlink" href="#r" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li><p><a class="reference external" href="https://learninghub.ons.gov.uk/enrol/index.php?id=538">Introduction to R</a></p></li>
-<li><p><a class="reference external" href="https://learninghub.ons.gov.uk/enrol/index.php?id=527">Aggregation, functions and control flow in R</a></p></li>
-<li><p><a class="reference external" href="https://www.udemy.com/course/r-basics/?LSNPUBID=JVFxdTr9V80&amp;ranEAID=JVFxdTr9V80&amp;ranMID=39197&amp;ranSiteID=JVFxdTr9V80-mzkL.lpta.ugiFro.8Oc_Q&amp;utm_medium=udemyads&amp;utm_source=aff-campaign">R Basics on Udemy</a></p></li>
-</ul>
-</div>
-<div class="section" id="general">
-<h3>General<a class="headerlink" href="#general" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><p><a class="reference external" href="https://learninghub.ons.gov.uk/enrol/index.php?id=537">Clean code</a></p></li>
-<li><p><a class="reference external" href="https://software-carpentry.org/lessons/">Software carpentry</a></p></li>
-<li><p><a class="reference external" href="https://datacarpentry.org/lessons/">Data carpentry</a></p></li>
+<li><p><a class="reference external" href="https://testthat.r-lib.org/">testthat</a></p></li>
+<li><p><a class="reference external" href="https://docs.ropensci.org/assertr/">assertr</a></p></li>
+<li><p><a class="reference external" href="https://github.com/google/patrick">patrick</a></p></li>
+<li><p><a class="reference external" href="https://r-hub.github.io/rhub/">rhub</a></p></li>
 </ul>
 </div>
 </div>
-<div class="section" id="data-manipulation">
-<h2>Data manipulation<a class="headerlink" href="#data-manipulation" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="test-coverage">
+<h2>Test Coverage<a class="headerlink" href="#test-coverage" title="Permalink to this headline">¶</a></h2>
+<p>Identifying which parts of your code are covered by existing tests.</p>
 <div class="section" id="id1">
 <h3>Python<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li><p><a class="reference external" href="https://learninghub.ons.gov.uk/enrol/index.php?id=521">Dataframes, manipulation and cleaning in Python</a></p></li>
-<li><p><a class="reference external" href="https://jakevdp.github.io/PythonDataScienceHandbook/index.html">Python Data Science Handbook</a></p></li>
-<li><p><a class="reference external" href="https://github.com/wesm/pydata-book">Python for Data Analysis</a></p></li>
+<li><p><a class="reference external" href="https://coverage.readthedocs.io/en/coverage-5.3/">coverage</a></p></li>
 </ul>
 </div>
 <div class="section" id="id2">
 <h3>R<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li><p><a class="reference external" href="https://learninghub.ons.gov.uk/enrol/index.php?id=523">Dataframes, manipulation and cleaning in R</a></p></li>
-<li><p><a class="reference external" href="https://r4ds.had.co.nz/">R for Data Science</a></p></li>
-<li><p><a class="reference external" href="https://adv-r.hadley.nz/index.html">Advanced R</a></p></li>
-</ul>
-</div>
-<div class="section" id="sql">
-<h3>SQL<a class="headerlink" href="#sql" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><p><a class="reference external" href="https://learninghub.ons.gov.uk/enrol/index.php?id=529">Foundations of SQL</a></p></li>
-<li><p><a class="reference external" href="https://www.w3schools.com/sql/default.asp">w3schools.com SQL Tutorial</a></p></li>
-<li><p><a class="reference external" href="https://realpython.com/python-sql-libraries/">Python SQL libraries</a></p></li>
-<li><p><a class="reference external" href="http://datacarpentry.org/R-ecology-lesson/05-r-and-databases.html">SQL databases and R</a></p></li>
+<li><p><a class="reference external" href="https://covr.r-lib.org/">covr</a></p></li>
 </ul>
 </div>
 </div>
-<div class="section" id="command-line-tools">
-<h2>Command line tools<a class="headerlink" href="#command-line-tools" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="code-linters">
+<h2>Code Linters<a class="headerlink" href="#code-linters" title="Permalink to this headline">¶</a></h2>
+<p>Analyse code for stylistic errors, and sometimes bugs.</p>
 <div class="section" id="id3">
-<h3>General<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<h3>Python<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li><p><a class="reference external" href="https://learninghub.ons.gov.uk/enrol/index.php?id=534">Windows and UNIX Command Line Basics</a></p></li>
-<li><p><a class="reference external" href="https://www.learnenough.com/command-line-tutorial/basics">Learn enough (UNIX) command line to be dangerous</a></p></li>
-<li><p><a class="reference external" href="https://seankross.com/the-unix-workbench/">The UNIX workbench</a></p></li>
+<li><p><a class="reference external" href="https://www.pylint.org/">pylint</a></p></li>
+<li><p><a class="reference external" href="https://pypi.org/project/pyflakes/">Pyflakes</a></p></li>
+<li><p><a class="reference external" href="https://flake8.pycqa.org/en/latest/">flake8</a></p></li>
+<li><p><a class="reference external" href="https://bandit.readthedocs.io/en/latest/">Bandit</a></p></li>
 </ul>
 </div>
-<div class="section" id="git">
-<h3>Git<a class="headerlink" href="#git" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id4">
+<h3>R<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li><p><a class="reference external" href="https://learninghub.ons.gov.uk/course/view.php?id=532">Intro to Git</a></p></li>
-<li><p><a class="reference external" href="https://git-scm.com/book/en/v2">The Pro Git book</a></p></li>
-<li><p><a class="reference external" href="https://swcarpentry.github.io/git-novice/">Software Carpentry: Version Control with Git</a> - an applied project</p></li>
-<li><p>Interactive online training with <a class="reference external" href="https://www.katacoda.com/courses/git">Katacoda</a> or <a class="reference external" href="https://learngitbranching.js.org/">Learn Git Branching</a></p></li>
-<li><p><a class="reference external" href="https://education.github.com/git-cheat-sheet-education.pdf">GitHub’s Git Cheatsheet</a></p></li>
-<li><p><a class="reference external" href="https://guides.github.com/introduction/git-handbook/">GitHub Git Handbook</a></p></li>
-<li><p><a class="reference external" href="https://www.atlassian.com/git">Atlassian’s Learn Git</a></p></li>
+<li><p><a class="reference external" href="https://github.com/jimhester/lintr">lintr</a></p></li>
 </ul>
 </div>
 </div>
-<div class="section" id="testing">
-<h2>Testing<a class="headerlink" href="#testing" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="code-formatters">
+<h2>Code Formatters<a class="headerlink" href="#code-formatters" title="Permalink to this headline">¶</a></h2>
+<p>Automated code format repair.</p>
+<div class="section" id="id5">
+<h3>Python<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li><p><a class="reference external" href="https://learninghub.ons.gov.uk/enrol/index.php?id=539">Introduction to Unit Testing in Python and R</a></p></li>
+<li><p><a class="reference external" href="https://black.readthedocs.io/en/stable/">Black</a></p></li>
+<li><p><a class="reference external" href="https://pycqa.github.io/isort/">Isort</a></p></li>
+</ul>
+</div>
+<div class="section" id="id6">
+<h3>R<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><a class="reference external" href="https://yihui.org/formatr/">formatR</a></p></li>
+<li><p><a class="reference external" href="https://styler.r-lib.org/">styler</a></p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="code-complexity">
+<h2>Code Complexity<a class="headerlink" href="#code-complexity" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id7">
+<h3>Python<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><a class="reference external" href="https://pypi.org/project/wily/">wily</a></p></li>
+<li><p><a class="reference external" href="https://radon.readthedocs.io/en/latest/">radon</a></p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="packaging-code">
+<h2>Packaging Code<a class="headerlink" href="#packaging-code" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id8">
+<h3>Python<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><a class="reference external" href="https://pypi.org/project/twine/">twine</a></p></li>
+</ul>
+</div>
+<div class="section" id="id9">
+<h3>R<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><a class="reference external" href="http://mangothecat.github.io/goodpractice/">goodpractice</a></p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="static-type-checking">
+<h2>Static Type Checking<a class="headerlink" href="#static-type-checking" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id10">
+<h3>Python<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><a class="reference external" href="https://mypy.readthedocs.io/en/stable/">mypy</a></p></li>
+<li><p><a class="reference external" href="https://github.com/microsoft/pyright">pyright</a></p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="pipeline-orchestration">
+<h2>Pipeline Orchestration<a class="headerlink" href="#pipeline-orchestration" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://airflow.apache.org/">Apache Airflow</a></p></li>
+<li><p><a class="reference external" href="https://wlandau.github.io/targets-manual/">targets R package</a></p></li>
+</ul>
+</div>
+<div class="section" id="continuous-integration-platforms">
+<h2>Continuous Integration Platforms<a class="headerlink" href="#continuous-integration-platforms" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/features/actions">GitHub Actions</a></p></li>
+<li><p><a class="reference external" href="https://docs.gitlab.com/ee/ci/">GitLab CI/CD</a></p></li>
+<li><p><a class="reference external" href="https://travis-ci.org/">Travis</a></p></li>
+<li><p><a class="reference external" href="https://www.jenkins.io/">Jenkins</a></p></li>
+<li><p><a class="reference external" href="https://coveralls.io/">Coveralls</a></p></li>
 </ul>
 </div>
 </div>
@@ -450,8 +543,7 @@
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="testing_code.html" title="previous page">Testing code</a>
-    <a class='right-next' id="next-link" href="tools.html" title="next page">Tools</a>
+    <a class='left-prev' id="prev-link" href="learning.html" title="previous page">Learning Resources</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

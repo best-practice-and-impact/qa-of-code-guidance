@@ -32,9 +32,9 @@
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="_static/tabs.css" />
-    <link rel="stylesheet" type="text/css" href="_static/admonitions.css" />
     <link rel="stylesheet" type="text/css" href="_static/markdown_within_tabs.css" />
     <link rel="stylesheet" type="text/css" href="_static/logo.css" />
+    <link rel="stylesheet" type="text/css" href="_static/admonitions.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
@@ -43,7 +43,6 @@
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
-    <script src="_static/language_data.js"></script>
     <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
@@ -129,6 +128,11 @@
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="configuration.html">
+   Configuration
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="data.html">
    Data Management
   </a>
@@ -155,12 +159,17 @@
    Learning Resources
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="tools.html">
+   Tools
+  </a>
+ </li>
 </ul>
 
 </nav> <!-- To handle the deprecated key -->
 
 <div class="navbar_extra_footer">
-  <p>Book version 2020.12</><a href='https://gss.civilservice.gov.uk/' target='_blank'><img src='./_static/GSS_logo.jpg' alt='The Government Statistical Service logo' style='width:100%'></a>
+  <p>Book version 2021.0</><a href='https://gss.civilservice.gov.uk/' target='_blank'><img src='./_static/GSS_logo.jpg' alt='The Government Statistical Service logo' style='width:100%'></a>
 </div>
 
 </div>
@@ -290,15 +299,9 @@
                 
   <div class="section" id="quality-assurance-of-code-for-analysis-and-research">
 <h1>Quality Assurance of Code for Analysis and Research<a class="headerlink" href="#quality-assurance-of-code-for-analysis-and-research" title="Permalink to this headline">¶</a></h1>
-<p>This is an early draft of Government Statistical Service (GSS) and Analysis Function guidance.
-It is produced by the <a class="reference external" href="https://gss.civilservice.gov.uk/about-us/support-for-the-gss/">Best Practice and Impact division</a> of the Office for National Statistics.</p>
-<p>This guidance has been written to support analysts in government who use coding in their work.
-This includes those who produce statistics, carry out modelling or apply data science.</p>
-<p>This guidance is a living document, so will be continually updated.
-You can refer to the current version of the guidance by it’s version number, found below the site table of contents.
-You may notice “Todo” notes throughout the guidance.
-These indicate where we plan to add additional content in the near future.
-We are extremely grateful for any feedback that you are able to provide on existing and future content.</p>
+<p>This is an early draft of Analysis Function guidance and Government Statistical Service (GSS). It is produced by the <a class="reference external" href="https://gss.civilservice.gov.uk/about-us/support-for-the-gss/">Best Practice and Impact division</a> of the Office for National Statistics.</p>
+<p>This guidance has been written to support analysts in government who use coding in their work. This includes those who produce statistics, carry out modelling or apply data science.</p>
+<p>This guidance is a living document, so will be continually updated. You can refer to the current version of the guidance by it’s version number, found below the site table of contents. You may notice “Todo” notes throughout the guidance. These indicate where we plan to add additional content in the near future. We are extremely grateful for any feedback that you are able to provide on existing and future content.</p>
 <div class="section" id="about-us">
 <h2>About us<a class="headerlink" href="#about-us" title="Permalink to this headline">¶</a></h2>
 <p>The Best Practice and Impact division supports government analysis by providing guidance, consultancy and training.</p>
@@ -314,7 +317,7 @@ We are extremely grateful for any feedback that you are able to provide on exist
 <h2>Citing the book<a class="headerlink" href="#citing-the-book" title="Permalink to this headline">¶</a></h2>
 <p>The following structure can be used to reference the current version of the book:</p>
 <blockquote>
-<div><p>UK Government Analytical Community. (2020). Quality assurance of code for analysis and research (version 2020.12). Office for National Statistics, Best Practice and Impact division: https://best-practice-and-impact.github.io/qa-of-code-guidance/</p>
+<div><p>UK Government Analytical Community. (2020). Quality assurance of code for analysis and research (version 2021.0). Office for National Statistics, Best Practice and Impact division: https://best-practice-and-impact.github.io/qa-of-code-guidance/</p>
 </div></blockquote>
 </div>
 <div class="section" id="how-to-get-the-most-out-of-the-book">
@@ -334,11 +337,8 @@ We are extremely grateful for any feedback that you are able to provide on exist
 </div>
 <div class="section" id="accessibility-statement">
 <h2>Accessibility statement<a class="headerlink" href="#accessibility-statement" title="Permalink to this headline">¶</a></h2>
-<p>This accessibility statement applies to the Quality Assurance of Code for Analysis and Research.
-Please not that this does not include third-party content that is referenced from this guidance.</p>
-<p>The website is managed by the Best Practice and Impact division of the Office for National Statistics.
-We would like this guidance to be accessible for as many people as possible.
-This means that you should be able to:</p>
+<p>This accessibility statement applies to the Quality Assurance of Code for Analysis and Research. Please not that this does not include third-party content that is referenced from this guidance.</p>
+<p>The website is managed by the Best Practice and Impact division of the Office for National Statistics. We would like this guidance to be accessible for as many people as possible. This means that you should be able to:</p>
 <ul class="simple">
 <li><p>change colours, contrast levels and fonts</p></li>
 <li><p>zoom in up to 300% without the text spilling off the screen</p></li>
@@ -346,21 +346,15 @@ This means that you should be able to:</p>
 <li><p>navigate most of the website using speech recognition software</p></li>
 <li><p>listen to most of the website using a screen reader (including the most recent versions of JAWS, NVDA and VoiceOver)</p></li>
 </ul>
-<p>For keyboard navigation, <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Up</kbd> <kbd class="kbd docutils literal notranslate">Arrow</kbd></kbd> and <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Down</kbd> <kbd class="kbd docutils literal notranslate">Arrow</kbd></kbd>keys can be used to scroll up and down on the current page.
-<kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Left</kbd> <kbd class="kbd docutils literal notranslate">Arrow</kbd></kbd> and <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Right</kbd> <kbd class="kbd docutils literal notranslate">Arrow</kbd></kbd> keys can be used to move forwards and backwards through the pages of the book.
-Tabbed content (including code example) can be focused using the <kbd class="kbd docutils literal notranslate">Tab</kbd> key.
-<kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Left</kbd> <kbd class="kbd docutils literal notranslate">Arrow</kbd></kbd> and <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Right</kbd> <kbd class="kbd docutils literal notranslate">Arrow</kbd></kbd> keys are then used to focus the required tab option, where <kbd class="kbd docutils literal notranslate">Enter</kbd> can be used to select that option and display the associated content.</p>
+<p>For keyboard navigation, <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Up</kbd> <kbd class="kbd docutils literal notranslate">Arrow</kbd></kbd> and <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Down</kbd> <kbd class="kbd docutils literal notranslate">Arrow</kbd></kbd>keys can be used to scroll up and down on the current page. <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Left</kbd> <kbd class="kbd docutils literal notranslate">Arrow</kbd></kbd> and <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Right</kbd> <kbd class="kbd docutils literal notranslate">Arrow</kbd></kbd> keys can be used to move forwards and backwards through the pages of the book. Tabbed content (including code example) can be focused using the <kbd class="kbd docutils literal notranslate">Tab</kbd> key. <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Left</kbd> <kbd class="kbd docutils literal notranslate">Arrow</kbd></kbd> and <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Right</kbd> <kbd class="kbd docutils literal notranslate">Arrow</kbd></kbd> keys are then used to focus the required tab option, where <kbd class="kbd docutils literal notranslate">Enter</kbd> can be used to select that option and display the associated content.</p>
 <div class="section" id="feedback-and-reporting-accessibility-problems">
 <h3>Feedback and reporting accessibility problems<a class="headerlink" href="#feedback-and-reporting-accessibility-problems" title="Permalink to this headline">¶</a></h3>
-<p>We’re always looking to improve the accessibility of our guidance.
-If you find any problems not listed on this page or think that we’re not meeting accessibility requirements, please contact us by email at <a class="reference external" href="mailto:gsshelp&#37;&#52;&#48;statistics&#46;gov&#46;uk">gsshelp<span>&#64;</span>statistics<span>&#46;</span>gov<span>&#46;</span>uk</a>.
-Please also get in touch if you are unable to access any part of this guidance, or require the content in a different format.</p>
+<p>We’re always looking to improve the accessibility of our guidance. If you find any problems not listed on this page or think that we’re not meeting accessibility requirements, please contact us by email at <a class="reference external" href="mailto:gsshelp&#37;&#52;&#48;statistics&#46;gov&#46;uk">gsshelp<span>&#64;</span>statistics<span>&#46;</span>gov<span>&#46;</span>uk</a>. Please also get in touch if you are unable to access any part of this guidance, or require the content in a different format.</p>
 <p>We will consider your request and aim to get back to you within 5 working days.</p>
 </div>
 <div class="section" id="enforcement-procedure">
 <h3>Enforcement procedure<a class="headerlink" href="#enforcement-procedure" title="Permalink to this headline">¶</a></h3>
-<p>The Equality and Human Rights Commission (EHRC) is responsible for enforcing the <a class="reference external" href="https://www.legislation.gov.uk/uksi/2018/952/made">Public Sector Bodies (Websites and Mobile Applications) (No. 2) Accessibility Regulations 2018 (the ‘accessibility regulations’)</a>.
-If you’re not happy with how we respond to your complaint, you should <a class="reference external" href="https://www.equalityadvisoryservice.com/">contact the Equality Advisory and Support Service (EASS)</a>.</p>
+<p>The Equality and Human Rights Commission (EHRC) is responsible for enforcing the <a class="reference external" href="https://www.legislation.gov.uk/uksi/2018/952/made">Public Sector Bodies (Websites and Mobile Applications) (No. 2) Accessibility Regulations 2018 (the ‘accessibility regulations’)</a>. If you’re not happy with how we respond to your complaint, you should <a class="reference external" href="https://www.equalityadvisoryservice.com/">contact the Equality Advisory and Support Service (EASS)</a>.</p>
 <div class="toctree-wrapper compound">
 </div>
 <div class="toctree-wrapper compound">

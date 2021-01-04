@@ -1,0 +1,439 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Configuration &#8212; DRAFT: Quality Assurance of Code for Analysis and Research</title>
+    
+  <link rel="stylesheet" href="_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="_static/markdown_within_tabs.css" />
+    <link rel="stylesheet" type="text/css" href="_static/logo.css" />
+    <link rel="stylesheet" type="text/css" href="_static/admonitions.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.3da636dd464baa7582d2.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Data Management" href="data.html" />
+    <link rel="prev" title="Version control" href="version_control.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  <img src="_static/duck_book_logo.svg" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">DRAFT: Quality Assurance of Code for Analysis and Research</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <p class="caption collapsible-parent">
+ <span class="caption-text">
+  Guidance
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="principles.html">
+   Principles
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="core_programming.html">
+   Core programming practices
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="project_structure.html">
+   Structuring your project
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="code_documentation.html">
+   Code documentation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="project_documentation.html">
+   Project documentation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="version_control.html">
+   Version control
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Configuration
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data.html">
+   Data Management
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="peer_review.html">
+   Peer review
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="testing_code.html">
+   Testing code
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Resources
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="learning.html">
+   Learning Resources
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="tools.html">
+   Tools
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  <p>Book version 2021.0</><a href='https://gss.civilservice.gov.uk/' target='_blank'><img src='./_static/GSS_logo.jpg' alt='The Government Statistical Service logo' style='width:100%'></a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/configuration.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/best-practice-and-impact/qa-of-code-guidance"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/best-practice-and-impact/qa-of-code-guidance/issues/new?title=Issue%20on%20page%20%2Fconfiguration.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/best-practice-and-impact/qa-of-code-guidance/edit/master/configuration.md"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#basic-configuration">
+   Basic configuration
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#configuration-files">
+   Configuration files
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#code-configuration-files">
+     Code configuration files
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#dedicated-configuration-files">
+     Dedicated configuration files
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="configuration">
+<h1>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h1>
+<p>Configuration describes how your code runs when you execute it.</p>
+<p>In analysis, we may want to run our analysis code using different inputs or parameters. And we likely want others analysts to be able to run our code on different machines, for example, to reproduce our results. This section describes how we can define analysis configuration that is easy to update and can remain separate from the logic in our analysis.</p>
+<div class="section" id="basic-configuration">
+<h2>Basic configuration<a class="headerlink" href="#basic-configuration" title="Permalink to this headline">¶</a></h2>
+<p>Configuration for your analysis code should include high level parameters (settings) that can be used to easily adjust how your analysis runs. This might include paths to input and output files, database connection settings and model parameters that are likely to be adjusted between runs.</p>
+<p>In early development of our analysis, lets imagine that we have a script that looks something like this:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;C:/a/very/specific/path/to/input_data.csv&quot;</span><span class="p">)</span> 
+
+<span class="n">variables_test</span><span class="p">,</span> <span class="n">variables_train</span><span class="p">,</span> <span class="n">outcome_test</span><span class="p">,</span> <span class="n">outcome_train</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;outcome&quot;</span><span class="p">],</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">random_seed</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+
+<span class="n">model</span> <span class="o">=</span> <span class="n">Model</span><span class="p">()</span>
+<span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">variables_train</span><span class="p">,</span> <span class="n">outcome_train</span><span class="p">)</span>
+
+<span class="c1"># prediction = model.predict(variables_test, constant_a=4.5, max_v=100)</span>
+<span class="n">prediction</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">variables_test</span><span class="p">,</span> <span class="n">constant_a</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span> <span class="n">max_v</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>
+
+<span class="n">prediction</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s2">&quot;outputs/predictions.csv&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Here we’re reading in some data and splitting it into subsets for training and testing a model. We use one subset of variables and outcomes to train our model and then use the other variables subset to test the model. Finally, we write the model’s predictions to a <code class="docutils literal notranslate"><span class="pre">.csv</span></code> file.</p>
+<p>The file paths that are used to read and write data in our script are particular to our working environment. These files and paths may not exist on another analysts machine. As such, other analysts would need to read through the script and replace these paths in order to run our code. As we’ll demonstrate below, collecting flexible parts of our code together makes it easier for others to update them.</p>
+<p>When splitting our data and using our model to make predictions, we’ve provided some parameters to the functions that we have used to perform these tasks. Eventually, we might reuse some of these parameters elsewhere in our script (e.g. the random seed) and we are likely to adjust these parameters between runs of our analysis. To make it easier to adjust these consistently throughout our script, we should store them in variables. We should also store these variables with any other parameters and options, so that it’s easy to identify where they should be adjusted.</p>
+<p>Note that in this example we’ve tried our model prediction twice, with different parameters. We’ve used comments to switch between which of these lines of code runs. This practice is common, especially when we want to make a number of changes when developing how our analysis should run. However, commenting sections of code in this way makes it difficult for others to understand our code and reproduce our results. Another analyst would not be sure which set of parameters was used to produce a given set of predictions, so we should avoid this form of ambiguity. Below, we’ll look at some better alternatives to storing and switching our analysis parameters.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Configuration</span>
+<span class="n">input_path</span> <span class="o">=</span> <span class="s2">&quot;C:/a/very/specific/path/to/input_data.csv&quot;</span>
+<span class="n">output_path</span> <span class="o">=</span> <span class="s2">&quot;outputs/predictions.csv&quot;</span>
+
+<span class="n">test_split_proportion</span> <span class="o">=</span> <span class="mf">0.3</span>
+<span class="n">random_seed</span> <span class="o">=</span> <span class="mi">42</span>
+
+<span class="n">prediction_parameters</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;constant_a&quot;</span><span class="p">:</span> <span class="mi">7</span><span class="p">,</span>
+    <span class="s2">&quot;max_v&quot;</span><span class="p">:</span> <span class="mi">1000</span>
+<span class="p">}</span>
+
+
+<span class="c1"># Analysis</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">read_csv</span><span class="p">(</span><span class="n">input_path</span><span class="p">)</span>
+
+<span class="n">variables_test</span><span class="p">,</span> <span class="n">variables_train</span><span class="p">,</span> <span class="n">outcome_test</span><span class="p">,</span> <span class="n">outcome_train</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;outcome&quot;</span><span class="p">],</span> <span class="n">test_size</span><span class="o">=</span><span class="n">test_split_proportion</span><span class="p">,</span> <span class="n">random_seed</span><span class="o">=</span><span class="n">random_seed</span><span class="p">)</span>
+
+<span class="n">model</span> <span class="o">=</span> <span class="n">Model</span><span class="p">()</span>
+<span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">variables_train</span><span class="p">,</span> <span class="n">outcome_train</span><span class="p">)</span>
+
+<span class="n">prediction</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">variables_test</span><span class="p">,</span> <span class="n">constant_a</span><span class="o">=</span><span class="n">prediction_parameters</span><span class="p">[</span><span class="s2">&quot;constant_a&quot;</span><span class="p">],</span> <span class="n">max_v</span><span class="o">=</span><span class="n">prediction_parameters</span><span class="p">[</span><span class="s2">&quot;max_v&quot;</span><span class="p">])</span>
+
+<span class="n">prediction</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">output_path</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Separating configuration from the rest of our code makes it easy to adjust these parameters and apply them consistently throughout the analysis script. We’re able to use basic objects (like lists and dictionaries) to group related parameters. We then reference these objects in the analysis section of our script.</p>
+<p>Our configuration could be extended to include other parameters, including which variables we’re selecting to train our model. However, it is important that we keep the configuration simple and easy to maintain. Before moving aspects of code to the configuration it’s good to consider whether it improves your workflow. If it is something that is dependent on the computer that your using (e.g. file paths) or is likely to change between runs of your analysis, then it’s a good candidate for including in your configuration.</p>
+</div>
+<div class="section" id="configuration-files">
+<h2>Configuration files<a class="headerlink" href="#configuration-files" title="Permalink to this headline">¶</a></h2>
+<p>We can use independent configuration files to take our previous example one step further. We simply take our collection of variables, containing parameters and options for our analysis, and move them to a separate file. As we’ll describe in the following subsections, these files can be written in the same language as your code or other simple languages.</p>
+<p>Storing our analysis configuration in a separate file to the analysis code is a useful separation. It means that we can version control our code based solely on changes to the overall logic - when we fix bugs or add new features. We can then keep a separate record of which configuration files were used with our code to generate specific results. We can easily switch between multiple configurations, by providing our analysis code with different configuration files.</p>
+<p>You may not want to version control your configuration file, for example if it includes file paths that are specific to your machine or references to sensitive data. In this case, you should include a sample or example configuration file, so that others can use this as a template to configure the analysis for their own environment. It is key that this template is kept up to date, so that it is compatible with your code.</p>
+<div class="section" id="code-configuration-files">
+<h3>Code configuration files<a class="headerlink" href="#code-configuration-files" title="Permalink to this headline">¶</a></h3>
+<p>To use another code script as our configuration file, we can copy our parameter variables directly from our scripts. Because these variables are defined in the programming language that our analysis uses, it’s easy to access them in our analysis script. In Python, variables from these config files can be imported into your analysis script. In R, your script might <code class="docutils literal notranslate"><span class="pre">source()</span></code> the config file to read the variables into the R environment.</p>
+</div>
+<div class="section" id="dedicated-configuration-files">
+<h3>Dedicated configuration files<a class="headerlink" href="#dedicated-configuration-files" title="Permalink to this headline">¶</a></h3>
+<p>Many other file formats can be used to store configuration parameters. You may have come across data-serialisation languages (including YAML, TOML, JSON and XML), which can be used independent of your programming language.</p>
+<p>If we were to represent our example configuration from above in YAML, this would look like:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">input_path</span><span class="p">:</span> <span class="s2">&quot;C:/a/very/specific/path/to/input_data.csv&quot;</span>
+<span class="n">output_path</span><span class="p">:</span> <span class="s2">&quot;outputs/predictions.csv&quot;</span>
+
+<span class="n">test_split_proportion</span><span class="p">:</span> <span class="mf">0.3</span>
+<span class="n">random_seed</span><span class="p">:</span> <span class="mi">42</span>
+
+<span class="n">prediction_parameters</span><span class="p">:</span>
+    <span class="n">constant_a</span><span class="p">:</span> <span class="mi">7</span>
+    <span class="n">max_v</span><span class="p">:</span> <span class="mi">1000</span>
+</pre></div>
+</div>
+<p>Configuration files that are written in other languages may need to be read using relevant libraries. The YAML example above could be read into our analysis as follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>import yaml
+
+with open(r&quot;./my_config.yaml&quot;) as file:
+    config = yaml.load(file)
+
+config
+
+# Analysis
+data = read_csv(config$input_path)
+...
+</pre></div>
+</div>
+<p>Configuration file formats like YAML and TOML are compact and human-readable. This makes them easy to interpret and update, even without knowledge of the underlying code used in the analysis. Reading these files in produces a single object containing all of the <code class="docutils literal notranslate"><span class="pre">key:value</span></code> pairs defined in our configuration file. In our analysis, we can then select our configuration parameters using their keys.</p>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="version_control.html" title="previous page">Version control</a>
+    <a class='right-next' id="next-link" href="data.html" title="next page">Data Management</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          <div class="extra_footer">
+            <p>Best Practice & Impact division, Office for National Statistics</p><p>This document is very young, please help use to make it grow by providing any feedback by <a href='mailto:gsshelp@statistics.gov.uk'>email</a> or via the <a href='https://github.com/best-practice-and-impact/qa-of-code-guidance'>GitHub repository</a>.
+          </div>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="_static/js/index.3da636dd464baa7582d2.js"></script>
+
+
+    
+  </body>
+</html>

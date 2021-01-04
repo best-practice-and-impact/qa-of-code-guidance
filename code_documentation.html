@@ -32,9 +32,9 @@
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="_static/tabs.css" />
-    <link rel="stylesheet" type="text/css" href="_static/admonitions.css" />
     <link rel="stylesheet" type="text/css" href="_static/markdown_within_tabs.css" />
     <link rel="stylesheet" type="text/css" href="_static/logo.css" />
+    <link rel="stylesheet" type="text/css" href="_static/admonitions.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
@@ -44,7 +44,6 @@
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
-    <script src="_static/language_data.js"></script>
     <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
@@ -132,6 +131,11 @@
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="configuration.html">
+   Configuration
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="data.html">
    Data Management
   </a>
@@ -158,12 +162,17 @@
    Learning Resources
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="tools.html">
+   Tools
+  </a>
+ </li>
 </ul>
 
 </nav> <!-- To handle the deprecated key -->
 
 <div class="navbar_extra_footer">
-  <p>Book version 2020.12</><a href='https://gss.civilservice.gov.uk/' target='_blank'><img src='./_static/GSS_logo.jpg' alt='The Government Statistical Service logo' style='width:100%'></a>
+  <p>Book version 2021.0</><a href='https://gss.civilservice.gov.uk/' target='_blank'><img src='./_static/GSS_logo.jpg' alt='The Government Statistical Service logo' style='width:100%'></a>
 </div>
 
 </div>
@@ -407,12 +416,7 @@ Complex is better than complicated.</p>
 </div>
 </div></div>
 <p>It is easy to forget which parts of code have been commented out and why they have been commented. It introduces a human factor into the equation, which might not be accounted for if someone in the future is not aware of the commented-out code. This is likely to produce inconsistent runs of the same piece of code. This code might quickly become out of sync with the rest of the changes in the codebase, as developers may not consider updating code that is commented out if they assume it is obsolete.</p>
-<p>You should instead use appropriate control flow (such as <code class="docutils literal notranslate"><span class="pre">if/else</span></code> statements) to determine when these sections should be run. When changes are required between individual runs of your analysis, you should define these options via a configuration file.</p>
-<div class="admonition-todo admonition" id="id1">
-<p class="admonition-title">Todo</p>
-<p>Reference configuration file section.
-<a class="reference external" href="https://github.com/best-practice-and-impact/qa-of-code-guidance/issues/30">#30</a></p>
-</div>
+<p>You should instead use appropriate control flow (such as <code class="docutils literal notranslate"><span class="pre">if/else</span></code> statements) to determine when these sections should be run. When changes are required between individual runs of your analysis, you should consider <a class="reference internal" href="configuration.html"><span class="doc std std-doc">defining these options in a dedicated configuration file</span></a>.</p>
 <p>In summary, you should use comments sparingly but purposefully. Make sure to:</p>
 <ul class="simple">
 <li><p>explain <strong>why</strong> certain things are done, in order to provide context around the decisions that you have made.</p></li>
@@ -421,7 +425,7 @@ Complex is better than complicated.</p>
 </ul>
 </div>
 <div class="section" id="docstrings">
-<span id="id2"></span><h2>Docstrings<a class="headerlink" href="#docstrings" title="Permalink to this headline">¶</a></h2>
+<span id="id1"></span><h2>Docstrings<a class="headerlink" href="#docstrings" title="Permalink to this headline">¶</a></h2>
 <p>When your code is structured as functions or classes, these functional units can be efficiently documented using docstrings. Docstrings are specialised multi-line descriptions that appear at the start of a function definition and are the de facto way of documenting these individual components. In practice they can be either strings (as in Python docstrings) or comments (as in R). Note that module or script level docstrings are also commonly used (usually at the top of the module file in the case of Python). Use of docstrings keeps the documentation of your code closely associated with the relevant sections of code. This close association means it is easier to keep documentation up to date as changes are introduced to the code.</p>
 <p>An end-user can access these docstrings by typing <code class="docutils literal notranslate"><span class="pre">help(function_name)</span></code> after they have imported your library, so they are handily available without needing to have the source code files open in another window. Other tools, like Jupyter for Python, allow users to easily access these docstrings for quick reference. Hence the focus on detail and comprehensiveness is key - this is the first point of call for an end-user trying to understand what a given function does.</p>
 <p>Docstrings commonly describe:</p>

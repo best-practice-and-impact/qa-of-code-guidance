@@ -32,9 +32,9 @@
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="_static/tabs.css" />
-    <link rel="stylesheet" type="text/css" href="_static/admonitions.css" />
     <link rel="stylesheet" type="text/css" href="_static/markdown_within_tabs.css" />
     <link rel="stylesheet" type="text/css" href="_static/logo.css" />
+    <link rel="stylesheet" type="text/css" href="_static/admonitions.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
@@ -43,7 +43,6 @@
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
-    <script src="_static/language_data.js"></script>
     <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
@@ -63,7 +62,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Peer review" href="peer_review.html" />
-    <link rel="prev" title="Version control" href="version_control.html" />
+    <link rel="prev" title="Configuration" href="configuration.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -129,6 +128,11 @@
    Version control
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="configuration.html">
+   Configuration
+  </a>
+ </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    Data Management
@@ -156,12 +160,17 @@
    Learning Resources
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="tools.html">
+   Tools
+  </a>
+ </li>
 </ul>
 
 </nav> <!-- To handle the deprecated key -->
 
 <div class="navbar_extra_footer">
-  <p>Book version 2020.12</><a href='https://gss.civilservice.gov.uk/' target='_blank'><img src='./_static/GSS_logo.jpg' alt='The Government Statistical Service logo' style='width:100%'></a>
+  <p>Book version 2021.0</><a href='https://gss.civilservice.gov.uk/' target='_blank'><img src='./_static/GSS_logo.jpg' alt='The Government Statistical Service logo' style='width:100%'></a>
 </div>
 
 </div>
@@ -306,6 +315,10 @@ This management is typically handled by dedicated data architects and engineers,
 This section aims to highlight good data management practices, so that you can either appreciate how your organisation handles its data or implement your own data management solutions.</p>
 <p>In order to reproduce a piece of analysis we need to be able to identify and access the same data that our analysis used.
 This requires suitable storage of data, with documentation and versioning of the data where it may change over time.</p>
+<div class="admonition-strategies admonition">
+<p class="admonition-title">Key strategies</p>
+<p><a class="reference external" href="https://www.gov.uk/government/publications/the-government-data-quality-framework/the-government-data-quality-framework">The Government Data Quality Framework</a> focuses primarily on assessing and improving the quality of input data. It should be primary resource for all analysts working with data in the public sector.</p>
+</div>
 <div class="section" id="data-storage">
 <h2>Data storage<a class="headerlink" href="#data-storage" title="Permalink to this headline">¶</a></h2>
 <p>It is assumed that most data are now stored digitally.</p>
@@ -513,7 +526,7 @@ This might be documented in analysis reports or automatically logged by your cod
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="version_control.html" title="previous page">Version control</a>
+    <a class='left-prev' id="prev-link" href="configuration.html" title="previous page">Configuration</a>
     <a class='right-next' id="next-link" href="peer_review.html" title="next page">Peer review</a>
 
     </div>
