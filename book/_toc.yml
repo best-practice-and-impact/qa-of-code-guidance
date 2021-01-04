@@ -8,11 +8,12 @@
   - file: code_documentation
   - file: project_documentation
   - file: version_control
+  - file: configuration
   - file: data
   - file: peer_review
   - file: testing_code
 
 - part: Resources
   chapters:
-  - file: learning.md
-  - file: tools.md
+  - file: learning
+  - file: tools
