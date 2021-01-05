@@ -267,11 +267,14 @@ If you adjust the filter at any point, you should run this command to apply the 
 git add --renormalize .
 ```
 
-This approach has been borrowed from [this blog post by Yury Zhauniarovich](https://zhauniarovich.com/post/2020/2020-10-clearing-jupyter-output-p3/).
-
+This approach has been borrowed from this [blog post by Yury Zhauniarovich](https://zhauniarovich.com/post/2020/2020-10-clearing-jupyter-output-p3/).
 
 
 ### Versioning large files
+
+When versioning your repository, Git stores compressed copies of all previous versions of each file. Despite the file compression, this means that versioning very large or binary files quickly increase the size of your repository's history, especially if there are multiple versions of them. The size of your Git history determines how long it takes to `clone` or `pull` and `push` changes to and from your remote repository. This includes when a continuous integration platform downloads your repo to run tests and other checks. Therefore, storing large files in Git typically slows down your development workflow.
+
+[Git Large Files Storage (LFS)](https://git-lfs.github.com/) is a Git extension that allows you to version large files, but without storing the files in your repository history. Large files in your repositories history are instead replaced with a small text-based pointer. This pointer references versions of the actual files, which are stored in a separate part of your remote repository (e.g. GitHub or GitLab). When you `pull` a repository including large files, only the current version of the file is retrieved from the remote server, rather than its whole history. This reduces the size of your local repository and the time taken to `push` and `pull` changes. [Git-LFS integrates well with a normal Git workflow](https://www.youtube.com/watch?v=uLR1RNqJ1Mw) and can be used for specific files, or even all files of a particular type within your repository.
 
 
 ### Handling data breaches via Git
@@ -337,11 +340,109 @@ git clone https://github.com/<user>/<repo>.git --branch=v0.1.0
 
 ## GitHub
 
+A number of platforms extend the functionality of Git, to further improve collaborative working.
+
+Here we describe some of the beneficial features supported by GitHub, the world's leading software development platform. GitHub provides additional tools for collaborative workflows, including:
+* Access management for viewing and contributing
+* Issues
+* Project boards
+* Forking
+* Pull requests
+* Continuous Integration
+
+Many of these project management tools are also discussed on the [GitHub features page](https://github.com/features/project-management/).
 
 ### Benefits
 
+GitHub repositories have a [visibility setting](https://docs.github.com/en/free-pro-team@latest/github/administering-a-repository/setting-repository-visibility) that represents whether the repo can be viewed publicly or only by owners of the project,
+Note that some GitHub features are limited or are not available for private repos on free GitHub accounts.
+
+Organizations provide an area for collating multiple repos that are associated with a particular team or department.
+Within Organizations, Teams can be also created to manage view and contribution permissions for projects within the Organization.
+External collaborators can also be added to projects, to allow direct contribution from those outside of the Organization.
+
+Despite the visibility status of a repo, only Organization members and collaborators may make direct contributions to the code in the repo.
+Others can contribute by Pull Request.
+
+Detailed setup and management of Organizations and Teams are described in the [relevant section of the GitHub Docs](https://docs.github.com/en/free-pro-team@latest/github/setting-up-and-managing-organizations-and-teams).
+
+
+## Branching models
+
+Adopting a particular branching model or workflow for Git can help to keep work consistent within a project.
+
+Generally, it is good practice to:
+* Commit a small number of changes, and commit often
+* Use one branch per high level change (e.g. bug or feature)
+
+These practices help to keep the audit trail informative and assist with peer review.
+
+Here we suggest a couple of common workflows that might be used to version your analytical work.
+You might not benefit from following these patterns to the the word, but should choose aspects of these to adopt a consistent workflow in your team.
+
+These workflows are especially useful when working in a team, as they embed a peer review process into your workflow.
+
+### Gitflow
+
+In this workflow:
+1. A development branch is created from the main branch.
+2. All changes are reviewed as they are merged from individual feature branches onto this development branch.
+3. Larger collections of changes are then merged from the development branch onto the main branch. These merges usually reflect a new version of functioning code.
+
+We recommend that you use pull requests (or equivalents) to review changes that are merged onto the development and master branches.
+This mode of release provides an extra opportunity for discussion and quality assurance, before changes are added to the most stable branch.
+
+```{figure} https://nvie.com/img/git-model@2x.png
+---
+width: 65%
+name: gitflow
+alt: Branching structure when using the gitflow workflow. Features are branched from develop, which is branched from master.
+---
+Branching diagram to demonstrate gitflow. From [A successful Git branching model](https://nvie.com/posts/a-successful-git-branching-model/) by Vincent Driessen.
+```
+
+This [blog post](https://nvie.com/posts/a-successful-git-branching-model/) and the [Atlassian Gitflow guide](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow) describe the workflow, with useful images to depict the branching model.
+
+
+### GitHub flow
+
+In this workflow:
+1. Feature branches are created directly from the main branch.
+2. Pull requests (or equivalent) are used to review and discuss changes in this new branch.
+3. Once reviewed, the feature branch can be deployed for user testing.
+4. Once satisfied that the code works as required, the feature branch is merged onto the main branch.
+
+This workflow might be more suited to projects with rapid development cycles.
+
+```{figure} https://files.programster.org/tutorials/git/flows/github-flow.png
+---
+width: 75%
+name: github_flow
+alt: Branching structure when using the GitHub flow workflow. Features branch directly from Master.
+---
+Branching diagram to demonstrate GitHub, from [Programster's blog post of git workflows](https://blog.programster.org/git-workflows).
+```
+
+This simple guide from GitHub also outlines [GitHub flow](https://guides.github.com/introduction/flow/#:~:text=GitHub%20flow%20is%20a%20lightweight,Created%20with%20Snap).
+
+
+
 
 ### Forking
+
+Forking a repo takes a complete copy of a project's current state, including all existing branches and tags.
+You can then make modifications on this copy, without affecting the original repo.
+
+You might want to do this because you:
+* Would like to contribute to a repository, but are not added to the repo as a collaborator
+* Would like to make changes to the project for your own use
+
+Note that forks do not automatically synchronise with the original repo.
+This means that changes to the original repo after you create a fork need to be manually synchronised if you want to include them in your repo.
+When you would like to offer to contribute your changes to the project (see Pull requests below), you should ensure that you synchronise your branch with any new changes first.
+
+See the GitHub Docs for [instructions on forking a repo and keeping your fork up to date](https://docs.github.com/en/free-pro-team@latest/github/getting-started-with-github/fork-a-repo) with the project and also [working with forks](https://docs.github.com/en/free-pro-team@latest/github/collaborating-with-issues-and-pull-requests/working-with-forks).
+
 
 
 ### Making the most of Pull Requests
@@ -349,6 +450,218 @@ git clone https://github.com/<user>/<repo>.git --branch=v0.1.0
 Pull requests support good branching. They provide an opportunity for review, before code is merged onto a more stable branch. This further reduces the likelihood of merging breaking changes onto our higher level branches.
 
 
+
+A pull request lets you describe changes that you have made to a repo.
+The request is based on the difference between a target branch (usually `dev` or `master`) and a source branch, where you have implemented changes.
+The source branch can the in the same repository, or might be in a Fork (below) of the repository if you are not a member of the project.
+
+Pull requests create an interface for discussion and review of your changes.
+Once a project maintainer is happy with your changes, they can merge them onto the target branch.
+After merging, pull requests preserve a record of the changes and associated discussion.
+
+You can label pull requests a draft to indicate they are still a work in progress.
+This prevents them from being merged prematurely.
+This can be useful when you would like to request advice or early feedback on the changes you are making.
+
+Like issues, pull requests can have assignees that are working on them.
+You can also assign reviewers and tag (`@`) project collaborators as part of the discussion.
+
+
+
 ### Efficient use of issues
 
+Issues offer a method for requesting or recording tasks, including enhancements and bug fixes in your project.
+They act as a collaborative todo list, which users can easily contribute to.
+
+The basic elements of an issue are the:
+* Title and description, provided by the person that submitted the issue
+* Labels to categorise issues (e.g. bug)
+* Comments, where others can discuss the issue
+* Assignees that are working on resolving the issue
+
+Issues can be linked to specific Pull Requests (below) that resolve or help to solve the issue.
+They can also reference other related issues (e.g. `#12`), both within the repo and between repos.
+
+Issues are useful for discussing bugs and new features within the team, but can also be added by users.
+This is often the case with open source projects, providing users with a platform to highlight what would be most useful for them.
+
+[Setting issue templates](https://docs.github.com/en/free-pro-team@latest/github/building-a-strong-community/configuring-issue-templates-for-your-repository) for your project can be an effective way of encouraging collaborators to use informative descriptions.
+For example, a bug issue should include simple instructions to help maintainers reproduce the problem.
+While feature requests might include information on how the user expects the new feature to work or details what problem it will help them to overcome.
+
+Issues are a useful soundboard for requesting changes, but the implementation of changes are handled by Pull Requests (below).
+
+
 ### Other GitHub features
+
+
+[Project boards](https://docs.github.com/en/free-pro-team@latest/github/managing-your-work-on-github/about-project-boards) offer project management features through a [Kanban board](https://en.wikipedia.org/wiki/Kanban_board) interface.
+
+These boards can be used to track assignment and progress of specific tasks.
+This is aided by linking tasks to specific issues and pull requests.
+
+
+(continuous-integration)=
+## Continuous integration
+
+Continuous integration (CI) describes the practice of frequently committing changes to your code.
+This subsection relates to CI tools, which primarily help to automate routine quality assurance tasks.
+These include verifying that your code successfully builds or installs and that your code tests run successfully.
+As the execution environment is defined in the CI workflow configuration, running of tests in this way should be reproducible.
+
+Automation of routine tasks in this way reduces the effort required to merge changes onto the existing code base.
+This encourages frequent merging of small changes.
+As such, conflicts between multiple contributions should be minimal and that review of these changes is simpler.
+
+CI is often linked to:
+* Continuous delivery - ensuring that your code is fit for use after each integration
+* Continuous deployment - automatically deploying working code into production
+
+GitHub provides a CI service via [GitHub Actions](https://github.com/features/actions).
+However, many other CI tools can be integrated with version control platforms, including GitHub.
+Other commonly used tools/services include:
+* Jenkins
+* Travis
+* CircleCI
+* AppVeyor
+
+
+### Testing example
+
+Below is an example configuration file, for use with GitHub actions.
+The `YAML` file, which is used here, is common for CI tools.
+Other CI tools may use different file types, but these likely have a similar overall structure.
+
+```
+name: Test python package
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: [3.6, 3.7, 3.8, 3.9]
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v2
+      with:
+        python-version: ${{ matrix.python-version }}
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install pytest 
+        pip install -r requirements.txt
+        
+    - name: Test with pytest
+      run: |
+        pytest
+```
+
+The first section of this example describes when our workflow should be run.
+In this case, we're running the CI workflow whenever code is `push`ed to the `master` branch or where any Pull Request is created.
+In the case of Pull Requests, the results of the CI workflow will be report on the request's page.
+If any of the workflow stages fail, this can block the merge of these changes onto a more stable branch.
+Subsequent commits to the source branch will trigger the CI workflow to run again.
+
+Below `jobs`, we're defining what tasks we would like to run when our workflow is triggered.
+We define what operating system we would like to run our workflow on - the Linux operating system `ubuntu` here.
+The `matrix` section under `strategy` defines parameters for the workflow.
+The workflow will be repeated for each combination of parameters supplied here - in this case the 4 latest Python versions.
+
+The individual stages of the workflow are defined under `steps`.
+`steps` typically have an informative name and run code to perform an action.
+Here `uses: actions/checkout@v2` references [existing code](https://github.com/actions/checkout) that will retrieve the code from our repo.
+The subsequent `steps` will use this code.
+The next step provides us with the a working Python version, as specified in the `matrix`.
+Then we install dependencies/requirements for our code and the `pytest` module.
+Finally, we run `pytest` to check that our code is working as expected.
+
+This workflow will report whether our test code ran successfully for each of the specified Python versions.
+
+
+### Documentation example
+
+This book uses the following GitHub Actions configuration to build and deploy the HTML content:
+
+```
+name: Build and deploy book
+
+on:
+  push:
+    branches:
+      - main
+      - master
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Set up Python 3.7
+      uses: actions/setup-python@v1
+      with:
+        python-version: 3.7
+
+    - name: Install dependencies
+      run: |
+        pip install -r requirements.txt
+
+    - name: Build the book
+      run: |
+        jb build book -W -v --keep-going && touch ./book/_build/html/.nojekyll
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    if: startsWith( github.ref, 'refs/tags/v')
+    steps:
+    - name: "Deploy book to GitHub Pages"
+      uses: peaceiris/actions-gh-pages@v3.6.1
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./book/_build/html
+```
+
+This workflow runs whenever a pull request is create or changes are pushed directly to the main branch.
+It has two jobs - one that builds the book's HTML content and another that deploys the content to this website.
+
+As with the previous example, we start the workflow by setting up an environment with Python.
+We install the dependencies for the project, which includes `jupyter-book` to build to the book.
+
+Our workflow then builds the book's HTML content, where the workflow will fail if warnings or errors are raised.
+
+In the second job, the book (including the new changes) is deployed to the site that you are reading now.
+This job needs the build job to have completed successfully before it will run.
+It will only run if a new Git tag has been created, to indicate a new version of the book.
+This allows us to accumulate changes on the main branch, before releasing a collection of changes in the next version.
+This deployment step requires authentication, which is managed by a secret/token that is accessed from the Action's environment.
+
+You might use a similar approach to this to deploy your code's HTML documentation.
+
+
+### Complex example
+
+You can see a detailed example of CI in practice in the `jupyter-book` project.
+A recent version of the [`jupyter-book` CI workflow](https://github.com/executablebooks/jupyter-book/blob/6fb0cbe4abb5bc29e9081afbe24f71d864b40475/.github/workflows/tests.yml) includes:
+* Checking code against style guidelines, using [pre-commit](https://pre-commit.com/)
+* Running code tests over
+  * a range of Python versions
+  * multiple versions of specific dependencies (`sphinx` here)
+  * multiple operating systems
+* Reporting test coverage
+* Checking that documentation builds successfully
+* Deploying a new version of the `jupyter-book` package to [the python package index (PyPI)](https://pypi.org/)
