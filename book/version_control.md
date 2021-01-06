@@ -1,19 +1,16 @@
 # Version control
 
-In this chapter, we primarily discuss the benefits of using the [Git](https://git-scm.com/) version control system.
+Version control is managing changes to your analysis over time. In this chapter, we primarily discuss the benefits of using [the Git version control system](https://git-scm.com/) .
 
 ## Why version control?
 
-Manually versioning files is not appropriate or sufficient for development at pace or with input from multiple individuals.
+As we discussed in [](principles.md), an audit trail is essential for assuring quality analysis. It's important for us to be able to answer the following questions about our analysis:
+* What changes have been made to our project?
+* When were those changes made?
+* Why were those changes made?
+* Who made those changes?
 
-Without automated version control, we commonly see:
-* Multiple copies of files or the entire project
-* Issues in resolving multiple changes to the same file
-* Duplicated effort
-* Difficulty understanding where changes have been made and by whom
-* Difficulty understanding the order that changes have occurred in
-* Difficulty identifying changes that have introduced errors
-* Problems in trying to roll back changes to get code working again quickly
+Version control software, like Git, records the answers to these questions throughout the development of a project. We can detail our development decisions alongside changes, using commit messages and Pull or Merge Requests. In turn, this keeps our analysis workspace clean of commented-out old code and numerous files containing previous versions.
 
 ```{figure} https://imgs.xkcd.com/comics/documents.png
 ---
@@ -24,27 +21,20 @@ alt: Comic demonstrating poor file naming, like "Untitled 138 Copy.docx".
 Documents, from [xkcd](https://xkcd.com/1459/)
 ```
 
-As discussed in [](principles.md), an audit trail is essential for quality analysis.
+When used effectively, version control helps us to identify which changes have negatively impacted our work and remove them. Furthermore, a detailed audit trail allows us to refer to specific versions of our code that have been used to produce outputs, which is important for reproducing our analysis.
 
-It's important for us to be able to answer the following questions about our analysis:
-* What changes have been made to our project?
-* When were those changes made?
-* Why were those changes made?
-* Who made those changes?
-
-Version control software, like Git, records the answers to these questions throughout the development of a project. Using a remote Git repository maintains a single source of truth, despite multiple individuals working on a project. It helps us to record and combine changes from multiple developers. When used effectively, it also allows us to more easily identify changes that have negatively impacted our work and remove them. Most importantly, it allows us to refer to specific versions of our code that have been used to produce specific outputs.
+Git is invaluable when recording and combining changes from multiple developers, as merging allows us to resolve conflicts between overlapping changes. Using a remote Git repository maintains a single source of truth, even when multiple individuals working on a project. Additionally, version control platforms, like GitHub and GitLab, can make it easier to track and review ongoing work. This avoids duplication of effort and keeps review embedded in the development workflow.
 
 
 ## What should I version control?
 
-Ideally, you should include any code that is required to run your system.
-In a public repository, you may need to omit confidential or sensitive code.
+Ideally, you should include any code that is required to run your analysis. In a public repository, you may need to omit confidential or sensitive aspects of the project.
 
 ```{caution}
 
 You should **not** include the following in your code repository:
 * passwords, credentials or keys
-* configuration files that are environment-dependent
+* configuration files that are environment-dependent (e.g. containing file paths)
 * code that contains sensitive information
   * for example, code that describes a method for fraud detection
   * or code that contains references to personally identifiable data
@@ -54,30 +44,73 @@ You should **not** include the following in your code repository:
 
 See [](excluding-from-git) for details on how to mitigate the risk of including sensitive information in a Git repository.
 
-You might include example configuration files, or documentation describing how configuration is applied. However, the exact configuration for a particular run of your code should be recorded by logging for reproducibility purposes.
+You might include example (configuration)[configuration.md] files, or documentation describing how configuration is applied. However, the exact configuration for a particular run of your code should be recorded by logging for reproducibility purposes.
 
-The data we use for analysis is often unreleased or sensitive. Unpublished, sensitive or disclosive data should never be shared in a code repository. As a rule of thumb, only small dummy/example datasets should be include. It is still important to version the data that we use for our analyses, but this can be done more appropriately using databases.
+The data we use for analysis is often unreleased or sensitive. Unpublished, sensitive or disclosive data should never be shared in a code repository. As a rule of thumb, only small dummy/example datasets should be include. It is still important to version the data that we use for our analyses, but this should be done independently to our code.
 
 
 ## Git
 
-Git is a distributed version control system. All users have access to a complete and self-contained history of changes to a given project. It can be used to record local changes, with the option of then synchronising these changes with a central, remote repository. Remote repositories are typically on a platform like GitHub or GitLab.
+Git is a distributed version control system. This means that all users have access to a complete and self-contained history of changes to a given project. The software can be used to record local changes, with the option of then synchronising these changes with a central, remote repository. Remote repositories are typically hosted on a platform like GitHub or GitLab.
 
-The following sections describe useful concepts for using Git to version control your analysis. We use examples of Git commands throughout, but do not provide detailed descriptions of Git usage. If you're not yet familiar with using Git, you should first look into [introductory training](git-learning).
-
-
-### Good branching
-
-Branches are independent copies of a project's history, copied from the state of the parent branch at a specific point in that branches history. They help to support development of multiple changes to a project in parallel.
-
-The `main` or `master` branch is the default highest level branch. This branch commonly reflects the code that is in production and should be considered as the most stable branch. Stability here, means that the code on this branch builds and functions as expected.
-
-Needs to be proportional to complexity and number of collaborators.
+The following sections describe useful concepts for using Git to version control your analysis. We use examples of Git commands throughout, but do not provide detailed descriptions of Git usage. If you are not familiar with using command line tools, or Git specifically, you should first look into [introductory training](git-learning).
 
 
-Depth of branches generally match the level of stability in the code. As code becomes more stable, it is merged onto higher level branches.
+### Appropriate use of branching
 
-As code is refined, it becomes safer to merge it onto a higher level branch. For example, when the code seems to work and has been suitably tested, we don't expect it to break the code on the next branch up.
+Branches are independent copies of a project's history, copied from a parent branch at a specific point in its history. A new branch is typically created to make a change to your code, which might be building a new feature or fixing a bug in your analysis. Multiple branches can be created from a single parent branch when multiple changes are being worked on independently. This is especially useful when when multiple analysts are working collaboratively and are making changes in parallel.
+
+Once changes have been implemented and sufficiently quality assured (think documentation and testing), the branch containing the changes can be merged onto another branch. The target branch for this merging is typically the parent branch, which the branch was created from. During merging any overlapping or "conflicting" changes between the current and target branches are resolved.
+
+ It is important to note that your approach to branching within a project should be proportional to number of collaborators and the complexity of the development work. For example, if working alone on a project you might only be working a single development branch at any moment in time, or might choose to track all changes on a single `main` branch. The `main` or `master` branch is the default highest level branch in a Git repository.
+
+```{figure} ./_static/git_main.png
+---
+width: 70%
+name: git_master
+alt: Commits along a single "main" Git branch.
+---
+Commits along a single "main" Git branch.
+```
+
+More complex projects may warrant using branching. When using branches, the `main` branch should be considered as the most "stable" branch in the repository - meaning that the code on this branch builds successfully and executes as expected. When making changes to our code, these changes may initially be less stable or reliable. As such, we make these changes on a new branch so that the code on our `main` branch is unaffected. As the changes to our code are refined, it becomes safer to merge these changes onto a higher level branch such as `main`. For example, when the code has been reviewed and suitably tested. You should aim to only merge onto a more stable branch when you don't expect it to break the working code on the target branch.
+
+```{figure} ./_static/git_feature.png
+---
+width: 70%
+name: git_feature
+alt: A feature branch from a main branch.
+---
+Creating and merging a feature branch.
+```
+
+Here we show a single `feature` branch being create from the `main` branch. After a few commits, the complete feature is merged back onto the `main` branch.
+
+We can create multiple branches from our `main` branch at any point. We might do this when multiple features are being developed in parallel, or perhaps when multiple analysts wish to make changes to the same piece of code independently.
+
+```{figure} ./_static/git_multiple_features.png
+---
+width: 90%
+name: git_multiple_features
+alt: Two features branches created from a single main branch.
+---
+Multiple parallel branches.
+```
+
+Here we create two feature branches from `main`. Work on each feature is carried out independently of the other feature and can be merged onto `main` once it is complete.
+
+In addition to having multiple branches from our `main` branch, we can also create deeper branches from our other branches. You might create additional sub-branches when additional work needs to be carried out on a particular feature.
+
+```{figure} ./_static/git_deeper_branching.png
+---
+width: 90%
+name: git_deeper_branching
+alt: A sub branch being created from a feature branch.
+---
+Deeper branching.
+```
+
+In this example, we have created a feature branch. Early in development of the feature we want to fix a bug which has been created, but this work can be carried out independently to the remaining work on the feature. As such, we create another deeper branch to carry out the bug fix. Once the bug is fixed, we merge the fix onto our feature branch. And finally, the finished feature can be merged back onto `main`.
 
 
 ### Commit standards
