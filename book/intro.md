@@ -21,7 +21,7 @@ You can find us on:
 
 The following structure can be used to reference the current version of the book:
 
-> UK Government Analytical Community. (2020). Quality assurance of code for analysis and research (version 2021.0). Office for National Statistics, Best Practice and Impact division: https://best-practice-and-impact.github.io/qa-of-code-guidance/
+> UK Government Analytical Community. (2020). Quality assurance of code for analysis and research (version 2021.1). Office for National Statistics, Best Practice and Impact division: https://best-practice-and-impact.github.io/qa-of-code-guidance/
 
 ## How to get the most out of the book
 
