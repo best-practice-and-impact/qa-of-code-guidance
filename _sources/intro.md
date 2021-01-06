@@ -1,6 +1,6 @@
 # Quality Assurance of Code for Analysis and Research
 
-This is an early draft of Analysis Function guidance and Government Statistical Service (GSS). It is produced by the [Best Practice and Impact division](https://gss.civilservice.gov.uk/about-us/support-for-the-gss/) of the Office for National Statistics.
+This is an early draft of Analysis Function and Government Statistical Service (GSS) guidance. It is produced by the [Best Practice and Impact division](https://gss.civilservice.gov.uk/about-us/support-for-the-gss/) of the Office for National Statistics.
 
 This guidance has been written to support analysts in government who use coding in their work. This includes those who produce statistics, carry out modelling or apply data science.
 
@@ -21,7 +21,7 @@ You can find us on:
 
 The following structure can be used to reference the current version of the book:
 
-> UK Government Analytical Community. (2020). Quality assurance of code for analysis and research (version 2021.0). Office for National Statistics, Best Practice and Impact division: https://best-practice-and-impact.github.io/qa-of-code-guidance/
+> UK Government Analytical Community. (2020). Quality assurance of code for analysis and research (version 2021.1). Office for National Statistics, Best Practice and Impact division: https://best-practice-and-impact.github.io/qa-of-code-guidance/
 
 ## How to get the most out of the book
 
