@@ -1,0 +1,17 @@
+/*
+Inline code
+Contrast ratio: 4.97:1
+Meets AA standard for normal sized text
+*/
+code {
+    color: #D51A72;
+}
+
+/*
+Code block comments
+Contrast ratio: 4.76:1
+Meets AA standard for normal sized text
+*/
+.highlight .c1 {
+    color: #3B7887;
+}
