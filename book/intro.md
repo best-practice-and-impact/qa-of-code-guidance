@@ -1,6 +1,6 @@
 # Quality Assurance of Code for Analysis and Research
 
-This is an early draft of Analysis Function guidance and Government Statistical Service (GSS). It is produced by the [Best Practice and Impact division](https://gss.civilservice.gov.uk/about-us/support-for-the-gss/) of the Office for National Statistics.
+This is an early draft of Analysis Function and Government Statistical Service (GSS) guidance. It is produced by the [Best Practice and Impact division](https://gss.civilservice.gov.uk/about-us/support-for-the-gss/) of the Office for National Statistics.
 
 This guidance has been written to support analysts in government who use coding in their work. This includes those who produce statistics, carry out modelling or apply data science.
 
