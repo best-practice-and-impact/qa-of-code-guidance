@@ -176,14 +176,9 @@ ALSO DVC, [git-annex](https://git-annex.branchable.com/) and [DataLad](https://w
 
 ### Releases (tagging)
 
-Regularly `commit`ing changes using Git helps us to create a thorough audit trail of changes to our project.
-However, there may be discrete points in the history of the project that we want to mark for easy future reference.
-Let's face it, hashes like `121b5b4` don't exactly roll off of the tongue.
+Regularly `commit`ing changes using Git helps us to create a thorough audit trail of changes to our project. However, there may be discrete points in the history of the project that we want to mark for easy future reference. Let's face it, hashes like `121b5b4` don't exactly roll off of the tongue.
 
-Tags can be created in Git, to reference a specific point in the projects history.
-A tag essentially acts as an alias for a commit hash.
-You might use tags, for example, to mark a particular model version or a new software version to be released.
-By default, tags will reference the current position in history (i.e. the latest commit or `HEAD`).
+Tags can be created in Git, to reference a specific point in the projects history. A tag essentially acts as an alias for a commit hash. You might use tags, for example, to mark a particular model version or a new software version to be released. By default, tags will reference the current position in history (i.e. the latest commit or `HEAD`).
 
 An annotated tag might be created for a new software version like so:
 
@@ -218,21 +213,14 @@ git clone https://github.com/<user>/<repo>.git --branch=v0.1.0
 (excluding-from-git)=
 ### Avoid commiting sensitive information to Git repositories
 
-Code itself is very rarely sensitive, so we should be open to sharing it.
-However, analysts may often want to use sensitive information in their analysis.
-This might be in the form of credentials, used to access a service, or data that contains personally identifiable information.
+Code itself is very rarely sensitive, so we should be open to sharing it. However, analysts may often want to use sensitive information in their analysis. This might be in the form of credentials, used to access a service, or data that contains personally identifiable information.
 
-In these cases, we need to minimise the risk of inadvertently sharing this information with our code.
-This subsection suggests how you might mitigate this risk in your analysis.
+In these cases, we need to minimise the risk of inadvertently sharing this information with our code. This subsection suggests how you might mitigate this risk in your analysis.
 
 
 #### .gitignore files
 
-As mentioned above, you may not want to include all of the files associated with your project in a Git repository.
-A `.gitignore` file allows you to exclude folders or files from being tracked by Git.
-Within this file, you provide a list of text patterns.
-If a folder matches one of your `.gitignore` file patterns, none of the files or folder below that folder will be tracked.
-If an individual file matches one of the patterns, this file will not be tracked.
+As mentioned above, you may not want to include all of the files associated with your project in a Git repository. A `.gitignore` file allows you to exclude folders or files from being tracked by Git. Within this file, you provide a list of text patterns. If a folder matches one of your `.gitignore` file patterns, none of the files or folder below that folder will be tracked. If an individual file matches one of the patterns, this file will not be tracked.
 
 Given this example `.gitignore` file:
 
@@ -242,30 +230,22 @@ sandpit/
 *.csv
 ```
 
-The first pattern tells Git to ignore any file with the exact name `secrets.yaml`.
-The second will ignore all files within a folder named `sandpit/`.
-Note that if there are multiple folders in the project named `sandpit/`, they will all be excluded.
-You should make the pattern more specific if you want to exclude particular directories.
-The third pattern will exclude all `.csv` files, regardless of which folder or sub-folder they are in.
+The first pattern tells Git to ignore any file with the exact name `secrets.yaml`. The second will ignore all files within a folder named `sandpit/`. Note that if there are multiple folders in the project named `sandpit/`, they will all be excluded. You should make the pattern more specific if you want to exclude particular directories. The third pattern will exclude all `.csv` files, regardless of which folder or sub-folder they are in.
 
 ```{caution}
-Files that are already being tracked by Git will not be excluded when you add new patterns to your `.gitignore` file.
-Ensure that you set up your `.gitignore` before adding files to be tracked in your repository.
+Files that are already being tracked by Git will not be excluded when you add new patterns to your `.gitignore` file. Ensure that you set up your `.gitignore` before adding files to be tracked in your repository.
 ```
 
 Please see the [Git documentation for `.gitignore`](https://git-scm.com/docs/gitignore) for more details.
 
-While we may not want to share files containing credentials, configuration and data, it can be useful to provide dummy examples of these files.
-Demonstrating the format of these files can help others to reuse your code, without sharing sensitive information.
+While we may not want to share files containing credentials, configuration and data, it can be useful to provide dummy examples of these files. Demonstrating the format of these files can help others to reuse your code, without sharing sensitive information.
 
 
 #### Using environmental variables
 
-If your code depends on credentials of some kind, these should not be explicitly written in your code.
-They can be stored in configuration files, which should be excluded from version control, or better still in local environment variables.
+If your code depends on credentials of some kind, these should not be explicitly written in your code. They can be stored in configuration files, which should be excluded from version control, or better still in local environment variables.
 
-Environment variables are variables which are available in a particular environment.
-In this context, our environment is the user environment that we are running our code from.
+Environment variables are variables which are available in a particular environment. In this context, our environment is the user environment that we are running our code from.
 
 In Unix systems (e.g. Linux and Mac), environment variables can be set in the terminal using `export` and deleted using `unset`:
 
@@ -281,8 +261,7 @@ setx SECRET_KEY "mysupersecretpassword"
 reg delete HKCU\Environment /F /V SECRET_KEY
 ```
 
-Once stored in environmental variables, these variables will remain available on your machine until they are removed.
-You can access this variable in your code like so:
+Once stored in environmental variables, these variables will remain available on your machine until they are removed. You can access this variable in your code like so:
 
 ````{tabs}
 
@@ -303,46 +282,32 @@ Note that you may need to open a new terminal to show that a variable has been r
 
 #### Excluding `.Rdata` and `.Rhistory` files
 
-R saves objects from your workspace (working environment) into an `.RData` file at the end of your session.
-This can save time when reloading large objects into R, when returning to a project.
-Depending on your settings, it may prompt you to ask if you would like to save them or it may do this automatically.
-If you have read sensitive information into R during the session, this information may be saved to the `.RData` file.
-As such, we must be careful not to include this information in commits to remote repositories.
+R saves objects from your workspace (working environment) into an `.RData` file at the end of your session. This can save time when reloading large objects into R, when returning to a project. Depending on your settings, it may prompt you to ask if you would like to save them or it may do this automatically. If you have read sensitive information into R during the session, this information may be saved to the `.RData` file. As such, we must be careful not to include this information in commits to remote repositories.
 
-Similarly, R stores a record of all commands executed in your session in a `.Rhistory` file.
-If you have referenced sensitive information directly in your R commands, then this information will be written to the `.Rhistory` file.
+Similarly, R stores a record of all commands executed in your session in a `.Rhistory` file. If you have referenced sensitive information directly in your R commands, then this information will be written to the `.Rhistory` file.
 
-To handle this, we can exclude these files (via `.gitignore`) or prevent R from generating them.
-If you do not use these files, it is safest not to generate them in the first place.
+To handle this, we can exclude these files (via `.gitignore`) or prevent R from generating them. If you do not use these files, it is safest not to generate them in the first place.
 
 In Rstudio, you can disable writing of these files via `Tools > Global options`:
-
 * Under Workspace, select `Never` for `Save workspace to .RData on exit:`.
 * Under History, deselect `Always save history`.
 
 
 #### Jupyter Notebooks
 
-By default, Jupyter Notebooks save a copy of the data that is used to create cell outputs.
-For example, the data used to generate a chart, table or print a section of a dataframe.
-This can be useful for sharing your code outputs without others needing to re-execute the code cells.
+By default, Jupyter Notebooks save a copy of the data that is used to create cell outputs. For example, the data used to generate a chart, table or print a section of a dataframe. This can be useful for sharing your code outputs without others needing to re-execute the code cells.
 
-If you work with sensitive datasets in notebooks, this means that your notebooks may store sensitive data to display cell outputs.
-If these notebooks are subsequently shared in code repositories, you may be making sensitive data available to unauthorised individuals.
+If you work with sensitive datasets in notebooks, this means that your notebooks may store sensitive data to display cell outputs. If these notebooks are subsequently shared in code repositories, you may be making sensitive data available to unauthorised individuals.
 
 It is [not currently possible to prevent the notebooks from retaining cell outputs](https://github.com/ipython/ipython/issues/1280).
 
-The best way to handle this situation is to clear the outputs from your notebooks before commiting them to Git repositories.
-This can be done from the notebook itself, by going to the menu `Cell > All > Output > Clear` and then saving your notebook.
-Alternatively, this can be done from the command line, by running this command with your notebook file path:
+The best way to handle this situation is to clear the outputs from your notebooks before commiting them to Git repositories. This can be done from the notebook itself, by going to the menu `Cell > All > Output > Clear` and then saving your notebook. Alternatively, this can be done from the command line, by running this command with your notebook file path:
 
 ```
 jupyter nbconvert --ClearOutputPreprocessor.enabled=True --inplace <notebook_file_path>
 ```
 
-This approach is quite laborious and could easily be forgotten.
-As such, we advise you to automate the cell clearing using [Git filter](https://git-scm.com/docs/gitattributes/#_filter) as follows.
-First, we tell Git to set an attribute on our notebook files by creating a `.gitattributes` file in the root of our repo:
+This approach is quite laborious and could easily be forgotten. As such, we advise you to automate the cell clearing using [Git filter](https://git-scm.com/docs/gitattributes/#_filter) as follows. First, we tell Git to set an attribute on our notebook files by creating a `.gitattributes` file in the root of our repo:
 
 ```
 *.ipynb filter=jupyternotebook
@@ -356,16 +321,13 @@ We can then define our cleaning instructions in a `.gitconfig` configuration fil
     required
 ```
 
-You can add this to your global `.gitconfig` or create a local `.gitconfig` file in the root of your repo.
-If you create a new config in your repo, you must run the following in that repo:
+You can add this to your global `.gitconfig` or create a local `.gitconfig` file in the root of your repo. If you create a new config in your repo, you must run the following in that repo:
 
 ```
 git config --local include.path ../.gitconfig
 ```
 
-This configuration will now run the notebook output cleaning command every time a change to an `.ipynb` file is added to your local repo.
-You will need to then `git add` the file a second time to add the changes from the cleaning.
-This should prevent notebook outputs from being included in commits to this repository.
+This configuration will now run the notebook output cleaning command every time a change to an `.ipynb` file is added to your local repo. You will need to then `git add` the file a second time to add the changes from the cleaning. This should prevent notebook outputs from being included in commits to this repository.
 
 If you adjust the filter at any point, you should run this command to apply the changes to existing files:
 
@@ -380,8 +342,7 @@ This approach has been borrowed from this [blog post by Yury Zhauniarovich](http
 
 ### Handling data breaches via Git
 
-If unauthorised individuals may access sensitive information through their accidental inclusion in a remote repository, this is a data breach.
-For example, pushing credentials or sensitive data to a remote public GitHub repository.
+If unauthorised individuals may access sensitive information through their accidental inclusion in a remote repository, this is a data breach. For example, pushing credentials or sensitive data to a remote public GitHub repository.
 
 To handle a data breach, you should:
 
@@ -396,8 +357,7 @@ To handle a data breach, you should:
    * Discuss the breach with the Data Protection Officer in your department. They should be able to advise you on the steps you should take to, according to your departments data security policy.
    * If the breach includes pre-publication statistics, you must also report the breach to the [Office for Statistics Regulation](https://osr.statisticsauthority.gov.uk/).
 
-The [Pro Git book section on rewriting history](https://git-scm.com/book/en/v2/Git-Tools-Rewriting-History) details methods for editing and deleting files from your repository's commit history.
-The [BFG repo-cleaner tool](https://rtyley.github.io/bfg-repo-cleaner/) can be a simpler alternative to standard Git commands.
+The [Pro Git book section on rewriting history](https://git-scm.com/book/en/v2/Git-Tools-Rewriting-History) details methods for editing and deleting files from your repository's commit history. The [BFG repo-cleaner tool](https://rtyley.github.io/bfg-repo-cleaner/) can be a simpler alternative to standard Git commands.
 
 
 ### Access control
@@ -406,6 +366,15 @@ Some teams choose to work in the open [service manual](https://www.gov.uk/servic
 Others work in a private repos, then either change to public or migrate to a fresh public repository to make the code open.
 
 Note that access control should not be used instead of the good practices outlined above. It can help to limit the risk of releasing sensitive information, but we should primarily take care to use version control tools safely.
+
+Remote version control platforms, like GitHub, have a [visibility setting](https://docs.github.com/en/free-pro-team@latest/github/administering-a-repository/setting-repository-visibility) that represents whether the repo can be viewed publicly or only by owners of the project. Note that some GitHub features are limited or are not available for private repos on free GitHub accounts.
+
+Organizations provide an area for collating multiple repos that are associated with a particular team or department. Within Organizations, Teams can be also created to manage view and contribution permissions for projects within the Organization. External collaborators can also be added to projects, to allow direct contribution from those outside of the Organization.
+
+Despite the visibility status of a repo, only Organization members and collaborators may make direct contributions to the code in the repo. Others can contribute by Pull Request.
+
+Detailed setup and management of Organizations and Teams are described in the [relevant section of the GitHub Docs](https://docs.github.com/en/free-pro-team@latest/github/setting-up-and-managing-organizations-and-teams).
+
 
 ## GitHub
 
@@ -421,126 +390,35 @@ Here we describe some of the beneficial features supported by GitHub, the world'
 
 Many of these project management tools are also discussed on the [GitHub features page](https://github.com/features/project-management/).
 
-### Benefits
-
-GitHub repositories have a [visibility setting](https://docs.github.com/en/free-pro-team@latest/github/administering-a-repository/setting-repository-visibility) that represents whether the repo can be viewed publicly or only by owners of the project,
-Note that some GitHub features are limited or are not available for private repos on free GitHub accounts.
-
-Organizations provide an area for collating multiple repos that are associated with a particular team or department.
-Within Organizations, Teams can be also created to manage view and contribution permissions for projects within the Organization.
-External collaborators can also be added to projects, to allow direct contribution from those outside of the Organization.
-
-Despite the visibility status of a repo, only Organization members and collaborators may make direct contributions to the code in the repo.
-Others can contribute by Pull Request.
-
-Detailed setup and management of Organizations and Teams are described in the [relevant section of the GitHub Docs](https://docs.github.com/en/free-pro-team@latest/github/setting-up-and-managing-organizations-and-teams).
-
-
-## Branching models
-
-Adopting a particular branching model or workflow for Git can help to keep work consistent within a project.
-
-Generally, it is good practice to:
-* Commit a small number of changes, and commit often
-* Use one branch per high level change (e.g. bug or feature)
-
-These practices help to keep the audit trail informative and assist with peer review.
-
-Here we suggest a couple of common workflows that might be used to version your analytical work.
-You might not benefit from following these patterns to the the word, but should choose aspects of these to adopt a consistent workflow in your team.
-
-These workflows are especially useful when working in a team, as they embed a peer review process into your workflow.
-
-### Gitflow
-
-In this workflow:
-1. A development branch is created from the main branch.
-2. All changes are reviewed as they are merged from individual feature branches onto this development branch.
-3. Larger collections of changes are then merged from the development branch onto the main branch. These merges usually reflect a new version of functioning code.
-
-We recommend that you use pull requests (or equivalents) to review changes that are merged onto the development and master branches.
-This mode of release provides an extra opportunity for discussion and quality assurance, before changes are added to the most stable branch.
-
-```{figure} https://nvie.com/img/git-model@2x.png
----
-width: 65%
-name: gitflow
-alt: Branching structure when using the gitflow workflow. Features are branched from develop, which is branched from master.
----
-Branching diagram to demonstrate gitflow. From [A successful Git branching model](https://nvie.com/posts/a-successful-git-branching-model/) by Vincent Driessen.
-```
-
-This [blog post](https://nvie.com/posts/a-successful-git-branching-model/) and the [Atlassian Gitflow guide](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow) describe the workflow, with useful images to depict the branching model.
-
-
-### GitHub flow
-
-In this workflow:
-1. Feature branches are created directly from the main branch.
-2. Pull requests (or equivalent) are used to review and discuss changes in this new branch.
-3. Once reviewed, the feature branch can be deployed for user testing.
-4. Once satisfied that the code works as required, the feature branch is merged onto the main branch.
-
-This workflow might be more suited to projects with rapid development cycles.
-
-```{figure} https://files.programster.org/tutorials/git/flows/github-flow.png
----
-width: 75%
-name: github_flow
-alt: Branching structure when using the GitHub flow workflow. Features branch directly from Master.
----
-Branching diagram to demonstrate GitHub, from [Programster's blog post of git workflows](https://blog.programster.org/git-workflows).
-```
-
-This simple guide from GitHub also outlines [GitHub flow](https://guides.github.com/introduction/flow/#:~:text=GitHub%20flow%20is%20a%20lightweight,Created%20with%20Snap).
-
-
-
-
 ### Forking
 
-Forking a repo takes a complete copy of a project's current state, including all existing branches and tags.
-You can then make modifications on this copy, without affecting the original repo.
+Forking a repo takes a complete copy of a project's current state, including all existing branches and tags. You make modifications on a fork, without affecting the original repo.
 
-You might want to do this because you:
-* Would like to contribute to a repository, but are not added to the repo as a collaborator
-* Would like to make changes to the project for your own use
+You might fork a repository when you want to:
+* Contribute to a repository as an external collaborator
+* Make changes to a project for your own use, or to maintain a copy that is independent to the original
 
-Note that forks do not automatically synchronise with the original repo.
-This means that changes to the original repo after you create a fork need to be manually synchronised if you want to include them in your repo.
-When you would like to offer to contribute your changes to the project (see Pull requests below), you should ensure that you synchronise your branch with any new changes first.
+Note that forks do not automatically synchronise with the original repo. This means that changes to the original repo, after you create a fork, need to be manually synchronised if you want to include them in your repo. When you would like to offer to contribute your changes to the original project (see Pull requests below), you should ensure that you synchronise your branch with any new changes first.
 
 See the GitHub Docs for [instructions on forking a repo and keeping your fork up to date](https://docs.github.com/en/free-pro-team@latest/github/getting-started-with-github/fork-a-repo) with the project and also [working with forks](https://docs.github.com/en/free-pro-team@latest/github/collaborating-with-issues-and-pull-requests/working-with-forks).
 
 
-
+(pull-requests)=
 ### Making the most of Pull Requests
 
 Pull requests support good branching. They provide an opportunity for review, before code is merged onto a more stable branch. This further reduces the likelihood of merging breaking changes onto our higher level branches.
 
+A pull request lets you describe changes that you have made to a repo. The request is based on the difference between a target branch (usually `dev` or `master`) and a source branch, where you have implemented changes. The source branch can the in the same repository, or might be in a Fork (below) of the repository if you are not a member of the project.
 
+Pull requests create an interface for discussion and review of your changes. Once a project maintainer is happy with your changes, they can merge them onto the target branch. After merging, pull requests preserve a record of the changes and associated discussion.
 
-A pull request lets you describe changes that you have made to a repo.
-The request is based on the difference between a target branch (usually `dev` or `master`) and a source branch, where you have implemented changes.
-The source branch can the in the same repository, or might be in a Fork (below) of the repository if you are not a member of the project.
+You can label pull requests a draft to indicate they are still a work in progress. This prevents them from being merged prematurely. This can be useful when you would like to request advice or early feedback on the changes you are making.
 
-Pull requests create an interface for discussion and review of your changes.
-Once a project maintainer is happy with your changes, they can merge them onto the target branch.
-After merging, pull requests preserve a record of the changes and associated discussion.
-
-You can label pull requests a draft to indicate they are still a work in progress.
-This prevents them from being merged prematurely.
-This can be useful when you would like to request advice or early feedback on the changes you are making.
-
-Like issues, pull requests can have assignees that are working on them.
-You can also assign reviewers and tag (`@`) project collaborators as part of the discussion.
-
-
+Like issues, pull requests can have assignees that are working on them. You can also assign reviewers and tag (`@`) project collaborators as part of the discussion.
 
 ### Efficient use of issues
 
-Issues offer a method for requesting or recording tasks, including enhancements and bug fixes in your project.
-They act as a collaborative todo list, which users can easily contribute to.
+Issues offer a method for requesting or recording tasks, including enhancements and bug fixes in your project. They act as a collaborative todo list, which users can easily contribute to.
 
 The basic elements of an issue are the:
 * Title and description, provided by the person that submitted the issue
@@ -548,15 +426,11 @@ The basic elements of an issue are the:
 * Comments, where others can discuss the issue
 * Assignees that are working on resolving the issue
 
-Issues can be linked to specific Pull Requests (below) that resolve or help to solve the issue.
-They can also reference other related issues (e.g. `#12`), both within the repo and between repos.
+Issues can be linked to specific Pull Requests (below) that resolve or help to solve the issue. They can also reference other related issues (e.g. `#12`), both within the repo and between repos.
 
-Issues are useful for discussing bugs and new features within the team, but can also be added by users.
-This is often the case with open source projects, providing users with a platform to highlight what would be most useful for them.
+Issues are useful for discussing bugs and new features within the team, but can also be added by users. This is often the case with open source projects, providing users with a platform to highlight what would be most useful for them.
 
-[Setting issue templates](https://docs.github.com/en/free-pro-team@latest/github/building-a-strong-community/configuring-issue-templates-for-your-repository) for your project can be an effective way of encouraging collaborators to use informative descriptions.
-For example, a bug issue should include simple instructions to help maintainers reproduce the problem.
-While feature requests might include information on how the user expects the new feature to work or details what problem it will help them to overcome.
+[Setting issue templates](https://docs.github.com/en/free-pro-team@latest/github/building-a-strong-community/configuring-issue-templates-for-your-repository) for your project can be an effective way of encouraging collaborators to use informative descriptions. For example, a bug issue should include simple instructions to help maintainers reproduce the problem. While feature requests might include information on how the user expects the new feature to work or details what problem it will help them to overcome.
 
 Issues are a useful soundboard for requesting changes, but the implementation of changes are handled by Pull Requests (below).
 
@@ -566,29 +440,21 @@ Issues are a useful soundboard for requesting changes, but the implementation of
 
 [Project boards](https://docs.github.com/en/free-pro-team@latest/github/managing-your-work-on-github/about-project-boards) offer project management features through a [Kanban board](https://en.wikipedia.org/wiki/Kanban_board) interface.
 
-These boards can be used to track assignment and progress of specific tasks.
-This is aided by linking tasks to specific issues and pull requests.
+These boards can be used to track assignment and progress of specific tasks. This is aided by linking tasks to specific issues and pull requests.
 
 
 (continuous-integration)=
 ## Continuous integration
 
-Continuous integration (CI) describes the practice of frequently committing changes to your code.
-This subsection relates to CI tools, which primarily help to automate routine quality assurance tasks.
-These include verifying that your code successfully builds or installs and that your code tests run successfully.
-As the execution environment is defined in the CI workflow configuration, running of tests in this way should be reproducible.
+Continuous integration (CI) describes the practice of frequently committing changes to your code. This subsection relates to CI tools, which primarily help to automate routine quality assurance tasks. These include verifying that your code successfully builds or installs and that your code tests run successfully. As the execution environment is defined in the CI workflow configuration, running of tests in this way should be reproducible.
 
-Automation of routine tasks in this way reduces the effort required to merge changes onto the existing code base.
-This encourages frequent merging of small changes.
-As such, conflicts between multiple contributions should be minimal and that review of these changes is simpler.
+Automation of routine tasks in this way reduces the effort required to merge changes onto the existing code base. This encourages frequent merging of small changes. As such, conflicts between multiple contributions should be minimal and that review of these changes is simpler.
 
 CI is often linked to:
 * Continuous delivery - ensuring that your code is fit for use after each integration
 * Continuous deployment - automatically deploying working code into production
 
-GitHub provides a CI service via [GitHub Actions](https://github.com/features/actions).
-However, many other CI tools can be integrated with version control platforms, including GitHub.
-Other commonly used tools/services include:
+GitHub provides a CI service via [GitHub Actions](https://github.com/features/actions). However, many other CI tools can be integrated with version control platforms, including GitHub. Other commonly used tools/services include:
 * Jenkins
 * Travis
 * CircleCI
@@ -597,9 +463,7 @@ Other commonly used tools/services include:
 
 ### Testing example
 
-Below is an example configuration file, for use with GitHub actions.
-The `YAML` file, which is used here, is common for CI tools.
-Other CI tools may use different file types, but these likely have a similar overall structure.
+Below is an example configuration file, for use with GitHub actions. The `YAML` file, which is used here, is common for CI tools. Other CI tools may use different file types, but these likely have a similar overall structure.
 
 ```
 name: Test python package
@@ -638,24 +502,11 @@ jobs:
         pytest
 ```
 
-The first section of this example describes when our workflow should be run.
-In this case, we're running the CI workflow whenever code is `push`ed to the `master` branch or where any Pull Request is created.
-In the case of Pull Requests, the results of the CI workflow will be report on the request's page.
-If any of the workflow stages fail, this can block the merge of these changes onto a more stable branch.
-Subsequent commits to the source branch will trigger the CI workflow to run again.
+The first section of this example describes when our workflow should be run. In this case, we're running the CI workflow whenever code is `push`ed to the `master` branch or where any Pull Request is created. In the case of Pull Requests, the results of the CI workflow will be report on the request's page. If any of the workflow stages fail, this can block the merge of these changes onto a more stable branch. Subsequent commits to the source branch will trigger the CI workflow to run again.
 
-Below `jobs`, we're defining what tasks we would like to run when our workflow is triggered.
-We define what operating system we would like to run our workflow on - the Linux operating system `ubuntu` here.
-The `matrix` section under `strategy` defines parameters for the workflow.
-The workflow will be repeated for each combination of parameters supplied here - in this case the 4 latest Python versions.
+Below `jobs`, we're defining what tasks we would like to run when our workflow is triggered. We define what operating system we would like to run our workflow on - the Linux operating system `ubuntu` here. The `matrix` section under `strategy` defines parameters for the workflow. The workflow will be repeated for each combination of parameters supplied here - in this case the 4 latest Python versions.
 
-The individual stages of the workflow are defined under `steps`.
-`steps` typically have an informative name and run code to perform an action.
-Here `uses: actions/checkout@v2` references [existing code](https://github.com/actions/checkout) that will retrieve the code from our repo.
-The subsequent `steps` will use this code.
-The next step provides us with the a working Python version, as specified in the `matrix`.
-Then we install dependencies/requirements for our code and the `pytest` module.
-Finally, we run `pytest` to check that our code is working as expected.
+The individual stages of the workflow are defined under `steps`. `steps` typically have an informative name and run code to perform an action. Here `uses: actions/checkout@v2` references [existing code](https://github.com/actions/checkout) that will retrieve the code from our repo. The subsequent `steps` will use this code. The next step provides us with the a working Python version, as specified in the `matrix`. Then we install dependencies/requirements for our code and the `pytest` module. Finally, we run `pytest` to check that our code is working as expected.
 
 This workflow will report whether our test code ran successfully for each of the specified Python versions.
 
@@ -705,19 +556,13 @@ jobs:
         publish_dir: ./book/_build/html
 ```
 
-This workflow runs whenever a pull request is create or changes are pushed directly to the main branch.
-It has two jobs - one that builds the book's HTML content and another that deploys the content to this website.
+This workflow runs whenever a pull request is create or changes are pushed directly to the main branch. It has two jobs - one that builds the book's HTML content and another that deploys the content to this website.
 
-As with the previous example, we start the workflow by setting up an environment with Python.
-We install the dependencies for the project, which includes `jupyter-book` to build to the book.
+As with the previous example, we start the workflow by setting up an environment with Python. We install the dependencies for the project, which includes `jupyter-book` to build to the book.
 
 Our workflow then builds the book's HTML content, where the workflow will fail if warnings or errors are raised.
 
-In the second job, the book (including the new changes) is deployed to the site that you are reading now.
-This job needs the build job to have completed successfully before it will run.
-It will only run if a new Git tag has been created, to indicate a new version of the book.
-This allows us to accumulate changes on the main branch, before releasing a collection of changes in the next version.
-This deployment step requires authentication, which is managed by a secret/token that is accessed from the Action's environment.
+In the second job, the book (including the new changes) is deployed to the site that you are reading now. This job needs the build job to have completed successfully before it will run. It will only run if a new Git tag has been created, to indicate a new version of the book. This allows us to accumulate changes on the main branch, before releasing a collection of changes in the next version. This deployment step requires authentication, which is managed by a secret/token that is accessed from the Action's environment.
 
 You might use a similar approach to this to deploy your code's HTML documentation.
 
