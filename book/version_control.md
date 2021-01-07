@@ -81,7 +81,7 @@ width: 70%
 name: git_feature
 alt: Creating a feature branch from a main branch.
 ---
-Creating and merging a `feature` branch.
+Working on changes on a single `feature` branch.
 ```
 
 Here we show a single `feature` branch being create from the `main` branch. The work is initially quite experimental, but is refined over a few commits. The complete, working feature is finally merged back onto the `main` branch.
@@ -106,7 +106,7 @@ width: 90%
 name: git_multiple_features
 alt: Two features branches created from a single main branch.
 ---
-Multiple parallel branches.
+Working on multiple parallel branches.
 ```
 
 Here we create two feature branches from `main`. Work on each feature is carried out independently of the other feature and can be merged onto `main` once it is complete. If changes from separate branches affect the same files, merging these branches to `main` may lead to merge conflicts. In these cases you should ensure that you resolve the conflicts to keep the desired overall change.
@@ -119,7 +119,7 @@ width: 90%
 name: git_deeper_branching
 alt: A sub branch being created from a feature branch.
 ---
-Deeper branching.
+Using deeper branching to manage sub-tasks.
 ```
 
 In this example, we have created a `feature` branch. Early in development of the feature we want to fix a bug which has been created, but this work can be carried out independently to the remaining development of the feature. As such, we create another, deeper branch to carry out the bug fix. Once the bug is fixed, we merge the `bug-fix` onto our `feature` branch. And finally, the finished `feature` can be merged back onto `main`.
@@ -169,10 +169,10 @@ When versioning your repository, Git stores compressed copies of all previous ve
 
 [Git Large Files Storage (LFS)](https://git-lfs.github.com/) is a Git extension that allows you to version large files, but without storing the files in your repository history. Large files in your repositories history are instead replaced with a small text-based pointer. This pointer references versions of the actual files, which are stored in a separate part of your remote repository (e.g. GitHub or GitLab). When you `pull` a repository including large files, only the current version of the file is retrieved from the remote server, rather than its whole history. This reduces the size of your local repository and the time taken to `push` and `pull` changes. [Git-LFS integrates well with a normal Git workflow](https://www.youtube.com/watch?v=uLR1RNqJ1Mw) and can be used for specific files, or even all files of a particular type within your repository.
 
+Other tools, including [git-annex](https://git-annex.branchable.com/) can be used for a similar purpose.
 
-```{todo}
-ALSO DVC, [git-annex](https://git-annex.branchable.com/) and [DataLad](https://www.datalad.org/)
-```
+Despite this support for large files, we recommend that remote Git repositories are not used to store data. Versioning of your data could instead be handled independently to your code; the version of your code should not be influenced directly by changes in the data and vice versa. This separation can be achieved using a tool like [DVC](https://dvc.org/), which allows you to specify where data versions are store (locally or on the cloud).
+
 
 ### Releases (tagging)
 
@@ -442,6 +442,8 @@ Issues are a useful soundboard for requesting changes, but the implementation of
 
 These boards can be used to track assignment and progress of specific tasks. This is aided by linking tasks to specific issues and pull requests.
 
+Wiki
+GitHub Pages for public documentation (link to documentation)
 
 (continuous-integration)=
 ## Continuous integration
