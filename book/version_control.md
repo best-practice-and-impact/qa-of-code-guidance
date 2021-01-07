@@ -79,12 +79,24 @@ More complex projects may warrant using branching. When using branches, the `mai
 ---
 width: 70%
 name: git_feature
-alt: A feature branch from a main branch.
+alt: Creating a feature branch from a main branch.
 ---
-Creating and merging a feature branch.
+Creating and merging a `feature` branch.
 ```
 
-Here we show a single `feature` branch being create from the `main` branch. After a few commits, the complete feature is merged back onto the `main` branch.
+Here we show a single `feature` branch being create from the `main` branch. The work is initially quite experimental, but is refined over a few commits. The complete, working feature is finally merged back onto the `main` branch.
+
+Many small scale projects iteratively work on individual feature or development branches in this way. The [GitHub flow branching strategy](https://guides.github.com/introduction/flow/) uses this approach in combination with [Pull Requests](pull-requests), to incorporate peer review into the development workflow.
+
+
+```{figure} ./_static/git_develop.png
+---
+width: 90%
+name: git_develop
+alt: Iteratively creating and merging a develop branch from a main branch.
+---
+Iteratively working on a `develop` branch.
+```
 
 We can create multiple branches from our `main` branch at any point. We might do this when multiple features are being developed in parallel, or perhaps when multiple analysts wish to make changes to the same piece of code independently.
 
@@ -97,9 +109,9 @@ alt: Two features branches created from a single main branch.
 Multiple parallel branches.
 ```
 
-Here we create two feature branches from `main`. Work on each feature is carried out independently of the other feature and can be merged onto `main` once it is complete.
+Here we create two feature branches from `main`. Work on each feature is carried out independently of the other feature and can be merged onto `main` once it is complete. If changes from separate branches affect the same files, merging these branches to `main` may lead to merge conflicts. In these cases you should ensure that you resolve the conflicts to keep the desired overall change.
 
-In addition to having multiple branches from our `main` branch, we can also create deeper branches from our other branches. You might create additional sub-branches when additional work needs to be carried out on a particular feature.
+In addition to having multiple branches from our `main` branch, we can also create deeper branches from our other branches. You might create additional sub-branches when the development of a feature involves multiple sub-tasks, or when a problem needs to be fixed during development of a feature. Deeper branching usually reflects work that is less stable and more exploratory or experimental.
 
 ```{figure} ./_static/git_deeper_branching.png
 ---
@@ -110,8 +122,13 @@ alt: A sub branch being created from a feature branch.
 Deeper branching.
 ```
 
-In this example, we have created a feature branch. Early in development of the feature we want to fix a bug which has been created, but this work can be carried out independently to the remaining work on the feature. As such, we create another deeper branch to carry out the bug fix. Once the bug is fixed, we merge the fix onto our feature branch. And finally, the finished feature can be merged back onto `main`.
+In this example, we have created a `feature` branch. Early in development of the feature we want to fix a bug which has been created, but this work can be carried out independently to the remaining development of the feature. As such, we create another, deeper branch to carry out the bug fix. Once the bug is fixed, we merge the `bug-fix` onto our `feature` branch. And finally, the finished `feature` can be merged back onto `main`.
 
+The [Git flow branching strategy](https://nvie.com/posts/a-successful-git-branching-model/) describes an alternative to progressively merging our changes onto `main`. Development work is instead branched from a `develop` branch. Merges from `develop` onto the `main` branch are only used to release a new version of the code. This approach can be useful when code from the `main` branch is deployed directly into production, however, analysts should opt to use the most simple and beneficial approach to branching depending on their project.
+
+```{note}
+Although we have used very simple branch names in the examples above, it's important that you use informative names for your branches in practice. If using an issue tracker (e.g. GitHub Issues or Jira), it can be useful to include the issue number in branch names (e.g. `#155-fix-index-aggregation`). This makes it easy to trace the branch back to the associated issue or task. Otherwise, aim to use meaningful names that describe the feature or bug that the changes will be focussed on. 
+```
 
 ### Commit standards
 
@@ -142,6 +159,62 @@ Further paragraphs come after blank lines.
 
 - Use a hanging indent
 ```
+
+A concise summary of a your change is usually sufficient, but remember that is is these commit message that will be used in future to understand what changes have been made to your project. You might rely on these to identify where an error has been introduced, so it is important that you write these messages clearly and informatively.
+
+
+### Versioning large files
+
+When versioning your repository, Git stores compressed copies of all previous versions of each file. Despite the file compression, this means that versioning very large or binary files quickly increase the size of your repository's history, especially if there are multiple versions of them. The size of your Git history determines how long it takes to `clone` or `pull` and `push` changes to and from your remote repository. This includes when a continuous integration platform downloads your repo to run tests and other checks. Therefore, storing large files in Git typically slows down your development workflow.
+
+[Git Large Files Storage (LFS)](https://git-lfs.github.com/) is a Git extension that allows you to version large files, but without storing the files in your repository history. Large files in your repositories history are instead replaced with a small text-based pointer. This pointer references versions of the actual files, which are stored in a separate part of your remote repository (e.g. GitHub or GitLab). When you `pull` a repository including large files, only the current version of the file is retrieved from the remote server, rather than its whole history. This reduces the size of your local repository and the time taken to `push` and `pull` changes. [Git-LFS integrates well with a normal Git workflow](https://www.youtube.com/watch?v=uLR1RNqJ1Mw) and can be used for specific files, or even all files of a particular type within your repository.
+
+
+```{todo}
+ALSO DVC, [git-annex](https://git-annex.branchable.com/) and [DataLad](https://www.datalad.org/)
+```
+
+### Releases (tagging)
+
+Regularly `commit`ing changes using Git helps us to create a thorough audit trail of changes to our project.
+However, there may be discrete points in the history of the project that we want to mark for easy future reference.
+Let's face it, hashes like `121b5b4` don't exactly roll off of the tongue.
+
+Tags can be created in Git, to reference a specific point in the projects history.
+A tag essentially acts as an alias for a commit hash.
+You might use tags, for example, to mark a particular model version or a new software version to be released.
+By default, tags will reference the current position in history (i.e. the latest commit or `HEAD`).
+
+An annotated tag might be created for a new software version like so:
+
+```{code-block}
+git tag -a v0.2.7 -m "Release version 0.2.7"
+git push origin v0.2.7
+```
+
+You can also retrospectively tag an older commit, by providing that `commit`'s hash:
+
+```{code-block}
+git tag -a v0.1.0 -m "Release version 0.2.7" 9fceb02
+git push origin v0.1.0
+```
+
+Once tags have been created, these locations in the projects history can be easily recovered by either checking out:
+
+```{code-block}
+git fetch --all
+git checkout tags/v0.1.0 -b new_branch_name
+```
+
+or cloning the tag:
+
+```{code-block}
+git clone https://github.com/<user>/<repo>.git --branch=v0.1.0
+```
+
+
+## Git security considerations
+
 (excluding-from-git)=
 ### Avoid commiting sensitive information to Git repositories
 
@@ -303,11 +376,6 @@ git add --renormalize .
 This approach has been borrowed from this [blog post by Yury Zhauniarovich](https://zhauniarovich.com/post/2020/2020-10-clearing-jupyter-output-p3/).
 
 
-### Versioning large files
-
-When versioning your repository, Git stores compressed copies of all previous versions of each file. Despite the file compression, this means that versioning very large or binary files quickly increase the size of your repository's history, especially if there are multiple versions of them. The size of your Git history determines how long it takes to `clone` or `pull` and `push` changes to and from your remote repository. This includes when a continuous integration platform downloads your repo to run tests and other checks. Therefore, storing large files in Git typically slows down your development workflow.
-
-[Git Large Files Storage (LFS)](https://git-lfs.github.com/) is a Git extension that allows you to version large files, but without storing the files in your repository history. Large files in your repositories history are instead replaced with a small text-based pointer. This pointer references versions of the actual files, which are stored in a separate part of your remote repository (e.g. GitHub or GitLab). When you `pull` a repository including large files, only the current version of the file is retrieved from the remote server, rather than its whole history. This reduces the size of your local repository and the time taken to `push` and `pull` changes. [Git-LFS integrates well with a normal Git workflow](https://www.youtube.com/watch?v=uLR1RNqJ1Mw) and can be used for specific files, or even all files of a particular type within your repository.
 
 
 ### Handling data breaches via Git
@@ -332,44 +400,12 @@ The [Pro Git book section on rewriting history](https://git-scm.com/book/en/v2/G
 The [BFG repo-cleaner tool](https://rtyley.github.io/bfg-repo-cleaner/) can be a simpler alternative to standard Git commands.
 
 
-### Releases (tagging)
+### Access control
 
-Regularly `commit`ing changes using Git helps us to create a thorough audit trail of changes to our project.
-However, there may be discrete points in the history of the project that we want to mark for easy future reference.
-Let's face it, hashes like `121b5b4` don't exactly roll off of the tongue.
+Some teams choose to work in the open [service manual](https://www.gov.uk/service-manual/service-standard/point-12-make-new-source-code-open))
+Others work in a private repos, then either change to public or migrate to a fresh public repository to make the code open.
 
-Tags can be created in Git, to reference a specific point in the projects history.
-A tag essentially acts as an alias for a commit hash.
-You might use tags, for example, to mark a particular model version or a new software version to be released.
-By default, tags will reference the current position in history (i.e. the latest commit or `HEAD`).
-
-An annotated tag might be created for a new software version like so:
-
-```{code-block}
-git tag -a v0.2.7 -m "Release version 0.2.7"
-git push origin v0.2.7
-```
-
-You can also retrospectively tag an older commit, by providing that `commit`'s hash:
-
-```{code-block}
-git tag -a v0.1.0 -m "Release version 0.2.7" 9fceb02
-git push origin v0.1.0
-```
-
-Once tags have been created, these locations in the projects history can be easily recovered by either checking out:
-
-```{code-block}
-git fetch --all
-git checkout tags/v0.1.0 -b new_branch_name
-```
-
-or cloning the tag:
-
-```{code-block}
-git clone https://github.com/<user>/<repo>.git --branch=v0.1.0
-```
-
+Note that access control should not be used instead of the good practices outlined above. It can help to limit the risk of releasing sensitive information, but we should primarily take care to use version control tools safely.
 
 ## GitHub
 
