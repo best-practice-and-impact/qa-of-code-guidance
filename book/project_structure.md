@@ -145,7 +145,7 @@ It means that members of the team can quickly orient themselves when joining an 
 
 [Cookiecutter](https://github.com/cookiecutter/cookiecutter) is a command-line tool that creates projects from templates (cookiecutters).
 Using an existing cookiecutter, or creating one to meet your needs, can be a useful way to increase consistency in structure between your projects.
-It can save time by creating common folder structures, laying out essential documentation or even starting off your code with basic boilerplate.
+It can save time by creating common folder structures, laying out essential documentation or even starting off your code with a basic boilerplate.
 Layout out a structure to include documentation and code testing encourages these good practices.
 
 Useful cookiecutters include:
