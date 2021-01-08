@@ -23,7 +23,7 @@ Documents, from [xkcd](https://xkcd.com/1459/)
 
 When used effectively, version control helps us to identify which changes have negatively impacted our work and remove them. Furthermore, a detailed audit trail allows us to refer to specific versions of our code that have been used to produce outputs, which is important for reproducing our analysis.
 
-Git is invaluable when recording and combining changes from multiple developers, as merging allows us to resolve conflicts between overlapping changes. Using a remote Git repository maintains a single source of truth, even when multiple individuals working on a project. Additionally, version control platforms, like GitHub and GitLab, can make it easier to track and review ongoing work. This avoids duplication of effort and keeps review embedded in the development workflow.
+Git is invaluable when recording and combining changes from multiple developers, as merging allows us to resolve conflicts between overlapping changes. Using a remote Git repository maintains a single source of truth, even when multiple individuals are working on a project. Additionally, version control platforms, like GitHub and GitLab, can make it easier to track and review ongoing work. This avoids duplication of effort and keeps review embedded in the development workflow.
 
 
 ## What should I version control?
@@ -46,7 +46,7 @@ See [](excluding-from-git) for details on how to mitigate the risk of including 
 
 You might include example (configuration)[configuration.md] files, or documentation describing how configuration is applied. However, the exact configuration for a particular run of your code should be recorded by logging for reproducibility purposes.
 
-The data we use for analysis is often unreleased or sensitive. Unpublished, sensitive or disclosive data should never be shared in a code repository. As a rule of thumb, only small dummy/example datasets should be include. It is still important to version the data that we use for our analyses, but this should be done independently to our code.
+The data we use for analysis is often unreleased or sensitive. Unpublished, sensitive or disclosive data should never be shared in a code repository. As a rule of thumb, only small dummy/example datasets should be included. It is still important to version the data that we use for our analyses, but this should be done independently to our code.
 
 
 ## Git
@@ -62,7 +62,7 @@ Branches are independent copies of a project's history, copied from a parent bra
 
 Once changes have been implemented and sufficiently quality assured (think documentation and testing), the branch containing the changes can be merged onto another branch. The target branch for this merging is typically the parent branch, which the branch was created from. During merging any overlapping or "conflicting" changes between the current and target branches are resolved.
 
- It is important to note that your approach to branching within a project should be proportional to number of collaborators and the complexity of the development work. For example, if working alone on a project you might only be working a single development branch at any moment in time, or might choose to track all changes on a single `main` branch. The `main` or `master` branch is the default highest level branch in a Git repository.
+It is important to note that your approach to branching within a project should be proportional to number of collaborators and the complexity of the development work. For example, if working alone on a project you might only be working a single development branch at any moment in time, or might choose to track all changes on a single `main` branch. The `main` or `master` branch is the default highest level branch in a Git repository.
 
 ```{figure} ./_static/git_main.png
 ---
@@ -84,7 +84,7 @@ alt: Creating a feature branch from a main branch.
 Creating and merging a `feature` branch.
 ```
 
-Here we show a single `feature` branch being create from the `main` branch. The work is initially quite experimental, but is refined over a few commits. The complete, working feature is finally merged back onto the `main` branch.
+Here we show a single `feature` branch being created from the `main` branch. The work is initially quite experimental, but is refined over a few commits. The complete, working feature is finally merged back onto the `main` branch.
 
 Many small scale projects iteratively work on individual feature or development branches in this way. The [GitHub flow branching strategy](https://guides.github.com/introduction/flow/) uses this approach in combination with [Pull Requests](pull-requests), to incorporate peer review into the development workflow.
 
@@ -122,7 +122,7 @@ alt: A sub branch being created from a feature branch.
 Deeper branching.
 ```
 
-In this example, we have created a `feature` branch. Early in development of the feature we want to fix a bug which has been created, but this work can be carried out independently to the remaining development of the feature. As such, we create another, deeper branch to carry out the bug fix. Once the bug is fixed, we merge the `bug-fix` onto our `feature` branch. And finally, the finished `feature` can be merged back onto `main`.
+In this example, we have created a `feature` branch. Early in development of the feature we want to fix a bug that has been created, but this work can be carried out independently to the remaining development of the feature. As such, we create another, deeper branch to carry out the bug fix. Once the bug is fixed, we merge the `bug-fix` onto our `feature` branch. And finally, the finished `feature` can be merged back onto `main`.
 
 The [Git flow branching strategy](https://nvie.com/posts/a-successful-git-branching-model/) describes an alternative to progressively merging our changes onto `main`. Development work is instead branched from a `develop` branch. Merges from `develop` onto the `main` branch are only used to release a new version of the code. This approach can be useful when code from the `main` branch is deployed directly into production, however, analysts should opt to use the most simple and beneficial approach to branching depending on their project.
 
@@ -160,14 +160,14 @@ Further paragraphs come after blank lines.
 - Use a hanging indent
 ```
 
-A concise summary of a your change is usually sufficient, but remember that is is these commit message that will be used in future to understand what changes have been made to your project. You might rely on these to identify where an error has been introduced, so it is important that you write these messages clearly and informatively.
+A concise summary of a your change is usually sufficient, but remember that it is these commit messages that will be used in the future to understand what changes have been made to your project. You might rely on these to identify where an error has been introduced, so it is important that you write these messages clearly and informatively.
 
 
 ### Versioning large files
 
 When versioning your repository, Git stores compressed copies of all previous versions of each file. Despite the file compression, this means that versioning very large or binary files quickly increase the size of your repository's history, especially if there are multiple versions of them. The size of your Git history determines how long it takes to `clone` or `pull` and `push` changes to and from your remote repository. This includes when a continuous integration platform downloads your repo to run tests and other checks. Therefore, storing large files in Git typically slows down your development workflow.
 
-[Git Large Files Storage (LFS)](https://git-lfs.github.com/) is a Git extension that allows you to version large files, but without storing the files in your repository history. Large files in your repositories history are instead replaced with a small text-based pointer. This pointer references versions of the actual files, which are stored in a separate part of your remote repository (e.g. GitHub or GitLab). When you `pull` a repository including large files, only the current version of the file is retrieved from the remote server, rather than its whole history. This reduces the size of your local repository and the time taken to `push` and `pull` changes. [Git-LFS integrates well with a normal Git workflow](https://www.youtube.com/watch?v=uLR1RNqJ1Mw) and can be used for specific files, or even all files of a particular type within your repository.
+[Git Large Files Storage (LFS)](https://git-lfs.github.com/) is a Git extension that allows you to version large files, but without storing the files in your repository history. Large files in your repository's history are instead replaced with a small text-based pointer. This pointer references versions of the actual files, which are stored in a separate part of your remote repository (e.g. GitHub or GitLab). When you `pull` a repository including large files, only the current version of the file is retrieved from the remote server, rather than its whole history. This reduces the size of your local repository and the time taken to `push` and `pull` changes. [Git-LFS integrates well with a normal Git workflow](https://www.youtube.com/watch?v=uLR1RNqJ1Mw) and can be used for specific files, or even all files of a particular type within your repository.
 
 
 ```{todo}
@@ -231,7 +231,7 @@ This subsection suggests how you might mitigate this risk in your analysis.
 As mentioned above, you may not want to include all of the files associated with your project in a Git repository.
 A `.gitignore` file allows you to exclude folders or files from being tracked by Git.
 Within this file, you provide a list of text patterns.
-If a folder matches one of your `.gitignore` file patterns, none of the files or folder below that folder will be tracked.
+If a folder matches one of your `.gitignore` file patterns, none of the files or folders below that folder will be tracked.
 If an individual file matches one of the patterns, this file will not be tracked.
 
 Given this example `.gitignore` file:
@@ -264,7 +264,7 @@ Demonstrating the format of these files can help others to reuse your code, with
 If your code depends on credentials of some kind, these should not be explicitly written in your code.
 They can be stored in configuration files, which should be excluded from version control, or better still in local environment variables.
 
-Environment variables are variables which are available in a particular environment.
+Environment variables are variables that are available in a particular environment.
 In this context, our environment is the user environment that we are running our code from.
 
 In Unix systems (e.g. Linux and Mac), environment variables can be set in the terminal using `export` and deleted using `unset`:
@@ -306,7 +306,7 @@ Note that you may need to open a new terminal to show that a variable has been r
 R saves objects from your workspace (working environment) into an `.RData` file at the end of your session.
 This can save time when reloading large objects into R, when returning to a project.
 Depending on your settings, it may prompt you to ask if you would like to save them or it may do this automatically.
-If you have read sensitive information into R during the session, this information may be saved to the `.RData` file.
+If you have read sensitive information into R during the session, this information may be saved into the `.RData` file.
 As such, we must be careful not to include this information in commits to remote repositories.
 
 Similarly, R stores a record of all commands executed in your session in a `.Rhistory` file.
@@ -315,7 +315,7 @@ If you have referenced sensitive information directly in your R commands, then t
 To handle this, we can exclude these files (via `.gitignore`) or prevent R from generating them.
 If you do not use these files, it is safest not to generate them in the first place.
 
-In Rstudio, you can disable writing of these files via `Tools > Global options`:
+In Rstudio, you can disable these files being created via `Tools > Global options`:
 
 * Under Workspace, select `Never` for `Save workspace to .RData on exit:`.
 * Under History, deselect `Always save history`.
@@ -365,7 +365,7 @@ git config --local include.path ../.gitconfig
 
 This configuration will now run the notebook output cleaning command every time a change to an `.ipynb` file is added to your local repo.
 You will need to then `git add` the file a second time to add the changes from the cleaning.
-This should prevent notebook outputs from being included in commits to this repository.
+This should prevent notebook outputs from being included in commits to the repository.
 
 If you adjust the filter at any point, you should run this command to apply the changes to existing files:
 
@@ -393,7 +393,7 @@ To handle a data breach, you should:
 2. Report the incident.
    * Record roughly how long the information was available for and the potential impact of releasing this information.
    * Inform the data owner of the breach.
-   * Discuss the breach with the Data Protection Officer in your department. They should be able to advise you on the steps you should take to, according to your departments data security policy.
+   * Discuss the breach with the Data Protection Officer in your department. They should be able to advise you on the steps you should take as well, according to your departments data security policy.
    * If the breach includes pre-publication statistics, you must also report the breach to the [Office for Statistics Regulation](https://osr.statisticsauthority.gov.uk/).
 
 The [Pro Git book section on rewriting history](https://git-scm.com/book/en/v2/Git-Tools-Rewriting-History) details methods for editing and deleting files from your repository's commit history.
@@ -522,7 +522,7 @@ Pull requests support good branching. They provide an opportunity for review, be
 
 A pull request lets you describe changes that you have made to a repo.
 The request is based on the difference between a target branch (usually `dev` or `master`) and a source branch, where you have implemented changes.
-The source branch can the in the same repository, or might be in a Fork (below) of the repository if you are not a member of the project.
+The source branch can be in the same repository, or might be in a Fork (below) of the repository if you are not a member of the project.
 
 Pull requests create an interface for discussion and review of your changes.
 Once a project maintainer is happy with your changes, they can merge them onto the target branch.
@@ -548,7 +548,7 @@ The basic elements of an issue are the:
 * Comments, where others can discuss the issue
 * Assignees that are working on resolving the issue
 
-Issues can be linked to specific Pull Requests (below) that resolve or help to solve the issue.
+Issues can be linked to specific Pull Requests that resolve or help to resolve the issue.
 They can also reference other related issues (e.g. `#12`), both within the repo and between repos.
 
 Issues are useful for discussing bugs and new features within the team, but can also be added by users.
@@ -558,7 +558,7 @@ This is often the case with open source projects, providing users with a platfor
 For example, a bug issue should include simple instructions to help maintainers reproduce the problem.
 While feature requests might include information on how the user expects the new feature to work or details what problem it will help them to overcome.
 
-Issues are a useful soundboard for requesting changes, but the implementation of changes are handled by Pull Requests (below).
+Issues are a useful soundboard for requesting changes, but the implementation of changes are handled by Pull Requests. <!-- Removed "(below)" - is that referencing a section. If so teh Pull request seciton is above? -->
 
 
 ### Other GitHub features
@@ -568,6 +568,8 @@ Issues are a useful soundboard for requesting changes, but the implementation of
 
 These boards can be used to track assignment and progress of specific tasks.
 This is aided by linking tasks to specific issues and pull requests.
+
+<!-- Could maybe add a screenshot of a projects board in action? -->
 
 
 (continuous-integration)=
@@ -580,7 +582,7 @@ As the execution environment is defined in the CI workflow configuration, runnin
 
 Automation of routine tasks in this way reduces the effort required to merge changes onto the existing code base.
 This encourages frequent merging of small changes.
-As such, conflicts between multiple contributions should be minimal and that review of these changes is simpler.
+As such, conflicts between multiple contributions should be minimal and review of these changes is simpler.
 
 CI is often linked to:
 * Continuous delivery - ensuring that your code is fit for use after each integration
@@ -640,7 +642,7 @@ jobs:
 
 The first section of this example describes when our workflow should be run.
 In this case, we're running the CI workflow whenever code is `push`ed to the `master` branch or where any Pull Request is created.
-In the case of Pull Requests, the results of the CI workflow will be report on the request's page.
+In the case of Pull Requests, the results of the CI workflow will be reported on the request's page.
 If any of the workflow stages fail, this can block the merge of these changes onto a more stable branch.
 Subsequent commits to the source branch will trigger the CI workflow to run again.
 
@@ -705,11 +707,11 @@ jobs:
         publish_dir: ./book/_build/html
 ```
 
-This workflow runs whenever a pull request is create or changes are pushed directly to the main branch.
+This workflow runs whenever a pull request is created or changes are pushed directly to the main branch.
 It has two jobs - one that builds the book's HTML content and another that deploys the content to this website.
 
 As with the previous example, we start the workflow by setting up an environment with Python.
-We install the dependencies for the project, which includes `jupyter-book` to build to the book.
+We install the dependencies for the project, which includes `jupyter-book` to build the book.
 
 Our workflow then builds the book's HTML content, where the workflow will fail if warnings or errors are raised.
 
