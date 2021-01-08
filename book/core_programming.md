@@ -26,7 +26,7 @@ When writing code, we should expect that at some point someone else will need to
 
 Common barriers to writing readable code include: documentation that is hard to understand or absent, walls of repetitive code that is hard to absorb, or over-complicated code where a simpler solution could be used. Avoiding these issues is essential to make sure that your analysis is reproducible, auditable and assured. Therefore it is our professional responsibility to avoid putting such barriers in place whenever possible.
 
-This chapter highlights good coding practices that will improve the readability and maintainability of your code. Here, readability refers to how easily another analyst can gain a decent understand of how your code works, within a reasonable amount of time. Maintainability refers to how easily other analysts can understand your code well enough to modify and repair it.
+This chapter highlights good coding practices that will improve the readability and maintainability of your code. Here, readability refers to how easily another analyst can gain a decent understand of how your code works, within a reasonable amount of time. Maintainability refers to how easily other analysts can understanding your code well enough to modify and repair it.
 
 (modular)=
 ## Modular code
@@ -52,7 +52,7 @@ When it is not possible or practical to follow these practices, you should ensur
 
 To summarise:
 
-- Make sure that functions are not too overcomplicated; break down your code into smaller functions and build up your functionality with larger functions from these small building blocks.
+- Make sure that functions are not overcomplicated; break down your code into smaller functions and build up your functionality with larger functions from these small building blocks.
 - Minimise the 'side-effects' of functions in order to make sure that your code is easy to debug and is transparent in its functionality.
 - Strive to make sure that running your function with the same inputs will produce the same results every time.
 
@@ -62,7 +62,7 @@ Classes are fundamental parts of [object-orientated programming (OOP)](https://e
 
 Although classes do exist in R, they are more widely used in Python (and other OOP enabling languages). Hence the following sub-section will focus primarily on Python classes.
 
-With a more complex system, OOP can help to reduce complexity by hiding low-level details from users, such as internal state.
+With a more complex system, OOP can help to reduce complexity by hiding low-level details from users, such as an internal state.
 
 ```{note}
 The 'state' of an object is usually a set of variables that are particular to a given instance of a class. To illustrate, imagine a bank account that is represented by an `Account` class. You can have many _instances_ of this class (many unique bank accounts), each defined by the following internal state:
@@ -104,7 +104,7 @@ diagnose({"brand":"Cadillac", "wheels":4})
 
 ````
 
-In some languages 'private' state can be used to prevent access to parts of your class. In Python [truly private instance variables do not exist](https://docs.python.org/3/tutorial/classes.html#private-variables), so it is not possible to prevent access to any part of your class. The standard convention in Python is to prefix attribute names with a single underscores (`_my_class_attribute`) to indicate that users shouldn't be concerned with these attributes.
+In some languages 'private' state can be used to prevent access to parts of your class. In Python [truly private instance variables do not exist](https://docs.python.org/3/tutorial/classes.html#private-variables), so it is not possible to prevent access to any part of your class. The standard convention in Python is to prefix attribute names with a single underscore (`_my_class_attribute`) to indicate that users shouldn't be concerned with these attributes.
 
 In addition to private attributes, you can use the same naming convention to indicate that a method is 'private' and should not be used by users. This can be useful when writing reusable low-level methods within an object, analogous to breaking a large function down into multiple smaller functions. These private methods can then be called by high-level methods that are exposed to users.
 
@@ -161,7 +161,7 @@ However, we should be wary that inheritance locks our class in to the object tha
 
 (interfaces)=
 
-In OOP, an 'interface' can be defined to act a blueprint or specification for writing classes. An interface outlines the attributes and methods that a class must provide to be considered equivalent to a group of classes. Perhaps we want to use classes to read and write data - this might require several different classes, with `read` and `write` methods for different file formats. For example, one class could deal with storing data into a database, and another could store data in local `.csv` files instead. In our code, we could switch which class is provided to downstream functions. Our functions don't need to know if they are reading or writing from databases or `.csv` files, however, they do require the `read` and `write` methods of the class to work in a standard way. An `interface` would help to define the standard for interacting with this group of classes.
+In OOP, an 'interface' can be defined to act as a blueprint or specification for writing classes. An interface outlines the attributes and methods that a class must provide to be considered equivalent to a group of classes. Perhaps we want to use classes to read and write data - this might require several different classes, with `read` and `write` methods for different file formats. For example, one class could deal with storing data in a database, and another could store data in local `.csv` files instead. In our code, we could switch which class is provided to downstream functions. Our functions don't need to know if they are reading or writing from databases or `.csv` files, however, they do require the `read` and `write` methods of the class to work in a standard way. An `interface` would help to define the standard for interacting with this group of classes.
 
 In Python, the `abc` module allows us to define ['abstract' base classes and methods](https://docs.python.org/3/library/abc.html) to enforce that our classes provide the required methods. When a subclass does not implement the required abstract methods, instances of the class cannot be created. These abstract base classes achieve the same as interfaces in other object-based languages. We can illustrate this concept in the following example:
 
@@ -235,12 +235,13 @@ To summarise:
 
 ### Scripts
 
-Scripts are simply files containing code that you would like to execute. In Python you commonly have a `main.py` script that orchestrates part of your codebase to achieve an outcome. In machine-learning projects, you sometimes have `train.py` and `test.py` which are scripts that train the model and produce performance metrics.
+Scripts are simply files containing code that you would like to execute. In Python you commonly have a `main.py` script that orchestrates part of your codebase to achieve an outcome. In machine-learning projects, you sometimes have `train.py` and `test.py`, which are scripts that train the model and produce performance metrics.
 
 Scripts, if written well, are reproducible. In languages like R and Python, when executed from the command line using commands like `python main.py` they are read top to bottom and executed line by line. This is in contrast to running code in an interactive interpreter or notebook, where the human has control of the order of execution. Manually executing individual lines of code allows for a slew of errors when things are run in the wrong order.
 
 Ultimately for code pipelines you will need to have some way of running your code - the humble script is the primary way of orchestrating your functions and classes in a pipeline fashion.
 
+<!-- The first sentence of the note below doesn't make sense to me. -->
 ```{note}
 Including something that is not reproducible in a script will not make it more reproducible. The script is simply a tool to run code in the same fashion across multiple runs.
 ```
@@ -328,7 +329,7 @@ export(report)
 
 Programming languages often come with quite a few in-built functions and classes that are available to the end-users. However, when it comes to solving specialised problems, these in-built functions are often not enough. In these cases, you may need to build functionality to address a given problem from scratch. If the solutions you build are useful and reusable, you can then wrap them up in a package to allow other users to install it. They can then reuse the work you have put in within their own code to solve similar problems.
 
-In short, packages are self-contained collections of code written by someone else to solve a particular problem. For example, packages like `dplyr` and `pandas` are essential when performing data wrangling in R and Python, respectively. They contain a myriad of functions that allows us to avoid rewriting this functionality from scratch every time. Inside these packages is a set of [modules](modules) containing relevant functions, classes and other code that someone has written. These are wrapped up into a package structure so that the programming language you use can understand, install and make available to you for import.
+In short, packages are self-contained collections of code written by someone else to solve a particular problem. For example, packages like `dplyr` and `pandas` are essential when performing data wrangling in R and Python, respectively. They contain a myriad of functions that allows us to avoid rewriting this functionality from scratch every time. Inside these packages is a set of [modules](modules) containing relevant functions, classes and other code that someone has written. These are wrapped up into a package structure so that the programming language you use can understand, install and make available the code to you for import.
 
 ```{note}
 This section will not cover the practices required to package and distribute your code as a package. However if you would like to know more please look to the [code documentation section](code_documentation.md) and seek out the packaging guides for your programming language.
@@ -341,7 +342,7 @@ Packaging code properly will involve applying many of the recommendations from t
 
 You will have to consider how to test, document and lay out your code for it to be usable and packagable. In the end, high quality packages are the cornerstone of open-source package ecosystems. However, it is not trivial to maintain and develop well-regarded open-source packages.
 
-If you feel like you are writing code that you might consider turning into a package, consult this book and strive to apply as many of the recommendations as you go. This will make the final polish and packaging much simpler, and will produce packages that are easier for third-parties to trust and use.
+If you feel like you are writing code that you might consider turning into a package, consult this book and strive to apply as many of the recommendations as you go. This will make the final polishing and packaging much simpler, and will produce packages that are easier for third-parties to trust and use.
 ```
 
 ## Notebooks
@@ -350,7 +351,7 @@ It is worth touching upon using Jupyter or other code Notebooks that allow runni
 
 Although individual notebooks could seem like a good way to modularise your analysis for distribution, for larger projects this is not always the best idea.
 
-notebooks are inherently difficult to review and audit through version control software like `git`. Simple text files like scripts can be version controlled easily as you can see which lines of text change from one version to another. notebooks store their internal workings in a much more complicated format, hence seeing the changes from one notebook to another as differences line by line is not possible in common version control tools.
+Notebooks are inherently difficult to review and audit through version control software like `git`. Simple text files like scripts can be version controlled easily as you can see which lines of text change from one version to another. Notebooks store their internal workings in a much more complicated format, hence seeing the changes from one notebook to another as differences line by line is not possible in common version control tools.
 
 Furthermore, defining and keeping functions within notebooks is prohibitive to testing. It is not simple to test individual cells of a notebook with standard external tooling.
 
@@ -432,7 +433,7 @@ my_favourite_number <- "ssh, I'm a string"
 
 Another developer, or even 'future you', would be unable to correctly interpret what these variable names to represent. Therefore, you should strive to avoid cryptic or single-letter identifiers.
 
-That said, there are situations where some seemingly cryptic identifiers make sense. Using single letters to name variables is suitable when implementing methodologies from mathematical notation. However, even in these cases you must make sure that the formulas being implemented are clear, readily available to the reader and are consistent throughout  your code. Be sure to cite the source of the mathematical formula in these cases.
+That said, there are situations where some seemingly cryptic identifiers make sense. Using single letters to name variables is suitable when implementing methodologies from mathematical notation. However, even in these cases you must make sure that the formulas being implemented are clear, readily available to the reader and are consistent throughout your code. Be sure to cite the source of the mathematical formula in these cases.
 
 In other cases, using variable names that contain a few (3 or so) informative words can drastically improve the readability of your code. How these words are separated (be it `CamelCase` or `snake_case`) will depend on your language of choice.
 
@@ -580,6 +581,7 @@ report_data = generate_report(model_results)
 ```
 
 In cases where a function responds with a Boolean (True or False) value, it is often useful to name this function in the form of a question.
+<!-- In the code examples below, would the function name doesn't clearly relate to content. Could change code to check for missing values? -->
 
 ````{tabs}
 
@@ -628,7 +630,7 @@ Method names in a class closely follow the requirements for [](naming-functions)
 
 ### Code style
 
-Programming languages can differ in a myriad of ways. One way R and Python differ, for example, is their use of indentation. Indentation is part of the well defined syntax of Python while it is not in the case of R. This does not mean that you shouldn't use indentation in R to make your code more readable. If in doubt it is often wise to consult how to use formatting to write more readable code by finding the style guidelines for your language.
+Programming languages can differ in a myriad of ways. One way R and Python differ, for example, is their use of indentation. Indentation is part of the well defined syntax of Python while it is not for R. This does not mean that you shouldn't use indentation in R to make your code more readable. If in doubt it is often wise to consult how to use formatting to write more readable code by finding the style guidelines for your language.
 
 Generally, code style guides provide a standard or convention for formatting and laying out your code. The purpose of these style guides is to increase consistency across the programming community for a given language.
 
@@ -638,7 +640,7 @@ They might include how to appropriately:
 - name your functions, variables or classes
 - separate elements of your code with whitespace
 - use indentation to make sure your code is readable
-- other useful guidance regarding formatting
+- and provide other useful guidance regarding formatting
 
 The existence of such style guides does not necessarily mean that each individual or team will apply these conventions to the letter. Organisations and developer teams often have needs that might not be addressed in a general style guidance document. After all, these documents aim to capture the needs of a diverse group of developers. Therefore, these guides are more useful as starting points in a discussion on 'how should our team be consistent internally in the way we write code?'.
 
@@ -722,7 +724,7 @@ If you're considering these tools as part of a project, see [Continuous Integrat
 
 ## Software ideas for analysts
 
-It's important to remember that when we write code for analysis, we are developing software. Over many years, software engineering teams have developed good practices for developing robust software. These practices help to make our code simple, readable and easier to maintain. Analysts using code as a means to perform analysis can benefit from at least partially applying such practices in their own codebases.
+It's important to remember that when we write code for analysis, we are developing software. Over many years, software engineering teams have developed good practices for creating robust software. These practices help to make our code simple, readable and easier to maintain. Analysts using code as a means to perform analysis can benefit from at least partially applying such practices in their own codebases.
 
 This chapter will try to condense key messages and guidelines from these practices, for use by analysts who write code. That said, reading and learning more about these practices is likely to benefit the quality of your code and is highly encouraged.
 
@@ -730,9 +732,9 @@ This chapter will try to condense key messages and guidelines from these practic
 
 The ability to convey information in a simple and clear way matters.
 
-This is particularly true when explaining concepts that are already complex. When writing code you are often trying to solve problems that are complex in nature. You should avoid introducing extra complexity to these problem, wherever possible. A good guideline to achieve this is to seek out the simplest solution wherever possible.
+This is particularly true when explaining concepts that are already complex. When writing code you are often trying to solve problems that are complex in nature. You should avoid introducing extra complexity to these problems, wherever possible. 
 
-More generally here are a few tips to make sure you keep your project nice and simple:
+Here are a few tips to make sure you keep your project nice and simple:
 
 - Solve the problem - do not get distracted and make sure you have a clear outcome in mind.
 - Try not to 'reinvent the wheel' - use existing packages when they solve the problem. They will most likely be better documented and won't need extra maintenance.
@@ -747,7 +749,7 @@ It can be tempting to try to account for every eventuality in your program, but 
 
 > You ain't gonna need it
 
-Remember that additional features will require more documentation and testing to ensure that they ae working correctly. Really consider if adding these extras will make your code more or less maintainable, user-friendly and correct. 
+Remember that additional features will require more documentation and testing to ensure that they are working correctly. Really consider if adding these extras will make your code more or less maintainable, user-friendly and correct. 
 ```
 
 Lastly, it is worth stressing that complex problems might require complex solutions. In those cases make sure that you only introduce complexity where it is needed. You should address necessary complexity with proportionate quality assurance - through documentation, testing and review. For instance, if the execution time of your code is critical, then making the code more complex to achieve a faster runtime may be an acceptable trade-off.
@@ -755,7 +757,7 @@ Lastly, it is worth stressing that complex problems might require complex soluti
 ### Don't Repeat Yourself
 
 In the section on [modular code](modular), you were encouraged to refactor your code into more self-contained components for ease of testing, reproducibility and reusability. However, it is worth stressing that 'quick and dirty' solutions often involve copy-pasted code that is functionally identical. This is expected and is natural in the initial stages of a project. Nonetheless, repetition not only wastes your time, but it also makes your code more difficult to read.
- 3*QA
+ 3*QA <!-- Not sure if this is meant to be here?-->
 Consider a script that contains three copies of a similar piece of code. If the code that is used to perform the repetitive task is found to be incorrect, or if a developer wishes to modify the task being performed by this code, they must implement a similar change in each of the three copies. If only two copies were spotted and amended, there is now a bug sleeping in the code waiting to be triggered... Moreover, anyone reviewing the code would need to check that the right logic is being used three times over.
 
 To put this in context, let us use an example where the developer wants to get the odd numbers from three different lists of numbers:
@@ -879,11 +881,11 @@ def is_odd(number):
 
 def get_odd(numbers):
     """Get only the odd numbers."""
-    return [number for number in numbers if number % 2 == 1]
+    return [number for number in numbers if is_odd(number)]
 
 def get_even(numbers):
     """Get only the even numbers."""
-    return [number for number in numbers if number % 2 == 0]
+    return [number for number in numbers if is_odd(number) == False]
 
 
 # More concise, but also more complex - not always best
@@ -987,8 +989,8 @@ if (student_count) {
 
 ````
 
-In the example above, the student count is not printed because `None` and `FALSE` evaluate to false.
-In Python and R, 0 will also evaluate to False.
+In the example above, the student count is not printed because `None` and `FALSE` evaluate to `False`.
+In Python and R, `0` will also evaluate to `False`.
 Therefore, it is unclear whether the programmer intended that the statement is printed when the count is 0.
 If a count of 0 should be printed, then this lack of specificity has created a bug.
 
@@ -1031,7 +1033,7 @@ Imagine trying to create a model of the economy, which is a complex web of inter
 
 For example, consider a class that represents a whole country (`Country`). This would represent a model that is trying to predict economic statistics for a country such as unemployment or inflation. One can imagine that this class will quickly grow into something unmanageable, as its responsibilities grow in the form of additional methods and attributes.
 
-Based on the other chapters in this guidance, you might eventually realise that you need to break this class down further. However, if you had applied the idea of single responsibility, you might have broken the `Country` class down into smaller components such as `UnemploymentModel`, `InflationModel`. These classes would be responsible for doing specific modelling, while the `Country` class might only responsible for presenting the results to, lets say, a higher level economy model that tries to model cross-country trade.
+Based on the other chapters in this guidance, you might eventually realise that you need to break this class down further. If you had applied the idea of single responsibility, you might have broken the `Country` class down into smaller components such as `UnemploymentModel`, `InflationModel`. These classes would be responsible for doing specific modelling, while the `Country` class might only responsible for presenting the results to, lets say, a higher level economy model that tries to model cross-country trade.
 
 This simplicity also increases usability, by minimising the number of parameters that each function or class might require.
 
@@ -1053,7 +1055,7 @@ In the previous economic modelling example, you might establish your concerns to
 
 - Run simulations given a description of the desired economy.
 
-  Once the model is ready, there might be a 'SimulationRunner' that takes in your model of the world economy and runs simulations. In this case, this part of your codebase will only revolve around running the actual simulations.
+  Once the model is ready, there might be a `SimulationRunner` that takes in your model of the world economy and runs simulations. In this case, this part of your codebase will only revolve around running the actual simulations.
 
 In each of these distinct sections of your codebase there will be multiple classes and functions, which should follow the single responsibility concepts outlined earlier.
 
@@ -1069,16 +1071,16 @@ Representation of concerns and responsibilities within a piece of software
 ```
 
 As such, separate sections of your software should be responsible for each of the concerns.
-Within each section of your software, distinct functions or classes should be responsible for each task that is required for that sections overall functionality.
+Within each section of your software, distinct functions or classes should be responsible for each task that is required for that section's overall functionality.
 
 ```{admonition} In the context of functions
-The previous example was heavily focused on classes and Object-Oriented Programming. The same principles apply in the world of functions. You define each concern which is addressed by a module containing functions who follow the single responsibility principle.
+The previous example was heavily focused on classes and Object-Oriented Programming. The same principles apply in the world of functions. You define each concern that is addressed by a module containing functions who follow the single responsibility principle.
 
 So the previous example could equally include:
 - An `unemployment_model` - function running the unemployment modelling.
-- An `inflation_model` - function running the unemployment modelling.
+- An `inflation_model` - function running the inflation modelling.
 
-These functions would produce data about a given country, to be stored in an object. Another function might then take this data for multiple countries and start modelling it across country boundaries.
+These functions would produce data about a given country, to be stored in an object. Another function might then take these data for multiple countries and start modelling it across country boundaries.
 
 The same core concepts still fully apply.
 ```
