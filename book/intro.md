@@ -27,22 +27,20 @@ The following structure can be used to reference the current version of the book
 
 This guidance is tailored to government analysts who would like to quality assure their code and increase the reproducibility of their analyses. We have tried to interpret the requirements of pieces of guidance (the [principles](/principles.md)) into actions and deliverables for analytical programming.
 
-However, the practices outlined in the book are general to many applications of programming, so may also be insightful for those outside of government.
-
-This book might be most useful for you if you are:
+However, the practices outlined in the book are general to many applications of programming, so may also be relevant for those outside of government. This book might be most useful for you if you are:
 - writing code to automate part of your work and would like to assure that it is working as expected
-- developing a statistical production pipeline and would like to assure that it is long term sustainable and reproducible
+- developing a statistical production pipeline and would like to assure that it is sustainable and reproducible
 - developing models and would like to assure that they are transparent and reproducible
 - developing data science techniques and would like your code to be useful to others
 - looking for a high level introduction to software engineering practices in the context of analysis and research
 
-This book can be used to guide your learning and as a reference. Each chapter describes the risks which the described practices may help to address. Therefore, you should strive to apply the most appropriate practices given the risks associated with your work.
+This book can be used to guide your learning and as a reference. Each chapter describes the risks that the described practices may help to address. Therefore, you should strive to apply the most appropriate practices given the risks associated with your work.
 
 The principles in this book are language agnostic. It does not form a comprehensive learning resource and you may often need to study further resources to implement these practices. That said, examples and useful references are provided for **Python** and **R**, as open source languages that are commonly applied across government.
 
 ## Accessibility statement
 
-This accessibility statement applies to the Quality Assurance of Code for Analysis and Research. Please not that this does not include third-party content that is referenced from this guidance.
+This accessibility statement applies to the Quality Assurance of Code for Analysis and Research. Please note that this does not include third-party content that is referenced from this guidance.
 
 The website is managed by the Best Practice and Impact division of the Office for National Statistics. We would like this guidance to be accessible for as many people as possible. This means that you should be able to:
 * change colours, contrast levels and fonts
