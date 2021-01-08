@@ -162,6 +162,9 @@ Further paragraphs come after blank lines.
 
 A concise summary of a your change is usually sufficient, but remember that is is these commit message that will be used in future to understand what changes have been made to your project. You might rely on these to identify where an error has been introduced, so it is important that you write these messages clearly and informatively.
 
+How often you commit when working on a project should depend on what benefit you would like to get from versioning your work. When reviewing code that has been version controlled, the commit history provides a chronological summary of the changes that have been made to a project. To make this audit trail useful, commits should be made whenever a discrete unit of work has been completed. When useful commit messages have been used to describe these units of work, it is easier for others to understand steps taken to develop the analysis to its current state.
+
+You should also make commits whenever you have made changes that you might wish to revisit or undo. As Git allows us to easily `revert` changes by referring to a commit's hash, you should try to ensure that each commit only contains changes to single aspect of your analysis. Consider a commit that includes changes to several files. We discover that one change in this commit has created a bug in our analysis code. We can revert the commit to remove the bug, but this also removes the other changes that were made in the same commit. As such, we'll need to invest more effort to work out which change causes the bug and selectively undo that change.
 
 ### Versioning large files
 
@@ -176,21 +179,21 @@ Despite this support for large files, we recommend that remote Git repositories 
 
 ### Releases (tagging)
 
-Regularly `commit`ing changes using Git helps us to create a thorough audit trail of changes to our project. However, there may be discrete points in the history of the project that we want to mark for easy future reference. Let's face it, hashes like `121b5b4` don't exactly roll off of the tongue.
+Regularly `commit`ing changes using Git helps us to create a thorough audit trail of changes to our project. However, there may be discrete points in the history of the project that we want to mark for easier future reference. Let's face it, commit hashes like `121b5b4` don't exactly stick in your mind.
 
-Tags can be created in Git, to reference a specific point in the projects history. A tag essentially acts as an alias for a commit hash. You might use tags, for example, to mark a particular model version or a new software version to be released. By default, tags will reference the current position in history (i.e. the latest commit or `HEAD`).
+To reference specific points in project's history, Git allows us to create "tags". These tags essentially act as an alias for a particular commit hash, allowing us to refer to it by an informative label. In analytical projects, we might use tags to mark a particular model version or an important stage of our analysis. For example, we might tag code that has been used to generate a particular output so that it can easily be accessed to reproduce that output in future. If developing a package as part of your analysis, these tags are also commonly used to indicate new package versions.
 
-An annotated tag might be created for a new software version like so:
+By default, tags will reference the current position in history (i.e. the latest commit or `HEAD`). An annotated tag might be created for a new model version like so:
 
 ```{code-block}
-git tag -a v0.2.7 -m "Release version 0.2.7"
+git tag -a v0.2.7 -m "Model version 0.2.7"
 git push origin v0.2.7
 ```
 
 You can also retrospectively tag an older commit, by providing that `commit`'s hash:
 
 ```{code-block}
-git tag -a v0.1.0 -m "Release version 0.2.7" 9fceb02
+git tag -a v0.1.0 -m "Model version 0.1.0" 9fceb02
 git push origin v0.1.0
 ```
 
@@ -208,17 +211,15 @@ git clone https://github.com/<user>/<repo>.git --branch=v0.1.0
 ```
 
 
-## Git security considerations
-
 (excluding-from-git)=
-### Avoid commiting sensitive information to Git repositories
+## Avoid commiting sensitive information to Git repositories
 
 Code itself is very rarely sensitive, so we should be open to sharing it. However, analysts may often want to use sensitive information in their analysis. This might be in the form of credentials, used to access a service, or data that contains personally identifiable information.
 
 In these cases, we need to minimise the risk of inadvertently sharing this information with our code. This subsection suggests how you might mitigate this risk in your analysis.
 
 
-#### .gitignore files
+### .gitignore files
 
 As mentioned above, you may not want to include all of the files associated with your project in a Git repository. A `.gitignore` file allows you to exclude folders or files from being tracked by Git. Within this file, you provide a list of text patterns. If a folder matches one of your `.gitignore` file patterns, none of the files or folder below that folder will be tracked. If an individual file matches one of the patterns, this file will not be tracked.
 
@@ -241,7 +242,7 @@ Please see the [Git documentation for `.gitignore`](https://git-scm.com/docs/git
 While we may not want to share files containing credentials, configuration and data, it can be useful to provide dummy examples of these files. Demonstrating the format of these files can help others to reuse your code, without sharing sensitive information.
 
 
-#### Using environmental variables
+### Using environmental variables
 
 If your code depends on credentials of some kind, these should not be explicitly written in your code. They can be stored in configuration files, which should be excluded from version control, or better still in local environment variables.
 
@@ -280,7 +281,7 @@ my_key <- Sys.getenv("SECRET_KEY")
 Note that you may need to open a new terminal to show that a variable has been removed.
 
 
-#### Excluding `.Rdata` and `.Rhistory` files
+### Excluding `.Rdata` and `.Rhistory` files
 
 R saves objects from your workspace (working environment) into an `.RData` file at the end of your session. This can save time when reloading large objects into R, when returning to a project. Depending on your settings, it may prompt you to ask if you would like to save them or it may do this automatically. If you have read sensitive information into R during the session, this information may be saved to the `.RData` file. As such, we must be careful not to include this information in commits to remote repositories.
 
@@ -293,7 +294,7 @@ In Rstudio, you can disable writing of these files via `Tools > Global options`:
 * Under History, deselect `Always save history`.
 
 
-#### Jupyter Notebooks
+### Jupyter Notebooks
 
 By default, Jupyter Notebooks save a copy of the data that is used to create cell outputs. For example, the data used to generate a chart, table or print a section of a dataframe. This can be useful for sharing your code outputs without others needing to re-execute the code cells.
 
@@ -338,6 +339,17 @@ git add --renormalize .
 This approach has been borrowed from this [blog post by Yury Zhauniarovich](https://zhauniarovich.com/post/2020/2020-10-clearing-jupyter-output-p3/).
 
 
+### Access control
+
+Access control management of your projects should ultimately be guided by your department. Note that access control should not be used instead of the good practices outlined above. It can help to limit the risk of releasing sensitive information, but we should primarily aim to use the version control tools correctly.
+
+Remote version control platforms, like GitHub, have a [visibility setting](https://docs.github.com/en/free-pro-team@latest/github/administering-a-repository/setting-repository-visibility) that represents whether the repo can be viewed publicly or only by owners of the project. We find that some analytical teams choose to develop code in the open, as per guidance from the [Government Service Manual](https://www.gov.uk/service-manual/service-standard/point-12-make-new-source-code-open). Others work in a private repositories, and then might either change to public or migrate to a fresh public repository to make the code open.
+
+Organizations provide an area for collating multiple repos that are associated with a particular team or department. Within Organizations, Teams can be also created to manage view and contribution permissions for projects within the Organization. External collaborators can also be added to projects, to allow direct contribution from those outside of the Organization.
+
+Despite the visibility status of a repo, only Organization members and collaborators may make direct contributions to the code in the repo. Others can contribute by Pull Request.
+
+Detailed setup and management of Organizations and Teams are described in the [relevant section of the GitHub Docs](https://docs.github.com/en/free-pro-team@latest/github/setting-up-and-managing-organizations-and-teams).
 
 
 ### Handling data breaches via Git
@@ -360,27 +372,11 @@ To handle a data breach, you should:
 The [Pro Git book section on rewriting history](https://git-scm.com/book/en/v2/Git-Tools-Rewriting-History) details methods for editing and deleting files from your repository's commit history. The [BFG repo-cleaner tool](https://rtyley.github.io/bfg-repo-cleaner/) can be a simpler alternative to standard Git commands.
 
 
-### Access control
-
-Some teams choose to work in the open [service manual](https://www.gov.uk/service-manual/service-standard/point-12-make-new-source-code-open))
-Others work in a private repos, then either change to public or migrate to a fresh public repository to make the code open.
-
-Note that access control should not be used instead of the good practices outlined above. It can help to limit the risk of releasing sensitive information, but we should primarily take care to use version control tools safely.
-
-Remote version control platforms, like GitHub, have a [visibility setting](https://docs.github.com/en/free-pro-team@latest/github/administering-a-repository/setting-repository-visibility) that represents whether the repo can be viewed publicly or only by owners of the project. Note that some GitHub features are limited or are not available for private repos on free GitHub accounts.
-
-Organizations provide an area for collating multiple repos that are associated with a particular team or department. Within Organizations, Teams can be also created to manage view and contribution permissions for projects within the Organization. External collaborators can also be added to projects, to allow direct contribution from those outside of the Organization.
-
-Despite the visibility status of a repo, only Organization members and collaborators may make direct contributions to the code in the repo. Others can contribute by Pull Request.
-
-Detailed setup and management of Organizations and Teams are described in the [relevant section of the GitHub Docs](https://docs.github.com/en/free-pro-team@latest/github/setting-up-and-managing-organizations-and-teams).
-
-
 ## GitHub
 
 A number of platforms extend the functionality of Git, to further improve collaborative working.
 
-Here we describe some of the beneficial features supported by GitHub, the world's leading software development platform. GitHub provides additional tools for collaborative workflows, including:
+Here we describe some of the beneficial features supported by [GitHub](https://github.com/), the world's leading software development platform. GitHub provides additional tools for collaborative workflows, including:
 * Access management for viewing and contributing
 * Issues
 * Project boards
