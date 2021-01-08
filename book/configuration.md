@@ -97,7 +97,7 @@ prediction_parameters:
 
 Configuration files that are written in other languages may need to be read using relevant libraries. The YAML example above could be read into our analysis as follows:
 
-```python
+```
 import yaml
 
 with open(r"./my_config.yaml") as file:
