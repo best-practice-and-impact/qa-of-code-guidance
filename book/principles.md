@@ -18,7 +18,7 @@ alt: Founding principles of good analysis.
 Founding principles of good analysis
 ```
 
-Reproducibility guarantees that we have done what we are claiming to have done, and that users could do it to get the same result.
+Reproducibility guarantees that we have done what we are claiming to have done, and that others can easily replicate our work.
 Auditability means that we know why we chose our analysis, and who is responsible for each part of it - including assurance.
 Assurance improves the average quality and includes the communication of that quality to users.
 
@@ -40,7 +40,7 @@ Each of these pieces of guidance advocate reproducibility as a core tenet of qua
 
 Reproducibility is the only thing that you can guarantee in your analysis.
 It is the first pillar of good analysis.
-If you can't prove that you can run the same analysis, with the same data, and obtain the same results then you are not adding valuable analysis.
+If you can't prove that you can run the same analysis, with the same data, and obtain the same results then you are not adding a valuable analysis.
 The additional assurances of peer review, rigorous testing, and validity are secondary to being able to reproduce any analysis that you carry out in a proportionate amount of time.
 
 Reproducible analysis relies on a transparent production process, so that anyone can follow your steps and understand your results.
@@ -58,13 +58,12 @@ Wherever possible, we share the code we used to produce our outputs, along with 
 
 ## Auditable
 
-If decisions are made, based on your analysis, then you must make sure that the story of that analysis is available.
-Your analysis and the evidence that you provide must be available for scrutiny and audit.
+If decisions are made, based on your analysis, then you must make sure that your analysis and the evidence that you provide must be available for scrutiny and audit.
 Auditable analysis is about being able to, at any point, answer: 
 
 * Who made each decision?
 * When was this decision made?
-* What evidence was this decision made on?
+* What evidence was this decision based on?
 
 Answering these questions gives decision makers and users greater trust in your work.
 They know the story of your analysis and why you made certain analytical choices.
@@ -117,7 +116,7 @@ Processes like this are also prone to error, because the input data and the outp
 
 More recently, the tools and techniques available to analysts have evolved. 
 Open-source tools like [Python](https://www.python.org/) and [R](https://www.r-project.org/) have become available.
-Coupled with version control and software management platforms like [Git](https://git-scm.com/) and Git-services have made it possible to develop automatic, streamlined processes, accompanied by a full audit trail.
+Coupled with version control and software management platforms like [Git](https://git-scm.com/) and Git-services these tools have made it possible to develop automatic, streamlined processes, accompanied by a full audit trail.
 
 It is essential that we have access to appropriate and up-to-date tools for our analysis.
 In a recent case, use of legacy analytical tools lead to [under-reporting of COVID-19 statistics](https://www.bbc.co.uk/news/technology-54423988).
