@@ -2,7 +2,7 @@
 
 Configuration describes how your code runs when you execute it.
 
-In analysis, we may want to run our analysis code using different inputs or parameters. And we likely want others analysts to be able to run our code on different machines, for example, to reproduce our results. This section describes how we can define analysis configuration that is easy to update and can remain separate from the logic in our analysis.
+In analysis, we may want to run our analysis code using different inputs or parameters. And we likely want other analysts to be able to run our code on different machines, for example, to reproduce our results. This section describes how we can define analysis configuration that is easy to update and can remain separate from the logic in our analysis.
 
 ## Basic configuration
 
@@ -24,14 +24,15 @@ prediction = model.predict(variables_test, constant_a=7, max_v=1000)
 prediction.to_csv("outputs/predictions.csv")
 ```
 
-Here we're reading in some data and splitting it into subsets for training and testing a model. We use one subset of variables and outcomes to train our model and then use the other variables subset to test the model. Finally, we write the model's predictions to a `.csv` file.
+Here we're reading in some data and splitting it into subsets for training and testing a model. We use one subset of variables and outcomes to train our model and then use the subset to test the model. Finally, we write the model's predictions to a `.csv` file.
 
-The file paths that are used to read and write data in our script are particular to our working environment. These files and paths may not exist on another analysts machine. As such, other analysts would need to read through the script and replace these paths in order to run our code. As we'll demonstrate below, collecting flexible parts of our code together makes it easier for others to update them.
+The file paths that are used to read and write data in our script are particular to our working environment. These files and paths may not exist on an other analyst's machine. As such, other analysts would need to read through the script and replace these paths in order to run our code. As we'll demonstrate below, collecting flexible parts of our code together makes it easier for others to update them.
 
 When splitting our data and using our model to make predictions, we've provided some parameters to the functions that we have used to perform these tasks. Eventually, we might reuse some of these parameters elsewhere in our script (e.g. the random seed) and we are likely to adjust these parameters between runs of our analysis. To make it easier to adjust these consistently throughout our script, we should store them in variables. We should also store these variables with any other parameters and options, so that it's easy to identify where they should be adjusted.
 
 Note that in this example we've tried our model prediction twice, with different parameters. We've used comments to switch between which of these lines of code runs. This practice is common, especially when we want to make a number of changes when developing how our analysis should run. However, commenting sections of code in this way makes it difficult for others to understand our code and reproduce our results. Another analyst would not be sure which set of parameters was used to produce a given set of predictions, so we should avoid this form of ambiguity. Below, we'll look at some better alternatives to storing and switching our analysis parameters.
 
+<!-- For consistency, it might be worth having an R code example as well -->
 
 ```python
 # Configuration
@@ -62,7 +63,7 @@ prediction.to_csv(output_path)
 
 Separating configuration from the rest of our code makes it easy to adjust these parameters and apply them consistently throughout the analysis script. We're able to use basic objects (like lists and dictionaries) to group related parameters. We then reference these objects in the analysis section of our script.
 
-Our configuration could be extended to include other parameters, including which variables we're selecting to train our model. However, it is important that we keep the configuration simple and easy to maintain. Before moving aspects of code to the configuration it's good to consider whether it improves your workflow. If it is something that is dependent on the computer that your using (e.g. file paths) or is likely to change between runs of your analysis, then it's a good candidate for including in your configuration.
+Our configuration could be extended to include other parameters, including which variables we're selecting to train our model. However, it is important that we keep the configuration simple and easy to maintain. Before moving aspects of code to the configuration it's good to consider whether it improves your workflow. If it is something that is dependent on the computer that you are using (e.g. file paths) or is likely to change between runs of your analysis, then it's a good candidate for including in your configuration.
 
 ## Configuration files
 
@@ -78,7 +79,7 @@ To use another code script as our configuration file, we can copy our parameter 
 
 ### Dedicated configuration files
 
-Many other file formats can be used to store configuration parameters. You may have come across data-serialisation languages (including YAML, TOML, JSON and XML), which can be used independent of your programming language.
+Many other file formats can be used to store configuration parameters. You may have come across data-serialisation languages (including YAML, TOML, JSON and XML), which can be used independently of your programming language.
 
 If we were to represent our example configuration from above in YAML, this would look like:
 
@@ -96,7 +97,7 @@ prediction_parameters:
 
 Configuration files that are written in other languages may need to be read using relevant libraries. The YAML example above could be read into our analysis as follows:
 
-```
+```python
 import yaml
 
 with open(r"./my_config.yaml") as file:
