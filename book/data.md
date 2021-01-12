@@ -153,7 +153,7 @@ An IAR may include:
 * how the information is stored and secured
 * the risk of information being lost or compromised
 
-See the GOV.UK provides [IAR templates](https://www.gov.uk/government/publications/information-asset-register) that your department might use to structure their IAR.
+GOV.UK provides [IAR templates](https://www.gov.uk/government/publications/information-asset-register) that your department might use to structure their IAR.
 
 
 ## Data versioning
@@ -214,4 +214,3 @@ Other guidance addresses:
 Analysts producing published statistics may also be interested in [Connected Open Government Statistics (COGS)](https://gss.civilservice.gov.uk/guidance/the-gss-data-project/).
 
 Guidance from the UK Data Service describes [data security considerations](https://www.ukdataservice.ac.uk/manage-data/store/security).
-
