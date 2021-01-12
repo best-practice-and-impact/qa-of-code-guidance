@@ -243,7 +243,7 @@ Ultimately for code pipelines you will need to have some way of running your cod
 
 <!-- The first sentence of the note below doesn't make sense to me. -->
 ```{note}
-Including something that is not reproducible in a script will not make it more reproducible. The script is simply a tool to run code in the same fashion across multiple runs.
+Using a script does not guarantee that your code will run reproducibly, but it does ensure that code is run in the same fashion across multiple runs.
 ```
 
 To summarise:
