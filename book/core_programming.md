@@ -757,7 +757,6 @@ Lastly, it is worth stressing that complex problems might require complex soluti
 ### Don't Repeat Yourself
 
 In the section on [modular code](modular), you were encouraged to refactor your code into more self-contained components for ease of testing, reproducibility and reusability. However, it is worth stressing that 'quick and dirty' solutions often involve copy-pasted code that is functionally identical. This is expected and is natural in the initial stages of a project. Nonetheless, repetition not only wastes your time, but it also makes your code more difficult to read.
- 3*QA <!-- Not sure if this is meant to be here?-->
 Consider a script that contains three copies of a similar piece of code. If the code that is used to perform the repetitive task is found to be incorrect, or if a developer wishes to modify the task being performed by this code, they must implement a similar change in each of the three copies. If only two copies were spotted and amended, there is now a bug sleeping in the code waiting to be triggered... Moreover, anyone reviewing the code would need to check that the right logic is being used three times over.
 
 To put this in context, let us use an example where the developer wants to get the odd numbers from three different lists of numbers:
