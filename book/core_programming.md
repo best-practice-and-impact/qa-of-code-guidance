@@ -26,7 +26,7 @@ When writing code, we should expect that at some point someone else will need to
 
 Common barriers to writing readable code include: documentation that is hard to understand or absent, walls of repetitive code that is hard to absorb, or over-complicated code where a simpler solution could be used. Avoiding these issues is essential to make sure that your analysis is reproducible, auditable and assured. Therefore it is our professional responsibility to avoid putting such barriers in place whenever possible.
 
-This chapter highlights good coding practices that will improve the readability and maintainability of your code. Here, readability refers to how easily another analyst can gain a decent understand of how your code works, within a reasonable amount of time. Maintainability refers to how easily other analysts can understanding your code well enough to modify and repair it.
+This chapter highlights good coding practices that will improve the readability and maintainability of your code. Here, readability refers to how easily another analyst can gain a decent understand of how your code works, within a reasonable amount of time. Maintainability refers to how easily other analysts can understand your code well enough to modify and repair it.
 
 (modular)=
 ## Modular code
