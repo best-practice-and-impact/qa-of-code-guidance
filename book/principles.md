@@ -58,7 +58,7 @@ Wherever possible, we share the code we used to produce our outputs, along with 
 
 ## Auditable
 
-If decisions are made, based on your analysis, then you must make sure that your analysis and the evidence that you provide must be available for scrutiny and audit.
+If decisions are made, based on your analysis, then you must make sure that your analysis and the evidence that you provide are available for scrutiny and audit.
 Auditable analysis is about being able to, at any point, answer: 
 
 * Who made each decision?
