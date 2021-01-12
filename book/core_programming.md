@@ -581,21 +581,20 @@ report_data = generate_report(model_results)
 ```
 
 In cases where a function responds with a Boolean (True or False) value, it is often useful to name this function in the form of a question.
-<!-- In the code examples below, would the function name doesn't clearly relate to content. Could change code to check for missing values? -->
 
 ````{tabs}
 
 ```{code-tab} py
-def is_clean(data):
-    if mean(data) > 0:
+def are_missing_values_present(data):
+    if None in data:
         return True
     else:
         return False
 ```
 
 ```{code-tab} r R
-is_clean <- function(data) {
-  if (mean(data) > 0){
+are_missing_values_present <- function(data) {
+  if (NA %in% data){
       TRUE
   } else {
       FALSE
