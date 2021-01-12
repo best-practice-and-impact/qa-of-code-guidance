@@ -374,33 +374,35 @@ The [Pro Git book section on rewriting history](https://git-scm.com/book/en/v2/G
 
 ## GitHub
 
-A number of platforms extend the functionality of Git, to further improve collaborative working.
+A number of version control platforms extend the functionality of Git, to further improve collaborative working.
 
-Here we describe some of the beneficial features supported by [GitHub](https://github.com/), the world's leading software development platform. GitHub provides additional tools for collaborative workflows, including:
-* Access management for viewing and contributing
-* Issues
-* Project boards
-* Forking
-* Pull requests
-* Continuous Integration
+Here we describe some of the beneficial features supported by [GitHub](https://github.com/), the world's leading software development platform. GitHub provides additional tools for better management of collaborative work. Many of these tools are also discussed in detail on the [GitHub features page](https://github.com/features/project-management/), but we will describe how they may be applied in analytical workflows here.
 
-Many of these project management tools are also discussed on the [GitHub features page](https://github.com/features/project-management/).
+### Efficient use of issues
 
-### Forking
+Issues offer a method for requesting or recording tasks, including enhancements and bug fixes in a project. They act as a collaborative todo list, which users and developers can easily contribute to.
 
-Forking a repo takes a complete copy of a project's current state, including all existing branches and tags. You make modifications on a fork, without affecting the original repo.
+The basic elements of an issue are the:
+* Title and description, provided by the person that submitted the issue
+* Labels that categorise the issue (e.g. enhancement or bug)
+* Comments section where the issue can be discussed
+* Assigned developers that are working on resolving the issue
 
-You might fork a repository when you want to:
-* Contribute to a repository as an external collaborator
-* Make changes to a project for your own use, or to maintain a copy that is independent to the original
+Within an issue's description and comments, you can reference other issues both within (e.g. `#12`) and between repos, and tag individuals to notify them of your comments (`@whatstheirface`). Similarly, issues can be linked to specific [changes that will be merged to resolve or help to solve the issue](pull-requests). This makes them useful for discussing bugs and new features within a team.
 
-Note that forks do not automatically synchronise with the original repo. This means that changes to the original repo, after you create a fork, need to be manually synchronised if you want to include them in your repo. When you would like to offer to contribute your changes to the original project (see Pull requests below), you should ensure that you synchronise your branch with any new changes first.
+When a GitHub repo is publicly visible, the issues are also open and can be contributed to by others, including users. Open source projects benefit from this transparency by providing users with a platform to highlight which changes to the project will be most beneficial for them. In turn, developers in the community can then address these issues to improve the project.
 
-See the GitHub Docs for [instructions on forking a repo and keeping your fork up to date](https://docs.github.com/en/free-pro-team@latest/github/getting-started-with-github/fork-a-repo) with the project and also [working with forks](https://docs.github.com/en/free-pro-team@latest/github/collaborating-with-issues-and-pull-requests/working-with-forks).
+Analytical projects might use issues to plan and discuss the steps involved in developing the project. Where additional help is required, collaborators might be tagged or assigned to the task. If your analysis code is widely useful, others that use your code may also suggest improvement and offer to contribute to the project via these issues.
+
+[Setting issue templates](https://docs.github.com/en/free-pro-team@latest/github/building-a-strong-community/configuring-issue-templates-for-your-repository) for your project can be an effective way of encouraging users and collaborators to use informative descriptions when creating issues. For example, a bug issue should include simple instructions to help maintainers reproduce the problem. While feature requests might include information on how the user expects the new feature to work and details what problem it will help them to overcome.
 
 
 (pull-requests)=
 ### Making the most of Pull Requests
+
+Issues provide a useful forum for proposing and discussing changes to a project. Once these changes have been implemented, Pull Requests (PRs) provide a useful interface for including those changes in the main project. They are typically used to merge a development branch onto a more stable branch in the main project. The development branch here may be within the same project, or from a separate project or [Fork](forking).
+
+Much like issues, PRs can be linked to other issues and PRs and contributors can be assigned or tagged in discussions.
 
 Pull requests support good branching. They provide an opportunity for review, before code is merged onto a more stable branch. This further reduces the likelihood of merging breaking changes onto our higher level branches.
 
@@ -410,26 +412,21 @@ Pull requests create an interface for discussion and review of your changes. Onc
 
 You can label pull requests a draft to indicate they are still a work in progress. This prevents them from being merged prematurely. This can be useful when you would like to request advice or early feedback on the changes you are making.
 
-Like issues, pull requests can have assignees that are working on them. You can also assign reviewers and tag (`@`) project collaborators as part of the discussion.
 
-### Efficient use of issues
+(forking)=
+### Forking
 
-Issues offer a method for requesting or recording tasks, including enhancements and bug fixes in your project. They act as a collaborative todo list, which users can easily contribute to.
+Forking a repository takes a complete copy of a project's current state, including its history and all existing branches and tags. Any changes made to a fork do not affect the code on the original repo, and *vice versa*.
 
-The basic elements of an issue are the:
-* Title and description, provided by the person that submitted the issue
-* Labels to categorise issues (e.g. bug)
-* Comments, where others can discuss the issue
-* Assignees that are working on resolving the issue
+You might fork a repository when you want to:
+* Contribute to a project as an external collaborator
+* Make changes to a project for your own use, or to maintain a copy that is independent to the original
 
-Issues can be linked to specific Pull Requests (below) that resolve or help to solve the issue. They can also reference other related issues (e.g. `#12`), both within the repo and between repos.
+In the first case, lets consider that you've found
 
-Issues are useful for discussing bugs and new features within the team, but can also be added by users. This is often the case with open source projects, providing users with a platform to highlight what would be most useful for them.
+Note that forks do not automatically synchronise with the original repo. This means that changes to the original repo, after you create a fork, need to be manually synchronised if you want to include them in your repo. When you would like to offer to contribute your changes to the original project (see [Pull Requests](pull-requests)), you should ensure that you synchronise your branch with any new changes first.
 
-[Setting issue templates](https://docs.github.com/en/free-pro-team@latest/github/building-a-strong-community/configuring-issue-templates-for-your-repository) for your project can be an effective way of encouraging collaborators to use informative descriptions. For example, a bug issue should include simple instructions to help maintainers reproduce the problem. While feature requests might include information on how the user expects the new feature to work or details what problem it will help them to overcome.
-
-Issues are a useful soundboard for requesting changes, but the implementation of changes are handled by Pull Requests (below).
-
+See the GitHub Docs for [instructions on forking a repo and keeping your fork up to date](https://docs.github.com/en/free-pro-team@latest/github/getting-started-with-github/fork-a-repo) with a project and also [working with forks](https://docs.github.com/en/free-pro-team@latest/github/collaborating-with-issues-and-pull-requests/working-with-forks).
 
 ### Other GitHub features
 
