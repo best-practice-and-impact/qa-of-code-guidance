@@ -39,13 +39,13 @@ When reviewing code, you can ask yourself the following questions:
 * Does the code fulfil its requirements?
 * Is the required functionality tested sufficiently?
 * How easy will it be to alter this code when requirements change? They always do.
-    * Are high level parameters kept in a dedicated configuration files? Or would somebody need to work their way through the code with lots of manual edits to reconfigure for a new run?
+    * Are high level parameters kept in dedicated configuration files? Or would somebody need to work their way through the code with lots of manual edits to reconfigure for a new run?
 * Can I generate the same outputs that the analysis claims to produce?
     * Have dependencies been sufficiently documented?
     * Is the code version, input data version and configuration recorded?
 * Is the code style consistent?
 
-In addition to asking these questions, you might formalise your review using a template. Templates are useful for setting criteria to review against. You should tailor any template to reflect the scope of your review. For example, small regular reviews may focus on smaller aspects of the analysis than a large project-wide review. The general example below is written in Markdown, so that it can be used in Git platform Pull/Merge requests:
+In addition to asking these questions, you might formalise your review using a template. Templates are useful for setting criteria to review against. You should tailor any template to reflect the scope of your review. For example, small regular reviews may focus on smaller aspects of the analysis compared to a large project-wide review. The general example below is written in Markdown, so that it can be used in Git platform Pull/Merge requests:
 
 
 ```{code-block} md
