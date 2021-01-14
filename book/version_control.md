@@ -341,15 +341,15 @@ This approach has been borrowed from this [blog post by Yury Zhauniarovich](http
 
 ### Access control
 
-Access control management of your projects should ultimately be guided by your department. Note that access control should not be used instead of the good practices outlined above. It can help to limit the risk of releasing sensitive information, but we should primarily aim to use the version control tools correctly.
-
 Remote version control platforms, like GitHub, have a [visibility setting](https://docs.github.com/en/free-pro-team@latest/github/administering-a-repository/setting-repository-visibility) that represents whether the repo can be viewed publicly or only by owners of the project. We find that some analytical teams choose to develop code in the open, as per guidance from the [Government Service Manual](https://www.gov.uk/service-manual/service-standard/point-12-make-new-source-code-open). Others work in a private repositories, and then might either change to public or migrate to a fresh public repository to make the code open.
 
-Organizations provide an area for collating multiple repos that are associated with a particular team or department. Within Organizations, Teams can be also created to manage view and contribution permissions for projects within the Organization. External collaborators can also be added to projects, to allow direct contribution from those outside of the Organization.
+```{caution}
+Access control should not be used instead of the good practices outlined above. Restricting access can help to limit the risk of releasing sensitive information, but correct use of version control tools avoids these issues.
+```
 
-Despite the visibility status of a repo, only Organization members and collaborators may make direct contributions to the code in the repo. Others can contribute by Pull Request.
+On GitHub, Organizations provide an area for collating multiple repos that are associated with a particular team or department. Within Organizations, Teams can be also created to manage view and contribution permissions for specific projects within the Organization. External collaborators can also be added to projects, to allow direct contribution from those outside of the Organization. Detailed setup and management of Organizations and Teams are described in the [relevant section of the GitHub documentation](https://docs.github.com/en/free-pro-team@latest/github/setting-up-and-managing-organizations-and-teams).
 
-Detailed setup and management of Organizations and Teams are described in the [relevant section of the GitHub Docs](https://docs.github.com/en/free-pro-team@latest/github/setting-up-and-managing-organizations-and-teams).
+Regardless of the visibility status of a repo, only Organization members and collaborators may make direct contributions to the code in the repo. Others can contribute by Forking and using Pull Requests.
 
 
 ### Handling data breaches via Git
@@ -400,17 +400,26 @@ Analytical projects might use issues to plan and discuss the steps involved in d
 (pull-requests)=
 ### Making the most of Pull Requests
 
-Issues provide a useful forum for proposing and discussing changes to a project. Once these changes have been implemented, Pull Requests (PRs) provide a useful interface for including those changes in the main project. They are typically used to merge a development branch onto a more stable branch in the main project. The development branch here may be within the same project, or from a separate project or [Fork](forking).
+Once changes have been implemented, perhaps to meet the requirements of an issue, Pull Requests (PRs) provide a useful interface for incorporating those changes into the main project. PRs are typically used to merge a development branch (the source branch) onto a more stable branch in the main project (the target branch). The development branch here may be within the same repo, a [Fork](forking) of this project or even a separate project. The initial description of the PR should include the high level changes that have been made and might point to any relevant issues that it resolves.
 
-Much like issues, PRs can be linked to other issues and PRs and contributors can be assigned or tagged in discussions.
+Much like issues, PRs can be linked to other issues and PRs, providing a coherent narrative of development work. Contributors can also be assigned or tagged in discussion, which can be useful for requesting help or review of a group of changes.
 
-Pull requests support good branching. They provide an opportunity for review, before code is merged onto a more stable branch. This further reduces the likelihood of merging breaking changes onto our higher level branches.
+Along side the main "Conversation" view of a PR, the GitHub web interface also provides a useful overview of changes that are included in the PR. You're able to view the list of individual commits that are included in the PR and, better still, you can view changes to each file in detail.
 
-A pull request lets you describe changes that you have made to a repo. The request is based on the difference between a target branch (usually `dev` or `master`) and a source branch, where you have implemented changes. The source branch can the in the same repository, or might be in a Fork (below) of the repository if you are not a member of the project.
+```{figure} ./_static/github_pr_changes.png
+---
+width: 90%
+name: github_pr_changes
+alt: The GitHub Pull Request web interface.
+---
+Changes from [an example Pull Request on the `fingertipsR` package](https://github.com/ropensci/fingertipsR/pull/91/files).
+```
 
-Pull requests create an interface for discussion and review of your changes. Once a project maintainer is happy with your changes, they can merge them onto the target branch. After merging, pull requests preserve a record of the changes and associated discussion.
+In the "Files changed" section of a PR (shown above) altered sections of files are shown before and after the changes were made, on the left and right respectively. Where changes have deleted lines of code, these lines are highlighted in red on the left panel. And changes that add lines of code to the file are shown on the right.
 
-You can label pull requests a draft to indicate they are still a work in progress. This prevents them from being merged prematurely. This can be useful when you would like to request advice or early feedback on the changes you are making.
+This highlighted summary of changes provides a useful interface for [peer review](peer_review.md). When carrying out a review using this view, comments can added to specific lines of code and these comments can include suggested changes. All comments made using this view are also shown in the main Conversation view. When completing a review, a reviewer can indicate whether the PR should be merged or additional changes are required.
+
+Once a PR has been reviewed and the reviewer is happy with the changes, the Conversation view can be used by internal developers to merge the PR changes onto the target branch.
 
 
 (forking)=
@@ -422,43 +431,36 @@ You might fork a repository when you want to:
 * Contribute to a project as an external collaborator
 * Make changes to a project for your own use, or to maintain a copy that is independent to the original
 
-In the first case, lets consider that you've found
+In the first case, lets consider that an issue describes a bug in a project's code. Looking at the code, you think that you know where the source of the bug is. You create a fork of the project and clone your copy of the project locally. Here you make commits that include changes to fix the bug and test that these changes work. Once the bug is fixed, you create a Pull Request on the original project and describe how your changes fix the bug. The source branch of this PR will be the branch that you committed to on your fork of the project, while the target will be the development or main branch of the original repo.
+
+In the second case, perhaps you want to reuse or adapt code from an existing project. If the changes that you wish to make to the code are not in line with the aim of the original project, then you might create a fork to contain these changes.
 
 Note that forks do not automatically synchronise with the original repo. This means that changes to the original repo, after you create a fork, need to be manually synchronised if you want to include them in your repo. When you would like to offer to contribute your changes to the original project (see [Pull Requests](pull-requests)), you should ensure that you synchronise your branch with any new changes first.
 
-See the GitHub Docs for [instructions on forking a repo and keeping your fork up to date](https://docs.github.com/en/free-pro-team@latest/github/getting-started-with-github/fork-a-repo) with a project and also [working with forks](https://docs.github.com/en/free-pro-team@latest/github/collaborating-with-issues-and-pull-requests/working-with-forks).
+See the GitHub documentation for [instructions on forking a repo and keeping your fork up to date](https://docs.github.com/en/free-pro-team@latest/github/getting-started-with-github/fork-a-repo) with a project and also [working with forks](https://docs.github.com/en/free-pro-team@latest/github/collaborating-with-issues-and-pull-requests/working-with-forks).
 
 ### Other GitHub features
 
+[Project boards](https://docs.github.com/en/free-pro-team@latest/github/managing-your-work-on-github/about-project-boards) offer project management features through a [Kanban-style board](https://en.wikipedia.org/wiki/Kanban_board). These boards can be used to track assignment and progress of specific tasks. This is aided by linking tasks to specific issues and pull requests.
 
-[Project boards](https://docs.github.com/en/free-pro-team@latest/github/managing-your-work-on-github/about-project-boards) offer project management features through a [Kanban board](https://en.wikipedia.org/wiki/Kanban_board) interface.
-
-These boards can be used to track assignment and progress of specific tasks. This is aided by linking tasks to specific issues and pull requests.
-
-Wiki
-GitHub Pages for public documentation (link to documentation)
+[GitHub Pages](https://pages.github.com/) offers hosting of static web content, which can be useful for project documentation. Alternatively, [project Wikis](https://docs.github.com/en/free-pro-team@latest/github/building-a-strong-community/about-wikis) can be used to document your project using [Markdown](https://www.markdownguide.org/basic-syntax/).
 
 (continuous-integration)=
 ## Continuous integration
 
-Continuous integration (CI) describes the practice of frequently committing changes to your code. This subsection relates to CI tools, which primarily help to automate routine quality assurance tasks. These include verifying that your code successfully builds or installs and that your code tests run successfully. As the execution environment is defined in the CI workflow configuration, running of tests in this way should be reproducible.
+Continuous integration (CI) describes the practice of frequently committing changes to your code. This subsection relates to CI tools, which primarily help to automate routine quality assurance tasks. These include verifying that your code successfully builds or installs and that your [code tests](testing_code.md) run successfully. The execution environment for CI is defined in the CI workflow configuration, which improves reproducibility when running tests.
 
-Automation of routine tasks in this way reduces the effort required to merge changes onto the existing code base. This encourages frequent merging of small changes. As such, conflicts between multiple contributions should be minimal and that review of these changes is simpler.
+Automation of routine tasks in this way reduces the effort required to merge changes onto the existing code base. This supports frequent commiting and merging of changes. As such, conflicts between multiple contributions should be minimal and that review of these changes simpler.
 
 CI is often linked to:
 * Continuous delivery - ensuring that your code is fit for use after each integration
 * Continuous deployment - automatically deploying working code into production
 
-GitHub provides a CI service via [GitHub Actions](https://github.com/features/actions). However, many other CI tools can be integrated with version control platforms, including GitHub. Other commonly used tools/services include:
-* Jenkins
-* Travis
-* CircleCI
-* AppVeyor
-
+GitHub provides a CI service via [GitHub Actions](https://github.com/features/actions). However, many other CI tools can be integrated with version control platforms, including Travis, Jenkins and CircleCI.
 
 ### Testing example
 
-Below is an example configuration file, for use with GitHub actions. The `YAML` file, which is used here, is common for CI tools. Other CI tools may use different file types, but these likely have a similar overall structure.
+Below is an example configuration file, for use with GitHub actions. The `YAML` file format, shown below, is commonly used to configure CI tools. Other CI tools may use different file types, but with a similar overall structure.
 
 ```
 name: Test python package
@@ -562,10 +564,9 @@ In the second job, the book (including the new changes) is deployed to the site 
 You might use a similar approach to this to deploy your code's HTML documentation.
 
 
-### Complex example
+### Comprehensive example
 
-You can see a detailed example of CI in practice in the `jupyter-book` project.
-A recent version of the [`jupyter-book` CI workflow](https://github.com/executablebooks/jupyter-book/blob/6fb0cbe4abb5bc29e9081afbe24f71d864b40475/.github/workflows/tests.yml) includes:
+You can see a detailed example of CI in practice in the `jupyter-book` project. A recent version of the [`jupyter-book` CI workflow](https://github.com/executablebooks/jupyter-book/blob/6fb0cbe4abb5bc29e9081afbe24f71d864b40475/.github/workflows/tests.yml) includes:
 * Checking code against style guidelines, using [pre-commit](https://pre-commit.com/)
 * Running code tests over
   * a range of Python versions
