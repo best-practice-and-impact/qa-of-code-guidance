@@ -97,7 +97,7 @@ Configuration files that are written in other languages may need to be read usin
 
 ````{tabs}
 
-```py
+```{code-tab} py
 import yaml
 
 with open(r"./my_config.yaml") as file:
@@ -107,10 +107,11 @@ data = read_csv(config$input_path)
 ...
 ```
 
-```r R
+```{code-tab} r R
 config <- yaml::yaml.load_file(config_path)
 
 data <- read.csv(config_path)
+...
 ```
 
 ````
@@ -126,7 +127,7 @@ To overcome this, we can adjust our analysis script to take the configuration fi
 
 ````{tabs}
 
-```py
+```{code-tab} py
 import sys
 import yaml
 
@@ -148,6 +149,7 @@ if (length(args) < 1) {
 
 config_path = args[1]
 config <- yaml::yaml.load_file(config_path)
+...
 ```
 
 ````
