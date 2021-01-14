@@ -32,8 +32,6 @@ When splitting our data and using our model to make predictions, we've provided 
 
 Note that in this example we've tried our model prediction twice, with different parameters. We've used comments to switch between which of these lines of code runs. This practice is common, especially when we want to make a number of changes when developing how our analysis should run. However, commenting sections of code in this way makes it difficult for others to understand our code and reproduce our results. Another analyst would not be sure which set of parameters was used to produce a given set of predictions, so we should avoid this form of ambiguity. Below, we'll look at some better alternatives to storing and switching our analysis parameters.
 
-<!-- For consistency, it might be worth having an R code example as well -->
-
 ```python
 # Configuration
 input_path = "C:/a/very/specific/path/to/input_data.csv"
@@ -97,17 +95,122 @@ prediction_parameters:
 
 Configuration files that are written in other languages may need to be read using relevant libraries. The YAML example above could be read into our analysis as follows:
 
-```
+````{tabs}
+
+```py
 import yaml
 
 with open(r"./my_config.yaml") as file:
     config = yaml.load(file)
 
-config
-
-# Analysis
 data = read_csv(config$input_path)
 ...
 ```
 
+```r R
+config <- yaml::yaml.load_file(config_path)
+
+data <- read.csv(config_path)
+```
+
+````
+
 Configuration file formats like YAML and TOML are compact and human-readable. This makes them easy to interpret and update, even without knowledge of the underlying code used in the analysis. Reading these files in produces a single object containing all of the `key:value` pairs defined in our configuration file. In our analysis, we can then select our configuration parameters using their keys.
+
+
+## Configuration files as arguments
+
+In the previous example we have stored our configuration options in a separate file and referenced this in our analysis script. Although this allows us to separate our configuration from the main codebase, we have used a hard-coded path to the configuration file. This is not ideal, as for the code to be run on another machine the configuration file must be saved on the same path. Furthermore, if we want to switch the configuration file that the analysis uses we must change this path or replace the configuration file at the specified path.
+
+To overcome this, we can adjust our analysis script to take the configuration file path as an argument when the analysis script is run. This can be achieved in a number of ways, but we'll discuss a minimal example here:
+
+````{tabs}
+
+```py
+import sys
+import yaml
+
+if sys.argv < 2:
+    # The Python script name is counted as the first argument
+    raise ValueError("Configuration file must be passed as an argument.")
+
+config_path = sys.argv[1]
+with open(config_path) as file:
+    config = yaml.load(file)
+...
+```
+
+```{code-tab} r R
+args <- commandArgs()
+if (length(args) < 1) {
+  stop("Configuration file must be passed as an argument.")
+}
+
+config_path = args[1]
+config <- yaml::yaml.load_file(config_path)
+```
+
+````
+
+When executing the analysis file above, we pass the path to our configuration file after calling the script. If our script was named 'analysis_script', it would be called from the command line as:
+
+````{tabs}
+
+```{code-tab} sh Python
+python analysis_script.py /path/to/my_configuration.yaml
+```
+
+```{code-tab} sh R
+Rscript analysis_script.R /path/to/my_configuration.yaml
+```
+
+````
+
+If we now want to run our analysis with a different configuration we can simple pass another configuration file to the script. This means that we don't need to change our code to account for changes to the configuration.
+
+```{note}
+It is possible to pass configuration options directly as arguments in this way, instead of referencing a configuration file. However, use of configuration files should be preferred as they allow us to document which configuration has been used to produce our analysis outputs, for reproducibility.
+```
+
+(environmental-variables)=
+## Using environmental variables
+
+Environment variables are variables that are available in a particular environment. In most analysis contexts, our environment is the user environment that we are running our code from. This might be your local machine or dedicated analysis platform.
+
+If your code depends on credentials of some kind, these must not be written in your code. Passwords and keys could be stored in configuration files, but there is a risk that these files may be included in [version control](version_control.md). To avoid this risk, it is best to store this information in local environment variables.
+
+Environmental variables can also be useful for storing other environment-dependent variables. For example, the location of a database or a software dependency. This might be preferred over a configuration file if very few other options are required by the code.
+
+In Unix systems (e.g. Linux and Mac), environment variables can be set in the terminal using `export` and deleted using `unset`:
+
+```
+export SECRET_KEY="mysupersecretpassword"
+unset SECRET_KEY
+```
+
+In Windows, the equivalent commands to these are:
+
+```
+setx SECRET_KEY "mysupersecretpassword"
+reg delete HKCU\Environment /F /V SECRET_KEY
+```
+
+Once stored in environmental variables, these variables will remain available in your environment until they are deleted.
+
+You can access this variable in your code like so:
+
+````{tabs}
+
+```{code-tab} py
+import os
+
+my_key = os.environ.get("SECRET_KEY")
+```
+
+```{code-tab} r R
+my_key <- Sys.getenv("SECRET_KEY")
+```
+
+````
+
+It is then safer for this code to be shared with others, as it is not possible to acquire your credentials without access to your environment.

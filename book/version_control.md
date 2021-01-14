@@ -2,6 +2,14 @@
 
 Version control is managing changes to your analysis over time. In this chapter, we primarily discuss the benefits of using [the Git version control system](https://git-scm.com/) .
 
+```{admonition} Pre-requisites
+:class: admonition-learning
+
+To get the most benefit from this section, you should have a basic understanding of how to use Git. Many of the examples used in this section refer to the command-line interface for Git, so general command-line knowledge may also help. 
+
+You can find links to relevant training in the [](learning.md) section of the book.
+```
+
 ## Why version control?
 
 As we discussed in [](principles.md), an audit trail is essential for assuring quality analysis. It's important for us to be able to answer the following questions about our analysis:
@@ -214,10 +222,11 @@ git clone https://github.com/<user>/<repo>.git --branch=v0.1.0
 (excluding-from-git)=
 ## Avoid commiting sensitive information to Git repositories
 
-Code itself is very rarely sensitive, so we should be open to sharing it. However, analysts may often want to use sensitive information in their analysis. This might be in the form of credentials, used to access a service, or data that contains personally identifiable information.
+Code itself is very rarely sensitive, so we should be open to sharing it. However, analysts may be required to use sensitive information in their analysis. This might be in the form of credentials, used to access a service, or data that contains personally identifiable information.
 
 In these cases, we need to minimise the risk of inadvertently sharing this information with our code. This subsection suggests how you might mitigate this risk in your analysis.
 
+In the case of passwords or credentials that are used in your code, you should ensure that these are stored in [environmental variables](environmental-variables) and are not written directly into code. This includes in the early stages of development, as your version control history will retain copies of these.
 
 ### .gitignore files
 
@@ -241,46 +250,6 @@ Files that are already being tracked by Git will not be excluded when you add ne
 Please see the [Git documentation for `.gitignore`](https://git-scm.com/docs/gitignore) for more details.
 
 While we may not want to share files containing credentials, configuration and data, it can be useful to provide dummy examples of these files. Demonstrating the format of these files can help others to reuse your code, without sharing sensitive information.
-
-
-### Using environmental variables
-
-If your code depends on credentials of some kind, these should not be explicitly written in your code. They can be stored in configuration files, which should be excluded from version control, or better still in local environment variables.
-
-Environment variables are variables which are available in a particular environment. In this context, our environment is the user environment that we are running our code from.
-
-In Unix systems (e.g. Linux and Mac), environment variables can be set in the terminal using `export` and deleted using `unset`:
-
-```
-export SECRET_KEY="mysupersecretpassword"
-unset SECRET_KEY
-```
-
-In Windows, the equivalent to this is:
-
-```
-setx SECRET_KEY "mysupersecretpassword"
-reg delete HKCU\Environment /F /V SECRET_KEY
-```
-
-Once stored in environmental variables, these variables will remain available on your machine until they are removed. You can access this variable in your code like so:
-
-````{tabs}
-
-```{code-tab} py
-import os
-
-my_key = os.environ.get("SECRET_KEY")
-```
-
-```{code-tab} r R
-my_key <- Sys.getenv("SECRET_KEY")
-```
-
-````
-
-Note that you may need to open a new terminal to show that a variable has been removed.
-
 
 ### Excluding `.Rdata` and `.Rhistory` files
 
