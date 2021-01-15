@@ -174,14 +174,14 @@ If we now want to run our analysis with a different configuration we can simple 
 It is possible to pass configuration options directly as arguments in this way, instead of referencing a configuration file. However, use of configuration files should be preferred as they allow us to document which configuration has been used to produce our analysis outputs, for reproducibility.
 ```
 
-(environmental-variables)=
-## Using environmental variables
+(environment-variables)=
+## Configuring secrets as environment variables
 
 Environment variables are variables that are available in a particular environment. In most analysis contexts, our environment is the user environment that we are running our code from. This might be your local machine or dedicated analysis platform.
 
 If your code depends on credentials of some kind, these must not be written in your code. Passwords and keys could be stored in configuration files, but there is a risk that these files may be included in [version control](version_control.md). To avoid this risk, it is best to store this information in local environment variables.
 
-Environmental variables can also be useful for storing other environment-dependent variables. For example, the location of a database or a software dependency. This might be preferred over a configuration file if very few other options are required by the code.
+Environment variables can also be useful for storing other environment-dependent variables. For example, the location of a database or a software dependency. This might be preferred over a configuration file if very few other options are required by the code.
 
 In Unix systems (e.g. Linux and Mac), environment variables can be set in the terminal using `export` and deleted using `unset`:
 
@@ -197,7 +197,7 @@ setx SECRET_KEY "mysupersecretpassword"
 reg delete HKCU\Environment /F /V SECRET_KEY
 ```
 
-Once stored in environmental variables, these variables will remain available in your environment until they are deleted.
+Once stored in environment variables, these variables will remain available in your environment until they are deleted.
 
 You can access this variable in your code like so:
 

@@ -226,7 +226,7 @@ Code itself is very rarely sensitive, so we should be open to sharing it. Howeve
 
 In these cases, we need to minimise the risk of inadvertently sharing this information with our code. This subsection suggests how you might mitigate this risk in your analysis.
 
-In the case of passwords or credentials that are used in your code, you should ensure that these are stored in [environmental variables](environmental-variables) and are not written directly into code. This includes in the early stages of development, as your version control history will retain copies of these.
+In the case of passwords or credentials that are used in your code, you should ensure that these are stored in [environment variables](environment-variables) and are not written directly into code. This includes in the early stages of development, as your version control history will retain copies of these.
 
 ### .gitignore files
 
