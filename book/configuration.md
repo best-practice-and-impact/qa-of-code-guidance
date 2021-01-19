@@ -97,7 +97,7 @@ Configuration files that are written in other languages may need to be read usin
 
 ````{tabs}
 
-```{code-tab} py
+```{code-tab} python
 import yaml
 
 with open(r"./my_config.yaml") as file:
@@ -127,7 +127,7 @@ To overcome this, we can adjust our analysis script to take the configuration fi
 
 ````{tabs}
 
-```{code-tab} py
+```{code-tab} python
 import sys
 import yaml
 
@@ -203,7 +203,7 @@ You can access this variable in your code like so:
 
 ````{tabs}
 
-```{code-tab} py
+```{code-tab} python
 import os
 
 my_key = os.environ.get("SECRET_KEY")
