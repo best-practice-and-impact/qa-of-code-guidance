@@ -54,6 +54,8 @@ See [](excluding-from-git) for details on how to mitigate the risk of including 
 
 You might include example (configuration)[configuration.md] files, or documentation describing how configuration is applied. However, the exact configuration for a particular run of your code should be recorded by logging for reproducibility purposes.
 
+You might also want to include example (configuration)[configuration.md] files, to help users trying to run your code understand what parameters need to be set. However, note that sometimes configuration files contain sensitive data or credentials, which should not be commited to version control. In this case, example configuration files should contain clear dummy values that are indicative of the expected values to be filled in.
+
 The data we use for analysis is often unreleased or sensitive. Unpublished, sensitive or disclosive data should never be shared in a code repository. As a rule of thumb, only small dummy/example datasets should be included. It is still important to version the data that we use for our analyses, but this should be done independently to our code.
 
 
