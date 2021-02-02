@@ -52,11 +52,9 @@ You should **not** include the following in your code repository:
 
 See [](excluding-from-git) for details on how to mitigate the risk of including sensitive information in a Git repository.
 
-You might include example (configuration)[configuration.md] files, or documentation describing how configuration is applied. However, the exact configuration for a particular run of your code should be recorded by logging for reproducibility purposes.
-
 You might also want to include example (configuration)[configuration.md] files, to help users trying to run your code understand what parameters need to be set. However, note that sometimes configuration files contain sensitive data or credentials, which should not be commited to version control. In this case, example configuration files should contain clear dummy values that are indicative of the expected values to be filled in.
 
-The data we use for analysis is often unreleased or sensitive. Unpublished, sensitive or disclosive data should never be shared in a code repository. As a rule of thumb, only small dummy/example datasets should be included. It is still important to version the data that we use for our analyses, but this should be done independently to our code.
+It is again worth stressing the importance of not committing sensitive, unpublished or disclosive data to your Git history. If you would like to include an example for end-users, a minimal dummy dataset can be committed to the repository. However, dummy datasets following the same layout can disclose the types of variables in the real data. As such, you should consider the inclusion of this data with caution, particularly for repositories intended to be hosted publicly.  
 
 
 ## Git
@@ -65,86 +63,13 @@ Git is a distributed version control system. This means that all users have acce
 
 The following sections describe useful concepts for using Git to version control your analysis. We use examples of Git commands throughout, but do not provide detailed descriptions of Git usage. If you are not familiar with using command line tools, or Git specifically, you should first look into [introductory training](git-learning).
 
-
-### Appropriate use of branching
-
-Branches are independent copies of a project's history, copied from a parent branch at a specific point in its history. A new branch is typically created to make a change to your code, which might be building a new feature or fixing a bug in your analysis. Multiple branches can be created from a single parent branch when multiple changes are being worked on independently. This is especially useful when when multiple analysts are working collaboratively and are making changes in parallel.
-
-Once changes have been implemented and sufficiently quality assured (think documentation and testing), the branch containing the changes can be merged onto another branch. The target branch for this merging is typically the parent branch, which the branch was created from. During merging any overlapping or "conflicting" changes between the current and target branches are resolved.
-
-It is important to note that your approach to branching within a project should be proportional to number of collaborators and the complexity of the development work. For example, if working alone on a project you might only be working a single development branch at any moment in time, or might choose to track all changes on a single `main` branch. The `main` or `master` branch is the default highest level branch in a Git repository.
-
-```{figure} ./_static/git_main.png
----
-width: 70%
-name: git_master
-alt: Commits along a single "main" Git branch.
----
-Commits along a single "main" Git branch.
-```
-
-More complex projects may warrant using branching. When using branches, the `main` branch should be considered as the most "stable" branch in the repository - meaning that the code on this branch builds successfully and executes as expected. When making changes to our code, these changes may initially be less stable or reliable. As such, we make these changes on a new branch so that the code on our `main` branch is unaffected. As the changes to our code are refined, it becomes safer to merge these changes onto a higher level branch such as `main`. For example, when the code has been reviewed and suitably tested. You should aim to only merge onto a more stable branch when you don't expect it to break the working code on the target branch.
-
-```{figure} ./_static/git_feature.png
----
-width: 70%
-name: git_feature
-alt: Creating a feature branch from a main branch.
----
-Working on changes on a single `feature` branch.
-```
-
-Here we show a single `feature` branch being created from the `main` branch. The work is initially quite experimental, but is refined over a few commits. The complete, working feature is finally merged back onto the `main` branch.
-
-Many small scale projects iteratively work on individual feature or development branches in this way. The [GitHub flow branching strategy](https://guides.github.com/introduction/flow/) uses this approach in combination with [Pull Requests](pull-requests), to incorporate peer review into the development workflow.
-
-
-```{figure} ./_static/git_develop.png
----
-width: 90%
-name: git_develop
-alt: Iteratively creating and merging a develop branch from a main branch.
----
-Iteratively working on a `develop` branch.
-```
-
-We can create multiple branches from our `main` branch at any point. We might do this when multiple features are being developed in parallel, or perhaps when multiple analysts wish to make changes to the same piece of code independently.
-
-```{figure} ./_static/git_multiple_features.png
----
-width: 90%
-name: git_multiple_features
-alt: Two features branches created from a single main branch.
----
-Working on multiple parallel branches.
-```
-
-Here we create two feature branches from `main`. Work on each feature is carried out independently of the other feature and can be merged onto `main` once it is complete. If changes from separate branches affect the same files, merging these branches to `main` may lead to merge conflicts. In these cases you should ensure that you resolve the conflicts to keep the desired overall change.
-
-In addition to having multiple branches from our `main` branch, we can also create deeper branches from our other branches. You might create additional sub-branches when the development of a feature involves multiple sub-tasks, or when a problem needs to be fixed during development of a feature. Deeper branching usually reflects work that is less stable and more exploratory or experimental.
-
-```{figure} ./_static/git_deeper_branching.png
----
-width: 90%
-name: git_deeper_branching
-alt: A sub branch being created from a feature branch.
----
-Using deeper branching to manage sub-tasks.
-```
-
-In this example, we have created a `feature` branch. Early in development of the feature we want to fix a bug that has been created, but this work can be carried out independently to the remaining development of the feature. As such, we create another, deeper branch to carry out the bug fix. Once the bug is fixed, we merge the `bug-fix` onto our `feature` branch. And finally, the finished `feature` can be merged back onto `main`.
-
-The [Git flow branching strategy](https://nvie.com/posts/a-successful-git-branching-model/) describes an alternative to progressively merging our changes onto `main`. Development work is instead branched from a `develop` branch. Merges from `develop` onto the `main` branch are only used to release a new version of the code. This approach can be useful when code from the `main` branch is deployed directly into production, however, analysts should opt to use the most simple and beneficial approach to branching depending on their project.
-
-```{note}
-Although we have used very simple branch names in the examples above, it's important that you use informative names for your branches in practice. If using an issue tracker (e.g. GitHub Issues or Jira), it can be useful to include the issue number in branch names (e.g. `#155-fix-index-aggregation`). This makes it easy to trace the branch back to the associated issue or task. Otherwise, aim to use meaningful names that describe the feature or bug that the changes will be focussed on. 
-```
-
 ### Commit standards
 
 Commits are collections of changes to one or more files in a repository. Every commit is attributed to the author of the changes, providing an audit trail. Each commit has a unique hash - or identifier - associated with it, which has a long (e.g. `121b5b4f18231e4ee32c9c61f6754429f9572743`) and short version (e.g. `121b5b4`). These hashes allow us to refer to specific changes, but each commit also has an associated message that is used to describe the changes.
 
-When adding changes to be included in a commit, you should preferentially add individual files or directories. For example, using `git add src/my_file.txt` rather than a catch-all like `git add .`. This specificity ensures that only intended changes are included, reducing the likelihood of including unrelated changes or files that should not be versioned. Using `git status` after adding changes can help to confirm that only the desired changes are included.
+```note
+When adding changes to be included in a commit, you should preferentially add individual files or directories. For example, using `git add src/my_file.txt` rather than a catch-all like `git add .`. This specificity ensures that only intended changes are included, reducing the likelihood of including unrelated changes or files that should not be versioned (when they are not included in `.gitignore`). Using `git status` after adding changes can help to confirm that only the desired changes are included.
+```
 
 Most commit messages are short and informative, but in some cases you may want to provide more detail. Common standards follow this model commit message from ["A note about Git commit messages"](https://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html):
 
@@ -178,6 +103,84 @@ How often you commit when working on a project should depend on what benefit you
 
 You should also make commits whenever you have made changes that you might wish to revisit or undo. As Git allows us to easily `revert` changes by referring to a commit's hash, you should try to ensure that each commit only contains changes to single aspect of your analysis. Consider a commit that includes changes to several files. We discover that one change in this commit has created a bug in our analysis code. We can revert the commit to remove the bug, but this also removes the other changes that were made in the same commit. As such, we'll need to invest more effort to work out which change causes the bug and selectively undo that change.
 
+### Appropriate use of branching
+
+Branches are independent copies of a project's history, copied from a parent branch at a specific point in its history. A new branch is typically created to make a change to your code, which might be building a new feature or fixing a bug in your analysis. Multiple branches can be created from a single parent branch when multiple changes are being worked on independently. This is especially useful when when multiple analysts are working collaboratively and are making changes in parallel.
+
+Once changes have been implemented and sufficiently quality assured (think documentation and testing), the branch containing the changes can be merged onto another branch. The target branch for this merging is typically the parent branch, which the branch was branched from. Complete changes should eventually be merged onto the `main` branch, which is the public-facing branch that is ready for use. During merging any overlapping or 'conflicting' changes between the current and target branches must be resolved.
+
+It is important to note that your approach to branching within a project should be proportional to number of collaborators and the complexity of the development work. For example, if working alone on a project you might only be working a single development branch at any moment in time, or might choose to track all changes on a single `main` branch. The `main` or `master` branch is the default highest level branch in a Git repository.
+
+```{figure} ./_static/git_main.png
+---
+width: 70%
+name: git_master
+alt: Commits along a single "main" Git branch.
+---
+Commits along a single "main" Git branch.
+```
+
+More complex projects may warrant using branching. When using branches, the `main` branch should be considered as the most 'stable' branch in the repository - meaning that the code on this branch builds successfully and executes as expected. When making changes to code, changes may initially be less stable or reliable. As such, you should make these changes on a new branch so that the working code on the `main` branch is unaffected. As the changes to the code are refined, it becomes safer to merge these changes onto a higher level branch such as `main`. For example, when the code has been reviewed and suitably tested. You should aim to only merge onto a more stable branch when you don't expect it to break the working code on the target branch.
+
+```{figure} ./_static/git_feature.png
+---
+width: 70%
+name: git_feature
+alt: Creating a feature branch from a main branch.
+---
+Working on changes on a single `feature` branch.
+```
+
+Here we show a single `feature` branch being created from the `main` branch. Changes are initially quite experimental, but are refined over a few commits. Finally, the complete, working feature is merged back onto the `main` branch.
+
+Many small scale projects iteratively work on individual feature or development branches in this way. The [GitHub flow branching strategy](https://guides.github.com/introduction/flow/) uses this approach in combination with [Pull Requests](pull-requests), to incorporate peer review into the development workflow.
+
+
+```{figure} ./_static/git_develop.png
+---
+width: 90%
+name: git_develop
+alt: Iteratively creating and merging a develop branch from a main branch.
+---
+Iteratively working on a `develop` branch.
+```
+
+We can create multiple branches from our `main` branch at any point. We might do this when multiple features are being developed in parallel, or perhaps when multiple analysts wish to make changes to the same piece of code independently.
+
+```{figure} ./_static/git_multiple_features.png
+---
+width: 90%
+name: git_multiple_features
+alt: Two features branches created from a single main branch.
+---
+Working on multiple parallel branches.
+```
+
+Here we create two feature branches from `main`. Work on each feature is carried out independently of the other feature and can be merged onto `main` once it is complete. If changes from separate branches affect the same files, merging these branches to `main` may lead to merge conflicts. In these cases you should ensure that you resolve the conflicts to keep the desired overall change.
+
+```note
+If you are able to break up your work into independent features that are not expected to affect the same files, you should do this. This helps to avoid conflicts in the merging process that need to be resolved manually.
+```
+
+In addition to having multiple branches from our `main` branch, we can also create deeper branches from our other branches. You might create additional sub-branches when the development of a feature involves multiple sub-tasks, or when a problem needs to be fixed during development of a feature. Deeper branching usually reflects work that is less stable and more exploratory or experimental.
+
+```{figure} ./_static/git_deeper_branching.png
+---
+width: 90%
+name: git_deeper_branching
+alt: A sub branch being created from a feature branch.
+---
+Using deeper branching to manage sub-tasks.
+```
+
+In this example, we have created a `feature` branch. Early in development of the feature we want to fix a bug that has been created, but this work can be carried out independently to the remaining development of the feature. As such, we create another, deeper branch to carry out the bug fix. Once the bug is fixed, we merge the `bug-fix` onto our `feature` branch. And finally, the finished `feature` can be merged back onto `main`.
+
+The [Git flow branching strategy](https://nvie.com/posts/a-successful-git-branching-model/) describes an alternative to progressively merging our changes onto `main`. Development work is instead branched from a `develop` branch. Merges from `develop` onto the `main` branch are only used to release a new version of the code. This approach can be useful when code from the `main` branch is deployed directly into production, however, analysts should opt to use the most simple and beneficial approach to branching depending on their project.
+
+```{note}
+Although we have used very simple branch names in the examples above, it's important that you use informative names for your branches in practice. If using an [issue tracker](issue) (e.g. GitHub Issues or Jira), it can be useful to include the issue number in branch names (e.g. `#155-fix-index-aggregation`). This makes it easy to trace the branch back to the associated issue or task. Otherwise, aim to use meaningful names that describe the feature or bug that the changes will be focussed on. 
+```
+
 ### Versioning large files
 
 When versioning your repository, Git stores compressed copies of all previous versions of each file. Despite the file compression, this means that versioning very large or binary files quickly increase the size of your repository's history, especially if there are multiple versions of them. The size of your Git history determines how long it takes to `clone` or `pull` and `push` changes to and from your remote repository. This includes when a continuous integration platform downloads your repo to run tests and other checks. Therefore, storing large files in Git typically slows down your development workflow.
@@ -186,12 +189,12 @@ When versioning your repository, Git stores compressed copies of all previous ve
 
 Other tools, including [git-annex](https://git-annex.branchable.com/) can be used for a similar purpose.
 
-Despite this support for large files, we recommend that remote Git repositories are not used to store data. Versioning of your data could instead be handled independently to your code; the version of your code should not be influenced directly by changes in the data and vice versa. This separation can be achieved using a tool like [DVC](https://dvc.org/), which allows you to specify where data versions are store (locally or on the cloud).
+Despite this support for large files, we recommend that remote Git repositories are not used to store data. Versioning of your data could instead be handled independently to your code; the version of your code should not be influenced directly by changes in the data and vice versa. This separation can be achieved using a tool like [DVC](https://dvc.org/), which allows you to specify where data versions are store (locally or on the cloud). Alternative, third party storage (e.g. cloud-based 'buckets' or databases) can provide easy data storage with varying levels of version control capability.
 
 
 ### Releases (tagging)
 
-Regularly `commit`ing changes using Git helps us to create a thorough audit trail of changes to our project. However, there may be discrete points in the history of the project that we want to mark for easier future reference. Let's face it, commit hashes like `121b5b4` don't exactly stick in your mind.
+Regularly `commit`ing changes using Git helps us to create a thorough audit trail of changes to our project. However, there may be discrete points in the history of the project that we want to mark for easier future reference. This is incredibly useful, commit hashes like `121b5b4` serve as really poor identifiers for human users.
 
 To reference specific points in project's history, Git allows us to create "tags". These tags essentially act as an alias for a particular commit hash, allowing us to refer to it by an informative label. In analytical projects, we might use tags to mark a particular model version or an important stage of our analysis. For example, we might tag code that has been used to generate a particular output so that it can easily be accessed to reproduce that output in future. If developing a package as part of your analysis, these tags are also commonly used to indicate new package versions.
 
@@ -341,7 +344,7 @@ To handle a data breach, you should:
 
 1. Prevent further access to the information.
    * Restrict access of the repository to only those who should have access to the information. For example, make a public repository private.
-   * Remove the offending files from the **commit history** of the repository. Note that commiting the deletion of the information alone will not suffice.
+   * Remove the offending files from the **commit history** of the repository.
    * If credentials (passwords or keys) have been revealed, you should change these credentials.
    * Ask anyone that you know has access to the repository to delete their local copy and re-clone the cleaned remote repository.
 2. Report the incident.
@@ -350,8 +353,12 @@ To handle a data breach, you should:
    * Discuss the breach with the Data Protection Officer in your department. They should be able to advise you on the steps you should take as well, according to your departments data security policy.
    * If the breach includes pre-publication statistics, you must also report the breach to the [Office for Statistics Regulation](https://osr.statisticsauthority.gov.uk/).
 
-The [Pro Git book section on rewriting history](https://git-scm.com/book/en/v2/Git-Tools-Rewriting-History) details methods for editing and deleting files from your repository's commit history. The [BFG repo-cleaner tool](https://rtyley.github.io/bfg-repo-cleaner/) can be a simpler alternative to standard Git commands.
 
+```warning
+It's important to stress that deleting a sensitive file and commiting this change is not sufficient. All previous versions of files are retained in a repository's history, so sensitive parts of the file must be entirely removed from the history.
+
+The [Pro Git book section on rewriting history](https://git-scm.com/book/en/v2/Git-Tools-Rewriting-History) details methods for editing and deleting files from your repository's commit history. The [BFG repo-cleaner tool](https://rtyley.github.io/bfg-repo-cleaner/) can be a simpler alternative to standard Git commands, but may not be available in your department.
+```
 
 ## GitHub
 
@@ -359,9 +366,10 @@ A number of version control platforms extend the functionality of Git, to furthe
 
 Here we describe some of the beneficial features supported by [GitHub](https://github.com/), the world's leading software development platform. GitHub provides additional tools for better management of collaborative work. Many of these tools are also discussed in detail on the [GitHub features page](https://github.com/features/project-management/), but we will describe how they may be applied in analytical workflows here.
 
+(issues)=
 ### Efficient use of issues
 
-Issues offer a method for requesting or recording tasks, including enhancements and bug fixes in a project. They act as a collaborative todo list, which users and developers can easily contribute to.
+Issues offer a method for requesting or recording tasks, including enhancements and bug fixes in a project. They act as a collaborative todo list, which users and developers can easily contribute to. When combined with [Project boards](https://docs.github.com/en/free-pro-team@latest/github/managing-your-work-on-github/about-project-boards), the issues system works very similarly to other tools like Trello and Jira.
 
 The basic elements of an issue are the:
 * Title and description, provided by the person that submitted the issue
@@ -382,11 +390,11 @@ Analytical projects might use issues to plan and discuss the steps involved in d
 (pull-requests)=
 ### Making the most of Pull Requests
 
-Once changes have been implemented, perhaps to meet the requirements of an issue, Pull Requests (PRs) provide a useful interface for incorporating those changes into the main project. PRs are typically used to merge a development branch (the source branch) onto a more stable branch in the main project (the target branch). The development branch here may be within the same repo, a [Fork](forking) of this project or even a separate project. The initial description of the PR should include the high level changes that have been made and might point to any relevant issues that it resolves.
+Once changes have been implemented, perhaps to meet the requirements of an issue, Pull Requests (PRs) provide a useful interface for incorporating those changes into the main project. PRs are typically used to merge a development branch (the source branch) onto a more stable branch in the main project (the target branch). The development branch here may be within the same repo, a [Fork](forking) of this project, or even a completely separate project.
 
-Much like issues, PRs can be linked to other issues and PRs, providing a coherent narrative of development work. Contributors can also be assigned or tagged in discussion, which can be useful for requesting help or review of a group of changes.
+The initial description of the PR should include the high level changes that have been made and might point to any relevant issues that it resolves.  Much like issues, PRs can be linked to other issues and PRs, providing a coherent narrative of development work. [Keywords can be used when linking an issue (e.g. 'fixes #42')](https://docs.github.com/en/github/managing-your-work-on-github/linking-a-pull-request-to-an-issue#linking-a-pull-request-to-an-issue-using-a-keyword) to trigger the issue to close the PR is merged. Contributors can also be assigned or tagged in discussion, which can be useful for requesting help or review of a group of changes.
 
-Along side the main "Conversation" view of a PR, the GitHub web interface also provides a useful overview of changes that are included in the PR. You're able to view the list of individual commits that are included in the PR and, better still, you can view changes to each file in detail.
+Alongside the main "Conversation" view of a PR, the GitHub web interface also provides a useful overview of changes that are included in the PR. You're able to view the list of individual commits that are included in the PR and, better still, you can view changes to each file in detail.
 
 ```{figure} ./_static/github_pr_changes.png
 ---
@@ -403,11 +411,15 @@ This highlighted summary of changes provides a useful interface for [peer review
 
 Once a PR has been reviewed and the reviewer is happy with the changes, the Conversation view can be used by internal developers to merge the PR changes onto the target branch.
 
+```note
+The repository settings can be adjust to project branches against specific actions. To enforce peer review, you should consider preventing merging onto the `main` branch without an approved Pull Request. Combining this with a [Pull Request template](https://docs.github.com/en/github/building-a-strong-community/creating-a-pull-request-template-for-your-repository) ensures that a standard peer review process is followed for all changes. 
+```
+
 
 (forking)=
 ### Forking
 
-Forking a repository takes a complete copy of a project's current state, including its history and all existing branches and tags. Any changes made to a fork do not affect the code on the original repo, and *vice versa*.
+Forking a repository takes a complete copy of a third-party project's current state, including its history and all existing branches and tags. Any changes made to a fork do not affect the code on the original repo, and *vice versa*.
 
 You might fork a repository when you want to:
 * Contribute to a project as an external collaborator
@@ -415,36 +427,29 @@ You might fork a repository when you want to:
 
 In the first case, lets consider that an issue describes a bug in a project's code. Looking at the code, you think that you know where the source of the bug is. You create a fork of the project and clone your copy of the project locally. Here you make commits that include changes to fix the bug and test that these changes work. Once the bug is fixed, you create a Pull Request on the original project and describe how your changes fix the bug. The source branch of this PR will be the branch that you committed to on your fork of the project, while the target will be the development or main branch of the original repo.
 
-In the second case, perhaps you want to reuse or adapt code from an existing project. If the changes that you wish to make to the code are not in line with the aim of the original project, then you might create a fork to contain these changes.
+In the second case, perhaps you want to reuse or adapt code from an existing project. If the changes that you wish to make to the code are not in line with the aim of the original project or the project is no longer actively maintained, then you might create a fork to contain these changes.
 
 Note that forks do not automatically synchronise with the original repo. This means that changes to the original repo, after you create a fork, need to be manually synchronised if you want to include them in your repo. When you would like to offer to contribute your changes to the original project (see [Pull Requests](pull-requests)), you should ensure that you synchronise your branch with any new changes first.
 
 See the GitHub documentation for [instructions on forking a repo and keeping your fork up to date](https://docs.github.com/en/free-pro-team@latest/github/getting-started-with-github/fork-a-repo) with a project and also [working with forks](https://docs.github.com/en/free-pro-team@latest/github/collaborating-with-issues-and-pull-requests/working-with-forks).
 
-### Other GitHub features
-
-[Project boards](https://docs.github.com/en/free-pro-team@latest/github/managing-your-work-on-github/about-project-boards) offer project management features through a [Kanban-style board](https://en.wikipedia.org/wiki/Kanban_board). These boards can be used to track assignment and progress of specific tasks. This is aided by linking tasks to specific issues and pull requests.
-
-[GitHub Pages](https://pages.github.com/) offers hosting of static web content, which can be useful for project documentation. Alternatively, [project Wikis](https://docs.github.com/en/free-pro-team@latest/github/building-a-strong-community/about-wikis) can be used to document your project using [Markdown](https://www.markdownguide.org/basic-syntax/).
 
 (continuous-integration)=
-## Continuous integration
+### GitHub Actions
 
-Continuous integration (CI) describes the practice of frequently committing changes to your code. This subsection relates to CI tools, which primarily help to automate routine quality assurance tasks. These include verifying that your code successfully builds or installs and that your [code tests](testing_code.md) run successfully. The execution environment for CI is defined in the CI workflow configuration, which improves reproducibility when running tests.
+Continuous integration (CI) describes the practice of frequently committing changes to your code. CI tools support this working pattern by automating routine quality assurance tasks. This subsection describes how the GitHub CI tool, [GitHub Actions](https://github.com/features/actions), can be used in an analytical workflow. This includes verifying that your code successfully builds or installs and that your [code tests](testing_code.md) run successfully.
 
-Automation of routine tasks in this way reduces the effort required to merge changes onto the existing code base. This supports frequent commiting and merging of changes. As such, conflicts between multiple contributions should be minimal and that review of these changes simpler.
+Automation of routine tasks in this way reduces the effort required to merge changes onto the existing code base. This supports frequent commiting and merging of changes. As such, conflicts between multiple contributions should be minimal and that review of these changes simpler. Additionally, the execution environment for CI is defined in a CI workflow configuration, which improves reproducibility when running tests.
 
 CI is often linked to:
 * Continuous delivery - ensuring that your code is fit for use after each integration
 * Continuous deployment - automatically deploying working code into production
 
-GitHub provides a CI service via [GitHub Actions](https://github.com/features/actions). However, many other CI tools can be integrated with version control platforms, including Travis, Jenkins and CircleCI.
+#### Testing example
 
-### Testing example
+Below is an example configuration file, for use with GitHub actions. The `YAML` file format, used below, is common to a number of other CI tools.
 
-Below is an example configuration file, for use with GitHub actions. The `YAML` file format, shown below, is commonly used to configure CI tools. Other CI tools may use different file types, but with a similar overall structure.
-
-```
+```yaml
 name: Test python package
 
 on:
@@ -490,11 +495,11 @@ The individual stages of the workflow are defined under `steps`. `steps` typical
 This workflow will report whether our test code ran successfully for each of the specified Python versions.
 
 
-### Documentation example
+#### Documentation example
 
 This book uses the following GitHub Actions configuration to build and deploy the HTML content:
 
-```
+```yaml
 name: Build and deploy book
 
 on:
@@ -546,7 +551,7 @@ In the second job, the book (including the new changes) is deployed to the site 
 You might use a similar approach to this to deploy your code's HTML documentation.
 
 
-### Comprehensive example
+#### Comprehensive example
 
 You can see a detailed example of CI in practice in the `jupyter-book` project. A recent version of the [`jupyter-book` CI workflow](https://github.com/executablebooks/jupyter-book/blob/6fb0cbe4abb5bc29e9081afbe24f71d864b40475/.github/workflows/tests.yml) includes:
 * Checking code against style guidelines, using [pre-commit](https://pre-commit.com/)
@@ -557,3 +562,10 @@ You can see a detailed example of CI in practice in the `jupyter-book` project. 
 * Reporting test coverage
 * Checking that documentation builds successfully
 * Deploying a new version of the `jupyter-book` package to [the python package index (PyPI)](https://pypi.org/)
+
+
+### Other GitHub features
+
+[Project boards](https://docs.github.com/en/free-pro-team@latest/github/managing-your-work-on-github/about-project-boards) offer project management features through a [Kanban-style board](https://en.wikipedia.org/wiki/Kanban_board). These boards can be used to track assignment and progress of specific tasks. This is aided by linking tasks to specific issues and pull requests.
+
+[GitHub Pages](https://pages.github.com/) offers hosting of static web content, which can be useful for project documentation. Alternatively, [project Wikis](https://docs.github.com/en/free-pro-team@latest/github/building-a-strong-community/about-wikis) can be used to document your project using [Markdown](https://www.markdownguide.org/basic-syntax/).
