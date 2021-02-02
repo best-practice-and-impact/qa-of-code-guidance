@@ -73,7 +73,7 @@ When adding changes to be included in a commit, you should preferentially add in
 
 Most commit messages are short and informative, but in some cases you may want to provide more detail. Common standards follow this model commit message from ["A note about Git commit messages"](https://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html):
 
-```{code-block} rst
+```{code-block} text
 Capitalized, short (50 chars or less) summary
 
 More detailed explanatory text, if necessary. Wrap it to about 72

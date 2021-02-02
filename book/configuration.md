@@ -81,7 +81,7 @@ Many other file formats can be used to store configuration parameters. You may h
 
 If we were to represent our example configuration from above in YAML, this would look like:
 
-```
+```yaml
 input_path: "C:/a/very/specific/path/to/input_data.csv"
 output_path: "outputs/predictions.csv"
 
@@ -100,10 +100,10 @@ Configuration files that are written in other languages may need to be read usin
 ```{code-tab} python
 import yaml
 
-with open(r"./my_config.yaml") as file:
+with open("./my_config.yaml") as file:
     config = yaml.load(file)
 
-data = read_csv(config$input_path)
+data = read_csv(config["input_path"])
 ...
 ```
 
