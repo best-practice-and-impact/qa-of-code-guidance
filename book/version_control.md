@@ -67,13 +67,13 @@ The following sections describe useful concepts for using Git to version control
 
 Commits are collections of changes to one or more files in a repository. Every commit is attributed to the author of the changes, providing an audit trail. Each commit has a unique hash - or identifier - associated with it, which has a long (e.g. `121b5b4f18231e4ee32c9c61f6754429f9572743`) and short version (e.g. `121b5b4`). These hashes allow us to refer to specific changes, but each commit also has an associated message that is used to describe the changes.
 
-```note
+```{note}
 When adding changes to be included in a commit, you should preferentially add individual files or directories. For example, using `git add src/my_file.txt` rather than a catch-all like `git add .`. This specificity ensures that only intended changes are included, reducing the likelihood of including unrelated changes or files that should not be versioned (when they are not included in `.gitignore`). Using `git status` after adding changes can help to confirm that only the desired changes are included.
 ```
 
 Most commit messages are short and informative, but in some cases you may want to provide more detail. Common standards follow this model commit message from ["A note about Git commit messages"](https://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html):
 
-```{code-block} text
+```{code-block} rst
 Capitalized, short (50 chars or less) summary
 
 More detailed explanatory text, if necessary. Wrap it to about 72
@@ -158,7 +158,7 @@ Working on multiple parallel branches.
 
 Here we create two feature branches from `main`. Work on each feature is carried out independently of the other feature and can be merged onto `main` once it is complete. If changes from separate branches affect the same files, merging these branches to `main` may lead to merge conflicts. In these cases you should ensure that you resolve the conflicts to keep the desired overall change.
 
-```note
+```{note}
 If you are able to break up your work into independent features that are not expected to affect the same files, you should do this. This helps to avoid conflicts in the merging process that need to be resolved manually.
 ```
 
@@ -178,7 +178,7 @@ In this example, we have created a `feature` branch. Early in development of the
 The [Git flow branching strategy](https://nvie.com/posts/a-successful-git-branching-model/) describes an alternative to progressively merging our changes onto `main`. Development work is instead branched from a `develop` branch. Merges from `develop` onto the `main` branch are only used to release a new version of the code. This approach can be useful when code from the `main` branch is deployed directly into production, however, analysts should opt to use the most simple and beneficial approach to branching depending on their project.
 
 ```{note}
-Although we have used very simple branch names in the examples above, it's important that you use informative names for your branches in practice. If using an [issue tracker](issue) (e.g. GitHub Issues or Jira), it can be useful to include the issue number in branch names (e.g. `#155-fix-index-aggregation`). This makes it easy to trace the branch back to the associated issue or task. Otherwise, aim to use meaningful names that describe the feature or bug that the changes will be focussed on. 
+Although we have used very simple branch names in the examples above, it's important that you use informative names for your branches in practice. If using an [issue tracker](issues) (e.g. GitHub Issues or Jira), it can be useful to include the issue number in branch names (e.g. `#155-fix-index-aggregation`). This makes it easy to trace the branch back to the associated issue or task. Otherwise, aim to use meaningful names that describe the feature or bug that the changes will be focussed on. 
 ```
 
 ### Versioning large files
@@ -354,7 +354,7 @@ To handle a data breach, you should:
    * If the breach includes pre-publication statistics, you must also report the breach to the [Office for Statistics Regulation](https://osr.statisticsauthority.gov.uk/).
 
 
-```warning
+```{warning}
 It's important to stress that deleting a sensitive file and commiting this change is not sufficient. All previous versions of files are retained in a repository's history, so sensitive parts of the file must be entirely removed from the history.
 
 The [Pro Git book section on rewriting history](https://git-scm.com/book/en/v2/Git-Tools-Rewriting-History) details methods for editing and deleting files from your repository's commit history. The [BFG repo-cleaner tool](https://rtyley.github.io/bfg-repo-cleaner/) can be a simpler alternative to standard Git commands, but may not be available in your department.
@@ -411,7 +411,7 @@ This highlighted summary of changes provides a useful interface for [peer review
 
 Once a PR has been reviewed and the reviewer is happy with the changes, the Conversation view can be used by internal developers to merge the PR changes onto the target branch.
 
-```note
+```{note}
 The repository settings can be adjust to project branches against specific actions. To enforce peer review, you should consider preventing merging onto the `main` branch without an approved Pull Request. Combining this with a [Pull Request template](https://docs.github.com/en/github/building-a-strong-community/creating-a-pull-request-template-for-your-repository) ensures that a standard peer review process is followed for all changes. 
 ```
 
@@ -568,4 +568,4 @@ You can see a detailed example of CI in practice in the `jupyter-book` project. 
 
 [Project boards](https://docs.github.com/en/free-pro-team@latest/github/managing-your-work-on-github/about-project-boards) offer project management features through a [Kanban-style board](https://en.wikipedia.org/wiki/Kanban_board). These boards can be used to track assignment and progress of specific tasks. This is aided by linking tasks to specific issues and pull requests.
 
-[GitHub Pages](https://pages.github.com/) offers hosting of static web content, which can be useful for project documentation. Alternatively, [project Wikis](https://docs.github.com/en/free-pro-team@latest/github/building-a-strong-community/about-wikis) can be used to document your project using [Markdown](https://www.markdownguide.org/basic-syntax/).
+[GitHub Pages](https://pages.github.com/) offers hosting of static web content, which can be useful for code documentation. GitHub Actions can be used to generate this documentation from the code and deploy directly to the Pages site. Alternatively, [project Wikis](https://docs.github.com/en/free-pro-team@latest/github/building-a-strong-community/about-wikis) can be used to manually document your project using [Markdown](https://www.markdownguide.org/basic-syntax/).
