@@ -34,7 +34,7 @@ Great, now you should have dependencies, including [jupyter-book](https://jupyte
 jb build book
 ```
 
-The book output will be written to book/_build, so you can open the `.html` from there to view the local build.
+The book output will be written to `book/_build/html/`, so you can open `index.html` from there to view the local build.
 
 All content for the book is currently written in [Markedly Structured Text](https://myst-parser.readthedocs.io/en/latest/), which is based on standard Markdown (`.md`) but allows use of "directives" for generating content.
 

@@ -11,7 +11,7 @@ This requires suitable storage of data, with documentation and versioning of the
 ```{admonition} Key strategies
 :class: admonition-strategies
 
-[The Government Data Quality Framework](https://www.gov.uk/government/publications/the-government-data-quality-framework/the-government-data-quality-framework) focuses primarily on assessing and improving the quality of input data. It should be primary resource for all analysts working with data in the public sector.
+[The Government Data Quality Framework](https://www.gov.uk/government/publications/the-government-data-quality-framework/the-government-data-quality-framework) focuses primarily on assessing and improving the quality of input data. It should be a primary resource for all analysts working with data in the public sector.
 ```
 
 ## Data storage
@@ -50,7 +50,7 @@ Issues when using spreadsheets for data storage include:
   * Converting dates to a different datetime format.
   * Converting numbers or text that resemble dates to dates.
 
-The European Spreadsheet Risks Interest Group document [spreadsheet related errors and their consequences](http://www.eusprig.org/horror-stories.htm).
+See the European Spreadsheet Risks Interest Group document [spreadsheet related errors and their consequences](http://www.eusprig.org/horror-stories.htm) for more information.
 
 
 ### Databases
@@ -107,13 +107,13 @@ Other resources:
 
 ## Documenting data
 
-Without documentation, it is difficult to understand and work with new dataset.
+Without documentation, it is difficult to understand and work with a new dataset.
 
 For our analysis, we should be able to quickly grasp:
-* What data is available to us?
-* How was this data collected or generated?
-* How is this data represented?
-* Has this data been validated or manipulated?
+* What data are available to us?
+* How were these data collected or generated?
+* How are these data represented?
+* Have these data been validated or manipulated?
 * How am I ethically and legally permitted to use the data?
 
 This information should be created by data providers and analysts, in the form of documentation.
@@ -143,9 +143,9 @@ Please see [UK Data Service guidance on documenting other data](https://www.ukda
 
 An information asset register (IAR) documents the information assets within your organisation.
 Your department should have an IAR in place, to document its information assets.
-As an analysts, you might use the register to identify contacts for data require for your analyses.
+As an analyst, you might use the register to identify contacts for data required for your analyses.
 
-This form of documentation may not contain detailed information on how to use each data source (provided by data dictionaries), but an IAR does increases visibility of data flows.
+This form of documentation may not contain detailed information on how to use each data source (provided by data dictionaries), but an IAR does increase visibility of data flows.
 An IAR may include:
 * the owner of each dataset
 * a high level description of the dataset
@@ -180,7 +180,7 @@ The [`daff` package summarises changes in tabular data files](https://github.com
 You might alternatively version your data manually.
 For example, by creating new database tables or files for each new version of the data.
 It must be possible to recreated previous versions of the data, for reproducibility.
-As such, is important that data file versions are named uniquely, for example, using incrementing numbers and/or date of collection.
+As such, it is important that data file versions are named uniquely, for example, using incrementing numbers and/or date of collection.
 Additionally, file versions must not be modified after they have been used for analysis - they should be treated as read-only.
 All modifications to the data should result in new versions.
 
@@ -208,11 +208,9 @@ Use CSVW when possible
 Other guidance addresses:
 * [Releasing statistics in spreadsheets](https://gss.civilservice.gov.uk/policy-store/releasing-statistics-in-spreadsheets/)
 * [Quality assurance of administrative data](https://osr.statisticsauthority.gov.uk/guidance/administrative-data-and-official-statistics/)
-* [Data linking methods](https://www.gov.uk/government/publications/joined-up-data-in-government-the-future-of-data-linking-methods
-)
+* [Data linking methods](https://www.gov.uk/government/publications/joined-up-data-in-government-the-future-of-data-linking-methods)
 * When publishing or sharing tabular data, you should follow the [GOV.UK Tabular data standard](https://www.gov.uk/government/publications/recommended-open-standards-for-government/tabular-data-standard).
 
-Analysts producing published statistics may also be interested in [Connected Open Government Statistsics (COGS)](https://gss.civilservice.gov.uk/guidance/the-gss-data-project/).
+Analysts producing published statistics may also be interested in [Connected Open Government Statistics (COGS)](https://gss.civilservice.gov.uk/guidance/the-gss-data-project/).
 
 Guidance from the UK Data Service describes [data security considerations](https://www.ukdataservice.ac.uk/manage-data/store/security).
-

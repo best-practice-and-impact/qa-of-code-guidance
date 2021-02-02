@@ -12,7 +12,7 @@ Documentation is a love letter that you write to your future self.
 Use comments sparingly and with purpose
 ```
 
-Comments are lines of text in source code files which typically aren't executed as part of the program. They are small notes or annotations written by those working on the code. Often, they provide context or explain the reasoning behind implementation decisions.
+Comments are lines of text in source code files that typically aren't executed as part of the program. They are small notes or annotations written by those working on the code. Often, they provide context or explain the reasoning behind implementation decisions.
 
 Comments are essential to help those working on the code in the future to understand any non-obvious details around how and why the code has been written in a particular way. As such, when it comes to providing relevant and perhaps higher-level documentation to the end consumer on the functionality of your code, there are much more appropriate solutions such as [docstrings](docstrings).
 
@@ -146,7 +146,7 @@ In summary, you should use comments sparingly but purposefully. Make sure to:
 (docstrings)=
 ## Docstrings
 
-When your code is structured as functions or classes, these functional units can be efficiently documented using docstrings. Docstrings are specialised multi-line descriptions that appear at the start of a function definition and are the de facto way of documenting these individual components. In practice they can be either strings (as in Python docstrings) or comments (as in R). Note that module or script level docstrings are also commonly used (usually at the top of the module file in the case of Python). Use of docstrings keeps the documentation of your code closely associated with the relevant sections of code. This close association means it is easier to keep documentation up to date as changes are introduced to the code.
+When your code is structured as functions or classes, these functional units can be efficiently documented using docstrings. Docstrings are specialised multi-line descriptions that appear at the start of a function definition and are the *de facto* way of documenting these individual components. In practice they can be either strings (as in Python docstrings) or comments (as in R). Note that module or script level docstrings are also commonly used (usually at the top of the module file in the case of Python). Use of docstrings keeps the documentation of your code closely associated with the relevant sections of code. This close association means it is easier to keep documentation up to date as changes are introduced to the code.
 
 An end-user can access these docstrings by typing `help(function_name)` after they have imported your library, so they are handily available without needing to have the source code files open in another window. Other tools, like Jupyter for Python, allow users to easily access these docstrings for quick reference. Hence the focus on detail and comprehensiveness is key - this is the first point of call for an end-user trying to understand what a given function does.
 
@@ -253,11 +253,11 @@ Other useful resources include:
 (generating_docs)=
 ## Automatic documentation generation
 
-This section does not describe a tool that writes your documentation for you. It does, however, describe tools that automate generation of searchable, user-friendly HTML documentation that can really provide a great user experience for end-users. Accurate, up to date and accessible documentation is one of the cornerstones of well-adopted, open-source packages.
+This section does not describe a tool that writes your documentation for you. It does, however, describe tools that automate generation of searchable, user-friendly HTML documentation that can really provide a great experience for end-users. Accurate, up to date and accessible documentation is one of the cornerstones of well-adopted, open-source packages.
 
 Perhaps it is worth reflecting on truly how much we use well-rendered documentation for our favourite programming packages. It would be much harder it to adopt these packages to solve hard programming problems if they were not well-documented and their documentation was not easily accessible.
 
-The information presented in this section seeks inform you of how you can take your well-crafted [docstrings](docstrings) and turn them into more widely accessible hosted documentation.
+The information presented in this section seeks to inform you of how you can take your well-crafted [docstrings](docstrings) and turn them into more widely accessible hosted documentation.
 
 ### Generating HTML documentation
 
@@ -271,7 +271,7 @@ Sphinx also supports theming, with a [myriad of themes](https://www.writethedocs
 
 As well as theming support, `sphinx` allows users to develop extensions that extend its functionality. This GitHub repository provides a list of [useful ways to extend the functionality of `sphinx`](https://github.com/yoloseem/awesome-sphinxdoc) to suit your needs.
 
-To illustrate how this can be extremely useful, we will introduce the [doctest extension](https://www.sphinx-doc.org/en/master/usage/extensions/doctest.html). It searches your existing docstrings for the `Examples` section and runs all of the included snippets of code, warning you if they do not run successfully. This means that you can ensure that your examples written in the documentation run to completion. Although this replace thorough code testing testing, it may help you to can spot a whole slew of issue stemming from potentially out of date documentation and examples that no longer apply when the code has been fundamentally altered.
+To illustrate how this can be extremely useful, we will introduce the [doctest extension](https://www.sphinx-doc.org/en/master/usage/extensions/doctest.html). It searches your existing docstrings for the `Examples` section and runs all of the included snippets of code, warning you if they do not run successfully. This means that you can ensure that your examples written in the documentation run to completion. Although this can't replace thorough code testing, it may help you to spot a whole slew of issues stemming from potentially out of date documentation and examples that no longer apply when the code has been fundamentally altered.
 
 #### R
 
