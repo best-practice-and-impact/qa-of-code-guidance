@@ -142,6 +142,8 @@ Although we have used very simple branch names in the examples above, it's impor
 
 Commits are collections of changes to one or more files in a repository. Every commit is attributed to the author of the changes, providing an audit trail. Each commit has a unique hash - or identifier - associated with it, which has a long (e.g. `121b5b4f18231e4ee32c9c61f6754429f9572743`) and short version (e.g. `121b5b4`). These hashes allow us to refer to specific changes, but each commit also has an associated message that is used to describe the changes.
 
+When adding changes to be included in a commit, you should preferentially add individual files or directories. For example, using `git add src/my_file.txt` rather than a catch-all like `git add .`. This specificity ensures that only intended changes are included, reducing the likelihood of including unrelated changes or files that should not be versioned. Using `git status` after adding changes can help to confirm that only the desired changes are included.
+
 Most commit messages are short and informative, but in some cases you may want to provide more detail. Common standards follow this model commit message from ["A note about Git commit messages"](https://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html):
 
 ```{code-block} text
@@ -263,6 +265,13 @@ In Rstudio, you can disable writing of these files via `Tools > Global options`:
 * Under Workspace, select `Never` for `Save workspace to .RData on exit:`.
 * Under History, deselect `Always save history`.
 
+Or to set these for a particular project you can include the following in your `.Rproj` file:
+
+```
+RestoreWorkspace: No
+SaveWorkspace: No
+AlwaysSaveHistory: No
+```
 
 ### Jupyter Notebooks
 

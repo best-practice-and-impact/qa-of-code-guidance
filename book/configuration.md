@@ -197,6 +197,8 @@ setx SECRET_KEY "mysupersecretpassword"
 reg delete HKCU\Environment /F /V SECRET_KEY
 ```
 
+These can alternatively be defined using a graphical interface under `Edit environment variables for your account` in your Windows settings.
+
 Once stored in environment variables, these variables will remain available in your environment until they are deleted.
 
 You can access this variable in your code like so:
