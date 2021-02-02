@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Core programming practices &#8212; DRAFT: Quality Assurance of Code for Analysis and Research</title>
     
-  <link rel="stylesheet" href="_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+  <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
     
   <link rel="stylesheet"
@@ -32,14 +32,14 @@
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="_static/tabs.css" />
-    <link rel="stylesheet" type="text/css" href="_static/markdown_within_tabs.css" />
     <link rel="stylesheet" type="text/css" href="_static/logo.css" />
-    <link rel="stylesheet" type="text/css" href="_static/accessibility.css" />
     <link rel="stylesheet" type="text/css" href="_static/admonitions.css" />
+    <link rel="stylesheet" type="text/css" href="_static/accessibility.css" />
+    <link rel="stylesheet" type="text/css" href="_static/markdown_within_tabs.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="_static/js/index.3da636dd464baa7582d2.js">
+  <link rel="preload" as="script" href="_static/js/index.d3f166471bb80abb5163.js">
 
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -49,7 +49,6 @@
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
     <script src="_static/tabs.js"></script>
-    <script src="_static/doctools.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
@@ -173,7 +172,7 @@
 </nav> <!-- To handle the deprecated key -->
 
 <div class="navbar_extra_footer">
-  <p>Book version 2021.1</p><a href='https://www.gov.uk/government/organisations/government-analysis-function' target='_blank'><img src='./_static/af_logo.png' alt='The Government Analysis Function logo' style='width:50%;'></a>
+  <p>Book version 2021.2</p><a href='https://www.gov.uk/government/organisations/government-analysis-function' target='_blank'><img src='./_static/af_logo.png' alt='The Government Analysis Function logo' style='width:50%;'></a>
 </div>
 
 </div>
@@ -426,7 +425,7 @@ In turn, this makes it easier to locate bugs in the code and assure its function
 <p>When it is not possible or practical to follow these practices, you should ensure that any ‘side-effects’ are adequately documented for both users and developers. This may be the case where your code interacts with a file, database or an external service. Ultimately, if you do signal where these kind of things might happen, someone trying to debug issues will know where to look.</p>
 <p>To summarise:</p>
 <ul class="simple">
-<li><p>Make sure that functions are not too overcomplicated; break down your code into smaller functions and build up your functionality with larger functions from these small building blocks.</p></li>
+<li><p>Make sure that functions are not overcomplicated; break down your code into smaller functions and build up your functionality with larger functions from these small building blocks.</p></li>
 <li><p>Minimise the ‘side-effects’ of functions in order to make sure that your code is easy to debug and is transparent in its functionality.</p></li>
 <li><p>Strive to make sure that running your function with the same inputs will produce the same results every time.</p></li>
 </ul>
@@ -435,7 +434,7 @@ In turn, this makes it easier to locate bugs in the code and assure its function
 <h3>Classes<a class="headerlink" href="#classes" title="Permalink to this headline">¶</a></h3>
 <p>Classes are fundamental parts of <a class="reference external" href="https://en.wikipedia.org/wiki/Object-oriented_programming">object-orientated programming (OOP)</a>. They create an association between data (attributes of the class) and logic (methods of the class). As you will see in the examples below, classes can be useful when representing real objects in our code.</p>
 <p>Although classes do exist in R, they are more widely used in Python (and other OOP enabling languages). Hence the following sub-section will focus primarily on Python classes.</p>
-<p>With a more complex system, OOP can help to reduce complexity by hiding low-level details from users, such as internal state.</p>
+<p>With a more complex system, OOP can help to reduce complexity by hiding low-level details from users, such as an internal state.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The ‘state’ of an object is usually a set of variables that are particular to a given instance of a class. To illustrate, imagine a bank account that is represented by an <code class="docutils literal notranslate"><span class="pre">Account</span></code> class. You can have many <em>instances</em> of this class (many unique bank accounts), each defined by the following internal state:</p>
@@ -475,7 +474,7 @@ In turn, this makes it easier to locate bugs in the code and assure its function
 </pre></div>
 </div>
 </div>
-<p>In some languages ‘private’ state can be used to prevent access to parts of your class. In Python <a class="reference external" href="https://docs.python.org/3/tutorial/classes.html#private-variables">truly private instance variables do not exist</a>, so it is not possible to prevent access to any part of your class. The standard convention in Python is to prefix attribute names with a single underscores (<code class="docutils literal notranslate"><span class="pre">_my_class_attribute</span></code>) to indicate that users shouldn’t be concerned with these attributes.</p>
+<p>In some languages ‘private’ state can be used to prevent access to parts of your class. In Python <a class="reference external" href="https://docs.python.org/3/tutorial/classes.html#private-variables">truly private instance variables do not exist</a>, so it is not possible to prevent access to any part of your class. The standard convention in Python is to prefix attribute names with a single underscore (<code class="docutils literal notranslate"><span class="pre">_my_class_attribute</span></code>) to indicate that users shouldn’t be concerned with these attributes.</p>
 <p>In addition to private attributes, you can use the same naming convention to indicate that a method is ‘private’ and should not be used by users. This can be useful when writing reusable low-level methods within an object, analogous to breaking a large function down into multiple smaller functions. These private methods can then be called by high-level methods that are exposed to users.</p>
 <div class="admonition caution">
 <p class="admonition-title">Caution</p>
@@ -521,7 +520,7 @@ They should extend their usefulness, but retain their original functionality. If
 </ul>
 </div>
 <p>However, we should be wary that inheritance locks our class in to the object that it inherits from. If the superclass changes, our class is forced to change with it. When using inheritance to reuse code from an unrelated class, ‘encapsulation’ may be more appropriate. For example, a <code class="docutils literal notranslate"><span class="pre">Car</span></code> class might want use a method from an <code class="docutils literal notranslate"><span class="pre">Engine</span></code> class, but a car could not be substituted for an engine. It would not be suitable for <code class="docutils literal notranslate"><span class="pre">Car</span></code> to inherit from <code class="docutils literal notranslate"><span class="pre">Engine</span></code>. Therefore, you might keep a private instance of the <code class="docutils literal notranslate"><span class="pre">Engine</span></code> class you wish to re-use, and delegate the work down to it in the <code class="docutils literal notranslate"><span class="pre">Car</span></code> methods. Then, if you change your mind about using this <code class="docutils literal notranslate"><span class="pre">Engine</span></code> class in your <code class="docutils literal notranslate"><span class="pre">Car</span></code> class, you aren’t tied to it and can easily replace it.</p>
-<p id="interfaces">In OOP, an ‘interface’ can be defined to act a blueprint or specification for writing classes. An interface outlines the attributes and methods that a class must provide to be considered equivalent to a group of classes. Perhaps we want to use classes to read and write data - this might require several different classes, with <code class="docutils literal notranslate"><span class="pre">read</span></code> and <code class="docutils literal notranslate"><span class="pre">write</span></code> methods for different file formats. For example, one class could deal with storing data into a database, and another could store data in local <code class="docutils literal notranslate"><span class="pre">.csv</span></code> files instead. In our code, we could switch which class is provided to downstream functions. Our functions don’t need to know if they are reading or writing from databases or <code class="docutils literal notranslate"><span class="pre">.csv</span></code> files, however, they do require the <code class="docutils literal notranslate"><span class="pre">read</span></code> and <code class="docutils literal notranslate"><span class="pre">write</span></code> methods of the class to work in a standard way. An <code class="docutils literal notranslate"><span class="pre">interface</span></code> would help to define the standard for interacting with this group of classes.</p>
+<p id="interfaces">In OOP, an ‘interface’ can be defined to act as a blueprint or specification for writing classes. An interface outlines the attributes and methods that a class must provide to be considered equivalent to a group of classes. Perhaps we want to use classes to read and write data - this might require several different classes, with <code class="docutils literal notranslate"><span class="pre">read</span></code> and <code class="docutils literal notranslate"><span class="pre">write</span></code> methods for different file formats. For example, one class could deal with storing data in a database, and another could store data in local <code class="docutils literal notranslate"><span class="pre">.csv</span></code> files instead. In our code, we could switch which class is provided to downstream functions. Our functions don’t need to know if they are reading or writing from databases or <code class="docutils literal notranslate"><span class="pre">.csv</span></code> files, however, they do require the <code class="docutils literal notranslate"><span class="pre">read</span></code> and <code class="docutils literal notranslate"><span class="pre">write</span></code> methods of the class to work in a standard way. An <code class="docutils literal notranslate"><span class="pre">interface</span></code> would help to define the standard for interacting with this group of classes.</p>
 <p>In Python, the <code class="docutils literal notranslate"><span class="pre">abc</span></code> module allows us to define <a class="reference external" href="https://docs.python.org/3/library/abc.html">‘abstract’ base classes and methods</a> to enforce that our classes provide the required methods. When a subclass does not implement the required abstract methods, instances of the class cannot be created. These abstract base classes achieve the same as interfaces in other object-based languages. We can illustrate this concept in the following example:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">abc</span> <span class="kn">import</span> <span class="n">ABC</span><span class="p">,</span> <span class="n">abstractmethod</span>
 
@@ -586,12 +585,13 @@ They should extend their usefulness, but retain their original functionality. If
 </div>
 <div class="section" id="scripts">
 <h3>Scripts<a class="headerlink" href="#scripts" title="Permalink to this headline">¶</a></h3>
-<p>Scripts are simply files containing code that you would like to execute. In Python you commonly have a <code class="docutils literal notranslate"><span class="pre">main.py</span></code> script that orchestrates part of your codebase to achieve an outcome. In machine-learning projects, you sometimes have <code class="docutils literal notranslate"><span class="pre">train.py</span></code> and <code class="docutils literal notranslate"><span class="pre">test.py</span></code> which are scripts that train the model and produce performance metrics.</p>
+<p>Scripts are simply files containing code that you would like to execute. In Python you commonly have a <code class="docutils literal notranslate"><span class="pre">main.py</span></code> script that orchestrates part of your codebase to achieve an outcome. In machine-learning projects, you sometimes have <code class="docutils literal notranslate"><span class="pre">train.py</span></code> and <code class="docutils literal notranslate"><span class="pre">test.py</span></code>, which are scripts that train the model and produce performance metrics.</p>
 <p>Scripts, if written well, are reproducible. In languages like R and Python, when executed from the command line using commands like <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">main.py</span></code> they are read top to bottom and executed line by line. This is in contrast to running code in an interactive interpreter or notebook, where the human has control of the order of execution. Manually executing individual lines of code allows for a slew of errors when things are run in the wrong order.</p>
 <p>Ultimately for code pipelines you will need to have some way of running your code - the humble script is the primary way of orchestrating your functions and classes in a pipeline fashion.</p>
+<!-- The first sentence of the note below doesn't make sense to me. -->
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Including something that is not reproducible in a script will not make it more reproducible. The script is simply a tool to run code in the same fashion across multiple runs.</p>
+<p>Using a script does not guarantee that your code will run reproducibly, but it does ensure that code is run in the same fashion across multiple runs.</p>
 </div>
 <p>To summarise:</p>
 <ul class="simple">
@@ -664,7 +664,7 @@ They should extend their usefulness, but retain their original functionality. If
 <div class="section" id="packages">
 <span id="id2"></span><h3>Packages<a class="headerlink" href="#packages" title="Permalink to this headline">¶</a></h3>
 <p>Programming languages often come with quite a few in-built functions and classes that are available to the end-users. However, when it comes to solving specialised problems, these in-built functions are often not enough. In these cases, you may need to build functionality to address a given problem from scratch. If the solutions you build are useful and reusable, you can then wrap them up in a package to allow other users to install it. They can then reuse the work you have put in within their own code to solve similar problems.</p>
-<p>In short, packages are self-contained collections of code written by someone else to solve a particular problem. For example, packages like <code class="docutils literal notranslate"><span class="pre">dplyr</span></code> and <code class="docutils literal notranslate"><span class="pre">pandas</span></code> are essential when performing data wrangling in R and Python, respectively. They contain a myriad of functions that allows us to avoid rewriting this functionality from scratch every time. Inside these packages is a set of <a class="reference internal" href="#modules"><span class="std std-ref">modules</span></a> containing relevant functions, classes and other code that someone has written. These are wrapped up into a package structure so that the programming language you use can understand, install and make available to you for import.</p>
+<p>In short, packages are self-contained collections of code written by someone else to solve a particular problem. For example, packages like <code class="docutils literal notranslate"><span class="pre">dplyr</span></code> and <code class="docutils literal notranslate"><span class="pre">pandas</span></code> are essential when performing data wrangling in R and Python, respectively. They contain a myriad of functions that allows us to avoid rewriting this functionality from scratch every time. Inside these packages is a set of <a class="reference internal" href="#modules"><span class="std std-ref">modules</span></a> containing relevant functions, classes and other code that someone has written. These are wrapped up into a package structure so that the programming language you use can understand, install and make available the code for you to import.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>This section will not cover the practices required to package and distribute your code as a package. However if you would like to know more please look to the <a class="reference internal" href="code_documentation.html"><span class="doc std std-doc">code documentation section</span></a> and seek out the packaging guides for your programming language.</p>
@@ -674,7 +674,7 @@ They should extend their usefulness, but retain their original functionality. If
 <p class="admonition-title">Note</p>
 <p>Packaging code properly will involve applying many of the recommendations from this book.</p>
 <p>You will have to consider how to test, document and lay out your code for it to be usable and packagable. In the end, high quality packages are the cornerstone of open-source package ecosystems. However, it is not trivial to maintain and develop well-regarded open-source packages.</p>
-<p>If you feel like you are writing code that you might consider turning into a package, consult this book and strive to apply as many of the recommendations as you go. This will make the final polish and packaging much simpler, and will produce packages that are easier for third-parties to trust and use.</p>
+<p>If you feel like you are writing code that you might consider turning into a package, consult this book and strive to apply as many of the recommendations as you go. This will make the final polishing and packaging much simpler, and will produce packages that are easier for third-parties to trust and use.</p>
 </div>
 </div>
 </div>
@@ -682,7 +682,7 @@ They should extend their usefulness, but retain their original functionality. If
 <h2>Notebooks<a class="headerlink" href="#notebooks" title="Permalink to this headline">¶</a></h2>
 <p>It is worth touching upon using Jupyter or other code Notebooks that allow running of your code.</p>
 <p>Although individual notebooks could seem like a good way to modularise your analysis for distribution, for larger projects this is not always the best idea.</p>
-<p>notebooks are inherently difficult to review and audit through version control software like <code class="docutils literal notranslate"><span class="pre">git</span></code>. Simple text files like scripts can be version controlled easily as you can see which lines of text change from one version to another. notebooks store their internal workings in a much more complicated format, hence seeing the changes from one notebook to another as differences line by line is not possible in common version control tools.</p>
+<p>Notebooks are inherently difficult to review and audit through version control software like <code class="docutils literal notranslate"><span class="pre">git</span></code>. Simple text files like scripts can be version controlled easily as you can see which lines of text change from one version to another. Notebooks store their internal workings in a much more complicated format, hence seeing the changes from one notebook to another as differences line by line is not possible in common version control tools.</p>
 <p>Furthermore, defining and keeping functions within notebooks is prohibitive to testing. It is not simple to test individual cells of a notebook with standard external tooling.</p>
 <p>Lastly, one of the key issues with notebooks when they are used as methods for running a pipeline is the ability to run cells out of order. In practice this means that a user can accidentally execute the steps of the analysis in the wrong order causing issues and different results. As such, notebook results may not always be reproducible.</p>
 <p>That said, great strengths of notebooks include their flexibility in displaying results while you are exploring data, and their ability to present final research code alongside a narrative. Therefore the top 2 reasons to use notebooks in the project lifecycle is to:</p>
@@ -744,7 +744,7 @@ They should extend their usefulness, but retain their original functionality. If
 </div>
 </div></div>
 <p>Another developer, or even ‘future you’, would be unable to correctly interpret what these variable names to represent. Therefore, you should strive to avoid cryptic or single-letter identifiers.</p>
-<p>That said, there are situations where some seemingly cryptic identifiers make sense. Using single letters to name variables is suitable when implementing methodologies from mathematical notation. However, even in these cases you must make sure that the formulas being implemented are clear, readily available to the reader and are consistent throughout  your code. Be sure to cite the source of the mathematical formula in these cases.</p>
+<p>That said, there are situations where some seemingly cryptic identifiers make sense. Using single letters to name variables is suitable when implementing methodologies from mathematical notation. However, even in these cases you must make sure that the formulas being implemented are clear, readily available to the reader and are consistent throughout your code. Be sure to cite the source of the mathematical formula in these cases.</p>
 <p>In other cases, using variable names that contain a few (3 or so) informative words can drastically improve the readability of your code. How these words are separated (be it <code class="docutils literal notranslate"><span class="pre">CamelCase</span></code> or <code class="docutils literal notranslate"><span class="pre">snake_case</span></code>) will depend on your language of choice.</p>
 <div class="sphinx-tabs docutils container">
 <div aria-label="Tabbed content" role="tablist"><button aria-controls="panel-1-UHl0aG9u" aria-selected="true" class="sphinx-tabs-tab code-tab group-tab" id="tab-1-UHl0aG9u" name="UHl0aG9u" role="tab" tabindex="0">Python</button><button aria-controls="panel-1-Ug==" aria-selected="false" class="sphinx-tabs-tab code-tab group-tab" id="tab-1-Ug==" name="Ug==" role="tab" tabindex="-1">R</button></div><div aria-labelledby="tab-1-UHl0aG9u" class="sphinx-tabs-panel code-tab group-tab" id="panel-1-UHl0aG9u" name="UHl0aG9u" role="tabpanel" tabindex="0"><div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -860,15 +860,15 @@ You’ll need to use your best judgement to adapt variable names in order to kee
 </div>
 <p>In cases where a function responds with a Boolean (True or False) value, it is often useful to name this function in the form of a question.</p>
 <div class="sphinx-tabs docutils container">
-<div aria-label="Tabbed content" role="tablist"><button aria-controls="panel-5-UHl0aG9u" aria-selected="true" class="sphinx-tabs-tab code-tab group-tab" id="tab-5-UHl0aG9u" name="UHl0aG9u" role="tab" tabindex="0">Python</button><button aria-controls="panel-5-Ug==" aria-selected="false" class="sphinx-tabs-tab code-tab group-tab" id="tab-5-Ug==" name="Ug==" role="tab" tabindex="-1">R</button></div><div aria-labelledby="tab-5-UHl0aG9u" class="sphinx-tabs-panel code-tab group-tab" id="panel-5-UHl0aG9u" name="UHl0aG9u" role="tabpanel" tabindex="0"><div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">is_clean</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
-    <span class="k">if</span> <span class="n">mean</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+<div aria-label="Tabbed content" role="tablist"><button aria-controls="panel-5-UHl0aG9u" aria-selected="true" class="sphinx-tabs-tab code-tab group-tab" id="tab-5-UHl0aG9u" name="UHl0aG9u" role="tab" tabindex="0">Python</button><button aria-controls="panel-5-Ug==" aria-selected="false" class="sphinx-tabs-tab code-tab group-tab" id="tab-5-Ug==" name="Ug==" role="tab" tabindex="-1">R</button></div><div aria-labelledby="tab-5-UHl0aG9u" class="sphinx-tabs-panel code-tab group-tab" id="panel-5-UHl0aG9u" name="UHl0aG9u" role="tabpanel" tabindex="0"><div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">are_missing_values_present</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+    <span class="k">if</span> <span class="kc">None</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
         <span class="k">return</span> <span class="kc">True</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="k">return</span> <span class="kc">False</span>
 </pre></div>
 </div>
-</div><div aria-labelledby="tab-5-Ug==" class="sphinx-tabs-panel code-tab group-tab" hidden="true" id="panel-5-Ug==" name="Ug==" role="tabpanel" tabindex="0"><div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">is_clean</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nf">if </span><span class="p">(</span><span class="nf">mean</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="o">&gt;</span> <span class="m">0</span><span class="p">){</span>
+</div><div aria-labelledby="tab-5-Ug==" class="sphinx-tabs-panel code-tab group-tab" hidden="true" id="panel-5-Ug==" name="Ug==" role="tabpanel" tabindex="0"><div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">are_missing_values_present</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nf">if </span><span class="p">(</span><span class="kc">NA</span> <span class="o">%in%</span> <span class="n">data</span><span class="p">){</span>
       <span class="kc">TRUE</span>
   <span class="p">}</span> <span class="n">else</span> <span class="p">{</span>
       <span class="kc">FALSE</span>
@@ -898,7 +898,7 @@ You’ll need to use your best judgement to adapt variable names in order to kee
 </div>
 <div class="section" id="code-style">
 <span id="id6"></span><h3>Code style<a class="headerlink" href="#code-style" title="Permalink to this headline">¶</a></h3>
-<p>Programming languages can differ in a myriad of ways. One way R and Python differ, for example, is their use of indentation. Indentation is part of the well defined syntax of Python while it is not in the case of R. This does not mean that you shouldn’t use indentation in R to make your code more readable. If in doubt it is often wise to consult how to use formatting to write more readable code by finding the style guidelines for your language.</p>
+<p>Programming languages can differ in a myriad of ways. One way R and Python differ, for example, is their use of indentation. Indentation is part of the well defined syntax of Python while it is not for R. This does not mean that you shouldn’t use indentation in R to make your code more readable. If in doubt it is often wise to consult how to use formatting to write more readable code by finding the style guidelines for your language.</p>
 <p>Generally, code style guides provide a standard or convention for formatting and laying out your code. The purpose of these style guides is to increase consistency across the programming community for a given language.</p>
 <p>They might include how to appropriately:</p>
 <ul class="simple">
@@ -906,7 +906,7 @@ You’ll need to use your best judgement to adapt variable names in order to kee
 <li><p>name your functions, variables or classes</p></li>
 <li><p>separate elements of your code with whitespace</p></li>
 <li><p>use indentation to make sure your code is readable</p></li>
-<li><p>other useful guidance regarding formatting</p></li>
+<li><p>and provide other useful guidance regarding formatting</p></li>
 </ul>
 <p>The existence of such style guides does not necessarily mean that each individual or team will apply these conventions to the letter. Organisations and developer teams often have needs that might not be addressed in a general style guidance document. After all, these documents aim to capture the needs of a diverse group of developers. Therefore, these guides are more useful as starting points in a discussion on ‘how should our team be consistent internally in the way we write code?’.</p>
 <div class="figure align-default" id="code-quality">
@@ -984,13 +984,13 @@ The <a class="reference external" href="https://google.github.io/styleguide/Rgui
 </div>
 <div class="section" id="software-ideas-for-analysts">
 <span id="id7"></span><h2>Software ideas for analysts<a class="headerlink" href="#software-ideas-for-analysts" title="Permalink to this headline">¶</a></h2>
-<p>It’s important to remember that when we write code for analysis, we are developing software. Over many years, software engineering teams have developed good practices for developing robust software. These practices help to make our code simple, readable and easier to maintain. Analysts using code as a means to perform analysis can benefit from at least partially applying such practices in their own codebases.</p>
+<p>It’s important to remember that when we write code for analysis, we are developing software. Over many years, software engineering teams have developed good practices for creating robust software. These practices help to make our code simple, readable and easier to maintain. Analysts using code as a means to perform analysis can benefit from at least partially applying such practices in their own codebases.</p>
 <p>This chapter will try to condense key messages and guidelines from these practices, for use by analysts who write code. That said, reading and learning more about these practices is likely to benefit the quality of your code and is highly encouraged.</p>
 <div class="section" id="keep-it-simple">
 <h3>Keep it simple<a class="headerlink" href="#keep-it-simple" title="Permalink to this headline">¶</a></h3>
 <p>The ability to convey information in a simple and clear way matters.</p>
-<p>This is particularly true when explaining concepts that are already complex. When writing code you are often trying to solve problems that are complex in nature. You should avoid introducing extra complexity to these problem, wherever possible. A good guideline to achieve this is to seek out the simplest solution wherever possible.</p>
-<p>More generally here are a few tips to make sure you keep your project nice and simple:</p>
+<p>This is particularly true when explaining concepts that are already complex. When writing code you are often trying to solve problems that are complex in nature. You should avoid introducing extra complexity to these problems, wherever possible.</p>
+<p>Here are a few tips to make sure you keep your project nice and simple:</p>
 <ul class="simple">
 <li><p>Solve the problem - do not get distracted and make sure you have a clear outcome in mind.</p></li>
 <li><p>Try not to ‘reinvent the wheel’ - use existing packages when they solve the problem. They will most likely be better documented and won’t need extra maintenance.</p></li>
@@ -1004,14 +1004,13 @@ The <a class="reference external" href="https://google.github.io/styleguide/Rgui
 <blockquote>
 <div><p>You ain’t gonna need it</p>
 </div></blockquote>
-<p>Remember that additional features will require more documentation and testing to ensure that they ae working correctly. Really consider if adding these extras will make your code more or less maintainable, user-friendly and correct.</p>
+<p>Remember that additional features will require more documentation and testing to ensure that they are working correctly. Really consider if adding these extras will make your code more or less maintainable, user-friendly and correct.</p>
 </div>
 <p>Lastly, it is worth stressing that complex problems might require complex solutions. In those cases make sure that you only introduce complexity where it is needed. You should address necessary complexity with proportionate quality assurance - through documentation, testing and review. For instance, if the execution time of your code is critical, then making the code more complex to achieve a faster runtime may be an acceptable trade-off.</p>
 </div>
 <div class="section" id="don-t-repeat-yourself">
 <h3>Don’t Repeat Yourself<a class="headerlink" href="#don-t-repeat-yourself" title="Permalink to this headline">¶</a></h3>
 <p>In the section on <a class="reference internal" href="#modular"><span class="std std-ref">modular code</span></a>, you were encouraged to refactor your code into more self-contained components for ease of testing, reproducibility and reusability. However, it is worth stressing that ‘quick and dirty’ solutions often involve copy-pasted code that is functionally identical. This is expected and is natural in the initial stages of a project. Nonetheless, repetition not only wastes your time, but it also makes your code more difficult to read.
-3*QA
 Consider a script that contains three copies of a similar piece of code. If the code that is used to perform the repetitive task is found to be incorrect, or if a developer wishes to modify the task being performed by this code, they must implement a similar change in each of the three copies. If only two copies were spotted and amended, there is now a bug sleeping in the code waiting to be triggered… Moreover, anyone reviewing the code would need to check that the right logic is being used three times over.</p>
 <p>To put this in context, let us use an example where the developer wants to get the odd numbers from three different lists of numbers:</p>
 <div class="sphinx-tabs docutils container">
@@ -1120,11 +1119,11 @@ Consider a script that contains three copies of a similar piece of code. If the 
 
 <span class="k">def</span> <span class="nf">get_odd</span><span class="p">(</span><span class="n">numbers</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Get only the odd numbers.&quot;&quot;&quot;</span>
-    <span class="k">return</span> <span class="p">[</span><span class="n">number</span> <span class="k">for</span> <span class="n">number</span> <span class="ow">in</span> <span class="n">numbers</span> <span class="k">if</span> <span class="n">number</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">1</span><span class="p">]</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">number</span> <span class="k">for</span> <span class="n">number</span> <span class="ow">in</span> <span class="n">numbers</span> <span class="k">if</span> <span class="n">is_odd</span><span class="p">(</span><span class="n">number</span><span class="p">)]</span>
 
 <span class="k">def</span> <span class="nf">get_even</span><span class="p">(</span><span class="n">numbers</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Get only the even numbers.&quot;&quot;&quot;</span>
-    <span class="k">return</span> <span class="p">[</span><span class="n">number</span> <span class="k">for</span> <span class="n">number</span> <span class="ow">in</span> <span class="n">numbers</span> <span class="k">if</span> <span class="n">number</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">]</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">number</span> <span class="k">for</span> <span class="n">number</span> <span class="ow">in</span> <span class="n">numbers</span> <span class="k">if</span> <span class="n">is_odd</span><span class="p">(</span><span class="n">number</span><span class="p">)</span> <span class="o">==</span> <span class="kc">False</span><span class="p">]</span>
 
 
 <span class="c1"># More concise, but also more complex - not always best</span>
@@ -1215,8 +1214,8 @@ For example, in Python <code class="docutils literal notranslate"><span class="p
 </pre></div>
 </div>
 </div></div>
-<p>In the example above, the student count is not printed because <code class="docutils literal notranslate"><span class="pre">None</span></code> and <code class="docutils literal notranslate"><span class="pre">FALSE</span></code> evaluate to false.
-In Python and R, 0 will also evaluate to False.
+<p>In the example above, the student count is not printed because <code class="docutils literal notranslate"><span class="pre">None</span></code> and <code class="docutils literal notranslate"><span class="pre">FALSE</span></code> evaluate to <code class="docutils literal notranslate"><span class="pre">False</span></code>.
+In Python and R, <code class="docutils literal notranslate"><span class="pre">0</span></code> will also evaluate to <code class="docutils literal notranslate"><span class="pre">False</span></code>.
 Therefore, it is unclear whether the programmer intended that the statement is printed when the count is 0.
 If a count of 0 should be printed, then this lack of specificity has created a bug.</p>
 <p>To perform the same decision explicitly, we should specify the exact condition under which the student count should be printed.</p>
@@ -1250,7 +1249,7 @@ Only changes to one part of the software’s specification should be able to aff
 <p>When you work with code that is designed to multitask, it is often difficult to modify this code without having an unintentional effect on other aspects of the software.</p>
 <p>Imagine trying to create a model of the economy, which is a complex web of interconnected interactions. Creating ‘abstractions’ in the form of classes or functions that try to model multiple aspects of the economy at once might seem helpful, but when used incorrectly might instead add to the complexity.</p>
 <p>For example, consider a class that represents a whole country (<code class="docutils literal notranslate"><span class="pre">Country</span></code>). This would represent a model that is trying to predict economic statistics for a country such as unemployment or inflation. One can imagine that this class will quickly grow into something unmanageable, as its responsibilities grow in the form of additional methods and attributes.</p>
-<p>Based on the other chapters in this guidance, you might eventually realise that you need to break this class down further. However, if you had applied the idea of single responsibility, you might have broken the <code class="docutils literal notranslate"><span class="pre">Country</span></code> class down into smaller components such as <code class="docutils literal notranslate"><span class="pre">UnemploymentModel</span></code>, <code class="docutils literal notranslate"><span class="pre">InflationModel</span></code>. These classes would be responsible for doing specific modelling, while the <code class="docutils literal notranslate"><span class="pre">Country</span></code> class might only responsible for presenting the results to, lets say, a higher level economy model that tries to model cross-country trade.</p>
+<p>Based on the other chapters in this guidance, you might eventually realise that you need to break this class down further. If you had applied the idea of single responsibility, you might have broken the <code class="docutils literal notranslate"><span class="pre">Country</span></code> class down into smaller components such as <code class="docutils literal notranslate"><span class="pre">UnemploymentModel</span></code>, <code class="docutils literal notranslate"><span class="pre">InflationModel</span></code>. These classes would be responsible for doing specific modelling, while the <code class="docutils literal notranslate"><span class="pre">Country</span></code> class might only responsible for presenting the results to, lets say, a higher level economy model that tries to model cross-country trade.</p>
 <p>This simplicity also increases usability, by minimising the number of parameters that each function or class might require.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -1266,7 +1265,7 @@ Only changes to one part of the software’s specification should be able to aff
 <p>These parts of your code relate to higher level concepts. They will be using the lower level <code class="docutils literal notranslate"><span class="pre">Model</span></code> classes, but are primarily concerned with interactions between countries.</p>
 </li>
 <li><p>Run simulations given a description of the desired economy.</p>
-<p>Once the model is ready, there might be a ‘SimulationRunner’ that takes in your model of the world economy and runs simulations. In this case, this part of your codebase will only revolve around running the actual simulations.</p>
+<p>Once the model is ready, there might be a <code class="docutils literal notranslate"><span class="pre">SimulationRunner</span></code> that takes in your model of the world economy and runs simulations. In this case, this part of your codebase will only revolve around running the actual simulations.</p>
 </li>
 </ul>
 <p>In each of these distinct sections of your codebase there will be multiple classes and functions, which should follow the single responsibility concepts outlined earlier.</p>
@@ -1276,16 +1275,16 @@ Only changes to one part of the software’s specification should be able to aff
 <p class="caption"><span class="caption-number">Fig. 3 </span><span class="caption-text">Representation of concerns and responsibilities within a piece of software</span><a class="headerlink" href="#separation-of-concerns" title="Permalink to this image">¶</a></p>
 </div>
 <p>As such, separate sections of your software should be responsible for each of the concerns.
-Within each section of your software, distinct functions or classes should be responsible for each task that is required for that sections overall functionality.</p>
+Within each section of your software, distinct functions or classes should be responsible for each task that is required for that section’s overall functionality.</p>
 <div class="admonition-in-the-context-of-functions admonition">
 <p class="admonition-title">In the context of functions</p>
-<p>The previous example was heavily focused on classes and Object-Oriented Programming. The same principles apply in the world of functions. You define each concern which is addressed by a module containing functions who follow the single responsibility principle.</p>
+<p>The previous example was heavily focused on classes and Object-Oriented Programming. The same principles apply in the world of functions. You define each concern that is addressed by a module containing functions who follow the single responsibility principle.</p>
 <p>So the previous example could equally include:</p>
 <ul class="simple">
 <li><p>An <code class="docutils literal notranslate"><span class="pre">unemployment_model</span></code> - function running the unemployment modelling.</p></li>
-<li><p>An <code class="docutils literal notranslate"><span class="pre">inflation_model</span></code> - function running the unemployment modelling.</p></li>
+<li><p>An <code class="docutils literal notranslate"><span class="pre">inflation_model</span></code> - function running the inflation modelling.</p></li>
 </ul>
-<p>These functions would produce data about a given country, to be stored in an object. Another function might then take this data for multiple countries and start modelling it across country boundaries.</p>
+<p>These functions would produce data about a given country, to be stored in an object. Another function might then take these data for multiple countries and start modelling it across country boundaries.</p>
 <p>The same core concepts still fully apply.</p>
 </div>
 </div>
@@ -1403,7 +1402,7 @@ Within each section of your software, distinct functions or classes should be re
     </div>
 
     
-  <script src="_static/js/index.3da636dd464baa7582d2.js"></script>
+  <script src="_static/js/index.d3f166471bb80abb5163.js"></script>
 
 
     

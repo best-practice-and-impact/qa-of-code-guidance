@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Data Management &#8212; DRAFT: Quality Assurance of Code for Analysis and Research</title>
     
-  <link rel="stylesheet" href="_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+  <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
     
   <link rel="stylesheet"
@@ -32,22 +32,22 @@
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="_static/tabs.css" />
-    <link rel="stylesheet" type="text/css" href="_static/markdown_within_tabs.css" />
     <link rel="stylesheet" type="text/css" href="_static/logo.css" />
-    <link rel="stylesheet" type="text/css" href="_static/accessibility.css" />
     <link rel="stylesheet" type="text/css" href="_static/admonitions.css" />
+    <link rel="stylesheet" type="text/css" href="_static/accessibility.css" />
+    <link rel="stylesheet" type="text/css" href="_static/markdown_within_tabs.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="_static/js/index.3da636dd464baa7582d2.js">
+  <link rel="preload" as="script" href="_static/js/index.d3f166471bb80abb5163.js">
 
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
     <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script src="_static/doctools.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
@@ -171,7 +171,7 @@
 </nav> <!-- To handle the deprecated key -->
 
 <div class="navbar_extra_footer">
-  <p>Book version 2021.1</p><a href='https://www.gov.uk/government/organisations/government-analysis-function' target='_blank'><img src='./_static/af_logo.png' alt='The Government Analysis Function logo' style='width:50%;'></a>
+  <p>Book version 2021.2</p><a href='https://www.gov.uk/government/organisations/government-analysis-function' target='_blank'><img src='./_static/af_logo.png' alt='The Government Analysis Function logo' style='width:50%;'></a>
 </div>
 
 </div>
@@ -318,7 +318,7 @@ This section aims to highlight good data management practices, so that you can e
 This requires suitable storage of data, with documentation and versioning of the data where it may change over time.</p>
 <div class="admonition-strategies admonition">
 <p class="admonition-title">Key strategies</p>
-<p><a class="reference external" href="https://www.gov.uk/government/publications/the-government-data-quality-framework/the-government-data-quality-framework">The Government Data Quality Framework</a> focuses primarily on assessing and improving the quality of input data. It should be primary resource for all analysts working with data in the public sector.</p>
+<p><a class="reference external" href="https://www.gov.uk/government/publications/the-government-data-quality-framework/the-government-data-quality-framework">The Government Data Quality Framework</a> focuses primarily on assessing and improving the quality of input data. It should be a primary resource for all analysts working with data in the public sector.</p>
 </div>
 <div class="section" id="data-storage">
 <h2>Data storage<a class="headerlink" href="#data-storage" title="Permalink to this headline">¶</a></h2>
@@ -334,7 +334,7 @@ However, most analysis tools should support reading data directly from safe long
 The cost of their easy to use interface and flexibility is increased difficulty of quality assurance.</p>
 <div class="figure align-default" id="spreadsheets-comic">
 <a class="reference internal image-reference" href="https://assets.amuniversal.com/7f343ac0870a01332a13005056a9545d"><img alt="A comic strip joking that it doesn't matter if a spreadsheet if wrong, &quot;as long as it gives me the answer I want&quot;." src="https://assets.amuniversal.com/7f343ac0870a01332a13005056a9545d" style="width: 75%;" /></a>
-<p class="caption"><span class="caption-number">Fig. 9 </span><span class="caption-text">Does it matter if the spreadsheet is wrong, from <a class="reference external" href="https://dilbert.com/strip/2016-01-07">Dilbert by Scott Adams</a></span><a class="headerlink" href="#spreadsheets-comic" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 13 </span><span class="caption-text">Does it matter if the spreadsheet is wrong, from <a class="reference external" href="https://dilbert.com/strip/2016-01-07">Dilbert by Scott Adams</a></span><a class="headerlink" href="#spreadsheets-comic" title="Permalink to this image">¶</a></p>
 </div>
 <p>Spreadsheets are not suitable for storage of data (or statistics production and modelling processes).
 Issues when using spreadsheets for data storage include:</p>
@@ -350,7 +350,7 @@ Issues when using spreadsheets for data storage include:</p>
 </ul>
 </li>
 </ul>
-<p>The European Spreadsheet Risks Interest Group document <a class="reference external" href="http://www.eusprig.org/horror-stories.htm">spreadsheet related errors and their consequences</a>.</p>
+<p>See the European Spreadsheet Risks Interest Group document <a class="reference external" href="http://www.eusprig.org/horror-stories.htm">spreadsheet related errors and their consequences</a> for more information.</p>
 </div>
 <div class="section" id="databases">
 <h3>Databases<a class="headerlink" href="#databases" title="Permalink to this headline">¶</a></h3>
@@ -404,13 +404,13 @@ While this Software Carpentry course covers <a class="reference external" href="
 </div>
 <div class="section" id="documenting-data">
 <h2>Documenting data<a class="headerlink" href="#documenting-data" title="Permalink to this headline">¶</a></h2>
-<p>Without documentation, it is difficult to understand and work with new dataset.</p>
+<p>Without documentation, it is difficult to understand and work with a new dataset.</p>
 <p>For our analysis, we should be able to quickly grasp:</p>
 <ul class="simple">
-<li><p>What data is available to us?</p></li>
-<li><p>How was this data collected or generated?</p></li>
-<li><p>How is this data represented?</p></li>
-<li><p>Has this data been validated or manipulated?</p></li>
+<li><p>What data are available to us?</p></li>
+<li><p>How were these data collected or generated?</p></li>
+<li><p>How are these data represented?</p></li>
+<li><p>Have these data been validated or manipulated?</p></li>
 <li><p>How am I ethically and legally permitted to use the data?</p></li>
 </ul>
 <p>This information should be created by data providers and analysts, in the form of documentation.</p>
@@ -436,8 +436,8 @@ While this Software Carpentry course covers <a class="reference external" href="
 <h3>Information Asset Register (IAR)<a class="headerlink" href="#information-asset-register-iar" title="Permalink to this headline">¶</a></h3>
 <p>An information asset register (IAR) documents the information assets within your organisation.
 Your department should have an IAR in place, to document its information assets.
-As an analysts, you might use the register to identify contacts for data require for your analyses.</p>
-<p>This form of documentation may not contain detailed information on how to use each data source (provided by data dictionaries), but an IAR does increases visibility of data flows.
+As an analyst, you might use the register to identify contacts for data required for your analyses.</p>
+<p>This form of documentation may not contain detailed information on how to use each data source (provided by data dictionaries), but an IAR does increase visibility of data flows.
 An IAR may include:</p>
 <ul class="simple">
 <li><p>the owner of each dataset</p></li>
@@ -468,7 +468,7 @@ The <a class="reference external" href="https://github.com/paulfitz/daff"><code 
 <p>You might alternatively version your data manually.
 For example, by creating new database tables or files for each new version of the data.
 It must be possible to recreated previous versions of the data, for reproducibility.
-As such, is important that data file versions are named uniquely, for example, using incrementing numbers and/or date of collection.
+As such, it is important that data file versions are named uniquely, for example, using incrementing numbers and/or date of collection.
 Additionally, file versions must not be modified after they have been used for analysis - they should be treated as read-only.
 All modifications to the data should result in new versions.</p>
 <div class="admonition-todo admonition" id="id1">
@@ -494,7 +494,7 @@ This might be documented in analysis reports or automatically logged by your cod
 <li><p><a class="reference external" href="https://www.gov.uk/government/publications/joined-up-data-in-government-the-future-of-data-linking-methods">Data linking methods</a></p></li>
 <li><p>When publishing or sharing tabular data, you should follow the <a class="reference external" href="https://www.gov.uk/government/publications/recommended-open-standards-for-government/tabular-data-standard">GOV.UK Tabular data standard</a>.</p></li>
 </ul>
-<p>Analysts producing published statistics may also be interested in <a class="reference external" href="https://gss.civilservice.gov.uk/guidance/the-gss-data-project/">Connected Open Government Statistsics (COGS)</a>.</p>
+<p>Analysts producing published statistics may also be interested in <a class="reference external" href="https://gss.civilservice.gov.uk/guidance/the-gss-data-project/">Connected Open Government Statistics (COGS)</a>.</p>
 <p>Guidance from the UK Data Service describes <a class="reference external" href="https://www.ukdataservice.ac.uk/manage-data/store/security">data security considerations</a>.</p>
 </div>
 </div>
@@ -548,7 +548,7 @@ This might be documented in analysis reports or automatically logged by your cod
     </div>
 
     
-  <script src="_static/js/index.3da636dd464baa7582d2.js"></script>
+  <script src="_static/js/index.d3f166471bb80abb5163.js"></script>
 
 
     

@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Principles &#8212; DRAFT: Quality Assurance of Code for Analysis and Research</title>
     
-  <link rel="stylesheet" href="_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+  <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
     
   <link rel="stylesheet"
@@ -32,22 +32,22 @@
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="_static/tabs.css" />
-    <link rel="stylesheet" type="text/css" href="_static/markdown_within_tabs.css" />
     <link rel="stylesheet" type="text/css" href="_static/logo.css" />
-    <link rel="stylesheet" type="text/css" href="_static/accessibility.css" />
     <link rel="stylesheet" type="text/css" href="_static/admonitions.css" />
+    <link rel="stylesheet" type="text/css" href="_static/accessibility.css" />
+    <link rel="stylesheet" type="text/css" href="_static/markdown_within_tabs.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="_static/js/index.3da636dd464baa7582d2.js">
+  <link rel="preload" as="script" href="_static/js/index.d3f166471bb80abb5163.js">
 
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
     <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script src="_static/doctools.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
@@ -171,7 +171,7 @@
 </nav> <!-- To handle the deprecated key -->
 
 <div class="navbar_extra_footer">
-  <p>Book version 2021.1</p><a href='https://www.gov.uk/government/organisations/government-analysis-function' target='_blank'><img src='./_static/af_logo.png' alt='The Government Analysis Function logo' style='width:50%;'></a>
+  <p>Book version 2021.2</p><a href='https://www.gov.uk/government/organisations/government-analysis-function' target='_blank'><img src='./_static/af_logo.png' alt='The Government Analysis Function logo' style='width:50%;'></a>
 </div>
 
 </div>
@@ -297,7 +297,7 @@ Analysis in programming makes each of these principles easier to fulfil in most 
 <a class="reference internal image-reference" href="_images/repro_stack.png"><img alt="Founding principles of good analysis." src="_images/repro_stack.png" style="width: 50%;" /></a>
 <p class="caption"><span class="caption-number">Fig. 1 </span><span class="caption-text">Founding principles of good analysis</span><a class="headerlink" href="#repro-stack" title="Permalink to this image">¶</a></p>
 </div>
-<p>Reproducibility guarantees that we have done what we are claiming to have done, and that users could do it to get the same result.
+<p>Reproducibility guarantees that we have done what we are claiming to have done, and that others can easily replicate our work.
 Auditability means that we know why we chose our analysis, and who is responsible for each part of it - including assurance.
 Assurance improves the average quality and includes the communication of that quality to users.</p>
 <div class="admonition-strategies admonition">
@@ -316,7 +316,7 @@ We recommend:</p>
 <h2>Reproducible<a class="headerlink" href="#reproducible" title="Permalink to this headline">¶</a></h2>
 <p>Reproducibility is the only thing that you can guarantee in your analysis.
 It is the first pillar of good analysis.
-If you can’t prove that you can run the same analysis, with the same data, and obtain the same results then you are not adding valuable analysis.
+If you can’t prove that you can run the same analysis, with the same data, and obtain the same results then you are not adding a valuable analysis.
 The additional assurances of peer review, rigorous testing, and validity are secondary to being able to reproduce any analysis that you carry out in a proportionate amount of time.</p>
 <p>Reproducible analysis relies on a transparent production process, so that anyone can follow your steps and understand your results.
 This transparency eases reuse of your methods and results.
@@ -330,13 +330,12 @@ Wherever possible, we share the code we used to produce our outputs, along with 
 </div>
 <div class="section" id="auditable">
 <h2>Auditable<a class="headerlink" href="#auditable" title="Permalink to this headline">¶</a></h2>
-<p>If decisions are made, based on your analysis, then you must make sure that the story of that analysis is available.
-Your analysis and the evidence that you provide must be available for scrutiny and audit.
+<p>If decisions are made, based on your analysis, then you must make sure that your analysis and the evidence that you provide are available for scrutiny and audit.
 Auditable analysis is about being able to, at any point, answer:</p>
 <ul class="simple">
 <li><p>Who made each decision?</p></li>
 <li><p>When was this decision made?</p></li>
-<li><p>What evidence was this decision made on?</p></li>
+<li><p>What evidence was this decision based on?</p></li>
 </ul>
 <p>Answering these questions gives decision makers and users greater trust in your work.
 They know the story of your analysis and why you made certain analytical choices.
@@ -380,7 +379,7 @@ Colleagues then typically repeat parts of the process manually to quality assure
 Processes like this are also prone to error, because the input data and the outputs are not connected directly, only through the analyst’s manual intervention.</p>
 <p>More recently, the tools and techniques available to analysts have evolved.
 Open-source tools like <a class="reference external" href="https://www.python.org/">Python</a> and <a class="reference external" href="https://www.r-project.org/">R</a> have become available.
-Coupled with version control and software management platforms like <a class="reference external" href="https://git-scm.com/">Git</a> and Git-services have made it possible to develop automatic, streamlined processes, accompanied by a full audit trail.</p>
+Coupled with version control and software management platforms like <a class="reference external" href="https://git-scm.com/">Git</a> and Git-services these tools have made it possible to develop automatic, streamlined processes, accompanied by a full audit trail.</p>
 <p>It is essential that we have access to appropriate and up-to-date tools for our analysis.
 In a recent case, use of legacy analytical tools lead to <a class="reference external" href="https://www.bbc.co.uk/news/technology-54423988">under-reporting of COVID-19 statistics</a>.</p>
 <p>RAP was <a class="reference external" href="https://dataingovernment.blog.gov.uk/2017/03/27/reproducible-analytical-pipeline/">first piloted in the Government Statistical Service in 2017</a> by analysts in the Department for Digital, Culture, Media &amp; Sport (DCMS) and the Department for Education (DfE).
@@ -439,7 +438,7 @@ RAP champions are responsible for promoting reproducible analysis through the us
     </div>
 
     
-  <script src="_static/js/index.3da636dd464baa7582d2.js"></script>
+  <script src="_static/js/index.d3f166471bb80abb5163.js"></script>
 
 
     

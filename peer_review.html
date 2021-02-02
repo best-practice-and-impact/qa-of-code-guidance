@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Peer review &#8212; DRAFT: Quality Assurance of Code for Analysis and Research</title>
     
-  <link rel="stylesheet" href="_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+  <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
     
   <link rel="stylesheet"
@@ -32,22 +32,22 @@
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="_static/tabs.css" />
-    <link rel="stylesheet" type="text/css" href="_static/markdown_within_tabs.css" />
     <link rel="stylesheet" type="text/css" href="_static/logo.css" />
-    <link rel="stylesheet" type="text/css" href="_static/accessibility.css" />
     <link rel="stylesheet" type="text/css" href="_static/admonitions.css" />
+    <link rel="stylesheet" type="text/css" href="_static/accessibility.css" />
+    <link rel="stylesheet" type="text/css" href="_static/markdown_within_tabs.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="_static/js/index.3da636dd464baa7582d2.js">
+  <link rel="preload" as="script" href="_static/js/index.d3f166471bb80abb5163.js">
 
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
     <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script src="_static/doctools.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
@@ -171,7 +171,7 @@
 </nav> <!-- To handle the deprecated key -->
 
 <div class="navbar_extra_footer">
-  <p>Book version 2021.1</p><a href='https://www.gov.uk/government/organisations/government-analysis-function' target='_blank'><img src='./_static/af_logo.png' alt='The Government Analysis Function logo' style='width:50%;'></a>
+  <p>Book version 2021.2</p><a href='https://www.gov.uk/government/organisations/government-analysis-function' target='_blank'><img src='./_static/af_logo.png' alt='The Government Analysis Function logo' style='width:50%;'></a>
 </div>
 
 </div>
@@ -327,7 +327,7 @@
 <li><p>Is the required functionality tested sufficiently?</p></li>
 <li><p>How easy will it be to alter this code when requirements change? They always do.</p>
 <ul>
-<li><p>Are high level parameters kept in a dedicated configuration files? Or would somebody need to work their way through the code with lots of manual edits to reconfigure for a new run?</p></li>
+<li><p>Are high level parameters kept in dedicated configuration files? Or would somebody need to work their way through the code with lots of manual edits to reconfigure for a new run?</p></li>
 </ul>
 </li>
 <li><p>Can I generate the same outputs that the analysis claims to produce?</p>
@@ -338,7 +338,7 @@
 </li>
 <li><p>Is the code style consistent?</p></li>
 </ul>
-<p>In addition to asking these questions, you might formalise your review using a template. Templates are useful for setting criteria to review against. You should tailor any template to reflect the scope of your review. For example, small regular reviews may focus on smaller aspects of the analysis than a large project-wide review. The general example below is written in Markdown, so that it can be used in Git platform Pull/Merge requests:</p>
+<p>In addition to asking these questions, you might formalise your review using a template. Templates are useful for setting criteria to review against. You should tailor any template to reflect the scope of your review. For example, small regular reviews may focus on smaller aspects of the analysis compared to a large project-wide review. The general example below is written in Markdown, so that it can be used in Git platform Pull/Merge requests:</p>
 <div class="highlight-md notranslate"><div class="highlight"><pre><span></span><span class="gu">##  Code review</span>
 
 <span class="gu">#### Documentation</span>
@@ -409,7 +409,7 @@ Be critical and clear, but not mean. Ask questions and set actions.
 </ul>
 <p>Remote review is aided by features of most version control platforms, namely the Pull Request (or equivalent). See <a class="reference internal" href="version_control.html"><span class="doc std std-doc">Version control</span></a> for more information.</p>
 <p>Here we discuss an example from <a class="reference external" href="https://ropensci.org/">rOpenSci</a>; a community led initiative that curates open source, statistical R packages. rOpenSci apply a rigorous peer review process to assure the quality of packages before including them in their collection. This peer review process is entirely remote and is performed in the open, via GitHub Pull Requests.</p>
-<p>In this example, from colleagues at Public Health England, <a class="reference external" href="https://github.com/ropensci/software-review/issues/168">the <code class="docutils literal notranslate"><span class="pre">fingertipsR</span></code> package is reviewed</a>. The initial comment describes the package that is being submitted and includes a check against a list of minimum requirements. The <a class="reference external" href="http://mangothecat.github.io/goodpractice/"><code class="docutils literal notranslate"><span class="pre">goodpractice</span></code> R package</a> is used to check that good R packaging practices have been followed. <a class="reference internal" href="version_control.html#continuous-integration"><span class="std std-ref">Continuous integration</span></a> is commonly used to use similar tools to carry out automated checks on code repositories. The reports from these checks can save reviewers time, by providing indicators of things like code complexity and test coverage.</p>
+<p>In this example, from colleagues at Public Health England, <a class="reference external" href="https://github.com/ropensci/software-review/issues/168">the <code class="docutils literal notranslate"><span class="pre">fingertipsR</span></code> package is reviewed</a>. The initial comment describes the package that is being submitted and includes a check against a list of minimum requirements. The <a class="reference external" href="http://mangothecat.github.io/goodpractice/"><code class="docutils literal notranslate"><span class="pre">goodpractice</span></code> R package</a> is used to check that good R packaging practices have been followed. <a class="reference internal" href="version_control.html#continuous-integration"><span class="std std-ref">GitHub Actions</span></a> is commonly used to use similar tools to carry out automated checks on code repositories. The reports from these checks can save reviewers time, by providing indicators of things like code complexity and test coverage.</p>
 <p>Two detailed external reviews are then conducted before the package is accepted - these reviews include additional checks for common aspects of code packages, like documentation, examples and automated testing. Perhaps the most informative part of these reviews, however, is the detailed bespoke comments. Here the reviewers highlight problems, ask questions to clarify aspects of the package design and suggest improvements to the implementation of the code (with examples).</p>
 <p>Following the reviews, additional comments describe how the reviewers requested changes have been addressed. And finally, there is a sign off to confirm that the reviewers are satisfied with the package.</p>
 <p>Although this review looked at an entire, mature package, you can apply parts of this review process to smaller pieces of code as required.</p>
@@ -466,7 +466,7 @@ Be critical and clear, but not mean. Ask questions and set actions.
     </div>
 
     
-  <script src="_static/js/index.3da636dd464baa7582d2.js"></script>
+  <script src="_static/js/index.d3f166471bb80abb5163.js"></script>
 
 
     

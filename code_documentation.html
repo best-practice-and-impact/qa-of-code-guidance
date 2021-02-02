@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Code documentation &#8212; DRAFT: Quality Assurance of Code for Analysis and Research</title>
     
-  <link rel="stylesheet" href="_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+  <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
     
   <link rel="stylesheet"
@@ -32,14 +32,14 @@
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="_static/tabs.css" />
-    <link rel="stylesheet" type="text/css" href="_static/markdown_within_tabs.css" />
     <link rel="stylesheet" type="text/css" href="_static/logo.css" />
-    <link rel="stylesheet" type="text/css" href="_static/accessibility.css" />
     <link rel="stylesheet" type="text/css" href="_static/admonitions.css" />
+    <link rel="stylesheet" type="text/css" href="_static/accessibility.css" />
+    <link rel="stylesheet" type="text/css" href="_static/markdown_within_tabs.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="_static/js/index.3da636dd464baa7582d2.js">
+  <link rel="preload" as="script" href="_static/js/index.d3f166471bb80abb5163.js">
 
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -49,7 +49,6 @@
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
     <script src="_static/tabs.js"></script>
-    <script src="_static/doctools.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
@@ -173,7 +172,7 @@
 </nav> <!-- To handle the deprecated key -->
 
 <div class="navbar_extra_footer">
-  <p>Book version 2021.1</p><a href='https://www.gov.uk/government/organisations/government-analysis-function' target='_blank'><img src='./_static/af_logo.png' alt='The Government Analysis Function logo' style='width:50%;'></a>
+  <p>Book version 2021.2</p><a href='https://www.gov.uk/government/organisations/government-analysis-function' target='_blank'><img src='./_static/af_logo.png' alt='The Government Analysis Function logo' style='width:50%;'></a>
 </div>
 
 </div>
@@ -317,7 +316,7 @@
 <blockquote class="epigraph">
 <div><p>Use comments sparingly and with purpose</p>
 </div></blockquote>
-<p>Comments are lines of text in source code files which typically aren’t executed as part of the program. They are small notes or annotations written by those working on the code. Often, they provide context or explain the reasoning behind implementation decisions.</p>
+<p>Comments are lines of text in source code files that typically aren’t executed as part of the program. They are small notes or annotations written by those working on the code. Often, they provide context or explain the reasoning behind implementation decisions.</p>
 <p>Comments are essential to help those working on the code in the future to understand any non-obvious details around how and why the code has been written in a particular way. As such, when it comes to providing relevant and perhaps higher-level documentation to the end consumer on the functionality of your code, there are much more appropriate solutions such as <a class="reference internal" href="#docstrings"><span class="std std-ref">docstrings</span></a>.</p>
 <p>Although extremely useful, comments should be used sparingly. Excessive use of code comments often leads to redundancy and can, ironically, make your code harder to read. It is easy for comments to not be updated as changes are made to the code. Additionally, outdated, or irrelevant comments can confuse or mislead.</p>
 <div class="admonition note">
@@ -427,7 +426,7 @@ Complex is better than complicated.</p>
 </div>
 <div class="section" id="docstrings">
 <span id="id1"></span><h2>Docstrings<a class="headerlink" href="#docstrings" title="Permalink to this headline">¶</a></h2>
-<p>When your code is structured as functions or classes, these functional units can be efficiently documented using docstrings. Docstrings are specialised multi-line descriptions that appear at the start of a function definition and are the de facto way of documenting these individual components. In practice they can be either strings (as in Python docstrings) or comments (as in R). Note that module or script level docstrings are also commonly used (usually at the top of the module file in the case of Python). Use of docstrings keeps the documentation of your code closely associated with the relevant sections of code. This close association means it is easier to keep documentation up to date as changes are introduced to the code.</p>
+<p>When your code is structured as functions or classes, these functional units can be efficiently documented using docstrings. Docstrings are specialised multi-line descriptions that appear at the start of a function definition and are the <em>de facto</em> way of documenting these individual components. In practice they can be either strings (as in Python docstrings) or comments (as in R). Note that module or script level docstrings are also commonly used (usually at the top of the module file in the case of Python). Use of docstrings keeps the documentation of your code closely associated with the relevant sections of code. This close association means it is easier to keep documentation up to date as changes are introduced to the code.</p>
 <p>An end-user can access these docstrings by typing <code class="docutils literal notranslate"><span class="pre">help(function_name)</span></code> after they have imported your library, so they are handily available without needing to have the source code files open in another window. Other tools, like Jupyter for Python, allow users to easily access these docstrings for quick reference. Hence the focus on detail and comprehensiveness is key - this is the first point of call for an end-user trying to understand what a given function does.</p>
 <p>Docstrings commonly describe:</p>
 <ul class="simple">
@@ -521,9 +520,9 @@ Complex is better than complicated.</p>
 </div>
 <div class="section" id="automatic-documentation-generation">
 <span id="generating-docs"></span><h2>Automatic documentation generation<a class="headerlink" href="#automatic-documentation-generation" title="Permalink to this headline">¶</a></h2>
-<p>This section does not describe a tool that writes your documentation for you. It does, however, describe tools that automate generation of searchable, user-friendly HTML documentation that can really provide a great user experience for end-users. Accurate, up to date and accessible documentation is one of the cornerstones of well-adopted, open-source packages.</p>
+<p>This section does not describe a tool that writes your documentation for you. It does, however, describe tools that automate generation of searchable, user-friendly HTML documentation that can really provide a great experience for end-users. Accurate, up to date and accessible documentation is one of the cornerstones of well-adopted, open-source packages.</p>
 <p>Perhaps it is worth reflecting on truly how much we use well-rendered documentation for our favourite programming packages. It would be much harder it to adopt these packages to solve hard programming problems if they were not well-documented and their documentation was not easily accessible.</p>
-<p>The information presented in this section seeks inform you of how you can take your well-crafted <a class="reference internal" href="#docstrings"><span class="std std-ref">docstrings</span></a> and turn them into more widely accessible hosted documentation.</p>
+<p>The information presented in this section seeks to inform you of how you can take your well-crafted <a class="reference internal" href="#docstrings"><span class="std std-ref">docstrings</span></a> and turn them into more widely accessible hosted documentation.</p>
 <div class="section" id="generating-html-documentation">
 <h3>Generating HTML documentation<a class="headerlink" href="#generating-html-documentation" title="Permalink to this headline">¶</a></h3>
 <div class="section" id="python">
@@ -532,7 +531,7 @@ Complex is better than complicated.</p>
 <p>Sphinx supports code highlighting for multiple programming languages within a project, however, other tools may be required to automatically collate documentation from code in languages other than Python. These are not addressed here.</p>
 <p>Sphinx also supports theming, with a <a class="reference external" href="https://www.writethedocs.org/guide/tools/sphinx-themes/">myriad of themes</a> available out of the box. With a little bit of extra time you can even develop and adapt the existing themes into a custom theme suitable for your work.</p>
 <p>As well as theming support, <code class="docutils literal notranslate"><span class="pre">sphinx</span></code> allows users to develop extensions that extend its functionality. This GitHub repository provides a list of <a class="reference external" href="https://github.com/yoloseem/awesome-sphinxdoc">useful ways to extend the functionality of <code class="docutils literal notranslate"><span class="pre">sphinx</span></code></a> to suit your needs.</p>
-<p>To illustrate how this can be extremely useful, we will introduce the <a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/extensions/doctest.html">doctest extension</a>. It searches your existing docstrings for the <code class="docutils literal notranslate"><span class="pre">Examples</span></code> section and runs all of the included snippets of code, warning you if they do not run successfully. This means that you can ensure that your examples written in the documentation run to completion. Although this replace thorough code testing testing, it may help you to can spot a whole slew of issue stemming from potentially out of date documentation and examples that no longer apply when the code has been fundamentally altered.</p>
+<p>To illustrate how this can be extremely useful, we will introduce the <a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/extensions/doctest.html">doctest extension</a>. It searches your existing docstrings for the <code class="docutils literal notranslate"><span class="pre">Examples</span></code> section and runs all of the included snippets of code, warning you if they do not run successfully. This means that you can ensure that your examples written in the documentation run to completion. Although this can’t replace thorough code testing, it may help you to spot a whole slew of issues stemming from potentially out of date documentation and examples that no longer apply when the code has been fundamentally altered.</p>
 </div>
 <div class="section" id="r">
 <h4>R<a class="headerlink" href="#r" title="Permalink to this headline">¶</a></h4>
@@ -598,7 +597,7 @@ Complex is better than complicated.</p>
     </div>
 
     
-  <script src="_static/js/index.3da636dd464baa7582d2.js"></script>
+  <script src="_static/js/index.d3f166471bb80abb5163.js"></script>
 
 
     

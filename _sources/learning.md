@@ -53,6 +53,7 @@ Please note that learning resources from non-government training providers (i.e.
 * [Learn enough (UNIX) command line to be dangerous](https://www.learnenough.com/command-line-tutorial/basics)
 * [The UNIX workbench](https://seankross.com/the-unix-workbench/)
 
+(git-learning)=
 ### Git
 
 * [Intro to Git](https://learninghub.ons.gov.uk/course/view.php?id=532)

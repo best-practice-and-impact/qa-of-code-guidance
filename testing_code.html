@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Testing code &#8212; DRAFT: Quality Assurance of Code for Analysis and Research</title>
     
-  <link rel="stylesheet" href="_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+  <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
     
   <link rel="stylesheet"
@@ -32,14 +32,14 @@
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="_static/tabs.css" />
-    <link rel="stylesheet" type="text/css" href="_static/markdown_within_tabs.css" />
     <link rel="stylesheet" type="text/css" href="_static/logo.css" />
-    <link rel="stylesheet" type="text/css" href="_static/accessibility.css" />
     <link rel="stylesheet" type="text/css" href="_static/admonitions.css" />
+    <link rel="stylesheet" type="text/css" href="_static/accessibility.css" />
+    <link rel="stylesheet" type="text/css" href="_static/markdown_within_tabs.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="_static/js/index.3da636dd464baa7582d2.js">
+  <link rel="preload" as="script" href="_static/js/index.d3f166471bb80abb5163.js">
 
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -49,7 +49,6 @@
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
     <script src="_static/tabs.js"></script>
-    <script src="_static/doctools.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
@@ -173,7 +172,7 @@
 </nav> <!-- To handle the deprecated key -->
 
 <div class="navbar_extra_footer">
-  <p>Book version 2021.1</p><a href='https://www.gov.uk/government/organisations/government-analysis-function' target='_blank'><img src='./_static/af_logo.png' alt='The Government Analysis Function logo' style='width:50%;'></a>
+  <p>Book version 2021.2</p><a href='https://www.gov.uk/government/organisations/government-analysis-function' target='_blank'><img src='./_static/af_logo.png' alt='The Government Analysis Function logo' style='width:50%;'></a>
 </div>
 
 </div>
@@ -359,7 +358,7 @@ We can use general guides to direct where most of our testing effort goes.</p>
 <li><p>Write a new test every time you find a bug, to squash it for good</p></li>
 <li><p>Focus on testing the most realistic use cases of your code</p></li>
 <li><p>Test external interfaces - what happens if something unexpected is returned from one of your dependencies?</p></li>
-<li><p>Document what your code should and shouldn’t be used for, to steer users towards the corrected and tested usage</p></li>
+<li><p>Document what your code should and shouldn’t be used for, to steer users towards the correct and tested usage</p></li>
 </ul>
 <p>You shouldn’t:</p>
 <ul class="simple">
@@ -414,7 +413,7 @@ And you’re right to think “surely this could be automated too?”
 These tools can be used to ensure that all changes to a particular project are tested.
 Additionally, it allows others that are reviewing your code to see the results of your tests.</p>
 <p>An alternative to continuous integration, is using a Git hook.
-<a class="reference external" href="https://git-scm.com/docs/githooks">Git hooks</a> are scripts which can be set to run locally at specific points in your Git workflow.
+<a class="reference external" href="https://git-scm.com/docs/githooks">Git hooks</a> are scripts that can be set to run locally at specific points in your Git workflow.
 For example, we might set up a <code class="docutils literal notranslate"><span class="pre">pre-commit</span></code> or <code class="docutils literal notranslate"><span class="pre">pre-push</span></code> hook that runs our tests before we make each commit or push to the remote repository.
 This might stop our commit/push if the tests fail, so that we don’t push breaking changes to our remote repository.</p>
 </div>
@@ -478,7 +477,7 @@ The course also covers writing and documenting functions, and error handling.</p
 Assuring that individual units work as expected, using unit testing, does not guarantee that multiple units interact with one another as expected.</p>
 <div class="figure align-default" id="no-integration-tests">
 <a class="reference internal image-reference" href="_images/no_integration_tests.png"><img alt="Two drawers that open into each other's handles." src="_images/no_integration_tests.png" style="width: 40%;" /></a>
-<p class="caption"><span class="caption-number">Fig. 10 </span><span class="caption-text">Two unit tests, no integration tests.</span><a class="headerlink" href="#no-integration-tests" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 14 </span><span class="caption-text">Two unit tests, no integration tests.</span><a class="headerlink" href="#no-integration-tests" title="Permalink to this image">¶</a></p>
 </div>
 <p>Integration tests incorporate two or more units and check that they work together correctly.
 These tests are also used to test the interface between your code and external dependencies, such as a database or web-based API.</p>
@@ -486,7 +485,7 @@ These tests are also used to test the interface between your code and external d
 Creating abstractions of these dependencies when they are not being directly tested can keep your test code simpler and more focused.
 You might use Stubs or Mocks for this purpose:</p>
 <ul class="simple">
-<li><p>Stubs carry out a predetermined behaviour. For example, a stub representing an API always return the same response. Use these when you are not interested in the details around how your code interacts with the dependency.</p></li>
+<li><p>Stubs carry out a predetermined behaviour. For example, a stub representing an API always returns the same response. Use these when you are not interested in the details around how your code interacts with the dependency.</p></li>
 <li><p>Mocks require additional setup in your test code, to define your expectations. Use these when your test needs to verify that your code interacts with the Mock in a specific way.</p></li>
 </ul>
 </div>
@@ -497,7 +496,7 @@ The motivation for using end-to-end tests is similar to that of integration test
 Despite assurance that small sections of the code are functioning correctly, it’s important to validate that your overall system is fit for purpose.</p>
 <div class="figure align-default" id="sinking-ship">
 <a class="reference internal image-reference" href="https://i.stack.imgur.com/Nirxy.jpg"><img alt="A sinking ship would still report passing unit tests." src="https://i.stack.imgur.com/Nirxy.jpg" style="width: 50%;" /></a>
-<p class="caption"><span class="caption-number">Fig. 11 </span><span class="caption-text">A sinking ship would still report a number of passing unit and integration tests, while the system is failing overall.</span><a class="headerlink" href="#sinking-ship" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 15 </span><span class="caption-text">A sinking ship would still report a number of passing unit and integration tests, while the system is failing overall.</span><a class="headerlink" href="#sinking-ship" title="Permalink to this image">¶</a></p>
 </div>
 <p>These tests are much slower to run and can take longer to develop for complex processes.
 Having at least one end-to-end test for your process will ensure that the high-level specification of your code is met.
@@ -514,7 +513,7 @@ As with functional code, test code is much easier to maintain when it is modular
 </div>
 <div class="section" id="fixtures">
 <h3>Fixtures<a class="headerlink" href="#fixtures" title="Permalink to this headline">¶</a></h3>
-<p>As your test suite grows, you might notice that many of your test use similar code to prepare your tests or to clean up after each test has run.
+<p>As your test suite grows, you might notice that many of your tests use similar code to prepare your tests or to clean up after each test has run.
 Copying these code snippets for each test is laborious and also increases the risk of inconsistently applying those steps.</p>
 <p>Fixtures help us to avoid this form of repetition in our tests.
 You define your test preparation and clean up within a function (the fixture).
@@ -601,7 +600,7 @@ However, using functionality from test packages may improve running efficiency a
     </div>
 
     
-  <script src="_static/js/index.3da636dd464baa7582d2.js"></script>
+  <script src="_static/js/index.d3f166471bb80abb5163.js"></script>
 
 
     

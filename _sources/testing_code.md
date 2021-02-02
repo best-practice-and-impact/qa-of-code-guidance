@@ -35,7 +35,7 @@ You should:
 * Write a new test every time you find a bug, to squash it for good
 * Focus on testing the most realistic use cases of your code
 * Test external interfaces - what happens if something unexpected is returned from one of your dependencies?
-* Document what your code should and shouldn't be used for, to steer users towards the corrected and tested usage
+* Document what your code should and shouldn't be used for, to steer users towards the correct and tested usage
 
 You shouldn't:
 * Attempt to test every possible input and type of input
@@ -96,7 +96,7 @@ These tools can be used to ensure that all changes to a particular project are t
 Additionally, it allows others that are reviewing your code to see the results of your tests.
 
 An alternative to continuous integration, is using a Git hook.
-[Git hooks](https://git-scm.com/docs/githooks) are scripts which can be set to run locally at specific points in your Git workflow.
+[Git hooks](https://git-scm.com/docs/githooks) are scripts that can be set to run locally at specific points in your Git workflow.
 For example, we might set up a `pre-commit` or `pre-push` hook that runs our tests before we make each commit or push to the remote repository.
 This might stop our commit/push if the tests fail, so that we don't push breaking changes to our remote repository.
 
@@ -191,7 +191,7 @@ These tests are also used to test the interface between your code and external d
 When your code relies upon interaction with complex or external dependencies, it may be difficult for your tests to reproducibly access these dependencies.
 Creating abstractions of these dependencies when they are not being directly tested can keep your test code simpler and more focused.
 You might use Stubs or Mocks for this purpose:
-* Stubs carry out a predetermined behaviour. For example, a stub representing an API always return the same response. Use these when you are not interested in the details around how your code interacts with the dependency.
+* Stubs carry out a predetermined behaviour. For example, a stub representing an API always returns the same response. Use these when you are not interested in the details around how your code interacts with the dependency.
 * Mocks require additional setup in your test code, to define your expectations. Use these when your test needs to verify that your code interacts with the Mock in a specific way.
 
 
@@ -230,7 +230,7 @@ Add examples to reducing repetition in tests to demonstrate these
 
 ### Fixtures
 
-As your test suite grows, you might notice that many of your test use similar code to prepare your tests or to clean up after each test has run.
+As your test suite grows, you might notice that many of your tests use similar code to prepare your tests or to clean up after each test has run.
 Copying these code snippets for each test is laborious and also increases the risk of inconsistently applying those steps.
 
 Fixtures help us to avoid this form of repetition in our tests.

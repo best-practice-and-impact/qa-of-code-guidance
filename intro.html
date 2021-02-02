@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Quality Assurance of Code for Analysis and Research &#8212; DRAFT: Quality Assurance of Code for Analysis and Research</title>
     
-  <link rel="stylesheet" href="_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+  <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
     
   <link rel="stylesheet"
@@ -32,22 +32,22 @@
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="_static/tabs.css" />
-    <link rel="stylesheet" type="text/css" href="_static/markdown_within_tabs.css" />
     <link rel="stylesheet" type="text/css" href="_static/logo.css" />
-    <link rel="stylesheet" type="text/css" href="_static/accessibility.css" />
     <link rel="stylesheet" type="text/css" href="_static/admonitions.css" />
+    <link rel="stylesheet" type="text/css" href="_static/accessibility.css" />
+    <link rel="stylesheet" type="text/css" href="_static/markdown_within_tabs.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="_static/js/index.3da636dd464baa7582d2.js">
+  <link rel="preload" as="script" href="_static/js/index.d3f166471bb80abb5163.js">
 
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
     <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script src="_static/doctools.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
@@ -170,7 +170,7 @@
 </nav> <!-- To handle the deprecated key -->
 
 <div class="navbar_extra_footer">
-  <p>Book version 2021.1</p><a href='https://www.gov.uk/government/organisations/government-analysis-function' target='_blank'><img src='./_static/af_logo.png' alt='The Government Analysis Function logo' style='width:50%;'></a>
+  <p>Book version 2021.2</p><a href='https://www.gov.uk/government/organisations/government-analysis-function' target='_blank'><img src='./_static/af_logo.png' alt='The Government Analysis Function logo' style='width:50%;'></a>
 </div>
 
 </div>
@@ -318,27 +318,26 @@
 <h2>Citing the book<a class="headerlink" href="#citing-the-book" title="Permalink to this headline">¶</a></h2>
 <p>The following structure can be used to reference the current version of the book:</p>
 <blockquote>
-<div><p>UK Government Analytical Community. (2020). Quality assurance of code for analysis and research (version 2021.1). Office for National Statistics, Best Practice and Impact division: https://best-practice-and-impact.github.io/qa-of-code-guidance/</p>
+<div><p>UK Government Analytical Community. (2020). Quality assurance of code for analysis and research (version 2021.2). Office for National Statistics, Best Practice and Impact division: https://best-practice-and-impact.github.io/qa-of-code-guidance/</p>
 </div></blockquote>
 </div>
 <div class="section" id="how-to-get-the-most-out-of-the-book">
 <h2>How to get the most out of the book<a class="headerlink" href="#how-to-get-the-most-out-of-the-book" title="Permalink to this headline">¶</a></h2>
 <p>This guidance is tailored to government analysts who would like to quality assure their code and increase the reproducibility of their analyses. We have tried to interpret the requirements of pieces of guidance (the <a class="reference internal" href="principles.html"><span class="doc std std-doc">principles</span></a>) into actions and deliverables for analytical programming.</p>
-<p>However, the practices outlined in the book are general to many applications of programming, so may also be insightful for those outside of government.</p>
-<p>This book might be most useful for you if you are:</p>
+<p>However, the practices outlined in the book are general to many applications of programming, so may also be relevant for those outside of government. This book might be most useful for you if you are:</p>
 <ul class="simple">
 <li><p>writing code to automate part of your work and would like to assure that it is working as expected</p></li>
-<li><p>developing a statistical production pipeline and would like to assure that it is long term sustainable and reproducible</p></li>
+<li><p>developing a statistical production pipeline and would like to assure that it is sustainable and reproducible</p></li>
 <li><p>developing models and would like to assure that they are transparent and reproducible</p></li>
 <li><p>developing data science techniques and would like your code to be useful to others</p></li>
 <li><p>looking for a high level introduction to software engineering practices in the context of analysis and research</p></li>
 </ul>
-<p>This book can be used to guide your learning and as a reference. Each chapter describes the risks which the described practices may help to address. Therefore, you should strive to apply the most appropriate practices given the risks associated with your work.</p>
+<p>This book can be used to guide your learning and as a reference. Each chapter describes the risks that the described practices may help to address. Therefore, you should strive to apply the most appropriate practices given the risks associated with your work.</p>
 <p>The principles in this book are language agnostic. It does not form a comprehensive learning resource and you may often need to study further resources to implement these practices. That said, examples and useful references are provided for <strong>Python</strong> and <strong>R</strong>, as open source languages that are commonly applied across government.</p>
 </div>
 <div class="section" id="accessibility-statement">
 <h2>Accessibility statement<a class="headerlink" href="#accessibility-statement" title="Permalink to this headline">¶</a></h2>
-<p>This accessibility statement applies to the Quality Assurance of Code for Analysis and Research. Please not that this does not include third-party content that is referenced from this guidance.</p>
+<p>This accessibility statement applies to the Quality Assurance of Code for Analysis and Research. Please note that this does not include third-party content that is referenced from this guidance.</p>
 <p>The website is managed by the Best Practice and Impact division of the Office for National Statistics. We would like this guidance to be accessible for as many people as possible. This means that you should be able to:</p>
 <ul class="simple">
 <li><p>change colours, contrast levels and fonts</p></li>
@@ -412,7 +411,7 @@
     </div>
 
     
-  <script src="_static/js/index.3da636dd464baa7582d2.js"></script>
+  <script src="_static/js/index.d3f166471bb80abb5163.js"></script>
 
 
     

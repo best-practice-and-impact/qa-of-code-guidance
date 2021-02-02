@@ -1,6 +1,6 @@
 # Project documentation
 
-Whether you're developing a package or collaborating on a piece of analysis, documenting your project well makes it much easier for others to understand your goal and ways of working.
+Whether you're developing a package or collaborating on a piece of analysis, documenting your project will makes it much easier for others to understand your goal and ways of working.
 
 
 ## README
@@ -259,7 +259,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - bug in `multiple_each_in_list()`, where output was not returned
 ```
 
-Similarly to versioning, a changelog is useful for users to determine whether an update to your code is compatible with their work which may depend on your code.
+Similarly to versioning, a changelog is useful for users to determine whether an update to your code is compatible with their work, which may depend on your code.
 It can also document which parts of your code will no longer be supported in future version and which bugs in your code have been addressed.
 Your changelog can be in any format and should be associated with your code documentation, so that it is easy for users and other contributors to find.
 
@@ -295,7 +295,7 @@ In government, we [support and promote open source](https://www.gov.uk/service-m
 [Open source](https://opensource.com/resources/what-open-source) software is software with source code that anyone can freely inspect, modify and enhance.
 As a government analyst, you should aim to make all new source code open, unless justification can be provided for withholding part of your source code.
 
-Open sourcing code benefits yourself, other government analyst and the public.
+Open sourcing code benefits yourself, other government analysts and the public.
 
 Personal benefits from open sourcing include:
 
