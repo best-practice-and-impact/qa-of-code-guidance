@@ -118,9 +118,6 @@ More recently, the tools and techniques available to analysts have evolved.
 Open-source tools like [Python](https://www.python.org/) and [R](https://www.r-project.org/) have become available.
 Coupled with version control and software management platforms like [Git](https://git-scm.com/) and Git-services these tools have made it possible to develop automatic, streamlined processes, accompanied by a full audit trail.
 
-It is essential that we have access to appropriate and up-to-date tools for our analysis.
-In a recent case, use of legacy analytical tools lead to [under-reporting of COVID-19 statistics](https://www.bbc.co.uk/news/technology-54423988).
-
 RAP was [first piloted in the Government Statistical Service in 2017](https://dataingovernment.blog.gov.uk/2017/03/27/reproducible-analytical-pipeline/) by analysts in the Department for Digital, Culture, Media & Sport (DCMS) and the Department for Education (DfE). 
 They collaborated with data scientists from the Government Digital Service (GDS) to automate the production of statistical bulletins.
 
