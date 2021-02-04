@@ -4,7 +4,7 @@ This is an early draft of Analysis Function and Government Statistical Service (
 
 This guidance has been written to support analysts in government who use coding in their work. This includes those who produce statistics, carry out modelling or apply data science.
 
-This guidance is a living document, so will be continually updated. You can refer to the current version of the guidance by it's version number, found below the site table of contents. You may notice "Todo" notes throughout the guidance. These indicate where we plan to add additional content in the near future. We are extremely grateful for any feedback that you are able to provide on existing and future content.
+This guidance is a living document, so will be continually updated. You can refer to the current version of the guidance by its version number, found below the site table of contents. You may notice "Todo" notes throughout the guidance. These indicate where we plan to add additional content in the near future. We are extremely grateful for any feedback that you are able to provide on existing and future content.
 
 
 ## About us
