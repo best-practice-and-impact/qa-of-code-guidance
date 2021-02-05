@@ -1,4 +1,4 @@
-# Quality Assurance of Code for Analysis and Research
+# Quality assurance of code for analysis and research
 
 This is an early draft of Analysis Function and Government Statistical Service (GSS) guidance. It is produced by the [Best Practice and Impact division](https://gss.civilservice.gov.uk/about-us/support-for-the-gss/) of the Office for National Statistics.
 
@@ -40,7 +40,7 @@ The principles in this book are language agnostic. It does not form a comprehens
 
 ## Accessibility statement
 
-This accessibility statement applies to the Quality Assurance of Code for Analysis and Research. Please note that this does not include third-party content that is referenced from this guidance.
+This accessibility statement applies to the Quality assurance of code for analysis and research guidance. Please note that this does not include third-party content that is referenced from this guidance.
 
 The website is managed by the Best Practice and Impact division of the Office for National Statistics. We would like this guidance to be accessible for as many people as possible. This means that you should be able to:
 * change colours, contrast levels and fonts
@@ -54,9 +54,9 @@ For keyboard navigation, {kbd}`Up Arrow` and {kbd}`Down Arrow`keys can be used t
 
 ### Feedback and reporting accessibility problems
 
-We’re always looking to improve the accessibility of our guidance. If you find any problems not listed on this page or think that we’re not meeting accessibility requirements, please contact us by email at [gsshelp@statistics.gov.uk](mailto:gsshelp@statistics.gov.uk). Please also get in touch if you are unable to access any part of this guidance, or require the content in a different format.
+We’re always looking to improve the accessibility of our guidance. If you find any problems not listed on this page or think that we’re not meeting accessibility requirements, please contact us by emailing [gsshelp@statistics.gov.uk](mailto:gsshelp@statistics.gov.uk). Please also get in touch if you are unable to access any part of this guidance, or require the content in a different format.
 
-We will consider your request and aim to get back to you within 5 working days.
+We will consider your request and aim to get back to you within five working days.
 
 
 ### Enforcement procedure
