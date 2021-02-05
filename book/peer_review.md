@@ -120,7 +120,7 @@ The thought of someone else reviewing your code in this way encourages good prac
 
 Remote review is aided by features of most version control platforms, namely the pull request (or equivalent). See [](version_control.md) for more information.
 
-####Case studies
+#### Case studies
 
 Here we discuss an example from [rOpenSci](https://ropensci.org/); a community led initiative that curates open source, statistical R packages. rOpenSci apply a rigorous peer review process to assure the quality of packages before including them in their collection. This peer review process is entirely remote and is performed in the open, via GitHub pull requests.
 
