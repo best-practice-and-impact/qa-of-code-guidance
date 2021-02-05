@@ -80,7 +80,7 @@ By making your analysis reproducible, you make it easier for others to quality a
 
 ## Assured
 
-Good quality analysis requires good quality assurance (QA).
+Good quality analysis requires good Quality Assurance (QA).
 If decisions are being made based on analysis then this analysis must be held to high standards.
 This is true for analysis carried out using any medium, including code.
 
