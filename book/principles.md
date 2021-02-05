@@ -13,7 +13,7 @@ Analysis in programming makes each of these principles easier to fulfil in most 
 ---
 width: 50%
 name: repro_stack
-alt: Founding principles of good analysis.
+alt=""
 ---
 Founding principles of good analysis
 ```
@@ -86,7 +86,7 @@ This is true for analysis carried out using any medium, including code.
 
 However, some of the analysis that we do in government doesn't bear on decisions at that level.
 We don't want to overburden analysts with QA procedures when they are not required.
-In government we advocate *proportionality* - the right quality assurance procedures for the right analysis.
+In government we advocate **proportionality** - the right quality assurance procedures for the right analysis.
 Analysis can be proportionately assured through peer review and defensive design.
 
 We advocate following your department's guidance on what proportionate quality assurance looks like.
@@ -116,9 +116,9 @@ Processes like this are also prone to error, because the input data and the outp
 
 More recently, the tools and techniques available to analysts have evolved. 
 Open-source tools like [Python](https://www.python.org/) and [R](https://www.r-project.org/) have become available.
-Coupled with version control and software management platforms like [Git](https://git-scm.com/) and Git-services these tools have made it possible to develop automatic, streamlined processes, accompanied by a full audit trail.
+Coupled with version control and software management platforms like [Git](https://git-scm.com/) and Git-services, these tools have made it possible to develop automatic, streamlined processes, accompanied by a full audit trail.
 
-RAP was [first piloted in the Government Statistical Service in 2017](https://dataingovernment.blog.gov.uk/2017/03/27/reproducible-analytical-pipeline/) by analysts in the Department for Digital, Culture, Media & Sport (DCMS) and the Department for Education (DfE). 
+RAP was [first piloted in the Government Statistical Service in 2017](https://dataingovernment.blog.gov.uk/2017/03/27/reproducible-analytical-pipeline/) by analysts in the Department for Digital, Culture, Media and Sport (DCMS) and the Department for Education (DfE). 
 They collaborated with data scientists from the Government Digital Service (GDS) to automate the production of statistical bulletins.
 
 To support the adoption of RAP across government, there is a network of [RAP champions](https://gss.civilservice.gov.uk/about-us/champion-networks/reproducible-analytical-pipeline-rap-champions/). 
