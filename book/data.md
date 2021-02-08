@@ -31,13 +31,13 @@ However, most analysis tools should support reading data directly from safe long
 Spreadsheets (e.g. Microsoft Excel formats and open equivalents) are a very general data analysis tool.
 The cost of their easy to use interface and flexibility is increased difficulty of quality assurance.
 
-```{figure} https://assets.amuniversal.com/7f343ac0870a01332a13005056a9545d
+```{figure} https://imgs.xkcd.com/comics/norm_normal_file_format.png
 ---
-width: 75%
-name: spreadsheets-comic
-alt: A comic strip joking that it doesn't matter if a spreadsheet if wrong, "as long as it gives me the answer I want".
+width: 50%
+name: data-file-comic
+alt: A comic strip describing someone sending "data" in the form of a screenshot of a spreadsheet document.
 ---
-Does it matter if the spreadsheet is wrong, from [Dilbert by Scott Adams](https://dilbert.com/strip/2016-01-07)
+.NORM Normal File Format, from [xkcd](https://xkcd.com/2116/)
 ```
 
 Spreadsheets are not suitable for storage of data (or statistics production and modelling processes).
