@@ -24,7 +24,12 @@ Code is read more often than it is written.
 
 When writing code, we should expect that at some point someone else will need to understand, use and adapt it. This might be yourself in six months time. As such, it is important to empathise with these potential users and write code that is tidy, understandable and does not add unnecessary complexity.
 
-Common barriers to writing readable code include: documentation that is hard to understand or absent, walls of repetitive code that is hard to absorb, or over-complicated code where a simpler solution could be used. Avoiding these issues is essential to make sure that your analysis is reproducible, auditable and assured. Therefore it is our professional responsibility to avoid putting such barriers in place whenever possible.
+Common barriers to writing readable code include: 
+* documentation that is hard to understand or absent
+* walls of repetitive code that is hard to absorb
+* over-complicated code where a simpler solution could be used
+
+Avoiding these issues is essential to make sure that your analysis is reproducible, auditable and assured. Therefore it is our professional responsibility to avoid putting such barriers in place whenever possible.
 
 This chapter highlights good coding practices that will improve the readability and maintainability of your code. Here, readability refers to how easily another analyst can gain a decent understand of how your code works, within a reasonable amount of time. Maintainability refers to how easily other analysts can understand your code well enough to modify and repair it.
 
@@ -41,9 +46,9 @@ When starting to write functions, you should consider what is the right level of
 
 This approach helps you break complex logic down into small, understandable chunks that can be documented and tested more easily.
 
-When writing functions, it's also important to consider how they interact with other parts of your code. As a general rule of thumb, your code should run in the same way if a call to your function was replaced by the value that it would have returned. This is referred to as 'referential transparency'.
+When writing functions, it's also important to consider how they interact with other parts of your code. As a general rule of thumb, your code should run in the same way if a call to your function was replaced by the value that it would have returned. This is called 'referential transparency'.
 
-In practice, this means that your functions should not depend-on or affect variables that have not been explicitly fed into them as arguments. For instance, a function should not add columns to a data table that has not been passed as an input to the function. Nor should the action of a function be affected by anything other than arguments that are passed to it. For example, running your function twice with the same inputs should always produce the same results.
+In practice, this means that your functions should not depend on or affect variables that have not been explicitly fed into them as arguments. For instance, a function should not add columns to a data table that has not been passed as an input to the function. Nor should the action of a function be affected by anything other than arguments that are passed to it. For example, running your function twice with the same inputs should always produce the same results.
 
 Avoiding such behaviours makes your code more transparent; it will be easier for users and developers to understand which functions affect which data without being concerned about hidden behaviours.
 In turn, this makes it easier to locate bugs in the code and assure its function by peer review.
@@ -65,7 +70,7 @@ Although classes do exist in R, they are more widely used in Python (and other O
 With a more complex system, OOP can help to reduce complexity by hiding low-level details from users, such as an internal state.
 
 ```{note}
-The 'state' of an object is usually a set of variables that are particular to a given instance of a class. To illustrate, imagine a bank account that is represented by an `Account` class. You can have many _instances_ of this class (many unique bank accounts), each defined by the following internal state:
+The 'state' of an object is usually a set of variables that are particular to a given instance of a class. To illustrate, imagine a bank account that is represented by an `Account` class. You can have many instances of this class (many unique bank accounts), each defined by the following internal state:
 - owner name
 - account number
 - balance
@@ -209,14 +214,14 @@ When multiple classes have a similar application programming interface (API, i.e
 (class-responsibilities)=
 
 ```{note}
-A word of caution, when creating your own classes. It is easy to start to mapping nouns in system descriptions to classes, and any adjectives applied to the nouns as methods. For example: 'the model loads the data', which implies that `Model` is a class that should have a `load_data` method. This works well for small systems, but as the complexity of your code grows you might find that one of your classes gains the majority of the underlying logic. This often leads to one class with many methods, whilst other classes just store data with very few methods. This can be described as 'Data Driven Design'.
+A word of caution, when creating your own classes. It is easy to start to mapping nouns in system descriptions to classes, and any adjectives applied to the nouns as methods. For example: 'the model loads the data', which implies that `Model` is a class that should have a `load_data` method. This works well for small systems, but as the complexity of your code grows you might find that one of your classes gains the majority of the underlying logic. This often leads to one class with many methods, while other classes just store data with very few methods. This can be described as 'Data Driven Design'.
 
 When most of your code resides in a single class, this can indicate that this class is responsible for too much of your code's logic. This class might become overly complex and hence difficult to maintain. Consequently, changes to requirements will cause this one class to change, which may affect other unrelated functionality in the class.
 
 For more complex analytical work, a better approach might be [Responsibility Driven Design](https://en.wikipedia.org/wiki/Responsibility-driven_design). Here, we write small classes with a focussed responsibility. This reduces complexity and helps classes to avoid being affected by changes to other, unrelated parts of our code. However, be aware of the trade-off between the complexity of one large class versus many smaller classes.
 ```
 
-[Responsibility Driven Design](https://en.wikipedia.org/wiki/Responsibility-driven_design) makes objects that are usually 'passive' become 'active'. For example, with a banking system, an  object representing a bank account, and handling all money movements, might become overly complex. Instead, objects representing `Cheque`s and `Cash` might be designed with payment methods. In this situation, a `Cheque` knows how much money it contains and how to pay itself into an account. A `Cheque`'s responsibility is to retrieve money from its associated account and pay itself in to another bank account. If we later needed to add new payment methods, the existing payment type classes (`Cheque` and `Cash`) will unlikely to be affected. The bank account's responsibility is holding money, receiving it and paying it out. 
+[Responsibility Driven Design](https://en.wikipedia.org/wiki/Responsibility-driven_design) makes objects that are usually 'passive' become 'active'. For example, with a banking system, an  object representing a bank account, and handling all money movements, might become overly complex. Instead, objects representing `Cheques` and `Cash` might be designed with payment methods. In this situation, a `Cheque` knows how much money it contains and how to pay itself into an account. A `Cheque`'s responsibility is to retrieve money from its associated account and pay itself in to another bank account. If we later needed to add new payment methods, the existing payment type classes (`Cheque` and `Cash`) will unlikely to be affected. The bank account's responsibility is holding money, receiving it and paying it out. 
 
 ```{tip}
 Many [Design Patterns](https://en.wikipedia.org/wiki/Software_design_pattern) are available with OOP. These are reusable solutions to common problems.
@@ -639,7 +644,7 @@ They might include how to appropriately:
 - name your functions, variables or classes
 - separate elements of your code with whitespace
 - use indentation to make sure your code is readable
-- and provide other useful guidance regarding formatting
+- provide other useful guidance regarding formatting
 
 The existence of such style guides does not necessarily mean that each individual or team will apply these conventions to the letter. Organisations and developer teams often have needs that might not be addressed in a general style guidance document. After all, these documents aim to capture the needs of a diverse group of developers. Therefore, these guides are more useful as starting points in a discussion on 'how should our team be consistent internally in the way we write code?'.
 
@@ -715,7 +720,7 @@ Two main types of tool exist for these tasks:
   - `formatR`, `styler`
 ```
 
-Be sure to read the documentation for any of these tools, to understand what they are checking/changing in your code. Some can be configured to ignore or detect specific types of formatting error. You can run multiple of these, to catch a broader range of stylistic or programmatic errors.
+Be sure to read the documentation for any of these tools, to understand what they are checking or changing in your code. Some can be configured to ignore or detect specific types of formatting error. You can run multiple of these, to catch a broader range of stylistic or programmatic errors.
 
 If you're considering these tools as part of a project, see [Continuous Integration](continuous-integration) for advice on automating them. Alternatively, explore other options, such as [pre-commit](https://pre-commit.com/), that do the formatting and checking on your machine prior to a Git commit.
 
@@ -753,7 +758,7 @@ Remember that additional features will require more documentation and testing to
 
 Lastly, it is worth stressing that complex problems might require complex solutions. In those cases make sure that you only introduce complexity where it is needed. You should address necessary complexity with proportionate quality assurance - through documentation, testing and review. For instance, if the execution time of your code is critical, then making the code more complex to achieve a faster runtime may be an acceptable trade-off.
 
-### Don't Repeat Yourself
+### Don't repeat yourself
 
 In the section on [modular code](modular), you were encouraged to refactor your code into more self-contained components for ease of testing, reproducibility and reusability. However, it is worth stressing that 'quick and dirty' solutions often involve copy-pasted code that is functionally identical. This is expected and is natural in the initial stages of a project. Nonetheless, repetition not only wastes your time, but it also makes your code more difficult to read.
 Consider a script that contains three copies of a similar piece of code. If the code that is used to perform the repetitive task is found to be incorrect, or if a developer wishes to modify the task being performed by this code, they must implement a similar change in each of the three copies. If only two copies were spotted and amended, there is now a bug sleeping in the code waiting to be triggered... Moreover, anyone reviewing the code would need to check that the right logic is being used three times over.
