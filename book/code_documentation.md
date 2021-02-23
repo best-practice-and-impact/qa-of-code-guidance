@@ -8,18 +8,16 @@ Documentation is a love letter that you write to your future self.
 
 ## Comments
 
-```{epigraph}
-Use comments sparingly and with purpose
-```
+> Use comments sparingly and with purpose
 
 Comments are lines of text in source code files that typically aren't executed as part of the program. They are small notes or annotations written by those working on the code. Often, they provide context or explain the reasoning behind implementation decisions.
 
 Comments are essential to help those working on the code in the future to understand any non-obvious details around how and why the code has been written in a particular way. As such, when it comes to providing relevant and perhaps higher-level documentation to the end consumer on the functionality of your code, there are much more appropriate solutions such as [docstrings](docstrings).
 
-Although extremely useful, comments should be used sparingly. Excessive use of code comments often leads to redundancy and can, ironically, make your code harder to read. It is easy for comments to not be updated as changes are made to the code. Additionally, outdated, or irrelevant comments can confuse or mislead.
+Although extremely useful, comments should be used sparingly. Excessive use of code comments often leads to redundancy and can, ironically, make your code harder to read. It is easy for comments to not be updated as changes are made to the code. Outdated, or irrelevant comments can confuse or mislead.
 
 ```{note}
-**Remember**: the only point of "truth" is the code that is executed - if the comments are out of date compared to the actual code, it may not be immediately apparent.
+**Remember**: the only point of 'truth' is the code that is executed - if the comments are out of date compared to the actual code, it may not be immediately apparent.
 ```
 
 ````{tabs}
@@ -137,16 +135,16 @@ It is easy to forget which parts of code have been commented out and why they ha
 You should instead use appropriate control flow (such as `if/else` statements) to determine when these sections should be run. When changes are required between individual runs of your analysis, you should consider [defining these options in a dedicated configuration file](configuration.md).
 
 
-In summary, you should use comments sparingly but purposefully. Make sure to:
+In summary, you should use comments sparingly but purposefully. Make sure comments:
 
-- explain **why** certain things are done, in order to provide context around the decisions that you have made.
-- not use commenting to echo what your code is already telling the reader.
-- and as with any other documentation, make sure comments are accurate and still relevant after code changes.
+- explain **why** certain things are done, in order to provide context around the decisions that you have made
+- do not echo what your code is already telling the reader
+- are accurate and still relevant after code changes
 
 (docstrings)=
 ## Docstrings
 
-When your code is structured as functions or classes, these functional units can be efficiently documented using docstrings. Docstrings are specialised multi-line descriptions that appear at the start of a function definition and are the *de facto* way of documenting these individual components. In practice they can be either strings (as in Python docstrings) or comments (as in R). Note that module or script level docstrings are also commonly used (usually at the top of the module file in the case of Python). Use of docstrings keeps the documentation of your code closely associated with the relevant sections of code. This close association means it is easier to keep documentation up to date as changes are introduced to the code.
+When your code is structured as functions or classes, these functional units can be efficiently documented using docstrings. Docstrings are specialised multi-line descriptions that appear at the start of a function definition and are the de facto way of documenting these individual components. In practice they can be either strings (as in Python docstrings) or comments (as in R). Note that module or script level docstrings are also commonly used (usually at the top of the module file in the case of Python). Use of docstrings keeps the documentation of your code closely associated with the relevant sections of code. This close association means it is easier to keep documentation up to date as changes are introduced to the code.
 
 An end-user can access these docstrings by typing `help(function_name)` after they have imported your library, so they are handily available without needing to have the source code files open in another window. Other tools, like Jupyter for Python, allow users to easily access these docstrings for quick reference. Hence the focus on detail and comprehensiveness is key - this is the first point of call for an end-user trying to understand what a given function does.
 
@@ -283,6 +281,6 @@ The [package's website](https://pkgdown.r-lib.org/) and [its source code](https:
 
 Once built, the HTML files containing your documentation can be opened in any browser. Usually this means looking for an `index.html` file in the output directory and opening it with your browser. This is sufficient for local usage, however, in order to improve the end-user experience and remove the need to browse the files looking for `index.html`, it is wise to host this documentation somewhere where it will be publicly available.
 
-Your version control platform might support hosting web pages already. GitHub provides this hosting via [GitHub Pages](https://pages.github.com/) and is able to host not only documentation, but any web page virtually for free. The book that you're reading right now is hosted in this way. In many cases, you may also be able to automatically update your hosted documentation using [CI](continuous-integration) practices.
+Your version control platform might support hosting web pages already. GitHub provides this hosting via [GitHub Pages](https://pages.github.com/) and is able to host not only documentation, but any web page virtually for free. The book that you're reading right now is hosted in this way. In many cases, you may also be able to automatically update your hosted documentation using [Continuous Integration](continuous-integration) practices.
 
 [Read the docs](https://readthedocs.org/) is a community-funded project that provides hosting for open source projects and is a great place to host any rendered documentation.
