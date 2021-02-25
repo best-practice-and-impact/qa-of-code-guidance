@@ -110,7 +110,7 @@ data = read_csv(config["input_path"])
 ```{code-tab} r R
 config <- yaml::yaml.load_file(config_path)
 
-data <- read.csv(config_path)
+data <- read.csv(config$input_path)
 ...
 ```
 
