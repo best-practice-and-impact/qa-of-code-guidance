@@ -15,7 +15,7 @@ Tests can:
 
 Testing is crucial to assuring quality in your code and will also increase efficiency in the development of your code. Code that has not been testing is more likely to contain bugs and require more maintenance in the future.
 
-In the following sections we discuss good practices for writing automated code tests. Where manual testing is carried out, this must be documented to create an audit trail. This documentation should include what has been tested and who has approved that it works as expected.
+In the following sections we discuss good practices for writing automated code tests.
 
 ## Tests are structured
 
@@ -47,6 +47,17 @@ def test_absolute_converts_negative_inputs():
     # Assert
     assert actual_output == expected_output
 ```
+
+The example above can be described as a 'unit test'. This means that it tests the smallest unit of our code - a function. There are three common "layers" of testing:
+
+* Unit testing - assuring that functions or class methods perform as expected.
+* Integration testing - assuring that units interact with other units or third party code as expected.
+* End-to-end or system testing - assuring that a complete system functions as expected.
+* User acceptance testing - assures that the system meets a users expectations.
+[Acceptance testing](https://en.wikipedia.org/wiki/Acceptance_testing) is often considered as an additional level, and should be applied whenever developing software for specific users.
+
+Later in this chapter, we describe what risk each level aims to address and detail good practices for each.
+
 
 ## Test data is minimal
 
@@ -107,11 +118,6 @@ If this is not clear from the code, us Python in function/method name, R in test
 ### Bugs are tested
 
 Every time you find a bug, write a test.
-
-### Test code is DRY
-
-Where possible, reduce repetition in your tests.
-Don't need to be completely DRY, but repetition makes maintenance of test code more difficult and risky (as with non-test code).
 
 ### Tests are deterministic
 
@@ -191,17 +197,60 @@ snippets/pytest_example.py::test_absolute_na SKIPPED                     [100%]
 ===================== 3 passed, 1 skipped in 0.11 seconds =====================
 ```
 
+## Test outcomes are recorded
+
+CI is best, as it keeps testing close to version control.
+Where manual testing is carried out, this must be documented to create an audit trail. This documentation should include what has been tested and who has approved that it works as expected.
 
 
-The example above can be described as a 'unit test'. This means that it tests the smallest unit of our code - a function. There are three common "layers" of testing:
+## Tests are not repetitive
 
-* Unit testing - assuring that functions or class methods perform as expected.
-* Integration testing - assuring that units interact with other units or third party code as expected.
-* End-to-end or system testing - assuring that a complete system functions as expected.
-* User acceptance testing - assures that the system meets a users expectations.
-[Acceptance testing](https://en.wikipedia.org/wiki/Acceptance_testing) is often considered as an additional level, and should be applied whenever developing software for specific users.
+Where possible, reduce repetition in your tests.
+Repetitive test code violates the "Don't repeat yourself" rule.
+Don't need to be completely DRY, but repetition makes maintenance of test code more difficult and risky (as with non-test code).
+As with functional code, test code is much easier to maintain when it is modular and reusable.
 
-Later in this chapter, we describe what risk each level aims to address and detail good practices for each.
+```{todo}
+Add examples to reducing repetition in tests to demonstrate these
+
+[#29](https://github.com/best-practice-and-impact/qa-of-code-guidance/issues/29)
+```
+
+
+### Fixtures
+
+As your test suite grows, you might notice that many of your tests use similar code to prepare your tests or to clean up after each test has run.
+Copying these code snippets for each test is laborious and also increases the risk of inconsistently applying those steps.
+
+Fixtures help us to avoid this form of repetition in our tests.
+You define your test preparation and clean up within a function (the fixture).
+You then use the fixture to carry out these steps consistently for each test that they are required for. 
+
+In Class-based testing frameworks, these functions tend to be separated into `SetUp` and `TearDown` functions.
+These are similarly set to run before and after each test, respectively.
+
+Fixtures can be especially useful when setting up a test object takes a large amount of time or resource.
+They can be designed to run for each test, once for a group of tests or once for the whole test suite.
+They are also useful for undoing any consequences of each test run.
+For example, removing data which has been written to a temporary file or database.
+
+Reference material:
+* [Python `pytest` Fixture](https://docs.pytest.org/en/stable/fixture.html) documentation
+* [R `testthat` Fixture](https://testthat.r-lib.org/articles/test-fixtures.html) documentation
+
+
+### Parametrization
+
+You might also find that similar steps are taken when testing multiple combinations of inputs and outputs.
+Parametrization allows us to reduce repetition in our code, in a similar way to reusable functions.
+We specify the pairs of inputs and expected outputs, so that our testing tool can repeat a test for each scenario.
+
+Note that this approach is equivalent to using a for-loop to apply a test function over multiple inputs and expected outputs.
+However, using functionality from test packages may improve running efficiency and the detail of subsequent test reports.
+
+In `pytest`, this can be achieved using the [Parametrize mark](https://docs.pytest.org/en/stable/parametrize.html).
+
+In R, the `patrick` package extends `testthat` to provide a [`with_parameters_test_that`](https://rdrr.io/cran/patrick/man/with_parameters_test_that.html) function to achieve this.
 
 
 ## Tests are run regularly
@@ -302,53 +351,3 @@ A sinking ship would still report a number of passing unit and integration tests
 These tests are much slower to run and can take longer to develop for complex processes.
 Having at least one end-to-end test for your process will ensure that the high-level specification of your code is met.
 This should validate that your user requirements are met.
-
-
-
-## Reducing repetition in tests
-
-Repetitive test code violates the "Don't repeat yourself" rule.
-As with functional code, test code is much easier to maintain when it is modular and reusable.
-
-```{todo}
-Add examples to reducing repetition in tests to demonstrate these
-
-[#29](https://github.com/best-practice-and-impact/qa-of-code-guidance/issues/29)
-```
-
-
-### Fixtures
-
-As your test suite grows, you might notice that many of your tests use similar code to prepare your tests or to clean up after each test has run.
-Copying these code snippets for each test is laborious and also increases the risk of inconsistently applying those steps.
-
-Fixtures help us to avoid this form of repetition in our tests.
-You define your test preparation and clean up within a function (the fixture).
-You then use the fixture to carry out these steps consistently for each test that they are required for. 
-
-In Class-based testing frameworks, these functions tend to be separated into `SetUp` and `TearDown` functions.
-These are similarly set to run before and after each test, respectively.
-
-Fixtures can be especially useful when setting up a test object takes a large amount of time or resource.
-They can be designed to run for each test, once for a group of tests or once for the whole test suite.
-They are also useful for undoing any consequences of each test run.
-For example, removing data which has been written to a temporary file or database.
-
-Reference material:
-* [Python `pytest` Fixture](https://docs.pytest.org/en/stable/fixture.html) documentation
-* [R `testthat` Fixture](https://testthat.r-lib.org/articles/test-fixtures.html) documentation
-
-
-### Parametrization
-
-You might also find that similar steps are taken when testing multiple combinations of inputs and outputs.
-Parametrization allows us to reduce repetition in our code, in a similar way to reusable functions.
-We specify the pairs of inputs and expected outputs, so that our testing tool can repeat a test for each scenario.
-
-Note that this approach is equivalent to using a for-loop to apply a test function over multiple inputs and expected outputs.
-However, using functionality from test packages may improve running efficiency and the detail of subsequent test reports.
-
-In `pytest`, this can be achieved using the [Parametrize mark](https://docs.pytest.org/en/stable/parametrize.html).
-
-In R, the `patrick` package extends `testthat` to provide a [`with_parameters_test_that`](https://rdrr.io/cran/patrick/man/with_parameters_test_that.html) function to achieve this.
-
