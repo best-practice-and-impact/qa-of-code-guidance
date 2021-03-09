@@ -288,6 +288,9 @@ However, [continuous integration](continuous-integration) can be used to automat
 ```
 
 ## Testing at multiple levels
+
+Each level is important for different reasons.
+
 ### Unit testing
 
 
@@ -351,3 +354,7 @@ A sinking ship would still report a number of passing unit and integration tests
 These tests are much slower to run and can take longer to develop for complex processes.
 Having at least one end-to-end test for your process will ensure that the high-level specification of your code is met.
 This should validate that your user requirements are met.
+
+### Acceptance testing
+
+Assures that code works for your end-user's requirements.
