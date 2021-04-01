@@ -1,5 +1,13 @@
 - file: intro
 
+- part: Overview
+  chapters:
+  - file: checklists
+    sections:
+      - file: checklist_lower
+      - file: checklist_moderate
+      - file: checklist_higher
+
 - part: Guidance
   chapters:
   - file: principles
