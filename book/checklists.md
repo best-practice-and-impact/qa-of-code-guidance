@@ -1,7 +1,7 @@
 # Code quality assurance checklists
 
 ```{note}
-This section is an early draft. Please get in touch with feedback [by creating a GitHub Issue](https://github.com/best-practice-and-impact/qa-of-code-guidance/issues) or via gsshelp@statistics.gov.uk.
+This section is an early draft. Please get in touch with feedback [by creating a GitHub Issue](https://github.com/best-practice-and-impact/qa-of-code-guidance/issues) or via [gsshelp@statistics.gov.uk](mailto:gsshelp@statistics.gov.uk).
 ```
 
 This sections aims to provide a checklist for quality assurance of analytical projects in government.
