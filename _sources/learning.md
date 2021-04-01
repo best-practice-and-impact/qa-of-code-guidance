@@ -12,6 +12,7 @@ Please note that learning resources from non-government training providers (i.e.
 
 * [Introduction to Python](https://learninghub.ons.gov.uk/enrol/index.php?id=536)
 * [Aggregation, functions and control flow in Python](https://learninghub.ons.gov.uk/enrol/index.php?id=525)
+* [Introduction to object-oriented programming (OOP) in Python](https://learninghub.ons.gov.uk/enrol/index.php?id=1163)
 * [The Official Python Getting Started Guide](https://www.python.org/about/gettingstarted/)
 * [Learn Python](https://www.learnpython.org/), supported by DataCamp
 
@@ -19,10 +20,11 @@ Please note that learning resources from non-government training providers (i.e.
 
 * [Introduction to R](https://learninghub.ons.gov.uk/enrol/index.php?id=538)
 * [Aggregation, functions and control flow in R](https://learninghub.ons.gov.uk/enrol/index.php?id=527)
-* [R Basics on Udemy](https://www.udemy.com/course/r-basics/?LSNPUBID=JVFxdTr9V80&ranEAID=JVFxdTr9V80&ranMID=39197&ranSiteID=JVFxdTr9V80-mzkL.lpta.ugiFro.8Oc_Q&utm_medium=udemyads&utm_source=aff-campaign)
+* [R Basics on Udemy](https://www.udemy.com/course/r-basics/)
 
 ### General
 * [Clean code](https://learninghub.ons.gov.uk/enrol/index.php?id=537)
+* [Packaging and documentation](https://learninghub.ons.gov.uk/enrol/index.php?id=1165)
 * [Software carpentry](https://software-carpentry.org/lessons/)
 * [Data carpentry](https://datacarpentry.org/lessons/)
 
@@ -57,6 +59,7 @@ Please note that learning resources from non-government training providers (i.e.
 ### Git
 
 * [Intro to Git](https://learninghub.ons.gov.uk/course/view.php?id=532)
+* [Introduction to continous integration](https://learninghub.ons.gov.uk/enrol/index.php?id=1164)
 * [The Pro Git book](https://git-scm.com/book/en/v2)
 * [Software Carpentry: Version Control with Git](https://swcarpentry.github.io/git-novice/) - an applied project
 * Interactive online training with [Katacoda](https://www.katacoda.com/courses/git) or [Learn Git Branching](https://learngitbranching.js.org/)
@@ -67,3 +70,10 @@ Please note that learning resources from non-government training providers (i.e.
 ## Testing
 
 * [Introduction to Unit Testing in Python and R](https://learninghub.ons.gov.uk/enrol/index.php?id=539)
+
+
+## Reproducible Analytical Pipelines
+
+* [GSS RAP Overview](https://gss.civilservice.gov.uk/reproducible-analytical-pipelines/)
+* [RAP Champion Network](https://gss.civilservice.gov.uk/about-us/champion-networks/reproducible-analytical-pipeline-rap-champions/#more-information-about-rap-champions)
+* [ONS Data Science Campus RAP learning materials](https://github.com/datasciencecampus/gov-uk-rap-materials)

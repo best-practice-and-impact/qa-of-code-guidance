@@ -1,0 +1,701 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Moderate quality assurance &#8212; Quality Assurance of Code for Analysis and Research</title>
+    
+  <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="_static/admonitions.css" />
+    <link rel="stylesheet" type="text/css" href="_static/markdown_within_tabs.css" />
+    <link rel="stylesheet" type="text/css" href="_static/logo.css" />
+    <link rel="stylesheet" type="text/css" href="_static/accessibility.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Higher quality assurance" href="checklist_higher.html" />
+    <link rel="prev" title="Lower quality assurance" href="checklist_lower.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  <img src="_static/duck_book_logo.svg" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Quality Assurance of Code for Analysis and Research</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <p class="caption collapsible-parent">
+ <span class="caption-text">
+  Overview
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 current active collapsible-parent">
+  <a class="reference internal" href="checklists.html">
+   Code quality assurance checklists
+  </a>
+  <ul class="current collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="checklist_lower.html">
+     Lower quality assurance
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Moderate quality assurance
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="checklist_higher.html">
+     Higher quality assurance
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Guidance
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="principles.html">
+   Principles
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="core_programming.html">
+   Core programming practices
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="project_structure.html">
+   Structuring your project
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="code_documentation.html">
+   Code documentation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="project_documentation.html">
+   Project documentation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="version_control.html">
+   Version control
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="configuration.html">
+   Configuration
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data.html">
+   Data Management
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="peer_review.html">
+   Peer review
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="testing_code.html">
+   Testing code
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Resources
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="learning.html">
+   Learning Resources
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="tools.html">
+   Tools
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  <p>Book version 2021.4</p><a href='https://www.gov.uk/government/organisations/government-analysis-function' target='_blank'><img src='./_static/af_logo.png' alt='The Government Analysis Function logo' style='width:50%;'></a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/checklist_moderate.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/best-practice-and-impact/qa-of-code-guidance"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/best-practice-and-impact/qa-of-code-guidance/issues/new?title=Issue%20on%20page%20%2Fchecklist_moderate.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/best-practice-and-impact/qa-of-code-guidance/edit/master/checklist_moderate.md"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i>
+            Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#quality-assurance-checklist">
+   Quality assurance checklist
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#modular-code">
+     Modular code
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#good-coding-practices">
+     Good coding practices
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#project-structure">
+     Project structure
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#code-documentation">
+     Code documentation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#project-documentation">
+     Project documentation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#version-control">
+     Version control
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#configuration">
+     Configuration
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#data-management">
+     Data management
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#peer-review">
+     Peer review
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#testing">
+     Testing
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#dependency-management">
+     Dependency management
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#logging">
+     Logging
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#project-management">
+     Project management
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#template-checklist">
+   Template checklist
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="moderate-quality-assurance">
+<h1>Moderate quality assurance<a class="headerlink" href="#moderate-quality-assurance" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="quality-assurance-checklist">
+<h2>Quality assurance checklist<a class="headerlink" href="#quality-assurance-checklist" title="Permalink to this headline">¶</a></h2>
+<p>Quality assurance checklist from <a class="reference external" href="https://best-practice-and-impact.github.io/qa-of-code-guidance/intro.html">the quality assurance of code for analysis and research guidance</a>.</p>
+<div class="section" id="modular-code">
+<h3>Modular code<a class="headerlink" href="#modular-code" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Individual pieces of logic are written as functions. Classes are used if more appropriate.</p></li>
+<li><p>Code is grouped in themed files (modules) and is packaged for easier use.</p></li>
+<li><p>Main analysis scripts import and run high level functions from the package.</p></li>
+<li><p>Low level functions and classes carry out one specific task. As such, there is only one reason to change each function.</p></li>
+<li><p>Repetition in the code is minimalised. For example, by moving reusable code into functions or classes.</p></li>
+</ul>
+</div>
+<div class="section" id="good-coding-practices">
+<h3>Good coding practices<a class="headerlink" href="#good-coding-practices" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Names used in the code are informative and concise.</p></li>
+<li><p>Names used in the code are explicit, rather than implicit.</p></li>
+<li><p>Code logic is clear and avoids unnecessary complexity.</p></li>
+<li><p>Code follows a standard style, e.g. <a class="reference external" href="https://www.python.org/dev/peps/pep-0008/">PEP8 for Python</a> and <a class="reference external" href="https://google.github.io/styleguide/Rguide.html">Google</a> or <a class="reference external" href="https://style.tidyverse.org/">tidyverse</a> for R.</p></li>
+</ul>
+</div>
+<div class="section" id="project-structure">
+<h3>Project structure<a class="headerlink" href="#project-structure" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>A clear, standard directory structure is used to separate input data, outputs, code and documentation.</p></li>
+<li><p>Packages follow a standard structure.</p></li>
+</ul>
+</div>
+<div class="section" id="code-documentation">
+<h3>Code documentation<a class="headerlink" href="#code-documentation" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Comments are used to describe why code is written in a particular way, rather than describing what the code is doing.</p></li>
+<li><p>Comments are kept up to date, so they do not confuse the reader.</p></li>
+<li><p>Code is not commented out to adjust which lines of code run.</p></li>
+<li><p>All functions and classes are documented to describe what they do, what inputs they take and what they return.</p></li>
+<li><p>Python code is <a class="reference external" href="https://www.python.org/dev/peps/pep-0257/">documented using docstrings</a>. R code is <a class="reference external" href="https://cran.r-project.org/web/packages/roxygen2/vignettes/roxygen2.html">documented using <code class="docutils literal notranslate"><span class="pre">roxygen2</span></code> comments</a>.</p></li>
+<li><p>Human-readable (preferably HTML) documentation is generated automatically from code documentation.</p></li>
+</ul>
+</div>
+<div class="section" id="project-documentation">
+<h3>Project documentation<a class="headerlink" href="#project-documentation" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>A README file details the purpose of the project, basic installation instructions, and examples of usage.</p></li>
+<li><p>Where appropriate, guidance for prospective contributors is available including a code of conduct.</p></li>
+<li><p>If the code’s users are not familiar with the code, desk instructions are provided to guide lead users through example use cases.</p></li>
+<li><p>The extent of analytical quality assurance conducted on the project is clearly documented.</p></li>
+<li><p>Assumptions in the analysis and their quality are documented next to the code that implements them. These are also made available to users.</p></li>
+<li><p>Copyright and licenses are specified for both documentation and code.</p></li>
+<li><p>Instructions for how to cite the project are given.</p></li>
+<li><p>Releases of the project used for reports, publications, or other outputs are versioned using a standard pattern such as <a class="reference external" href="https://semver.org/">semantic versioning</a>.</p></li>
+<li><p>A summary of <a class="reference external" href="https://keepachangelog.com/en/1.0.0/">changes to functionality are documented in a changelog</a> following releases. The changelog is available to users.</p></li>
+<li><p>Example usage of packages and underlying functionality is documented for developers and users.</p></li>
+</ul>
+</div>
+<div class="section" id="version-control">
+<h3>Version control<a class="headerlink" href="#version-control" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Code is <a class="reference external" href="https://git-scm.com/">version controlled using Git</a>.</p></li>
+<li><p>Code is committed regularly, preferably when a discrete unit of work has been completed.</p></li>
+<li><p>An appropriate branching strategy is defined and used throughout development.</p></li>
+<li><p>Code is open-sourced. Any sensitive data are omitted or replaced with dummy data.</p></li>
+<li><p>Committing standards are followed such as appropriate commit summary and message supplied.</p></li>
+<li><p>Commits are tagged at significant stages. This is used to indicate the state of code for specific releases or model versions.</p></li>
+<li><p>Continuous integration is applied through tools such as <a class="reference external" href="https://github.com/features/actions">GitHub Actions</a>, to ensure that each change is integrated into the workflow smoothly.</p></li>
+</ul>
+</div>
+<div class="section" id="configuration">
+<h3>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Credentials and other secrets are not written in code but are configured as environment variables.</p></li>
+<li><p>Configuration is written as code, and is clearly separated from code used for analysis.</p></li>
+<li><p>The configuration used to generate particular outputs, releases and publications is recorded.</p></li>
+<li><p>If appropriate, multiple configuration files are used and interchangeable depending on system/local/user.</p></li>
+</ul>
+</div>
+<div class="section" id="data-management">
+<h3>Data management<a class="headerlink" href="#data-management" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>All data for analysis are stored in an open format, so that specific software is not required to access them.</p></li>
+<li><p>Input data are stored safely and are treated as read-only.</p></li>
+<li><p>Input data are versioned. All changes to the data result in new versions being created, or <a class="reference external" href="https://en.wikipedia.org/wiki/Slowly_changing_dimension">changes are recorded as new records</a>.</p></li>
+<li><p>All input data is documented in a data register, including where they come from and their importance to the analysis.</p></li>
+<li><p>Outputs from your analysis are disposable and are regularly deleted and regenerated while analysis develops. Your analysis code is able to reproduce them at any time.</p></li>
+<li><p>Non-sensitive data are made available to users. If data are sensitive, dummy data is made available so that the code can be run by others.</p></li>
+<li><p>Data quality is monitored, as per <a class="reference external" href="https://www.gov.uk/government/publications/the-government-data-quality-framework/the-government-data-quality-framework">the government data quality framework</a>.</p></li>
+<li><p>Fields within input and output datasets are documented in a data dictionary.</p></li>
+<li><p>Large or complex data are stored in a database.</p></li>
+</ul>
+</div>
+<div class="section" id="peer-review">
+<h3>Peer review<a class="headerlink" href="#peer-review" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Peer review is conducted and recorded near to the code. Merge or pull requests are used to document review, when relevant.</p></li>
+<li><p>Pair programming is used to review code and share knowledge.</p></li>
+<li><p>Users are encouraged to participate in peer review.</p></li>
+</ul>
+</div>
+<div class="section" id="testing">
+<h3>Testing<a class="headerlink" href="#testing" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Core functionality is unit tested as code. See <a class="reference external" href="https://docs.pytest.org/en/stable/"><code class="docutils literal notranslate"><span class="pre">pytest</span></code> for Python</a> and <a class="reference external" href="https://testthat.r-lib.org/"><code class="docutils literal notranslate"><span class="pre">testthat</span></code> for R</a>.</p></li>
+<li><p>Code based tests are run regularly.</p></li>
+<li><p>Bug fixes include implementing new unit tests to ensure that the same bug does not reoccur.</p></li>
+<li><p>Informal tests are recorded near to the code.</p></li>
+<li><p>Stakeholder or user acceptance sign-offs are recorded near to the code.</p></li>
+<li><p>Test are automatically run and recorded using continuous integration or git hooks.</p></li>
+<li><p>The whole process is tested from start to finish using one or more realistic end-to-end tests.</p></li>
+<li><p>Test code is clean an readable. Tests make use of fixtures and parametrisation to reduce repetition.</p></li>
+</ul>
+</div>
+<div class="section" id="dependency-management">
+<h3>Dependency management<a class="headerlink" href="#dependency-management" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Required passwords, secrets and tokens are documented, but are stored outside of version control.</p></li>
+<li><p>Required libraries and packages are documented, including their versions.</p></li>
+<li><p>Working operating system environments are documented.</p></li>
+<li><p>Example configuration files are provided.</p></li>
+<li><p>Where appropriate, code runs independent of operating system (e.g. suitable management of file paths).</p></li>
+<li><p>Dependencies are managed separately for users, developers, and testers.</p></li>
+<li><p>There are as few dependencies as possible.</p></li>
+<li><p>Package dependencies are managed using an environment manager such as <a class="reference external" href="https://virtualenv.pypa.io/en/latest/">virtualenv for Python</a> or <a class="reference external" href="https://rstudio.github.io/renv/articles/renv.html">renv for R</a>.</p></li>
+</ul>
+</div>
+<div class="section" id="logging">
+<h3>Logging<a class="headerlink" href="#logging" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Misuse or failure in the code produces informative error messages.</p></li>
+<li><p>Code configuration is recorded when the code is run.</p></li>
+<li><p>Pipeline route is recorded if decisions are made in code.</p></li>
+</ul>
+</div>
+<div class="section" id="project-management">
+<h3>Project management<a class="headerlink" href="#project-management" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>The roles and responsibilities of team members are clearly defined.</p></li>
+<li><p>An issue tracker (e.g GitHub Project, Trello or Jira) is used to record development tasks.</p></li>
+<li><p>New issues or tasks are guided by users’ needs and stories.</p></li>
+<li><p>Issues templates are used to ensure proper logging of the title, description, labels and comments.</p></li>
+<li><p>Acceptance criteria are noted for issues and tasks. Fulfilment of acceptance criteria is recorded.</p></li>
+<li><p>Quality assurance standards and processes for the project are defined. These are based around <a class="reference external" href="https://best-practice-and-impact.github.io/qa-of-code-guidance/intro.html">the quality assurance of code for analysis and research guidance document</a>.</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="template-checklist">
+<h2>Template checklist<a class="headerlink" href="#template-checklist" title="Permalink to this headline">¶</a></h2>
+<p>You can either refer to the checklist above, or use the Markdown template below to include the checklist in your project.</p>
+<div class="highlight-md notranslate"><div class="highlight"><pre><span></span><span class="gu">## Quality assurance checklist</span>
+
+Quality assurance checklist from [<span class="nt">the quality assurance of code for analysis and research guidance</span>](<span class="na">https://best-practice-and-impact.github.io/qa-of-code-guidance/intro.html</span>).
+
+<span class="gu">### Modular code</span>
+
+<span class="k">- [ ]</span> Individual pieces of logic are written as functions. Classes are used if more appropriate.
+<span class="k">- [ ]</span> Code is grouped in themed files (modules) and is packaged for easier use.
+<span class="k">- [ ]</span> Main analysis scripts import and run high level functions from the package.
+<span class="k">- [ ]</span> Low level functions and classes carry out one specific task. As such, there is only one reason to change each function.
+<span class="k">- [ ]</span> Repetition in the code is minimalised. For example, by moving reusable code into functions or classes.
+
+<span class="gu">### Good coding practices</span>
+
+<span class="k">- [ ]</span> Names used in the code are informative and concise.
+<span class="k">- [ ]</span> Names used in the code are explicit, rather than implicit.
+<span class="k">- [ ]</span> Code logic is clear and avoids unnecessary complexity.
+<span class="k">- [ ]</span> Code follows a standard style, e.g. [<span class="nt">PEP8 for Python</span>](<span class="na">https://www.python.org/dev/peps/pep-0008/</span>) and [<span class="nt">Google</span>](<span class="na">https://google.github.io/styleguide/Rguide.html</span>) or [<span class="nt">tidyverse</span>](<span class="na">https://style.tidyverse.org/</span>) for R.
+
+<span class="gu">### Project structure</span>
+
+<span class="k">- [ ]</span> A clear, standard directory structure is used to separate input data, outputs, code and documentation.
+<span class="k">- [ ]</span> Packages follow a standard structure.
+
+<span class="gu">### Code documentation</span>
+
+<span class="k">- [ ]</span> Comments are used to describe why code is written in a particular way, rather than describing what the code is doing.
+<span class="k">- [ ]</span> Comments are kept up to date, so they do not confuse the reader.
+<span class="k">- [ ]</span> Code is not commented out to adjust which lines of code run.
+<span class="k">- [ ]</span> All functions and classes are documented to describe what they do, what inputs they take and what they return.
+<span class="k">- [ ]</span> Python code is [<span class="nt">documented using docstrings</span>](<span class="na">https://www.python.org/dev/peps/pep-0257/</span>). R code is [<span class="nt">documented using `roxygen2` comments</span>](<span class="na">https://cran.r-project.org/web/packages/roxygen2/vignettes/roxygen2.html</span>).
+<span class="k">- [ ]</span> Human-readable (preferably HTML) documentation is generated automatically from code documentation.
+
+<span class="gu">### Project documentation</span>
+
+<span class="k">- [ ]</span> A README file details the purpose of the project, basic installation instructions, and examples of usage.
+<span class="k">- [ ]</span> Where appropriate, guidance for prospective contributors is available including a code of conduct.
+<span class="k">- [ ]</span> If the code&#39;s users are not familiar with the code, desk instructions are provided to guide lead users through example use cases.
+<span class="k">- [ ]</span> The extent of analytical quality assurance conducted on the project is clearly documented.
+<span class="k">- [ ]</span> Assumptions in the analysis and their quality are documented next to the code that implements them. These are also made available to users.
+<span class="k">- [ ]</span> Copyright and licenses are specified for both documentation and code.
+<span class="k">- [ ]</span> Instructions for how to cite the project are given.
+<span class="k">- [ ]</span> Releases of the project used for reports, publications, or other outputs are versioned using a standard pattern such as [<span class="nt">semantic versioning</span>](<span class="na">https://semver.org/</span>).
+<span class="k">- [ ]</span> A summary of [<span class="nt">changes to functionality are documented in a changelog</span>](<span class="na">https://keepachangelog.com/en/1.0.0/</span>) following releases. The changelog is available to users.
+<span class="k">- [ ]</span> Example usage of packages and underlying functionality is documented for developers and users.
+
+<span class="gu">### Version control</span>
+
+<span class="k">- [ ]</span> Code is [<span class="nt">version controlled using Git</span>](<span class="na">https://git-scm.com/</span>).
+<span class="k">- [ ]</span> Code is committed regularly, preferably when a discrete unit of work has been completed.
+<span class="k">- [ ]</span> An appropriate branching strategy is defined and used throughout development.
+<span class="k">- [ ]</span> Code is open-sourced. Any sensitive data are omitted or replaced with dummy data.
+<span class="k">- [ ]</span> Committing standards are followed such as appropriate commit summary and message supplied.
+<span class="k">- [ ]</span> Commits are tagged at significant stages. This is used to indicate the state of code for specific releases or model versions.
+<span class="k">- [ ]</span> Continuous integration is applied through tools such as [<span class="nt">GitHub Actions</span>](<span class="na">https://github.com/features/actions</span>), to ensure that each change is integrated into the workflow smoothly.
+
+<span class="gu">### Configuration</span>
+
+<span class="k">- [ ]</span> Credentials and other secrets are not written in code but are configured as environment variables.
+<span class="k">- [ ]</span> Configuration is written as code, and is clearly separated from code used for analysis.
+<span class="k">- [ ]</span> The configuration used to generate particular outputs, releases and publications is recorded.
+<span class="k">- [ ]</span> If appropriate, multiple configuration files are used and interchangeable depending on system/local/user.
+
+<span class="gu">### Data management</span>
+
+<span class="k">- [ ]</span> All data for analysis are stored in an open format, so that specific software is not required to access them.
+<span class="k">- [ ]</span> Input data are stored safely and are treated as read-only.
+<span class="k">- [ ]</span> Input data are versioned. All changes to the data result in new versions being created, or [<span class="nt">changes are recorded as new records</span>](<span class="na">https://en.wikipedia.org/wiki/Slowly_changing_dimension</span>).
+<span class="k">- [ ]</span> All input data is documented in a data register, including where they come from and their importance to the analysis.
+<span class="k">- [ ]</span> Outputs from your analysis are disposable and are regularly deleted and regenerated while analysis develops. Your analysis code is able to reproduce them at any time.
+<span class="k">- [ ]</span> Non-sensitive data are made available to users. If data are sensitive, dummy data is made available so that the code can be run by others.
+<span class="k">- [ ]</span> Data quality is monitored, as per [<span class="nt">the government data quality framework</span>](<span class="na">https://www.gov.uk/government/publications/the-government-data-quality-framework/the-government-data-quality-framework</span>).
+<span class="k">- [ ]</span> Fields within input and output datasets are documented in a data dictionary.
+<span class="k">- [ ]</span> Large or complex data are stored in a database.
+
+<span class="gu">### Peer review</span>
+
+<span class="k">- [ ]</span> Peer review is conducted and recorded near to the code. Merge or pull requests are used to document review, when relevant.
+<span class="k">- [ ]</span> Pair programming is used to review code and share knowledge.
+<span class="k">- [ ]</span> Users are encouraged to participate in peer review.
+
+<span class="gu">### Testing</span>
+
+<span class="k">- [ ]</span> Core functionality is unit tested as code. See [<span class="sb">`pytest`</span> for Python](https://docs.pytest.org/en/stable/) and [<span class="sb">`testthat`</span> for R](https://testthat.r-lib.org/). 
+<span class="k">- [ ]</span> Code based tests are run regularly.
+<span class="k">- [ ]</span> Bug fixes include implementing new unit tests to ensure that the same bug does not reoccur.
+<span class="k">- [ ]</span> Informal tests are recorded near to the code.
+<span class="k">- [ ]</span> Stakeholder or user acceptance sign-offs are recorded near to the code.
+<span class="k">- [ ]</span> Test are automatically run and recorded using continuous integration or git hooks.
+<span class="k">- [ ]</span> The whole process is tested from start to finish using one or more realistic end-to-end tests.
+<span class="k">- [ ]</span> Test code is clean an readable. Tests make use of fixtures and parametrisation to reduce repetition.
+
+<span class="gu">### Dependency management</span>
+
+<span class="k">- [ ]</span> Required passwords, secrets and tokens are documented, but are stored outside of version control.
+<span class="k">- [ ]</span> Required libraries and packages are documented, including their versions.
+<span class="k">- [ ]</span> Working operating system environments are documented.
+<span class="k">- [ ]</span> Example configuration files are provided.
+<span class="k">- [ ]</span> Where appropriate, code runs independent of operating system (e.g. suitable management of file paths).
+<span class="k">- [ ]</span> Dependencies are managed separately for users, developers, and testers.
+<span class="k">- [ ]</span> There are as few dependencies as possible.
+<span class="k">- [ ]</span> Package dependencies are managed using an environment manager such as [<span class="nt">virtualenv for Python</span>](<span class="na">https://virtualenv.pypa.io/en/latest/</span>) or [<span class="nt">renv for R</span>](<span class="na">https://rstudio.github.io/renv/articles/renv.html</span>).
+
+<span class="gu">### Logging</span>
+
+<span class="k">- [ ]</span> Misuse or failure in the code produces informative error messages.
+<span class="k">- [ ]</span> Code configuration is recorded when the code is run.
+<span class="k">- [ ]</span> Pipeline route is recorded if decisions are made in code.
+
+<span class="gu">### Project management</span>
+
+<span class="k">- [ ]</span> The roles and responsibilities of team members are clearly defined.
+<span class="k">- [ ]</span> An issue tracker (e.g GitHub Project, Trello or Jira) is used to record development tasks.
+<span class="k">- [ ]</span> New issues or tasks are guided by users’ needs and stories.
+<span class="k">- [ ]</span> Issues templates are used to ensure proper logging of the title, description, labels and comments.
+<span class="k">- [ ]</span> Acceptance criteria are noted for issues and tasks. Fulfilment of acceptance criteria is recorded.
+<span class="k">- [ ]</span> Quality assurance standards and processes for the project are defined. These are based around [<span class="nt">the quality assurance of code for analysis and research guidance document</span>](<span class="na">https://best-practice-and-impact.github.io/qa-of-code-guidance/intro.html</span>).
+</pre></div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="checklist_lower.html" title="previous page">Lower quality assurance</a>
+    <a class='right-next' id="next-link" href="checklist_higher.html" title="next page">Higher quality assurance</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          <div class="extra_footer">
+            <p>Best Practice & Impact division, Office for National Statistics</p><p>This document is very young, please help use to make it grow by providing any feedback by <a href='mailto:gsshelp@statistics.gov.uk'>email</a> or via the <a href='https://github.com/best-practice-and-impact/qa-of-code-guidance'>GitHub repository</a>.
+          </div>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>

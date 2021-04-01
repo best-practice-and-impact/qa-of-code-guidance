@@ -26,16 +26,16 @@
 
     
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="_static/tabs.css" />
-    <link rel="stylesheet" type="text/css" href="_static/logo.css" />
     <link rel="stylesheet" type="text/css" href="_static/admonitions.css" />
-    <link rel="stylesheet" type="text/css" href="_static/accessibility.css" />
     <link rel="stylesheet" type="text/css" href="_static/markdown_within_tabs.css" />
+    <link rel="stylesheet" type="text/css" href="_static/logo.css" />
+    <link rel="stylesheet" type="text/css" href="_static/accessibility.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
@@ -49,9 +49,7 @@
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script src="_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -62,7 +60,7 @@
     <link rel="shortcut icon" href="_static/favicon.ico"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Principles" href="principles.html" />
+    <link rel="next" title="Code quality assurance checklists" href="checklists.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -93,6 +91,37 @@
 </form>
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
     <p class="caption collapsible-parent">
+ <span class="caption-text">
+  Overview
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="checklists.html">
+   Code quality assurance checklists
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="checklist_lower.html">
+     Lower quality assurance
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="checklist_moderate.html">
+     Moderate quality assurance
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="checklist_higher.html">
+     Higher quality assurance
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
  <span class="caption-text">
   Guidance
  </span>
@@ -170,7 +199,7 @@
 </nav> <!-- To handle the deprecated key -->
 
 <div class="navbar_extra_footer">
-  <p>Book version 2021.3</p><a href='https://www.gov.uk/government/organisations/government-analysis-function' target='_blank'><img src='./_static/af_logo.png' alt='The Government Analysis Function logo' style='width:50%;'></a>
+  <p>Book version 2021.4</p><a href='https://www.gov.uk/government/organisations/government-analysis-function' target='_blank'><img src='./_static/af_logo.png' alt='The Government Analysis Function logo' style='width:50%;'></a>
 </div>
 
 </div>
@@ -182,21 +211,21 @@
           
 <main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
     
-    <div class="row topbar fixed-top container-xl">
-    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
-    </div>
-    <div class="col pl-2 topbar-main">
-        
-        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-            <i class="fas fa-bars"></i>
-            <i class="fas fa-arrow-left"></i>
-            <i class="fas fa-arrow-up"></i>
-        </button>
-        
-        
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
 <div class="dropdown-buttons-trigger">
     <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
             class="fas fa-download"></i></button>
@@ -214,7 +243,7 @@
     </div>
 </div>
 
-        <!-- Source interaction buttons -->
+            <!-- Source interaction buttons -->
 
 <div class="dropdown-buttons-trigger">
     <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
@@ -235,21 +264,22 @@
 </div>
 
 
-        <!-- Full screen (wrap in <a> to have style consistency -->
-        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-                title="Fullscreen mode"><i
-                    class="fas fa-expand"></i></button></a>
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
 
-        <!-- Launch buttons -->
+            <!-- Launch buttons -->
 
-    </div>
+        </div>
 
-    <!-- Table of contents -->
-    <div class="d-none d-md-block col-md-2 bd-toc show">
-        
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
         <div class="tocsection onthispage pt-5 pb-3">
-            <i class="fas fa-list"></i> Contents
+            <i class="fas fa-list"></i>
+            Contents
         </div>
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
@@ -291,6 +321,7 @@
 
         </nav>
         
+        </div>
     </div>
 </div>
     <div id="main-content" class="row">
@@ -300,9 +331,9 @@
                 
   <div class="section" id="quality-assurance-of-code-for-analysis-and-research">
 <h1>Quality Assurance of Code for Analysis and Research<a class="headerlink" href="#quality-assurance-of-code-for-analysis-and-research" title="Permalink to this headline">¶</a></h1>
-<p>This is an early draft of Analysis Function and Government Statistical Service (GSS) guidance. It is produced by the <a class="reference external" href="https://gss.civilservice.gov.uk/about-us/support-for-the-gss/">Best Practice and Impact division</a> of the Office for National Statistics.</p>
-<p>This guidance has been written to support analysts in government who use coding in their work. This includes those who produce statistics, carry out modelling or apply data science.</p>
-<p>This guidance is a living document, so will be continually updated. You can refer to the current version of the guidance by it’s version number, found below the site table of contents. You may notice “Todo” notes throughout the guidance. These indicate where we plan to add additional content in the near future. We are extremely grateful for any feedback that you are able to provide on existing and future content.</p>
+<p>This Analysis Function and Government Statistical Service (GSS) guidance is produced by the <a class="reference external" href="https://gss.civilservice.gov.uk/about-us/support-for-the-gss/">Best Practice and Impact division</a> of the Office for National Statistics.</p>
+<p>The guidance has been written to support analysts in government who use coding in their work. This includes those who produce statistics, carry out modelling or apply data science.</p>
+<p>The guidance is a living document, so will be continually updated. You can refer to the current version of the guidance by it’s version number, found below the site table of contents. We are extremely grateful for any feedback that you are able to provide on existing and future content. Please get in touch via <a class="reference external" href="https://github.com/best-practice-and-impact/qa-of-code-guidance/issues">GitHub Issues</a> or <a class="reference external" href="mailto:gsshelp&#37;&#52;&#48;statistics&#46;gov&#46;uk">gsshelp<span>&#64;</span>statistics<span>&#46;</span>gov<span>&#46;</span>uk</a>.</p>
 <div class="section" id="about-us">
 <h2>About us<a class="headerlink" href="#about-us" title="Permalink to this headline">¶</a></h2>
 <p>The Best Practice and Impact division supports government analysis by providing guidance, consultancy and training.</p>
@@ -318,7 +349,7 @@
 <h2>Citing the book<a class="headerlink" href="#citing-the-book" title="Permalink to this headline">¶</a></h2>
 <p>The following structure can be used to reference the current version of the book:</p>
 <blockquote>
-<div><p>UK Government Analytical Community. (2020). Quality assurance of code for analysis and research (version 2021.3). Office for National Statistics, Best Practice and Impact division: https://best-practice-and-impact.github.io/qa-of-code-guidance/</p>
+<div><p>UK Government Analytical Community. (2020). Quality assurance of code for analysis and research (version 2021.4). Office for National Statistics, Best Practice and Impact division: <a class="reference external" href="https://best-practice-and-impact.github.io/qa-of-code-guidance/">https://best-practice-and-impact.github.io/qa-of-code-guidance/</a></p>
 </div></blockquote>
 </div>
 <div class="section" id="how-to-get-the-most-out-of-the-book">
@@ -346,7 +377,7 @@
 <li><p>navigate most of the website using speech recognition software</p></li>
 <li><p>listen to most of the website using a screen reader (including the most recent versions of JAWS, NVDA and VoiceOver)</p></li>
 </ul>
-<p>For keyboard navigation, <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Up</kbd> <kbd class="kbd docutils literal notranslate">Arrow</kbd></kbd> and <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Down</kbd> <kbd class="kbd docutils literal notranslate">Arrow</kbd></kbd>keys can be used to scroll up and down on the current page. <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Left</kbd> <kbd class="kbd docutils literal notranslate">Arrow</kbd></kbd> and <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Right</kbd> <kbd class="kbd docutils literal notranslate">Arrow</kbd></kbd> keys can be used to move forwards and backwards through the pages of the book. Tabbed content (including code example) can be focused using the <kbd class="kbd docutils literal notranslate">Tab</kbd> key. <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Left</kbd> <kbd class="kbd docutils literal notranslate">Arrow</kbd></kbd> and <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Right</kbd> <kbd class="kbd docutils literal notranslate">Arrow</kbd></kbd> keys are then used to focus the required tab option, where <kbd class="kbd docutils literal notranslate">Enter</kbd> can be used to select that option and display the associated content.</p>
+<p>For keyboard navigation, <kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Up</kbd> <kbd class="kbd docutils literal notranslate">Arrow</kbd></kbd> and <kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Down</kbd> <kbd class="kbd docutils literal notranslate">Arrow</kbd></kbd>keys can be used to scroll up and down on the current page. <kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Left</kbd> <kbd class="kbd docutils literal notranslate">Arrow</kbd></kbd> and <kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Right</kbd> <kbd class="kbd docutils literal notranslate">Arrow</kbd></kbd> keys can be used to move forwards and backwards through the pages of the book. Tabbed content (including code example) can be focused using the <kbd class="kbd docutils literal notranslate">Tab</kbd> key. <kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Left</kbd> <kbd class="kbd docutils literal notranslate">Arrow</kbd></kbd> and <kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Right</kbd> <kbd class="kbd docutils literal notranslate">Arrow</kbd></kbd> keys are then used to focus the required tab option, where <kbd class="kbd docutils literal notranslate">Enter</kbd> can be used to select that option and display the associated content.</p>
 <div class="section" id="feedback-and-reporting-accessibility-problems">
 <h3>Feedback and reporting accessibility problems<a class="headerlink" href="#feedback-and-reporting-accessibility-problems" title="Permalink to this headline">¶</a></h3>
 <p>We’re always looking to improve the accessibility of our guidance. If you find any problems not listed on this page or think that we’re not meeting accessibility requirements, please contact us by email at <a class="reference external" href="mailto:gsshelp&#37;&#52;&#48;statistics&#46;gov&#46;uk">gsshelp<span>&#64;</span>statistics<span>&#46;</span>gov<span>&#46;</span>uk</a>. Please also get in touch if you are unable to access any part of this guidance, or require the content in a different format.</p>
@@ -355,6 +386,8 @@
 <div class="section" id="enforcement-procedure">
 <h3>Enforcement procedure<a class="headerlink" href="#enforcement-procedure" title="Permalink to this headline">¶</a></h3>
 <p>The Equality and Human Rights Commission (EHRC) is responsible for enforcing the <a class="reference external" href="https://www.legislation.gov.uk/uksi/2018/952/made">Public Sector Bodies (Websites and Mobile Applications) (No. 2) Accessibility Regulations 2018 (the ‘accessibility regulations’)</a>. If you’re not happy with how we respond to your complaint, you should <a class="reference external" href="https://www.equalityadvisoryservice.com/">contact the Equality Advisory and Support Service (EASS)</a>.</p>
+<div class="toctree-wrapper compound">
+</div>
 <div class="toctree-wrapper compound">
 </div>
 <div class="toctree-wrapper compound">
@@ -385,14 +418,14 @@
 
               </div>
               
-        </div>
-    </div>
-    
-    
-    <div class='prev-next-bottom'>
         
-    <a class='right-next' id="next-link" href="principles.html" title="next page">Principles</a>
+        <div class='prev-next-bottom'>
+            
+    <a class='right-next' id="next-link" href="checklists.html" title="next page">Code quality assurance checklists</a>
 
+        </div>
+        
+        </div>
     </div>
     <footer class="footer mt-5 mt-md-0">
     <div class="container">
