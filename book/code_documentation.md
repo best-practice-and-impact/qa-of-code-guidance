@@ -184,7 +184,7 @@ def add_to_each(numbers, add):
     Returns
     -------
     list
-       `numbers` with `to_add` added to each element.
+        `numbers` with `to_add` added to each element.
 
     Examples
     --------
@@ -195,11 +195,11 @@ def add_to_each(numbers, add):
     See Also
     --------
     add : Adds two numbers
-   """
-   if not isinstance(numbers, list):
-       raise TypeError("numbers must be a list")
-   new_numbers = [number + to_add for number in numbers]
-   return new numbers
+    """
+    if not isinstance(numbers, list):
+        raise TypeError("numbers must be a list")
+    new_numbers = [number + to_add for number in numbers]
+    return new_numbers
 ```
 
 ```{code-tab} r R
