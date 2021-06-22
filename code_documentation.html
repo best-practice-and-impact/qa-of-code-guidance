@@ -202,7 +202,7 @@
 </nav> <!-- To handle the deprecated key -->
 
 <div class="navbar_extra_footer">
-  <p>Book version 2021.6</p><a href='https://www.gov.uk/government/organisations/government-analysis-function' target='_blank'><img src='./_static/af_logo.png' alt='The Government Analysis Function logo' style='width:50%;'></a>
+  <p>Book version 2021.7</p><a href='https://www.gov.uk/government/organisations/government-analysis-function' target='_blank'><img src='./_static/af_logo.png' alt='The Government Analysis Function logo' style='width:50%;'></a>
 </div>
 
 </div>
@@ -489,7 +489,7 @@ Complex is better than complicated.</p>
 <span class="sd">    Returns</span>
 <span class="sd">    -------</span>
 <span class="sd">    list</span>
-<span class="sd">       `numbers` with `to_add` added to each element.</span>
+<span class="sd">        `numbers` with `to_add` added to each element.</span>
 
 <span class="sd">    Examples</span>
 <span class="sd">    --------</span>
@@ -500,11 +500,11 @@ Complex is better than complicated.</p>
 <span class="sd">    See Also</span>
 <span class="sd">    --------</span>
 <span class="sd">    add : Adds two numbers</span>
-<span class="sd">   &quot;&quot;&quot;</span>
-   <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">numbers</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
-       <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;numbers must be a list&quot;</span><span class="p">)</span>
-   <span class="n">new_numbers</span> <span class="o">=</span> <span class="p">[</span><span class="n">number</span> <span class="o">+</span> <span class="n">to_add</span> <span class="k">for</span> <span class="n">number</span> <span class="ow">in</span> <span class="n">numbers</span><span class="p">]</span>
-   <span class="k">return</span> <span class="n">new</span> <span class="n">numbers</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">numbers</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;numbers must be a list&quot;</span><span class="p">)</span>
+    <span class="n">new_numbers</span> <span class="o">=</span> <span class="p">[</span><span class="n">number</span> <span class="o">+</span> <span class="n">to_add</span> <span class="k">for</span> <span class="n">number</span> <span class="ow">in</span> <span class="n">numbers</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">new_numbers</span>
 </pre></div>
 </div>
 </div><div aria-labelledby="tab-3-Ug==" class="sphinx-tabs-panel code-tab group-tab" hidden="true" id="panel-3-Ug==" name="Ug==" role="tabpanel" tabindex="0"><div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#&#39;@title add_to_each</span>
