@@ -173,7 +173,7 @@ def add_to_each(numbers, add):
     ----------
     numbers : list
         Numbers to add `add` to.
-    add : int or float
+    to_add : int or float
         Number to be added to each element of `numbers`.
 
     Raises
@@ -184,7 +184,7 @@ def add_to_each(numbers, add):
     Returns
     -------
     list
-       `numbers` with `add` added to each element.
+       `numbers` with `to_add` added to each element.
 
     Examples
     --------
