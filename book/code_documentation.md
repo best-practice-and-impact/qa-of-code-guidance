@@ -165,14 +165,14 @@ But in general, there is scope to add any information that you consider relevant
 ````{tabs}
 
 ```{code-tab} py
-def add_to_each(numbers, add):
+def add_to_each(numbers, to_add):
     """
     Adds a number to each number in a list.
 
     Parameters
     ----------
     numbers : list
-        Numbers to add `add` to.
+        Numbers to add `to_add` to.
     to_add : int or float
         Number to be added to each element of `numbers`.
 
