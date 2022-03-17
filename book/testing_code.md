@@ -114,8 +114,9 @@ assert 1 == 1
 ```
 
 ```{code-tab} r R
-if (1 != 1):
+if (1 != 1) {
   stop("Something has gone terribly wrong")
+}
 ```
 
 ````
