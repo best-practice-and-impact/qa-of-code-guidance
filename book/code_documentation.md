@@ -98,6 +98,7 @@ plt.plot(penguins.bill_length_mm)
 species_means.to_csv("penguin_species_mean_measurements.csv")
 ```
 ```{code-tab} r R
+library(palmerpenguins)
 library(dplyr)
 
 
