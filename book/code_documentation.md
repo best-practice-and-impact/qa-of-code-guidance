@@ -99,7 +99,7 @@ species_means.to_csv("penguin_species_mean_measurements.csv")
 ```
 ```{code-tab} r R
 library(palmerpenguins)
-library(magrittr)
+library(dplyr)
 
 
 ## Get data
@@ -107,8 +107,8 @@ penguins_data <- penguins
 
 ## Analyse
 species_means <- penguins_data %>%
-  dplyr::group_by(species) %>%
-  dplyr::summarize(dplyr::across(where(is.numeric), mean, na.rm = TRUE))
+  group_by(species) %>%
+  summarize(across(where(is.numeric), mean, na.rm = TRUE))
 
 ## Report
 plot(penguins_data$bill_length_mm)
@@ -203,22 +203,22 @@ def add_to_each(numbers, to_add):
 ```
 
 ```{code-tab} r R
-#'@title add_to_each
-#'
-#'@description Add a number to elements of a vector
-#'
-#'@details Cycles through a vector of numbers and adds a user-specified number to each element.
-#'
-#'@param numbers A vector of numbers
-#'@param add A float or integer to be added to each element of \code{numbers}
-#'
-#'@return \code{numbers} with \code{add} added to each element
-#'
-#'@seealso \code{\link{add}}
-#'@examples
-#' add_to_each(list(1, 2, 3), 5)
-#'
-#'@export
+#' @title Add to a vector
+#' 
+#' @description Add a number to elements of a vector.
+#' 
+#' @details Cycles through a vector of numbers and adds a user-specified number to each element.
+#' 
+#' @param numbers A vector of numbers.
+#' @param add A float or integer to be added to each element of \code{numbers}.
+#' 
+#' @return \code{numbers} with \code{add} added to each element.
+#' 
+#' @seealso \code{\link{add}}
+#' @examples
+#'  add_to_each(list(1, 2, 3), 5)
+#' 
+#' @export
 add_to_each <- function(numbers, add) {
   if (!(is.vector(numbers) & is.numeric(numbers)) {
     stop("'numbers' must be a numeric vector.")

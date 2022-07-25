@@ -147,7 +147,7 @@ if (length(args) < 1) {
   stop("Configuration file must be passed as an argument.")
 }
 
-config_path = args[1]
+config_path <- args[1]
 config <- yaml::yaml.load_file(config_path)
 ...
 ```
