@@ -13,7 +13,7 @@ Programming in analysis makes each of these principles easier to fulfil in most 
 ---
 width: 50%
 name: repro_stack
-alt:""
+alt: Founding principles of good analysis.
 ---
 Founding principles of good analysis
 ```
