@@ -1,12 +1,19 @@
 # Testing code
 
-Tests are bits of code that verify that your analytical code is working as expected. Where code documentation helps others to understand what you expect your code to do, testing assures that the the code meets these expectations.
+Tests are bits of code that verify that your analytical code is working as expected. 
+Where code documentation helps others to understand what you expect your code to do, testing assures that the the code meets these expectations.
+
+Tests should be used proportionately across your codebase. 
+Hadley Wickham gives advice on designing test suites in [his book on writing packages for R](https://r-pkgs.org/testing-design.html#what-to-test). 
+Although this book is written for R developers the advice at the start of the chapter is more general.
 
 ## Introduction
 
 When testing, ask: **"Does my code do what I expect it to, given realistic inputs?"**.
 
-Delivering a piece of analysis or research includes both writing the code that performs your analysis and assuring that it works. You cannot be sure that your code works without having run it with realistic examples. Therefore, you must test your analytical code proportionately.
+Delivering a piece of analysis or research includes both writing the code that performs your analysis and assuring that it works. 
+You cannot be sure that your code works without having run it with realistic examples. 
+Therefore, you must test your analytical code proportionately.
 
 Tests can:
 * verify that users expectations are met by the code,
@@ -14,64 +21,113 @@ Tests can:
 * let you know when you've broken the expected functionality of your code,
 * be used to report or flag poor performance, for example, when modelling.
 
-Testing helps you assure your code quality and makes developing your code more efficient. Code that has not been tested is more likely to contain bugs and require more maintenance in the future.
+Testing helps you assure your code quality and makes developing your code more efficient. 
+Code that has not been tested is more likely to contain bugs and require more maintenance in the future.
 
-Testing is a useful and deep skill to learn. Writing code for testing should also follow good practice.
+Code for testing should also follow good practice. 
+Testing is a useful and deep skill to learn.
 
-## Tests are structured
+## Structure your tests
 
-Tests comes in many shapes and sizes, but often follow the pattern:
+When writing code outside dedicated testing frameworks, we manually test our code. 
+We might do this by running our code and seeing what the outputs are. 
+We test these outputs against our mental model - or understanding - of how the code should work. 
+Testing frameworks structure this process so that computers can automate the testing of the code.
+
+Tests come in many shapes and sizes, but usually follow the pattern:
 1. Arrange - set up any objects for your test, e.g. example input data and expected output data.
 2. Act - run the code that you are testing (1 or more functions or methods).
 3. Assert - verify that the code performed the expected action, e.g. that the output matched the expected output.
 
-We'll use a couple of examples throughout this section of the book, to demonstrate how tests relate to analytical code. Here we've a basic function to get the absolute equivalent of a number:
+We'll use a couple of examples throughout this section of the book, to demonstrate how tests relate to analytical code. 
+Here we've a basic function to get the absolute equivalent of a number:
 
-```py
+````{tabs}
+```{code-tab} py Python
 def absolute(number):
     """Get the non-negative equivalent of a real number."""
     if not isinstance(number, (int, float)):
         raise TypeError("Input number must be numeric.")
-    return (number * number) ** 0.5
+    return (number * number) / number
 ```
 
-To test that this function works as expected, we write another function to carry out the test. We've spread the code out over separate lines, to make it clear how this test follows the arrange, act, assert patten:
+```{code-tab} r R
+#' Absolute
+#'
+#' Get the non-negative equivalent of a real number.
 
-```py
+absolute <- function(number) {
+    if !(is.numeric(number)) {
+        stop("Input number must be numeric.")
+    }
+
+    return (number * number) / number
+}
+```
+````
+To test that this function works as expected, we write code to carry out the test. 
+In Python this is another function, whereas in R it is simply a statement. 
+We've spread the code out over separate lines, to make it clear how this test follows the arrange, act, assert pattern:
+
+````{tabs}
+```{code-tab} py
 def test_absolute_converts_negative_inputs():
     """Makes negative numbers positive."""
     # Arrange
     input_value = -5
     expected_output = 5
+
     # Act
     actual_output = absolute(input_value)
+
     # Assert
     assert actual_output == expected_output
 ```
+```{code-tab} r R
+# Arrange
+input_value <- -5
+expected_output <- 5
 
-The example above can be described as a 'unit test'. This means that it tests the smallest unit of our code - a function. There are three common "layers" of testing:
+# Act
+actual_output <- absolute(input_value)
+
+# Assert
+test_that("absolute converts negative inputs to positive", {
+    expect_equal(expected_output, actual_output)
+    }
+)
+```
+````
+The example above can be described as a 'unit test'. 
+This means that it tests the smallest unit of our code - a function. 
+There are three common "layers" of testing:
 
 * Unit testing - assuring that functions or class methods perform as expected.
 * Integration testing - assuring that units interact with other units or third party code as expected.
 * End-to-end or system testing - assuring that a complete system functions as expected.
-* User acceptance testing - assures that the system meets a users expectations.
-[Acceptance testing](https://en.wikipedia.org/wiki/Acceptance_testing) is often considered as an additional level, and should be applied whenever developing software for specific users.
 
-Later in this chapter, we describe what risk each level aims to address and detail good practices for each.
+[User acceptance testing](https://en.wikipedia.org/wiki/Acceptance_testing) is an additional level of software testing although it doesn't involve writing test code. 
+It should be applied whenever developing software for users.
+
+Each level of testing mitigates specific risks.
 
 
-## Test data is minimal
+### Use minimal data for tests
 
-- there should only be enough data to be able to carry out the test.
-- data should be static (hardcoded), readable, fake and close to the tests (if unit test).
-- expected output must not be generated by running your function then pasting it into the script. Strong indication that your function is too complicated.
-- can reuse larger example data for multiple integration and end to end tests. Return it from a function or fixture for consistency.
+Data for tests must be:
+- only just large enough to carry out the test,
+- static (hardcoded), readable, fake and in the same folder as the tests (if unit test),
+- not generated by running your function then pasting it into the script,
+- larger for integration and end-to-end tests,
+- returned from a function or fixture for consistency.
 
-## Test code is modular
+### Write your test code to mirror your codebase
 
-Modular, well-structured code is easier to write tests for As such, testing encourages you to structure your code well.
-Testing directories should mirror the source code directories. Might want one file per function/class or one per module.
-Overall, it should be easy to identify which functions or classes your tests are assuring.
+Modular, well-structured code is easier to write tests for. 
+As such, testing encourages you to structure your code well.
+Directories of testing code should mirror the source code directories. 
+You might want one file per function/class or one per module.
+Overall, it should be easy to identify which functions or classes your tests are for.
 
 ```
 project/
@@ -98,32 +154,48 @@ project/
         └── test_end_to_end.py
 ```
 
-## Tests are specific
 
-Tests should be specific.
-If you can't refactor the code to make it easier to test specific aspects, then Mocks can be useful for removing unwanted factors.
-Mocking is useful for removing things that we don't care about from the the test. But should not be used to avoid testing complex parts of code that you've written.
 
-## Tests are independent
+### Good tests do not rely on external states
 
-Tests should be clean and easy to maintain:
- - tests should be independent (no external state, if possible). You shouldn't need one to run before or after another - testing frameworks will often randomly order the tests when running them for this reason.
- - no side effects. Use set up and tear down to manage this. Or Mocks to avoid it.
- - should be independent to the code. Ideally, if the code changes, functions should not break. Difficult to do, but can create an interface between tests and main code base.
+Tests should be clean and easy to maintain.
 
-## Tests are documented
+Independent tests that do not rely on external states make maintenance easier. 
+Tests should not need to be run in a specific order. 
+Testing frameworks will often randomly order the tests when running them for this reason.
 
-Test must describe what it is testing.
-Ideally, do this using good naming practices within the test code. It should tell a story - given this data, having run this function, we expect this output.
-If this is not clear from the code, us Python in function/method name, R in testthat... Use docstrings or comments where needed.
-### Bugs are tested
+Likewise, tests should leave no trace. 
+Use set up and tear down code to manage this. 
+Some testing frameworks provide tools like fixtures or mocks to help with this.
 
-Every time you find a bug, write a test.
+Tests should be independent from the code. 
+If the code changes, the tests may fail but test functions should not break. 
 
-### Tests are deterministic
+### Tests are documentation and tests are documented
 
-Test should be deterministic and repeatable. The only thing that should cause a test to fail is if the tested code has changed. Running the same test with the same tested code should always produce the same outcome.
-Tests should pass or fail, not "mostly pass".
+Good tests describe what it is they are testing. 
+They do this by using good naming practices within the test code. 
+A good test suite should tell a story - given this data, having run this function, we expect this output. 
+Tests should follow the relevant practices outlined in [core programming practices](./core_programming).
+
+The story told in a testing suite helps developers understand what code is meant to do. 
+By defining expected outputs from given inputs, developers can understand the use of a particular piece of code. 
+Good testing suites recognise this and supplement other forms of documentation.
+
+### Use bugs to improve your test suite
+
+Every time you find a bug, write a test to check that it is fixed. 
+Doing so guarantees that your code covers common edge cases. 
+When you change your code or refactor your product you can be sure that bugs you have already fixed will not reappear.
+
+### Avoid flickering tests by making them deterministic
+
+Good tests are deterministic and repeatable. 
+Don't use randomness when writing tests. 
+The only thing that should cause a test to fail when it has been passing is if the tested code has changed. 
+Running the same test with the same tested code should always produce the same outcome.
+
+In short, tests should pass or fail, not "mostly pass".
 
 ## Tests are thorough but realistic
 
@@ -320,3 +392,9 @@ Testing in multiple environments?
 * [rhub](https://r-hub.github.io/rhub/)
 ```
 
+## Use mocks where code cannot be easily decoupled
+
+Tests should be specific.
+
+If you can't refactor the code to make it easier to test specific aspects, then Mocks can be useful for removing unwanted factors.
+Mocking is useful for removing things that we don't care about from the the test. But should not be used to avoid testing complex parts of code that you've written.
