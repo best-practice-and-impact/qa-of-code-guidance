@@ -861,15 +861,9 @@ odd_third = get_odd(third_ten_numbers)
 
 ```{code-tab} r R
 get_odd <- function(numbers) {
-  odd_numbers = []
-  for (number in first_ten_numbers) {
-    if (number % 2 == 1) {
-      odd_first_ten_numbers.append(number)
-    }
-  }
-  return odd_numbers
+  # Get only the odd numbers
+  numbers[numbers %% 2 == 1]
 }
-
 
 first_ten_numbers = 1:10
 second_ten_numbers = 11:20
@@ -923,34 +917,17 @@ odd_numbers = get_numbers_with_parity(list(range(1, 11), "odd"))
 
 ```{code-tab} r R
 # Simple and modular
-is_odd <- function(number) {
-  if (number %% 2 == 1) {
-    TRUE
-  } else {
-    FALSE
-  }
+is_odd <- function(numbers) {
+  ifelse(numbers %% 2 == 1, TRUE, FALSE) 
 }
 
 get_odd <- function(numbers) {
-  odd_numbers = c()
-  for (number in numbers) {
-    if (is_odd(number)) {
-      odd_numbers = c(odd_numbers, number)
-    }
-  }
-  return(odd_numbers)
+  numbers[is_odd(numbers)]
 }
 
 get_even <- function(numbers) {
-  even_numbers = c()
-  for (number in numbers) {
-    if (!is_odd(number)) {
-      even_numbers = c(even_numbers, number)
-    }
-  }
-  return(even_numbers)
+  numbers[!is_odd(numbers)]
 }
-
 
 # More concise, but also more complex - not always best
 get_numbers_with_parity <- function(numbers, parity) {
@@ -962,8 +939,10 @@ get_numbers_with_parity <- function(numbers, parity) {
   } else {
     stop("parity must be 'odd' or 'even'")
   }
+  
   numbers[numbers %% 2 == remainder]
 }
+
 odd_numbers <- get_numbers_with_parity(1:10, "odd")
 ```
 
