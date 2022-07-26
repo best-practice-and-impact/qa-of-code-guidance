@@ -1,21 +1,22 @@
 # Testing code
 
-We use testing here to refer to code that aims to verify that your analytical code is working as expected. While code documentation specifies what you expect your code to do, testing assures that the action of the code meets these expectations.
+Tests are bits of code that verify that your analytical code is working as expected. Where code documentation helps others to understand what you expect your code to do, testing assures that the the code meets these expectations.
 
 ## Introduction
 
-The core concept of testing is **"Does my code do what I expect it to, given realistic inputs?"**.
+When testing, ask: **"Does my code do what I expect it to, given realistic inputs?"**.
 
-Successfully delivering a completed piece of analysis or research includes both writing the code the carry out your analysis and assuring that it works. You can't be sure that your code works without having run it with realistic examples. Therefore, you must test the most complex and important parts of your analytical code.
+Delivering a piece of analysis or research includes both writing the code that performs your analysis and assuring that it works. You cannot be sure that your code works without having run it with realistic examples. Therefore, you must test your analytical code proportionately.
 
 Tests can:
-* verify that users expectations are met by the code.
-* let you know when you've broken the expected functionality of your code.
+* verify that users expectations are met by the code,
+* define what code should do,
+* let you know when you've broken the expected functionality of your code,
 * be used to report or flag poor performance, for example, when modelling.
 
-Testing is crucial to assuring quality in your code and will also increase efficiency in the development of your code. Code that has not been testing is more likely to contain bugs and require more maintenance in the future.
+Testing helps you assure your code quality and makes developing your code more efficient. Code that has not been tested is more likely to contain bugs and require more maintenance in the future.
 
-In the following sections we discuss good practices for writing automated code tests.
+Testing is a useful and deep skill to learn. Writing code for testing should also follow good practice.
 
 ## Tests are structured
 
@@ -197,13 +198,13 @@ snippets/pytest_example.py::test_absolute_na SKIPPED                     [100%]
 ===================== 3 passed, 1 skipped in 0.11 seconds =====================
 ```
 
-
+````{tabs}
 ```{code-tab} r R
 if (1 != 1) {
   stop("Something has gone terribly wrong")
 }
 ```
-
+````
 
 CI is best, as it keeps testing close to version control.
 Where manual testing is carried out, this must be documented to create an audit trail. This documentation should include what has been tested and who has approved that it works as expected.
