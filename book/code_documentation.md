@@ -229,6 +229,8 @@ add_to_each <- function(numbers, add) {
 
 In this example, the function docstring starts with a brief description. It then lists the parameters that our function takes, along with the suggested type for each parameter and a brief description of what they control. It also tells us that the function will raise an error if the wrong type is provided for the first parameter. Note that the listed errors are the errors that are expected by the writer of the documentation, other unexpected issues can still occur if the function is not properly tested and will not be signposted in the docstring. Then there is a description of the object that is returned from the function, followed by an example of the functions use. Finally, it references a similar related function that might be of interest to the end-user.
 
+The R example uses a format called [roxygen](https://roxygen2.r-lib.org/). You should use it to write function documentation as part of R packages. If you are documenting functions that are not part of a package, you can use regular code comments. However, documenting functions using roxygen syntax can be helpful if you are planning on packaging the code in future and gives a clear structure to your documentation. 
+
 You might find that writing function, class or package descriptions prior to writing their code helps you to focus on the task at hand. The documentation should be a specification of what the code is expected to do. As documentation tends to be user-focussed, this approach helps you to keep the user's needs in mind when developing code and provides a quick reference when more information on its capabilities are required.
 
 Lastly, perhaps one of the key things to remember when writing docstrings is to **keep them up to date**. If these crucial bits of information no longer represent what the code actually does, the end-user will be misled. This might lead to various issues ranging from wasted time to serious methodological implications.
@@ -247,6 +249,65 @@ Other useful resources include:
 - [Python docstring convention](https://www.python.org/dev/peps/pep-0257/)
 - Guidance for [documenting objects and functions in R](http://r-pkgs.had.co.nz/man.html)
 ```
+
+### Writing script or module doctstrings
+
+Docstrings are not just for function documentation. You will often want to include explanatory notes alongside modules containing multiple functions or standalone scripts.
+
+In those cases, the structure is a lot looser and will depend on what the script is intended to do. The docstrings should be brief and avoid repeating details found in function documentation or other code comments later in the script. You may want to include:
+
+- a title
+- a brief description
+- any important usage notes not covered elsewhere
+- any copyright information if the script reproduces open source code from elsewhere
+- academic citations, if applicable
+
+````{tabs}
+
+```{code-tab} py
+"""
+Data cleaning 
+
+Functions to tidy and clean ingested csv and SQL data
+"""
+```
+
+```{code-tab} r R
+# Data import functions
+#
+# Functions to tidy and clean ingested csv and SQL data
+```
+
+````
+
+The examples above document a simple module as part of an analysis package. The notes are brief and explain the main purpose of the module. Please note: in R, it is considered acceptable to include either multiple functions per file or have separate files for each function. You do not need to include module documentation if a file only contains one function.
+
+
+````{tabs}
+
+```{code-tab} py
+"""
+Duck census main analysis 
+
+Produces the duck census bulletin outputs for the annual publication.
+
+Check the configuration file before running and run from the command line. Detailed setup and desk instructions can be found in README.md.
+
+"""
+```
+
+```{code-tab} r R
+# Duck census main analysis 
+#
+# Produces the duck census bulletin outputs for the annual publication.
+#
+# Check the configuration file before running and run from the command line. Detailed setup and desk instructions can be found in README.md.
+```
+
+````
+
+These examples document a main analysis script. They include enough information that a user can get started, without repeating too much that should be documented elsewhere. 
+
 
 (generating_docs)=
 ## Automatic documentation generation
