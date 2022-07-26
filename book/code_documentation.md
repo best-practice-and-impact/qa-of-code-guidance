@@ -8,18 +8,16 @@ Documentation is a love letter that you write to your future self.
 
 ## Comments
 
-```{epigraph}
-Use comments sparingly and with purpose
-```
+> Use comments sparingly and with purpose
 
 Comments are lines of text in source code files that typically aren't executed as part of the program. They are small notes or annotations written by those working on the code. Often, they provide context or explain the reasoning behind implementation decisions.
 
 Comments are essential to help those working on the code in the future to understand any non-obvious details around how and why the code has been written in a particular way. As such, when it comes to providing relevant and perhaps higher-level documentation to the end consumer on the functionality of your code, there are much more appropriate solutions such as [docstrings](docstrings).
 
-Although extremely useful, comments should be used sparingly. Excessive use of code comments often leads to redundancy and can, ironically, make your code harder to read. It is easy for comments to not be updated as changes are made to the code. Additionally, outdated, or irrelevant comments can confuse or mislead.
+Although extremely useful, comments should be used sparingly. Excessive use of code comments often leads to redundancy and can, ironically, make your code harder to read. It is easy for comments to not be updated as changes are made to the code. Outdated, or irrelevant comments can confuse or mislead.
 
 ```{note}
-**Remember**: the only point of "truth" is the code that is executed - if the comments are out of date compared to the actual code, it may not be immediately apparent.
+**Remember**: the only point of 'truth' is the code that is executed - if the comments are out of date compared to the actual code, it may not be immediately apparent.
 ```
 
 ````{tabs}
@@ -137,16 +135,16 @@ It is easy to forget which parts of code have been commented out and why they ha
 You should instead use appropriate control flow (such as `if/else` statements) to determine when these sections should be run. When changes are required between individual runs of your analysis, you should consider [defining these options in a dedicated configuration file](configuration.md).
 
 
-In summary, you should use comments sparingly but purposefully. Make sure to:
+In summary, you should use comments sparingly but purposefully. Make sure comments:
 
-- explain **why** certain things are done, in order to provide context around the decisions that you have made.
-- not use commenting to echo what your code is already telling the reader.
-- and as with any other documentation, make sure comments are accurate and still relevant after code changes.
+- explain **why** certain things are done, in order to provide context around the decisions that you have made
+- do not echo what your code is already telling the reader
+- are accurate and still relevant after code changes
 
 (docstrings)=
 ## Docstrings
 
-When your code is structured as functions or classes, these functional units can be efficiently documented using docstrings. Docstrings are specialised multi-line descriptions that appear at the start of a function definition and are the *de facto* way of documenting these individual components. In practice they can be either strings (as in Python docstrings) or comments (as in R). Note that module or script level docstrings are also commonly used (usually at the top of the module file in the case of Python). Use of docstrings keeps the documentation of your code closely associated with the relevant sections of code. This close association means it is easier to keep documentation up to date as changes are introduced to the code.
+When your code is structured as functions or classes, these functional units can be efficiently documented using docstrings. Docstrings are specialised multi-line descriptions that appear at the start of a function definition and are the de facto way of documenting these individual components. In practice they can be either strings (as in Python docstrings) or comments (as in R). Note that module or script level docstrings are also commonly used (usually at the top of the module file in the case of Python). Use of docstrings keeps the documentation of your code closely associated with the relevant sections of code. This close association means it is easier to keep documentation up to date as changes are introduced to the code.
 
 An end-user can access these docstrings by typing `help(function_name)` after they have imported your library, so they are handily available without needing to have the source code files open in another window. Other tools, like Jupyter for Python, allow users to easily access these docstrings for quick reference. Hence the focus on detail and comprehensiveness is key - this is the first point of call for an end-user trying to understand what a given function does.
 
@@ -231,6 +229,8 @@ add_to_each <- function(numbers, add) {
 
 In this example, the function docstring starts with a brief description. It then lists the parameters that our function takes, along with the suggested type for each parameter and a brief description of what they control. It also tells us that the function will raise an error if the wrong type is provided for the first parameter. Note that the listed errors are the errors that are expected by the writer of the documentation, other unexpected issues can still occur if the function is not properly tested and will not be signposted in the docstring. Then there is a description of the object that is returned from the function, followed by an example of the functions use. Finally, it references a similar related function that might be of interest to the end-user.
 
+The R example uses a format called [roxygen](https://roxygen2.r-lib.org/). You should use it to write function documentation as part of R packages. If you are documenting functions that are not part of a package, you can use regular code comments. However, documenting functions using roxygen syntax can be helpful if you are planning on packaging the code in future and gives a clear structure to your documentation. 
+
 You might find that writing function, class or package descriptions prior to writing their code helps you to focus on the task at hand. The documentation should be a specification of what the code is expected to do. As documentation tends to be user-focussed, this approach helps you to keep the user's needs in mind when developing code and provides a quick reference when more information on its capabilities are required.
 
 Lastly, perhaps one of the key things to remember when writing docstrings is to **keep them up to date**. If these crucial bits of information no longer represent what the code actually does, the end-user will be misled. This might lead to various issues ranging from wasted time to serious methodological implications.
@@ -249,6 +249,65 @@ Other useful resources include:
 - [Python docstring convention](https://www.python.org/dev/peps/pep-0257/)
 - Guidance for [documenting objects and functions in R](http://r-pkgs.had.co.nz/man.html)
 ```
+
+### Writing script or module doctstrings
+
+Docstrings are not just for function documentation. You will often want to include explanatory notes alongside modules containing multiple functions or standalone scripts.
+
+In those cases, the structure is a lot looser and will depend on what the script is intended to do. The docstrings should be brief and avoid repeating details found in function documentation or other code comments later in the script. You may want to include:
+
+- a title
+- a brief description
+- any important usage notes not covered elsewhere
+- any copyright information if the script reproduces open source code from elsewhere
+- academic citations, if applicable
+
+````{tabs}
+
+```{code-tab} py
+"""
+Data cleaning 
+
+Functions to tidy and clean ingested csv and SQL data
+"""
+```
+
+```{code-tab} r R
+# Data import functions
+#
+# Functions to tidy and clean ingested csv and SQL data
+```
+
+````
+
+The examples above document a simple module as part of an analysis package. The notes are brief and explain the main purpose of the module. Please note: in R, it is considered acceptable to include either multiple functions per file or have separate files for each function. You do not need to include module documentation if a file only contains one function.
+
+
+````{tabs}
+
+```{code-tab} py
+"""
+Duck census main analysis 
+
+Produces the duck census bulletin outputs for the annual publication.
+
+Check the configuration file before running and run from the command line. Detailed setup and desk instructions can be found in README.md.
+
+"""
+```
+
+```{code-tab} r R
+# Duck census main analysis 
+#
+# Produces the duck census bulletin outputs for the annual publication.
+#
+# Check the configuration file before running and run from the command line. Detailed setup and desk instructions can be found in README.md.
+```
+
+````
+
+These examples document a main analysis script. They include enough information that a user can get started, without repeating too much that should be documented elsewhere. 
+
 
 (generating_docs)=
 ## Automatic documentation generation
@@ -283,6 +342,6 @@ The [package's website](https://pkgdown.r-lib.org/) and [its source code](https:
 
 Once built, the HTML files containing your documentation can be opened in any browser. Usually this means looking for an `index.html` file in the output directory and opening it with your browser. This is sufficient for local usage, however, in order to improve the end-user experience and remove the need to browse the files looking for `index.html`, it is wise to host this documentation somewhere where it will be publicly available.
 
-Your version control platform might support hosting web pages already. GitHub provides this hosting via [GitHub Pages](https://pages.github.com/) and is able to host not only documentation, but any web page virtually for free. The book that you're reading right now is hosted in this way. In many cases, you may also be able to automatically update your hosted documentation using [CI](continuous-integration) practices.
+Your version control platform might support hosting web pages already. GitHub provides this hosting via [GitHub Pages](https://pages.github.com/) and is able to host not only documentation, but any web page virtually for free. The book that you're reading right now is hosted in this way. In many cases, you may also be able to automatically update your hosted documentation using [Continuous Integration](continuous-integration) practices.
 
 [Read the docs](https://readthedocs.org/) is a community-funded project that provides hosting for open source projects and is a great place to host any rendered documentation.
