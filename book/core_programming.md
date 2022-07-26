@@ -1089,7 +1089,9 @@ The same core concepts still fully apply.
 
 This means that it should be possible to extend the functionality of classes or functions, without modifying their source code or how they work.
 
-```python
+````{tabs}
+
+```{code-tab} python
 # some function that we want to keep closed for modification
 def core_method(data):
     ...
@@ -1101,6 +1103,25 @@ def extended_methodology(data):
      return extended_functionality(core_results)
 
 ```
+
+```{code-tab} r R
+# some function that we want to keep closed for modification
+core_method <- function(data) {
+  ...
+  return(result)
+}
+
+
+# if we want to extend a function without modifying it, we can always do the following
+extended_methodology <- function(data){
+  core_results = core_method(data)
+  return(
+    extended_functionality(core_results)
+  )
+}
+```
+
+````
 
 Same would apply with classes through ideas like inheritance.
 
@@ -1121,13 +1142,24 @@ Imagine you have a task to perform modelling and report generation from data. Yo
 
 So when it comes to creating a pipeline you end up with something like:
 
-```python
+````{tabs}
+
+```{code-tab} python
 report = report(model(load(filepath)))
+
 ```
+
+```{code-tab} r R
+report <- report(model(load(filepath)))
+```
+
+````
 
 We will now assume that these individual functions are closed for modification. However, we can extend the functionality of `load` by adding a `clean` function that cleans the data. In which case, we end up with:
 
-```python
+````{tabs}
+
+```{code-tab} python
 # We can extend this without modifying the source code of `load`
 report = report(model(clean(load(filepath))))
 
@@ -1146,6 +1178,20 @@ report = report(model(new_load(filepath)))
 
 # We can even use this to create a single function to run our defined pipeline
 pipeline = lambda data: report(model(clean(load(filepath))))
+report = pipeline(filepath)
+```
+
+```{code-tab} r R
+# We can extend this without modifying the source code of `load`
+report <- report(model(clean(load(filepath))))
+
+# or we can first define a new load as follows
+new_load <- function(filepath) clean(load(filepath))
+
+report <- report(model(new_load(filepath)))
+
+# We can even use this to create a single function to run our defined pipeline
+pipeline <- function(data) report(model(clean(load(filepath))))
 report = pipeline(filepath)
 ```
 
