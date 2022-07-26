@@ -13,6 +13,8 @@ In early development of our analysis, lets imagine that we have a script that lo
 ````{tabs}
 
 ```{code-tab} python
+# Note: this is not an example of good practice
+# This is intended as example of what early pipeline code might look like
 data = read_csv("C:/a/very/specific/path/to/input_data.csv") 
 
 variables_test, variables_train, outcome_test, outcome_train = train_test_split(data["a", "b", "c"], data["outcome"], test_size=0.3, random_seed=42)
@@ -28,6 +30,8 @@ prediction.to_csv("outputs/predictions.csv")
 ```
 
 ```{code-tab} r R
+# Note: this is not an example of good practice
+# This is intended as example of what early pipeline code might look like
 data <- read.csv("C:/a/very/specific/path/to/input_data.csv") 
 
 set.seed(42)
@@ -48,8 +52,6 @@ write.csv(prediction, "outputs/predictions.csv")
 
 ````
 
-
-
 Here we're reading in some data and splitting it into subsets for training and testing a model. We use one subset of variables and outcomes to train our model and then use the subset to test the model. Finally, we write the model's predictions to a `.csv` file.
 
 The file paths that are used to read and write data in our script are particular to our working environment. These files and paths may not exist on an other analyst's machine. As such, other analysts would need to read through the script and replace these paths in order to run our code. As we'll demonstrate below, collecting flexible parts of our code together makes it easier for others to update them.
@@ -61,6 +63,9 @@ Note that in this example we've tried our model prediction twice, with different
 ````{tabs}
 
 ```{code-tab} python
+# Note: this is not an example of good practice
+# This is intended as an example of basic in-code configuration. 
+
 # Configuration
 input_path = "C:/a/very/specific/path/to/input_data.csv"
 output_path = "outputs/predictions.csv"
@@ -87,6 +92,9 @@ prediction.to_csv(output_path)
 ```
 
 ```{code-tab} r R
+# Note: this is not an example of good practice
+# This is intended as an example of basic in-code configuration. 
+
 # Configuration
 input_path <- "C:/a/very/specific/path/to/input_data.csv"
 output_path <- "outputs/predictions.csv"
