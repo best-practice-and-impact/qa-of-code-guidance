@@ -1,6 +1,6 @@
 # Quality Assurance of Code for Analysis and Research
 
-This document forms part of the Quality Guidance, published by the Best Practice and Impact Division, ONS.
+This document forms part of the Quality Guidance, published by the Quality and Improvement Division of Methods and Quality Directorate at the UK [Office for National Statistics](https://www.ons.gov.uk).
 
 
 # Contributing to this guidance
@@ -20,7 +20,7 @@ This will allow discussion around whether content is suitable for this book, bef
 ### Getting started
 
 To start contributing, you'll need python installed.
-If you sit outside of BPI, the you'll need to [create a Fork of this repository to make changes](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/working-with-forks).
+If you sit outside of Quality and Improvement Division, the you'll need to [create a Fork of this repository to make changes](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/working-with-forks).
 Once forked, you should clone the fork repository to get a copy of the book. Then install it's Python dependencies like so:
 
 ```

@@ -15,7 +15,7 @@ Others are more specific, and - as with all guidelines - should not be taken as 
 
 As you begin developing your project it's a good idea to save your working code in a script file.
 In R these are saved as `.R` files, and in Python as `.py`.
-Scripts can be used within an integrated development environment (IDE) like [Visual Studio Code](https://code.visualstudio.com/), [RStudio](https://rstudio.com/), or [PyCharm](https://www.jetbrains.com/pycharm/).
+Scripts can be used within an Integrated Development Environment (IDE) like [Visual Studio Code](https://code.visualstudio.com/), [RStudio](https://rstudio.com/), or [PyCharm](https://www.jetbrains.com/pycharm/).
 Inside an IDE you can usually run through your script line-by-line, or run the whole file at once.
 This can be an easier workflow than running code in the Python or the R console and then rewriting the same code in a script later.
 
@@ -61,7 +61,7 @@ For example, where the `001_introduction` should come before `002_methodology` a
 
 ### Analysis is a DAG
 
-Analysis can best be thought of as a directed acyclic graph.
+Analysis can best be thought of as a Directed Acyclic Graph (DAG).
 Don't let the name scare you off!
 All we mean by this is that you start off with the input data, you finish with the output(s), and in between there are no lines that link backwards.
 
@@ -146,10 +146,10 @@ It means that members of the team can quickly orient themselves when joining an 
 [Cookiecutter](https://github.com/cookiecutter/cookiecutter) is a command-line tool that creates projects from templates (cookiecutters).
 Using an existing cookiecutter, or creating one to meet your needs, can be a useful way to increase consistency in structure between your projects.
 It can save time by creating common folder structures, laying out essential documentation or even starting off your code with a basic boilerplate.
-Layout out a structure to include documentation and code testing encourages these good practices.
+Laying out a structure to include documentation and code testing encourages these good practices.
 
 Useful cookiecutters include:
-* The Government data science [govcookiecutter](https://github.com/ukgovdatascience/govcookiecutter), including data security features.
+* The government data science [govcookiecutter](https://github.com/ukgovdatascience/govcookiecutter), including data security features.
 * The comprehensive Python data science project template [cookiecutter-data-science](http://drivendata.github.io/cookiecutter-data-science/).
 * The Python package template [cookiecutter-pypackage](https://cookiecutter-pypackage.readthedocs.io/en/latest/).
 
@@ -160,7 +160,7 @@ For example, `use_test()` will add the directories necessary for testing using `
 
 ## Repositories
 
-Repositories or "repos" are typically project folders that are version controlled using Git or a similar version control system.
+Repositories or 'repos' are typically project folders that are version controlled using Git or a similar version control system.
 One repository usually contains a single project.
 Developing your project using a version controlled repository has significant benefits for reproducibility.
 

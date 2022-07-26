@@ -1,10 +1,10 @@
-# Learning Resources
+# Learning resources
 
-This section links to training and self-led learning resources, which relate to the sections of the guidance.
+This section links to training and self-led learning resources, which relate to sections of the guidance.
 
-Many of these learning resources point to the UK Statistics Authority Learning Hub. Government analysts can [request an account for the Hub via gss.capability@ons.gov.uk](mailto:gss.capability@ons.gov.uk).
+Many of these learning resources point to the UK Statistics Authority Learning Hub. Government analysts can [request an account for the hub via gss.capability@ons.gov.uk](mailto:gss.capability@ons.gov.uk).
 
-Please note that learning resources from non-government training providers (i.e. not accessed through the Hub) may not always follow best practices. However, exposure to a range of applied examples will still benefit your learning. You should compare and contrast your learning to the good practices outlined in the guidance.
+Please note that learning resources from non-government training providers (i.e. not accessed through the Hub) may not always follow best practice. However, exposure to a range of applied examples will still benefit your learning. You should compare and contrast your learning to the good practices outlined in the guidance.
 
 ## Core programming
 
