@@ -1101,6 +1101,10 @@ def core_method(data):
     return result
 
 # if we want to extend a function without modifying it, we can always do the following
+def extended_functionality(results):
+     ...
+     return extended_result
+
 def extended_methodology(data):
      core_results = core_method(data)
      return extended_functionality(core_results)
@@ -1114,9 +1118,13 @@ core_method <- function(data) {
   return(result)
 }
 
-
 # if we want to extend a function without modifying it, we can always do the following
-extended_methodology <- function(data){
+extended_functionality <- function(result) {
+  ...
+  return(extended_result)
+}
+
+extended_methodology <- function(data) {
   core_results = core_method(data)
   return(
     extended_functionality(core_results)
