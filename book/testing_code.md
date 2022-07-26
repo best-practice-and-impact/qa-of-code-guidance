@@ -27,12 +27,67 @@ Code that has not been tested is more likely to contain bugs and require more ma
 Code for testing should also follow good practice. 
 Testing is a useful and deep skill to learn.
 
-## Structure your tests
+## Good test suites are thorough but realistic
+
+> A quality assurance engineer walks into a bar. They order 1 beer. They order 3.14 beers. They order -1 beers. They order 99999999999 beers. They order a lizard. They order `NULL`.  
+
+> The first customer walks in and asks where the bathroom is. The bar bursts into flames.
 
 When writing code outside dedicated testing frameworks, we manually test our code. 
 We might do this by running our code and seeing what the outputs are. 
 We test these outputs against our mental model - or understanding - of how the code should work. 
 Testing frameworks structure this process so that computers can automate the testing of the code.
+
+Unfortunately, there's no golden rule for exactly what you should test.
+We can use general guides to direct where most of our testing effort goes.
+
+Types of test - positive, negative (errors, if API). positive, negative, 0, NA.
+
+You should:
+* Focus on testing the most complex and vulnerable parts of your code
+* Focus on testing the "behaviour" of your code as opposed to the implementation
+* Write a new test every time you find a bug, to squash it for good
+* Focus on testing the most realistic use cases of your code
+* Test external interfaces - what happens if something unexpected is returned from one of your dependencies?
+* Document what your code should and shouldn't be used for, to steer users towards the correct and tested usage
+
+You shouldn't:
+* Attempt to test every possible input and type of input
+* Focus on things that are already sufficiently tested (e.g. it should not be necessary to test the functionality from your dependencies packages if you are confident that they are already been subjected to sufficient assurance)
+* Write tests that have an element of randomness - tests should be deterministic
+
+A short check-list for questions to ask when writing tests:
+- [ ] Have I tested realistic combinations of my code's input parameters?
+- [ ] Have I tested any discrete outputs once?
+- [ ] Have I tested the boundaries of non-discrete outputs?
+- [ ] Are informative errors raised when the code is not used in a valid or correct way?
+- [ ] Are informative warnings raised when the code is not used in a standard way?
+
+Don't worry if writing all of these tests sounds like a large task.
+You'll find that tests are very repetitive in nature, so we can reuse testing code to broaden the cases that our tests cover.
+We'll describe two useful ways of reducing the burden of writing and maintaining tests in a later section.
+
+The examples in this section use these testing frameworks:
+* `pytest` for Python
+* `testthat` for R
+
+R users might also be interested in `assertthat`, which provides Python-like assertions in R.
+
+Other common frameworks, which have a Class-based focus, are:
+* `unittest` built into Python
+* `Runit` for R
+
+
+```{todo}
+
+Modelling-relevant testing
+including https://www.jeremyjordan.me/testing-ml/
+
+[#15](https://github.com/best-practice-and-impact/qa-of-code-guidance/issues/15)
+```
+
+
+## Structure your tests
 
 Tests come in many shapes and sizes, but usually follow the pattern:
 1. Arrange - set up any objects for your test, e.g. example input data and expected output data.
@@ -197,60 +252,6 @@ Running the same test with the same tested code should always produce the same o
 
 In short, tests should pass or fail, not "mostly pass".
 
-## Tests are thorough but realistic
-
-> A quality assurance engineer walks into a bar. They order 1 beer. They order 3.14 beers. They order -1 beers. They order 99999999999 beers. They order a lizard. They order `NULL`.  
-
-> The first customer walks in and asks where the bathroom is. The bar bursts into flames.
-
-Unfortunately, there's no golden rule for exactly what you should test.
-We can use general guides to direct where most of our testing effort goes.
-
-Types of test - positive, negative (errors, if API). positive, negative, 0, NA.
-
-You should:
-* Focus on testing the most complex and vulnerable parts of your code
-* Write a new test every time you find a bug, to squash it for good
-* Focus on testing the most realistic use cases of your code
-* Test external interfaces - what happens if something unexpected is returned from one of your dependencies?
-* Document what your code should and shouldn't be used for, to steer users towards the correct and tested usage
-
-You shouldn't:
-* Attempt to test every possible input and type of input
-* Focus on things that are already sufficiently tested (e.g. it should not be necessary to test the functionality from your dependencies packages if you are confident that they are already been subjected to sufficient assurance)
-* Write tests that have an element of randomness - tests should be deterministic
-
-
-A short check-list for questions to ask when writing tests:
-* Have I tested realistic combinations of my code's input parameters?
-* Have I tested any discrete outputs once?
-* Have I tested the boundaries of non-discrete outputs?
-* Are informative errors raised when the code is not used in a valid or correct way?
-* Are informative warnings raised when the code is not used in a standard way?
-
-
-Don't worry if writing all of these tests sounds like a large task.
-You'll find that tests are very repetitive in nature, so we can reuse testing code to broaden the cases that our tests cover.
-We'll describe two useful ways of reducing the burden of writing and maintaining tests in a later section.
-
-The examples in this section use these testing frameworks:
-* `pytest` for Python
-* `testthat` for R
-
-R users might also be interested in `assertthat`, which provides Python-like assertions in R.
-
-Other common frameworks, which have a Class-based focus, are:
-* `unittest` built into Python
-* `Runit` for R
-
-
-```{todo}
-
-Modelling-relevant testing
-including https://www.jeremyjordan.me/testing-ml/
-
-[#15](https://github.com/best-practice-and-impact/qa-of-code-guidance/issues/15)
-```
 
 
 ## Test placeholders
@@ -332,7 +333,7 @@ In `pytest`, this can be achieved using the [Parametrize mark](https://docs.pyte
 In R, the `patrick` package extends `testthat` to provide a [`with_parameters_test_that`](https://rdrr.io/cran/patrick/man/with_parameters_test_that.html) function to achieve this.
 
 
-## Tests are run regularly
+## Run tests whenever you make changes to your project
 
 Tests should be run whenever you make changes to your project.
 This ensures that changes do not break the existing, intended functionality of your code.
