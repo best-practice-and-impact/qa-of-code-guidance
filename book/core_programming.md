@@ -670,7 +670,9 @@ The notion of style goes beyond simple spacing or capitalisation. In the same wa
 
 This might mean simplifying complex and perhaps hard to read patterns into a simpler, but well established alternative. In Python for example these two pieces of code are equivalent:
 
-```python
+````{tabs}
+
+```{code-tab} python
 # Example 1 - very unpythonic
 i = 0
 my_data = []
@@ -686,6 +688,28 @@ for i in range(100):
 # Example 3 - making full use pythonic idioms, `range` with list comprehension
 my_data = [i**2 / 356 for i in range(100)]
 ```
+
+```{code-tab} r R
+# Example 1 - not idiomatic
+i = 0
+my_data = c()
+while (i < 100) {
+  my_data = c(my_data, i * i / 356)
+  i = i + 1
+}
+
+# Example 2 - more use of R features, e.g. `append` and idiomatic assignment (' <- ')
+my_data = c()
+for (i in 0:100) {
+  my_data <- append(my_data, i^2 / 365)
+}
+
+# Example 3 - making  use of R's built-in vectors
+my_data <- (0:100) ^ 2 / 365
+
+```
+
+````
 
 The ability to write idiomatic code in a given language comes with time. However, it is important to think about it while looking at a given piece of code: is it using everything that language 'X' has to offer?
 
