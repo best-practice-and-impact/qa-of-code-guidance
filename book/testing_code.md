@@ -56,7 +56,7 @@ You shouldn't:
 * Focus on things that are already sufficiently tested (e.g. it should not be necessary to test the functionality from your dependencies packages if you are confident that they are already been subjected to sufficient assurance)
 * Write tests that have an element of randomness - tests should be deterministic
 
-A short check-list for questions to ask when writing tests:
+You may want to use a short check-list for questions to ask when writing tests. For example:
 - [ ] Have I tested realistic combinations of my code's input parameters?
 - [ ] Have I tested any discrete outputs once?
 - [ ] Have I tested the boundaries of non-discrete outputs?
@@ -64,7 +64,7 @@ A short check-list for questions to ask when writing tests:
 - [ ] Are informative warnings raised when the code is not used in a standard way?
 
 Don't worry if writing all of these tests sounds like a large task.
-You'll find that tests are very repetitive in nature, so we can reuse testing code to broaden the cases that our tests cover.
+You'll find that tests are repetitive, so we can reuse testing code to broaden the cases that our tests cover.
 We'll describe two useful ways of reducing the burden of writing and maintaining tests in a later section.
 
 The examples in this section use these testing frameworks:
@@ -87,7 +87,7 @@ including https://www.jeremyjordan.me/testing-ml/
 ```
 
 
-## Structure your tests
+## Structure your tests to reflect how the code works
 
 Tests come in many shapes and sizes, but usually follow the pattern:
 1. Arrange - set up any objects for your test, e.g. example input data and expected output data.
@@ -253,11 +253,11 @@ Running the same test with the same tested code should always produce the same o
 In short, tests should pass or fail, not "mostly pass".
 
 
+### Writing tests at a later date
 
-## Test placeholders
-
-Write test shells where you intend to write test - this highlights where testing is missing, easy to come back to later.
-Or at least document these somewhere.
+You should write tests when you write code.
+However, this may not always be possible because of time, capability or tooling constraints.
+Write test shells where you intend to write test - this highlights where testing is missing, which makes it easy to come back to later.
 
 ```console
 $ pytest
@@ -279,15 +279,16 @@ if (1 != 1) {
 ```
 ````
 
-CI is best, as it keeps testing close to version control.
-Where manual testing is carried out, this must be documented to create an audit trail. This documentation should include what has been tested and who has approved that it works as expected.
+Use Continuous Integration where possible as it keeps testing associated with version control.
 
+Where manual testing is carried out instead of writing test code, this must be documented to create an audit trail. 
+This documentation should include what has been tested and who has approved that it works as expected.
 
-## Tests are not repetitive
+## Write test code only once
 
 Where possible, reduce repetition in your tests.
-Repetitive test code violates the "Don't repeat yourself" rule.
-Don't need to be completely DRY, but repetition makes maintenance of test code more difficult and risky (as with non-test code).
+Repetitive test code violates the ["Don't repeat yourself"](./core_programming#dont-repeat-yourself) rule.
+Tests need not be totally singular, but, as with non-test code, repetition makes maintenance of test code more difficult and risky .
 As with functional code, test code is much easier to maintain when it is modular and reusable.
 
 ```{todo}
@@ -296,37 +297,36 @@ Add examples to reducing repetition in tests to demonstrate these
 [#29](https://github.com/best-practice-and-impact/qa-of-code-guidance/issues/29)
 ```
 
+### Use fixtures to reduce repetition
 
-### Fixtures
-
-As your test suite grows, you might notice that many of your tests use similar code to prepare your tests or to clean up after each test has run.
-Copying these code snippets for each test is laborious and also increases the risk of inconsistently applying those steps.
+As your test suite grows, many of your tests may use similar code to prepare your tests or to clean up after each test has run.
+Copying these code snippets for each test is laborious and increases the risk of applying those steps inconsistently.
 
 Fixtures help us to avoid this form of repetition in our tests.
-You define your test preparation and clean up within a function (the fixture).
+With a fixture, you define your test preparation and clean up as functions.
 You then use the fixture to carry out these steps consistently for each test that they are required for. 
 
 In Class-based testing frameworks, these functions tend to be separated into `SetUp` and `TearDown` functions.
-These are similarly set to run before and after each test, respectively.
+These are set to run before and after each test, respectively.
 
-Fixtures can be especially useful when setting up a test object takes a large amount of time or resource.
+Fixtures can be most useful when setting up a test object takes a large amount of time or resource.
 They can be designed to run for each test, once for a group of tests or once for the whole test suite.
-They are also useful for undoing any consequences of each test run.
-For example, removing data which has been written to a temporary file or database.
+They are also useful for undoing the effects of each test run on the global environment.
+For example, they can remove test data which has been written to a temporary file or database.
 
 Reference material:
 * [Python `pytest` Fixture](https://docs.pytest.org/en/stable/fixture.html) documentation
 * [R `testthat` Fixture](https://testthat.r-lib.org/articles/test-fixtures.html) documentation
 
 
-### Parametrization
+### Use parametrization to test multiple cases at once
 
-You might also find that similar steps are taken when testing multiple combinations of inputs and outputs.
+Often, similar steps are taken when testing multiple combinations of inputs and outputs.
 Parametrization allows us to reduce repetition in our code, in a similar way to reusable functions.
 We specify the pairs of inputs and expected outputs, so that our testing tool can repeat a test for each scenario.
 
-Note that this approach is equivalent to using a for-loop to apply a test function over multiple inputs and expected outputs.
-However, using functionality from test packages may improve running efficiency and the detail of subsequent test reports.
+This approach is equivalent to using a for-loop to apply a test function over multiple inputs and expected outputs.
+Using functionality from test packages may improve running efficiency and the detail given in test logs.
 
 In `pytest`, this can be achieved using the [Parametrize mark](https://docs.pytest.org/en/stable/parametrize.html).
 
@@ -337,13 +337,13 @@ In R, the `patrick` package extends `testthat` to provide a [`with_parameters_te
 
 Tests should be run whenever you make changes to your project.
 This ensures that changes do not break the existing, intended functionality of your code.
-When tests fail, you should endeavour to fix these before adding these changes to a stable or production version of your code.
+Where tests fail, fix these before adding changes to a stable or production version of your code.
 
-If you have intentionally altered the functionality of your code, this will likely break existing tests.
+If you have altered the functionality of your code, this will likely break existing tests.
 Failing tests here are a good reminder that your should update your documentation and tests to reflect the new functionality.
 
 If your collection of tests runs quickly, it's simplest to run them all often.
-If some tests take considerably longer to run, you might want to run these less often - perhaps only when relevant changes have been made.
+If some tests take longer to run, you might want to run these less often - perhaps only when relevant changes have been made.
 Otherwise, running the entire collection of tests has the added benefit of capturing unexpected side-effects of your changes.
 For example, you might pick up an unexpected failure in part of your code that you have not directly changed.
 
@@ -393,9 +393,15 @@ Testing in multiple environments?
 * [rhub](https://r-hub.github.io/rhub/)
 ```
 
+### Integration testing
+
+### Systems testing
+
+
+
 ## Use mocks where code cannot be easily decoupled
 
 Tests should be specific.
 
 If you can't refactor the code to make it easier to test specific aspects, then Mocks can be useful for removing unwanted factors.
-Mocking is useful for removing things that we don't care about from the the test. But should not be used to avoid testing complex parts of code that you've written.
+Mocking is useful for removing things that we don't care about from the the test. But should not be used to avoid testing complex parts of code that you've written. 
