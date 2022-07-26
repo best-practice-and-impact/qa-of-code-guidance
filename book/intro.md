@@ -1,15 +1,15 @@
 # Quality Assurance of Code for Analysis and Research
 
-This is an early draft of Analysis Function and Government Statistical Service (GSS) guidance. It is produced by the [Best Practice and Impact division](https://gss.civilservice.gov.uk/about-us/support-for-the-gss/) of the Office for National Statistics.
+This Government Analysis Function and Government Statistical Service (GSS) guidance is produced by the Quality and Improvement team in the Methods and Quality directorate of the [Office for National Statistics](https://www.ons.gov.uk).
 
-This guidance has been written to support analysts in government who use coding in their work. This includes those who produce statistics, carry out modelling or apply data science.
+The guidance has been written to support analysts in government who use coding in their work. This includes those who produce statistics, carry out modelling or apply data science.
 
-This guidance is a living document, so will be continually updated. You can refer to the current version of the guidance by it's version number, found below the site table of contents. You may notice "Todo" notes throughout the guidance. These indicate where we plan to add additional content in the near future. We are extremely grateful for any feedback that you are able to provide on existing and future content.
+The guidance is a living document, so will be continually updated. You can refer to the current version of the guidance by it's version number, found below the site table of contents. We are extremely grateful for any feedback that you are able to provide on existing and future content. Please get in touch via [GitHub Issues](https://github.com/best-practice-and-impact/qa-of-code-guidance/issues) or [gsshelp@statistics.gov.uk](mailto:gsshelp@statistics.gov.uk).
 
 
 ## About us
 
-The Best Practice and Impact division supports government analysis by providing guidance, consultancy and training.
+The Methods and Quality directorate supports government analysis by providing guidance, consultancy and training.
 
 You can find us on:
 - Our websites: [Government Analysis Function](https://www.gov.uk/government/organisations/government-analysis-function) and [Government Statistical Service](https://gss.civilservice.gov.uk/)
@@ -21,7 +21,7 @@ You can find us on:
 
 The following structure can be used to reference the current version of the book:
 
-> UK Government Analytical Community. (2020). Quality assurance of code for analysis and research (version 2021.3). Office for National Statistics, Best Practice and Impact division: https://best-practice-and-impact.github.io/qa-of-code-guidance/
+> UK Government Analytical Community. (2020). Quality assurance of code for analysis and research (version 2021.9). Office for National Statistics, Quality and Improvement division: https://best-practice-and-impact.github.io/qa-of-code-guidance/
 
 ## How to get the most out of the book
 
@@ -42,7 +42,7 @@ The principles in this book are language agnostic. It does not form a comprehens
 
 This accessibility statement applies to the Quality Assurance of Code for Analysis and Research. Please note that this does not include third-party content that is referenced from this guidance.
 
-The website is managed by the Best Practice and Impact division of the Office for National Statistics. We would like this guidance to be accessible for as many people as possible. This means that you should be able to:
+The website is managed by the Quality and Improvement division of the Office for National Statistics. We would like this guidance to be accessible for as many people as possible. This means that you should be able to:
 * change colours, contrast levels and fonts
 * zoom in up to 300% without the text spilling off the screen
 * navigate most of the website using just a keyboard

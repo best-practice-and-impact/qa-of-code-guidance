@@ -197,7 +197,13 @@ snippets/pytest_example.py::test_absolute_na SKIPPED                     [100%]
 ===================== 3 passed, 1 skipped in 0.11 seconds =====================
 ```
 
-## Test outcomes are recorded
+
+```{code-tab} r R
+if (1 != 1) {
+  stop("Something has gone terribly wrong")
+}
+```
+
 
 CI is best, as it keeps testing close to version control.
 Where manual testing is carried out, this must be documented to create an audit trail. This documentation should include what has been tested and who has approved that it works as expected.
@@ -307,54 +313,9 @@ Other resources include:
 ```
 
 ```{todo}
-These testing sections all need more content/examples.
 
-[#28](https://github.com/best-practice-and-impact/qa-of-code-guidance/issues/28)
+Testing in multiple environments?
+* [tox](https://tox.readthedocs.io/en/latest/)/[nox](https://nox.thea.codes/en/stable/)
+* [rhub](https://r-hub.github.io/rhub/)
 ```
 
-### Integration testing
-
-Your analysis likely involves multiple units working together to perform a high level task.
-Assuring that individual units work as expected, using unit testing, does not guarantee that multiple units interact with one another as expected.
-
-```{figure} ./_static/no_integration_tests.png
----
-width: 40%
-name: no_integration_tests
-alt: Two drawers that open into each other's handles.
----
-Two unit tests, no integration tests.
-```
-
-Integration tests incorporate two or more units and check that they work together correctly.
-These tests are also used to test the interface between your code and external dependencies, such as a database or web-based API.
-
-When your code relies upon interaction with complex or external dependencies, it may be difficult for your tests to reproducibly access these dependencies.
-Creating abstractions of these dependencies when they are not being directly tested can keep your test code simpler and more focused.
-You might use Stubs or Mocks for this purpose:
-* Stubs carry out a predetermined behaviour. For example, a stub representing an API always returns the same response. Use these when you are not interested in the details around how your code interacts with the dependency.
-* Mocks require additional setup in your test code, to define your expectations. Use these when your test needs to verify that your code interacts with the Mock in a specific way.
-
-
-### End-to-end testing
-
-As the name suggests, these tests cover the entire process.
-The motivation for using end-to-end tests is similar to that of integration tests.
-Despite assurance that small sections of the code are functioning correctly, it's important to validate that your overall system is fit for purpose.
-
-```{figure} https://i.stack.imgur.com/Nirxy.jpg
----
-width: 50%
-name: sinking_ship
-alt: A sinking ship would still report passing unit tests.
----
-A sinking ship would still report a number of passing unit and integration tests, while the system is failing overall.
-```
-
-These tests are much slower to run and can take longer to develop for complex processes.
-Having at least one end-to-end test for your process will ensure that the high-level specification of your code is met.
-This should validate that your user requirements are met.
-
-### Acceptance testing
-
-Assures that code works for your end-user's requirements.

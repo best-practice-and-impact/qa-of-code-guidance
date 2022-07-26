@@ -110,7 +110,7 @@ data = read_csv(config["input_path"])
 ```{code-tab} r R
 config <- yaml::yaml.load_file(config_path)
 
-data <- read.csv(config_path)
+data <- read.csv(config$input_path)
 ...
 ```
 
@@ -147,7 +147,7 @@ if (length(args) < 1) {
   stop("Configuration file must be passed as an argument.")
 }
 
-config_path = args[1]
+config_path <- args[1]
 config <- yaml::yaml.load_file(config_path)
 ...
 ```
