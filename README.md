@@ -1,6 +1,6 @@
 # Quality Assurance of Code for Analysis and Research
 
-This document forms part of the Quality Guidance, published by the Best Practice and Impact Division, ONS.
+This document forms part of the Quality Guidance, published by the Quality and Improvement Division of Methods and Quality Directorate at the UK [Office for National Statistics](https://www.ons.gov.uk).
 
 
 # Contributing to this guidance
@@ -20,28 +20,29 @@ This will allow discussion around whether content is suitable for this book, bef
 ### Getting started
 
 To start contributing, you'll need python installed.
-You can take a copy of the book and install it's dependencies like so:
+If you sit outside of Quality and Improvement Division, the you'll need to [create a Fork of this repository to make changes](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/working-with-forks).
+Once forked, you should clone the fork repository to get a copy of the book. Then install it's Python dependencies like so:
 
 ```
-git clone https://github.com/best-practice-and-impact/qa-of-code-guidance.git
+git clone https://github.com/<your-username>/qa-of-code-guidance.git
 cd qa-of-code-guidance
 pip install -r requirements.txt
 ```
 
-Great, now you should have dependencies, including [jupyter-book](https://jupyterbook.org/intro.html), installed and be able to build the book locally using:
+Great, now you should have the dependencies, including [jupyter-book](https://jupyterbook.org/intro.html), installed and be able to build the book locally using:
 
 ```
 jb build book
 ```
 
-The book output will be written to `book/_build/html/`, so you can open `index.html` from there to view the local build.
+Jupyter book will write the book's `HTML` content to `book/_build/html/`, so you can open `index.html` from there to view the local build.
 
 All content for the book is currently written in [Markedly Structured Text](https://myst-parser.readthedocs.io/en/latest/), which is based on standard Markdown (`.md`) but allows use of "directives" for generating content.
 
 
 ### Guidelines
 
-Please:
+When contributing to the book, please:
 * Keep text as simple as possible
 * Provide alt text for all images
 * Explain informative image content in text, where possible
@@ -56,9 +57,9 @@ All pages in `book/` must be referenced in `_toc.yml` or a warning will be raise
 
 ### Submitting contributions
 
-If you are not a member of BPI and would like to contribute, please create a fork of the repository.
 You should create a new branch to collect related changes that you make.
-Once you're happy with any changes you've made to the book, you should raise a [Pull Request](https://github.com/best-practice-and-impact/qa-of-code-guidance/pulls) to the `master` branch of the book's repository.
+Once you're happy with any changes you've made to the book, you should raise a [Pull Request (PR)](https://github.com/best-practice-and-impact/qa-of-code-guidance/pulls) to the `master` branch of the main repository.
+The source branch of this PR should be the fork and/or branch that you have commited changes to.
 
 ## Publishing changes
 
@@ -77,7 +78,7 @@ pip install -r dev-requirements.txt
 To create a new release, use the command line tool `bump2version`, which will be installed with the dev dependencies.
 The version number references the current `year` and an incremental `build` count.
 
-For a the first release of a year, provide the `year` as the command argument, otherwise provide `build`:
+For a the first release of a year, provide the `year` as the command argument, otherwise provide `build`.
 
 ```
 bump2version build

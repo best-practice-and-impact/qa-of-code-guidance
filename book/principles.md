@@ -6,7 +6,7 @@ Bad analysis can result in harm or misallocation of public funds.
 As such, we must take the right steps to ensure high quality analysis.
 
 This book recognises three founding principles of good analysis, each supported by the one before it.
-Analysis in programming makes each of these principles easier to fulfil in most cases.
+Programming in analysis makes each of these principles easier to fulfil in most cases.
 
 
 ```{figure} ./_static/repro_stack.png

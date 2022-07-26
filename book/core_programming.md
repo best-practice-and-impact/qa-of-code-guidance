@@ -473,7 +473,7 @@ empty_dataframe <- data.frame()
 
 
 # Using variables
-print(paste("Hi" + first_name))
+paste("Hi", first_name)
 
 number_of_attendees <- number_of_attendees + 1
 
@@ -511,14 +511,14 @@ Variable names can be used to document differences between variables, or to incr
 letters_first_three = ["a", "b", "c"]
 letters_last_three = ["x", "y", "z"]
 
-letters_first_three_reversed = reversed(first_three_letters)
+letters_first_three_reversed = reversed(letters_first_three)
 ```
 
 ```{code-tab} r R
 letters_first_three <- c("a", "b", "c")
 letters_last_three <- c("x", "y", "z")
 
-letters_first_three_reversed <- rev(first_three_letters)
+letters_first_three_reversed <- rev(letters_first_three)
 ```
 
 ````
@@ -565,7 +565,7 @@ process_text <- function(data) {
     ...
 }
 
-processed_text = process_text("The following document was handled using...")
+processed_text <- process_text("The following document was handled using...")
 ```
 
 ````
@@ -599,7 +599,7 @@ def are_missing_values_present(data):
 
 ```{code-tab} r R
 are_missing_values_present <- function(data) {
-  if (NA %in% data){
+  if (NA %in% data) {
       TRUE
   } else {
       FALSE
@@ -789,9 +789,9 @@ for number in third_ten_numbers:
 ```
 
 ```{code-tab} r R
-first_ten_numbers = 1:10
-second_ten_numbers = 11:20
-third_ten_numbers = 21:30
+first_ten_numbers <- 1:10
+second_ten_numbers <- 11:20
+third_ten_numbers <- 21:30
 
 odd_first <- c()
 for (number in first_ten_numbers) {
@@ -799,7 +799,6 @@ for (number in first_ten_numbers) {
     odd_first <- c(odd_first, number)
   }
 }
-
 
 odd_second = c()
 for (number in second_ten_numbers) {
@@ -842,23 +841,22 @@ odd_third = get_odd(third_ten_numbers)
 
 ```{code-tab} r R
 get_odd <- function(numbers) {
-  odd_numbers = []
-  for (number in first_ten_numbers) {
-    if (number % 2 == 1) {
-      odd_first_ten_numbers.append(number)
+  odd_numbers <- c()
+  for (number in numbers) {
+    if (number %% 2 == 1) {
+      odd_numbers <- c(odd_numbers, number)
     }
   }
-  return odd_numbers
+  return(odd_numbers)
 }
 
+first_ten_numbers <- 1:10
+second_ten_numbers <- 11:20
+third_ten_numbers <- 21:30
 
-first_ten_numbers = 1:10
-second_ten_numbers = 11:20
-third_ten_numbers = 21:30
-
-odd_first = get_odd(first_ten_numbers)
-odd_second = get_odd(second_ten_numbers)
-odd_third = get_odd(third_ten_numbers)
+odd_first <- get_odd(first_ten_numbers)
+odd_second <- get_odd(second_ten_numbers)
+odd_third <- get_odd(third_ten_numbers)
 ```
 
 ````
@@ -913,20 +911,20 @@ is_odd <- function(number) {
 }
 
 get_odd <- function(numbers) {
-  odd_numbers = c()
+  odd_numbers <- c()
   for (number in numbers) {
     if (is_odd(number)) {
-      odd_numbers = c(odd_numbers, number)
+      odd_numbers <- c(odd_numbers, number)
     }
   }
   return(odd_numbers)
 }
 
 get_even <- function(numbers) {
-  even_numbers = c()
+  even_numbers <- c()
   for (number in numbers) {
     if (!is_odd(number)) {
-      even_numbers = c(even_numbers, number)
+      even_numbers <- c(even_numbers, number)
     }
   }
   return(even_numbers)
@@ -935,11 +933,11 @@ get_even <- function(numbers) {
 
 # More concise, but also more complex - not always best
 get_numbers_with_parity <- function(numbers, parity) {
-  numbers_with_parity = c()
+  numbers_with_parity <- c()
   if (parity == "odd") {
-    remainder = 1
+    remainder <- 1
   } else if (parity == "even") {
-    remainder = 0
+    remainder <- 0
   } else {
     stop("parity must be 'odd' or 'even'")
   }
@@ -986,7 +984,7 @@ student_count <- FALSE
 
 # Relying on falseness of FALSE
 if (student_count) {
-  print("There are " + student_count + " students!")
+  paste("There are", student_count, "students!")
 }
 ```
 
@@ -1010,11 +1008,11 @@ if student_count >= 0:
 ```
 
 ```{code-tab} r R
-student_count = 0
+student_count <- 0
 
 # Explicitly only print if more than 0
 if (student_count >= 0) {
-  print("There are " + student_count + " students!")
+  paste("There are", student_count, "students!")
 }
 ```
 

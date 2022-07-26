@@ -1,6 +1,14 @@
-- file: intro
-
-- part: Guidance
+format: jb-book
+root: intro
+parts:
+- caption: Overview
+  chapters:
+  - file: checklists
+    sections:
+    - file: checklist_lower
+    - file: checklist_moderate
+    - file: checklist_higher
+- caption: Guidance
   chapters:
   - file: principles
   - file: core_programming
@@ -12,8 +20,7 @@
   - file: data
   - file: peer_review
   - file: testing_code
-
-- part: Resources
+- caption: Resources
   chapters:
   - file: learning
   - file: tools
