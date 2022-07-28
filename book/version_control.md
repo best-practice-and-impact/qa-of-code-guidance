@@ -394,6 +394,8 @@ Once changes have been implemented, perhaps to meet the requirements of an issue
 
 The initial description of the PR should include the high level changes that have been made and might point to any relevant issues that it resolves.  Much like issues, PRs can be linked to other issues and PRs, providing a coherent narrative of development work. [Keywords can be used when linking an issue (e.g. 'fixes #42')](https://docs.github.com/en/github/managing-your-work-on-github/linking-a-pull-request-to-an-issue#linking-a-pull-request-to-an-issue-using-a-keyword) to trigger the issue to close the PR is merged. Contributors can also be assigned or tagged in discussion, which can be useful for requesting help or review of a group of changes.
 
+You can put checklists into your pull request comments. Unlike regular bullet lists, these come with check boxes that can be ticked. This is particularly useful when down tasks into smaller chunks. When requesting a review of your pull request, you can check checklists to help the reviewer make sure they check all the relevant parts of the pull request. As a reviewer, you can use checklists to list out the changes needed before the pull request can be approved. 
+
 Alongside the main "Conversation" view of a PR, the GitHub web interface also provides a useful overview of changes that are included in the PR. You're able to view the list of individual commits that are included in the PR and, better still, you can view changes to each file in detail.
 
 ```{figure} ./_static/github_pr_changes.png
