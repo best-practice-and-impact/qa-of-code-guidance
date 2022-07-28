@@ -26,7 +26,7 @@ width: 30%
 name: file_names
 alt: Comic demonstrating poor file naming, like "Untitled 138 Copy.docx".
 ---
-Documents, from [xkcd](https://xkcd.com/1459/)
+Documents, from [xkcd](https://xkcd.com/1459/). This work is licensed under a [Creative Commons Attribution-NonCommercial 2.5 License](https://creativecommons.org/licenses/by-nc/2.5/).
 ```
 
 When used effectively, version control helps us to identify which changes have negatively impacted our work and remove them. Furthermore, a detailed audit trail allows us to refer to specific versions of our code that have been used to produce outputs, which is important for reproducing our analysis.
@@ -180,6 +180,24 @@ The [Git flow branching strategy](https://nvie.com/posts/a-successful-git-branch
 ```{note}
 Although we have used very simple branch names in the examples above, it's important that you use informative names for your branches in practice. If using an [issue tracker](issues) (e.g. GitHub Issues or Jira), it can be useful to include the issue number in branch names (e.g. `#155-fix-index-aggregation`). This makes it easy to trace the branch back to the associated issue or task. Otherwise, aim to use meaningful names that describe the feature or bug that the changes will be focussed on. 
 ```
+
+### Merge conflicts
+
+Git is generally very effective at merging different branches together. However, when the same file is edited in two branches at the same time, this can lead to a merge conflict when you try to merge those together. When this happens, you see a message telling you there is a merge conflict and which files are affected. The file name will appear as `branch-name|MERGING`. You can fix this by manually selecting which changes to keep. If using the command line, you can also run `git status` to output the names of the affected files.
+
+When merge conflicts happen, git will mark the clashes using this syntax:
+
+```
+<<<<<<< HEAD
+Changes on the current branch
+=======
+Changes on the branch being merged
+>>>>>>> new
+```
+
+The contents between the smaller-than signs and equal signs are the changes in the current branch. Changes between the equal signs and greater-than signs are from the new branch. You can choose to keep one, both or neither. To resolve the merge conflict, you will need to make the necessary changes and delete the greater-than, smaller-than and equal signs that git added to the text. Once you're resolved all conflicting text manually (there may be more than one), add and commit the changes to resolve the merge conflicts.
+
+It is best to avoid merge conflicts whenever possible. You can do this by avoiding editing the same files across different branches. If you find that this is difficult to do, it may be that your scripts are too monolithic, and should modularised or split into multiple scripts. 
 
 ### Versioning large files
 
