@@ -357,7 +357,7 @@ To handle a data breach, you should:
 ```{warning}
 It's important to stress that deleting a sensitive file and commiting this change is not sufficient. All previous versions of files are retained in a repository's history, so sensitive parts of the file must be entirely removed from the history.
 
-The [Pro Git book section on rewriting history](https://git-scm.com/book/en/v2/Git-Tools-Rewriting-History) details methods for editing and deleting files from your repository's commit history. The [BFG repo-cleaner tool](https://rtyley.github.io/bfg-repo-cleaner/) can be a simpler alternative to standard Git commands, but may not be available in your department.
+The [Pro Git book section on rewriting history](https://git-scm.com/book/en/v2/Git-Tools-Rewriting-History) details methods for editing and deleting files from your repository's commit history. Git has a built-in way to do this. However, if you are able to install them in your department, you should use one of the simpler alternatives, such as [git-filter-repo](https://github.com/newren/git-filter-repo) (python) or [BFG repo-cleaner tool](https://rtyley.github.io/bfg-repo-cleaner/) (Java).
 ```
 
 ## GitHub
