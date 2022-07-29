@@ -287,6 +287,7 @@ Consider a project where an analyst has created one large data analysis script. 
     | README.md
     | project.rproj 
 ```
+````
 
 ```{warning}
 R projects are a really useful and simple way to organise your projects better. However, be sure to check your settings. R projects save history and data by default. This is not a good idea if you're using git, as it means data can easily make its way into the version history.
