@@ -275,6 +275,7 @@ Consider a project where an analyst has created one large data analysis script. 
     | processing.py 
     | reporting.py 
     | README.md 
+    | project.Rproj
 ```
 
 ``` {tab} R
@@ -289,11 +290,17 @@ Consider a project where an analyst has created one large data analysis script. 
 ```
 ````
 
-```{warning}
-R projects are a really useful and simple way to organise your projects better. However, be sure to check your settings. R projects save history and data by default. This is not a good idea if you're using git, as it means data can easily make its way into the version history.
+````{warning}
+R projects are a really useful and simple way to organise your projects better. However, be sure to check your settings. R projects save history and data by default. This is not a good idea if you're using git, as it means data can easily make its way into the version history. To disable these options in RStudio, open the project options menu in the tools tab. In the menu, set the options "save workspace to .RDATA on exit" and "Always save history" to "No". Alternatively, you can edit the .Rproj file in an editor of your choice by adding these settings:
+
+```
+SaveWorkspace: No
+AlwaysSaveHistory: No
 ```
 
-They then import the relevant functions into `main.py` from their modules as follows:
+````
+
+They then import the relevant functions into the main script from their modules as follows:
 
 ````{tabs}
 
@@ -314,8 +321,8 @@ export(report)
 ```{code-tab} r R
 # These relative file paths only work while working within an R project
 source("modelling.R")
-source("modelling.R")
-source("modelling.R")
+source("processing.R")
+source("reporting.R")
 
 data <- read.csv("data/path.csv)
 data <- preprocess(clean(data))
@@ -330,7 +337,7 @@ This is a minimal example of a pipeline script, illustrating how you might impor
 ```
 
 `````{admonition} A step further
-Another step that can be taken to introduce clarity is to further wrap these modules into their own folder like so:
+Another step that can be taken to improve clarity is to further wrap these modules into their own folder like so:
 
 
 ```` {tabs}
