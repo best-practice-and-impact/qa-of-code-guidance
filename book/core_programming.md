@@ -324,7 +324,7 @@ source("modelling.R")
 source("processing.R")
 source("reporting.R")
 
-data <- read.csv("data/path.csv)
+data <- read.csv("data/path.csv")
 data <- preprocess(clean(data))
 results <- predict_results(data)
 report <- generate_report(results)
