@@ -332,6 +332,7 @@ This is a minimal example of a pipeline script, illustrating how you might impor
 `````{admonition} A step further
 Another step that can be taken to introduce clarity is to further wrap these modules into their own folder like so:
 
+
 ```` {tabs}
 
 ``` {tab} Python
@@ -360,7 +361,7 @@ Another step that can be taken to introduce clarity is to further wrap these mod
     | project.Rproj
 ```
 
-````
+`````
 
 (packages)=
 
