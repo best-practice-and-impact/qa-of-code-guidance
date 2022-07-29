@@ -615,7 +615,9 @@ processed_text <- process_text("The following document was handled using...")
 
 This is often a tidy way to structure high-level functions in your pipeline. Well defined, verb-based names often lead to clear pipelines such as:
 
-```python
+```` {tabs}
+
+``` {code-tab} py
 data_path = "path/to/data"
 
 # in short
@@ -627,6 +629,21 @@ clean_data = clean(data)
 model_results = model(clean_data)
 report_data = generate_report(model_results)
 ```
+
+``` {code-tab} r R
+data_path <- "path/to/data"
+
+# in short
+report_data <- generate_report(model(clean(load(data_path))))
+
+# or, more explicitly
+data <- load(data_path)
+clean_data <- clean(data)
+model_results <- model(clean_data)
+report_data <- generate_report(model_results)
+```
+
+````
 
 In cases where a function responds with a Boolean (True or False) value, it is often useful to name this function in the form of a question.
 
