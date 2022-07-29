@@ -26,7 +26,7 @@ width: 30%
 name: file_names
 alt: Comic demonstrating poor file naming, like "Untitled 138 Copy.docx".
 ---
-Documents, from [xkcd](https://xkcd.com/1459/)
+Documents, from [xkcd](https://xkcd.com/1459/). This work is licensed under a [Creative Commons Attribution-NonCommercial 2.5 License](https://creativecommons.org/licenses/by-nc/2.5/).
 ```
 
 When used effectively, version control helps us to identify which changes have negatively impacted our work and remove them. Furthermore, a detailed audit trail allows us to refer to specific versions of our code that have been used to produce outputs, which is important for reproducing our analysis.
@@ -180,6 +180,24 @@ The [Git flow branching strategy](https://nvie.com/posts/a-successful-git-branch
 ```{note}
 Although we have used very simple branch names in the examples above, it's important that you use informative names for your branches in practice. If using an [issue tracker](issues) (e.g. GitHub Issues or Jira), it can be useful to include the issue number in branch names (e.g. `#155-fix-index-aggregation`). This makes it easy to trace the branch back to the associated issue or task. Otherwise, aim to use meaningful names that describe the feature or bug that the changes will be focussed on. 
 ```
+
+### Merge conflicts
+
+Git is effective at merging different branches. However, when the same file is edited in two different branches at the same time, this can lead to a merge conflict when you try to merge those branches. When this happens, you will see a message telling you there is a merge conflict and which files are affected. The file name will appear as `branch-name|MERGING`. You can fix this by manually selecting which changes to keep. If using the command line, you can also run `git status` to output the names of the affected files.
+
+When merge conflicts happen, git will mark the clashes using this syntax:
+
+```
+<<<<<<< HEAD
+Changes on the current branch
+=======
+Changes on the branch being merged
+>>>>>>> new
+```
+
+The row of equals signs divides the old from the new. The contents in the first division are the changes in the current branch. Changes in the second division are from the new branch. You can choose to keep one, both or neither. To resolve the merge conflict, you will need to make the necessary changes and delete the relevant symbols that git added to the text. Once you have resolved all conflicting text manually (there may be more than one), then you can add and commit the changes to resolve the merge conflicts.
+
+Avoid merge conflicts whenever possible. Do this by not editing the same files across different branches. If this is difficult to do, it may be that your scripts are too monolithic and should be modularised or split into multiple scripts. 
 
 ### Versioning large files
 
@@ -355,9 +373,9 @@ To handle a data breach, you should:
 
 
 ```{warning}
-It's important to stress that deleting a sensitive file and commiting this change is not sufficient. All previous versions of files are retained in a repository's history, so sensitive parts of the file must be entirely removed from the history.
+Deleting a sensitive file and commiting this change is not sufficient. All previous versions of files are retained in a repository's history, so sensitive parts of the file must be entirely removed from the history.
 
-The [Pro Git book section on rewriting history](https://git-scm.com/book/en/v2/Git-Tools-Rewriting-History) details methods for editing and deleting files from your repository's commit history. The [BFG repo-cleaner tool](https://rtyley.github.io/bfg-repo-cleaner/) can be a simpler alternative to standard Git commands, but may not be available in your department.
+The [Pro Git book section on rewriting history](https://git-scm.com/book/en/v2/Git-Tools-Rewriting-History) details methods for editing and deleting files from your repository's commit history. Git has a built-in way to do this. If you are able to install them in your department, you may use one of the simpler alternatives, such as [git-filter-repo](https://github.com/newren/git-filter-repo) (python) or [BFG repo-cleaner tool](https://rtyley.github.io/bfg-repo-cleaner/) (Java).
 ```
 
 ## GitHub
@@ -393,6 +411,8 @@ Analytical projects might use issues to plan and discuss the steps involved in d
 Once changes have been implemented, perhaps to meet the requirements of an issue, Pull Requests (PRs) provide a useful interface for incorporating those changes into the main project. PRs are typically used to merge a development branch (the source branch) onto a more stable branch in the main project (the target branch). The development branch here may be within the same repo, a [Fork](forking) of this project, or even a completely separate project.
 
 The initial description of the PR should include the high level changes that have been made and might point to any relevant issues that it resolves.  Much like issues, PRs can be linked to other issues and PRs, providing a coherent narrative of development work. [Keywords can be used when linking an issue (e.g. 'fixes #42')](https://docs.github.com/en/github/managing-your-work-on-github/linking-a-pull-request-to-an-issue#linking-a-pull-request-to-an-issue-using-a-keyword) to trigger the issue to close the PR is merged. Contributors can also be assigned or tagged in discussion, which can be useful for requesting help or review of a group of changes.
+
+Put checklists into your pull request comments.  These come with check boxes that can be ticked. This is useful when breaking down tasks into smaller chunks. When requesting a review, use checklists to help the reviewer review all the relevant parts of the pull request. As a reviewer, use checklists to list changes needed before the pull request can be approved. [The Government Digital Service have good examples of what this can look like.](https://github.com/alphagov/github-organisation-administration/pull/1)
 
 Alongside the main "Conversation" view of a PR, the GitHub web interface also provides a useful overview of changes that are included in the PR. You're able to view the list of individual commits that are included in the PR and, better still, you can view changes to each file in detail.
 
