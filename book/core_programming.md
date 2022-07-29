@@ -835,6 +835,7 @@ To put this in context, let us use an example where the developer wants to get t
 ````{tabs}
 
 ```{code-tab} py
+# Note: this is an example of bad practice
 first_ten_numbers = list(range(1, 11))
 second_ten_numbers = list(range(10, 21))
 third_ten_numbers = list(range(20, 31))
@@ -856,6 +857,7 @@ for number in third_ten_numbers:
 ```
 
 ```{code-tab} r R
+# Note: this is an example of bad practice
 first_ten_numbers <- 1:10
 second_ten_numbers <- 11:20
 third_ten_numbers <- 21:30
