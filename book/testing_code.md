@@ -25,7 +25,9 @@ Testing helps you assure your code quality and makes developing your code more e
 Code that has not been tested is more likely to contain bugs and require more maintenance in the future.
 
 Code for testing should also follow good practice. 
-Testing is a useful and deep skill to learn.
+Testing is a useful and rewarding skill to learn.
+You can learn basic testing that will immediately improve the quality of your code quickly.
+However, it is usual for it to seem a daunting learning curve.
 
 ## Good test suites are thorough but realistic
 
@@ -99,11 +101,13 @@ Here we've a basic function to get the absolute equivalent of a number:
 
 ````{tabs}
 ```{code-tab} py Python
+from math import sqrt
+
 def absolute(number):
     """Get the non-negative equivalent of a real number."""
     if not isinstance(number, (int, float)):
         raise TypeError("Input number must be numeric.")
-    return (number * number) / number
+    return sqrt(number * number) 
 ```
 
 ```{code-tab} r R
@@ -112,11 +116,11 @@ def absolute(number):
 #' Get the non-negative equivalent of a real number.
 
 absolute <- function(number) {
-    if !(is.numeric(number)) {
+    if (!is.numeric(number)) {
         stop("Input number must be numeric.")
     }
 
-    return (number * number) / number
+    return(sqrt(number * number))
 }
 ```
 ````
@@ -184,7 +188,8 @@ Directories of testing code should mirror the source code directories.
 You might want one file per function/class or one per module.
 Overall, it should be easy to identify which functions or classes your tests are for.
 
-```
+```{tabs}
+```` Python
 project/
 │
 ├── src/
@@ -207,8 +212,31 @@ project/
     └── end_to_end/
         ├── __init__.py
         └── test_end_to_end.py
-```
+````
 
+```` R
+
+project/
+│
+├── .Rproj
+|
+├── R/
+│   ├── math.R
+│   ├── strings.R
+|   └── api.R
+│
+└── tests/
+    |
+    ├── testthat/
+    |   ├── test-maths_abs.R
+    |   ├── test-maths_sum.R
+    |   └── test-strings_option.R
+    |
+    └── testthat.R
+
+````
+
+```
 
 
 ### Good tests do not rely on external states
@@ -250,8 +278,7 @@ Don't use randomness when writing tests.
 The only thing that should cause a test to fail when it has been passing is if the tested code has changed. 
 Running the same test with the same tested code should always produce the same outcome.
 
-In short, tests should pass or fail, not "mostly pass".
-
+In short, a test should either pass or fail every time, not "mostly pass".
 
 ### Writing tests at a later date
 
