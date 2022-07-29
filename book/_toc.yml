@@ -11,7 +11,8 @@ parts:
 - caption: Guidance
   chapters:
   - file: principles
-  - file: core_programming
+  - file: modular_code
+  - file: readable_code
   - file: project_structure
   - file: code_documentation
   - file: project_documentation
