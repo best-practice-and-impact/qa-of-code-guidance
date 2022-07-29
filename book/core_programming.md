@@ -367,6 +367,7 @@ Another step that can be taken to improve clarity is to further wrap these modul
     | README.md
     | project.Rproj
 ```
+````
 
 `````
 
