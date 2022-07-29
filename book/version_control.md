@@ -373,9 +373,9 @@ To handle a data breach, you should:
 
 
 ```{warning}
-It's important to stress that deleting a sensitive file and commiting this change is not sufficient. All previous versions of files are retained in a repository's history, so sensitive parts of the file must be entirely removed from the history.
+Deleting a sensitive file and commiting this change is not sufficient. All previous versions of files are retained in a repository's history, so sensitive parts of the file must be entirely removed from the history.
 
-The [Pro Git book section on rewriting history](https://git-scm.com/book/en/v2/Git-Tools-Rewriting-History) details methods for editing and deleting files from your repository's commit history. Git has a built-in way to do this. However, if you are able to install them in your department, you should use one of the simpler alternatives, such as [git-filter-repo](https://github.com/newren/git-filter-repo) (python) or [BFG repo-cleaner tool](https://rtyley.github.io/bfg-repo-cleaner/) (Java).
+The [Pro Git book section on rewriting history](https://git-scm.com/book/en/v2/Git-Tools-Rewriting-History) details methods for editing and deleting files from your repository's commit history. Git has a built-in way to do this. If you are able to install them in your department, you may use one of the simpler alternatives, such as [git-filter-repo](https://github.com/newren/git-filter-repo) (python) or [BFG repo-cleaner tool](https://rtyley.github.io/bfg-repo-cleaner/) (Java).
 ```
 
 ## GitHub
@@ -412,7 +412,7 @@ Once changes have been implemented, perhaps to meet the requirements of an issue
 
 The initial description of the PR should include the high level changes that have been made and might point to any relevant issues that it resolves.  Much like issues, PRs can be linked to other issues and PRs, providing a coherent narrative of development work. [Keywords can be used when linking an issue (e.g. 'fixes #42')](https://docs.github.com/en/github/managing-your-work-on-github/linking-a-pull-request-to-an-issue#linking-a-pull-request-to-an-issue-using-a-keyword) to trigger the issue to close the PR is merged. Contributors can also be assigned or tagged in discussion, which can be useful for requesting help or review of a group of changes.
 
-You can put checklists into your pull request comments. Unlike regular bullet lists, these come with check boxes that can be ticked. This is particularly useful when down tasks into smaller chunks. When requesting a review of your pull request, you can check checklists to help the reviewer make sure they check all the relevant parts of the pull request. As a reviewer, you can use checklists to list out the changes needed before the pull request can be approved. 
+Put checklists into your pull request comments. These come with check boxes that can be ticked. This is useful when breaking down tasks into smaller chunks. When requesting a review, use checklists to help the reviewer review all the relevant parts of the pull request. As a reviewer, use checklists to list changes needed before the pull request can be approved. 
 
 Alongside the main "Conversation" view of a PR, the GitHub web interface also provides a useful overview of changes that are included in the PR. You're able to view the list of individual commits that are included in the PR and, better still, you can view changes to each file in detail.
 
