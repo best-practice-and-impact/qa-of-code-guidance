@@ -188,8 +188,8 @@ Directories of testing code should mirror the source code directories.
 You might want one file per function/class or one per module.
 Overall, it should be easy to identify which functions or classes your tests are for.
 
-```{tabs}
-```` Python
+`````{tabs}
+````{tab} Python
 project/
 │
 ├── src/
@@ -214,7 +214,7 @@ project/
         └── test_end_to_end.py
 ````
 
-```` R
+````{tab} R
 
 project/
 │
@@ -236,7 +236,7 @@ project/
 
 ````
 
-```
+`````
 
 
 ### Good tests do not rely on external states
