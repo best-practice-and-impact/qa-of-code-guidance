@@ -6,6 +6,7 @@ logo: "./_static/duck_book_logo.svg"
 
 repository:
   url: https://github.com/best-practice-and-impact/qa-of-code-guidance
+  path_to_book: book
 
 html:
   home_page_in_navbar: false
