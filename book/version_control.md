@@ -183,7 +183,7 @@ Although we have used very simple branch names in the examples above, it's impor
 
 ### Merge conflicts
 
-Git is generally very effective at merging different branches together. However, when the same file is edited in two branches at the same time, this can lead to a merge conflict when you try to merge those together. When this happens, you see a message telling you there is a merge conflict and which files are affected. The file name will appear as `branch-name|MERGING`. You can fix this by manually selecting which changes to keep. If using the command line, you can also run `git status` to output the names of the affected files.
+Git is effective at merging different branches. However, when the same file is edited in two different branches at the same time, this can lead to a merge conflict when you try to merge those branches. When this happens, you will see a message telling you there is a merge conflict and which files are affected. The file name will appear as `branch-name|MERGING`. You can fix this by manually selecting which changes to keep. If using the command line, you can also run `git status` to output the names of the affected files.
 
 When merge conflicts happen, git will mark the clashes using this syntax:
 
@@ -195,9 +195,9 @@ Changes on the branch being merged
 >>>>>>> new
 ```
 
-The contents between the smaller-than signs and equal signs are the changes in the current branch. Changes between the equal signs and greater-than signs are from the new branch. You can choose to keep one, both or neither. To resolve the merge conflict, you will need to make the necessary changes and delete the greater-than, smaller-than and equal signs that git added to the text. Once you're resolved all conflicting text manually (there may be more than one), add and commit the changes to resolve the merge conflicts.
+The row of equals signs divides the old from the new. The contents in the first division are the changes in the current branch. Changes in the second division are from the new branch. You can choose to keep one, both or neither. To resolve the merge conflict, you will need to make the necessary changes and delete the relevant symbols that git added to the text. Once you have resolved all conflicting text manually (there may be more than one), then you can add and commit the changes to resolve the merge conflicts.
 
-It is best to avoid merge conflicts whenever possible. You can do this by avoiding editing the same files across different branches. If you find that this is difficult to do, it may be that your scripts are too monolithic, and should modularised or split into multiple scripts. 
+Avoid merge conflicts whenever possible. Do this by not editing the same files across different branches. If this is difficult to do, it may be that your scripts are too monolithic and should be modularised or split into multiple scripts. 
 
 ### Versioning large files
 
