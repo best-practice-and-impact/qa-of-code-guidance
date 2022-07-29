@@ -4,11 +4,13 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Higher quality assurance &#8212; Quality Assurance of Code for Analysis and Research</title>
     
-  <link href="_static/css/theme.css" rel="stylesheet">
-  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,41 +20,40 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="_static/tabs.css" />
-    <link rel="stylesheet" type="text/css" href="_static/accessibility.css" />
     <link rel="stylesheet" type="text/css" href="_static/logo.css" />
+    <link rel="stylesheet" type="text/css" href="_static/accessibility.css" />
     <link rel="stylesheet" type="text/css" href="_static/admonitions.css" />
     <link rel="stylesheet" type="text/css" href="_static/markdown_within_tabs.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
-    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
-    <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script >
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="shortcut icon" href="_static/favicon.ico"/>
     <link rel="index" title="Index" href="genindex.html" />
@@ -66,7 +67,21 @@
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -75,9 +90,10 @@
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -95,7 +111,7 @@
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <p class="caption">
+        <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Overview
  </span>
@@ -129,7 +145,7 @@
   </ul>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Guidance
  </span>
@@ -186,7 +202,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Resources
  </span>
@@ -194,7 +210,7 @@
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="learning.html">
-   Learning Resources
+   Learning resources
   </a>
  </li>
  <li class="toctree-l1">
@@ -205,92 +221,197 @@
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  <p>Book version 2021.9</p><a href='https://www.gov.uk/government/organisations/government-analysis-function' target='_blank'><img src='./_static/af_logo.png' alt='The Government Analysis Function logo' style='width:50%;'></a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
             
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/checklist_higher.md"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/best-practice-and-impact/qa-of-code-guidance"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        <a class="issues-button"
-            href="https://github.com/best-practice-and-impact/qa-of-code-guidance/issues/new?title=Issue%20on%20page%20%2Fchecklist_higher.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        <a class="edit-button" href="https://github.com/best-practice-and-impact/qa-of-code-guidance/edit/master/checklist_higher.md"><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
-    </div>
-</div>
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div class="navbar_extra_footer">
+            <p>Book version 2022.0</p><a href='https://www.gov.uk/government/organisations/government-analysis-function' target='_blank'><img src='./_static/af_logo.png' alt='The Government Analysis Function logo' style='width:50%;'></a>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/best-practice-and-impact/qa-of-code-guidance"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/best-practice-and-impact/qa-of-code-guidance/issues/new?title=Issue%20on%20page%20%2Fchecklist_higher.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/best-practice-and-impact/qa-of-code-guidance/edit/master/checklist_higher.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Edit this page"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="headerbtn__text-container">suggest edit</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/checklist_higher.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#quality-assurance-checklist">
    Quality assurance checklist
@@ -370,12 +491,11 @@
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
                 <h1>Higher quality assurance</h1>
@@ -471,16 +591,17 @@
                     </div>
                 </div>
             </div>
-            
+            <main id="main-content" role="main">
+                
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="higher-quality-assurance">
-<h1>Higher quality assurance<a class="headerlink" href="#higher-quality-assurance" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="quality-assurance-checklist">
-<h2>Quality assurance checklist<a class="headerlink" href="#quality-assurance-checklist" title="Permalink to this headline">¶</a></h2>
+  <section class="tex2jax_ignore mathjax_ignore" id="higher-quality-assurance">
+<h1>Higher quality assurance<a class="headerlink" href="#higher-quality-assurance" title="Permalink to this headline">#</a></h1>
+<section id="quality-assurance-checklist">
+<h2>Quality assurance checklist<a class="headerlink" href="#quality-assurance-checklist" title="Permalink to this headline">#</a></h2>
 <p>Quality assurance checklist from <a class="reference external" href="https://best-practice-and-impact.github.io/qa-of-code-guidance/intro.html">the quality assurance of code for analysis and research guidance</a>.</p>
-<div class="section" id="modular-code">
-<h3>Modular code<a class="headerlink" href="#modular-code" title="Permalink to this headline">¶</a></h3>
+<section id="modular-code">
+<h3>Modular code<a class="headerlink" href="#modular-code" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>Individual pieces of logic are written as functions. Classes are used if more appropriate.</p></li>
 <li><p>Code is grouped in themed files (modules) and is packaged for easier use.</p></li>
@@ -490,25 +611,25 @@
 <li><p>Objects and functions are open for extension but closed for modification; functionality can be extended without modifying the source code.</p></li>
 <li><p>Subclasses retain the functionality of their parent class while adding new functionality. Parent class objects can be replaced with instances of the subclass and still work as expected.</p></li>
 </ul>
-</div>
-<div class="section" id="good-coding-practices">
-<h3>Good coding practices<a class="headerlink" href="#good-coding-practices" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="good-coding-practices">
+<h3>Good coding practices<a class="headerlink" href="#good-coding-practices" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>Names used in the code are informative and concise.</p></li>
 <li><p>Names used in the code are explicit, rather than implicit.</p></li>
 <li><p>Code logic is clear and avoids unnecessary complexity.</p></li>
 <li><p>Code follows a standard style, e.g. <a class="reference external" href="https://www.python.org/dev/peps/pep-0008/">PEP8 for Python</a> and <a class="reference external" href="https://google.github.io/styleguide/Rguide.html">Google</a> or <a class="reference external" href="https://style.tidyverse.org/">tidyverse</a> for R.</p></li>
 </ul>
-</div>
-<div class="section" id="project-structure">
-<h3>Project structure<a class="headerlink" href="#project-structure" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="project-structure">
+<h3>Project structure<a class="headerlink" href="#project-structure" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>A clear, standard directory structure is used to separate input data, outputs, code and documentation.</p></li>
 <li><p>Packages follow a standard structure.</p></li>
 </ul>
-</div>
-<div class="section" id="code-documentation">
-<h3>Code documentation<a class="headerlink" href="#code-documentation" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="code-documentation">
+<h3>Code documentation<a class="headerlink" href="#code-documentation" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>Comments are used to describe why code is written in a particular way, rather than describing what the code is doing.</p></li>
 <li><p>Comments are kept up to date, so they do not confuse the reader.</p></li>
@@ -518,9 +639,9 @@
 <li><p>Human-readable (preferably HTML) documentation is generated automatically from code documentation.</p></li>
 <li><p>Documentation is hosted for easy access. <a class="reference external" href="https://pages.github.com/">GitHub Pages</a> and <a class="reference external" href="https://readthedocs.org/">Read the Docs</a> provide a free service for hosting documentation publicly.</p></li>
 </ul>
-</div>
-<div class="section" id="project-documentation">
-<h3>Project documentation<a class="headerlink" href="#project-documentation" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="project-documentation">
+<h3>Project documentation<a class="headerlink" href="#project-documentation" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>A README file details the purpose of the project, basic installation instructions, and examples of usage.</p></li>
 <li><p>Where appropriate, guidance for prospective contributors is available including a code of conduct.</p></li>
@@ -535,9 +656,9 @@
 <li><p>Design certificates confirm that the design is compliant with requirements.</p></li>
 <li><p>If appropriate, the software is fully specified.</p></li>
 </ul>
-</div>
-<div class="section" id="version-control">
-<h3>Version control<a class="headerlink" href="#version-control" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="version-control">
+<h3>Version control<a class="headerlink" href="#version-control" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>Code is <a class="reference external" href="https://git-scm.com/">version controlled using Git</a>.</p></li>
 <li><p>Code is committed regularly, preferably when a discrete unit of work has been completed.</p></li>
@@ -547,18 +668,18 @@
 <li><p>Commits are tagged at significant stages. This is used to indicate the state of code for specific releases or model versions.</p></li>
 <li><p>Continuous integration is applied through tools such as <a class="reference external" href="https://github.com/features/actions">GitHub Actions</a>, to ensure that each change is integrated into the workflow smoothly.</p></li>
 </ul>
-</div>
-<div class="section" id="configuration">
-<h3>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="configuration">
+<h3>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>Credentials and other secrets are not written in code but are configured as environment variables.</p></li>
 <li><p>Configuration is written as code, and is clearly separated from code used for analysis.</p></li>
 <li><p>The configuration used to generate particular outputs, releases and publications is recorded.</p></li>
 <li><p>If appropriate, multiple configuration files are used and interchangeable depending on system/local/user.</p></li>
 </ul>
-</div>
-<div class="section" id="data-management">
-<h3>Data management<a class="headerlink" href="#data-management" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="data-management">
+<h3>Data management<a class="headerlink" href="#data-management" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>All data for analysis are stored in an open format, so that specific software is not required to access them.</p></li>
 <li><p>Input data are stored safely and are treated as read-only.</p></li>
@@ -571,17 +692,17 @@
 <li><p>Large or complex data are stored in a database.</p></li>
 <li><p>Data are documented in an information asset register.</p></li>
 </ul>
-</div>
-<div class="section" id="peer-review">
-<h3>Peer review<a class="headerlink" href="#peer-review" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="peer-review">
+<h3>Peer review<a class="headerlink" href="#peer-review" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>Peer review is conducted and recorded near to the code. Merge or pull requests are used to document review, when relevant.</p></li>
 <li><p>Pair programming is used to review code and share knowledge.</p></li>
 <li><p>Users are encouraged to participate in peer review.</p></li>
 </ul>
-</div>
-<div class="section" id="testing">
-<h3>Testing<a class="headerlink" href="#testing" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="testing">
+<h3>Testing<a class="headerlink" href="#testing" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>Core functionality is unit tested as code. See <a class="reference external" href="https://docs.pytest.org/en/stable/"><code class="docutils literal notranslate"><span class="pre">pytest</span></code> for Python</a> and <a class="reference external" href="https://testthat.r-lib.org/"><code class="docutils literal notranslate"><span class="pre">testthat</span></code> for R</a>.</p></li>
 <li><p>Code based tests are run regularly.</p></li>
@@ -594,9 +715,9 @@
 <li><p>Formal user acceptance testing is conducted and recorded.</p></li>
 <li><p>Integration tests ensure that multiple units of code work together as expected.</p></li>
 </ul>
-</div>
-<div class="section" id="dependency-management">
-<h3>Dependency management<a class="headerlink" href="#dependency-management" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="dependency-management">
+<h3>Dependency management<a class="headerlink" href="#dependency-management" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>Required passwords, secrets and tokens are documented, but are stored outside of version control.</p></li>
 <li><p>Required libraries and packages are documented, including their versions.</p></li>
@@ -608,17 +729,17 @@
 <li><p>Package dependencies are managed using an environment manager such as <a class="reference external" href="https://virtualenv.pypa.io/en/latest/">virtualenv for Python</a> or <a class="reference external" href="https://rstudio.github.io/renv/articles/renv.html">renv for R</a>.</p></li>
 <li><p>Docker containers or virtual machine builds are available for the code execution environment and these are version controlled.</p></li>
 </ul>
-</div>
-<div class="section" id="logging">
-<h3>Logging<a class="headerlink" href="#logging" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="logging">
+<h3>Logging<a class="headerlink" href="#logging" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>Misuse or failure in the code produces informative error messages.</p></li>
 <li><p>Code configuration is recorded when the code is run.</p></li>
 <li><p>Pipeline route is recorded if decisions are made in code.</p></li>
 </ul>
-</div>
-<div class="section" id="project-management">
-<h3>Project management<a class="headerlink" href="#project-management" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="project-management">
+<h3>Project management<a class="headerlink" href="#project-management" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>The roles and responsibilities of team members are clearly defined.</p></li>
 <li><p>An issue tracker (e.g GitHub Project, Trello or Jira) is used to record development tasks.</p></li>
@@ -627,10 +748,10 @@
 <li><p>Acceptance criteria are noted for issues and tasks. Fulfilment of acceptance criteria is recorded.</p></li>
 <li><p>Quality assurance standards and processes for the project are defined. These are based around <a class="reference external" href="https://best-practice-and-impact.github.io/qa-of-code-guidance/intro.html">the quality assurance of code for analysis and research guidance document</a>.</p></li>
 </ul>
-</div>
-</div>
-<div class="section" id="template-checklist">
-<h2>Template checklist<a class="headerlink" href="#template-checklist" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="template-checklist">
+<h2>Template checklist<a class="headerlink" href="#template-checklist" title="Permalink to this headline">#</a></h2>
 <p>You can either refer to the checklist above, or use the Markdown template below to include the checklist in your project.</p>
 <div class="highlight-md notranslate"><div class="highlight"><pre><span></span><span class="gu">## Quality assurance checklist</span>
 
@@ -760,8 +881,8 @@ Quality assurance checklist from [<span class="nt">the quality assurance of code
 <span class="k">- [ ]</span> Quality assurance standards and processes for the project are defined. These are based around [<span class="nt">the quality assurance of code for analysis and research guidance document</span>](<span class="na">https://best-practice-and-impact.github.io/qa-of-code-guidance/intro.html</span>).
 </pre></div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -785,9 +906,11 @@ Quality assurance checklist from [<span class="nt">the quality assurance of code
 
               </div>
               
-            
-                <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="checklist_moderate.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -803,24 +926,28 @@ Quality assurance checklist from [<span class="nt">the quality assurance of code
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-            
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-  <p>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    <div class="extra_footer">
+      <p>Best Practice & Impact division, Office for National Statistics</p><p>This document is very young, please help use to make it grow by providing any feedback by <a href='mailto:gsshelp@statistics.gov.uk'>email</a> or via the <a href='https://github.com/best-practice-and-impact/qa-of-code-guidance'>GitHub repository</a>.
+    </div>
+</p>
+        </footer>
+    </div>
     
-      <div class="extra_footer">
-        <p>Best Practice & Impact division, Office for National Statistics</p><p>This document is very young, please help use to make it grow by providing any feedback by <a href='mailto:gsshelp@statistics.gov.uk'>email</a> or via the <a href='https://github.com/best-practice-and-impact/qa-of-code-guidance'>GitHub repository</a>.
-      </div>
-  </p>
-</footer>
-</main>
+</div>
 
 
       </div>
     </div>
   
-  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
 
   </body>
 </html>

@@ -10,7 +10,11 @@ Configuration for your analysis code should include high level parameters (setti
 
 In early development of our analysis, lets imagine that we have a script that looks something like this:
 
-```python
+````{tabs}
+
+```{code-tab} python
+# Note: this is not an example of good practice
+# This is intended as example of what early pipeline code might look like
 data = read_csv("C:/a/very/specific/path/to/input_data.csv") 
 
 variables_test, variables_train, outcome_test, outcome_train = train_test_split(data["a", "b", "c"], data["outcome"], test_size=0.3, random_seed=42)
@@ -22,7 +26,31 @@ model.fit(variables_train, outcome_train)
 prediction = model.predict(variables_test, constant_a=7, max_v=1000)
 
 prediction.to_csv("outputs/predictions.csv")
+
 ```
+
+```{code-tab} r R
+# Note: this is not an example of good practice
+# This is intended as example of what early pipeline code might look like
+data <- read.csv("C:/a/very/specific/path/to/input_data.csv") 
+
+set.seed(42)
+split <- caTools::sample.split(data, SplitRatio = .3)
+
+train_data <- data[split, ]
+test_data <- data[!split, ]
+
+model <- glm(formula = outcome ~ a + b + c, family = binomial(link = "logit"), data = train_data, method = "model.frame")
+# model <- glm(formula = outcome ~ a + b + c, family = binomial(link = "logit"), data = train_data, method = "glm.fit")
+
+
+prediction <- predict(model, test_data, type = "response")
+
+write.csv(prediction, "outputs/predictions.csv")
+
+```
+
+````
 
 Here we're reading in some data and splitting it into subsets for training and testing a model. We use one subset of variables and outcomes to train our model and then use the subset to test the model. Finally, we write the model's predictions to a `.csv` file.
 
@@ -32,7 +60,12 @@ When splitting our data and using our model to make predictions, we've provided 
 
 Note that in this example we've tried our model prediction twice, with different parameters. We've used comments to switch between which of these lines of code runs. This practice is common, especially when we want to make a number of changes when developing how our analysis should run. However, commenting sections of code in this way makes it difficult for others to understand our code and reproduce our results. Another analyst would not be sure which set of parameters was used to produce a given set of predictions, so we should avoid this form of ambiguity. Below, we'll look at some better alternatives to storing and switching our analysis parameters.
 
-```python
+````{tabs}
+
+```{code-tab} python
+# Note: this is not an example of good practice
+# This is intended as an example of basic in-code configuration. 
+
 # Configuration
 input_path = "C:/a/very/specific/path/to/input_data.csv"
 output_path = "outputs/predictions.csv"
@@ -44,7 +77,6 @@ prediction_parameters = {
     "constant_a": 7,
     "max_v": 1000
 }
-
 
 # Analysis
 data = read_csv(input_path)
@@ -58,6 +90,36 @@ prediction = model.predict(variables_test, constant_a=prediction_parameters["con
 
 prediction.to_csv(output_path)
 ```
+
+```{code-tab} r R
+# Note: this is not an example of good practice
+# This is intended as an example of basic in-code configuration. 
+
+# Configuration
+input_path <- "C:/a/very/specific/path/to/input_data.csv"
+output_path <- "outputs/predictions.csv"
+
+random_seed = 42
+test_split_proportion = .3
+model_method = "glm.fit"
+
+#analysis
+data <- read.csv(input_path) 
+
+set.seed(random_seed)
+split <- caTools::sample.split(data, SplitRatio = test_split_proportion)
+
+train_data <- data[split, ]
+test_data <- data[!split, ]
+
+model <- glm(formula = outcome ~ a + b + c, family = binomial(link = "logit"), data = train_data, method = model_method)
+
+prediction <- predict(model, test_data, type = "response")
+
+write.csv(prediction, output_path)
+```
+
+````
 
 Separating configuration from the rest of our code makes it easy to adjust these parameters and apply them consistently throughout the analysis script. We're able to use basic objects (like lists and dictionaries) to group related parameters. We then reference these objects in the analysis section of our script.
 
@@ -147,7 +209,7 @@ if (length(args) < 1) {
   stop("Configuration file must be passed as an argument.")
 }
 
-config_path = args[1]
+config_path <- args[1]
 config <- yaml::yaml.load_file(config_path)
 ...
 ```

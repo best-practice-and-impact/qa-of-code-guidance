@@ -4,11 +4,13 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Quality Assurance of Code for Analysis and Research &#8212; Quality Assurance of Code for Analysis and Research</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Quality assurance of code for analysis and research &#8212; Quality Assurance of Code for Analysis and Research</title>
     
-  <link href="_static/css/theme.css" rel="stylesheet">
-  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,41 +20,40 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="_static/tabs.css" />
-    <link rel="stylesheet" type="text/css" href="_static/accessibility.css" />
     <link rel="stylesheet" type="text/css" href="_static/logo.css" />
+    <link rel="stylesheet" type="text/css" href="_static/accessibility.css" />
     <link rel="stylesheet" type="text/css" href="_static/admonitions.css" />
     <link rel="stylesheet" type="text/css" href="_static/markdown_within_tabs.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
-    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
-    <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script >
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="shortcut icon" href="_static/favicon.ico"/>
     <link rel="index" title="Index" href="genindex.html" />
@@ -65,7 +66,21 @@
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -74,9 +89,10 @@
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -94,7 +110,7 @@
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <p class="caption">
+        <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Overview
  </span>
@@ -128,7 +144,7 @@
   </ul>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Guidance
  </span>
@@ -185,7 +201,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Resources
  </span>
@@ -193,7 +209,7 @@
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="learning.html">
-   Learning Resources
+   Learning resources
   </a>
  </li>
  <li class="toctree-l1">
@@ -204,92 +220,197 @@
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  <p>Book version 2021.9</p><a href='https://www.gov.uk/government/organisations/government-analysis-function' target='_blank'><img src='./_static/af_logo.png' alt='The Government Analysis Function logo' style='width:50%;'></a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
             
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/intro.md"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/best-practice-and-impact/qa-of-code-guidance"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        <a class="issues-button"
-            href="https://github.com/best-practice-and-impact/qa-of-code-guidance/issues/new?title=Issue%20on%20page%20%2Fintro.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        <a class="edit-button" href="https://github.com/best-practice-and-impact/qa-of-code-guidance/edit/master/intro.md"><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
-    </div>
-</div>
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div class="navbar_extra_footer">
+            <p>Book version 2022.0</p><a href='https://www.gov.uk/government/organisations/government-analysis-function' target='_blank'><img src='./_static/af_logo.png' alt='The Government Analysis Function logo' style='width:50%;'></a>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/best-practice-and-impact/qa-of-code-guidance"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/best-practice-and-impact/qa-of-code-guidance/issues/new?title=Issue%20on%20page%20%2Fintro.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/best-practice-and-impact/qa-of-code-guidance/edit/master/intro.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Edit this page"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="headerbtn__text-container">suggest edit</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/intro.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#about-us">
    About us
@@ -324,15 +445,14 @@
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Quality Assurance of Code for Analysis and Research</h1>
+                <h1>Quality assurance of code for analysis and research</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -380,16 +500,17 @@
                     </div>
                 </div>
             </div>
-            
+            <main id="main-content" role="main">
+                
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="quality-assurance-of-code-for-analysis-and-research">
-<h1>Quality Assurance of Code for Analysis and Research<a class="headerlink" href="#quality-assurance-of-code-for-analysis-and-research" title="Permalink to this headline">¶</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="quality-assurance-of-code-for-analysis-and-research">
+<h1>Quality assurance of code for analysis and research<a class="headerlink" href="#quality-assurance-of-code-for-analysis-and-research" title="Permalink to this headline">#</a></h1>
 <p>This Government Analysis Function and Government Statistical Service (GSS) guidance is produced by the Quality and Improvement team in the Methods and Quality directorate of the <a class="reference external" href="https://www.ons.gov.uk">Office for National Statistics</a>.</p>
 <p>The guidance has been written to support analysts in government who use coding in their work. This includes those who produce statistics, carry out modelling or apply data science.</p>
-<p>The guidance is a living document, so will be continually updated. You can refer to the current version of the guidance by it’s version number, found below the site table of contents. We are extremely grateful for any feedback that you are able to provide on existing and future content. Please get in touch via <a class="reference external" href="https://github.com/best-practice-and-impact/qa-of-code-guidance/issues">GitHub Issues</a> or <a class="reference external" href="mailto:gsshelp&#37;&#52;&#48;statistics&#46;gov&#46;uk">gsshelp<span>&#64;</span>statistics<span>&#46;</span>gov<span>&#46;</span>uk</a>.</p>
-<div class="section" id="about-us">
-<h2>About us<a class="headerlink" href="#about-us" title="Permalink to this headline">¶</a></h2>
+<p>This guidance is a living document, so will be continually updated. You can refer to the current version of the guidance by its version number, found below the site table of contents. You may notice “Todo” notes throughout the guidance. These indicate where we plan to add additional content in the near future. We are extremely grateful for any feedback that you are able to provide on existing and future content.</p>
+<section id="about-us">
+<h2>About us<a class="headerlink" href="#about-us" title="Permalink to this headline">#</a></h2>
 <p>The Methods and Quality directorate supports government analysis by providing guidance, consultancy and training.</p>
 <p>You can find us on:</p>
 <ul class="simple">
@@ -398,16 +519,16 @@
 <li><p>Slack: <a class="reference external" href="https://govdatascience.slack.com">Government Data Science</a> and <a class="reference external" href="https://gov-stats-service.slack.com">GSS</a></p></li>
 <li><p>Twitter: <a class="reference external" href="https://twitter.com/gov_analysis">Government Analysis Function</a>,  <a class="reference external" href="https://twitter.com/gssgoodpractice">GSS Good Practice Team</a> and <a class="reference external" href="https://twitter.com/ukgss">UK GSS</a></p></li>
 </ul>
-</div>
-<div class="section" id="citing-the-book">
-<h2>Citing the book<a class="headerlink" href="#citing-the-book" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="citing-the-book">
+<h2>Citing the book<a class="headerlink" href="#citing-the-book" title="Permalink to this headline">#</a></h2>
 <p>The following structure can be used to reference the current version of the book:</p>
 <blockquote>
-<div><p>UK Government Analytical Community. (2020). Quality assurance of code for analysis and research (version 2021.9). Office for National Statistics, Quality and Improvement division: <a class="reference external" href="https://best-practice-and-impact.github.io/qa-of-code-guidance/">https://best-practice-and-impact.github.io/qa-of-code-guidance/</a></p>
+<div><p>UK Government Analytical Community. (2020). Quality assurance of code for analysis and research (version 2022.0). Office for National Statistics, Quality and Improvement division: <a class="reference external" href="https://best-practice-and-impact.github.io/qa-of-code-guidance/">https://best-practice-and-impact.github.io/qa-of-code-guidance/</a></p>
 </div></blockquote>
-</div>
-<div class="section" id="how-to-get-the-most-out-of-the-book">
-<h2>How to get the most out of the book<a class="headerlink" href="#how-to-get-the-most-out-of-the-book" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="how-to-get-the-most-out-of-the-book">
+<h2>How to get the most out of the book<a class="headerlink" href="#how-to-get-the-most-out-of-the-book" title="Permalink to this headline">#</a></h2>
 <p>This guidance is tailored to government analysts who would like to quality assure their code and increase the reproducibility of their analyses. We have tried to interpret the requirements of pieces of guidance (the <a class="reference internal" href="principles.html"><span class="doc std std-doc">principles</span></a>) into actions and deliverables for analytical programming.</p>
 <p>However, the practices outlined in the book are general to many applications of programming, so may also be relevant for those outside of government. This book might be most useful for you if you are:</p>
 <ul class="simple">
@@ -419,10 +540,10 @@
 </ul>
 <p>This book can be used to guide your learning and as a reference. Each chapter describes the risks that the described practices may help to address. Therefore, you should strive to apply the most appropriate practices given the risks associated with your work.</p>
 <p>The principles in this book are language agnostic. It does not form a comprehensive learning resource and you may often need to study further resources to implement these practices. That said, examples and useful references are provided for <strong>Python</strong> and <strong>R</strong>, as open source languages that are commonly applied across government.</p>
-</div>
-<div class="section" id="accessibility-statement">
-<h2>Accessibility statement<a class="headerlink" href="#accessibility-statement" title="Permalink to this headline">¶</a></h2>
-<p>This accessibility statement applies to the Quality Assurance of Code for Analysis and Research. Please note that this does not include third-party content that is referenced from this guidance.</p>
+</section>
+<section id="accessibility-statement">
+<h2>Accessibility statement<a class="headerlink" href="#accessibility-statement" title="Permalink to this headline">#</a></h2>
+<p>This accessibility statement applies to the Quality assurance of code for analysis and research guidance. Please note that this does not include third-party content that is referenced from this guidance.</p>
 <p>The website is managed by the Quality and Improvement division of the Office for National Statistics. We would like this guidance to be accessible for as many people as possible. This means that you should be able to:</p>
 <ul class="simple">
 <li><p>change colours, contrast levels and fonts</p></li>
@@ -432,23 +553,23 @@
 <li><p>listen to most of the website using a screen reader (including the most recent versions of JAWS, NVDA and VoiceOver)</p></li>
 </ul>
 <p>For keyboard navigation, <kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Up</kbd> <kbd class="kbd docutils literal notranslate">Arrow</kbd></kbd> and <kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Down</kbd> <kbd class="kbd docutils literal notranslate">Arrow</kbd></kbd>keys can be used to scroll up and down on the current page. <kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Left</kbd> <kbd class="kbd docutils literal notranslate">Arrow</kbd></kbd> and <kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Right</kbd> <kbd class="kbd docutils literal notranslate">Arrow</kbd></kbd> keys can be used to move forwards and backwards through the pages of the book. Tabbed content (including code example) can be focused using the <kbd class="kbd docutils literal notranslate">Tab</kbd> key. <kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Left</kbd> <kbd class="kbd docutils literal notranslate">Arrow</kbd></kbd> and <kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Right</kbd> <kbd class="kbd docutils literal notranslate">Arrow</kbd></kbd> keys are then used to focus the required tab option, where <kbd class="kbd docutils literal notranslate">Enter</kbd> can be used to select that option and display the associated content.</p>
-<div class="section" id="feedback-and-reporting-accessibility-problems">
-<h3>Feedback and reporting accessibility problems<a class="headerlink" href="#feedback-and-reporting-accessibility-problems" title="Permalink to this headline">¶</a></h3>
-<p>We’re always looking to improve the accessibility of our guidance. If you find any problems not listed on this page or think that we’re not meeting accessibility requirements, please contact us by email at <a class="reference external" href="mailto:gsshelp&#37;&#52;&#48;statistics&#46;gov&#46;uk">gsshelp<span>&#64;</span>statistics<span>&#46;</span>gov<span>&#46;</span>uk</a>. Please also get in touch if you are unable to access any part of this guidance, or require the content in a different format.</p>
-<p>We will consider your request and aim to get back to you within 5 working days.</p>
-</div>
-<div class="section" id="enforcement-procedure">
-<h3>Enforcement procedure<a class="headerlink" href="#enforcement-procedure" title="Permalink to this headline">¶</a></h3>
+<section id="feedback-and-reporting-accessibility-problems">
+<h3>Feedback and reporting accessibility problems<a class="headerlink" href="#feedback-and-reporting-accessibility-problems" title="Permalink to this headline">#</a></h3>
+<p>We’re always looking to improve the accessibility of our guidance. If you find any problems not listed on this page or think that we’re not meeting accessibility requirements, please contact us by emailing <a class="reference external" href="mailto:gsshelp&#37;&#52;&#48;statistics&#46;gov&#46;uk">gsshelp<span>&#64;</span>statistics<span>&#46;</span>gov<span>&#46;</span>uk</a>. Please also get in touch if you are unable to access any part of this guidance, or require the content in a different format.</p>
+<p>We will consider your request and aim to get back to you within five working days.</p>
+</section>
+<section id="enforcement-procedure">
+<h3>Enforcement procedure<a class="headerlink" href="#enforcement-procedure" title="Permalink to this headline">#</a></h3>
 <p>The Equality and Human Rights Commission (EHRC) is responsible for enforcing the <a class="reference external" href="https://www.legislation.gov.uk/uksi/2018/952/made">Public Sector Bodies (Websites and Mobile Applications) (No. 2) Accessibility Regulations 2018 (the ‘accessibility regulations’)</a>. If you’re not happy with how we respond to your complaint, you should <a class="reference external" href="https://www.equalityadvisoryservice.com/">contact the Equality Advisory and Support Service (EASS)</a>.</p>
-</div>
-</div>
+</section>
+</section>
 <div class="toctree-wrapper compound">
 </div>
 <div class="toctree-wrapper compound">
 </div>
 <div class="toctree-wrapper compound">
 </div>
-</div>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -472,8 +593,10 @@
 
               </div>
               
-            
-                <!-- Previous / next buttons -->
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
 <div class='prev-next-area'>
     <a class='right-next' id="next-link" href="checklists.html" title="next page">
     <div class="prev-next-info">
@@ -483,24 +606,28 @@
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-            
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-  <p>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    <div class="extra_footer">
+      <p>Best Practice & Impact division, Office for National Statistics</p><p>This document is very young, please help use to make it grow by providing any feedback by <a href='mailto:gsshelp@statistics.gov.uk'>email</a> or via the <a href='https://github.com/best-practice-and-impact/qa-of-code-guidance'>GitHub repository</a>.
+    </div>
+</p>
+        </footer>
+    </div>
     
-      <div class="extra_footer">
-        <p>Best Practice & Impact division, Office for National Statistics</p><p>This document is very young, please help use to make it grow by providing any feedback by <a href='mailto:gsshelp@statistics.gov.uk'>email</a> or via the <a href='https://github.com/best-practice-and-impact/qa-of-code-guidance'>GitHub repository</a>.
-      </div>
-  </p>
-</footer>
-</main>
+</div>
 
 
       </div>
     </div>
   
-  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
 
   </body>
 </html>

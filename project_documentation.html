@@ -4,11 +4,13 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Project documentation &#8212; Quality Assurance of Code for Analysis and Research</title>
     
-  <link href="_static/css/theme.css" rel="stylesheet">
-  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,42 +20,41 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="_static/tabs.css" />
-    <link rel="stylesheet" type="text/css" href="_static/accessibility.css" />
     <link rel="stylesheet" type="text/css" href="_static/logo.css" />
+    <link rel="stylesheet" type="text/css" href="_static/accessibility.css" />
     <link rel="stylesheet" type="text/css" href="_static/admonitions.css" />
     <link rel="stylesheet" type="text/css" href="_static/markdown_within_tabs.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
-    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
-    <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
     <script src="_static/tabs.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script >
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="shortcut icon" href="_static/favicon.ico"/>
     <link rel="index" title="Index" href="genindex.html" />
@@ -67,7 +68,21 @@
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -76,9 +91,10 @@
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -96,7 +112,7 @@
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <p class="caption">
+        <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Overview
  </span>
@@ -130,7 +146,7 @@
   </ul>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Guidance
  </span>
@@ -187,7 +203,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Resources
  </span>
@@ -195,7 +211,7 @@
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="learning.html">
-   Learning Resources
+   Learning resources
   </a>
  </li>
  <li class="toctree-l1">
@@ -206,92 +222,197 @@
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  <p>Book version 2021.9</p><a href='https://www.gov.uk/government/organisations/government-analysis-function' target='_blank'><img src='./_static/af_logo.png' alt='The Government Analysis Function logo' style='width:50%;'></a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
             
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/project_documentation.md"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/best-practice-and-impact/qa-of-code-guidance"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        <a class="issues-button"
-            href="https://github.com/best-practice-and-impact/qa-of-code-guidance/issues/new?title=Issue%20on%20page%20%2Fproject_documentation.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        <a class="edit-button" href="https://github.com/best-practice-and-impact/qa-of-code-guidance/edit/master/project_documentation.md"><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
-    </div>
-</div>
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div class="navbar_extra_footer">
+            <p>Book version 2022.0</p><a href='https://www.gov.uk/government/organisations/government-analysis-function' target='_blank'><img src='./_static/af_logo.png' alt='The Government Analysis Function logo' style='width:50%;'></a>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/best-practice-and-impact/qa-of-code-guidance"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/best-practice-and-impact/qa-of-code-guidance/issues/new?title=Issue%20on%20page%20%2Fproject_documentation.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/best-practice-and-impact/qa-of-code-guidance/edit/master/project_documentation.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Edit this page"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="headerbtn__text-container">suggest edit</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/project_documentation.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#readme">
    README
@@ -344,12 +465,11 @@
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
                 <h1>Project documentation</h1>
@@ -418,14 +538,15 @@
                     </div>
                 </div>
             </div>
-            
+            <main id="main-content" role="main">
+                
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="project-documentation">
-<h1>Project documentation<a class="headerlink" href="#project-documentation" title="Permalink to this headline">¶</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="project-documentation">
+<h1>Project documentation<a class="headerlink" href="#project-documentation" title="Permalink to this headline">#</a></h1>
 <p>Whether you’re developing a package or collaborating on a piece of analysis, documenting your project will makes it much easier for others to understand your goal and ways of working.</p>
-<div class="section" id="readme">
-<h2>README<a class="headerlink" href="#readme" title="Permalink to this headline">¶</a></h2>
+<section id="readme">
+<h2>README<a class="headerlink" href="#readme" title="Permalink to this headline">#</a></h2>
 <p>When working on a collaborative or open coding project, it’s good practice to describe an overview of your project in a README file.
 This allows users or developers to grasp the overall goal of your project.
 As well as a description of the project, it might include examples using your code or references to other associated projects.
@@ -439,16 +560,16 @@ This file can be any text type, including <code class="docutils literal notransl
 <li><p>Screenshot if your project has a graphical user interface</p></li>
 <li><p>Links to related projects</p></li>
 </ul>
-</div>
-<div class="section" id="contributing-guidance">
-<h2>Contributing guidance<a class="headerlink" href="#contributing-guidance" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="contributing-guidance">
+<h2>Contributing guidance<a class="headerlink" href="#contributing-guidance" title="Permalink to this headline">#</a></h2>
 <p>When collaborating, it is also useful to outline the standards used within your project.
 This might include particular packages that should used for certain tasks and guidance on the <a class="reference internal" href="core_programming.html#code-style"><span class="std std-ref">code style</span></a> used in the project.
 If you plan to have contributors from outside your organisation it is useful to include a code of conduct too.
 Please <a class="reference external" href="https://docs.github.com/en/github/building-a-strong-community/adding-a-code-of-conduct-to-your-project">see GitHub</a> for advice on creating a code of conduct.</p>
 <p>For an example, see the CONTRIBUTING file from our <a class="reference external" href="https://github.com/best-practice-and-impact/gptables/blob/master/CONTRIBUTING.md">gptables package</a>:</p>
 <div class="sphinx-tabs docutils container">
-<div aria-label="Tabbed content" role="tablist"><button aria-controls="panel-0-0-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-0-0-0" name="0-0" role="tab" tabindex="0">Markdown</button><button aria-controls="panel-0-0-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-0-0-1" name="0-1" role="tab" tabindex="-1">HTML</button></div><div aria-labelledby="tab-0-0-0" class="sphinx-tabs-panel" id="panel-0-0-0" name="0-0" role="tabpanel" tabindex="0"><div class="highlight-default notranslate"><div class="highlight"><pre><span></span># Contributing
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-0-0-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-0-0-0" name="0-0" role="tab" tabindex="0">Markdown</button><button aria-controls="panel-0-0-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-0-0-1" name="0-1" role="tab" tabindex="-1">HTML</button></div><div aria-labelledby="tab-0-0-0" class="sphinx-tabs-panel" id="panel-0-0-0" name="0-0" role="tabpanel" tabindex="0"><div class="highlight-default notranslate"><div class="highlight"><pre><span></span># Contributing
 
 When contributing to this repository, please first discuss the change you wish
 to make via issue, email, or any other method with the owners before making a change.
@@ -528,9 +649,9 @@ non-minor changes.</p></li>
 </div></div>
 <p>In this case we have outlined our standard practices for using version control on GitHub, the code style that we are using in the project and the review process that we follow.
 We have used the <a class="reference external" href="https://daringfireball.net/projects/markdown/syntax">Markdown</a> (<code class="docutils literal notranslate"><span class="pre">.md</span></code>) markup language for this document, which is formatted into HTML when viewed on our repository.</p>
-</div>
-<div class="section" id="user-desk-instructions">
-<h2>User desk instructions<a class="headerlink" href="#user-desk-instructions" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="user-desk-instructions">
+<h2>User desk instructions<a class="headerlink" href="#user-desk-instructions" title="Permalink to this headline">#</a></h2>
 <p>If your project is very user focussed for one particular task, for example developing a statistic production pipeline for other analysts to execute, it is very important that the code users understand how to appropriately run your code.</p>
 <p>These instructions should include:</p>
 <ul class="simple">
@@ -540,9 +661,9 @@ We have used the <a class="reference external" href="https://daringfireball.net/
 <li><p>What quality assurance has been carried out and what further quality assurance of outputs is required</p></li>
 <li><p>How to maintain your project (including how to update data sources)</p></li>
 </ul>
-</div>
-<div class="section" id="dependencies">
-<h2>Dependencies<a class="headerlink" href="#dependencies" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="dependencies">
+<h2>Dependencies<a class="headerlink" href="#dependencies" title="Permalink to this headline">#</a></h2>
 <p>The environment that your code runs in includes the machine, the operating system (Windows, Mac, Linux…), the programming language, and any external packages.
 It is important to record this information to ensure reproducibility.</p>
 <p>The simplest way to document which packages your code is dependent on, is to record them in a text file.
@@ -553,9 +674,9 @@ You can get a list of your installed python packages using <code class="docutils
 Packages are listed under the <code class="docutils literal notranslate"><span class="pre">Imports</span></code> key.
 You can get a list of your installed R packages using the <code class="docutils literal notranslate"><span class="pre">installed.packages()</span></code> function.</p>
 <p>Environment management tools, such as <a class="reference external" href="https://rstudio.github.io/renv/articles/renv.html"><code class="docutils literal notranslate"><span class="pre">renv</span></code></a> for R or <a class="reference external" href="https://github.com/pyenv/pyenv"><code class="docutils literal notranslate"><span class="pre">pyenv</span></code></a> for python, are very useful for keeping track of software and package versions used in a project.</p>
-</div>
-<div class="section" id="citation">
-<h2>Citation<a class="headerlink" href="#citation" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="citation">
+<h2>Citation<a class="headerlink" href="#citation" title="Permalink to this headline">#</a></h2>
 <p>For research or analytical code that is likely to be referenced by others, it can be helpful to provide a citation template.
 This can be included in your code repository as a <code class="docutils literal notranslate"><span class="pre">CITATION</span></code> file or part of your <code class="docutils literal notranslate"><span class="pre">README</span></code>.
 For example, the R package <code class="docutils literal notranslate"><span class="pre">ggplot2</span></code> provides the following:</p>
@@ -578,9 +699,9 @@ For example, the R package <code class="docutils literal notranslate"><span clas
 </div>
 <p>This might include multiple citations, if your project includes multiple datasets, pieces of code or outputs with their own <a class="reference external" href="https://en.wikipedia.org/wiki/Digital_object_identifier">DOI’s</a>.</p>
 <p>See this <a class="reference external" href="https://guides.github.com/activities/citable-code/">GitHub guide for more information on making your public code citable</a>.</p>
-</div>
-<div class="section" id="vignettes">
-<h2>Vignettes<a class="headerlink" href="#vignettes" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="vignettes">
+<h2>Vignettes<a class="headerlink" href="#vignettes" title="Permalink to this headline">#</a></h2>
 <p>Vignettes are a form of supplementary documentation, containing applied examples that demonstrate the intended use of the code in your project or package.
 Docstrings may contain examples applying individual functional units, while vignettes may show multiple units being used together.
 The term vignette is usually used with reference to R packages, for example this introduction to the <a class="reference external" href="https://cran.r-project.org/web/packages/dplyr/vignettes/dplyr.html"><code class="docutils literal notranslate"><span class="pre">dplyr</span></code> package</a> for data manipulation.
@@ -591,9 +712,9 @@ This can help users to understand how different code elements interact, and how 
 <p>Another good example is this vignette describing <a class="reference external" href="http://r-pkgs.had.co.nz/vignettes.html">how to design vignettes</a> in Rmarkdown.
 You can produce this type of documentation in any format, though Rmarkdown is particularly effectively at combining sections of code, code outputs and descriptive text.</p>
 <p>You might also consider providing examples in an interactive notebook, that users can run for themselves.</p>
-</div>
-<div class="section" id="versioning">
-<h2>Versioning<a class="headerlink" href="#versioning" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="versioning">
+<h2>Versioning<a class="headerlink" href="#versioning" title="Permalink to this headline">#</a></h2>
 <p>Documenting the version of your code provides distinct points of reference in the code’s development.
 Recording the version of code used for analysis is important for reproducing your work.
 When used in combination with <a class="reference internal" href="version_control.html"><span class="doc std std-doc">Version control</span></a>, versioning allows you to recover the exact code used to run your analysis and thus reproduce the same results.</p>
@@ -602,19 +723,21 @@ Following these rules also helps other users of your code to understand how chan
 Each level of version number indicates the extent of changes to the application programming interface (API) of your code, i.e. the part of the code that a user interacts with directly.
 Changes to the major version number indicate changes to the API that are not compatible with use of previous versions of the code.
 While changes is the minor and patch numbers indicate changes that are either compatible or have no effect on the use of the code, respectively.</p>
-<div class="figure align-default" id="semantic-versioning">
+<figure class="align-default" id="semantic-versioning">
 <a class="reference internal image-reference" href="_images/semantic_versioning.png"><img alt="_images/semantic_versioning.png" src="_images/semantic_versioning.png" style="width: 70%;" /></a>
-<p class="caption"><span class="caption-number">Fig. 5 </span><span class="caption-text"><a class="reference external" href="https://semver.org/">Semantic versioning</a></span><a class="headerlink" href="#semantic-versioning" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 5 </span><span class="caption-text"><a class="reference external" href="https://semver.org/">Semantic versioning</a></span><a class="headerlink" href="#semantic-versioning" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>You’ll see this, or a similar version numbering, on packages that you install for Python and R.</p>
 <p>Changes to this book don’t cause backwards-compatibility issues in the same sense as code.
 We’ve chosen to use a form of calender versioning (<a class="reference external" href="https://calver.org/">CalVer</a>).
 You’ll see the current version below the site’s table of contents, where the first four digits represent the year that latest changes were made.
 The incremental number following the full stop indicates how many versions of the guidance have been published in that year.
 As this guidance will change over time, this version number provides users with a reference for citing a specific state of the guidance.</p>
-</div>
-<div class="section" id="changelog">
-<h2>Changelog<a class="headerlink" href="#changelog" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="changelog">
+<h2>Changelog<a class="headerlink" href="#changelog" title="Permalink to this headline">#</a></h2>
 <p>A changelog records the major changes that have occurred to a project or package, between versioned releases of the code.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span># Changelog
 All notable changes to this project will be documented in this file.
@@ -642,9 +765,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 It can also document which parts of your code will no longer be supported in future version and which bugs in your code have been addressed.
 Your changelog can be in any format and should be associated with your code documentation, so that it is easy for users and other contributors to find.</p>
 <p><a class="reference external" href="https://keepachangelog.com/en/1.0.0/">keep a changelog</a> provides a simple but effective template for recording changes to your code.</p>
-</div>
-<div class="section" id="copyright-and-licenses">
-<h2>Copyright and Licenses<a class="headerlink" href="#copyright-and-licenses" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="copyright-and-licenses">
+<h2>Copyright and Licenses<a class="headerlink" href="#copyright-and-licenses" title="Permalink to this headline">#</a></h2>
 <p>Copyright indicates ownership of work.
 All material created by civil servants, ministers, government departments and their agencies are covered by <a class="reference external" href="https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/">Crown copyright</a>.
 It is not essential to include a copyright notice on your work, but doing so can help to avoid confusion around ownership.</p>
@@ -660,9 +783,9 @@ For example, an MIT LICENSE file might look like:</p>
 <p>The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.</p>
 <p>THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
 </div></blockquote>
-</div>
-<div class="section" id="open-source-your-code">
-<h2>Open source your code<a class="headerlink" href="#open-source-your-code" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="open-source-your-code">
+<h2>Open source your code<a class="headerlink" href="#open-source-your-code" title="Permalink to this headline">#</a></h2>
 <p>In government, we <a class="reference external" href="https://www.gov.uk/service-manual/service-standard/point-12-make-new-source-code-open">support and promote open source</a> whenever possible.
 <a class="reference external" href="https://opensource.com/resources/what-open-source">Open source</a> software is software with source code that anyone can freely inspect, modify and enhance.
 As a government analyst, you should aim to make all new source code open, unless justification can be provided for withholding part of your source code.</p>
@@ -682,8 +805,8 @@ As a government analyst, you should aim to make all new source code open, unless
 </ul>
 <p>Please see the <a class="reference external" href="https://www.gov.uk/government/publications/open-source-guidance/when-code-should-be-open-or-closed">Government Data Service (GDS) guidance</a> for help deciding when code should be open or closed.
 Security concerns for coding in the open are also addressed in further <a class="reference external" href="https://www.gov.uk/government/publications/open-source-guidance/security-considerations-when-coding-in-the-open">GDS guidance</a>.</p>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -707,9 +830,11 @@ Security concerns for coding in the open are also addressed in further <a class=
 
               </div>
               
-            
-                <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="code_documentation.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -725,24 +850,28 @@ Security concerns for coding in the open are also addressed in further <a class=
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-            
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-  <p>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    <div class="extra_footer">
+      <p>Best Practice & Impact division, Office for National Statistics</p><p>This document is very young, please help use to make it grow by providing any feedback by <a href='mailto:gsshelp@statistics.gov.uk'>email</a> or via the <a href='https://github.com/best-practice-and-impact/qa-of-code-guidance'>GitHub repository</a>.
+    </div>
+</p>
+        </footer>
+    </div>
     
-      <div class="extra_footer">
-        <p>Best Practice & Impact division, Office for National Statistics</p><p>This document is very young, please help use to make it grow by providing any feedback by <a href='mailto:gsshelp@statistics.gov.uk'>email</a> or via the <a href='https://github.com/best-practice-and-impact/qa-of-code-guidance'>GitHub repository</a>.
-      </div>
-  </p>
-</footer>
-</main>
+</div>
 
 
       </div>
     </div>
   
-  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
 
   </body>
 </html>

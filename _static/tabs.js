@@ -16,8 +16,9 @@ window.addEventListener("DOMContentLoaded", () => {
     tabList.addEventListener("keydown", keyTabs);
   });
 
+  // Restore group tab selection from session
   const lastSelected = session.getItem('sphinx-tabs-last-selected');
-  if (lastSelected != null) selectGroupedTabs(lastSelected);
+  if (lastSelected != null) selectNamedTabs(lastSelected);
 });
 
 /**
@@ -56,39 +57,67 @@ function keyTabs(e) {
  * @param  {Node} e the element that was clicked
  */
 function changeTabs(e) {
-  const target = e.target;
-  const selected = target.getAttribute("aria-selected") === "true";
-  const positionBefore = target.parentNode.getBoundingClientRect().top;
+  // Use this instead of the element that was clicked, in case it's a child
+  const notSelected = this.getAttribute("aria-selected") === "false";
+  const positionBefore = this.parentNode.getBoundingClientRect().top;
+  const notClosable = !this.parentNode.classList.contains("closeable");
 
-  deselectTabset(target);
+  deselectTabList(this);
 
-  if (!selected) {
-    selectTab(target);
-    const name = target.getAttribute("name");
-    selectGroupedTabs(name, target.id);
+  if (notSelected || notClosable) {
+    selectTab(this);
+    const name = this.getAttribute("name");
+    selectNamedTabs(name, this.id);
 
-    if (target.classList.contains("group-tab")) {
+    if (this.classList.contains("group-tab")) {
       // Persist during session
       session.setItem('sphinx-tabs-last-selected', name);
     }
   }
 
-  const positionAfter = target.parentNode.getBoundingClientRect().top;
+  const positionAfter = this.parentNode.getBoundingClientRect().top;
   const positionDelta = positionAfter - positionBefore;
   // Scroll to offset content resizing
   window.scrollTo(0, window.scrollY + positionDelta);
 }
 
-function selectTab(target) {
-  target.setAttribute("aria-selected", true);
+/**
+ * Select tab and show associated panel.
+ * @param  {Node} tab tab to select
+ */
+function selectTab(tab) {
+  tab.setAttribute("aria-selected", true);
 
   // Show the associated panel
   document
-    .getElementById(target.getAttribute("aria-controls"))
+    .getElementById(tab.getAttribute("aria-controls"))
     .removeAttribute("hidden");
 }
 
-function selectGroupedTabs(name, clickedId=null) {
+/**
+ * Hide the panels associated with all tabs within the
+ * tablist containing this tab.
+ * @param  {Node} tab a tab within the tablist to deselect
+ */
+function deselectTabList(tab) {
+  const parent = tab.parentNode;
+  const grandparent = parent.parentNode;
+
+  Array.from(parent.children)
+  .forEach(t => t.setAttribute("aria-selected", false));
+
+  Array.from(grandparent.children)
+    .slice(1)  // Skip tablist
+    .forEach(panel => panel.setAttribute("hidden", true));
+}
+
+/**
+ * Select grouped tabs with the same name, but no the tab
+ * with the given id.
+ * @param  {Node} name name of grouped tab to be selected
+ * @param  {Node} clickedId id of clicked tab
+ */
+function selectNamedTabs(name, clickedId=null) {
   const groupedTabs = document.querySelectorAll(`.sphinx-tabs-tab[name="${name}"]`);
   const tabLists = Array.from(groupedTabs).map(tab => tab.parentNode);
 
@@ -99,22 +128,18 @@ function selectGroupedTabs(name, clickedId=null) {
       if (clickedTab === null ) {
         // Select first tab with matching name
         const tab = tabList.querySelector(`.sphinx-tabs-tab[name="${name}"]`);
-        deselectTabset(tab);
+        deselectTabList(tab);
         selectTab(tab);
       }
     })
 }
 
-function deselectTabset(target) {
-  const parent = target.parentNode;
-  const grandparent = parent.parentNode;
-
-  // Hide all tabs in current tablist, but not nested
-  Array.from(parent.children)
-  .forEach(t => t.setAttribute("aria-selected", false));
-
-  // Hide all associated panels
-  Array.from(grandparent.children)
-    .slice(1)  // Skip tablist
-    .forEach(p => p.setAttribute("hidden", true));
+if (typeof exports === 'undefined') {
+  exports = {};
 }
+
+exports.keyTabs = keyTabs;
+exports.changeTabs = changeTabs;
+exports.selectTab = selectTab;
+exports.deselectTabList = deselectTabList;
+exports.selectNamedTabs = selectNamedTabs;
