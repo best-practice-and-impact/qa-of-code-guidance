@@ -242,7 +242,7 @@ To summarise:
 
 Scripts are simply files containing code that you would like to execute. In Python you commonly have a `main.py` script that orchestrates part of your codebase to achieve an outcome. In machine-learning projects, you sometimes have `train.py` and `test.py`, which are scripts that train the model and produce performance metrics.
 
-Scripts, if written well, are reproducible. In languages like R and Python, when executed from the command line using commands like `python main.py` they are read top to bottom and executed line by line. This is in contrast to running code in an interactive interpreter or notebook, where the human has control of the order of execution. Manually executing individual lines of code allows for a slew of errors when things are run in the wrong order.
+Scripts, if written well, are reproducible. In languages like R and Python, when executed from the command line using commands like `python main.py` or `Rscript main.R` they are read top to bottom and executed line by line. This is in contrast to running code in an interactive interpreter or notebook, where the human has control of the order of execution. Manually executing individual lines of code allows for a slew of errors when things are run in the wrong order.
 
 Ultimately for code pipelines you will need to have some way of running your code - the humble script is the primary way of orchestrating your functions and classes in a pipeline fashion.
 
@@ -263,20 +263,48 @@ To summarise:
 
 Simply put, modules are scripts that contain functions that you want to use in other scripts. As you write your code and find opportunities to create classes or functions that reduce repetition and promote easier code comprehension, you might decide that you want these functions to sit outside of your main pipeline script. This is where modules come in, to separate reusable code into logical groups.
 
-Consider a project where an analyst has created one large data analysis script. Upon reflection, they decide to split the logic from their pipeline into groups of functions relating to 'data processing', 'data modelling' and 'result presentation'. They then create a file to contain each of these groups of functions: `processing.py`, `modelling.py` and `reporting.py`. They decide that they want to have a pipeline script called `main`, but they want to keep this script readable and simple.  Their directory now looks something similar to:
+Consider a project where an analyst has created one large data analysis script. Upon reflection, they decide to split the logic from their pipeline into groups of functions relating to 'data processing', 'data modelling' and 'result presentation'. They then create a file to contain each of these groups of functions: `processing.py`, `modelling.py` and `reporting.py`. They decide that they want to have a pipeline script called `main`, but they want to keep this script readable and simple.  In R, it's best to also use an R project file. Working within a project allows you to use relative file paths and avoid the need to refer to specific script locations. Their directory now looks something similar to:
+
+````{tabs}
+
+``` {tab} Python
+
+    project
+    | main.py 
+    | modelling.py 
+    | processing.py 
+    | reporting.py 
+    | README.md 
+    | project.Rproj
+```
+
+``` {tab} R
+
+    project 
+    | main.R 
+    | modelling.R 
+    | processing.R 
+    | reporting.R 
+    | README.md
+    | project.rproj 
+```
+````
+
+````{warning}
+R projects are a really useful and simple way to organise your projects better. However, be sure to check your settings. R projects save history and data by default. This is not a good idea if you're using git, as it means data can easily make its way into the version history. To disable these options in RStudio, open the project options menu in the tools tab. In the menu, set the options "save workspace to .RDATA on exit" and "Always save history" to "No". Alternatively, you can edit the .Rproj file in an editor of your choice by adding these settings:
 
 ```
-project
-| main.py
-| modelling.py
-| processing.py
-| reporting.py
-| README.md
+SaveWorkspace: No
+AlwaysSaveHistory: No
 ```
 
-They then import the relevant functions into `main.py` from their modules as follows:
+````
 
-```python
+They then import the relevant functions into the main script from their modules as follows:
+
+````{tabs}
+
+```{code-tab} py
 import pandas as pd
 
 from modelling import predict_results
@@ -290,43 +318,58 @@ report = generate_report(results)
 export(report)
 ```
 
-```{note}
-This is a minimal example of a pipeline script, illustrating how you might import reusable functions from other modules. This `main.py` script lacks the ability to configure things like the path to the input data. This requires users to manually alter file paths in the code, which is highly discouraged.
-```
+```{code-tab} r R
+# These relative file paths only work while working within an R project
+source("modelling.R")
+source("processing.R")
+source("reporting.R")
 
-````{admonition} A step further
-Another step that can be taken to introduce clarity is to further wrap these modules into their own folder like so:
-
-```
-project
-| library
-  | __init__.py
-  | modelling.py
-  | processing.py
-  | reporting.py
-| LICENSE
-| main.py
-| README.md
-```
-
-And the expected python code then can be structured as follows:
-
-```python
-import pandas as pd
-
-# Import required modules from functions
-from library.modelling import predict_results
-from library.processing import clean, preprocess
-from library.reporting import generate_report, export
-
-data = pd.read_csv("data/path.csv")
-data = preprocess(clean(data))
-results = predict_results(data)
-report = generate_report(results)
+data <- read.csv("data/path.csv")
+data <- preprocess(clean(data))
+results <- predict_results(data)
+report <- generate_report(results)
 export(report)
 ```
-
 ````
+
+```{note}
+This is a minimal example of a pipeline script, illustrating how you might import reusable functions from other modules. These main scripts lack the ability to configure things like the path to the input data. This requires users to manually alter file paths in the code, which is highly discouraged.
+```
+
+`````{admonition} A step further
+Another step that can be taken to improve clarity is to further wrap these modules into their own folder like so:
+
+
+```` {tabs}
+
+``` {tab} Python
+
+    project
+    | library
+      | __init__.py
+      | modelling.py
+      | processing.py
+      | reporting.py
+    | LICENSE
+    | main.py
+    | README.md
+```
+
+``` {tab} R
+
+    project
+    | R
+      | modelling.R
+      | processing.R
+      | reporting.R
+    | LICENSE
+    | main.R
+    | README.md
+    | project.Rproj
+```
+````
+
+`````
 
 (packages)=
 
