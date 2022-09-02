@@ -1,8 +1,8 @@
 # Quality assurance of code for analysis and research
 
-This Government Analysis Function and Government Statistical Service (GSS) guidance is produced by the Quality and Improvement team in the Methods and Quality directorate of the [Office for National Statistics](https://www.ons.gov.uk).
+This Government Analysis Function (AF) and Government Statistical Service (GSS) guidance, also known as the Duck Book, is produced by the Quality and Improvement team in the Methods and Quality directorate of the [Office for National Statistics](https://www.ons.gov.uk).
 
-The guidance has been written to support analysts in government who use coding in their work. This includes those who produce statistics, carry out modelling or apply data science.
+The guidance has been written to support analysts in government who use coding in their work. This includes those who produce statistics, carry out modelling or apply data science. 
 
 This guidance is a living document, so will be continually updated. You can refer to the current version of the guidance by its version number, found below the site table of contents. You may notice "Todo" notes throughout the guidance. These indicate where we plan to add additional content in the near future. We are extremely grateful for any feedback that you are able to provide on existing and future content.
 
@@ -20,7 +20,7 @@ You can find us on:
 
 The following structure can be used to reference the current version of the book:
 
-> UK Government Analytical Community. (2020). Quality assurance of code for analysis and research (version 2022.0). Office for National Statistics, Quality and Improvement division: https://best-practice-and-impact.github.io/qa-of-code-guidance/
+> UK Government Analytical Community. (2020). Quality assurance of code for analysis and research (version 2022.2). Office for National Statistics, Quality and Improvement division: https://best-practice-and-impact.github.io/qa-of-code-guidance/
 
 ## How to get the most out of the book
 

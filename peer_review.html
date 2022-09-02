@@ -28,9 +28,9 @@
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="_static/tabs.css" />
     <link rel="stylesheet" type="text/css" href="_static/logo.css" />
-    <link rel="stylesheet" type="text/css" href="_static/accessibility.css" />
     <link rel="stylesheet" type="text/css" href="_static/admonitions.css" />
     <link rel="stylesheet" type="text/css" href="_static/markdown_within_tabs.css" />
+    <link rel="stylesheet" type="text/css" href="_static/accessibility.css" />
     <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -157,8 +157,13 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="core_programming.html">
-   Core programming practices
+  <a class="reference internal" href="modular_code.html">
+   Modular code
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="readable_code.html">
+   Readable code
   </a>
  </li>
  <li class="toctree-l1">
@@ -226,7 +231,7 @@ const thebe_selector_output = ".output, .cell_output"
              <!-- To handle the deprecated key -->
             
             <div class="navbar_extra_footer">
-            <p>Book version 2022.0</p><a href='https://www.gov.uk/government/organisations/government-analysis-function' target='_blank'><img src='./_static/af_logo.png' alt='The Government Analysis Function logo' style='width:50%;'></a>
+            <p>Book version 2022.2</p><a href='https://www.gov.uk/government/organisations/government-analysis-function' target='_blank'><img src='./_static/af_logo.png' alt='The Government Analysis Function logo' style='width:50%;'></a>
             </div>
             
         </div>
@@ -325,7 +330,7 @@ title="Open an issue"
       </li>
       
       <li>
-        <a href="https://github.com/best-practice-and-impact/qa-of-code-guidance/edit/master/peer_review.md"
+        <a href="https://github.com/best-practice-and-impact/qa-of-code-guidance/edit/master/book/peer_review.md"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -525,7 +530,7 @@ title="Print to PDF"
 <p>Nick Macphereson, former Permanent Secretary to the Treasury</p>
 <p><a class="reference external" href="https://www.gov.uk/government/publications/the-aqua-book-guidance-on-producing-quality-analysis-for-government">The Aqua book</a> tells us that quality assurance of our analysis should be proportional to the complexity and business risk of the analysis. This means that both internal and external peer review may be required to adequately assure your analysis. Particularly if your analysis uses novel or complex techniques, where comparison with other analyses cannot be used to challenge your results, or if the analysis is business critical.</p>
 <p>Most analysis stems from some form of customer engagement. Throughout design, implementation and review of analysis we must continue to assess whether our analysis is fit for purpose: Does it meet the needs of the customer? Your project should document the scope of your analysis and any requirements, to make this assessment as easy as possible. Regular contact with customers helps to keep these requirements up to date. Additional documentation that supports the auditability of your analysis includes assumption logs, technical reports describing the analysis and documentation on any verification or validation that has already been carried out.</p>
-<p>As we discussed in <a class="reference internal" href="core_programming.html"><span class="doc std std-doc">Core programming practices</span></a>, good quality code is easier to read, understand and maintain. Peer review improves the quality of our code through the constructive challenges from the reviewer. A reviewer might do this by suggesting alternative ways to represent your analysis or they may ask questions to check the reasons behind decisions in your coding approach and analysis as a whole.</p>
+<p>As we discussed in <a class="reference internal" href="readable_code.html"><span class="doc std std-doc">Readable code</span></a>, good quality code is easier to read, understand and maintain. Peer review improves the quality of our code through the constructive challenges from the reviewer. A reviewer might do this by suggesting alternative ways to represent your analysis or they may ask questions to check the reasons behind decisions in your coding approach and analysis as a whole.</p>
 <p>Moreover, effective peer review requires and, therefore, enforces reproducibility. A key aspect of review is checking that the same results are acquired when running your code with the same input data. Assurance that your analysis can be reproduced increases the trust in your results.</p>
 <p>Another benefit, particularly of internal review, is knowledge transfer. Both the reviewer and reviewee are exposed to new ideas. The reviewer must gain a low-level understanding of what the code is doing, in order to validate that it works as expected. This may provide your team members with the understanding required to use and maintain your code in the future.</p>
 </section>

@@ -28,9 +28,9 @@
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="_static/tabs.css" />
     <link rel="stylesheet" type="text/css" href="_static/logo.css" />
-    <link rel="stylesheet" type="text/css" href="_static/accessibility.css" />
     <link rel="stylesheet" type="text/css" href="_static/admonitions.css" />
     <link rel="stylesheet" type="text/css" href="_static/markdown_within_tabs.css" />
+    <link rel="stylesheet" type="text/css" href="_static/accessibility.css" />
     <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -47,6 +47,7 @@
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="_static/togglebutton.js"></script>
+    <script src="_static/tabs.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -59,7 +60,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Code documentation" href="code_documentation.html" />
-    <link rel="prev" title="Core programming practices" href="core_programming.html" />
+    <link rel="prev" title="Readable code" href="readable_code.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en">
     
@@ -157,8 +158,13 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="core_programming.html">
-   Core programming practices
+  <a class="reference internal" href="modular_code.html">
+   Modular code
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="readable_code.html">
+   Readable code
   </a>
  </li>
  <li class="toctree-l1 current active">
@@ -226,7 +232,7 @@ const thebe_selector_output = ".output, .cell_output"
              <!-- To handle the deprecated key -->
             
             <div class="navbar_extra_footer">
-            <p>Book version 2022.0</p><a href='https://www.gov.uk/government/organisations/government-analysis-function' target='_blank'><img src='./_static/af_logo.png' alt='The Government Analysis Function logo' style='width:50%;'></a>
+            <p>Book version 2022.2</p><a href='https://www.gov.uk/government/organisations/government-analysis-function' target='_blank'><img src='./_static/af_logo.png' alt='The Government Analysis Function logo' style='width:50%;'></a>
             </div>
             
         </div>
@@ -325,7 +331,7 @@ title="Open an issue"
       </li>
       
       <li>
-        <a href="https://github.com/best-practice-and-impact/qa-of-code-guidance/edit/master/project_structure.md"
+        <a href="https://github.com/best-practice-and-impact/qa-of-code-guidance/edit/master/book/project_structure.md"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -602,23 +608,38 @@ Each project should be kept in its own folder, with a descriptive name.
 Most analysis will have an ingest or input stage, a processing stage, and a reporting stage.
 You should use folders within each project to separate raw data, documentation, source code (or <code class="docutils literal notranslate"><span class="pre">src</span></code>) and results.</p>
 <p>A typical analytical project folder might look like:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">|--</span> <span class="n">README</span><span class="o">.</span><span class="n">md</span>
-<span class="o">|--</span> <span class="n">requirements</span><span class="o">.</span><span class="n">txt</span>
-<span class="o">|--</span> <span class="n">data</span><span class="o">/</span>
-<span class="o">|</span>   <span class="o">--</span> <span class="n">incident_counts</span><span class="o">.</span><span class="n">csv</span>
-<span class="o">|--</span> <span class="n">docs</span><span class="o">/</span>
-<span class="o">|</span>   <span class="o">--</span> <span class="n">notebook</span><span class="o">.</span><span class="n">md</span>
-<span class="o">|</span>   <span class="o">--</span> <span class="n">manuscript</span><span class="o">.</span><span class="n">md</span>
-<span class="o">|</span>   <span class="o">--</span> <span class="n">changelog</span><span class="o">.</span><span class="n">md</span>
-<span class="o">|--</span> <span class="n">results</span><span class="o">/</span>
-<span class="o">|</span>   <span class="o">--</span> <span class="n">incident_counts_by_age</span><span class="o">.</span><span class="n">csv</span>
-<span class="o">|</span>   <span class="o">--</span> <span class="n">incidents_over_time</span><span class="o">.</span><span class="n">svg</span>
-<span class="o">|--</span> <span class="n">src</span><span class="o">/</span>
-<span class="o">|</span>   <span class="o">--</span> <span class="n">data_cleaning</span><span class="o">.</span><span class="n">py</span>
-<span class="o">|</span>   <span class="o">--</span> <span class="n">main_analysis</span><span class="o">.</span><span class="n">py</span>
-<span class="o">|</span>   <span class="o">--</span> <span class="n">generate_plots</span><span class="o">.</span><span class="n">py</span>
-</pre></div>
-</div>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-0-0-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-0-0-0" name="0-0" role="tab" tabindex="0">Python</button><button aria-controls="panel-0-0-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-0-0-1" name="0-1" role="tab" tabindex="-1">R</button></div><div aria-labelledby="tab-0-0-0" class="sphinx-tabs-panel" id="panel-0-0-0" name="0-0" role="tabpanel" tabindex="0"><p>|– <a class="reference external" href="http://README.md">README.md</a>
+|– requirements.txt
+|– data/
+|   – incident_counts.csv
+|– docs/
+|   – <a class="reference external" href="http://notebook.md">notebook.md</a>
+|   – <a class="reference external" href="http://manuscript.md">manuscript.md</a>
+|   – <a class="reference external" href="http://changelog.md">changelog.md</a>
+|– results/
+|   – incident_counts_by_age.csv
+|   – incidents_over_time.svg
+|– src/
+|   – data_cleaning.py
+|   – main_analysis.py
+|   – generate_plots.py</p>
+</div><div aria-labelledby="tab-0-0-1" class="sphinx-tabs-panel" hidden="true" id="panel-0-0-1" name="0-1" role="tabpanel" tabindex="0"><p>|– <a class="reference external" href="http://README.md">README.md</a>
+|– project.Rproj
+|– data/
+|   – incident_counts.csv
+|– docs/
+|   – <a class="reference external" href="http://notebook.md">notebook.md</a>
+|   – <a class="reference external" href="http://manuscript.md">manuscript.md</a>
+|   – <a class="reference external" href="http://changelog.md">changelog.md</a>
+|– results/
+|   – incident_counts_by_age.csv
+|   – incidents_over_time.svg
+|– R/
+|   – data_cleaning.R
+|   – main_analysis.R
+|   – generate_plots.R</p>
+</div></div>
 <p>Where you have written code that is used by multiple projects, this code should reside in its own separate folder.
 This will allow you to record changes to your code independent of other dependencies of each project.</p>
 </section>
@@ -703,11 +724,11 @@ Developing your project using a version controlled repository has significant be
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="core_programming.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="readable_code.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Core programming practices</p>
+            <p class="prev-next-title">Readable code</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="code_documentation.html" title="next page">

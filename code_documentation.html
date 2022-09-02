@@ -28,9 +28,9 @@
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="_static/tabs.css" />
     <link rel="stylesheet" type="text/css" href="_static/logo.css" />
-    <link rel="stylesheet" type="text/css" href="_static/accessibility.css" />
     <link rel="stylesheet" type="text/css" href="_static/admonitions.css" />
     <link rel="stylesheet" type="text/css" href="_static/markdown_within_tabs.css" />
+    <link rel="stylesheet" type="text/css" href="_static/accessibility.css" />
     <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -158,8 +158,13 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="core_programming.html">
-   Core programming practices
+  <a class="reference internal" href="modular_code.html">
+   Modular code
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="readable_code.html">
+   Readable code
   </a>
  </li>
  <li class="toctree-l1">
@@ -227,7 +232,7 @@ const thebe_selector_output = ".output, .cell_output"
              <!-- To handle the deprecated key -->
             
             <div class="navbar_extra_footer">
-            <p>Book version 2022.0</p><a href='https://www.gov.uk/government/organisations/government-analysis-function' target='_blank'><img src='./_static/af_logo.png' alt='The Government Analysis Function logo' style='width:50%;'></a>
+            <p>Book version 2022.2</p><a href='https://www.gov.uk/government/organisations/government-analysis-function' target='_blank'><img src='./_static/af_logo.png' alt='The Government Analysis Function logo' style='width:50%;'></a>
             </div>
             
         </div>
@@ -326,7 +331,7 @@ title="Open an issue"
       </li>
       
       <li>
-        <a href="https://github.com/best-practice-and-impact/qa-of-code-guidance/edit/master/code_documentation.md"
+        <a href="https://github.com/best-practice-and-impact/qa-of-code-guidance/edit/master/book/code_documentation.md"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -574,7 +579,7 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div></div>
-<p>Comments that describe exactly <strong>what</strong> is occurring in the code, as above, are often not necessary. They may be redundant, if <a class="reference internal" href="core_programming.html#naming"><span class="std std-ref">good naming practices</span></a> are followed to self-document the steps that occur in your code. For a more detailed description of <strong>what</strong> the code does, the developer can also read more appropriate forms of documentation (see <a class="reference internal" href="#docstrings"><span class="std std-ref">docstrings</span></a> below).</p>
+<p>Comments that describe exactly <strong>what</strong> is occurring in the code, as above, are often not necessary. They may be redundant, if <a class="reference internal" href="readable_code.html#naming"><span class="std std-ref">good naming practices</span></a> are followed to self-document the steps that occur in your code. For a more detailed description of <strong>what</strong> the code does, the developer can also read more appropriate forms of documentation (see <a class="reference internal" href="#docstrings"><span class="std std-ref">docstrings</span></a> below).</p>
 <p>If it is difficult to understand your code without comments, this can indicate that your code is overly complex and might benefit from being broken down, or ‘refactored’, into smaller units. That said, sometimes you will be faced with functions and classes that are complex for a reason. Stopping to reflect on why your documentation is so large is a good prompt to consider whether refactoring is in order.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
