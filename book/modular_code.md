@@ -58,7 +58,7 @@ To summarise:
 
 Classes are fundamental parts of [object-orientated programming (OOP)](https://en.wikipedia.org/wiki/Object-oriented_programming). They create an association between data (attributes of the class) and logic (methods of the class). As you will see in the examples below, classes can be useful when representing real objects in our code.
 
-Although classes exist in R, [writing custom classeshttps://adv-r.hadley.nz/oo.html]() is less common than it is in Python (and other OOP enabling languages). Because of this, the following sub-section will focus primarily on Python classes. 
+Although classes exist in R, [writing custom classes](https://adv-r.hadley.nz/oo.html) is less common than it is in Python (and other OOP enabling languages). Because of this, the following sub-section will focus primarily on Python classes. 
 
 With a more complex system, OOP can help to reduce complexity by hiding low-level details from users, such as an internal state.
 
