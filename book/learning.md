@@ -71,9 +71,14 @@ Please note that learning resources from non-government training providers (i.e.
 
 * [Introduction to Unit Testing in Python and R](https://learninghub.ons.gov.uk/enrol/index.php?id=539)
 
+## Making software accessible
+
+* [A11Y Project software, books and tools](https://www.a11yproject.com/resources/)
+
 
 ## Reproducible Analytical Pipelines
 
 * [GSS RAP Overview](https://gss.civilservice.gov.uk/reproducible-analytical-pipelines/)
 * [RAP Champion Network](https://gss.civilservice.gov.uk/about-us/champion-networks/reproducible-analytical-pipeline-rap-champions/#more-information-about-rap-champions)
 * [ONS Data Science Campus RAP learning materials](https://github.com/datasciencecampus/gov-uk-rap-materials)
+
