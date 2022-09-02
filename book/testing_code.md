@@ -259,7 +259,7 @@ If the code changes, the tests may fail but test functions should not break.
 Good tests describe what it is they are testing. 
 They do this by using good naming practices within the test code. 
 A good test suite should tell a story - given this data, having run this function, we expect this output. 
-Tests should follow the relevant practices outlined in [core programming practices](./core_programming).
+Tests should follow the relevant practices outlined in [readable code](./readable_code).
 
 The story told in a testing suite helps developers understand what code is meant to do. 
 By defining expected outputs from given inputs, developers can understand the use of a particular piece of code. 
