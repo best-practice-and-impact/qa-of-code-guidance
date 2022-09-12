@@ -4,7 +4,7 @@ This section is aimed at those who manage analysts in government or act as produ
 
 Analytical managers should not need an in-depth understanding of the code produced by their team. However, they should be able to asses whether adequate quality assurance is being applied to the development of the analysis.
 
-For a better understanding of the tools that your team use for analysis, you might look at the [Awareness of Coding Tools](https://learninghub.ons.gov.uk/enrol/index.php?id=530) course on th GSS Learning Hub.
+For a better understanding of the tools that your team use for analysis, you might look at the [Awareness of Coding Tools](https://learninghub.ons.gov.uk/enrol/index.php?id=530) course on the GSS Learning Hub.
 
 ## Questions around quality assurance
 
@@ -52,7 +52,7 @@ The practices outlined below should be applied proportionately to the business r
 ### How has peer review been done?
 
 * Skilled colleagues should conduct internal peer reviews of the code.
-* If the product is high risk an external peer review should also be conducted.
+* If the product is high risk, an external peer review should also be conducted.
 * Peer review should follow a standard procedure.
 
 ### How have you kept track of who made changes and for which reasons?
@@ -80,10 +80,16 @@ The practices outlined below should be applied proportionately to the business r
 * It can be difficult to run code on other systems when dependencies are not documented.
 * Documenting dependencies allows others to reproduce the analysis more easily.
 
+### How can we further improve the quality of the code?
+
+* Code quality should improve over time, as your team learn more about good practices. They should consider which practices could be applied next to improve the code.
+* You should review training needs in your team and allow time for continous personal development of these practices.
+
 ### Which other systems have you run this on?
 
 * Code should not be dependent on a specific computer to run. Running it on a colleague's system can help to check this. 
 * Container systems, like Docker, help to create reproducible environments to run code.
+
 ### How would we do a dual run?
 
 * For the highest risk analysis, the program should be written twice separately or with different tools.
