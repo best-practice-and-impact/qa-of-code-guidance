@@ -1,18 +1,20 @@
-- file: intro
-
-- part: Overview
+format: jb-book
+root: intro
+parts:
+- caption: Overview
   chapters:
   - file: checklists
     sections:
-      - file: checklist_lower
-      - file: checklist_moderate
-      - file: checklist_higher
+    - file: checklist_lower
+    - file: checklist_moderate
+    - file: checklist_higher
   - file: managers_guide
 
-- part: Guidance
+- caption: Guidance
   chapters:
   - file: principles
-  - file: core_programming
+  - file: modular_code
+  - file: readable_code
   - file: project_structure
   - file: code_documentation
   - file: project_documentation
@@ -21,8 +23,7 @@
   - file: data
   - file: peer_review
   - file: testing_code
-
-- part: Resources
+- caption: Resources
   chapters:
   - file: learning
   - file: tools
