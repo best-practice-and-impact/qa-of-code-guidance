@@ -2,9 +2,16 @@
 
 This section is aimed at those who manage analysts in government or act as product owners for analytical code.
 
-Analytical managers should not need an in-depth understanding of the code produced by their team. However, they should be able to asses whether adequate quality assurance is being applied to the development of the analysis.
+Learning from previous projects, we've found that management of reproducible analytical pipeline (RAP) projects requires: 
+* Intention to transform and improve the quality of the wider business process around the project, not just automating an existing process. 
+* Committed, skilled resource for the duration of the project and for ongoing maintenance for the life span of the product. 
+* Motivation for the project and personal development from those working on the project. 
+* Having appropriate tools available for the development and deployment of the project. 
+* A plan for requirement collection and transitioning the product into business as usual. 
 
-For a better understanding of the tools that your team use for analysis, you might look at the [Awareness of Coding Tools](https://learninghub.ons.gov.uk/enrol/index.php?id=530) course on the GSS Learning Hub.
+It is common for RAP transformation to identify quality issues in the current process. This should be seen as an opportunity to improve the quality of the process.
+
+Analytical managers should not need an in-depth understanding of the code produced by their team. However, they should be able to asses whether adequate quality assurance is being applied to the development of the analysis.
 
 ## Questions around quality assurance
 
@@ -18,7 +25,6 @@ The practices outlined below should be applied proportionately to the business r
 * The analysis tools that your team use should have some rationale for being chosen.
 * Users should be consulted throughout the development process.
 * The program should be maintainable if it will be re-used.
-
 
 ### What happens when the analysis fails to run?
 
@@ -95,3 +101,7 @@ The practices outlined below should be applied proportionately to the business r
 * For the highest risk analysis, the results of your analysis should be compared from two independent calculations (i.e. one from another tool or software).
 * Where possible, outputs should be compared between analysis using a variety of realistic inputs.
 * You may also wish to parallel run the new analysis system with a legacy approach, to quantify changes or improvements to the analysis.
+
+# Other resources
+
+For a better understanding of the tools that your team use for analysis, you might look at the [Awareness of Coding Tools](https://learninghub.ons.gov.uk/enrol/index.php?id=530) course on the GSS Learning Hub.
