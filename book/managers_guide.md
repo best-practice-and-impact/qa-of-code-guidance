@@ -2,7 +2,7 @@
 
 This section is aimed at those who manage analysts in government or act as product owners for analytical code.
 
-Learning from previous projects, we've found that management of reproducible analytical pipeline (RAP) projects requires: 
+Learning from previous projects, we've found that successful reproducible analytical pipeline (RAP) projects require: 
 * Intention to transform and improve the quality of the wider business process around the project, not just automating an existing process. 
 * Committed, skilled resource for the duration of the project and for ongoing maintenance for the life span of the product. 
 * Motivation for the project and personal development from those working on the project. 
