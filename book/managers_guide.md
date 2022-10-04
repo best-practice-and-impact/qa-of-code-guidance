@@ -1,4 +1,4 @@
-# Managers guide
+# Managing analytical code development
 
 This section is aimed at those who manage data analysis/science/engineering work in government or those acting as product owners for analytical products.
 
