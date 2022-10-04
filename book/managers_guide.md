@@ -15,7 +15,7 @@ It is common for this kind of transformation to identify quality issues in the c
 
 The rest of this page describes the benefits of doing analysis as code and aims to help you ensure that your team are applying the good quality assurance practices outlined in the wider [Quality assurance of code for analysis and research guidance](https://best-practice-and-impact.github.io/qa-of-code-guidance/intro.html). Code that applies these good practices are refered to as reproducible analytical pipelines (RAP).
 
-Analysis team managers should not need an in-depth understanding of the code produced by their team. However, they should be able to asses whether adequate quality assurance is being applied to the development of the analysis.
+Analysis team managers should not need an in-depth understanding of the code produced by their team. However, they should be confident that the approach the team has taken is appropriate given the user need, and that proportionate quality assurance is being applied to the development and running of the analysis.
 
 ## Analysis as code is beneficial
 
@@ -36,7 +36,7 @@ The practices outlined below should be applied proportionately to the business r
 ### Why have your chosen to do things this way?
 
 * The methodology and data should be suitable for the question being asked.
-* Your team should be using open-source analysis tools, with a reason for each given tool being chosen.
+* Your team should be using open-source analysis tools. They should be able to explain why they have chosen these tools and why they are confident that they are appropriate and fit for purpose.
 * Users should be consulted throughout the development process, to ensure that their need is being met.
 
 ### How is your code structured?
@@ -67,6 +67,7 @@ The practices outlined below should be applied proportionately to the business r
 * Peer review of individual changes to the code will help to identify issues sooner. This is also more manageable than reviewing the complete final analysis.
 * If the product is high risk, an external peer review should also be conducted.
 * Peer review should follow a standard procedure, so that reviews are consistent.
+* There should be evidence that peer reviews are acted on. When issues or concerns are raised, they should be addressed before the analysis is used.
 
 ### How have you kept track of who made changes to the code and why?
 
