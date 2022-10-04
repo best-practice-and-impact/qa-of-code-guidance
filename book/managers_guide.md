@@ -25,7 +25,7 @@ Carrying out analysis as code has many benefits:
 * Transparent analysis and quality assurance, increasing trust.
 * Improved business continuity and knowledge management.
 
-Automating a process using code is not sufficient to achieve all of the benefits, witout also applying adequate quality assurance.
+Automating a process using code is not sufficient to achieve all of the benefits, without also applying adequate quality assurance.
 
 ## Analytical code requires quality assurance
 
