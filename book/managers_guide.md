@@ -111,7 +111,7 @@ The practices outlined below should be applied proportionately to the business r
 
 ### How would we do a dual run?
 
-* For the highest risk analysis, the results of your analysis should be compared from two independent calculations (i.e. one from another tool or software).
+* For high risk parts of the analysis, the results of this part of the analysis should be compared from two independent calculations (i.e. one from another tool or software).
 * Where possible, outputs should be compared between analysis using a variety of realistic inputs.
 * You may also wish to parallel run new analysis processes with a legacy approach, to quantify changes or improvements to the analysis.
 
