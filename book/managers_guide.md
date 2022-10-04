@@ -13,7 +13,7 @@ It is common for this kind of transformation to identify quality issues in the c
 
 [The Government Service Standard](https://www.gov.uk/service-manual/service-standard) outlines best practices for creating public services, which includes analysis. You should use this when designing and managing the development of analysis.
 
-The rest of this page describes the benefits of doing analysis as code and aims to help you ensure that your team are applying the good quality assurance practices outlined in the wider [Quality assurance of code for analysis and research guidance](https://best-practice-and-impact.github.io/qa-of-code-guidance/intro.html). Code that applies these good practices are refered to as reproducible analytical pipelines (RAP).
+The rest of this page describes the benefits of doing analysis as code and aims to help you ensure that your team are applying the good quality assurance practices outlined in the wider [Quality assurance of code for analysis and research guidance](https://best-practice-and-impact.github.io/qa-of-code-guidance/intro.html). Code that applies these good practices is referred to as a reproducible analytical pipeline (RAP).
 
 Analysis team managers should not need an in-depth understanding of the code produced by their team. However, they should be confident that the approach the team has taken is appropriate given the user need, and that proportionate quality assurance is being applied to the development and running of the analysis.
 
@@ -25,7 +25,7 @@ Carrying out analysis as code has many benefits:
 * Transparent analysis and quality assurance, increasing trust.
 * Improved business continuity and knowledge management.
 
-Automating a process using code is not sufficient to achieve all of the benefits, witout also applying adequate quality assurance.
+Automating a process using code is not sufficient to achieve all of the benefits, without also applying adequate quality assurance.
 
 ## Analytical code requires quality assurance
 
