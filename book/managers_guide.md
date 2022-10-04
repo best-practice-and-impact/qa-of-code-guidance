@@ -36,7 +36,7 @@ The practices outlined below should be applied proportionately to the business r
 ### Why have your chosen to do things this way?
 
 * The methodology and data should be suitable for the question being asked.
-* Your team should be using open-source analysis tools. They should be able to explain why they have chosen these tools and why they are confident that they are appropriate and fit for purpose.
+* Your team should be using open-source analysis tools. They should be able to explain why they have chosen these tools and why they are confident that they are fit for purpose.
 * Users should be consulted throughout the development process, to ensure that their need is being met.
 
 ### How is your code structured?
