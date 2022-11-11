@@ -78,6 +78,11 @@ These questions can be used throughout the development of the analysis, to asses
 * Function documentation should also include what goes in and what comes out of each function.
 * Where code will be run or re-used by others, documentation should include usage examples and test data.
 
+### What assumptions does the analysis make?
+
+* Assumptions and caveats of the analysis should be recorded close to the code.
+* These must be communicated to users when releasing results from the analysis.
+
 ### How has peer review been done?
 
 * Technical colleagues should conduct internal peer reviews of each change to the code. This will identify issues early on and makes the review process more manageable than reviewing only the final analysis.
@@ -99,11 +104,6 @@ These questions can be used throughout the development of the analysis, to asses
 
 * Documenting the code dependencies allows others to reproduce the analysis more easily.
 * Dependencies include anything the code needs to run, including software and package versions.
-
-### What assumptions does the analysis make?
-
-* Assumptions and caveats of the analysis should be recorded close to the code.
-* These must be communicated to users when releasing results from the analysis.
 
 ### What happens when the analysis fails to run?
 
