@@ -1,5 +1,9 @@
 # Managing analytical code development
 
+```{note}
+This section is a working draft. Please get in touch with feedback [by creating a GitHub Issue](https://github.com/best-practice-and-impact/qa-of-code-guidance/issues) or via [Analysis.Function@ons.gov.uk](mailto:Analysis.Function@ons.gov.uk).
+```
+
 This section of the guidance is aimed at those who manage data analysis/science/engineering work in government or those acting as product owners for analytical products.
 
 It aims to help you support your team to apply the good quality assurance practices described in the wider [Quality assurance of code for analysis and research guidance](https://best-practice-and-impact.github.io/qa-of-code-guidance/intro.html). Processes that apply these good practices are referred to as a reproducible analytical pipelines (RAP).
