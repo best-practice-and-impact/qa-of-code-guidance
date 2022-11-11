@@ -1,21 +1,30 @@
 # Managing analytical code development
 
-This section is aimed at those who manage data analysis/science/engineering work in government or those acting as product owners for analytical products.
+This section of the guidance is aimed at those who manage data analysis/science/engineering work in government or those acting as product owners for analytical products.
 
-Learning from previous projects, we've found that moving from traditional analysis approaches to developing analysis as code requires: 
-* Intention to transform and improve the quality of the wider business process around the project, not just automating an existing process. 
-* Committed, skilled resource for the duration of the project and for ongoing maintenance for the life span of the product. 
-* Motivation for the project and personal development from those working on the project. 
-* Having appropriate tools available for the development and deployment of the project. 
-* A plan for requirement collection and transitioning the product into business as usual. 
+It aims to help you support your team to apply the good quality assurance practices described in the wider [Quality assurance of code for analysis and research guidance](https://best-practice-and-impact.github.io/qa-of-code-guidance/intro.html). Proccesses that appliy these good practices are referred to as a reproducible analytical pipelines (RAP).
 
-It is common for this kind of transformation to identify quality issues in the current process. This should be seen as an opportunity to improve the quality of the process.
+Before applying this guidance, you should have a basic awareness of the tools and techniques used to do quality analysis as code - the [introduction to RAP course](https://learninghub.ons.gov.uk/course/view.php?name=intro_to_RAP) outlines these. You should also be aware of any specific tools and platforms that are used in your department.
 
-[The Government Service Standard](https://www.gov.uk/service-manual/service-standard) outlines best practices for creating public services, which includes analysis. You should use this when designing and managing the development of analysis.
+[The Government Service Standard](https://www.gov.uk/service-manual/service-standard) outlines best practices for creating public services, which includes analysis. You should use this when designing and managing the development of analysis as code.
 
-The rest of this page describes the benefits of doing analysis as code and aims to help you ensure that your team are applying the good quality assurance practices outlined in the wider [Quality assurance of code for analysis and research guidance](https://best-practice-and-impact.github.io/qa-of-code-guidance/intro.html). Code that applies these good practices is referred to as a reproducible analytical pipeline (RAP).
 
-Analysis team managers should not need an in-depth understanding of the code produced by their team. However, they should be confident that the approach the team has taken is appropriate given the user need, and that proportionate quality assurance is being applied to the development and running of the analysis.
+## Quality assurance is proportional to risk
+
+As described by [the Aqua book](https://www.gov.uk/government/publications/the-aqua-book-guidance-on-producing-quality-analysis-for-government), the quality assurance of our analysis should be proportional to the complexity and risk of the analysis.
+
+When managing analytical work, you should not need an in-depth understanding of the analysis code to trust that it is working correclty. However, you should be confident that the approach the team has taken is appropriate given the user need, and that proportionate quality assurance is being applied to the development and running of the analysis.
+
+You should work with your team to decide on which quality assurance practices are necessary given each piece of analysis. You might find our [](version_control.md) useful templates for defining the target level of assurance. When possible, you should define the target assurance level before starting the analysis.
+
+```{important} Developing good practice skills
+
+While quality assurance must be applied relative to the risk and complexity of the analysis, you must consider the skills of your team. It will take time to learn to apply the necessary good practices, so you should support their gradual development of these skills.
+
+[The RAP learning pathway](https://learninghub.ons.gov.uk/course/view.php?name=intro_to_RAP) provides training in good practices. Then the wider [Quality assurance of code for analysis and research guidance](https://best-practice-and-impact.github.io/qa-of-code-guidance/intro.html) can be used as a reference to apply these to your analysis. You should identify where each analyst is along the pathway - they should look to develop the next skill in the pathway and apply this, rather than attempting to adopt them all at once.
+
+Where quality assurance of the code doesn't meet your target level of assurance, for example where there is limited time or skill, then it is necessary to supplement this with  in-depth assurance of analysis outputs. This might include dual running the analysis with an independent system and consistency checks across the output data.
+```
 
 ## Analysis as code is beneficial
 
@@ -26,6 +35,15 @@ Carrying out analysis as code has many benefits:
 * Improved business continuity and knowledge management.
 
 Automating a process using code is not sufficient to achieve all of these benefits, without also applying adequate quality assurance.
+
+Learning from previous projects, we've found that moving to doing analysis as code is most successful when there is: 
+* intention to transform and improve the quality of the wider business process around the project, not just automating an existing process. 
+* committed, skilled resource for the duration of the project and for ongoing maintenance for the life span of the product. 
+* motivation for the project and personal development from those working on the project. 
+* access to appropriate tools for the development and deployment of the project. 
+* a plan for collecting requirements and for transitioning the product into business as usual. 
+
+It is common for transformation of existing processes to identify quality issues in the current process. This should be seen as an opportunity to improve the quality of the process.
 
 ## Analytical code requires quality assurance
 
@@ -114,7 +132,3 @@ The practices outlined below should be applied proportionately to the business r
 * For high risk parts of the analysis, the results of this part of the analysis should be compared from two independent calculations (i.e. one from another tool or software).
 * Where possible, outputs should be compared between analysis using a variety of realistic inputs.
 * You may also wish to parallel run new analysis processes with a legacy approach, to quantify changes or improvements to the analysis.
-
-# Other resources
-
-For a better understanding of the tools that your team use for analysis, you might look at the [Awareness of Coding Tools](https://learninghub.ons.gov.uk/enrol/index.php?id=530) course on the GSS Learning Hub.
