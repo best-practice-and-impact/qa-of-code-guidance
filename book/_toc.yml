@@ -3,12 +3,13 @@ root: intro
 parts:
 - caption: Overview
   chapters:
+  - file: managers_guide
   - file: checklists
     sections:
     - file: checklist_lower
     - file: checklist_moderate
     - file: checklist_higher
-  - file: managers_guide
+
 
 - caption: Guidance
   chapters:
