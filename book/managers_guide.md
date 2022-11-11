@@ -21,7 +21,7 @@ When managing analytical work, you should not need an in-depth understanding of 
 
 You should work with your team to decide on which quality assurance practices are necessary given each piece of analysis. You might find our [](version_control.md) useful templates for defining the target level of assurance. When possible, you should define the target assurance level before starting the analysis.
 
-```{important} Developing good practice skills
+```{important} Develop good practice skills
 
 While quality assurance must be applied relative to the risk and complexity of the analysis, you must consider the skills of your team. It will take time to learn to apply the necessary good practices, so you should support their gradual development of these skills.
 
