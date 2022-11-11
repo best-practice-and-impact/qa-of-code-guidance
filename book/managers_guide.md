@@ -23,11 +23,12 @@ While quality assurance must be applied relative to the risk and complexity of t
 
 [The RAP learning pathway](https://learninghub.ons.gov.uk/course/view.php?name=intro_to_RAP) provides training in good practices. Then the wider [Quality assurance of code for analysis and research guidance](https://best-practice-and-impact.github.io/qa-of-code-guidance/intro.html) can be used as a reference to apply these to your analysis. You should identify where each analyst is along the pathway - they should look to develop the next skill in the pathway and apply this, rather than attempting to adopt them all at once.
 
-Where quality assurance of the code doesn't meet your target level of assurance, for example where there is limited time or skill, then it is necessary to supplement this with  in-depth assurance of analysis outputs. This might include dual running the analysis with an independent system and consistency checks across the output data.
+Note that it is important to maintain skills in the analysis team for sustainability, to ensure that the analysis can be understood, updated and maintained.
 ```
 
-Note that it is important to maintain skills in the analysis team, to ensure that the analysis can be updated and maintained.
+Where quality assurance of the code doesn't meet your target level of assurance, for example where there is limited time or skill, then it is necessary to supplement this with in-depth assurance of analysis outputs. This might include dual running the analysis with an independent system and consistency checks across the output data.
 
+Not following good practices also creates [technical debt](https://en.wikipedia.org/wiki/Technical_debt), which will slow down further development and maintenance of the analysis. This can be necessary for delivering to short deadlines, but time should be set aside to address this for continued development of the analysis.
 
 ## Design quality analysis
 
