@@ -33,7 +33,7 @@ Note that it is important to maintain skills in the analysis team, to ensure tha
 
 These questions aim to help you assess the design decisions at the beginning of the analysis.
 
-### Why have you chosen to do things this way?
+### Why have you chosen to do the analysis this way?
 
 * The methodology and data should be suitable for the question being asked.
 * The analysis should be carried out using open-source analysis tools, wherever possible. Your team should be able to explain why they have chosen the analysis tools and why they are confident that they are fit for purpose.
