@@ -1,7 +1,9 @@
 # Managing analytical code development
 
 ```{note}
-This section is a working draft. Please get in touch with feedback [by creating a GitHub Issue](https://github.com/best-practice-and-impact/qa-of-code-guidance/issues) or via [Analysis.Function@ons.gov.uk](mailto:Analysis.Function@ons.gov.uk).
+This section is a working draft.
+
+Please get in touch with feedback or case studies to support the guidance [by creating a GitHub Issue](https://github.com/best-practice-and-impact/qa-of-code-guidance/issues) or via [Analysis.Function@ons.gov.uk](mailto:Analysis.Function@ons.gov.uk).
 ```
 
 This section of the guidance is aimed at those who manage data analysis/science/engineering work in government or those acting as product owners for analytical products.
