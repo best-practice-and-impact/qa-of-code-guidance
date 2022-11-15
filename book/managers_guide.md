@@ -27,7 +27,7 @@ You should work with your team to decide on which quality assurance practices ar
 
 While quality assurance must be applied relative to the risk and complexity of the analysis, you must consider the skills of your team. It will take time to learn to apply the necessary good practices, so you should support their gradual development of these skills.
 
-[The RAP learning pathway](https://learninghub.ons.gov.uk/course/view.php?name=intro_to_RAP) provides training in good practices. Then the wider [Quality assurance of code for analysis and research guidance](https://best-practice-and-impact.github.io/qa-of-code-guidance/intro.html) can be used as a reference to apply these to your analysis. You should identify where each analyst is along the pathway - they should look to develop the next skill in the pathway and apply this, rather than attempting to adopt them all at once.
+[The RAP learning pathway](https://learninghub.ons.gov.uk/course/view.php?name=intro_to_RAP) provides training in good practices. Then the wider [Quality assurance of code for analysis and research guidance](https://best-practice-and-impact.github.io/qa-of-code-guidance/intro.html) can be used as a reference to apply these practices to analysis. You should identify where each analyst is along the pathway - they should look to develop the next skill in the pathway and apply this, rather than attempting to adopt them all at once.
 
 Note that it is important to maintain skills in the analysis team for sustainability, to ensure that the analysis can be understood, updated and maintained.
 ```
@@ -42,22 +42,30 @@ These questions aim to help you assess the design decisions at the beginning of 
 
 ### Why have you chosen to do the analysis this way?
 
+Understanding user needs ensures that the analysis is valuable.
+
+* There should be a plan to consult users at the beginning and throughout the development process, to ensure that their needs are being met.
 * The methodology and data should be suitable for the question being asked.
-* The analysis should be carried out using open-source analysis tools, wherever possible. Your team should be able to explain why they have chosen the analysis tools and why they are confident that they are fit for purpose.
 * The analysis should be developed by more than one individual, to allow pair programming and peer review. This increases the sustainability of the analysis.
-* Users should be consulted at the beginning and throughout the development process, to ensure that their needs are met.
+* The analysis should be carried out using open-source analysis tools, wherever possible. Your team should be able to explain why they have chosen the analysis tools and why they are confident that they are fit for purpose.
+
 
 ### How are you storing input data?
+
+Versioning input data ensures that we can reproduce our analysis.
 
 * Input data should be versioned, so that analysis outputs can be reproduced.
 * Data should be stored in an open format (e.g. CSV or ODS), not formats that are restricted to proprietary software like SAS and Stata. 
 * Large or complex datasets should be stored in a database.
-* You should monitor the data quality, following [the government data quality framework](https://www.gov.uk/government/publications/the-government-data-quality-framework/the-government-data-quality-framework).
+* You should monitor the quality of data, following [the government data quality framework](https://www.gov.uk/government/publications/the-government-data-quality-framework/the-government-data-quality-framework).
+
 
 ### How will you keep track of changes to the code and why they were made?
 
+[Version control](version_control.md) of changes provides an audit trail.
+
 * The code, documentation, and peer reviews should all be version controlled. Git software is most commonly used for this.
-* Ideally the code is developed on an open source code platform, like GitHub. This transparency increases your users trust in the analysis.
+* The code should be developed on an open source code platform, like GitHub. This transparency increases your users trust in the analysis.
 * There should be a clear record of every change and who made it.
 * Each change should be linked to a reason, for example, a new requirement or an issue in the existing code.
 * Reviews of changes should be stored with the version of the analysis that was reviewed.
@@ -67,36 +75,66 @@ These questions aim to help you assess the design decisions at the beginning of 
 
 These questions can be used throughout the development of the analysis, to assess how the team are progressing towards the target quality assurance practices that you have agreed.
 
+
 ### How is your code structured?
+
+[Modular code](modular_code.md) makes it easier to understand, update and reuse the code.
 
 * Logic should be written as functions, so that it can be reused consistently and tested.
 * Related functions should be grouped together in the same file, so that it is easy to find them.
+* Logic with different responsibilities (e.g. reading data versus transforming data) should be clearly separated.
+* When code can be reused for other analyses, it should be stored and shared as a package.
+
 
 ### How easy is it to adjust the way that the analysis runs?
 
-* Parts of the code that may change should be stored in separate configuration files, so that they can be changed without changing the code.
+[Configuration files](configuration.md) allow you to change the way the code runs without editing the code.
+
+* Parts of the code that may change should be stored in separate configuration files.
 * Things that often change in analysis code include input and output file paths, reference dates and model parameters.
+
 
 ### How is the analysis documented?
 
-* Good documentation is essential for business continuity.
+[Code documentation](code_documentation.md) is essential for business continuity and sustainability.
+
 * Every function should be documented in the code, so that it is clear what the function is supposed to do.
-* Function documentation should also include what goes in and what comes out of each function.
+* Function documentation should include what goes in and what comes out of each function.
 * Where code will be run or re-used by others, documentation should include usage examples and test data.
 
+
+### What are the dependencies?
+
+[Project documentation](project_documentation.md) ensures that others can reproduce our analysis.
+
+* User instructions should be provided for running the analysis.
+* Software and package versions should be documented with the code. Typically package versions are recorded using `setup.py` and `requirements.txt` files (Python) or `DESCRIPTION` file (R).
+* Code should not be dependent on a specific computer to run. Running it on a colleague's system can help to check this.
+* When the same analysis is run multiple times or on different systems it should give reproducible outcomes.
+* Container systems, like Docker, help to create reproducible environments to run code.
+
+
 ### What assumptions does the analysis make?
+
+Transparency of our analysis increases trust.
 
 * Assumptions and caveats of the analysis should be recorded close to the code.
 * These must be communicated to users when releasing results from the analysis.
 
+
 ### How has peer review been done?
+
+[Peer review](peer_review.md) increases the quality of our analysis and transfers skills and knowledge.
 
 * Technical colleagues should conduct internal peer reviews of each change to the code. This will identify issues early on and makes the review process more manageable than reviewing only the final analysis.
 * Peer review should follow a standard procedure, so that reviews are consistent. Reviewers should check that each change follows the agreed good practices.
 * There should be evidence that peer reviews are acted on. When issues or concerns are raised, they should be addressed before the analysis is used.
 * If the product is high risk, external peer review should also be conducted.
 
+
 ### How have you tested the code?
+
+[Testing](testing_code.md) assures us that the code is working correctly.
 
 * Testing means making sure that the code produces the right outputs for realistic example input data.
 * Automated 'unit' testing should be applied to each function, to ensure that code continues to work after future changes to the code.
@@ -106,30 +144,28 @@ These questions can be used throughout the development of the analysis, to asses
 * Reviewers should sign-off that there is enough testing to assure that the code is working as expected.
 * Each time an error is found in the code, a test should be added to assure that the error does not reoccur.
 
-### What are the dependencies?
-
-* Documenting the code dependencies allows others to reproduce the analysis more easily.
-* Dependencies include anything the code needs to run, including software and package versions.
 
 ### What happens when the analysis fails to run?
+
+Recording and reporting errors provides an audit trail and makes it easier for users to correctly use the code.
 
 * When code fails to run, it should provide informative error messages to describe the problem.
 * If another team will operate the code, error messages should help users to correct the problem.
 * Errors or warnings might also be raised when data validation is not met.
+* When code is run in production, errors should be recorded or logged.
 
-### Which other systems have you run this on?
-
-* Code should not be dependent on a specific computer to run. Running it on a colleague's system can help to check this.
-* When the same analysis is run multiple times or on different systems it should give reproducible outcomes.
-* Container systems, like Docker, help to create reproducible environments to run code.
 
 ### How does the analysis result differ from the previous analysis?
+
+Comparing analysis to previous results can help to ensure reproducibility and identify errors.
 
 * When repeating analysis over time, you should compare results between analyses. Large differences in the outcome of the results may indicate an issue with the analysis process.
 * When developing code to replace legacy analysis, you may wish to parallel this with the new method. This will allow you to identify differences and improvements.
 
+
 ### How can we further improve the quality of the analysis?
 
-* Code quality should improve over time, as your team learn more about good practices.
+Code quality improves over time, as your team learn more about good practices.
+
 * The team should be aiming to meet the agreed assurance level, but should also consider which practices could be applied next to improve the code beyond this.
 * You should review training needs in your team and allow time for continuos personal development of these practices.
