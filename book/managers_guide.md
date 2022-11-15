@@ -108,7 +108,7 @@ These questions can be used throughout the development of the analysis, to asses
 [Project documentation](project_documentation.md) ensures that others can reproduce our analysis.
 
 * User instructions should be provided for running the analysis.
-* Software and package versions should be documented with the code. Typically package versions are recorded using `setup.py` and `requirements.txt` files (Python) or `DESCRIPTION` file (R).
+* Software and package versions should be documented with the code. Typically package versions are recorded using `setup.py` and `requirements.txt` files (Python) or a `DESCRIPTION` file (R).
 * Code should not be dependent on a specific computer to run. Running it on a colleague's system can help to check this.
 * When the same analysis is run multiple times or on different systems it should give reproducible outcomes.
 * Container systems, like Docker, help to create reproducible environments to run code.
