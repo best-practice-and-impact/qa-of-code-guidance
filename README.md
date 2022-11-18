@@ -8,7 +8,7 @@ This document forms part of the Quality Guidance, published by the Quality and I
 We welcome all constructive feedback and contributions.
 
 To provide feedback or request new content, you can [create an issue](https://github.com/best-practice-and-impact/qa-of-code-guidance/issues) on this book's repository.
-Alternatively, you can always drop us an [email](gsshelp@statistics.gov.uk).
+Alternatively, you can always drop us an [email](mailto:Analysis.Function@ons.gov.uk).
 
 If you'd like to contribute, please also [create or comment on an issue](https://github.com/best-practice-and-impact/qa-of-code-guidance/issues) to describe the changes that you'd like to make.
 This will allow discussion around whether content is suitable for this book, before you put the hard work into implementing it.
