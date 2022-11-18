@@ -1,12 +1,12 @@
 # Managing analytical code development
 
 ```{note}
-This section is a working draft.
+This section is a draft, while we ensure that it meets user needs.
 
-Please get in touch with feedback or case studies to support the guidance [by creating a GitHub Issue](https://github.com/best-practice-and-impact/qa-of-code-guidance/issues) or via [Analysis.Function@ons.gov.uk](mailto:Analysis.Function@ons.gov.uk).
+Please get in touch with feedback or case studies to support the guidance [by creating a GitHub Issue](https://github.com/best-practice-and-impact/qa-of-code-guidance/issues) or emailing us at [Analysis.Function@ons.gov.uk](mailto:Analysis.Function@ons.gov.uk).
 ```
 
-This section of the guidance is aimed at those who manage data analysis/science/engineering work in government or those acting as product owners for analytical products.
+This section of the guidance is targeted at those who manage data analysis/science/engineering work in government or those acting as product owners for analytical products.
 
 It aims to help you support your team to apply the good quality assurance practices described in the wider [Quality assurance of code for analysis and research guidance](https://best-practice-and-impact.github.io/qa-of-code-guidance/intro.html). Processes that apply these good practices are referred to as a reproducible analytical pipelines (RAP).
 
@@ -23,18 +23,21 @@ When managing analytical work, you should not need an in-depth understanding of 
 
 You should work with your team to decide on which quality assurance practices are necessary given each piece of analysis. You might find our [](version_control.md) useful templates for defining the target level of assurance. When possible, you should define the target assurance level before starting the analysis.
 
-```{important} Develop good practice skills
+```{important}
 
 While quality assurance must be applied relative to the risk and complexity of the analysis, you must consider the skills of your team. It will take time to learn to apply the necessary good practices, so you should support their gradual development of these skills.
 
 [The RAP learning pathway](https://learninghub.ons.gov.uk/course/view.php?name=intro_to_RAP) provides training in good practices. Then the wider [Quality assurance of code for analysis and research guidance](https://best-practice-and-impact.github.io/qa-of-code-guidance/intro.html) can be used as a reference to apply these practices to analysis. You should identify where each analyst is along the pathway - they should look to develop the next skill in the pathway and apply this, rather than attempting to adopt them all at once.
 
-Note that it is important to maintain skills in the analysis team for sustainability, to ensure that the analysis can be understood, updated and maintained.
+Note that it is important to maintain technical skills in the analysis team for sustainability, to ensure that the analysis can be understood, updated and maintained.
 ```
 
-Where quality assurance of the code doesn't meet your target level of assurance, for example where there is limited time or skill, then it is necessary to supplement this with in-depth assurance of analysis outputs. This might include dual running the analysis with an independent system and consistency checks across the output data.
+Despite the initial cost of developing technical skills, [evidence shows that applying good practices increases the efficiency of code development and maintainability of the code](https://www.devops-research.com/research.html). Not following good practices creates [technical debt](https://en.wikipedia.org/wiki/Technical_debt), which slows down further development of the analysis. This can be necessary for delivering to short deadlines, but time should be set aside to address this for continued development of the analysis.
 
-Not following good practices also creates [technical debt](https://en.wikipedia.org/wiki/Technical_debt), which will slow down further development and maintenance of the analysis. This can be necessary for delivering to short deadlines, but time should be set aside to address this for continued development of the analysis.
+Where quality assurance of the code doesn't meet your target level of assurance, for example where there is limited time or skill, then it is necessary to supplement this with more in-depth assurance of outputs. This might include dual running the analysis with an independent system and consistency checks across the output data.
+
+The remaining parts of this section provide questions that aim to help you assess the quality assurance practices that your team are applying in their analysis.
+
 
 ## Design quality analysis
 
@@ -46,7 +49,7 @@ Understanding user needs ensures that the analysis is valuable.
 
 * There should be a plan to consult users at the beginning and throughout the development process, to ensure that their needs are being met.
 * The methodology and data should be suitable for the question being asked.
-* The analysis should be developed by more than one individual, to allow pair programming and peer review. This increases the sustainability of the analysis.
+* The analysis must be developed by more than one individual, to allow pair programming, peer review and mentoring. This increases the sustainability of analysis.
 * The analysis should be carried out using open-source analysis tools, wherever possible. Your team should be able to explain why they have chosen the analysis tools and why they are confident that they are fit for purpose.
 
 
