@@ -14,7 +14,7 @@ It aims to help you support your team to apply the good quality assurance practi
 
 Before applying this guidance, you should have a basic awareness of the tools and techniques used to do quality analysis as code - the [introduction to RAP course](https://learninghub.ons.gov.uk/course/view.php?name=intro_to_RAP) outlines these. You should also be aware of any specific tools and platforms that are used in your department.
 
-[The Government Service Standard](https://www.gov.uk/service-manual/service-standard) outlines best practices for creating public services, which includes analysis. You should use this when designing and managing the development of analysis as code.
+[The Government Service Standard](https://www.gov.uk/service-manual/service-standard) outlines best practices for creating public services, which include analysis. You should use this when designing and managing the development of analysis as code.
 
 
 ## Apply quality assurance proportional to risk
@@ -23,7 +23,7 @@ As described by [the Aqua book](https://www.gov.uk/government/publications/the-a
 
 When managing analytical work, you should not need an in-depth understanding of the analysis code to trust that it is working correctly. However, you should be confident that the approach the team has taken is appropriate given the user need, and that proportionate quality assurance is being applied to the development and running of the analysis.
 
-You should work with your team to decide on which quality assurance practices are necessary given each piece of analysis. You might find our [](version_control.md) useful templates for defining the target level of assurance. When possible, you should define the target assurance level before starting the analysis.
+You should work with your team to decide on which quality assurance practices are necessary given each piece of analysis. You might find our [](checklists.md) useful templates for defining the target level of assurance. When possible, you should define the target assurance level before starting the analysis.
 
 ```{important}
 
