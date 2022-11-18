@@ -58,7 +58,7 @@ All pages in `book/` must be referenced in `_toc.yml` or a warning will be raise
 ### Submitting contributions
 
 You should create a new branch to collect related changes that you make.
-Once you're happy with any changes you've made to the book, you should raise a [Pull Request (PR)](https://github.com/best-practice-and-impact/qa-of-code-guidance/pulls) to the `master` branch of the main repository.
+Once you're happy with any changes you've made to the book, you should raise a [Pull Request (PR)](https://github.com/best-practice-and-impact/qa-of-code-guidance/pulls) to the `main` branch of the main repository.
 The source branch of this PR should be the fork and/or branch that you have commited changes to.
 
 ## Publishing changes
@@ -67,7 +67,7 @@ Internal contributors can trigger a new release of the book.
 
 ### Preparation
 
-To create a new release and publish the `master` branch, you will need to install the development dependencies:
+To create a new release and publish the `main` branch, you will need to install the development dependencies:
 
 ```
 pip install -r dev-requirements.txt
@@ -84,7 +84,7 @@ For a the first release of a year, provide the `year` as the command argument, o
 bump2version build
 ```
 
-`bump2version` will create a new Git `tag` and `commit`.
+`bumpversion` will create a new Git `tag` and `commit`.
 If you're happy with the version increase, `push` these to the remote to trigger the publication, by running both:
 
 ```
