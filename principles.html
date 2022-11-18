@@ -28,9 +28,9 @@
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="_static/tabs.css" />
     <link rel="stylesheet" type="text/css" href="_static/logo.css" />
-    <link rel="stylesheet" type="text/css" href="_static/admonitions.css" />
     <link rel="stylesheet" type="text/css" href="_static/markdown_within_tabs.css" />
     <link rel="stylesheet" type="text/css" href="_static/accessibility.css" />
+    <link rel="stylesheet" type="text/css" href="_static/admonitions.css" />
     <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -117,6 +117,11 @@ const thebe_selector_output = ".output, .cell_output"
  </span>
 </p>
 <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="managers_guide.html">
+   Managing analytical code development
+  </a>
+ </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="checklists.html">
    Code quality assurance checklists
@@ -231,7 +236,7 @@ const thebe_selector_output = ".output, .cell_output"
              <!-- To handle the deprecated key -->
             
             <div class="navbar_extra_footer">
-            <p>Book version 2022.2</p><a href='https://www.gov.uk/government/organisations/government-analysis-function' target='_blank'><img src='./_static/af_logo.png' alt='The Government Analysis Function logo' style='width:50%;'></a>
+            <p>Book version 2022.3</p><a href='https://www.gov.uk/government/organisations/government-analysis-function' target='_blank'><img src='./_static/af_logo.png' alt='The Government Analysis Function logo' style='width:50%;'></a>
             </div>
             
         </div>
@@ -573,7 +578,7 @@ In particularly high risk analysis, dual running should be considered.</p>
 We need to make sure that our outputs are both accurate and timely.
 We aim to develop effective and efficient analytical workflows that are repeatable and sustainable over time.
 These workflows should follow the principles of reproducible analysis.
-We call these <a class="reference external" href="https://gss.civilservice.gov.uk/reproducible-analytical-pipelines/">Reproducible Analytical Pipelines (RAP)</a>.</p>
+We call these <a class="reference external" href="https://analysisfunction.civilservice.gov.uk/support/reproducible-analytical-pipelines/">Reproducible Analytical Pipelines (RAP)</a>.</p>
 <p>Reproducible analysis is still not widely practised across government.
 Many analysts use proprietary (paid-for) analytical tools like SAS or SPSS in combination with programs like Excel, Word or Acrobat to create statistical products.
 The processes for creating statistics in this way are usually manual or semi-manual.
@@ -585,7 +590,7 @@ Open-source tools like <a class="reference external" href="https://www.python.or
 Coupled with version control and software management platforms like <a class="reference external" href="https://git-scm.com/">Git</a> and Git-services, these tools have made it possible to develop automatic, streamlined processes, accompanied by a full audit trail.</p>
 <p>RAP was <a class="reference external" href="https://dataingovernment.blog.gov.uk/2017/03/27/reproducible-analytical-pipeline/">first piloted in the Government Statistical Service in 2017</a> by analysts in the Department for Digital, Culture, Media and Sport (DCMS) and the Department for Education (DfE).
 They collaborated with data scientists from the Government Digital Service (GDS) to automate the production of statistical bulletins.</p>
-<p>To support the adoption of RAP across government, there is a network of <a class="reference external" href="https://gss.civilservice.gov.uk/about-us/champion-networks/reproducible-analytical-pipeline-rap-champions/">RAP champions</a>.
+<p>To support the adoption of RAP across government, there is a network of <a class="reference external" href="https://analysisfunction.civilservice.gov.uk/support/reproducible-analytical-pipelines/reproducible-analytical-pipeline-rap-champions/">RAP champions</a>.
 RAP champions are responsible for promoting reproducible analysis through the use of reproducible analytical pipelines, and supporting others who want to develop RAP in their own departments.</p>
 </section>
 </section>
@@ -639,7 +644,7 @@ RAP champions are responsible for promoting reproducible analysis through the us
         <footer class="col footer"><p>
   
     <div class="extra_footer">
-      <p>Best Practice & Impact division, Office for National Statistics</p><p>This document is very young, please help use to make it grow by providing any feedback by <a href='mailto:gsshelp@statistics.gov.uk'>email</a> or via the <a href='https://github.com/best-practice-and-impact/qa-of-code-guidance'>GitHub repository</a>.
+      <p>Analysis Function reproducible analytical pipelines (RAP) support</p><p>This is a living document, please help use to make it grow by providing any feedback <a href='mailto:Analysis.Function@ons.gov.uk'>by email</a> or via the <a href='https://github.com/best-practice-and-impact/qa-of-code-guidance'>GitHub repository</a>.
     </div>
 </p>
         </footer>

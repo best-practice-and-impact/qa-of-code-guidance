@@ -28,9 +28,9 @@
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="_static/tabs.css" />
     <link rel="stylesheet" type="text/css" href="_static/logo.css" />
-    <link rel="stylesheet" type="text/css" href="_static/admonitions.css" />
     <link rel="stylesheet" type="text/css" href="_static/markdown_within_tabs.css" />
     <link rel="stylesheet" type="text/css" href="_static/accessibility.css" />
+    <link rel="stylesheet" type="text/css" href="_static/admonitions.css" />
     <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -58,7 +58,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="_static/favicon.ico"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Code quality assurance checklists" href="checklists.html" />
+    <link rel="next" title="Managing analytical code development" href="managers_guide.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en">
     
@@ -116,6 +116,11 @@ const thebe_selector_output = ".output, .cell_output"
  </span>
 </p>
 <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="managers_guide.html">
+   Managing analytical code development
+  </a>
+ </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="checklists.html">
    Code quality assurance checklists
@@ -230,7 +235,7 @@ const thebe_selector_output = ".output, .cell_output"
              <!-- To handle the deprecated key -->
             
             <div class="navbar_extra_footer">
-            <p>Book version 2022.2</p><a href='https://www.gov.uk/government/organisations/government-analysis-function' target='_blank'><img src='./_static/af_logo.png' alt='The Government Analysis Function logo' style='width:50%;'></a>
+            <p>Book version 2022.3</p><a href='https://www.gov.uk/government/organisations/government-analysis-function' target='_blank'><img src='./_static/af_logo.png' alt='The Government Analysis Function logo' style='width:50%;'></a>
             </div>
             
         </div>
@@ -529,7 +534,7 @@ title="Print to PDF"
 <h2>Citing the book<a class="headerlink" href="#citing-the-book" title="Permalink to this headline">#</a></h2>
 <p>The following structure can be used to reference the current version of the book:</p>
 <blockquote>
-<div><p>UK Government Analytical Community. (2020). Quality assurance of code for analysis and research (version 2022.2). Office for National Statistics, Quality and Improvement division: <a class="reference external" href="https://best-practice-and-impact.github.io/qa-of-code-guidance/">https://best-practice-and-impact.github.io/qa-of-code-guidance/</a></p>
+<div><p>UK Government Analytical Community. (2020). Quality assurance of code for analysis and research (version 2022.3). Office for National Statistics, Quality and Improvement division: <a class="reference external" href="https://best-practice-and-impact.github.io/qa-of-code-guidance/">https://best-practice-and-impact.github.io/qa-of-code-guidance/</a></p>
 </div></blockquote>
 </section>
 <section id="how-to-get-the-most-out-of-the-book">
@@ -560,7 +565,7 @@ title="Print to PDF"
 <p>For keyboard navigation, <kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Up</kbd> <kbd class="kbd docutils literal notranslate">Arrow</kbd></kbd> and <kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Down</kbd> <kbd class="kbd docutils literal notranslate">Arrow</kbd></kbd>keys can be used to scroll up and down on the current page. <kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Left</kbd> <kbd class="kbd docutils literal notranslate">Arrow</kbd></kbd> and <kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Right</kbd> <kbd class="kbd docutils literal notranslate">Arrow</kbd></kbd> keys can be used to move forwards and backwards through the pages of the book. Tabbed content (including code example) can be focused using the <kbd class="kbd docutils literal notranslate">Tab</kbd> key. <kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Left</kbd> <kbd class="kbd docutils literal notranslate">Arrow</kbd></kbd> and <kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Right</kbd> <kbd class="kbd docutils literal notranslate">Arrow</kbd></kbd> keys are then used to focus the required tab option, where <kbd class="kbd docutils literal notranslate">Enter</kbd> can be used to select that option and display the associated content.</p>
 <section id="feedback-and-reporting-accessibility-problems">
 <h3>Feedback and reporting accessibility problems<a class="headerlink" href="#feedback-and-reporting-accessibility-problems" title="Permalink to this headline">#</a></h3>
-<p>We’re always looking to improve the accessibility of our guidance. If you find any problems not listed on this page or think that we’re not meeting accessibility requirements, please contact us by emailing <a class="reference external" href="mailto:gsshelp&#37;&#52;&#48;statistics&#46;gov&#46;uk">gsshelp<span>&#64;</span>statistics<span>&#46;</span>gov<span>&#46;</span>uk</a>. Please also get in touch if you are unable to access any part of this guidance, or require the content in a different format.</p>
+<p>We’re always looking to improve the accessibility of our guidance. If you find any problems not listed on this page or think that we’re not meeting accessibility requirements, please contact us by emailing <a class="reference external" href="mailto:Analysis&#46;Function&#37;&#52;&#48;ons&#46;gov&#46;uk">Analysis<span>&#46;</span>Function<span>&#64;</span>ons<span>&#46;</span>gov<span>&#46;</span>uk</a>. Please also get in touch if you are unable to access any part of this guidance, or require the content in a different format.</p>
 <p>We will consider your request and aim to get back to you within five working days.</p>
 </section>
 <section id="enforcement-procedure">
@@ -603,10 +608,10 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='right-next' id="next-link" href="checklists.html" title="next page">
+    <a class='right-next' id="next-link" href="managers_guide.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Code quality assurance checklists</p>
+        <p class="prev-next-title">Managing analytical code development</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
@@ -618,7 +623,7 @@ title="Print to PDF"
         <footer class="col footer"><p>
   
     <div class="extra_footer">
-      <p>Best Practice & Impact division, Office for National Statistics</p><p>This document is very young, please help use to make it grow by providing any feedback by <a href='mailto:gsshelp@statistics.gov.uk'>email</a> or via the <a href='https://github.com/best-practice-and-impact/qa-of-code-guidance'>GitHub repository</a>.
+      <p>Analysis Function reproducible analytical pipelines (RAP) support</p><p>This is a living document, please help use to make it grow by providing any feedback <a href='mailto:Analysis.Function@ons.gov.uk'>by email</a> or via the <a href='https://github.com/best-practice-and-impact/qa-of-code-guidance'>GitHub repository</a>.
     </div>
 </p>
         </footer>

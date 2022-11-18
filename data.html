@@ -28,9 +28,9 @@
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="_static/tabs.css" />
     <link rel="stylesheet" type="text/css" href="_static/logo.css" />
-    <link rel="stylesheet" type="text/css" href="_static/admonitions.css" />
     <link rel="stylesheet" type="text/css" href="_static/markdown_within_tabs.css" />
     <link rel="stylesheet" type="text/css" href="_static/accessibility.css" />
+    <link rel="stylesheet" type="text/css" href="_static/admonitions.css" />
     <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -117,6 +117,11 @@ const thebe_selector_output = ".output, .cell_output"
  </span>
 </p>
 <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="managers_guide.html">
+   Managing analytical code development
+  </a>
+ </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="checklists.html">
    Code quality assurance checklists
@@ -231,7 +236,7 @@ const thebe_selector_output = ".output, .cell_output"
              <!-- To handle the deprecated key -->
             
             <div class="navbar_extra_footer">
-            <p>Book version 2022.2</p><a href='https://www.gov.uk/government/organisations/government-analysis-function' target='_blank'><img src='./_static/af_logo.png' alt='The Government Analysis Function logo' style='width:50%;'></a>
+            <p>Book version 2022.3</p><a href='https://www.gov.uk/government/organisations/government-analysis-function' target='_blank'><img src='./_static/af_logo.png' alt='The Government Analysis Function logo' style='width:50%;'></a>
             </div>
             
         </div>
@@ -544,6 +549,7 @@ This requires suitable storage of data, with documentation and versioning of the
 <div class="admonition-strategies admonition">
 <p class="admonition-title">Key strategies</p>
 <p><a class="reference external" href="https://www.gov.uk/government/publications/the-government-data-quality-framework/the-government-data-quality-framework">The Government Data Quality Framework</a> focuses primarily on assessing and improving the quality of input data. It should be a primary resource for all analysts working with data in the public sector.</p>
+<p>The Office for Statistics Regulation provides a standard for <a class="reference external" href="https://osr.statisticsauthority.gov.uk/guidance/administrative-data-and-official-statistics/">quality assurance of administrative data</a>.</p>
 </div>
 <section id="data-storage">
 <h2>Data storage<a class="headerlink" href="#data-storage" title="Permalink to this headline">#</a></h2>
@@ -708,20 +714,11 @@ This might be documented in analysis reports or automatically logged by your cod
 </section>
 <section id="releasing-data">
 <h2>Releasing data<a class="headerlink" href="#releasing-data" title="Permalink to this headline">#</a></h2>
-<div class="admonition-todo admonition" id="id2">
-<p class="admonition-title">Todo</p>
-<p>Open Linked Data ratings</p>
-<p>Use CSVW when possible</p>
-<p><a class="reference external" href="https://github.com/best-practice-and-impact/qa-of-code-guidance/issues/23">#23</a></p>
-</div>
-<p>Other guidance addresses:</p>
-<ul class="simple">
-<li><p><a class="reference external" href="https://gss.civilservice.gov.uk/policy-store/releasing-statistics-in-spreadsheets/">Releasing statistics in spreadsheets</a></p></li>
-<li><p><a class="reference external" href="https://osr.statisticsauthority.gov.uk/guidance/administrative-data-and-official-statistics/">Quality assurance of administrative data</a></p></li>
-<li><p><a class="reference external" href="https://www.gov.uk/government/publications/joined-up-data-in-government-the-future-of-data-linking-methods">Data linking methods</a></p></li>
-<li><p>When publishing or sharing tabular data, you should follow the <a class="reference external" href="https://www.gov.uk/government/publications/recommended-open-standards-for-government/tabular-data-standard">GOV.UK Tabular data standard</a>.</p></li>
-</ul>
-<p>Analysts producing published statistics may also be interested in <a class="reference external" href="https://gss.civilservice.gov.uk/guidance/the-gss-data-project/">Connected Open Government Statistics (COGS)</a>.</p>
+<p>You should use the <a class="reference external" href="https://5stardata.info/en/">5-star open data standards</a> to understand and improve the current utility of your published data. The <a class="reference external" href="https://csvw.org/">CSV on the Web (CSVW) standard</a> is recommended for achieving the highest ratings of open data.</p>
+<p>When publishing statistics you should follow government guidance for <a class="reference external" href="https://gss.civilservice.gov.uk/policy-store/releasing-statistics-in-spreadsheets/">releasing statistics in spreadsheets</a>.</p>
+<p>When publishing or sharing tabular data, you should follow the <a class="reference external" href="https://www.gov.uk/government/publications/recommended-open-standards-for-government/tabular-data-standard">GOV.UK Tabular data standard</a>.</p>
+<p>Analysts producing published statistics may also be interested in <a class="reference external" href="https://gss.civilservice.gov.uk/guidance/the-gss-data-project/">Connected Open Government Statistics (COGS)</a> and <a class="reference external" href="https://www.gov.uk/government/publications/joined-up-data-in-government-the-future-of-data-linking-methods">the review of government data linking methods</a>
+.</p>
 <p>Guidance from the UK Data Service describes <a class="reference external" href="https://www.ukdataservice.ac.uk/manage-data/store/security">data security considerations</a>.</p>
 </section>
 </section>
@@ -775,7 +772,7 @@ This might be documented in analysis reports or automatically logged by your cod
         <footer class="col footer"><p>
   
     <div class="extra_footer">
-      <p>Best Practice & Impact division, Office for National Statistics</p><p>This document is very young, please help use to make it grow by providing any feedback by <a href='mailto:gsshelp@statistics.gov.uk'>email</a> or via the <a href='https://github.com/best-practice-and-impact/qa-of-code-guidance'>GitHub repository</a>.
+      <p>Analysis Function reproducible analytical pipelines (RAP) support</p><p>This is a living document, please help use to make it grow by providing any feedback <a href='mailto:Analysis.Function@ons.gov.uk'>by email</a> or via the <a href='https://github.com/best-practice-and-impact/qa-of-code-guidance'>GitHub repository</a>.
     </div>
 </p>
         </footer>

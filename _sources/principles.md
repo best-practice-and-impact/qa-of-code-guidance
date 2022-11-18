@@ -104,7 +104,7 @@ Producing analysis, such as official statistics, can be time-consuming and pains
 We need to make sure that our outputs are both accurate and timely.
 We aim to develop effective and efficient analytical workflows that are repeatable and sustainable over time.
 These workflows should follow the principles of reproducible analysis. 
-We call these [Reproducible Analytical Pipelines (RAP)](https://gss.civilservice.gov.uk/reproducible-analytical-pipelines/).
+We call these [Reproducible Analytical Pipelines (RAP)](https://analysisfunction.civilservice.gov.uk/support/reproducible-analytical-pipelines/).
 
 Reproducible analysis is still not widely practised across government.
 Many analysts use proprietary (paid-for) analytical tools like SAS or SPSS in combination with programs like Excel, Word or Acrobat to create statistical products. 
@@ -121,5 +121,5 @@ Coupled with version control and software management platforms like [Git](https:
 RAP was [first piloted in the Government Statistical Service in 2017](https://dataingovernment.blog.gov.uk/2017/03/27/reproducible-analytical-pipeline/) by analysts in the Department for Digital, Culture, Media and Sport (DCMS) and the Department for Education (DfE). 
 They collaborated with data scientists from the Government Digital Service (GDS) to automate the production of statistical bulletins.
 
-To support the adoption of RAP across government, there is a network of [RAP champions](https://gss.civilservice.gov.uk/about-us/champion-networks/reproducible-analytical-pipeline-rap-champions/). 
+To support the adoption of RAP across government, there is a network of [RAP champions](https://analysisfunction.civilservice.gov.uk/support/reproducible-analytical-pipelines/reproducible-analytical-pipeline-rap-champions/). 
 RAP champions are responsible for promoting reproducible analysis through the use of reproducible analytical pipelines, and supporting others who want to develop RAP in their own departments.

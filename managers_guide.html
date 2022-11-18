@@ -1,0 +1,852 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Managing analytical code development &#8212; Quality Assurance of Code for Analysis and Research</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="_static/logo.css" />
+    <link rel="stylesheet" type="text/css" href="_static/markdown_within_tabs.css" />
+    <link rel="stylesheet" type="text/css" href="_static/accessibility.css" />
+    <link rel="stylesheet" type="text/css" href="_static/admonitions.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Code quality assurance checklists" href="checklists.html" />
+    <link rel="prev" title="Quality assurance of code for analysis and research" href="intro.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/duck_book_logo.svg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Quality Assurance of Code for Analysis and Research</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Overview
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Managing analytical code development
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="checklists.html">
+   Code quality assurance checklists
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="checklist_lower.html">
+     Lower quality assurance
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="checklist_moderate.html">
+     Moderate quality assurance
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="checklist_higher.html">
+     Higher quality assurance
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Guidance
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="principles.html">
+   Principles
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="modular_code.html">
+   Modular code
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="readable_code.html">
+   Readable code
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="project_structure.html">
+   Structuring your project
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="code_documentation.html">
+   Code documentation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="project_documentation.html">
+   Project documentation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="version_control.html">
+   Version control
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="configuration.html">
+   Configuration
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data.html">
+   Data Management
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="peer_review.html">
+   Peer review
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="testing_code.html">
+   Testing code
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Resources
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="learning.html">
+   Learning resources
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="tools.html">
+   Tools
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            <p>Book version 2022.3</p><a href='https://www.gov.uk/government/organisations/government-analysis-function' target='_blank'><img src='./_static/af_logo.png' alt='The Government Analysis Function logo' style='width:50%;'></a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/best-practice-and-impact/qa-of-code-guidance"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/best-practice-and-impact/qa-of-code-guidance/issues/new?title=Issue%20on%20page%20%2Fmanagers_guide.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/best-practice-and-impact/qa-of-code-guidance/edit/master/book/managers_guide.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Edit this page"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="headerbtn__text-container">suggest edit</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/managers_guide.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#apply-quality-assurance-proportional-to-risk">
+   Apply quality assurance proportional to risk
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#design-quality-analysis">
+   Design quality analysis
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#why-have-you-chosen-to-do-the-analysis-this-way">
+     Why have you chosen to do the analysis this way?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#how-are-you-storing-input-data">
+     How are you storing input data?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#how-will-you-keep-track-of-changes-to-the-code-and-why-they-were-made">
+     How will you keep track of changes to the code and why they were made?
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#quality-assure-throughout-development">
+   Quality assure throughout development
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#how-is-your-code-structured">
+     How is your code structured?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#how-easy-is-it-to-adjust-the-way-that-the-analysis-runs">
+     How easy is it to adjust the way that the analysis runs?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#how-is-the-analysis-documented">
+     How is the analysis documented?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-are-the-dependencies">
+     What are the dependencies?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-assumptions-does-the-analysis-make">
+     What assumptions does the analysis make?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#how-has-peer-review-been-done">
+     How has peer review been done?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#how-have-you-tested-the-code">
+     How have you tested the code?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-happens-when-the-analysis-fails-to-run">
+     What happens when the analysis fails to run?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#how-does-the-analysis-result-differ-from-the-previous-analysis">
+     How does the analysis result differ from the previous analysis?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#how-can-we-further-improve-the-quality-of-the-analysis">
+     How can we further improve the quality of the analysis?
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Managing analytical code development</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#apply-quality-assurance-proportional-to-risk">
+   Apply quality assurance proportional to risk
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#design-quality-analysis">
+   Design quality analysis
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#why-have-you-chosen-to-do-the-analysis-this-way">
+     Why have you chosen to do the analysis this way?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#how-are-you-storing-input-data">
+     How are you storing input data?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#how-will-you-keep-track-of-changes-to-the-code-and-why-they-were-made">
+     How will you keep track of changes to the code and why they were made?
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#quality-assure-throughout-development">
+   Quality assure throughout development
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#how-is-your-code-structured">
+     How is your code structured?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#how-easy-is-it-to-adjust-the-way-that-the-analysis-runs">
+     How easy is it to adjust the way that the analysis runs?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#how-is-the-analysis-documented">
+     How is the analysis documented?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-are-the-dependencies">
+     What are the dependencies?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-assumptions-does-the-analysis-make">
+     What assumptions does the analysis make?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#how-has-peer-review-been-done">
+     How has peer review been done?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#how-have-you-tested-the-code">
+     How have you tested the code?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-happens-when-the-analysis-fails-to-run">
+     What happens when the analysis fails to run?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#how-does-the-analysis-result-differ-from-the-previous-analysis">
+     How does the analysis result differ from the previous analysis?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#how-can-we-further-improve-the-quality-of-the-analysis">
+     How can we further improve the quality of the analysis?
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="managing-analytical-code-development">
+<h1>Managing analytical code development<a class="headerlink" href="#managing-analytical-code-development" title="Permalink to this headline">#</a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This section is a draft, while we ensure that it meets user needs.</p>
+<p>It would benefit from case studies that demonstrate how to decide what level of quality assurance a piece of analysis requires.</p>
+<p>Please get in touch with feedback or case studies to support the guidance <a class="reference external" href="https://github.com/best-practice-and-impact/qa-of-code-guidance/issues">by creating a GitHub Issue</a> or emailing us at <a class="reference external" href="mailto:Analysis&#46;Function&#37;&#52;&#48;ons&#46;gov&#46;uk">Analysis<span>&#46;</span>Function<span>&#64;</span>ons<span>&#46;</span>gov<span>&#46;</span>uk</a>.</p>
+</div>
+<p>This section of the guidance is targeted at those who manage data analysis/science/engineering work in government or those acting as product owners for analytical products.</p>
+<p>It aims to help you support your team to apply the good quality assurance practices described in the wider <a class="reference external" href="https://best-practice-and-impact.github.io/qa-of-code-guidance/intro.html">Quality assurance of code for analysis and research guidance</a>. Processes that apply these good practices are referred to as a reproducible analytical pipelines (RAP).</p>
+<p>Before applying this guidance, you should have a basic awareness of the tools and techniques used to do quality analysis as code - the <a class="reference external" href="https://learninghub.ons.gov.uk/course/view.php?name=intro_to_RAP">introduction to RAP course</a> outlines these. You should also be aware of any specific tools and platforms that are used in your department.</p>
+<p><a class="reference external" href="https://www.gov.uk/service-manual/service-standard">The Government Service Standard</a> outlines best practices for creating public services, which include analysis. You should use this when designing and managing the development of analysis as code.</p>
+<section id="apply-quality-assurance-proportional-to-risk">
+<h2>Apply quality assurance proportional to risk<a class="headerlink" href="#apply-quality-assurance-proportional-to-risk" title="Permalink to this headline">#</a></h2>
+<p>As described by <a class="reference external" href="https://www.gov.uk/government/publications/the-aqua-book-guidance-on-producing-quality-analysis-for-government">the Aqua book</a>, the quality assurance of our analysis should be proportional to the complexity and risk of the analysis.</p>
+<p>When managing analytical work, you should not need an in-depth understanding of the analysis code to trust that it is working correctly. However, you should be confident that the approach the team has taken is appropriate given the user need, and that proportionate quality assurance is being applied to the development and running of the analysis.</p>
+<p>You should work with your team to decide on which quality assurance practices are necessary given each piece of analysis. You might find our <a class="reference internal" href="checklists.html"><span class="doc std std-doc">Code quality assurance checklists</span></a> useful templates for defining the target level of assurance. When possible, you should define the target assurance level before starting the analysis.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>While quality assurance must be applied relative to the risk and complexity of the analysis, you must consider the skills of your team. It will take time to learn to apply the necessary good practices, so you should support their gradual development of these skills.</p>
+<p><a class="reference external" href="https://learninghub.ons.gov.uk/course/view.php?name=intro_to_RAP">The RAP learning pathway</a> provides training in good practices. Then the wider <a class="reference external" href="https://best-practice-and-impact.github.io/qa-of-code-guidance/intro.html">Quality assurance of code for analysis and research guidance</a> can be used as a reference to apply these practices to analysis. You should identify where each analyst is along the pathway - they should look to develop the next skill in the pathway and apply this, rather than attempting to adopt them all at once.</p>
+<p>Note that it is important to maintain technical skills in the analysis team for sustainability, to ensure that the analysis can be understood, updated and maintained.</p>
+</div>
+<p>Despite the initial cost of developing technical skills, <a class="reference external" href="https://www.devops-research.com/research.html">evidence shows that applying good practices increases the efficiency of code development and maintainability of the code</a>. There are number of case studies that describe how <a class="reference external" href="https://analysisfunction.civilservice.gov.uk/support/reproducible-analytical-pipelines/rap-case-studies/">good quality assurance practices have improved government analysis</a>.</p>
+<p>Not following good practices creates <a class="reference external" href="https://en.wikipedia.org/wiki/Technical_debt">technical debt</a>, which slows down further development of the analysis. This can be necessary for delivering to short deadlines, but time should be set aside to address this for continued development of the analysis.</p>
+<p>Where quality assurance of the code doesn’t meet your target level of assurance, for example where there is limited time or skill, then it is necessary to supplement this with more in-depth assurance of outputs. This might include dual running the analysis with an independent system and consistency checks across the output data.</p>
+<p>The remaining parts of this section provide questions that aim to help you assess the quality assurance practices that your team are applying in their analysis.</p>
+</section>
+<section id="design-quality-analysis">
+<h2>Design quality analysis<a class="headerlink" href="#design-quality-analysis" title="Permalink to this headline">#</a></h2>
+<p>These questions aim to help you assess the design decisions at the beginning of the analysis.</p>
+<section id="why-have-you-chosen-to-do-the-analysis-this-way">
+<h3>Why have you chosen to do the analysis this way?<a class="headerlink" href="#why-have-you-chosen-to-do-the-analysis-this-way" title="Permalink to this headline">#</a></h3>
+<p>Understanding user needs ensures that the analysis is valuable.</p>
+<ul class="simple">
+<li><p>There should be a plan to consult users at the beginning and throughout the development process, to ensure that their needs are being met.</p></li>
+<li><p>The methodology and data should be suitable for the question being asked.</p></li>
+<li><p>The analysis must be developed by more than one individual, to allow pair programming, peer review and mentoring. This increases the sustainability of analysis.</p></li>
+<li><p>The analysis should be carried out using open-source analysis tools, wherever possible. Your team should be able to explain why they have chosen the analysis tools and why they are confident that they are fit for purpose.</p></li>
+</ul>
+</section>
+<section id="how-are-you-storing-input-data">
+<h3>How are you storing input data?<a class="headerlink" href="#how-are-you-storing-input-data" title="Permalink to this headline">#</a></h3>
+<p>Versioning input data ensures that we can reproduce our analysis.</p>
+<ul class="simple">
+<li><p>Input data should be versioned, so that analysis outputs can be reproduced.</p></li>
+<li><p>Data should be stored in an open format (e.g. CSV or ODS), not formats that are restricted to proprietary software like SAS and Stata.</p></li>
+<li><p>Large or complex datasets should be stored in a database.</p></li>
+<li><p>You should monitor the quality of data, following <a class="reference external" href="https://www.gov.uk/government/publications/the-government-data-quality-framework/the-government-data-quality-framework">the government data quality framework</a>.</p></li>
+</ul>
+</section>
+<section id="how-will-you-keep-track-of-changes-to-the-code-and-why-they-were-made">
+<h3>How will you keep track of changes to the code and why they were made?<a class="headerlink" href="#how-will-you-keep-track-of-changes-to-the-code-and-why-they-were-made" title="Permalink to this headline">#</a></h3>
+<p><a class="reference internal" href="version_control.html"><span class="doc std std-doc">Version control</span></a> of changes provides an audit trail.</p>
+<ul class="simple">
+<li><p>The code, documentation, and peer reviews should all be version controlled. Git software is most commonly used for this.</p></li>
+<li><p>The code should be developed on an open source code platform, like GitHub. This transparency increases your users trust in the analysis.</p></li>
+<li><p>There should be a clear record of every change and who made it.</p></li>
+<li><p>Each change should be linked to a reason, for example, a new requirement or an issue in the existing code.</p></li>
+<li><p>Reviews of changes should be stored with the version of the analysis that was reviewed.</p></li>
+</ul>
+</section>
+</section>
+<section id="quality-assure-throughout-development">
+<h2>Quality assure throughout development<a class="headerlink" href="#quality-assure-throughout-development" title="Permalink to this headline">#</a></h2>
+<p>These questions can be used throughout the development of the analysis, to assess how the team are progressing towards the target quality assurance practices that you have agreed.</p>
+<section id="how-is-your-code-structured">
+<h3>How is your code structured?<a class="headerlink" href="#how-is-your-code-structured" title="Permalink to this headline">#</a></h3>
+<p><a class="reference internal" href="modular_code.html"><span class="doc std std-doc">Modular code</span></a> makes it easier to understand, update and reuse the code.</p>
+<ul class="simple">
+<li><p>Logic should be written as functions, so that it can be reused consistently and tested.</p></li>
+<li><p>Related functions should be grouped together in the same file, so that it is easy to find them.</p></li>
+<li><p>Logic with different responsibilities (e.g. reading data versus transforming data) should be clearly separated.</p></li>
+<li><p>When code can be reused for other analyses, it should be stored and shared as a package.</p></li>
+</ul>
+</section>
+<section id="how-easy-is-it-to-adjust-the-way-that-the-analysis-runs">
+<h3>How easy is it to adjust the way that the analysis runs?<a class="headerlink" href="#how-easy-is-it-to-adjust-the-way-that-the-analysis-runs" title="Permalink to this headline">#</a></h3>
+<p><a class="reference internal" href="configuration.html"><span class="doc std std-doc">Configuration files</span></a> allow you to change the way the code runs without editing the code.</p>
+<ul class="simple">
+<li><p>Parts of the code that may change should be stored in separate configuration files.</p></li>
+<li><p>Things that often change in analysis code include input and output file paths, reference dates and model parameters.</p></li>
+</ul>
+</section>
+<section id="how-is-the-analysis-documented">
+<h3>How is the analysis documented?<a class="headerlink" href="#how-is-the-analysis-documented" title="Permalink to this headline">#</a></h3>
+<p><a class="reference internal" href="code_documentation.html"><span class="doc std std-doc">Code documentation</span></a> is essential for business continuity and sustainability.</p>
+<ul class="simple">
+<li><p>Every function should be documented in the code, so that it is clear what the function is supposed to do.</p></li>
+<li><p>Function documentation should include what goes in and what comes out of each function.</p></li>
+<li><p>Where code will be run or re-used by others, documentation should include usage examples and test data.</p></li>
+</ul>
+</section>
+<section id="what-are-the-dependencies">
+<h3>What are the dependencies?<a class="headerlink" href="#what-are-the-dependencies" title="Permalink to this headline">#</a></h3>
+<p><a class="reference internal" href="project_documentation.html"><span class="doc std std-doc">Project documentation</span></a> ensures that others can reproduce our analysis.</p>
+<ul class="simple">
+<li><p>User instructions should be provided for running the analysis.</p></li>
+<li><p>Software and package versions should be documented with the code. Typically package versions are recorded using <code class="docutils literal notranslate"><span class="pre">setup.py</span></code> and <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> files (Python) or a <code class="docutils literal notranslate"><span class="pre">DESCRIPTION</span></code> file (R).</p></li>
+<li><p>Code should not be dependent on a specific computer to run. Running it on a colleague’s system can help to check this.</p></li>
+<li><p>When the same analysis is run multiple times or on different systems it should give reproducible outcomes.</p></li>
+<li><p>Container systems, like Docker, help to create reproducible environments to run code.</p></li>
+</ul>
+</section>
+<section id="what-assumptions-does-the-analysis-make">
+<h3>What assumptions does the analysis make?<a class="headerlink" href="#what-assumptions-does-the-analysis-make" title="Permalink to this headline">#</a></h3>
+<p>Transparency of our analysis increases trust.</p>
+<ul class="simple">
+<li><p>Assumptions and caveats of the analysis should be recorded close to the code.</p></li>
+<li><p>These must be communicated to users when releasing results from the analysis.</p></li>
+</ul>
+</section>
+<section id="how-has-peer-review-been-done">
+<h3>How has peer review been done?<a class="headerlink" href="#how-has-peer-review-been-done" title="Permalink to this headline">#</a></h3>
+<p><a class="reference internal" href="peer_review.html"><span class="doc std std-doc">Peer review</span></a> increases the quality of our analysis and transfers skills and knowledge.</p>
+<ul class="simple">
+<li><p>Technical colleagues should conduct internal peer reviews of each change to the code. This will identify issues early on and makes the review process more manageable than reviewing only the final analysis.</p></li>
+<li><p>Peer review should follow a standard procedure, so that reviews are consistent. Reviewers should check that each change follows the agreed good practices.</p></li>
+<li><p>There should be evidence that peer reviews are acted on. When issues or concerns are raised, they should be addressed before the analysis is used.</p></li>
+<li><p>If the product is high risk, external peer review should also be conducted.</p></li>
+</ul>
+</section>
+<section id="how-have-you-tested-the-code">
+<h3>How have you tested the code?<a class="headerlink" href="#how-have-you-tested-the-code" title="Permalink to this headline">#</a></h3>
+<p><a class="reference internal" href="testing_code.html"><span class="doc std std-doc">Testing</span></a> assures us that the code is working correctly.</p>
+<ul class="simple">
+<li><p>Testing means making sure that the code produces the right outputs for realistic example input data.</p></li>
+<li><p>Automated ‘unit’ testing should be applied to each function, to ensure that code continues to work after future changes to the code.</p></li>
+<li><p>Each function and the end-to-end analysis should be tested using minimal, realistic data.</p></li>
+<li><p>Testing should be more extensive on the most important or complex parts of the code. However, ideally every single function should be tested.</p></li>
+<li><p>Tests should account for realistic cases, which might include missing data, zeroes, infinities, negative numbers, wrong data types, and invalid inputs.</p></li>
+<li><p>Reviewers should sign-off that there is enough testing to assure that the code is working as expected.</p></li>
+<li><p>Each time an error is found in the code, a test should be added to assure that the error does not reoccur.</p></li>
+</ul>
+</section>
+<section id="what-happens-when-the-analysis-fails-to-run">
+<h3>What happens when the analysis fails to run?<a class="headerlink" href="#what-happens-when-the-analysis-fails-to-run" title="Permalink to this headline">#</a></h3>
+<p>Recording and reporting errors provides an audit trail and makes it easier for users to correctly use the code.</p>
+<ul class="simple">
+<li><p>When code fails to run, it should provide informative error messages to describe the problem.</p></li>
+<li><p>If another team will operate the code, error messages should help users to correct the problem.</p></li>
+<li><p>Errors or warnings might also be raised when data validation is not met.</p></li>
+<li><p>When code is run in production, errors should be recorded or logged.</p></li>
+</ul>
+</section>
+<section id="how-does-the-analysis-result-differ-from-the-previous-analysis">
+<h3>How does the analysis result differ from the previous analysis?<a class="headerlink" href="#how-does-the-analysis-result-differ-from-the-previous-analysis" title="Permalink to this headline">#</a></h3>
+<p>Comparing analysis to previous results can help to ensure reproducibility and identify errors.</p>
+<ul class="simple">
+<li><p>When repeating analysis over time, you should compare results between analyses. Large differences in the outcome of the results may indicate an issue with the analysis process.</p></li>
+<li><p>When developing code to replace legacy analysis, you may wish to parallel this with the new method. This will allow you to identify differences and improvements.</p></li>
+</ul>
+</section>
+<section id="how-can-we-further-improve-the-quality-of-the-analysis">
+<h3>How can we further improve the quality of the analysis?<a class="headerlink" href="#how-can-we-further-improve-the-quality-of-the-analysis" title="Permalink to this headline">#</a></h3>
+<p>Code quality improves over time, as your team learn more about good practices.</p>
+<ul class="simple">
+<li><p>The team should be aiming to meet the agreed assurance level, but should also consider which practices could be applied next to improve the code beyond this.</p></li>
+<li><p>You should review training needs in your team and allow time for continuos personal development of these practices.</p></li>
+</ul>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="intro.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Quality assurance of code for analysis and research</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="checklists.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Code quality assurance checklists</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    <div class="extra_footer">
+      <p>Analysis Function reproducible analytical pipelines (RAP) support</p><p>This is a living document, please help use to make it grow by providing any feedback <a href='mailto:Analysis.Function@ons.gov.uk'>by email</a> or via the <a href='https://github.com/best-practice-and-impact/qa-of-code-guidance'>GitHub repository</a>.
+    </div>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
