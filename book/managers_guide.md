@@ -34,7 +34,9 @@ While quality assurance must be applied relative to the risk and complexity of t
 Note that it is important to maintain technical skills in the analysis team for sustainability, to ensure that the analysis can be understood, updated and maintained.
 ```
 
-Despite the initial cost of developing technical skills, [evidence shows that applying good practices increases the efficiency of code development and maintainability of the code](https://www.devops-research.com/research.html). Not following good practices creates [technical debt](https://en.wikipedia.org/wiki/Technical_debt), which slows down further development of the analysis. This can be necessary for delivering to short deadlines, but time should be set aside to address this for continued development of the analysis.
+Despite the initial cost of developing technical skills, [evidence shows that applying good practices increases the efficiency of code development and maintainability of the code](https://www.devops-research.com/research.html). There are number of case studies that describe how [good quality assurance practices have improved government analysis](https://analysisfunction.civilservice.gov.uk/support/reproducible-analytical-pipelines/rap-case-studies/).
+
+Not following good practices creates [technical debt](https://en.wikipedia.org/wiki/Technical_debt), which slows down further development of the analysis. This can be necessary for delivering to short deadlines, but time should be set aside to address this for continued development of the analysis.
 
 Where quality assurance of the code doesn't meet your target level of assurance, for example where there is limited time or skill, then it is necessary to supplement this with more in-depth assurance of outputs. This might include dual running the analysis with an independent system and consistency checks across the output data.
 
