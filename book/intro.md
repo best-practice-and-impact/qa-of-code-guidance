@@ -53,7 +53,7 @@ For keyboard navigation, {kbd}`Up Arrow` and {kbd}`Down Arrow`keys can be used t
 
 ### Feedback and reporting accessibility problems
 
-We’re always looking to improve the accessibility of our guidance. If you find any problems not listed on this page or think that we’re not meeting accessibility requirements, please contact us by emailing [gsshelp@statistics.gov.uk](mailto:gsshelp@statistics.gov.uk). Please also get in touch if you are unable to access any part of this guidance, or require the content in a different format.
+We’re always looking to improve the accessibility of our guidance. If you find any problems not listed on this page or think that we’re not meeting accessibility requirements, please contact us by emailing [Analysis.Function@ons.gov.uk](mailto:Analysis.Function@ons.gov.uk). Please also get in touch if you are unable to access any part of this guidance, or require the content in a different format.
 
 We will consider your request and aim to get back to you within five working days.
 

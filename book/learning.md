@@ -78,7 +78,7 @@ Please note that learning resources from non-government training providers (i.e.
 
 ## Reproducible Analytical Pipelines
 
-* [GSS RAP Overview](https://gss.civilservice.gov.uk/reproducible-analytical-pipelines/)
-* [RAP Champion Network](https://gss.civilservice.gov.uk/about-us/champion-networks/reproducible-analytical-pipeline-rap-champions/#more-information-about-rap-champions)
+* [GSS RAP Overview](https://analysisfunction.civilservice.gov.uk/support/reproducible-analytical-pipelines/)
+* [The cross government RAP Champion Network](https://analysisfunction.civilservice.gov.uk/support/reproducible-analytical-pipelines/reproducible-analytical-pipeline-rap-champions/)
 * [ONS Data Science Campus RAP learning materials](https://github.com/datasciencecampus/gov-uk-rap-materials)
 
