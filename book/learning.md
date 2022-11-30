@@ -15,6 +15,8 @@ Please note that learning resources from non-government training providers (i.e.
 * [Introduction to object-oriented programming (OOP) in Python](https://learninghub.ons.gov.uk/enrol/index.php?id=1163)
 * [The Official Python Getting Started Guide](https://www.python.org/about/gettingstarted/)
 * [Learn Python](https://www.learnpython.org/), supported by DataCamp
+* [Learn Python Programming](https://www.scaler.com/topics/python/)
+* [Python For Beginners](https://www.python.org/about/gettingstarted/)
 
 ### R
 
