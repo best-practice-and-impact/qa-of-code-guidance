@@ -7,6 +7,7 @@
 Reproducible Analytical Pipelines (RAP) focus on the use of open-source analytical tools and a variety of techniques from various fields such as software engineering, and data analysis, in order to deliver reproducible, testable and auditable data pipelines. RAP is a culture of wanting to improve the quality of our analysis, by improving the quality assurance of our analysis code.
 
 ### Version control
+
 Saving versions documents to keep an audit trails of changes to them. This allows you to backtrack to previous versions, and keep track of and merge multiple concurrent versions.
 
 ### Peer review
@@ -41,13 +42,9 @@ Open-source programming languages are free to use. We recommend using Python and
 
 Proprietary software, including SPSS, SAS and Stata are closed source. These are expensive to use and do not support many of the good analysis practices outlined in this guidance. Not using open source analysis tools means that our users need to purchase software to reproduce our results.
 
-### Python
+### Python and R
 
-Python is a general-use high-level programming language with an emphasis on code readability. Python is free and open source.
-
-### R
-
-R is a high-level programming language, commonly used within mathematic and statistical projects. R is free and open source.
+Python and R are high-level programming languages that are commonly used in government analysis. They are both free to use and open source.
 
 ### Git
 
@@ -63,13 +60,11 @@ Some platforms (e.g. GitLab) are open source and can be hosted internally by you
 
 ### Continuous integration and continuous delivery (CI/CD)
 
-CI/CD tools help to automate parts of your code development workflow. This can include running automated tests against your code and deploying the latest version of your code into production. GitHub actions is an example tool for this.
+CI/CD tools help to automate parts of your code development workflow. This can include running automated tests against your code and deploying the latest version of your code into production. GitHub Actions is an example tool for running CI/CD workflows.
 
 Continuous integration describes regularly combining code changes from multiple contributors on a single software project. Integrating these changes regularly helps to check that independent changes work correctly together. Continous delivery describes automation of the software release process. Automating both of these using a CI/CD tool increases the efficiency of building software and getting it into production.
 
 ### Virtual environment
-
-
 
 ### Integrated development environment (IDE)
 
@@ -150,4 +145,4 @@ Something that is required for your code to run correctly - your code depends up
 
 ### Automated testing
 
-Tests that are written in code, to check that code works as expected.
+Tests that are written in code, to check that code works as expected. Tests can check code multiple levels, for example, checking that an individual function works or checking that a pipeline runs from end to end.
