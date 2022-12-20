@@ -1,0 +1,1044 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Glossary of terms &#8212; Quality Assurance of Code for Analysis and Research</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="_static/logo.css" />
+    <link rel="stylesheet" type="text/css" href="_static/admonitions.css" />
+    <link rel="stylesheet" type="text/css" href="_static/markdown_within_tabs.css" />
+    <link rel="stylesheet" type="text/css" href="_static/accessibility.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Managing analytical code development" href="managers_guide.html" />
+    <link rel="prev" title="Quality assurance of code for analysis and research" href="intro.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/duck_book_logo.svg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Quality Assurance of Code for Analysis and Research</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Overview
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Glossary of terms
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="managers_guide.html">
+   Managing analytical code development
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="checklists.html">
+   Code quality assurance checklists
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="checklist_lower.html">
+     Lower quality assurance
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="checklist_moderate.html">
+     Moderate quality assurance
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="checklist_higher.html">
+     Higher quality assurance
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Guidance
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="principles.html">
+   Principles
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="modular_code.html">
+   Modular code
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="readable_code.html">
+   Readable code
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="project_structure.html">
+   Structuring your project
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="code_documentation.html">
+   Code documentation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="project_documentation.html">
+   Project documentation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="version_control.html">
+   Version control
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="configuration.html">
+   Configuration
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data.html">
+   Data Management
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="peer_review.html">
+   Peer review
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="testing_code.html">
+   Testing code
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Resources
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="learning.html">
+   Learning resources
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="tools.html">
+   Tools
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            <p>Book version 2022.4</p><a href='https://www.gov.uk/government/organisations/government-analysis-function' target='_blank'><img src='./_static/af_logo.png' alt='The Government Analysis Function logo' style='width:50%;'></a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/best-practice-and-impact/qa-of-code-guidance"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/best-practice-and-impact/qa-of-code-guidance/issues/new?title=Issue%20on%20page%20%2Fglossary.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/best-practice-and-impact/qa-of-code-guidance/edit/master/book/glossary.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Edit this page"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="headerbtn__text-container">suggest edit</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/glossary.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#practices">
+   Practices
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#reproducible-analytical-pipelines-rap">
+     Reproducible Analytical Pipelines (RAP)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#version-control">
+     Version control
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#peer-review">
+     Peer review
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#automated-testing">
+     Automated testing
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#abstraction">
+     Abstraction
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#modularity">
+     Modularity
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#readability">
+     Readability
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#maintainability">
+     Maintainability
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tools">
+   Tools
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#open-source">
+     Open source
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#python-and-r">
+     Python and R
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#git">
+     Git
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#version-control-platforms">
+     Version control platforms
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#continuous-integration-and-continuous-delivery-ci-cd">
+     Continuous integration and continuous delivery (CI/CD)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#virtual-environment">
+     Virtual environment
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#integrated-development-environment-ide">
+     Integrated development environment (IDE)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#code-interpreter">
+     Code interpreter
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#debugger">
+     Debugger
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#cloud-computing">
+     Cloud computing
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#code">
+   Code
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Code
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#scripts">
+     Scripts
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#notebooks">
+     Notebooks
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#packages">
+     Packages
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#code-repository">
+     Code repository
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#variables">
+     Variables
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#functions-and-methods">
+     Functions and methods
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#parameters-and-arguments">
+     Parameters and arguments
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#dependencies">
+     Dependencies
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#documentation">
+     Documentation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#configuration-file">
+     Configuration file
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#logging">
+     Logging
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#application-programming-interface-api">
+     Application Programming Interface (API)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#object-oriented-programming-oop">
+     Object-oriented programming (OOP)
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Glossary of terms</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#practices">
+   Practices
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#reproducible-analytical-pipelines-rap">
+     Reproducible Analytical Pipelines (RAP)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#version-control">
+     Version control
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#peer-review">
+     Peer review
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#automated-testing">
+     Automated testing
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#abstraction">
+     Abstraction
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#modularity">
+     Modularity
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#readability">
+     Readability
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#maintainability">
+     Maintainability
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tools">
+   Tools
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#open-source">
+     Open source
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#python-and-r">
+     Python and R
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#git">
+     Git
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#version-control-platforms">
+     Version control platforms
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#continuous-integration-and-continuous-delivery-ci-cd">
+     Continuous integration and continuous delivery (CI/CD)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#virtual-environment">
+     Virtual environment
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#integrated-development-environment-ide">
+     Integrated development environment (IDE)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#code-interpreter">
+     Code interpreter
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#debugger">
+     Debugger
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#cloud-computing">
+     Cloud computing
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#code">
+   Code
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Code
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#scripts">
+     Scripts
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#notebooks">
+     Notebooks
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#packages">
+     Packages
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#code-repository">
+     Code repository
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#variables">
+     Variables
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#functions-and-methods">
+     Functions and methods
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#parameters-and-arguments">
+     Parameters and arguments
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#dependencies">
+     Dependencies
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#documentation">
+     Documentation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#configuration-file">
+     Configuration file
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#logging">
+     Logging
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#application-programming-interface-api">
+     Application Programming Interface (API)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#object-oriented-programming-oop">
+     Object-oriented programming (OOP)
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="glossary-of-terms">
+<h1>Glossary of terms<a class="headerlink" href="#glossary-of-terms" title="Permalink to this headline">#</a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This section is a draft, while we ensure that it meets user needs.</p>
+<p>Please get in touch with feedback <a class="reference external" href="https://github.com/best-practice-and-impact/qa-of-code-guidance/issues">by creating a GitHub Issue</a> or <a class="reference external" href="mailto:ASAP&#37;&#52;&#48;ons&#46;gov&#46;uk">emailing us</a>.</p>
+</div>
+<section id="practices">
+<h2>Practices<a class="headerlink" href="#practices" title="Permalink to this headline">#</a></h2>
+<section id="reproducible-analytical-pipelines-rap">
+<h3>Reproducible Analytical Pipelines (RAP)<a class="headerlink" href="#reproducible-analytical-pipelines-rap" title="Permalink to this headline">#</a></h3>
+<p>Reproducible Analytical Pipelines (RAP) are analyses that are carried out following good software engineering practices that are described by this guidance. They focus on the use of open-source analytical tools and a variety of techniques to deliver reproducible, auditable and assured data analyses. RAP is more generally a culture of wanting to improve the quality of our analysis, by improving the quality assurance of our analysis code.</p>
+</section>
+<section id="version-control">
+<h3>Version control<a class="headerlink" href="#version-control" title="Permalink to this headline">#</a></h3>
+<p>Saving versions of documents to keep an audit trails of changes. Version control tools typically allow you to backtrack to previous versions and to merge multiple concurrent changes from different users.</p>
+</section>
+<section id="peer-review">
+<h3>Peer review<a class="headerlink" href="#peer-review" title="Permalink to this headline">#</a></h3>
+<p>Having another developer review changes that you have made to code. This helps to assure that your code is readable and follows a sensible approach. It also helps to transfer understanding of the code between members of the team.</p>
+</section>
+<section id="automated-testing">
+<h3>Automated testing<a class="headerlink" href="#automated-testing" title="Permalink to this headline">#</a></h3>
+<p>Tests that are written in code, to check that other code works as expected. Test are like a controlled experience, to check that our code produces the expected outcome. Tests can check code multiple levels, for example, checking that an individual function works or checking that a pipeline runs from end to end.</p>
+</section>
+<section id="abstraction">
+<h3>Abstraction<a class="headerlink" href="#abstraction" title="Permalink to this headline">#</a></h3>
+<p>Treating a problem as an idea or concept, rather than a detailed individual example.</p>
+<p>Abstraction is used to manage the complexity of software, by describing our logic in a more generic way or by hiding complexity. When we use similar logic in multiple parts of our code, we can abstract this logic into a generic function or method to be reused. When part of our process is very complex but is self-contained we can hide this complexity it by putting it inside a function and referring to the function.</p>
+</section>
+<section id="modularity">
+<h3>Modularity<a class="headerlink" href="#modularity" title="Permalink to this headline">#</a></h3>
+<p>Modular code is written in discrete, re-usable chunks. Similar code is kept close together, while pieces of code with different uses are stored separately. Breaking code down in this way makes code easier to work with, understand and review.</p>
+</section>
+<section id="readability">
+<h3>Readability<a class="headerlink" href="#readability" title="Permalink to this headline">#</a></h3>
+<p>Ability to gain an understanding of code within a reasonable amount of time.</p>
+</section>
+<section id="maintainability">
+<h3>Maintainability<a class="headerlink" href="#maintainability" title="Permalink to this headline">#</a></h3>
+<p>Ability to easily understand, modify and repair the code.</p>
+</section>
+</section>
+<section id="tools">
+<h2>Tools<a class="headerlink" href="#tools" title="Permalink to this headline">#</a></h2>
+<section id="open-source">
+<h3>Open source<a class="headerlink" href="#open-source" title="Permalink to this headline">#</a></h3>
+<p>A type of software license that allows users to do view the software’s code. Open-source code is openly available to anyone. Using open-source software and publishing our code with open-source licenses ensures that our users can easily understand and reproduce our analysis.</p>
+<p>Open-source programming languages are free to use. We recommend using Python and R, which support the good practices outlined in this guidance.</p>
+<p>Proprietary software, including SPSS, SAS and Stata are closed source. These are expensive to use and do not support many of the good analysis practices outlined in this guidance. Not using open source analysis tools means that our users need to purchase software to reproduce our results.</p>
+</section>
+<section id="python-and-r">
+<h3>Python and R<a class="headerlink" href="#python-and-r" title="Permalink to this headline">#</a></h3>
+<p>Python and R are high-level programming languages that are commonly used in government analysis. They are both free to use and open source.</p>
+</section>
+<section id="git">
+<h3>Git<a class="headerlink" href="#git" title="Permalink to this headline">#</a></h3>
+<p>By far the most popular version control tool. Used to version changes to code for any programming language.</p>
+</section>
+<section id="version-control-platforms">
+<h3>Version control platforms<a class="headerlink" href="#version-control-platforms" title="Permalink to this headline">#</a></h3>
+<p>For example, GitHub, GitLab and BitBucket.</p>
+<p>These services use Git to manage remote repositories. Having a remote version of your repository allows multiple users to collaborate using Git. Each platform has free and paid options and allow users to open-source their work.</p>
+<p>Some platforms (e.g. GitLab) are open source and can be hosted internally by your organisation.</p>
+</section>
+<section id="continuous-integration-and-continuous-delivery-ci-cd">
+<h3>Continuous integration and continuous delivery (CI/CD)<a class="headerlink" href="#continuous-integration-and-continuous-delivery-ci-cd" title="Permalink to this headline">#</a></h3>
+<p>CI/CD tools help to automate parts of your code development workflow. This can include running automated tests against your code and deploying the latest version of your code into production. GitHub Actions is an example tool for running CI/CD workflows.</p>
+<p>Continuous integration describes regularly combining code changes from multiple contributors on a single software project. Integrating these changes regularly helps to check that independent changes work correctly together. Continous delivery describes automation of the software release process. Automating both of these using a CI/CD tool increases the efficiency of building software and getting it into production.</p>
+</section>
+<section id="virtual-environment">
+<h3>Virtual environment<a class="headerlink" href="#virtual-environment" title="Permalink to this headline">#</a></h3>
+<p>Virtual environments are tools for managing dependencies and isolating projects. A virtual environment is effectively a folder tree containing the programming language version and a list of dependencies. This helps keep track of dependencies and avoid conflicts between different projects.</p>
+</section>
+<section id="integrated-development-environment-ide">
+<h3>Integrated development environment (IDE)<a class="headerlink" href="#integrated-development-environment-ide" title="Permalink to this headline">#</a></h3>
+<p>An IDE is a tool that facilitates software development for a given programming language. An IDE will usually consist of a code editor, debugger and development automation tools like a text auto-complete.</p>
+</section>
+<section id="code-interpreter">
+<h3>Code interpreter<a class="headerlink" href="#code-interpreter" title="Permalink to this headline">#</a></h3>
+<p>A computer program that runs code in a particular programming language. For example, the program that reads your Python or R analysis code and runs it. A non-interactive interpreter runs code in order, which is important for reproducibility.</p>
+<p>Interactive interpreters allow you to run individual lines of code, which means that code can be run out of order. Notebooks use interactive interpreters. These are not suitable for running analysis pipelines, because they do not ensure that the code is run reproducibly.</p>
+</section>
+<section id="debugger">
+<h3>Debugger<a class="headerlink" href="#debugger" title="Permalink to this headline">#</a></h3>
+<p>A computer program that is used to test software and to identify the root cause of errors or “bugs”. Debuggers allow you to pause the code at specific points and to walk through code step by step, in order to understand how it is working.</p>
+</section>
+<section id="cloud-computing">
+<h3>Cloud computing<a class="headerlink" href="#cloud-computing" title="Permalink to this headline">#</a></h3>
+<p>Cloud computing allows us to access computing power and data storage on-demand. This means that we can access high-specification hardware or store large amounts of data, usually only paying for what we have used.</p>
+<p>The most common cloud platforms are Google cloud platform (GCP), Amazon web service (AWS) and Microsoft azure.</p>
+</section>
+</section>
+<section id="code">
+<h2>Code<a class="headerlink" href="#code" title="Permalink to this headline">#</a></h2>
+<section id="id1">
+<h3>Code<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
+<p>The part of software that contains program instructions. In analysis, code is a set of human-readable instructions that tell a computed how to carry out our analysis.</p>
+</section>
+<section id="scripts">
+<h3>Scripts<a class="headerlink" href="#scripts" title="Permalink to this headline">#</a></h3>
+<p>A script is a single file containing code. Code in scripts can be run interactively or procedurally.</p>
+</section>
+<section id="notebooks">
+<h3>Notebooks<a class="headerlink" href="#notebooks" title="Permalink to this headline">#</a></h3>
+<p>Notebooks are documents that contain text, executable code, and the output of that code. Notebooks are used to share the results of exploratory analysis. However, because parts of a notebook can be run out of order they are not suitable for production of published outputs.</p>
+</section>
+<section id="packages">
+<h3>Packages<a class="headerlink" href="#packages" title="Permalink to this headline">#</a></h3>
+<p>Packages are file structures that contain code and documentation. These collections of code are designed to be installed and re-used with ease. Packages in Python and R act as extensions, to allow us to reuse code that has already been written.</p>
+<p>“Library” is similarly used to describe a software collection, however, packages are more specifically for distribution of code.</p>
+</section>
+<section id="code-repository">
+<h3>Code repository<a class="headerlink" href="#code-repository" title="Permalink to this headline">#</a></h3>
+<p>A folder for storing the code and associated documents for a piece of software. These are often associate with Git, as the folder that is being version controlled.</p>
+</section>
+<section id="variables">
+<h3>Variables<a class="headerlink" href="#variables" title="Permalink to this headline">#</a></h3>
+<p>A variable is a named code object for storing data within a programming language.</p>
+</section>
+<section id="functions-and-methods">
+<h3>Functions and methods<a class="headerlink" href="#functions-and-methods" title="Permalink to this headline">#</a></h3>
+<p>Functions and methods are named units of logic that can be used multiple times in our code. Methods are similar to functions, but are associated with a class. Functions and methods are crucial for creating modular code.</p>
+<p>Functions are written to generalise a piece of logic, so that it can be used consistently in multiple places in our code. You might define a function for a particular statistical method, validation check or to manipulate data in a certain way.</p>
+</section>
+<section id="parameters-and-arguments">
+<h3>Parameters and arguments<a class="headerlink" href="#parameters-and-arguments" title="Permalink to this headline">#</a></h3>
+<p>Parameters are the variables that a piece of code expects to be provided when it is used. They act as placeholders, to allow us to make code more generic. A function might have parameters to allow it to be run on different inputs. For example, there may be a parameter to allow the user to select which column of data a piece of logic should be use.</p>
+<p>An argument is the value that is being passed to a given parameter.</p>
+</section>
+<section id="dependencies">
+<h3>Dependencies<a class="headerlink" href="#dependencies" title="Permalink to this headline">#</a></h3>
+<p>Something that is required for your code to run correctly - your code depends upon it. This includes your operating system, environment, software and packages (and their versions), if these are needed to reproducibly run your analysis code. Dependencies are usually documented alongside code, so that others can prepare an environment to run the code.</p>
+</section>
+<section id="documentation">
+<h3>Documentation<a class="headerlink" href="#documentation" title="Permalink to this headline">#</a></h3>
+<p>Human readable text that describes your analysis and code. There are many ways to document code. Low level documentation might describe a single function, a code comment might describe a decision you made when writing the code, and high level documentation might describe your overall approach to a piece of analysis.</p>
+</section>
+<section id="configuration-file">
+<h3>Configuration file<a class="headerlink" href="#configuration-file" title="Permalink to this headline">#</a></h3>
+<p>Files that are used to configure the parameters or settings of a program. In analysis, these often include paths to input data files and other information that may change between each run of the pipeline.</p>
+</section>
+<section id="logging">
+<h3>Logging<a class="headerlink" href="#logging" title="Permalink to this headline">#</a></h3>
+<p>Automatically recording information when your analysis runs. This might include what options were used when configuring the pipeline and any decisions that the code made when running. Recording this information can help you to reproduce previous runs of the analysis and to identify the source of errors.</p>
+</section>
+<section id="application-programming-interface-api">
+<h3>Application Programming Interface (API)<a class="headerlink" href="#application-programming-interface-api" title="Permalink to this headline">#</a></h3>
+<p>An interface that defines how you can interact with software through code. For example, the functions or methods from a package that a typical user will interact with.</p>
+</section>
+<section id="object-oriented-programming-oop">
+<h3>Object-oriented programming (OOP)<a class="headerlink" href="#object-oriented-programming-oop" title="Permalink to this headline">#</a></h3>
+<p>Writing code that defines and uses classes. Classes are objects that contain both data (attributes) and logic (methods). Classes are often used to represent a real life entity - for example a bank account, which stores a balance and has method for withdrawing money.</p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="intro.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Quality assurance of code for analysis and research</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="managers_guide.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Managing analytical code development</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    <div class="extra_footer">
+      <p>Analysis Function reproducible analytical pipelines (RAP) support</p><p>This is a living document, please help use to make it grow by providing any feedback <a href='mailto:Analysis.Function@ons.gov.uk'>by email</a> or via the <a href='https://github.com/best-practice-and-impact/qa-of-code-guidance'>GitHub repository</a>.
+    </div>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
