@@ -90,7 +90,7 @@ Interactive interpreters allow you to run individual lines of code, which means 
 
 ### Debugger
 
-A computer program that is used to test software and to identify the root cause of errors or "bugs". Debuggers allow you to pause the code at specific points and to  walk through code step by step, in order to understand how it is working.
+A computer program that is used to test software and to identify the root cause of errors or "bugs". Debuggers allow you to pause the code at specific points and to walk through code step by step, in order to understand how it is working.
 
 ### Cloud computing
 
