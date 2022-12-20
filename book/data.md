@@ -202,9 +202,9 @@ You should use the [5-star open data standards](https://5stardata.info/en/) to u
 
 When publishing statistics you should follow government guidance for [releasing statistics in spreadsheets](https://gss.civilservice.gov.uk/policy-store/releasing-statistics-in-spreadsheets/).
 
-When publishing or sharing tabular data, you should follow the [GOV.UK Tabular data standard](https://www.gov.uk/government/publications/recommended-open-standards-for-government/tabular-data-standard).
+When publishing or sharing tabular data, you should follow the [GOV.UK Tabular data standard](https://analysisfunction.civilservice.gov.uk/policy-store/releasing-statistics-in-spreadsheets/).
 
-Analysts producing published statistics may also be interested in [Connected Open Government Statistics (COGS)](https://gss.civilservice.gov.uk/guidance/the-gss-data-project/) and [the review of government data linking methods](https://www.gov.uk/government/publications/joined-up-data-in-government-the-future-of-data-linking-methods)
+Analysts producing published statistics may also be interested in [Connected Open Government Statistics (COGS)](https://analysisfunction.civilservice.gov.uk/the-gss-data-project/) and [the review of government data linking methods](https://www.gov.uk/government/publications/joined-up-data-in-government-the-future-of-data-linking-methods)
 .
 
 Guidance from the UK Data Service describes [data security considerations](https://www.ukdataservice.ac.uk/manage-data/store/security).

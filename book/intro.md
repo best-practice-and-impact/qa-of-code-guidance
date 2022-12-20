@@ -1,16 +1,16 @@
 # Quality assurance of code for analysis and research
 
-This Government Analysis Function (AF) and Government Statistical Service (GSS) guidance, also known as the Duck Book, is produced by the Analysis Standards and Pipelines hub of the [Office for National Statistics](https://www.ons.gov.uk).
+This Government Analysis Function (AF) guidance, also known as the Duck Book, is produced by the Analysis Standards and Pipelines hub of the [Office for National Statistics](https://www.ons.gov.uk).
 
 This guidance is a living document, so is continually updated. We are extremely grateful for any feedback that you are able to provide on existing and future content.
 
 ## How to get the most out of the book
 
-This guidance describes software engineering good practices that are tailored to those working with data using code. It is designed for those who would like to quality assure their code and increase the reproducibility of their analyses. These good practices are applied in reproducible analytical pipelines (RAP).
+This guidance describes software engineering good practices that are tailored to those working with data using code. It is designed for those who would like to quality assure their code and increase the reproducibility of their analyses. Software that apply these practices are referred to as reproducible analytical pipelines (RAP).
 
- This guidance is relevant for you if you are:
+ This guidance is relevant if you are:
 - writing code to automate part of your work and would like to assure that it is working as expected
-- developing a statistical production pipeline and would like to assure that it is sustainable and reproducible
+- developing statistical or data engineering pipelines and would like to assure that they are sustainable and reproducible
 - developing models and would like to assure that they are transparent and reproducible
 - developing data science techniques and would like your code to be useful to others
 - looking for a high level introduction to software engineering practices in the context of analysis and research
@@ -28,8 +28,8 @@ The Analysis Standards and Pipelines hub supports government analysis by providi
 You can find us on:
 - Our websites: [Government Analysis Function](https://www.gov.uk/government/organisations/government-analysis-function)
 - Email: [Analysis Standards and Pipelines hub](mailto:ASAP@ons.gov.uk)
-- Slack: [Government Data Science](https://govdatascience.slack.com) and [GSS](https://gov-stats-service.slack.com)
-- Twitter: [Government Analysis Function](https://twitter.com/gov_analysis),  [GSS Good Practice Team](https://twitter.com/gssgoodpractice) and [UK GSS](https://twitter.com/ukgss)
+- Slack: [Government Data Science](https://govdatascience.slack.com) and [AF](https://gov-stats-service.slack.com)
+- Twitter: [Government Analysis Function](https://twitter.com/gov_analysis) and [UK GSS](https://twitter.com/ukgss)
 
 ## Citing the book
 
