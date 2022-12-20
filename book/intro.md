@@ -2,7 +2,7 @@
 
 This Government Analysis Function (AF) guidance, also known as the Duck Book, is produced by the Analysis Standards and Pipelines hub of the [Office for National Statistics](https://www.ons.gov.uk).
 
-This guidance is a living document, so is continually updated. We are extremely grateful for any feedback that you are able to provide on existing and future content.
+This guidance is a living document, which is continually updated. We are extremely grateful for any feedback that you are able to provide on existing and future content.
 
 ## How to get the most out of the book
 
