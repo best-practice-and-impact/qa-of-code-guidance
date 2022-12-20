@@ -1,5 +1,11 @@
 # Glossary of terms
 
+```{note}
+This section is a draft, while we ensure that it meets user needs.
+
+Please get in touch with feedback [by creating a GitHub Issue](https://github.com/best-practice-and-impact/qa-of-code-guidance/issues) or [emailing us](mailto:ASAP@ons.gov.uk).
+```
+
 ## Practices
 
 ### Reproducible Analytical Pipelines (RAP)
