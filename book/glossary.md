@@ -128,10 +128,6 @@ Parameters are the variables that a piece of code expects to be provided when it
 
 An argument is the value that is being passed to a given parameter.
 
-### Object-oriented programming (OOP)
-
-Writing code that defines and uses classes. Classes are objects that contain both data (attributes) and logic (methods). Classes are often used to represent a real life entity - for example a bank account, which stores a balance and has method for withdrawing money.
-
 ### Dependencies
 
 Something that is required for your code to run correctly - your code depends upon it. This includes your operating system, environment, software and packages (and their versions), if these are needed to reproducibly run your analysis code. Dependencies are usually documented alongside code, so that others can prepare an environment to run the code.
@@ -144,4 +140,6 @@ Human readable text that describes your analysis and code. There are many ways t
 
 An interface that defines how you can interact with software through code. For example, the functions or methods from a package that a typical user will interact with.
 
+### Object-oriented programming (OOP)
 
+Writing code that defines and uses classes. Classes are objects that contain both data (attributes) and logic (methods). Classes are often used to represent a real life entity - for example a bank account, which stores a balance and has method for withdrawing money.
