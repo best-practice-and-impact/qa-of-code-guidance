@@ -4,15 +4,19 @@
 
 ### Reproducible Analytical Pipelines (RAP)
 
-Reproducible Analytical Pipelines (RAP) focus on the use of open-source analytical tools and a variety of techniques from various fields such as software engineering, and data analysis, in order to deliver reproducible, testable and auditable data pipelines. RAP is a culture of wanting to improve the quality of our analysis, by improving the quality assurance of our analysis code.
+Reproducible Analytical Pipelines (RAP) are analyses that are carried out following good software engineering practices that are described by this guidance. They focus on the use of open-source analytical tools and a variety of techniques to deliver reproducible, auditable and assured data analyses. RAP is more generally a culture of wanting to improve the quality of our analysis, by improving the quality assurance of our analysis code.
 
 ### Version control
 
-Saving versions documents to keep an audit trails of changes to them. This allows you to backtrack to previous versions, and keep track of and merge multiple concurrent versions.
+Saving versions of documents to keep an audit trails of changes. Version control tools typically allow you to backtrack to previous versions and to merge multiple concurrent changes from different users.
 
 ### Peer review
 
 Having another analyst review changes that you have made to code. This helps to assure that your code is readable and follows a sensible approach. It also helps to transfer understanding of the code between members of the team.
+
+### Automated testing
+
+Tests that are written in code, to check that other code works as expected. Test are like a controlled experience, to check that our code produces the expected outcome. Tests can check code multiple levels, for example, checking that an individual function works or checking that a pipeline runs from end to end.
 
 ### Abstraction
 
@@ -22,7 +26,7 @@ Abstraction is used to manage the complexity of software, by describing our logi
 
 ### Modularity
 
-Modular code is written in discrete, re-usable chunks. Similar code is kept close together, which code with different uses is stored separately. Breaking code down in this way makes code easier to work with, understand and review.
+Modular code is written in discrete, re-usable chunks. Similar code is kept close together, while pieces of code with different uses are stored separately. Breaking code down in this way makes code easier to work with, understand and review.
 
 ### Readability
 
@@ -68,14 +72,15 @@ Continuous integration describes regularly combining code changes from multiple 
 
 ### Integrated development environment (IDE)
 
-### Interpreter
+### Code interpreter
 
-A computer program that runs code in a programming language.
+A computer program that runs code in a particular programming language. For example, the program that reads your Python or R analysis code and runs it. A non-interactive interpreter runs code in order, which is important for reproducibility.
 
-Interactive interpreters allow you to run individual lines of code. This 
+Interactive interpreters allow you to run individual lines of code, which means that code can be run out of order. Notebooks use interactive interpreters. These are not suitable for running analysis pipelines, because they do not ensure that the code is run reproducibly.
 
 ### Debugger
 
+A computer program that is used to test software and to identify the root cause of errors or "bugs". Debuggers allow you to pause the code at specific points and to  walk through code step by step, in order to understand how it is working.
 
 ### Cloud computing
 
@@ -129,20 +134,14 @@ Writing code that defines and uses classes. Classes are objects that contain bot
 
 ### Dependencies
 
-Something that your analysis depends on. This includes your operating system, environment, software and packages (and their versions), if these are needed to reproducibly run your analysis code.
+Something that is required for your code to run correctly - your code depends upon it. This includes your operating system, environment, software and packages (and their versions), if these are needed to reproducibly run your analysis code. Dependencies are usually documented alongside code, so that others can prepare an environment to run the code.
+
+### Documentation
+
+Human readable text that describes your analysis and code. There are many ways to document code. Low level documentation might describe a single function, a code comment might describe a decision you made when writing the code, and high level documentation might describe your overall approach to a piece of analysis.
 
 ### Application Programming Interface (API)
 
 An interface that defines how you can interact with software through code. For example, the functions or methods from a package that a typical user will interact with.
 
-### Documentation
 
-Human readable text that describes an aspect of your code. There are many ways to document code. Low level documentation might describe a single function, a code comment might describe a decision you made when writing the code, while high level documentation might describe your overall approach to a piece of analysis.
-
-### Dependency
-
-Something that is required for your code to run correctly - your code depends upon it. Dependencies are usually documented along side code, so that others can prepare an environment to run the code.
-
-### Automated testing
-
-Tests that are written in code, to check that code works as expected. Tests can check code multiple levels, for example, checking that an individual function works or checking that a pipeline runs from end to end.
