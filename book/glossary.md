@@ -22,7 +22,7 @@ Abstraction is used to manage the complexity of software, by describing our logi
 
 ### Modularity
 
-Modular code is written in discrete, re-usable chunks. Similar code is kept close together, which code with different uses is stored separately. Breaking code down in this way makes code easier to work with, understand and review.
+Modular code is written in discrete, re-usable chunks. Similar code is kept close together, and code with different uses is stored separately. Breaking code down in this way makes code easier to work with, understand and review.
 
 ### Readability
 
@@ -66,7 +66,11 @@ Continuous integration describes regularly combining code changes from multiple 
 
 ### Virtual environment
 
+Virtual environments are tools for managing dependencies and isolating projects. A virtual environment is effectively a folder tree containing the programming language version and a list of dependencies. 
+
 ### Integrated development environment (IDE)
+
+An IDE is a tool that facilitates software development for a given progamming language. An IDE will usually consist of a code editor and debugger. 
 
 ### Interpreter
 
