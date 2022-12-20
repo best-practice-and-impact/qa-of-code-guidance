@@ -76,11 +76,11 @@ Continuous integration describes regularly combining code changes from multiple 
 
 ### Virtual environment
 
-Virtual environments are tools for managing dependencies and isolating projects. A virtual environment is effectively a folder tree containing the programming language version and a list of dependencies. 
+Virtual environments are tools for managing dependencies and isolating projects. A virtual environment is effectively a folder tree containing the programming language version and a list of dependencies. This helps keep track of dependencies and avoid conflicts between different projects.
 
 ### Integrated development environment (IDE)
 
-An IDE is a tool that facilitates software development for a given progamming language. An IDE will usually consist of a code editor and debugger. 
+An IDE is a tool that facilitates software development for a given programming language. An IDE will usually consist of a code editor, debugger and development automation tools like a text auto-complete.
 
 ### Code interpreter
 
@@ -90,7 +90,7 @@ Interactive interpreters allow you to run individual lines of code, which means 
 
 ### Debugger
 
-A computer program that is used to test software and to identify the root cause of errors or "bugs". Debuggers allow you to pause the code at specific points and to  walk through code step by step, in order to understand how it is working.
+A computer program that is used to test software and to identify the root cause of errors or "bugs". Debuggers allow you to pause the code at specific points and to walk through code step by step, in order to understand how it is working.
 
 ### Cloud computing
 
