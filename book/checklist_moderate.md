@@ -59,12 +59,15 @@ Quality assurance checklist from [the quality assurance of code for analysis and
 ### Configuration
 
 - Credentials and other secrets are not written in code but are configured as environment variables.
-- Configuration is written as code, and is clearly separated from code used for analysis.
+- Configuration is stored in a dedicated configuration file, outside of the code.
+- If appropriate, multiple configuration files are used depending on system/local/user.
+- Configuration files are version controlled separately to the analysis code, so that they can be updated independently.
 - The configuration used to generate particular outputs, releases and publications is recorded.
-- If appropriate, multiple configuration files are used and interchangeable depending on system/local/user.
+
 
 ### Data management
 
+- Published outputs meets [accessibility regulations](https://analysisfunction.civilservice.gov.uk/area_of_work/accessibility/).
 - All data for analysis are stored in an open format, so that specific software is not required to access them.
 - Input data are stored safely and are treated as read-only.
 - Input data are versioned. All changes to the data result in new versions being created, or [changes are recorded as new records](https://en.wikipedia.org/wiki/Slowly_changing_dimension).
@@ -182,12 +185,14 @@ Quality assurance checklist from [the quality assurance of code for analysis and
 ### Configuration
 
 - [ ] Credentials and other secrets are not written in code but are configured as environment variables.
-- [ ] Configuration is written as code, and is clearly separated from code used for analysis.
+- [ ] Configuration is stored in a dedicated configuration file, outside of the code.
+- [ ] If appropriate, multiple configuration files are used depending on system/local/user.
+- [ ] Configuration files are version controlled separately to the analysis code, so that they can be updated independently.
 - [ ] The configuration used to generate particular outputs, releases and publications is recorded.
-- [ ] If appropriate, multiple configuration files are used and interchangeable depending on system/local/user.
 
 ### Data management
 
+- [ ] Published outputs meet [accessibility regulations](https://analysisfunction.civilservice.gov.uk/area_of_work/accessibility/).
 - [ ] All data for analysis are stored in an open format, so that specific software is not required to access them.
 - [ ] Input data are stored safely and are treated as read-only.
 - [ ] Input data are versioned. All changes to the data result in new versions being created, or [changes are recorded as new records](https://en.wikipedia.org/wiki/Slowly_changing_dimension).
