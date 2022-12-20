@@ -5,7 +5,7 @@ This section is a draft, while we ensure that it meets user needs.
 
 It would benefit from case studies that demonstrate how to decide what level of quality assurance a piece of analysis requires.
 
-Please get in touch with feedback or case studies to support the guidance [by creating a GitHub Issue](https://github.com/best-practice-and-impact/qa-of-code-guidance/issues) or emailing us at [Analysis.Function@ons.gov.uk](mailto:Analysis.Function@ons.gov.uk).
+Please get in touch with feedback or case studies to support the guidance [by creating a GitHub Issue](https://github.com/best-practice-and-impact/qa-of-code-guidance/issues) or emailing us at [emailing us](mailto:ASAP@ons.gov.uk).
 ```
 
 This section of the guidance is targeted at those who manage data analysis/science/engineering work in government or those acting as product owners for analytical products.
