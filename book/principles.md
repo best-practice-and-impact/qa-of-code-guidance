@@ -29,7 +29,7 @@ Government guidance is available to help you when developing analysis.
 We recommend:
 1. The [Analysis Function reproducible analytical pipelines (RAP) strategy](https://analysisfunction.civilservice.gov.uk/policy-store/reproducible-analytical-pipelines-strategy/), when considering how your department should adopt good practices.
 2. The [Aqua book](https://www.gov.uk/government/publications/the-aqua-book-guidance-on-producing-quality-analysis-for-government) to understand guidance around assurance.
-3. The [GSS Quality Strategy](https://analysisfunction.civilservice.gov.uk/policy-store/government-statistical-service-gss-quality-strategy/) when thinking about the quality of statistics.
+3. The [Analysis Function Quality Strategy](https://analysisfunction.civilservice.gov.uk/policy-store/government-statistical-service-gss-quality-strategy/) when thinking about the quality of statistics.
 4. The [DCMS Data Ethics Framework](https://www.gov.uk/government/publications/data-ethics-framework/data-ethics-framework) when approaching any analysis.
 5. The [Communicating quality, uncertainty and change guidance](https://analysisfunction.civilservice.gov.uk/policy-store/communicating-quality-uncertainty-and-change/) whenever you must develop user-facing products.
 
