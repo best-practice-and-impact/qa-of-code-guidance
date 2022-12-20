@@ -12,7 +12,7 @@ Saving versions of documents to keep an audit trails of changes. Version control
 
 ### Peer review
 
-Having another analyst review changes that you have made to code. This helps to assure that your code is readable and follows a sensible approach. It also helps to transfer understanding of the code between members of the team.
+Having another developer review changes that you have made to code. This helps to assure that your code is readable and follows a sensible approach. It also helps to transfer understanding of the code between members of the team.
 
 ### Automated testing
 
@@ -135,6 +135,14 @@ Something that is required for your code to run correctly - your code depends up
 ### Documentation
 
 Human readable text that describes your analysis and code. There are many ways to document code. Low level documentation might describe a single function, a code comment might describe a decision you made when writing the code, and high level documentation might describe your overall approach to a piece of analysis.
+
+### Configuration file
+
+Files that are used to configure the parameters or settings of a program. In analysis, these often include paths to input data files and other information that may change between each run of the pipeline.
+
+### Logging
+
+Automatically recording information when your analysis runs. This might include what options were used when configuring the pipeline and any decisions that the code made when running. Recording this information can help you to reproduce previous runs of the analysis and to identify the source of errors.
 
 ### Application Programming Interface (API)
 
