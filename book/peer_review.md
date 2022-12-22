@@ -27,21 +27,29 @@ Another benefit, particularly of internal review, is knowledge transfer. Both th
 
 ## What should we review?
 
-When reviewing code, you can ask yourself the following questions:
+Our [](checklists.md) provide a comprehensive list of good practices that reviewers can look for. Many of these criteria look at the project as a whole, so your review should be tailored to the quality assurance criteria that the project is trying to meet and the scale of the review.
+
+Reviewing is centered around conversations - asking yourself and the reviewer questions. While reviewing changes to analytical code, you could ask yourself:
 * Can I easily understand what the code does?
     * Is the code sufficiently documented for me to understand it?
     * Is there duplication in the code that could be simplified by refactoring into functions and classes?
     * Are functions and class methods simple, using few parameters?
 * Does the code fulfil its requirements?
 * Is the required functionality tested sufficiently?
-* How easy will it be to alter this code when requirements change? They always do.
+* How easy will it be to alter this code when requirements change?
     * Are high level parameters kept in dedicated configuration files? Or would somebody need to work their way through the code with lots of manual edits to reconfigure for a new run?
 * Can I generate the same outputs that the analysis claims to produce?
     * Have dependencies been sufficiently documented?
     * Is the code version, input data version and configuration recorded?
 * Is the code style consistent?
 
-In addition to asking these questions, you might formalise your review using a template. Templates are useful for setting criteria to review against. You should tailor any template to reflect the scope of your review. For example, small regular reviews may focus on smaller aspects of the analysis compared to a large project-wide review. The general example below is written in Markdown, so that it can be used in Git platform pull/merge requests:
+If the answer to any of these questions "no", you should suggest improvements to the code to solve these issues. The developer may respond to your comments to justify why they have taken a certain approach, otherwise they should act on your comments.
+
+```{important}
+It is essential that you document what you have considered in your review and how the developer has responded to your comments. This documentation should be kept close to the relevant version of the code, so that others can see what has been reviewed. The easiest way to manage this is by using the Merge Request or Pull Request feature on your version control platform to conduct the review. See [](version_control.md) for more information.
+```
+
+You might formalise your review using a template, to ensure that review is consistent within a project. Templates are useful for setting criteria to review against. You should tailor any template to reflect the scope of your review. For example, small regular reviews may focus on smaller aspects of the analysis compared to a large project-wide review. The general example below is written in Markdown, so that it can be used in version control platform merge requests:
 
 
 ```{code-block} md
@@ -63,13 +71,6 @@ Any new code includes all the following forms of documentation:
   of inputs and conditions. All tests pass on your local machine.
 - [ ] **Packaging guidelines**: New code conforms to the project contribution
   guidelines.
-
-#### Final approval (post-review)
-
-The author has responded to my review and made changes to my satisfaction.
-- [ ] **I recommend merging this request.**
-
-Estimated time spent reviewing: #
 
 ---
 
@@ -94,7 +95,7 @@ Be critical and clear, but not mean. Ask questions and set actions.
 
 Internal review should be carried out within your teams. Reviewing code from those with more and less experience is beneficial.
 
-## How do we approach code review?
+## How can we approach code review?
 
 ### Pair programming
 
@@ -102,9 +103,11 @@ Internal review should be carried out within your teams. Reviewing code from tho
 
 This practice combines the code writing and the review process into one step. Here, two or three developers work together to write a single piece of code. Each developer takes turns to actively author parts of the code, while others provide real-time feedback on the code being written.
 
-This practice encourages developers to consider why they are writing code in a particular way and to vocalise this ('programming out loud'). Additionally, it gives reviewers a chance to suggest improvements and question the author's approach as the code is written. Working in this way can be more efficient than reviewing code separately and the resulting code often contains fewer bugs.
+This practice encourages developers to consider why they are writing code in a particular way and to vocalise this ("programming out loud"). Additionally, it gives reviewers a chance to suggest improvements and question the author's approach as the code is written. Working in this way can be more efficient than reviewing code separately - issues are identified sooner, so they easier to fix. Despite the upfront cost of two individuals writing the code, the resulting code is often higher quality and contains fewer bugs. 
 
 The rotational aspect of pair programming ensures that all team members gain experience from both the author and review perspective. From both angles, you'll learn new techniques and practices. In addition to this shared knowledge, developers can also improve their interpersonal skills by working in this way.
+
+Developers working in pairs can approve changes to code as it is written, however, key discussions from pair programming sessions should still be documented to demonstrate which aspects of the code have been reviewed and discussed.
 
 This blog post from the Government Digital Service provides [more detailed steps to apply pair programming](https://gds.blog.gov.uk/2018/02/06/how-to-pair-program-effectively-in-6-steps/).
 
@@ -112,13 +115,21 @@ This blog post from the Government Digital Service provides [more detailed steps
 
 Remote review involves sharing your code with a reviewer, and receiving a review in the form of constructive comments. We describe this as remote, in the sense that the code author does not need to be present for the review. This is often an iterative process, where the reviewer may make additional suggestions until they are satisfied with the code.
 
-This form of review works well when changes to the code are small and frequent. Requesting review of small but regular changes reduces the burden on reviewers, relative to large review of a complete project. When carrying out a review of larger pieces of work, it may be worth reviewing different aspects of the code in separate sessions. For example, focussing on documentation in one session and functionality in the next.
+This form of review works best when changes to the code are small and frequent. Requesting review of small but regular changes reduces the burden on reviewers, relative to large review of a complete project. Similarly to pair programming, reviewing small changes to code allows you to catch issues sooner.
+
+```{important}
+If a project is only reviewed when all of the code has been written, this significantly reduces the benefit of review.
+
+There is a much larger burden on the reviewer and any issues that are identified may take a lot of time to fix across the whole project. A reviewer might highlight that certain quality assurance practices have not been used - for example, there has not been enough documentation or automated testing in the project. It would take a substantial amount of effort to add documentation and testing for the whole project. While if this was identified earlier on, the improved practices would be easier to apply as the code is developed.
+```
+
+When you must carry out a review of larger or complete pieces of work, it may be worth reviewing different aspects of the code in separate sessions. For example, focussing on documentation in one session and functionality in the next.
 
 The thought of someone else reviewing your code in this way encourages good practices from the outset:
 * Clear code and documentation - so that others with no experience can use and test your code
 * Usable dependency management - so that others can run your code in their own environment
 
-Remote review is aided by features of most version control platforms, namely the pull request (or equivalent). See [](version_control.md) for more information.
+Remote review is aided by features of most version control platforms. See [](version_control.md) for more information.
 
 #### Case studies
 
