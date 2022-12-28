@@ -52,7 +52,7 @@ Issues when using spreadsheets for data storage include:
   * Converting dates to a different datetime format.
   * Converting numbers or text that resemble dates to dates.
 
-See the European Spreadsheet Risks Interest Group document [spreadsheet related errors and their consequences](http://www.eusprig.org/horror-stories.htm) for more information.
+See the European Spreadsheet Risks Interest Group document [spreadsheet related errors and their consequences](https://eusprig.org/research-info/horror-stories/) for more information.
 
 
 ### Databases
