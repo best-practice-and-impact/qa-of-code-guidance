@@ -12,7 +12,7 @@ Documentation is a love letter that you write to your future self.
 
 Comments are lines of text in source code files that typically aren't executed as part of the program. They are small notes or annotations written by those working on the code. Often, they provide context or explain the reasoning behind implementation decisions.
 
-Comments are essential to help those working on the code in the future to understand any non-obvious details around how and why the code has been written in a particular way. As such, when it comes to providing relevant and perhaps higher-level documentation to the end consumer on the functionality of your code, there are much more appropriate solutions such as [docstrings](#docstrings).
+Comments are essential to help those working on the code in the future to understand any non-obvious details around how and why the code has been written in a particular way. As such, when it comes to providing relevant and perhaps higher-level documentation to the end consumer on the functionality of your code, there are much more appropriate solutions such as [docstrings](docstrings).
 
 Although extremely useful, comments should be used sparingly. Excessive use of code comments often leads to redundancy and can, ironically, make your code harder to read. It is easy for comments to not be updated as changes are made to the code. Outdated, or irrelevant comments can confuse or mislead.
 
