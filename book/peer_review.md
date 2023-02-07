@@ -103,7 +103,7 @@ Internal review should be carried out within your teams. Reviewing code from tho
 
 This practice combines the code writing and the review process into one step. Here, two or three developers work together to write a single piece of code. Each developer takes turns to actively author parts of the code, while others provide real-time feedback on the code being written.
 
-This practice encourages developers to consider why they are writing code in a particular way and to vocalise this ("programming out loud"). Additionally, it gives reviewers a chance to suggest improvements and question the author's approach as the code is written. Working in this way can be more efficient than reviewing code separately - issues are identified sooner, so they easier to fix. Despite the upfront cost of two individuals writing the code, the resulting code is often higher quality and contains fewer bugs. 
+This practice encourages developers to consider why they are writing code in a particular way and to vocalise this ("programming out loud"). Additionally, it gives reviewers a chance to suggest improvements and question the author's approach as the code is written. Working in this way can be more efficient than reviewing code separately - issues are identified sooner, so they are easier to fix. Despite the upfront cost of two individuals writing the code, the resulting code is often higher quality and contains fewer bugs. 
 
 The rotational aspect of pair programming ensures that all team members gain experience from both the author and review perspective. From both angles, you'll learn new techniques and practices. In addition to this shared knowledge, developers can also improve their interpersonal skills by working in this way.
 
