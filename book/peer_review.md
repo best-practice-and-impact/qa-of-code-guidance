@@ -24,8 +24,20 @@ Moreover, effective peer review requires and, therefore, enforces reproducibilit
 
 Another benefit, particularly of internal review, is knowledge transfer. Both the reviewer and reviewee are exposed to new ideas. The reviewer must gain a low-level understanding of what the code is doing, in order to validate that it works as expected. This may provide your team members with the understanding required to use and maintain your code in the future.
 
+## Give practical feedback
 
-## What should we review?
+Feedback should be practical and constructive. For example, you should suggest an improvement or alternative that the developer may consider and learn from. You should avoid making feedback personal.
+
+The CEDAR feedback model can be a useful framework for structuring review comments. This model breaks review down into five sections:
+1. Context - describe the issue and the potential impact.
+2. Examples - give specific examples of when and where the issue has been present. 
+3. Diagnosis - use the example to discuss why this approach was taken, what could have been done differently and why the alternatives could be an improvement.
+4. Actions - ask the person receiving feedback to suggest actions that they could follow to avoid this issue in future.
+5. Review - revisit the discussion to look for progress following on the feedback.
+
+This approach has been designed from a coaching or mentoring perspective, and can work well in verbal discussion or when giving written feedback.
+
+## Focus feedback on code quality
 
 Our [](checklists.md) provide a comprehensive list of good practices that reviewers can look for. Many of these criteria look at the project as a whole, so your review should be tailored to the quality assurance criteria that the project is trying to meet and the scale of the review.
 
@@ -45,9 +57,13 @@ Reviewing is centered around conversations - asking yourself and the reviewer qu
 
 If the answer to any of these questions "no", you should suggest improvements to the code to solve these issues. The developer may respond to your comments to justify why they have taken a certain approach, otherwise they should act on your comments.
 
+Note that these example questions focus on important good quality assurance practices in the code, rather than minor issues like code layout.
+
 ```{important}
-It is essential that you document what you have considered in your review and how the developer has responded to your comments. This documentation should be kept close to the relevant version of the code, so that others can see what has been reviewed. The easiest way to manage this is by using the Merge Request or Pull Request feature on your version control platform to conduct the review. See [](version_control.md) for more information.
+It is essential that you document what you have considered in your review and how the developer has responded to your feedback. This documentation should be kept close to the relevant version of the code, so that others can see what has been reviewed. The easiest way to manage this is by using the Merge Request or Pull Request feature on your version control platform to conduct the review. See [](version_control.md) for more information.
 ```
+
+## Give consistent feedback
 
 You might formalise your review using a template, to ensure that review is consistent within a project. Templates are useful for setting criteria to review against. You should tailor any template to reflect the scope of your review. For example, small regular reviews may focus on smaller aspects of the analysis compared to a large project-wide review. The general example below is written in Markdown, so that it can be used in version control platform merge requests:
 
@@ -71,7 +87,6 @@ Any new code includes all the following forms of documentation:
   of inputs and conditions. All tests pass on your local machine.
 - [ ] **Packaging guidelines**: New code conforms to the project contribution
   guidelines.
-
 ---
 
 ### Review comments
@@ -95,25 +110,29 @@ Be critical and clear, but not mean. Ask questions and set actions.
 
 Internal review should be carried out within your teams. Reviewing code from those with more and less experience is beneficial.
 
-## How can we approach code review?
+## Give timely feedback
+
+It's important that feedback is provided in good time, so that the review process does not hold up development of the code and that issues can be addressed before more code is written using the same practices.
+
+We strongly recommend applying pair programming for code review, as the most timely and practical method. However, a separate review process may be necessary when multiple developers are not available to work at the same time or when reviewing completed work.
 
 ### Pair programming
 
 > Two heads are better than one.
 
-This practice combines the code writing and the review process into one step. Here, two or three developers work together to write a single piece of code. Each developer takes turns to actively author parts of the code, while others provide real-time feedback on the code being written.
+Review doesn't have to be an arduous standalone task. Pair programming combines the code writing and the review process into a single step. Here, two or three developers work together to write a single piece of code. Each developer takes turns to actively author parts of the code, while others provide real-time feedback on the code being written.
 
-This practice encourages developers to consider why they are writing code in a particular way and to vocalise this ("programming out loud"). Additionally, it gives reviewers a chance to suggest improvements and question the author's approach as the code is written. Working in this way can be more efficient than reviewing code separately - issues are identified sooner, so they easier to fix. Despite the upfront cost of two individuals writing the code, the resulting code is often higher quality and contains fewer bugs. 
+This practice encourages developers to consider why they are writing code in a particular way and to vocalise this ("programming out loud"). Additionally, it gives reviewers a chance to suggest improvements and question the author's approach as the code is written. Working in this way can be more efficient than reviewing code separately - issues are identified sooner, so they easier to fix. Despite the upfront cost of more than one individual writing the code, the resulting code is often higher quality and contains fewer bugs.
 
-The rotational aspect of pair programming ensures that all team members gain experience from both the author and review perspective. From both angles, you'll learn new techniques and practices. In addition to this shared knowledge, developers can also improve their interpersonal skills by working in this way.
+The rotational aspect of pair programming ensures that all team members gain experience from both the author and review perspective. From both angles, you'll learn new programming and communication techniques. In addition to this, sharing knowledge of how the code works across the team prevents too much risk being put on individuals.
 
 Developers working in pairs can approve changes to code as it is written, however, key discussions from pair programming sessions should still be documented to demonstrate which aspects of the code have been reviewed and discussed.
 
 This blog post from the Government Digital Service provides [more detailed steps to apply pair programming](https://gds.blog.gov.uk/2018/02/06/how-to-pair-program-effectively-in-6-steps/).
 
-### Remote review
+### Separate review process
 
-Remote review involves sharing your code with a reviewer, and receiving a review in the form of constructive comments. We describe this as remote, in the sense that the code author does not need to be present for the review. This is often an iterative process, where the reviewer may make additional suggestions until they are satisfied with the code.
+A separate review involves sharing your code with a reviewer, and receiving written feedback. We describe this as separate, because code development and review are separate and the code author does not need to be present for the review. This type of review is an iterative process, where the reviewer may make additional suggestions until they are satisfied with the code changes.
 
 This form of review works best when changes to the code are small and frequent. Requesting review of small but regular changes reduces the burden on reviewers, relative to large review of a complete project. Similarly to pair programming, reviewing small changes to code allows you to catch issues sooner.
 
@@ -129,11 +148,11 @@ The thought of someone else reviewing your code in this way encourages good prac
 * Clear code and documentation - so that others with no experience can use and test your code
 * Usable dependency management - so that others can run your code in their own environment
 
-Remote review is aided by features of most version control platforms. See [](version_control.md) for more information.
+Separate review is aided by features of most version control platforms. See [](version_control.md) for more information.
 
-#### Case studies
+#### Case study - rOpenSci review
 
-Here we discuss an example from [rOpenSci](https://ropensci.org/); a community led initiative that curates open source, statistical R packages. rOpenSci apply a rigorous peer review process to assure the quality of packages before including them in their collection. This peer review process is entirely remote and is performed in the open, via GitHub pull requests.
+Here we discuss an example from [rOpenSci](https://ropensci.org/); a community led initiative that curates open source, statistical R packages. rOpenSci apply a rigorous peer review process to assure the quality of packages before including them in their collection. This peer review process is separate and is performed in the open, via GitHub pull requests.
 
 In this example, from colleagues at Public Health England, [the `fingertipsR` package is reviewed](https://github.com/ropensci/software-review/issues/168). The initial comment describes the package that is being submitted and includes a check against a list of minimum requirements. The [`goodpractice` R package](http://mangothecat.github.io/goodpractice/) is used to check that good R packaging practices have been followed. [Continuous integration](https://www.atlassian.com/continuous-delivery/continuous-integration#:~:text=Continuous%20integration%20(CI)%20is%20the,builds%20and%20tests%20then%20run.) is commonly used to carry out automated checks on code repositories. The reports from these checks can save reviewers time, by providing indicators of things like code complexity and test coverage.
 
