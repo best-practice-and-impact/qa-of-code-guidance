@@ -122,7 +122,7 @@ We strongly recommend applying pair programming for code review, as the most tim
 
 Review doesn't have to be an arduous standalone task. Pair programming combines the code writing and the review process into a single step. Here, two or three developers work together to write a single piece of code. Each developer takes turns to actively author parts of the code, while others provide real-time feedback on the code being written.
 
-This practice encourages developers to consider why they are writing code in a particular way and to vocalise this ("programming out loud"). Additionally, it gives reviewers a chance to suggest improvements and question the author's approach as the code is written. Working in this way can be more efficient than reviewing code separately - issues are identified sooner, so they easier to fix. Despite the upfront cost of more than one individual writing the code, the resulting code is often higher quality and contains fewer bugs.
+This practice encourages developers to consider why they are writing code in a particular way and to vocalise this ("programming out loud"). Additionally, it gives reviewers a chance to suggest improvements and question the author's approach as the code is written. Working in this way can be more efficient than reviewing code separately - issues are identified sooner, so they are easier to fix. Despite the upfront cost of two individuals writing the code, the resulting code is often higher quality and contains fewer bugs. 
 
 The rotational aspect of pair programming ensures that all team members gain experience from both the author and review perspective. From both angles, you'll learn new programming and communication techniques. In addition to this, sharing knowledge of how the code works across the team prevents too much risk being put on individuals.
 
@@ -139,7 +139,7 @@ This form of review works best when changes to the code are small and frequent. 
 ```{important}
 If a project is only reviewed when all of the code has been written, this significantly reduces the benefit of review.
 
-There is a much larger burden on the reviewer and any issues that are identified may take a lot of time to fix across the whole project. A reviewer might highlight that certain quality assurance practices have not been used - for example, there has not been enough documentation or automated testing in the project. It would take a substantial amount of effort to add documentation and testing for the whole project. While if this was identified earlier on, the improved practices would be easier to apply as the code is developed.
+There is a much larger burden on the reviewer and any issues that are identified may take a lot of time to fix across the whole project. A reviewer might highlight that certain quality assurance practices have not been used - for example, there has not been enough documentation or automated testing in the project. It would take a substantial amount of effort to add documentation and testing for the whole project. If this was identified earlier, the improved practices could be to apply as the remaining code is developed.
 ```
 
 When you must carry out a review of larger or complete pieces of work, it may be worth reviewing different aspects of the code in separate sessions. For example, focussing on documentation in one session and functionality in the next.
