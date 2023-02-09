@@ -80,45 +80,73 @@ Most analysis will have an ingest or input stage, a processing stage, and a repo
 You should use folders within each project to separate raw data, documentation, source code (or `src`) and results.
 
 A typical analytical project folder might look like:
-
-```` {tabs}
-
-``` {tab} Python
-|-- README.md  
-|-- requirements.txt  
-|-- data/  
-|-- -- incident_counts.csv  
-|-- docs/  
-|-- -- notebook.md  
-|-- -- manuscript.md  
-|-- -- changelog.md  
-|-- results/  
-|-- -- incident_counts_by_age.csv  
-|-- -- incidents_over_time.svg  
-|-- src/  
-|-- -- data_cleaning.py  
-|-- -- main_analysis.py  
-|-- -- generate_plots.py  
+```
+├── src
+│   ├── controller
+│   │   ├── **/*.css
+│   ├── views
+│   ├── model
+│   ├── index.js
+├── public
+│   ├── css
+│   │   ├── **/*.css
+│   ├── images
+│   ├── js
+│   ├── index.html
+├── dist (or build
+├── node_modules
+├── package.json
+├── package-lock.json 
+└── .gitignore
 ```
 
-``` {tab} R
-|-- README.md  
-|-- project.Rproj  
-|-- data/  
-|-- -- incident_counts.csv  
-|-- docs/  
-|-- -- notebook.md  
-|-- -- manuscript.md  
-|-- -- changelog.md  
-|-- results/  
-|-- -- incident_counts_by_age.csv  
-|-- -- incidents_over_time.svg  
-|-- R/  
-|-- -- data_cleaning.R  
-|-- -- main_analysis.R  
-|-- -- generate_plots.R  
+````` {tabs}
+```` {tab} Python
+```
+├── README.md  
+├── requirements.txt  
+├── data/  
+│   └── incident_counts.csv 
+│ 
+├── docs/  
+│   ├── notebook.md  
+│   ├── manuscript.md  
+│   └── changelog.md  
+│
+├── results/  
+│   ├── incident_counts_by_age.csv  
+│   └── incidents_over_time.svg 
+│ 
+└── src/  
+    ├── data_cleaning.py  
+    ├── main_analysis.py  
+    └── generate_plots.py  
+```
+````
+
+```` {tab} R
+```
+├── README.md  
+├── project.Rproj  
+├── data/  
+│   └── incident_counts.csv  
+│
+├── docs/  
+│   ├── notebook.md  
+│   ├── manuscript.md  
+│   └── changelog.md  
+│
+├── results/  
+│   ├── incident_counts_by_age.csv  
+│   └── incidents_over_time.svg  
+│
+└── R/  
+    ├── data_cleaning.R  
+    ├── main_analysis.R  
+    └── generate_plots.R  
 ```
 ```` 
+`````
 
 Where you have written code that is used by multiple projects, this code should reside in its own separate folder.
 This will allow you to record changes to your code independent of other dependencies of each project.
