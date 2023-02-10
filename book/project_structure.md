@@ -80,25 +80,6 @@ Most analysis will have an ingest or input stage, a processing stage, and a repo
 You should use folders within each project to separate raw data, documentation, source code (or `src`) and results.
 
 A typical analytical project folder might look like:
-```
-├── src
-│   ├── controller
-│   │   ├── **/*.css
-│   ├── views
-│   ├── model
-│   ├── index.js
-├── public
-│   ├── css
-│   │   ├── **/*.css
-│   ├── images
-│   ├── js
-│   ├── index.html
-├── dist (or build
-├── node_modules
-├── package.json
-├── package-lock.json 
-└── .gitignore
-```
 
 ````` {tabs}
 ```` {tab} Python
