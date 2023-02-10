@@ -190,50 +190,51 @@ Overall, it should be easy to identify which functions or classes your tests are
 
 `````{tabs}
 ````{tab} Python
+```
 project/
 │
 ├── src/
-|   ├── __init__.py
+│   ├── __init__.py
 │   ├── math.py
 │   ├── strings.py
-|   └── api.py
+│   └── api.py
 │
 └── tests/
-    |
     ├── unit/
-    |   ├── __init__.py
-    |   ├── test_math.py
-    |   └── test_strings.py
-    |
+    │   ├── __init__.py
+    │   ├── test_math.py
+    │   └── test_strings.py
+    │
     ├── integration/
-    |   ├── __init__.py
-    |   └── test_sum.py
-    |
+    │   ├── __init__.py
+    │   └── test_sum.py
+    │
     └── end_to_end/
         ├── __init__.py
         └── test_end_to_end.py
+```
 ````
 
 ````{tab} R
-
-project/
-│
-├── .Rproj
-|
-├── R/
-│   ├── math.R
-│   ├── strings.R
-|   └── api.R
-│
-└── tests/
-    |
-    ├── testthat/
-    |   ├── test-maths_abs.R
-    |   ├── test-maths_sum.R
-    |   └── test-strings_option.R
-    |
-    └── testthat.R
-
+```
+project/  
+│  
+├── .Rproj  
+│  
+├── R/  
+│   ├── math.R  
+│   ├── strings.R  
+│   └── api.R  
+│  
+└── tests/  
+    │  
+    ├── testthat/  
+    │   ├── test-maths_abs.R  
+    │   ├── test-maths_sum.R  
+    │   └── test-strings_option.R  
+    │  
+    └── testthat.R  
+```
 ````
 
 `````
