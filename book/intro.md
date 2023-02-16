@@ -2,7 +2,7 @@
 
 This Government Analysis Function (AF) and Government Statistical Service (GSS) guidance, also known as the Duck Book, is produced by the Quality and Improvement team in the Methods and Quality directorate of the [Office for National Statistics](https://www.ons.gov.uk).
 
-The guidance has been written to support analysts in government who use coding in their work. This includes those who produce statistics, carry out modelling or apply data science. 
+The guidance has been written to support analysts in government who use coding in their work. This includes those who produce statistics, carry out modelling or apply data science.
 
 This guidance is a living document, so will be continually updated. You can refer to the current version of the guidance by its version number, found below the site table of contents. You may notice "Todo" notes throughout the guidance. These indicate where we plan to add additional content in the near future. We are extremely grateful for any feedback that you are able to provide on existing and future content.
 
@@ -11,6 +11,7 @@ This guidance is a living document, so will be continually updated. You can refe
 The Methods and Quality directorate supports government analysis by providing guidance, consultancy and training.
 
 You can find us on:
+
 - Our websites: [Government Analysis Function](https://www.gov.uk/government/organisations/government-analysis-function) and [Government Statistical Service](https://gss.civilservice.gov.uk/)
 - Email: [analysis.function@ons.gov.uk](mailto:analysis.function@ons.gov.uk) and [gsshelp@statistics.gov.uk](mailto:gsshelp@statistics.gov.uk)
 - Slack: [Government Data Science](https://govdatascience.slack.com) and [GSS](https://gov-stats-service.slack.com)
@@ -20,13 +21,14 @@ You can find us on:
 
 The following structure can be used to reference the current version of the book:
 
-> UK Government Analytical Community. (2020). Quality assurance of code for analysis and research (version 2022.4). Office for National Statistics, Quality and Improvement division: https://best-practice-and-impact.github.io/qa-of-code-guidance/
+> UK Government Analytical Community. (2020). Quality assurance of code for analysis and research (version 2022.4). Office for National Statistics, Quality and Improvement division: <https://best-practice-and-impact.github.io/qa-of-code-guidance/>
 
-## How to get the most out of the book
+## Get the most out of the book
 
 This guidance is tailored to government analysts who would like to quality assure their code and increase the reproducibility of their analyses. We have tried to interpret the requirements of pieces of guidance (the [principles](/principles.md)) into actions and deliverables for analytical programming.
 
 However, the practices outlined in the book are general to many applications of programming, so may also be relevant for those outside of government. This book might be most useful for you if you are:
+
 - writing code to automate part of your work and would like to assure that it is working as expected
 - developing a statistical production pipeline and would like to assure that it is sustainable and reproducible
 - developing models and would like to assure that they are transparent and reproducible
@@ -42,21 +44,20 @@ The principles in this book are language agnostic. It does not form a comprehens
 This accessibility statement applies to the Quality assurance of code for analysis and research guidance. Please note that this does not include third-party content that is referenced from this guidance.
 
 The website is managed by the Quality and Improvement division of the Office for National Statistics. We would like this guidance to be accessible for as many people as possible. This means that you should be able to:
-* change colours, contrast levels and fonts
-* zoom in up to 300% without the text spilling off the screen
-* navigate most of the website using just a keyboard
-* navigate most of the website using speech recognition software
-* listen to most of the website using a screen reader (including the most recent versions of JAWS, NVDA and VoiceOver)
+
+- change colours, contrast levels and fonts
+- zoom in up to 300% without the text spilling off the screen
+- navigate most of the website using just a keyboard
+- navigate most of the website using speech recognition software
+- listen to most of the website using a screen reader (including the most recent versions of JAWS, NVDA and VoiceOver)
 
 For keyboard navigation, {kbd}`Up Arrow` and {kbd}`Down Arrow`keys can be used to scroll up and down on the current page. {kbd}`Left Arrow` and {kbd}`Right Arrow` keys can be used to move forwards and backwards through the pages of the book. Tabbed content (including code example) can be focused using the {kbd}`Tab` key. {kbd}`Left Arrow` and {kbd}`Right Arrow` keys are then used to focus the required tab option, where {kbd}`Enter` can be used to select that option and display the associated content.
 
-
-### Feedback and reporting accessibility problems
+### Feedback and report accessibility problems
 
 We’re always looking to improve the accessibility of our guidance. If you find any problems not listed on this page or think that we’re not meeting accessibility requirements, please contact us by emailing [Analysis.Function@ons.gov.uk](mailto:Analysis.Function@ons.gov.uk). Please also get in touch if you are unable to access any part of this guidance, or require the content in a different format.
 
 We will consider your request and aim to get back to you within five working days.
-
 
 ### Enforcement procedure
 

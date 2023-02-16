@@ -98,7 +98,7 @@ Cloud computing allows us to access computing power and data storage on-demand. 
 
 The most common cloud platforms are Google cloud platform (GCP), Amazon web service (AWS) and Microsoft azure.
 
-## Code
+## Coding
 
 ### Code
 

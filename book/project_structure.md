@@ -10,10 +10,9 @@ It will help others to read your code more easily, and you will write better cod
 Some structures have been found to be generally quite effective through trial and error.
 Others are more specific, and - as with all guidelines - should not be taken as mandatory.
 
+## Use and run scripts
 
-## Scripts
-
-As you begin developing your project it's a good idea to save your working code in a script file.
+As you begin developing your project, it's a good idea to save your working code in a script file.
 In R these are saved as `.R` files, and in Python as `.py`.
 Scripts can be used within an Integrated Development Environment (IDE) like [Visual Studio Code](https://code.visualstudio.com/), [RStudio](https://rstudio.com/), or [PyCharm](https://www.jetbrains.com/pycharm/).
 Inside an IDE you can usually run through your script line-by-line, or run the whole file at once.
@@ -31,20 +30,20 @@ For example you can use the `Rcmd <script-path>` command to run your R scripts o
 Running your analysis files from end to end ensures that your code is executed in the same order each time.
 It also runs the code with a clean environment, not containing variables or other objects from previous runs that can be a common source of errors.
 
-
-## Clean directories
+## Keep directories clean
 
 As your analysis project grows it becomes more important to keep your project structure clean.
 Every project is different and the right way to organise your project might differ from another project.
 However, there are some principles that are useful to consider.
 
-### Filenames
+### Use good filename conventions
 
 Much like names of elements in your code, good filenames inform you of the purpose of a file.
 Within a project, you should follow a standard file naming convention.
 Good naming practices improve your ability to locate and identify the contents of files.
 
 Good naming conventions include:
+
 * Consistency, above all else
 * Short but descriptive and human readable names
 * No spaces, for machine readability - underscores (`_`) or dashes (`-`) are preferred
@@ -58,8 +57,7 @@ This makes it much easier to find the earliest or latest files.
 You should start filenames with numbers to order files, if ordering is logical and informative.
 For example, where the `001_introduction` should come before `002_methodology` and `003_results`.
 
-
-### Analysis is a DAG
+### Organise analysis as a DAG
 
 Analysis can best be thought of as a Directed Acyclic Graph (DAG).
 Don't let the name scare you off!
@@ -132,24 +130,21 @@ A typical analytical project folder might look like:
 Where you have written code that is used by multiple projects, this code should reside in its own separate folder.
 This will allow you to record changes to your code independent of other dependencies of each project.
 
-
-### Raw data should be preserved
+### Preserve raw data
 
 You should not alter raw data - treat it as read-only.
 Even data cleaning should take place on a copy of the raw data, so that you can document which cleaning decisions have been made.
 
 There must be an immutable store for raw data in your project structure.
 
-
-### Outputs should be disposable
+### Dispose of outputs
 
 You should be able to dispose of your outputs, deleting them, without worrying.
 If you are worried about deleting your outputs (i.e. results) then it is unlikely you have confidence in being able to reproduce your results.
 
 It is good practice to delete and regenerate your outputs frequently when developing analysis.
 
-
-## Modules and packages
+## Structure code as modules and packages
 
 Code that is more complex, high risk or reusable between projects can benefit from being structured into a package.
 Modules are single files that contain one or more reusable units of code.
@@ -166,8 +161,7 @@ For example, installing additional functionality for Python using `pip install <
 
 See [](project_documentation.md) for a summary of common package and project documentation types.
 
-
-## Project templates
+## Use project templates
 
 Although project structure is flexible, you might recognise that many analysts choose to use similar structures for multiple projects.
 Consistency in structure makes it easier to navigate unfamiliar projects.
@@ -179,6 +173,7 @@ It can save time by creating common folder structures, laying out essential docu
 Laying out a structure to include documentation and code testing encourages these good practices.
 
 Useful cookiecutters include:
+
 * The government data science [govcookiecutter](https://github.com/ukgovdatascience/govcookiecutter), including data security features.
 * The comprehensive Python data science project template [cookiecutter-data-science](http://drivendata.github.io/cookiecutter-data-science/).
 * The Python package template [cookiecutter-pypackage](https://cookiecutter-pypackage.readthedocs.io/en/latest/).
@@ -187,8 +182,7 @@ Rstudio provides a standard template for R packages via `File > New Project... >
 R project structures can also be set up or extended, one component at a time, using the [`usethis` workflow package](https://usethis.r-lib.org/).
 For example, `use_test()` will add the directories necessary for testing using `testthat` and generate basic test file templates for a given function name.
 
-
-## Repositories
+## Use version controlled repositories
 
 Repositories or 'repos' are typically project folders that are version controlled using Git or a similar version control system.
 One repository usually contains a single project.

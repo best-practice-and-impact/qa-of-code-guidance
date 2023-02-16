@@ -16,7 +16,6 @@ Before applying this guidance, you should have a basic awareness of the tools an
 
 [The Government Service Standard](https://www.gov.uk/service-manual/service-standard) outlines best practices for creating public services, which include analysis. You should use this when designing and managing the development of analysis as code.
 
-
 ## Apply quality assurance proportional to risk
 
 As described by [the Aqua book](https://www.gov.uk/government/publications/the-aqua-book-guidance-on-producing-quality-analysis-for-government), the quality assurance of our analysis should be proportional to the complexity and risk of the analysis.
@@ -42,7 +41,6 @@ Where quality assurance of the code doesn't meet your target level of assurance,
 
 The remaining parts of this section provide questions that aim to help you assess the quality assurance practices that your team are applying in their analysis.
 
-
 ## Design quality analysis
 
 These questions aim to help you assess the design decisions at the beginning of the analysis.
@@ -56,16 +54,14 @@ Understanding user needs ensures that the analysis is valuable.
 * The analysis must be developed by more than one individual, to allow pair programming, peer review and mentoring. This increases the sustainability of analysis.
 * The analysis should be carried out using open-source analysis tools, wherever possible. Your team should be able to explain why they have chosen the analysis tools and why they are confident that they are fit for purpose.
 
-
 ### How are you storing input data?
 
 Versioning input data ensures that we can reproduce our analysis.
 
 * Input data should be versioned, so that analysis outputs can be reproduced.
-* Data should be stored in an open format (e.g. CSV or ODS), not formats that are restricted to proprietary software like SAS and Stata. 
+* Data should be stored in an open format (e.g. CSV or ODS), not formats that are restricted to proprietary software like SAS and Stata.
 * Large or complex datasets should be stored in a database.
 * You should monitor the quality of data, following [the government data quality framework](https://www.gov.uk/government/publications/the-government-data-quality-framework/the-government-data-quality-framework).
-
 
 ### How will you keep track of changes to the code and why they were made?
 
@@ -77,11 +73,9 @@ Versioning input data ensures that we can reproduce our analysis.
 * Each change should be linked to a reason, for example, a new requirement or an issue in the existing code.
 * Reviews of changes should be stored with the version of the analysis that was reviewed.
 
-
 ## Quality assure throughout development
 
 These questions can be used throughout the development of the analysis, to assess how the team are progressing towards the target quality assurance practices that you have agreed.
-
 
 ### How is your code structured?
 
@@ -92,14 +86,12 @@ These questions can be used throughout the development of the analysis, to asses
 * Logic with different responsibilities (e.g. reading data versus transforming data) should be clearly separated.
 * When code can be reused for other analyses, it should be stored and shared as a package.
 
-
 ### How easy is it to adjust the way that the analysis runs?
 
 [Configuration files](configuration.md) allow you to change the way the code runs without editing the code.
 
 * Parts of the code that may change should be stored in separate configuration files.
 * Things that often change in analysis code include input and output file paths, reference dates and model parameters.
-
 
 ### How is the analysis documented?
 
@@ -108,7 +100,6 @@ These questions can be used throughout the development of the analysis, to asses
 * Every function should be documented in the code, so that it is clear what the function is supposed to do.
 * Function documentation should include what goes in and what comes out of each function.
 * Where code will be run or re-used by others, documentation should include usage examples and test data.
-
 
 ### What are the dependencies?
 
@@ -120,14 +111,12 @@ These questions can be used throughout the development of the analysis, to asses
 * When the same analysis is run multiple times or on different systems it should give reproducible outcomes.
 * Container systems, like Docker, help to create reproducible environments to run code.
 
-
 ### What assumptions does the analysis make?
 
 Transparency of our analysis increases trust.
 
 * Assumptions and caveats of the analysis should be recorded close to the code.
 * These must be communicated to users when releasing results from the analysis.
-
 
 ### How has peer review been done?
 
@@ -137,7 +126,6 @@ Transparency of our analysis increases trust.
 * Peer review should follow a standard procedure, so that reviews are consistent. Reviewers should check that each change follows the agreed good practices.
 * There should be evidence that peer reviews are acted on. When issues or concerns are raised, they should be addressed before the analysis is used.
 * If the product is high risk, external peer review should also be conducted.
-
 
 ### How have you tested the code?
 
@@ -151,7 +139,6 @@ Transparency of our analysis increases trust.
 * Reviewers should sign-off that there is enough testing to assure that the code is working as expected.
 * Each time an error is found in the code, a test should be added to assure that the error does not reoccur.
 
-
 ### What happens when the analysis fails to run?
 
 Recording and reporting errors provides an audit trail and makes it easier for users to correctly use the code.
@@ -161,14 +148,12 @@ Recording and reporting errors provides an audit trail and makes it easier for u
 * Errors or warnings might also be raised when data validation is not met.
 * When code is run in production, errors should be recorded or logged.
 
-
 ### How does the analysis result differ from the previous analysis?
 
 Comparing analysis to previous results can help to ensure reproducibility and identify errors.
 
 * When repeating analysis over time, you should compare results between analyses. Large differences in the outcome of the results may indicate an issue with the analysis process.
 * When developing code to replace legacy analysis, you may wish to parallel this with the new method. This will allow you to identify differences and improvements.
-
 
 ### How can we further improve the quality of the analysis?
 

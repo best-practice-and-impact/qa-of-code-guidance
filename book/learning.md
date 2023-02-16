@@ -8,7 +8,7 @@ Please note that learning resources from non-government training providers (i.e.
 
 ## Core programming
 
-### Python 
+### Python
 
 * [Introduction to Python](https://learninghub.ons.gov.uk/enrol/index.php?id=536)
 * [Aggregation, functions and control flow in Python](https://learninghub.ons.gov.uk/enrol/index.php?id=525)
@@ -23,6 +23,7 @@ Please note that learning resources from non-government training providers (i.e.
 * [R Basics on Udemy](https://www.udemy.com/course/r-basics/)
 
 ### General
+
 * [Clean code](https://learninghub.ons.gov.uk/enrol/index.php?id=537)
 * [Packaging and documentation](https://learninghub.ons.gov.uk/enrol/index.php?id=1165)
 * [Software carpentry](https://software-carpentry.org/lessons/)
@@ -35,6 +36,7 @@ Please note that learning resources from non-government training providers (i.e.
 * [Dataframes, manipulation and cleaning in Python](https://learninghub.ons.gov.uk/enrol/index.php?id=521)
 * [Python Data Science Handbook](https://jakevdp.github.io/PythonDataScienceHandbook/index.html)
 * [Python for Data Analysis](https://github.com/wesm/pydata-book)
+
 ### R
 
 * [Dataframes, manipulation and cleaning in R](https://learninghub.ons.gov.uk/enrol/index.php?id=523)
@@ -47,6 +49,7 @@ Please note that learning resources from non-government training providers (i.e.
 * [w3schools.com SQL Tutorial](https://www.w3schools.com/sql/default.asp)
 * [Python SQL libraries](https://realpython.com/python-sql-libraries/)
 * [SQL databases and R](http://datacarpentry.org/R-ecology-lesson/05-r-and-databases.html)
+
 ## Command line tools
 
 ### General
@@ -56,6 +59,7 @@ Please note that learning resources from non-government training providers (i.e.
 * [The UNIX workbench](https://seankross.com/the-unix-workbench/)
 
 (git-learning)=
+
 ### Git
 
 * [Intro to Git](https://learninghub.ons.gov.uk/course/view.php?id=532)
@@ -75,10 +79,8 @@ Please note that learning resources from non-government training providers (i.e.
 
 * [A11Y Project software, books and tools](https://www.a11yproject.com/resources/)
 
-
 ## Reproducible Analytical Pipelines
 
 * [GSS RAP Overview](https://analysisfunction.civilservice.gov.uk/support/reproducible-analytical-pipelines/)
 * [The cross government RAP Champion Network](https://analysisfunction.civilservice.gov.uk/support/reproducible-analytical-pipelines/reproducible-analytical-pipeline-rap-champions/)
 * [ONS Data Science Campus RAP learning materials](https://github.com/datasciencecampus/gov-uk-rap-materials)
-

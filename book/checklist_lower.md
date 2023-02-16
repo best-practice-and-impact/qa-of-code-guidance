@@ -67,7 +67,7 @@ Quality assurance checklist from [the quality assurance of code for analysis and
 
 ### Testing
 
-- Core functionality is unit tested as code. See [`pytest` for Python](https://docs.pytest.org/en/stable/) and [`testthat` for R](https://testthat.r-lib.org/). 
+- Core functionality is unit tested as code. See [`pytest` for Python](https://docs.pytest.org/en/stable/) and [`testthat` for R](https://testthat.r-lib.org/).
 - Code based tests are run regularly, ideally being automated using continuous integration.
 - Bug fixes include implementing new unit tests to ensure that the same bug does not reoccur.
 - Informal tests are recorded near to the code.
@@ -92,7 +92,6 @@ Quality assurance checklist from [the quality assurance of code for analysis and
 - New issues or tasks are guided by users’ needs and stories.
 - Acceptance criteria are noted for issues and tasks. Fulfilment of acceptance criteria is recorded.
 - Quality assurance standards and processes for the project are defined. These are based around [the quality assurance of code for analysis and research guidance document](https://best-practice-and-impact.github.io/qa-of-code-guidance/intro.html).
-
 
 ## Template checklist
 
