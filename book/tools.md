@@ -38,6 +38,8 @@ Identifying which parts of your code are covered by existing tests.
 
 Analyse code for stylistic errors, and sometimes bugs.
 
+* [pre-commit](https://pre-commit.com/)
+
 ### Python
 
 * [pylint](https://www.pylint.org/)
@@ -97,6 +99,10 @@ Automated code format repair.
 * [targets R package](https://wlandau.github.io/targets-manual/)
 * [Hamilton (Python)](https://hamilton-docs.gitbook.io/docs/)
 
+## Dependency management
+
+* [renv (R)](https://rstudio.github.io/renv/articles/renv.html)
+
 ## Continuous Integration Platforms
 
 * [GitHub Actions](https://github.com/features/actions)
@@ -107,9 +113,13 @@ Automated code format repair.
 
 ## Data processing, analysis, and publishing
 
-### Data Linkage
+### Data linkage
 
 * [Splink (Python)](https://www.gov.uk/government/publications/joined-up-data-in-government-the-future-of-data-linking-methods/splink-mojs-open-source-library-for-probabilistic-record-linkage-at-scale#introduction)
+
+### Data wrangling
+
+* [Polars (Python)](https://www.pola.rs/)
 
 ### Publishing
 
