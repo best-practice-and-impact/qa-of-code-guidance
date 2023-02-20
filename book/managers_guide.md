@@ -12,7 +12,7 @@ This section of the guidance is targeted at those who manage data analysis/scien
 
 It aims to help you support your team to apply the good quality assurance practices described in the wider [Quality assurance of code for analysis and research guidance](https://best-practice-and-impact.github.io/qa-of-code-guidance/intro.html). Processes that apply these good practices are referred to as a reproducible analytical pipelines (RAP).
 
-Before applying this guidance, you should have a basic awareness of the tools and techniques used to do quality analysis as code - the [introduction to RAP course](https://learninghub.ons.gov.uk/course/view.php?name=intro_to_RAP) outlines these. You should also be aware of any specific tools and platforms that are used in your department.
+Before applying this guidance, you should have a basic awareness of the tools and techniques used to do quality analysis as code - the [introduction to RAP course](https://learninghub.ons.gov.uk/course/view.php?id=662) outlines these. You should also be aware of any specific tools and platforms that are used in your department.
 
 [The Government Service Standard](https://www.gov.uk/service-manual/service-standard) outlines best practices for creating public services, which include analysis. You should use this when designing and managing the development of analysis as code.
 
@@ -29,7 +29,7 @@ You should work with your team to decide on which quality assurance practices ar
 
 While quality assurance must be applied relative to the risk and complexity of the analysis, you must consider the skills of your team. It will take time to learn to apply the necessary good practices, so you should support their gradual development of these skills.
 
-[The RAP learning pathway](https://learninghub.ons.gov.uk/course/view.php?name=intro_to_RAP) provides training in good practices. Then the wider [Quality assurance of code for analysis and research guidance](https://best-practice-and-impact.github.io/qa-of-code-guidance/intro.html) can be used as a reference to apply these practices to analysis. You should identify where each analyst is along the pathway - they should look to develop the next skill in the pathway and apply this, rather than attempting to adopt them all at once.
+[The RAP learning pathway](https://learninghub.ons.gov.uk/mod/page/view.php?id=8699) provides training in good practices. Then the wider [Quality assurance of code for analysis and research guidance](https://best-practice-and-impact.github.io/qa-of-code-guidance/intro.html) can be used as a reference to apply these practices to analysis. You should identify where each analyst is along the pathway - they should look to develop the next skill in the pathway and apply this, rather than attempting to adopt them all at once.
 
 Note that it is important to maintain technical skills in the analysis team for sustainability, to ensure that the analysis can be understood, updated and maintained.
 ```
