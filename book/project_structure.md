@@ -30,7 +30,7 @@ For example you can use the `Rcmd <script-path>` command to run your R scripts o
 Running your analysis files from end to end ensures that your code is executed in the same order each time.
 It also runs the code with a clean environment, not containing variables or other objects from previous runs that can be a common source of errors.
 
-## Keep directories clean
+## Keep your project structure clean
 
 As your analysis project grows it becomes more important to keep your project structure clean.
 Every project is different and the right way to organise your project might differ from another project.
