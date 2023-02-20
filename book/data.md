@@ -77,7 +77,7 @@ Most DBMS use structured query language (SQL) to communicate with databases.
 ```{admonition} Key Learning
 :class: admonition-learning
 
-You might find this [foundations of SQL (government analysts only course)](https://learninghub.ons.gov.uk/enrol/index.php?id=529) or [w3schools SQL tutorials](https://www.w3schools.com/sql/default.asp) useful for learning the basics of SQL.
+You might find this [foundations of SQL (government analysts only course)](https://learninghub.ons.gov.uk/enrol/index.php?id=490) or [w3schools SQL tutorials](https://www.w3schools.com/sql/default.asp) useful for learning the basics of SQL.
 ```
 
 Common analysis tools can interface with databases using SQL packages, or those which provide an object-relational mapping (ORM).
@@ -200,7 +200,7 @@ This might be documented in analysis reports or automatically logged by your cod
 
 You should use the [5-star open data standards](https://5stardata.info/en/) to understand and improve the current utility of your published data. The [CSV on the Web (CSVW) standard](https://csvw.org/) is recommended for achieving the highest ratings of open data.
 
-When publishing statistics you should follow government guidance for [releasing statistics in spreadsheets](https://gss.civilservice.gov.uk/policy-store/releasing-statistics-in-spreadsheets/).
+When publishing statistics you should follow government guidance for [releasing statistics in spreadsheets](https://analysisfunction.civilservice.gov.uk/policy-store/releasing-statistics-in-spreadsheets/).
 
 When publishing or sharing tabular data, you should follow the [GOV.UK Tabular data standard](https://analysisfunction.civilservice.gov.uk/policy-store/releasing-statistics-in-spreadsheets/).
 

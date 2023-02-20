@@ -17,7 +17,7 @@ This guidance describes software engineering good practices that are tailored to
 
 The good practices outlined in the book are general to many applications of programming, so may also be relevant for those outside of government.
 
-The [RAP learning pathway](https://learninghub.ons.gov.uk/totara/program/view.php?id=6) provides training for many of these good practices. This book can be used to guide your learning and as a reference when applying these practices in your work. Each chapter describes the risks that each practice may help to address. As recommended by [the Aqua book](https://www.gov.uk/government/publications/the-aqua-book-guidance-on-producing-quality-analysis-for-government), you should strive to apply the most appropriate quality assurance practices given the risks associated with your work.
+The [RAP learning pathway](https://learninghub.ons.gov.uk/mod/page/view.php?id=8699) provides training for many of these good practices. This book can be used to guide your learning and as a reference when applying these practices in your work. Each chapter describes the risks that each practice may help to address. As recommended by [the Aqua book](https://www.gov.uk/government/publications/the-aqua-book-guidance-on-producing-quality-analysis-for-government), you should strive to apply the most appropriate quality assurance practices given the risks associated with your work.
 
 The principles in this book are language agnostic. The book does not aim to form a comprehensive learning resource and you may often need to study further resources to implement these practices. That said, examples and useful references are provided for **Python** and **R**, as open source languages that are commonly applied across government.
 

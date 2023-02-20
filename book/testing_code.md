@@ -405,7 +405,7 @@ Each level is important for different reasons.
 ```{admonition} Key Learning
 :class: admonition-learning
 
-You should follow the [Introduction to Unit Testing course](https://learninghub.ons.gov.uk/enrol/index.php?id=539) (GSS only) for applied examples in Python and R.
+You should follow the [Introduction to Unit Testing course](https://learninghub.ons.gov.uk/course/view.php?id=499) for applied examples in Python and R.
 The course also covers writing and documenting functions, and error handling.
 
 Other resources include:
