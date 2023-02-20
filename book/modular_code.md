@@ -259,30 +259,31 @@ Simply put, modules are scripts that contain functions that you want to use in o
 
 Consider a project where an analyst has created one large data analysis script. Upon reflection, they decide to split the logic from their pipeline into groups of functions relating to 'data processing', 'data modelling' and 'result presentation'. They then create a file to contain each of these groups of functions: `processing.py`, `modelling.py` and `reporting.py`. They decide that they want to have a pipeline script called `main`, but they want to keep this script readable and simple.  In R, it's best to also use an R project file. Working within a project allows you to use relative file paths and avoid the need to refer to specific script locations. Their directory now looks something similar to:
 
-````{tabs}
-
-``` {tab} Python
-
-    project
-    | main.py 
-    | modelling.py 
-    | processing.py 
-    | reporting.py 
-    | README.md 
-    | project.Rproj
+`````{tabs}
+```` {tab} Python
 ```
-
-``` {tab} R
-
-    project 
-    | main.R 
-    | modelling.R 
-    | processing.R 
-    | reporting.R 
-    | README.md
-    | project.rproj 
+project
+├── main.py 
+├── modelling.py 
+├── processing.py 
+├── reporting.py 
+├── README.md 
+└── project.Rproj
 ```
 ````
+
+```` {tab} R
+```
+project 
+├── main.R 
+├── modelling.R 
+├── processing.R 
+├── reporting.R 
+├── README.md
+└── project.rproj 
+```
+````
+`````
 
 ````{warning}
 R projects are a really useful and simple way to organise your projects better. However, be sure to check your settings. R projects save history and data by default. This is not a good idea if you're using git, as it means data can easily make its way into the version history. To disable these options in RStudio, open the project options menu in the tools tab. In the menu, set the options "save workspace to .RDATA on exit" and "Always save history" to "No". Alternatively, you can edit the .Rproj file in an editor of your choice by adding these settings:
@@ -297,7 +298,6 @@ AlwaysSaveHistory: No
 They then import the relevant functions into the main script from their modules as follows:
 
 ````{tabs}
-
 ```{code-tab} py
 import pandas as pd
 
@@ -330,39 +330,37 @@ export(report)
 This is a minimal example of a pipeline script, illustrating how you might import reusable functions from other modules. These main scripts lack the ability to configure things like the path to the input data. This requires users to manually alter file paths in the code, which is highly discouraged.
 ```
 
-`````{admonition} A step further
+``````{admonition} A step further
 Another step that can be taken to improve clarity is to further wrap these modules into their own folder like so:
 
-```` {tabs}
-
-``` {tab} Python
-
-    project
-    | library
-      | __init__.py
-      | modelling.py
-      | processing.py
-      | reporting.py
-    | LICENSE
-    | main.py
-    | README.md
 ```
-
-``` {tab} R
-
-    project
-    | R
-      | modelling.R
-      | processing.R
-      | reporting.R
-    | LICENSE
-    | main.R
-    | README.md
-    | project.Rproj
+project
+├── library
+│   ├── __init__.py
+│   ├── modelling.py
+│   ├── processing.py
+│   └── reporting.py
+├── LICENSE
+├── main.py
+└── README.md
 ```
 ````
 
+```` {tab} R
+```
+project
+├──R
+│   ├── modelling.R
+│   ├── processing.R
+│   └── reporting.R
+├── LICENSE
+├── main.R
+├── README.md
+└── project.Rproj
+```
+````
 `````
+``````
 
 (packages)=
 
