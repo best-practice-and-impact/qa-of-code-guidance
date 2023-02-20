@@ -250,7 +250,7 @@ Other useful resources include:
 - Guidance for [documenting objects and functions in R](http://r-pkgs.had.co.nz/man.html)
 ```
 
-### Write script or module doctstrings
+### Document scripts or modules using doctstrings
 
 Docstrings are not just for function documentation. You will often want to include explanatory notes alongside modules containing multiple functions or standalone scripts.
 
