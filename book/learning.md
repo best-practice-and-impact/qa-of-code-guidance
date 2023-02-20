@@ -84,3 +84,8 @@ Please note that learning resources from non-government training providers (i.e.
 * [The cross government RAP Champion Network](https://analysisfunction.civilservice.gov.uk/support/reproducible-analytical-pipelines/reproducible-analytical-pipeline-rap-champions/)
 * [ONS Data Science Campus RAP learning materials](https://github.com/datasciencecampus/gov-uk-rap-materials)
 
+## Learing from mistakes
+
+Finally, it is often good to see what not to do and learn from the mistakes of others. The following is a compliation of bad code in Python, but worth a read whatever your language as most apply to R and Python, as well as other languages.
+
+* [The Little Book of Python Anti-Patterns](https://docs.quantifiedcode.com/python-anti-patterns/index.html)

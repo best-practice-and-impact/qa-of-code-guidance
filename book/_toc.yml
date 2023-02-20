@@ -3,6 +3,7 @@ root: intro
 parts:
 - caption: Overview
   chapters:
+  - file: glossary
   - file: managers_guide
   - file: checklists
     sections:
