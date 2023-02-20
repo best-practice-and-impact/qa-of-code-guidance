@@ -9,7 +9,7 @@ CI is often linked to:
 * Continuous delivery - ensuring that your code is fit for use after each integration
 * Continuous deployment - automatically deploying working code into production
 
-## Automating you tests
+## Automating your tests
 
 Tests should be run whenever you make changes to your project.
 This ensures that changes do not break the existing, intended functionality of your code.
