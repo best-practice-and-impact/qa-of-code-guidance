@@ -38,8 +38,6 @@ Identifying which parts of your code are covered by existing tests.
 
 Analyse code for stylistic errors, and sometimes bugs.
 
-* [pre-commit](https://pre-commit.com/)
-
 ### Python
 
 * [pylint](https://www.pylint.org/)
@@ -92,7 +90,6 @@ Automated code format repair.
 * [mypy](https://mypy.readthedocs.io/en/stable/)
 * [pyright](https://github.com/microsoft/pyright)
 
-
 ## Pipeline Orchestration
 
 * [Apache Airflow](https://airflow.apache.org/)
@@ -110,6 +107,10 @@ Automated code format repair.
 * [Travis](https://travis-ci.org/)
 * [Jenkins](https://www.jenkins.io/)
 * [Coveralls](https://coveralls.io/)
+
+## Git hook automation
+
+* [pre-commit](https://pre-commit.com/)
 
 ## Data processing, analysis, and publishing
 
