@@ -23,7 +23,7 @@ The following structure can be used to reference the current version of the book
 
 > UK Government Analytical Community. (2020). Quality assurance of code for analysis and research (version 2022.4). Office for National Statistics, Quality and Improvement division: <https://best-practice-and-impact.github.io/qa-of-code-guidance/>
 
-## Get the most out of the book
+## Get the most out of this book
 
 This guidance is tailored to government analysts who would like to quality assure their code and increase the reproducibility of their analyses. We have tried to interpret the requirements of pieces of guidance (the [principles](/principles.md)) into actions and deliverables for analytical programming.
 
