@@ -28,7 +28,7 @@ The Analysis Standards and Pipelines hub supports government analysis by providi
 You can find us on:
 - Our websites: [Government Analysis Function](https://www.gov.uk/government/organisations/government-analysis-function)
 - Email: [Analysis Standards and Pipelines hub](mailto:ASAP@ons.gov.uk)
-- Slack: [Government Data Science](https://govdatascience.slack.com) and [AF](https://gov-stats-service.slack.com)
+- Slack: [Government Data Science](https://govdatascience.slack.com)
 - Twitter: [Government Analysis Function](https://twitter.com/gov_analysis) and [UK GSS](https://twitter.com/ukgss)
 
 ## Citing the book
