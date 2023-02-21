@@ -433,7 +433,7 @@ The repository settings can be adjust to project branches against specific actio
 
 (forking)=
 
-### Fork a repository
+### Fork a repository to maintain an independent copy
 
 Forking a repository takes a complete copy of a third-party project's current state, including its history and all existing branches and tags. Any changes made to a fork do not affect the code on the original repo, and *vice versa*.
 
