@@ -137,7 +137,7 @@ Even data cleaning should take place on a copy of the raw data, so that you can 
 
 There must be an immutable store for raw data in your project structure.
 
-### Make outputs disposable
+### Check that outputs are disposable
 
 You should be able to dispose of your outputs, deleting them, without worrying.
 If you are worried about deleting your outputs (i.e. results) then it is unlikely you have confidence in being able to reproduce your results.
