@@ -139,7 +139,7 @@ This form of review works best when changes to the code are small and frequent. 
 ```{important}
 If a project is only reviewed when all of the code has been written, this significantly reduces the benefit of review.
 
-There is a much larger burden on the reviewer and any issues that are identified may take a lot of time to fix across the whole project. A reviewer might highlight that certain quality assurance practices have not been used - for example, there has not been enough documentation or automated testing in the project. It would take a substantial amount of effort to add documentation and testing for the whole project. If this was identified earlier, the improved practices could be to apply as the remaining code is developed.
+There is a much larger burden on the reviewer and any issues that are identified may take a lot of time to fix across the whole project. A reviewer might highlight that certain quality assurance practices have not been used - for example, there has not been enough documentation or automated testing in the project. It would take a substantial amount of effort to add documentation and testing for the whole project. If this was identified earlier, the improved practices could be applied as the remaining code is developed.
 ```
 
 When you must carry out a review of larger or complete pieces of work, it may be worth reviewing different aspects of the code in separate sessions. For example, focussing on documentation in one session and functionality in the next.
