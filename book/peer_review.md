@@ -8,11 +8,11 @@ Peer review of code is a quality assurance activity where a developer, other tha
 
 Peer review allows a fresh pair of eyes to take a look at your work. It helps to assure that you have taken an appropriate approach to your analysis and may highlight errors in the analysis process. Constructive review feedback helps you to improve your code quality and provides confidence in your work. It acts to assure that our analysis is fit for purpose.
 
+[The Aqua book](https://www.gov.uk/government/publications/the-aqua-book-guidance-on-producing-quality-analysis-for-government) tells us that quality assurance of our analysis should be proportional to the complexity and business risk of the analysis. This means that both internal and external peer review may be required to adequately assure your analysis. Particularly if your analysis uses novel or complex techniques, where comparison with other analyses cannot be used to challenge your results, or if the analysis is business critical.
+
 >Continuous challenge and improvement is essential to ensure that the people we serve – ministers and, of course, the public – have trust in our analysis. 
 
 Nick Macphereson, former Permanent Secretary to the Treasury
-
-[The Aqua book](https://www.gov.uk/government/publications/the-aqua-book-guidance-on-producing-quality-analysis-for-government) tells us that quality assurance of our analysis should be proportional to the complexity and business risk of the analysis. This means that both internal and external peer review may be required to adequately assure your analysis. Particularly if your analysis uses novel or complex techniques, where comparison with other analyses cannot be used to challenge your results, or if the analysis is business critical.
 
 ## Focus reviews on code quality
 
