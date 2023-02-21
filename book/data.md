@@ -76,7 +76,7 @@ Most DBMS use structured query language (SQL) to communicate with databases.
 ```{admonition} Key Learning
 :class: admonition-learning
 
-You might find this [foundations of SQL (government analysts only course)](https://learninghub.ons.gov.uk/enrol/index.php?id=529) or [w3schools SQL tutorials](https://www.w3schools.com/sql/default.asp) useful for learning the basics of SQL.
+You might find this [foundations of SQL (government analysts only course)](https://learninghub.ons.gov.uk/enrol/index.php?id=490) or [w3schools SQL tutorials](https://www.w3schools.com/sql/default.asp) useful for learning the basics of SQL.
 ```
 
 Common analysis tools can interface with databases using SQL packages, or those which provide an object-relational mapping (ORM).
@@ -200,11 +200,11 @@ This might be documented in analysis reports or automatically logged by your cod
 
 You should use the [5-star open data standards](https://5stardata.info/en/) to understand and improve the current utility of your published data. The [CSV on the Web (CSVW) standard](https://csvw.org/) is recommended for achieving the highest ratings of open data.
 
-When publishing statistics you should follow government guidance for [releasing statistics in spreadsheets](https://gss.civilservice.gov.uk/policy-store/releasing-statistics-in-spreadsheets/).
+When publishing statistics you should follow government guidance for [releasing statistics in spreadsheets](https://analysisfunction.civilservice.gov.uk/policy-store/releasing-statistics-in-spreadsheets/).
 
 When publishing or sharing tabular data, you should follow the [GOV.UK Tabular data standard](https://www.gov.uk/government/publications/recommended-open-standards-for-government/tabular-data-standard).
 
-Analysts producing published statistics may also be interested in [Connected Open Government Statistics (COGS)](https://gss.civilservice.gov.uk/guidance/the-gss-data-project/) and [the review of government data linking methods](https://www.gov.uk/government/publications/joined-up-data-in-government-the-future-of-data-linking-methods)
+Analysts producing published statistics may also be interested in [Connected Open Government Statistics (COGS)](https://analysisfunction.civilservice.gov.uk/the-gss-data-project/) and [the review of government data linking methods](https://www.gov.uk/government/publications/joined-up-data-in-government-the-future-of-data-linking-methods)
 .
 
 Guidance from the UK Data Service describes [data security considerations](https://www.ukdataservice.ac.uk/manage-data/store/security).
