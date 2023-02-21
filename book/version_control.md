@@ -10,7 +10,7 @@ To get the most benefit from this section, you should have a basic understanding
 You can find links to relevant training in the [](learning.md) section of the book.
 ```
 
-## Motivation
+## Keep an audit trail of changes
 
 As we discussed in [](principles.md), an audit trail is essential for assuring quality analysis. It's important for us to be able to answer the following questions about our analysis:
 
