@@ -63,7 +63,7 @@ Git is a distributed version control system. This means that all users have acce
 
 The following sections describe useful concepts for using Git to version control your analysis. We use examples of Git commands throughout, but do not provide detailed descriptions of Git usage. If you are not familiar with using command line tools, or Git specifically, you should first look into [introductory training](git-learning).
 
-### Write effective and efficient commits
+### Write short and informative commits
 
 Commits are collections of changes to one or more files in a repository. Every commit is attributed to the author of the changes, providing an audit trail. Each commit has a unique hash - or identifier - associated with it, which has a long (e.g. `121b5b4f18231e4ee32c9c61f6754429f9572743`) and short version (e.g. `121b5b4`). These hashes allow us to refer to specific changes, but each commit also has an associated message that is used to describe the changes.
 
@@ -381,7 +381,7 @@ Here we describe some of the beneficial features supported by [GitHub](https://g
 
 (issues)=
 
-### Use issues efficiently
+### Use Git issues to plan and discuss development of your project
 
 Issues offer a method for requesting or recording tasks, including enhancements and bug fixes in a project. They act as a collaborative todo list, which users and developers can easily contribute to. When combined with [Project boards](https://docs.github.com/en/free-pro-team@latest/github/managing-your-work-on-github/about-project-boards), the issues system works very similarly to other tools like Trello and Jira.
 
@@ -402,7 +402,7 @@ Analytical projects might use issues to plan and discuss the steps involved in d
 
 (pull-requests)=
 
-### Make the most of Pull Requests
+### Use pull requests for reviewing changes
 
 Once changes have been implemented, perhaps to meet the requirements of an issue, Pull Requests (PRs) provide a useful interface for incorporating those changes into the main project. PRs are typically used to merge a development branch (the source branch) onto a more stable branch in the main project (the target branch). The development branch here may be within the same repo, a [Fork](forking) of this project, or even a completely separate project.
 
