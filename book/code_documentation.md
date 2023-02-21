@@ -337,7 +337,7 @@ For R projects, you might want to consider [`pkgdown`](https://pkgdown.r-lib.org
 
 The [package's website](https://pkgdown.r-lib.org/) and [its source code](https://github.com/r-lib/pkgdown/) provide a good demonstration of how you would apply it in practice.
 
-### Host HTML documentation
+### Make human readable documentation easily available to users
 
 Once built, the HTML files containing your documentation can be opened in any browser. Usually this means looking for an `index.html` file in the output directory and opening it with your browser. This is sufficient for local usage, however, in order to improve the end-user experience and remove the need to browse the files looking for `index.html`, it is wise to host this documentation somewhere where it will be publicly available.
 
