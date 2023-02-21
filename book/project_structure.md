@@ -10,7 +10,7 @@ It will help others to read your code more easily, and you will write better cod
 Some structures have been found to be generally quite effective through trial and error.
 Others are more specific, and - as with all guidelines - should not be taken as mandatory.
 
-## Use and run scripts
+## Run scripts from end to end to ensure your code is executed reproducibly
 
 As you begin developing your project, it's a good idea to save your working code in a script file.
 In R these are saved as `.R` files, and in Python as `.py`.
@@ -57,7 +57,7 @@ This makes it much easier to find the earliest or latest files.
 You should start filenames with numbers to order files, if ordering is logical and informative.
 For example, where the `001_introduction` should come before `002_methodology` and `003_results`.
 
-### Organise analysis as a DAG
+### Organise analysis as a Directed Acyclic Graph
 
 Analysis can best be thought of as a Directed Acyclic Graph (DAG).
 Don't let the name scare you off!
@@ -137,7 +137,7 @@ Even data cleaning should take place on a copy of the raw data, so that you can 
 
 There must be an immutable store for raw data in your project structure.
 
-### Dispose of outputs
+### Make outputs disposable
 
 You should be able to dispose of your outputs, deleting them, without worrying.
 If you are worried about deleting your outputs (i.e. results) then it is unlikely you have confidence in being able to reproduce your results.
