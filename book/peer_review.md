@@ -1,14 +1,12 @@
 # Peer review
 
-Peer review of code is a quality assurance activity, where a developer other than the code's author, views and tests the usage of a piece of code.
+Peer review of code is a quality assurance activity where a developer, other than the code's author, views and tests the usage of a piece of code.
 
 >For analysis to be used to inform a decision it must be possible to assess its utility, reliability, and the degree of validation and verification to which it has been subjected.
 
 [The Aqua book](https://www.gov.uk/government/publications/the-aqua-book-guidance-on-producing-quality-analysis-for-government)
 
-## Why do we need peer review?
-
-Peer review allows a fresh pair of eyes to take a look at your work. It validates that you have taken a correct approach to your analysis and may highlight errors. This constructive feedback helps you to improve your code quality and provides confidence in your work. It acts to make sure that our analysis is fit for purpose.
+Peer review allows a fresh pair of eyes to take a look at your work. It helps to assure that you have taken an appropriate approach to your analysis and may highlight errors in the analysis process. Constructive review feedback helps you to improve your code quality and provides confidence in your work. It acts to assure that our analysis is fit for purpose.
 
 >Continuous challenge and improvement is essential to ensure that the people we serve – ministers and, of course, the public – have trust in our analysis. 
 
@@ -16,17 +14,42 @@ Nick Macphereson, former Permanent Secretary to the Treasury
 
 [The Aqua book](https://www.gov.uk/government/publications/the-aqua-book-guidance-on-producing-quality-analysis-for-government) tells us that quality assurance of our analysis should be proportional to the complexity and business risk of the analysis. This means that both internal and external peer review may be required to adequately assure your analysis. Particularly if your analysis uses novel or complex techniques, where comparison with other analyses cannot be used to challenge your results, or if the analysis is business critical.
 
-Most analysis stems from some form of customer engagement. Throughout design, implementation and review of analysis we must continue to assess whether our analysis is fit for purpose: Does it meet the needs of the customer? Your project should document the scope of your analysis and any requirements, to make this assessment as easy as possible. Regular contact with customers helps to keep these requirements up to date. Additional documentation that supports the auditability of your analysis includes assumption logs, technical reports describing the analysis and documentation on any verification or validation that has already been carried out.
+## Focus reviews on code quality
 
-As we discussed in [](readable_code.md), good quality code is easier to read, understand and maintain. Peer review improves the quality of our code through the constructive challenges from the reviewer. A reviewer might do this by suggesting alternative ways to represent your analysis or they may ask questions to check the reasons behind decisions in your coding approach and analysis as a whole.
+Our [](checklists.md) provide a comprehensive list of good practices that reviewers can look for. Many of these criteria look at the project as a whole, but your review should be tailored to the quality assurance criteria that the project is trying to meet and the scale of the review.
 
-Moreover, effective peer review requires and, therefore, enforces reproducibility. A key aspect of review is checking that the same results are acquired when running your code with the same input data. Assurance that your analysis can be reproduced increases the trust in your results.
+Reviewing is centered around conversations - asking yourself and the reviewer questions. While reviewing changes to analytical code, example questions might be:
+
+1. Can I easily understand what the code does?
+    * Is the code sufficiently documented for me to understand it?
+    * Is there duplication in the code that could be simplified by refactoring into functions and classes?
+    * Are functions and class methods simple, using few parameters?
+
+As we discussed in [](readable_code.md), good quality code is easier to read, understand and maintain. Peer review improves the quality of our code through the constructive challenges from the reviewer. As a reviewer you might do this by suggesting alternative ways to represent the analysis or by asking about decisions that have been made in the approach to the analysis.
 
 Another benefit, particularly of internal review, is knowledge transfer. Both the reviewer and reviewee are exposed to new ideas. The reviewer must gain a low-level understanding of what the code is doing, in order to validate that it works as expected. This may provide your team members with the understanding required to use and maintain your code in the future.
 
+2. Is the required functionality tested sufficiently?
+
+If there are not tests for each part of the code, then we can't be sure that it works as expected. As a reviewer, you should ask whether the amount of testing is proportionate given the risk to the analysis if the code does not work.
+
+3. How easy will it be to alter this code when requirements change?
+    * Are high level parameters kept in dedicated configuration files?
+    * Or would somebody need to work their way through the code with lots of manual edits to reconfigure for a new run?
+
+Most analysis stems from some form of customer engagement. Throughout design, implementation and review of analysis we must continue to assess whether our analysis is fit for purpose: Does it meet the needs of the customer? A project should document the scope of your analysis and any requirements, to make this assessment as easy as possible. Additional documentation that supports the auditability of your analysis includes assumption logs, technical reports describing the analysis and documentation on any verification or validation that has already been carried out.
+
+4. Can I generate the same outputs that the analysis claims to produce?
+    * Have dependencies been sufficiently documented?
+    * Is the code version, input data version and configuration recorded?
+
+A key aspect of review is checking that the same results are acquired when running your code with the same input data. Assurance that  analysis can be reproduced increases the trust in the results.
+
+Note that each of these example questions focuses on important quality assurance practices in the code, rather than minor issues like code layout and style.
+
 ## Give practical feedback
 
-Feedback should be practical and constructive. For example, you should suggest an improvement or alternative that the developer may consider and learn from. You should avoid making feedback personal.
+Feedback should be practical and constructive. For example, you should suggest an improvement or alternative that the developer may consider and learn from. Although it may be necessary to highlight specific examples, you should avoid making feedback personal.
 
 The CEDAR feedback model can be a useful framework for structuring review comments. This model breaks review down into five sections:
 1. Context - describe the issue and the potential impact.
@@ -37,27 +60,11 @@ The CEDAR feedback model can be a useful framework for structuring review commen
 
 This approach has been designed from a coaching or mentoring perspective, and can work well in verbal discussion or when giving written feedback.
 
-## Focus feedback on code quality
+## Document review feedback and outcomes
 
-Our [](checklists.md) provide a comprehensive list of good practices that reviewers can look for. Many of these criteria look at the project as a whole, so your review should be tailored to the quality assurance criteria that the project is trying to meet and the scale of the review.
+When you identify issues with code functionality or quality you should suggest improvements to solve these issues. The code developer may respond to your comments to justify why they have taken a certain approach, otherwise they should act on your feedback before using the analysis.
 
-Reviewing is centered around conversations - asking yourself and the reviewer questions. While reviewing changes to analytical code, you could ask yourself:
-* Can I easily understand what the code does?
-    * Is the code sufficiently documented for me to understand it?
-    * Is there duplication in the code that could be simplified by refactoring into functions and classes?
-    * Are functions and class methods simple, using few parameters?
-* Does the code fulfil its requirements?
-* Is the required functionality tested sufficiently?
-* How easy will it be to alter this code when requirements change?
-    * Are high level parameters kept in dedicated configuration files? Or would somebody need to work their way through the code with lots of manual edits to reconfigure for a new run?
-* Can I generate the same outputs that the analysis claims to produce?
-    * Have dependencies been sufficiently documented?
-    * Is the code version, input data version and configuration recorded?
-* Is the code style consistent?
-
-If the answer to any of these questions "no", you should suggest improvements to the code to solve these issues. The developer may respond to your comments to justify why they have taken a certain approach, otherwise they should act on your comments.
-
-Note that these example questions focus on important good quality assurance practices in the code, rather than minor issues like code layout.
+It may be necessary to re-review changes that have resulted from your initial review, to confirm that your feedback has been actioned appropriately.
 
 ```{important}
 It is essential that you document what you have considered in your review and how the developer has responded to your feedback. This documentation should be kept close to the relevant version of the code, so that others can see what has been reviewed. The easiest way to manage this is by using the Merge Request or Pull Request feature on your version control platform to conduct the review. See [](version_control.md) for more information.
@@ -65,7 +72,7 @@ It is essential that you document what you have considered in your review and ho
 
 ## Give consistent feedback
 
-You might formalise your review using a template, to ensure that review is consistent within a project. Templates are useful for setting criteria to review against. You should tailor any template to reflect the scope of your review. For example, small regular reviews may focus on smaller aspects of the analysis compared to a large project-wide review. The general example below is written in Markdown, so that it can be used in version control platform merge requests:
+You might formalise your review using a template, to ensure that review is consistent within a project. Templates are useful for setting criteria to review against. You should tailor any template to reflect the scope of your review. For example, small regular reviews may focus on smaller aspects of the analysis compared to a large project-wide review. The general example below is written in Markdown, so that it can be used in version control platform Merge or Pull requests:
 
 
 ```{code-block} md
@@ -108,15 +115,15 @@ Be critical and clear, but not mean. Ask questions and set actions.
 
 ```
 
-Internal review should be carried out within your teams. Reviewing code from those with more and less experience is beneficial.
+Internal review should be carried out regularly within the development team. Reviewing code written by those with more and less experience that you is beneficial for both reviewer and developer. Similar questions can be asked from both perspectives, for the reviewer to get a good understanding of the approach and decisions behind the analysis.
 
 ## Give timely feedback
 
 It's important that feedback is provided in good time, so that the review process does not hold up development of the code and that issues can be addressed before more code is written using the same practices.
 
-We strongly recommend applying pair programming for code review, as the most timely and practical method. However, a separate review process may be necessary when multiple developers are not available to work at the same time or when reviewing completed work.
+We strongly recommend applying pair programming for code review, as the most timely and practical method. However, a separate review process may be necessary when multiple developers are not available to work at the same time.
 
-### Pair programming
+### Review through pair programming
 
 > Two heads are better than one.
 
@@ -130,7 +137,7 @@ Developers working in pairs can approve changes to code as it is written, howeve
 
 This blog post from the Government Digital Service provides [more detailed steps to apply pair programming](https://gds.blog.gov.uk/2018/02/06/how-to-pair-program-effectively-in-6-steps/).
 
-### Separate review process
+### Review separately when necessary
 
 A separate review involves sharing your code with a reviewer, and receiving written feedback. We describe this as separate, because code development and review are separate and the code author does not need to be present for the review. This type of review is an iterative process, where the reviewer may make additional suggestions until they are satisfied with the code changes.
 
@@ -139,7 +146,7 @@ This form of review works best when changes to the code are small and frequent. 
 ```{important}
 If a project is only reviewed when all of the code has been written, this significantly reduces the benefit of review.
 
-There is a much larger burden on the reviewer and any issues that are identified may take a lot of time to fix across the whole project. A reviewer might highlight that certain quality assurance practices have not been used - for example, there has not been enough documentation or automated testing in the project. It would take a substantial amount of effort to add documentation and testing for the whole project. If this was identified earlier, the improved practices could be applied as the remaining code is developed.
+This creates a much larger burden on the reviewer. Additionaly, any issues that are identified may take a lot of time to fix across the whole project. A reviewer might highlight that certain quality assurance practices have not been used - for example, there has not been enough documentation or automated testing in the project. It would take a substantial amount of effort to add documentation and testing for the whole project. If this was identified earlier, the improved practices could be applied as the remaining code is developed.
 ```
 
 When you must carry out a review of larger or complete pieces of work, it may be worth reviewing different aspects of the code in separate sessions. For example, focussing on documentation in one session and functionality in the next.
