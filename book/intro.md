@@ -53,7 +53,7 @@ The website is managed by the Quality and Improvement division of the Office for
 
 For keyboard navigation, {kbd}`Up Arrow` and {kbd}`Down Arrow`keys can be used to scroll up and down on the current page. {kbd}`Left Arrow` and {kbd}`Right Arrow` keys can be used to move forwards and backwards through the pages of the book. Tabbed content (including code example) can be focused using the {kbd}`Tab` key. {kbd}`Left Arrow` and {kbd}`Right Arrow` keys are then used to focus the required tab option, where {kbd}`Enter` can be used to select that option and display the associated content.
 
-### Feedback and report accessibility problems
+### Help us improve this book
 
 We’re always looking to improve the accessibility of our guidance. If you find any problems not listed on this page or think that we’re not meeting accessibility requirements, please contact us by emailing [Analysis.Function@ons.gov.uk](mailto:Analysis.Function@ons.gov.uk). Please also get in touch if you are unable to access any part of this guidance, or require the content in a different format.
 

@@ -196,7 +196,7 @@ Diagram of good manual data versioning workflow.
 Finally, for this to be effective, your analysis should record the version of data used to generate a specified set of outputs.
 This might be documented in analysis reports or automatically logged by your code.
 
-## Publish data
+## Use these standards and guidance when publishing data
 
 You should use the [5-star open data standards](https://5stardata.info/en/) to understand and improve the current utility of your published data. The [CSV on the Web (CSVW) standard](https://csvw.org/) is recommended for achieving the highest ratings of open data.
 
