@@ -25,7 +25,7 @@ Reviewing is centered around conversations - asking yourself and the reviewer qu
     * Is there duplication in the code that could be simplified by refactoring into functions and classes?
     * Are functions and class methods simple, using few parameters?
 
-As we discussed in [](readable_code.md), good quality code is easier to read, understand and maintain. Peer review improves the quality of our code through the constructive challenges from the reviewer. As a reviewer you might do this by suggesting alternative ways to represent the analysis or by asking about decisions that have been made in the approach to the analysis.
+As we discussed in [](readable_code.md), good quality code is easier to read, understand and maintain. Peer review improves the quality of our code through the constructive challenges of the reviewer. As a reviewer, you might do this by suggesting alternative ways to represent the analysis or by asking about decisions that have been made in the approach to the analysis.
 
 Another benefit, particularly of internal review, is knowledge transfer. Both the reviewer and reviewee are exposed to new ideas. The reviewer must gain a low-level understanding of what the code is doing, in order to validate that it works as expected. This may provide your team members with the understanding required to use and maintain your code in the future.
 
