@@ -115,7 +115,7 @@ Be critical and clear, but not mean. Ask questions and set actions.
 
 ```
 
-Internal review should be carried out regularly within the development team. Reviewing code written by those with more and less experience that you is beneficial for both reviewer and developer. Similar questions can be asked from both perspectives, for the reviewer to get a good understanding of the approach and decisions behind the analysis.
+Internal review should be carried out regularly within the development team. Reviewing code written by those with more and less experience than you is beneficial for both reviewer and developer. Similar questions can be asked from both perspectives, for the reviewer to get a good understanding of the approach and decisions behind the analysis.
 
 ## Give timely feedback
 
