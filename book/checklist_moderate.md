@@ -64,7 +64,6 @@ Quality assurance checklist from [the quality assurance of code for analysis and
 - Configuration files are version controlled separately to the analysis code, so that they can be updated independently.
 - The configuration used to generate particular outputs, releases and publications is recorded.
 
-
 ### Data management
 
 - Published outputs meet [accessibility regulations](https://analysisfunction.civilservice.gov.uk/area_of_work/accessibility/).
@@ -86,7 +85,7 @@ Quality assurance checklist from [the quality assurance of code for analysis and
 
 ### Testing
 
-- Core functionality is unit tested as code. See [`pytest` for Python](https://docs.pytest.org/en/stable/) and [`testthat` for R](https://testthat.r-lib.org/). 
+- Core functionality is unit tested as code. See [`pytest` for Python](https://docs.pytest.org/en/stable/) and [`testthat` for R](https://testthat.r-lib.org/).
 - Code based tests are run regularly.
 - Bug fixes include implementing new unit tests to ensure that the same bug does not reoccur.
 - Informal tests are recorded near to the code.

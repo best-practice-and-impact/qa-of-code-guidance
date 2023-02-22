@@ -125,7 +125,7 @@ Separating configuration from the rest of our code makes it easy to adjust these
 
 Our configuration could be extended to include other parameters, including which variables we're selecting to train our model. However, it is important that we keep the configuration simple and easy to maintain. Before moving aspects of code to the configuration it's good to consider whether it improves your workflow. If it is something that is dependent on the computer that you are using (e.g. file paths) or is likely to change between runs of your analysis, then it's a good candidate for including in your configuration.
 
-## Configuration files
+## Use separate configuration files
 
 We can use independent configuration files to take our previous example one step further. We simply take our collection of variables, containing parameters and options for our analysis, and move them to a separate file. As we'll describe in the following subsections, these files can be written in the same language as your code or other simple languages.
 
@@ -133,11 +133,11 @@ Storing our analysis configuration in a separate file to the analysis code is a 
 
 You may not want to version control your configuration file, for example if it includes file paths that are specific to your machine or references to sensitive data. In this case, you should include a sample or example configuration file, so that others can use this as a template to configure the analysis for their own environment. It is key that this template is kept up to date, so that it is compatible with your code.
 
-### Code configuration files
+### Use code files for configuration
 
 To use another code script as our configuration file, we can copy our parameter variables directly from our scripts. Because these variables are defined in the programming language that our analysis uses, it's easy to access them in our analysis script. In Python, variables from these config files can be imported into your analysis script. In R, your script might `source()` the config file to read the variables into the R environment.
 
-### Dedicated configuration files
+### Use dedicated configuration files
 
 Many other file formats can be used to store configuration parameters. You may have come across data-serialisation languages (including YAML, TOML, JSON and XML), which can be used independently of your programming language.
 
@@ -180,10 +180,9 @@ data <- read.csv(config$input_path)
 
 Configuration file formats like YAML and TOML are compact and human-readable. This makes them easy to interpret and update, even without knowledge of the underlying code used in the analysis. Reading these files in produces a single object containing all of the `key:value` pairs defined in our configuration file. In our analysis, we can then select our configuration parameters using their keys.
 
+## Use configuration files as arguments
 
-## Configuration files as arguments
-
-In the previous example we have stored our configuration options in a separate file and referenced this in our analysis script. Although this allows us to separate our configuration from the main codebase, we have used a hard-coded path to the configuration file. This is not ideal, as for the code to be run on another machine the configuration file must be saved on the same path. Furthermore, if we want to switch the configuration file that the analysis uses we must change this path or replace the configuration file at the specified path.
+In the previous example, we have stored our configuration options in a separate file and referenced this in our analysis script. Although this allows us to separate our configuration from the main codebase, we have used a hard-coded path to the configuration file. This is not ideal, as for the code to be run on another machine the configuration file must be saved on the same path. Furthermore, if we want to switch the configuration file that the analysis uses we must change this path or replace the configuration file at the specified path.
 
 To overcome this, we can adjust our analysis script to take the configuration file path as an argument when the analysis script is run. This can be achieved in a number of ways, but we'll discuss a minimal example here:
 
@@ -237,7 +236,8 @@ It is possible to pass configuration options directly as arguments in this way, 
 ```
 
 (environment-variables)=
-## Configuring secrets as environment variables
+
+## Configure secrets as environment variables
 
 Environment variables are variables that are available in a particular environment. In most analysis contexts, our environment is the user environment that we are running our code from. This might be your local machine or dedicated analysis platform.
 

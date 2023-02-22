@@ -63,14 +63,12 @@ Automated code format repair.
 * [formatR](https://yihui.org/formatr/)
 * [styler](https://styler.r-lib.org/)
 
-
 ## Code Complexity
 
 ### Python
 
 * [wily](https://pypi.org/project/wily/)
 * [radon](https://radon.readthedocs.io/en/latest/)
-
 
 ## Packaging Code
 

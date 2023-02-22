@@ -286,7 +286,7 @@ if (is_clean(data)) {
 ```
 ````
 
-#### Make classes easy to identify 
+#### Make classes easy to identify
 
 Class names are usually started with a capital letter, and in `CamelCase`, as this differentiates them from `variableNames` and `variable_names`. Class names follow the same advice as for [](naming-functions) - namely, is it obvious from the class name what it does? If its too complex to name concisely, it is an indication of too many [responsibilities](class-responsibilities) and you should refactor your code into more, smaller classes.
 
@@ -426,7 +426,7 @@ This chapter will try to condense key messages and guidelines from these practic
 
 The ability to convey information in a simple and clear way matters.
 
-This is particularly true when explaining concepts that are already complex. When writing code you are often trying to solve problems that are complex in nature. You should avoid introducing extra complexity to these problems, wherever possible. 
+This is particularly true when explaining concepts that are already complex. When writing code you are often trying to solve problems that are complex in nature. You should avoid introducing extra complexity to these problems, wherever possible.
 
 Here are a few tips to make sure you keep your project nice and simple:
 
@@ -434,7 +434,6 @@ Here are a few tips to make sure you keep your project nice and simple:
 - Try not to 'reinvent the wheel' - use existing packages when they solve the problem. They will most likely be better documented and won't need extra maintenance.
 - Split your code into understandable parts - consider how to [make your code modular](modular).
 - Don't over-engineer your solution - if it is understandable and works, refrain from over-complicating for the sake of small increases in efficiency.
-
 
 ```{note}
 It's important to capture the requirements of your code before writing it. This includes when your code needs to be adapted to meet changing needs. You should then aim to meet these requirements in the functionality that your code provides.
