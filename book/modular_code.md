@@ -6,6 +6,7 @@ The principles outlined in this chapter represent good practices for general pro
 :class: admonition-learning
 
 To get the most benefit from this section, you should have an understanding of core programming concepts such as:
+
 * storing information in variables
 * using control flow, such as if-statements and for-loops
 * writing code as functions or classes
@@ -16,17 +17,19 @@ You can find links to relevant training in the [](learning.md) section of the bo
 
 ## Motivation
 
-Code that is repetitive, disorganised or overly complex can be difficult to understand, even for experienced programmers. This makes assuring, testing or changing the code more burdersome. It also makes it harder to spot and fix mistakes. 
+Code that is repetitive, disorganised or overly complex can be difficult to understand, even for experienced programmers. This makes assuring, testing or changing the code more burdersome. It also makes it harder to spot and fix mistakes.
 
-Code that isn't modular can cause a range of issues: 
-* walls of repetitive code that is hard to absorb
-* long, complex scripts that are hard to follow
-* over-complicated code where a simpler solution could be used
-* a code base that makes it difficult to find what you're looking for
+Code that isn't modular can cause a range of issues:
 
-This chapter highlights ways to write modular code that is easier to read, review and maintain. These practices will also help you implement the other good coding practices you will come across in this book, such as version control, review, testing and documentation. Because of this, modular code is fundamental to making analysis more reproducible, auditable and assured. 
+- walls of repetitive code that is hard to absorb
+- long, complex scripts that are hard to follow
+- over-complicated code where a simpler solution could be used
+- a code base that makes it difficult to find what you're looking for
+
+This chapter highlights ways to write modular code that is easier to read, review and maintain. These practices will also help you implement the other good coding practices you will come across in this book, such as version control, review, testing and documentation. Because of this, modular code is fundamental to making analysis more reproducible, auditable and assured.
 
 (modular)=
+
 ## Modular code
 
 Breaking your code down into smaller, more manageable chunks is a sensible way to improve readability. Regardless of the language, there are often techniques to containerise your code into self-contained parts such as modules, classes or functions.
@@ -58,7 +61,7 @@ To summarise:
 
 Classes are fundamental parts of [object-orientated programming (OOP)](https://en.wikipedia.org/wiki/Object-oriented_programming). They create an association between data (attributes of the class) and logic (methods of the class). As you will see in the examples below, classes can be useful when representing real objects in our code.
 
-Although classes exist in R, [writing custom classes](https://adv-r.hadley.nz/oo.html) is less common than it is in Python (and other OOP enabling languages). Because of this, the following sub-section will focus primarily on Python classes. 
+Although classes exist in R, [writing custom classes](https://adv-r.hadley.nz/oo.html) is less common than it is in Python (and other OOP enabling languages). Because of this, the following sub-section will focus primarily on Python classes.
 
 With a more complex system, OOP can help to reduce complexity by hiding low-level details from users, such as an internal state.
 
@@ -110,7 +113,6 @@ In addition to private attributes, you can use the same naming convention to ind
 In Python, the notion of 'private' does not mean secure. The main goal of private attributes and methods is to expose less unnecessary information to the anyone using your class in their code.
 ```
 
-
 ```python
 class BankAccount:
     def __init__(self, balance, credentials):
@@ -133,7 +135,6 @@ class BankAccount:
         if _check_credentials(credentials):
             self._private_withdraw(amount)
 ```
-
 
 When using classes in our code, we care more about what methods a class provides than what `type` it is defined as. This is known as 'duck typing'; if a class has the same methods as another class, then you can use either class in your code.
 
@@ -214,7 +215,7 @@ When most of your code resides in a single class, this can indicate that this cl
 For more complex analytical work, a better approach might be [Responsibility Driven Design](https://en.wikipedia.org/wiki/Responsibility-driven_design). Here, we write small classes with a focussed responsibility. This reduces complexity and helps classes to avoid being affected by changes to other, unrelated parts of our code. However, be aware of the trade-off between the complexity of one large class versus many smaller classes.
 ```
 
-[Responsibility Driven Design](https://en.wikipedia.org/wiki/Responsibility-driven_design) makes objects that are usually 'passive' become 'active'. For example, with a banking system, an  object representing a bank account, and handling all money movements, might become overly complex. Instead, objects representing `Cheques` and `Cash` might be designed with payment methods. In this situation, a `Cheque` knows how much money it contains and how to pay itself into an account. A `Cheque`'s responsibility is to retrieve money from its associated account and pay itself in to another bank account. If we later needed to add new payment methods, the existing payment type classes (`Cheque` and `Cash`) will unlikely to be affected. The bank account's responsibility is holding money, receiving it and paying it out. 
+[Responsibility Driven Design](https://en.wikipedia.org/wiki/Responsibility-driven_design) makes objects that are usually 'passive' become 'active'. For example, with a banking system, an  object representing a bank account, and handling all money movements, might become overly complex. Instead, objects representing `Cheques` and `Cash` might be designed with payment methods. In this situation, a `Cheque` knows how much money it contains and how to pay itself into an account. A `Cheque`'s responsibility is to retrieve money from its associated account and pay itself in to another bank account. If we later needed to add new payment methods, the existing payment type classes (`Cheque` and `Cash`) will unlikely to be affected. The bank account's responsibility is holding money, receiving it and paying it out.
 
 ```{tip}
 Many [Design Patterns](https://en.wikipedia.org/wiki/Software_design_pattern) are available with OOP. These are reusable solutions to common problems.
@@ -332,9 +333,6 @@ This is a minimal example of a pipeline script, illustrating how you might impor
 ``````{admonition} A step further
 Another step that can be taken to improve clarity is to further wrap these modules into their own folder like so:
 
-
-````` {tabs}
-```` {tab} Python
 ```
 project
 ├── library
@@ -412,4 +410,3 @@ In short, notebooks are not suitable for modularising analysis pipelines, howeve
 After this, you might turn existing notebooks into HTML to send them stakeholders, or save them as is so that analytical peers can re-run and review your notebooks. The steps that you've taken to simplify your notebook code will make your code much easier to understand by readers.
 
 Bear in mind that notebook files can still be run out of order by other analysts, and that they should not be used as the main method of actually generating outputs. Output generation should instead be trusted to scripts, where human decisions do not alter the order that code is run.
-

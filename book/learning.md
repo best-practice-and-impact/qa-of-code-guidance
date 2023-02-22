@@ -10,7 +10,7 @@ Please note that learning resources from non-government training providers (i.e.
 
 The [RAP learning pathway](https://learninghub.ons.gov.uk/mod/page/view.php?id=8699) covers training for most of the good practices outlined in this book, with a focus on Python and R. Other courses below can be used to supplement this learning.
 
-### Python 
+### Python
 
 * [Introduction to object-oriented programming (OOP) in Python](https://learninghub.ons.gov.uk/enrol/index.php?id=567)
 * [The Official Python Getting Started Guide](https://www.python.org/about/gettingstarted/)
@@ -32,6 +32,7 @@ The [RAP learning pathway](https://learninghub.ons.gov.uk/mod/page/view.php?id=8
 * [Dataframes, manipulation and cleaning in Python](https://learninghub.ons.gov.uk/enrol/index.php?id=484)
 * [Python Data Science Handbook](https://jakevdp.github.io/PythonDataScienceHandbook/index.html)
 * [Python for Data Analysis](https://github.com/wesm/pydata-book)
+
 ### R
 
 * [Dataframes, manipulation and cleaning in R](https://learninghub.ons.gov.uk/enrol/index.php?id=486)
@@ -45,7 +46,6 @@ The [RAP learning pathway](https://learninghub.ons.gov.uk/mod/page/view.php?id=8
 * [Python SQL libraries](https://realpython.com/python-sql-libraries/)
 * [SQL databases and R](http://datacarpentry.org/R-ecology-lesson/05-r-and-databases.html)
 
-
 ## Command line tools
 
 ### General
@@ -55,6 +55,7 @@ The [RAP learning pathway](https://learninghub.ons.gov.uk/mod/page/view.php?id=8
 * [The UNIX workbench](https://seankross.com/the-unix-workbench/)
 
 (git-learning)=
+
 ### Git
 
 * [Intro to Git](https://learninghub.ons.gov.uk/enrol/index.php?id=493)
@@ -73,7 +74,6 @@ The [RAP learning pathway](https://learninghub.ons.gov.uk/mod/page/view.php?id=8
 ## Making software accessible
 
 * [A11Y Project software, books and tools](https://www.a11yproject.com/resources/)
-
 
 ## Reproducible Analytical Pipelines
 
