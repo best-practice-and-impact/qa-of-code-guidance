@@ -13,11 +13,11 @@ CI is often linked to:
 * Continuous delivery - ensuring that your code is fit for use after each integration
 * Continuous deployment - automatically deploying working code into production
 
-### Automating your tests
+### Automate tests to reduce risk of errors
 
 Tests should be run whenever you make changes to your project.
 This ensures that changes do not break the existing, intended functionality of your code.
-However, it's not easy to remember to run your tests at regular intervals.
+However, it is easy to forget to run your tests at regular intervals.
 You're already putting effort into `commit`ing your changes to a version control system regularly.
 
 And you're right to think "surely this could be automated too?"
@@ -25,7 +25,7 @@ And you're right to think "surely this could be automated too?"
 These tools can be used to ensure that all changes to a project are tested.
 Additionally, it allows others, who are reviewing your code, to see the results of your tests.
 
-Automation of routine tasks in this way reduces the effort required to merge changes onto the existing code base. This supports frequent commiting and merging of changes. As such, conflicts between multiple contributions should be minimal and that review of these changes simpler. Additionally, the execution environment for CI is defined in a CI workflow configuration, which improves reproducibility when running tests.
+Automation of routine tasks in this way reduces the effort required to merge changes onto the existing code base. This supports frequent commiting and merging of changes. As such, conflicts between multiple contributions should be minimal and review of these changes is simpler. Additionally, the execution environment for CI is defined in a CI workflow configuration, which improves reproducibility when running tests.
 
 ### Continuous Integration Platforms
 
