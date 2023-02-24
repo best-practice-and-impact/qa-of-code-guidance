@@ -74,7 +74,9 @@ If you're considering these tools as part of a project, see [Continuous Integrat
 
 ## Example use cases for GitHub Actions
 
-### Example - Testing
+The following examples are presented to support understanding of the topic discussed above.
+
+### Configure GitHub actions to automate tests
 
 Below is an example configuration file, for use with GitHub actions. The `YAML` file format, used below, is common to a number of other CI tools.
 
@@ -86,7 +88,6 @@ on:
     branches:
       - master
   pull_request:
-
 
 jobs:
   build:
@@ -123,7 +124,7 @@ The individual stages of the workflow are defined under `steps`. `steps` typical
 
 This workflow will report whether our test code ran successfully for each of the specified Python versions.
 
-### Example - Documentation
+### Configure GitHub actions to build and deploy documentation
 
 This book uses the following GitHub Actions configuration to build and deploy the HTML content:
 
