@@ -2,7 +2,6 @@
 
 Whether you're developing a package or collaborating on a piece of analysis, documenting your project will makes it much easier for others to understand your goal and ways of working.
 
-
 ## README
 
 When working on a collaborative or open coding project, it's good practice to describe an overview of your project in a README file.
@@ -11,14 +10,13 @@ As well as a description of the project, it might include examples using your co
 This file can be any text type, including `.txt`, `.md`, and `.rst`, and can be associated with your automated documentation.
 
 We suggest the following for a good README:
-  
+
 - Short statement of intent
 - Longer description describing the problem that your project solves and how it solves it
 - Basic installation instructions or link to installation guide
 - Example usage
 - Screenshot if your project has a graphical user interface
 - Links to related projects
-
 
 ## Contributing guidance
 
@@ -54,7 +52,6 @@ maintainers.
 5. If you are merging `dev` to `master`, you must increment the version number
 in the VERSION file to the new version that this Pull/Merge Request would
 represent. The versioning scheme we use is [SemVer](http://semver.org/).
-
 
 ## Code style
 
@@ -100,7 +97,6 @@ maintainers.
 in the VERSION file to the new version that this Pull/Merge Request would
 represent. The versioning scheme we use is [SemVer](http://semver.org/).
 
-
 <h2>Code style</h2>
 
 - We name variables using few nouns in lowercase, e.g. `mapping_names`
@@ -124,19 +120,17 @@ non-minor changes.
 In this case we have outlined our standard practices for using version control on GitHub, the code style that we are using in the project and the review process that we follow.
 We have used the [Markdown](https://daringfireball.net/projects/markdown/syntax) (`.md`) markup language for this document, which is formatted into HTML when viewed on our repository.
 
-
 ## User desk instructions
 
 If your project is very user focussed for one particular task, for example developing a statistic production pipeline for other analysts to execute, it is very important that the code users understand how to appropriately run your code.
 
 These instructions should include:
-  
+
 - How to set up an environment to run your code (including how to install dependencies)
 - How to run your code
 - What outputs (if any) your code or system produces and how these should be interpreted
 - What quality assurance has been carried out and what further quality assurance of outputs is required
 - How to maintain your project (including how to update data sources)
-
 
 ## Dependencies
 
@@ -154,7 +148,6 @@ Packages are listed under the `Imports` key.
 You can get a list of your installed R packages using the `installed.packages()` function.
 
 Environment management tools, such as [`renv`](https://rstudio.github.io/renv/articles/renv.html) for R or [`pyenv`](https://github.com/pyenv/pyenv) for python, are very useful for keeping track of software and package versions used in a project.
-
 
 ## Citation
 
@@ -184,7 +177,6 @@ This might include multiple citations, if your project includes multiple dataset
 
 See this [GitHub guide for more information on making your public code citable](https://guides.github.com/activities/citable-code/).
 
-
 ## Vignettes
 
 Vignettes are a form of supplementary documentation, containing applied examples that demonstrate the intended use of the code in your project or package.
@@ -201,7 +193,6 @@ You can produce this type of documentation in any format, though Rmarkdown is pa
 
 You might also consider providing examples in an interactive notebook, that users can run for themselves.
 
-
 ## Versioning
 
 Documenting the version of your code provides distinct points of reference in the code's development.
@@ -213,7 +204,6 @@ Following these rules also helps other users of your code to understand how chan
 Each level of version number indicates the extent of changes to the application programming interface (API) of your code, i.e. the part of the code that a user interacts with directly.
 Changes to the major version number indicate changes to the API that are not compatible with use of previous versions of the code.
 While changes is the minor and patch numbers indicate changes that are either compatible or have no effect on the use of the code, respectively.
-
 
 ```{figure} ./_static/semantic_versioning.png
 ---
@@ -230,7 +220,6 @@ We've chosen to use a form of calender versioning ([CalVer](https://calver.org/)
 You'll see the current version below the site's table of contents, where the first four digits represent the year that latest changes were made.
 The incremental number following the full stop indicates how many versions of the guidance have been published in that year.
 As this guidance will change over time, this version number provides users with a reference for citing a specific state of the guidance.
-
 
 ## Changelog
 
@@ -265,7 +254,6 @@ Your changelog can be in any format and should be associated with your code docu
 
 [keep a changelog](https://keepachangelog.com/en/1.0.0/) provides a simple but effective template for recording changes to your code.
 
-
 ## Copyright and Licenses
 
 Copyright indicates ownership of work.
@@ -288,7 +276,6 @@ For example, an MIT LICENSE file might look like:
 >
 > THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-
 ## Open source your code
 
 In government, we [support and promote open source](https://www.gov.uk/service-manual/service-standard/point-12-make-new-source-code-open) whenever possible.
@@ -299,16 +286,16 @@ Open sourcing code benefits yourself, other government analysts and the public.
 
 Personal benefits from open sourcing include:
 
-* Attribution - coding in the open creates a public record of your contributions to analysis and software.
-* Collaboration - you can gain experience working with analysts in other departments.
-* Review - peers and experts in the field can provide advice on improving your analysis and coding.
-* Feels good - we regularly benefit from open source software, so it's nice to give something back.
+- Attribution - coding in the open creates a public record of your contributions to analysis and software.
+- Collaboration - you can gain experience working with analysts in other departments.
+- Review - peers and experts in the field can provide advice on improving your analysis and coding.
+- Feels good - we regularly benefit from open source software, so it's nice to give something back.
 
 While the public benefit from:
 
-* Transparency - stakeholders can understand and reproduce our analysis, which is a core element of the [Statistics Code of Practice](https://code.statisticsauthority.gov.uk/).
-* Sharing value - others can benefit from our work, either through reuse or demonstration of good practices.
-* Sharing opportunity - others can gain insight and experience from reading and possibly contributing to  your code.
+- Transparency - stakeholders can understand and reproduce our analysis, which is a core element of the [Statistics Code of Practice](https://code.statisticsauthority.gov.uk/).
+- Sharing value - others can benefit from our work, either through reuse or demonstration of good practices.
+- Sharing opportunity - others can gain insight and experience from reading and possibly contributing to  your code.
 
 Please see the [Government Data Service (GDS) guidance](https://www.gov.uk/government/publications/open-source-guidance/when-code-should-be-open-or-closed) for help deciding when code should be open or closed.
 Security concerns for coding in the open are also addressed in further [GDS guidance](https://www.gov.uk/government/publications/open-source-guidance/security-considerations-when-coding-in-the-open).

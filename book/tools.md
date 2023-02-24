@@ -13,6 +13,7 @@ Implementing automated code testing.
 * [unittest](https://docs.python.org/3/library/unittest.html)
 * [tox](https://tox.readthedocs.io/en/latest/)
 * [nox](https://nox.thea.codes/en/stable/)
+* [chispa (PySpark)](https://pypi.org/project/chispa/)
 
 ### R
 
@@ -62,14 +63,12 @@ Automated code format repair.
 * [formatR](https://yihui.org/formatr/)
 * [styler](https://styler.r-lib.org/)
 
-
 ## Code Complexity
 
 ### Python
 
 * [wily](https://pypi.org/project/wily/)
 * [radon](https://radon.readthedocs.io/en/latest/)
-
 
 ## Packaging Code
 
@@ -80,6 +79,7 @@ Automated code format repair.
 ### R
 
 * [goodpractice](http://mangothecat.github.io/goodpractice/)
+* [fusen](https://thinkr-open.github.io/fusen/)
 
 ## Static Type Checking
 
@@ -88,11 +88,15 @@ Automated code format repair.
 * [mypy](https://mypy.readthedocs.io/en/stable/)
 * [pyright](https://github.com/microsoft/pyright)
 
-
 ## Pipeline Orchestration
 
 * [Apache Airflow](https://airflow.apache.org/)
 * [targets R package](https://wlandau.github.io/targets-manual/)
+* [Hamilton (Python)](https://hamilton-docs.gitbook.io/docs/)
+
+## Dependency management
+
+* [renv (R)](https://rstudio.github.io/renv/articles/renv.html)
 
 ## Continuous Integration Platforms
 
@@ -101,3 +105,23 @@ Automated code format repair.
 * [Travis](https://travis-ci.org/)
 * [Jenkins](https://www.jenkins.io/)
 * [Coveralls](https://coveralls.io/)
+
+## Git hook automation
+
+* [pre-commit](https://pre-commit.com/)
+
+## Data processing, analysis, and publishing
+
+### Data linkage
+
+* [Splink (Python)](https://www.gov.uk/government/publications/joined-up-data-in-government-the-future-of-data-linking-methods/splink-mojs-open-source-library-for-probabilistic-record-linkage-at-scale#introduction)
+
+### Data engineering
+
+* [Polars (Python)](https://www.pola.rs/)
+
+### Publishing
+
+* [Quarto](https://quarto.org/)
+* [a11tables (R only)](https://co-analysis.github.io/a11ytables/index.html)
+* [gptables (Python)](https://gptables.readthedocs.io/en/latest/index.html#)
