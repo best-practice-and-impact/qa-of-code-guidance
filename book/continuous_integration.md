@@ -4,15 +4,17 @@
 
 There are various tasks which can be automated to increase the quality of code and make development easier and less tedious. Automating the running of unit tests is especially important to ensuring trust in your pipeline or package, by ensuring that all unit tests pass before every merge.
 
+(continuous-integration)=
 ## Continous Integration
 
 Continuous integration (CI) describes the practice of frequently committing changes to your code. [CI tools](CI-tools) support this working pattern by automating routine quality assurance tasks. This includes verifying that your code successfully builds or installs and that your [code tests](testing_code.md) run successfully.
 
-CI is often linked to:
+[CI is often linked](https://www.atlassian.com/continuous-delivery/principles/continuous-integration-vs-delivery-vs-deployment) to:
 
 * Continuous delivery - ensuring that your code is fit for use after each integration
 * Continuous deployment - automatically deploying working code into production
 
+(automate-tests)=
 ### Automate tests to reduce risk of errors
 
 Tests should be run whenever you make changes to your project.
@@ -21,7 +23,7 @@ However, it is easy to forget to run your tests at regular intervals.
 You're already putting effort into `commit`ing your changes to a version control system regularly.
 
 And you're right to think "surely this could be automated too?"
-[Continuous integration](continuous-integration) can be used to automate testing, amongst other quality assurance measures, and can be triggered when changes are made to your remote version control repository.
+Continuous integration can be used to automate testing, amongst other quality assurance measures, and can be triggered when changes are made to your remote version control repository.
 These tools can be used to ensure that all changes to a project are tested.
 Additionally, it allows others, who are reviewing your code, to see the results of your tests.
 
@@ -43,7 +45,6 @@ However, [continuous integration](continuous-integration) can be used to automat
 ```
 
 (linters-formatters)=
-
 ## Linters and formatters
 
 As discussed in [](automate-style-checks), the process of checking and fixing code for style and formatting is tedious. Automation can speed up this work, either by providing suggestions as the code is written or by reformatting your code to comply with some style.
@@ -69,8 +70,6 @@ Two main types of tool exist for these tasks:
 ```
 
 Be sure to read the documentation for any of these tools, to understand what they are checking or changing in your code. Some can be configured to ignore or detect specific types of formatting error. You can run multiple of these, to catch a broader range of stylistic or programmatic errors.
-
-If you're considering these tools as part of a project, see [Continuous Integration](continuous-integration) for advice on automating them. Alternatively, explore other options, such as [pre-commit](https://pre-commit.com/), that do the formatting and checking on your machine prior to a Git commit.
 
 ## Example use cases for GitHub Actions
 

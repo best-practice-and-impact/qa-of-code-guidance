@@ -450,8 +450,6 @@ Note that forks do not automatically synchronise with the original repo. This me
 
 See the GitHub documentation for [instructions on forking a repo and keeping your fork up to date](https://docs.github.com/en/free-pro-team@latest/github/getting-started-with-github/fork-a-repo) with a project and also [working with forks](https://docs.github.com/en/free-pro-team@latest/github/collaborating-with-issues-and-pull-requests/working-with-forks).
 
-(continuous-integration)=
-
 ### Use GitHub Actions for continous integration
 
 Continuous Integration is discussed in more detail in [](continuous_integration.md). 
