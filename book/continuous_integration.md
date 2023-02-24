@@ -2,11 +2,11 @@
 
 ## Introduction
 
-
+There are various tasks which can be automated to increase the quality of code and make development easier and less tedious. Automating the running of unit tests is especially important to ensuring trust in your pipeline or package, by ensuring that all unit tests pass before every merge.
 
 ## Continous Integration
 
-Continuous integration (CI) describes the practice of frequently committing changes to your code. CI tools support this working pattern by automating routine quality assurance tasks. This includes verifying that your code successfully builds or installs and that your [code tests](testing_code.md) run successfully.
+Continuous integration (CI) describes the practice of frequently committing changes to your code. [CI tools]() support this working pattern by automating routine quality assurance tasks. This includes verifying that your code successfully builds or installs and that your [code tests](testing_code.md) run successfully.
 
 CI is often linked to:
 
