@@ -74,7 +74,7 @@ If you're considering these tools as part of a project, see [Continuous Integrat
 
 ## Example use cases for GitHub Actions
 
-#### Example - Testing
+### Example - Testing
 
 Below is an example configuration file, for use with GitHub actions. The `YAML` file format, used below, is common to a number of other CI tools.
 
@@ -123,7 +123,7 @@ The individual stages of the workflow are defined under `steps`. `steps` typical
 
 This workflow will report whether our test code ran successfully for each of the specified Python versions.
 
-#### Example - Documentation
+### Example - Documentation
 
 This book uses the following GitHub Actions configuration to build and deploy the HTML content:
 
@@ -178,7 +178,7 @@ In the second job, the book (including the new changes) is deployed to the site 
 
 You might use a similar approach to this to deploy your code's HTML documentation.
 
-#### Comprehensive example
+### Comprehensive example
 
 You can see a detailed example of CI in practice in the `jupyter-book` project. A recent version of the [`jupyter-book` CI workflow](https://github.com/executablebooks/jupyter-book/blob/6fb0cbe4abb5bc29e9081afbe24f71d864b40475/.github/workflows/tests.yml) includes:
 
