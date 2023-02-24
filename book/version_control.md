@@ -34,13 +34,27 @@ When used effectively, version control helps us to identify which changes have n
 
 Git is invaluable when recording and combining changes from multiple developers, as merging allows us to resolve conflicts between overlapping changes. Using a remote Git repository maintains a single source of truth, even when multiple individuals are working on a project. Additionally, version control platforms, like GitHub and GitLab, can make it easier to track and review ongoing work. This avoids duplication of effort and keeps review embedded in the development workflow.
 
-## Include or exclude
+## Include code and documentation in version control
 
-Ideally, you should include any code that is required to run your analysis. In a public repository, you may need to omit confidential or sensitive aspects of the project.
+Ideally, you should include all code and documentation that is required to run your analysis.
+
+This may include:
+
+* Project documentation including readme and contribution guidance
+* Packaged functions and code documentation
+* Unit tests
+* Dummy data and configuration files
+* User documentation such as desk notes and installation guidance
+
+Whilst inclusion of [configuration](configuration.md) files is needed to help users understand the parameters to be set, it is best to include example files. Since configuration files often contain sensitive data or credentials, which should **not** be committed to version control, example files should contain clear dummy values that are indicative of the expected values.
+
+## Exclude sensitive information from version control
+
+In a public repository, you may need to omit confidential or sensitive aspects of the project.
 
 ```{caution}
 
-You should **not** include the following in your code repository:
+You should **never** include the following in your code repository:
 
 * passwords, credentials or keys
 * configuration files that are environment-dependent (e.g. containing file paths)
@@ -53,9 +67,7 @@ You should **not** include the following in your code repository:
 
 See [](excluding-from-git) for details on how to mitigate the risk of including sensitive information in a Git repository.
 
-You might also want to include example [configuration](configuration.md) files, to help users trying to run your code understand what parameters need to be set. However, note that sometimes configuration files contain sensitive data or credentials, which should not be commited to version control. In this case, example configuration files should contain clear dummy values that are indicative of the expected values to be filled in.
-
-It is again worth stressing the importance of not committing sensitive, unpublished or disclosive data to your Git history. If you would like to include an example for end-users, a minimal dummy dataset can be committed to the repository. However, dummy datasets following the same layout can disclose the types of variables in the real data. As such, you should consider the inclusion of this data with caution, particularly for repositories intended to be hosted publicly.  
+It is again worth stressing the importance of not committing sensitive, unpublished or disclosive data to your Git history. If you would like to include an example for end-users, a minimal dummy dataset can be committed to the repository. However, dummy datasets following the same layout can disclose the types of variables in the real data. As such, you should consider the inclusion of this data with caution, particularly for repositories intended to be hosted publicly.
 
 ## Using Git for version control
 
