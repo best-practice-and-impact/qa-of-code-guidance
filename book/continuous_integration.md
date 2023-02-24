@@ -27,14 +27,6 @@ Additionally, it allows others, who are reviewing your code, to see the results 
 
 Automation of routine tasks in this way reduces the effort required to merge changes onto the existing code base. This supports frequent commiting and merging of changes. As such, conflicts between multiple contributions should be minimal and review of these changes is simpler. Additionally, the execution environment for CI is defined in a CI workflow configuration, which improves reproducibility when running tests.
 
-### Continuous Integration Platforms
-
-* [GitHub Actions](https://github.com/features/actions)
-* [GitLab CI/CD](https://docs.gitlab.com/ee/ci/)
-* [Travis](https://travis-ci.org/)
-* [Jenkins](https://www.jenkins.io/)
-* [Coveralls](https://coveralls.io/)
-
 ## Pre-Commit and git hooks
 
 An alternative to continuous integration, is using a Git hook.
