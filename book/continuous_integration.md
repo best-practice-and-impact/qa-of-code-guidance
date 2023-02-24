@@ -1,6 +1,10 @@
-# Continuous Integration
+# Automating Code Quality Assurance
 
 ## Introduction
+
+
+
+## Continous Integration
 
 Continuous integration (CI) describes the practice of frequently committing changes to your code. CI tools support this working pattern by automating routine quality assurance tasks. This includes verifying that your code successfully builds or installs and that your [code tests](testing_code.md) run successfully.
 
@@ -9,7 +13,7 @@ CI is often linked to:
 * Continuous delivery - ensuring that your code is fit for use after each integration
 * Continuous deployment - automatically deploying working code into production
 
-## Automating your tests
+### Automating your tests
 
 Tests should be run whenever you make changes to your project.
 This ensures that changes do not break the existing, intended functionality of your code.
@@ -23,7 +27,7 @@ Additionally, it allows others, who are reviewing your code, to see the results 
 
 Automation of routine tasks in this way reduces the effort required to merge changes onto the existing code base. This supports frequent commiting and merging of changes. As such, conflicts between multiple contributions should be minimal and that review of these changes simpler. Additionally, the execution environment for CI is defined in a CI workflow configuration, which improves reproducibility when running tests.
 
-## Continuous Integration Platforms
+### Continuous Integration Platforms
 
 * [GitHub Actions](https://github.com/features/actions)
 * [GitLab CI/CD](https://docs.gitlab.com/ee/ci/)
@@ -31,7 +35,7 @@ Automation of routine tasks in this way reduces the effort required to merge cha
 * [Jenkins](https://www.jenkins.io/)
 * [Coveralls](https://coveralls.io/)
 
-## Git Hooks
+## Pre-Commit and git hooks
 
 An alternative to continuous integration, is using a Git hook.
 [Git hooks](https://git-scm.com/docs/githooks) are scripts that can be set to run locally at specific points in your Git workflow.
@@ -45,3 +49,33 @@ If your code is likely to be run on a range of software versions or operating sy
 
 However, [continuous integration](continuous-integration) can be used to automate these tests on a broader range on parameters.
 ```
+
+(linters-formatters)=
+
+## Linters and formatters
+
+As discussed in [](automate-style-checks), the process of checking and fixing code for style and formatting is tedious. Automation can speed up this work, either by providing suggestions as the code is written or by reformatting your code to comply with some style.
+
+Two main types of tool exist for these tasks:
+
+* Linters - these analyse your code to flag stylistic errors (and sometimes bugs or security issues too).
+* Formatters - these not only detect when you have diverged from a style, but will automatically correct the formatting of your code to conform to a particular style.
+
+```{list-table} Packages that can be used for linting or formatting in Python and R
+:header-rows: 1
+:name: linters
+
+* - Language
+  - Linters
+  - Formatters
+* - Python
+  - `flake8`, `pylint`, `Bandit`
+  - `Black`, `Isort`
+* - R
+  - `lintr`
+  - `formatR`, `styler`
+```
+
+Be sure to read the documentation for any of these tools, to understand what they are checking or changing in your code. Some can be configured to ignore or detect specific types of formatting error. You can run multiple of these, to catch a broader range of stylistic or programmatic errors.
+
+If you're considering these tools as part of a project, see [Continuous Integration](continuous-integration) for advice on automating them. Alternatively, explore other options, such as [pre-commit](https://pre-commit.com/), that do the formatting and checking on your machine prior to a Git commit.
