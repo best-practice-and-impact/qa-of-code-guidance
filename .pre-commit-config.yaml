@@ -1,0 +1,10 @@
+default_stages: [commit, push]
+
+repos:
+    - repo: https://github.com/jackdewinter/pymarkdown
+      rev: main
+      hooks:
+          - id: pymarkdown
+            args:
+                - --disable-version
+                - scan
