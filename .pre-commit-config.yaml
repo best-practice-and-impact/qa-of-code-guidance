@@ -6,3 +6,6 @@ repos:
       hooks:
           - id: pymarkdown
             verbose: true
+            args:
+                - --config=.pymarkdown.json
+                - scan
