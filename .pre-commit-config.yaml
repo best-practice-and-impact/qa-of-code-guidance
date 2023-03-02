@@ -2,7 +2,7 @@ default_stages: [commit, push]
 
 repos:
     - repo: https://github.com/jackdewinter/pymarkdown
-      rev: main
+      rev: v0.9.9
       hooks:
           - id: pymarkdown
             verbose: true
