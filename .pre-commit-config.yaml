@@ -6,5 +6,5 @@ repos:
       hooks:
           - id: pymarkdown
             args:
-                - --disable-version
                 - scan
+            verbose: true
