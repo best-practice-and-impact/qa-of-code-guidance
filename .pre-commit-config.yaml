@@ -5,6 +5,4 @@ repos:
       rev: main
       hooks:
           - id: pymarkdown
-            args:
-                - scan
             verbose: true
