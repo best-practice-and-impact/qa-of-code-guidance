@@ -8,7 +8,8 @@
         },
         "md013" : {
             "line_length" : 160,
-            "heading_line_length" : 160
+            "heading_line_length" : 160,
+            "code_block_line_length" : 160
         },
         "md022" : {
             "enabled" : false
