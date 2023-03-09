@@ -345,7 +345,7 @@ This documentation should include what has been tested and who has approved that
 ## Write test code only once
 
 Where possible, reduce repetition in your tests.
-Repetitive test code violates the ["Don't repeat yourself"](./core_programming#dont-repeat-yourself) rule.
+Repetitive test code violates the "Don't repeat yourself" rule.
 Tests need not be totally singular, but, as with non-test code, repetition makes maintenance of test code more difficult and risky .
 As with functional code, test code is much easier to maintain when it is modular and reusable.
 
