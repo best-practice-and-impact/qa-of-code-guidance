@@ -26,6 +26,7 @@ Reviewing is centered around conversations - asking yourself and the reviewer qu
 
 ### Can I easily understand what the code does?
 
+In more depth:
   * Is the code sufficiently documented for me to understand it?
   * Is there duplication in the code that could be simplified by refactoring into functions and classes?
   * Are functions and class methods simple, using few parameters?
@@ -40,6 +41,7 @@ If there are not tests for each part of the code, then we can't be sure that it 
 
 ### How easy will it be to alter this code when requirements change?
 
+In more depth:
   * Are high level parameters kept in dedicated configuration files?
   * Or would somebody need to work their way through the code with lots of manual edits to reconfigure for a new run?
 
@@ -47,6 +49,7 @@ Most analysis stems from some form of customer engagement. Throughout design, im
 
 ### Can I generate the same outputs that the analysis claims to produce?
 
+In more depth:
   * Have dependencies been sufficiently documented?
   * Is the code version, input data version and configuration recorded?
 
