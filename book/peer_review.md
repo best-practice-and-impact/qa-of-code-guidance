@@ -4,44 +4,51 @@ Peer review of code is a quality assurance activity where a developer, other tha
 
 Peer review allows a fresh pair of eyes to take a look at your work. It helps to assure that you have taken an appropriate approach to your analysis and may highlight errors in the analysis process. Constructive review feedback helps you to improve your code quality and provides confidence in your work. It acts to assure that our analysis is fit for purpose.
 
->For analysis to be used to inform a decision it must be possible to assess its utility, reliability, and the degree of validation and verification to which it has been subjected.
+```{epigraph}
+For analysis to be used to inform a decision it must be possible to assess its utility, reliability, and the degree of validation and verification to which it has been subjected.
 
-[The Aqua book](https://www.gov.uk/government/publications/the-aqua-book-guidance-on-producing-quality-analysis-for-government)
+-- [The Aqua book](https://www.gov.uk/government/publications/the-aqua-book-guidance-on-producing-quality-analysis-for-government)
+```
 
-[The Aqua book](https://www.gov.uk/government/publications/the-aqua-book-guidance-on-producing-quality-analysis-for-government) tells us that quality assurance of our analysis should be proportional to the complexity and business risk of the analysis. This means that both internal and external peer review may be required to adequately assure your analysis. Particularly if your analysis uses novel or complex techniques, where comparison with other analyses cannot be used to challenge your results, or if the analysis is business critical.
+[The Aqua book](https://www.gov.uk/government/publications/the-aqua-book-guidance-on-producing-quality-analysis-for-government) tells us that quality assurance of our analysis should be proportional to the complexity and business risk of the analysis. This means that both internal and external peer review may be required to adequately assure your analysis. External review is recommended if your analysis uses novel or complex techniques, if comparison with other analyses cannot be used to challenge your results, or if the analysis is business critical.
 
->Continuous challenge and improvement is essential to ensure that the people we serve – ministers and, of course, the public – have trust in our analysis. 
+```{epigraph}
+Continuous challenge and improvement is essential to ensure that the people we serve – ministers and, of course, the public – have trust in our analysis. 
 
-Nick Macphereson, former Permanent Secretary to the Treasury
+-- Nick Macphereson, former Permanent Secretary to the Treasury
+```
 
 ## Focus reviews on code quality
 
-Our [](checklists.md) provide a comprehensive list of good practices that reviewers can look for. Many of these criteria look at the project as a whole, but your review should be tailored to the quality assurance criteria that the project is trying to meet and the scale of the review.
+Our [](checklists.md) provide an extensive list of good practices that reviewers can look for. Many of these criteria consider the whole project. You should tailor your review to the quality assurance criteria that the project is trying to meet and the scale of the review.
 
 Reviewing is centered around conversations - asking yourself and the reviewer questions. While reviewing changes to analytical code, example questions might be:
 
-1. Can I easily understand what the code does?
-    * Is the code sufficiently documented for me to understand it?
-    * Is there duplication in the code that could be simplified by refactoring into functions and classes?
-    * Are functions and class methods simple, using few parameters?
+### Can I easily understand what the code does?
+
+  * Is the code sufficiently documented for me to understand it?
+  * Is there duplication in the code that could be simplified by refactoring into functions and classes?
+  * Are functions and class methods simple, using few parameters?
 
 As we discussed in [](readable_code.md), good quality code is easier to read, understand and maintain. Peer review improves the quality of our code through the constructive challenges of the reviewer. As a reviewer, you might do this by suggesting alternative ways to represent the analysis or by asking about decisions that have been made in the approach to the analysis.
 
 Another benefit, particularly of internal review, is knowledge transfer. Both the reviewer and reviewee are exposed to new ideas. The reviewer must gain a low-level understanding of what the code is doing, in order to validate that it works as expected. This may provide your team members with the understanding required to use and maintain your code in the future.
 
-2. Is the required functionality tested sufficiently?
+### Is the required functionality tested sufficiently?
 
 If there are not tests for each part of the code, then we can't be sure that it works as expected. As a reviewer, you should ask whether the amount of testing is proportionate given the risk to the analysis if the code does not work.
 
-3. How easy will it be to alter this code when requirements change?
-    * Are high level parameters kept in dedicated configuration files?
-    * Or would somebody need to work their way through the code with lots of manual edits to reconfigure for a new run?
+### How easy will it be to alter this code when requirements change?
+
+  * Are high level parameters kept in dedicated configuration files?
+  * Or would somebody need to work their way through the code with lots of manual edits to reconfigure for a new run?
 
 Most analysis stems from some form of customer engagement. Throughout design, implementation and review of analysis we must continue to assess whether our analysis is fit for purpose: Does it meet the needs of the customer? A project should document the scope of your analysis and any requirements, to make this assessment as easy as possible. Additional documentation that supports the auditability of your analysis includes assumption logs, technical reports describing the analysis and documentation on any verification or validation that has already been carried out.
 
-4. Can I generate the same outputs that the analysis claims to produce?
-    * Have dependencies been sufficiently documented?
-    * Is the code version, input data version and configuration recorded?
+### Can I generate the same outputs that the analysis claims to produce?
+
+  * Have dependencies been sufficiently documented?
+  * Is the code version, input data version and configuration recorded?
 
 A key aspect of review is checking that the same results are acquired when running your code with the same input data. Assurance that  analysis can be reproduced increases the trust in the results.
 
@@ -159,7 +166,7 @@ Separate review is aided by features of most version control platforms. See [](v
 
 #### Case study - rOpenSci review
 
-Here we discuss an example from [rOpenSci](https://ropensci.org/); a community led initiative that curates open source, statistical R packages. rOpenSci apply a rigorous peer review process to assure the quality of packages before including them in their collection. This peer review process is separate and is performed in the open, via GitHub pull requests.
+Here we discuss a [review example from rOpenSci](https://ropensci.org/); a community led initiative that curates open source, statistical R packages. rOpenSci apply a rigorous peer review process to assure the quality of packages before including them in their collection. This peer review process is entirely remote and is performed in the open, via GitHub pull requests.
 
 In this example, from colleagues at Public Health England, [the `fingertipsR` package is reviewed](https://github.com/ropensci/software-review/issues/168). The initial comment describes the package that is being submitted and includes a check against a list of minimum requirements. The [`goodpractice` R package](http://mangothecat.github.io/goodpractice/) is used to check that good R packaging practices have been followed. [Continuous integration](https://www.atlassian.com/continuous-delivery/continuous-integration#:~:text=Continuous%20integration%20(CI)%20is%20the,builds%20and%20tests%20then%20run.) is commonly used to carry out automated checks on code repositories. The reports from these checks can save reviewers time, by providing indicators of things like code complexity and test coverage.
 
