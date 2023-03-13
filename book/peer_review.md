@@ -2,17 +2,17 @@
 
 Peer review of code is a quality assurance activity where a developer, other than the code's author, views and tests the usage of a piece of code.
 
->Continuous challenge and improvement is essential to ensure that the people we serve – ministers and, of course, the public – have trust in our analysis. 
+>For analysis to be used to inform a decision it must be possible to assess its utility, reliability, and the degree of validation and verification to which it has been subjected.
 
-Nick Macphereson, former Permanent Secretary to the Treasury
+[The Aqua book](https://www.gov.uk/government/publications/the-aqua-book-guidance-on-producing-quality-analysis-for-government)
 
 ## Why do we need peer review?
 
 Peer review allows a fresh pair of eyes to take a look at your work. It validates that you have taken a correct approach to your analysis and may highlight errors. This constructive feedback helps you to improve your code quality and provides confidence in your work. It acts to make sure that our analysis is fit for purpose.
 
->For analysis to be used to inform a decision it must be possible to assess its utility, reliability, and the degree of validation and verification to which it has been subjected.
+>Continuous challenge and improvement is essential to ensure that the people we serve – ministers and, of course, the public – have trust in our analysis. 
 
-[The Aqua book](https://www.gov.uk/government/publications/the-aqua-book-guidance-on-producing-quality-analysis-for-government)
+Nick Macphereson, former Permanent Secretary to the Treasury
 
 [The Aqua book](https://www.gov.uk/government/publications/the-aqua-book-guidance-on-producing-quality-analysis-for-government) tells us that quality assurance of our analysis should be proportional to the complexity and business risk of the analysis. This means that both internal and external peer review may be required to adequately assure your analysis. Particularly if your analysis uses novel or complex techniques, where comparison with other analyses cannot be used to challenge your results, or if the analysis is business critical.
 
