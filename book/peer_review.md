@@ -1,6 +1,6 @@
 # Peer review
 
-Peer review of code is a quality assurance activity where a developer, other than the code's author, views and tests the usage of a piece of code.
+Peer review of code is a quality assurance activity, where a developer other than the code's author, views and tests the usage of a piece of code.
 
 >For analysis to be used to inform a decision it must be possible to assess its utility, reliability, and the degree of validation and verification to which it has been subjected.
 
@@ -122,7 +122,7 @@ Remote review is aided by features of most version control platforms, namely the
 
 #### Case studies
 
-Here we discuss a [review example from rOpenSci](https://ropensci.org/); a community led initiative that curates open source, statistical R packages. rOpenSci apply a rigorous peer review process to assure the quality of packages before including them in their collection. This peer review process is entirely remote and is performed in the open, via GitHub pull requests.
+Here we discuss an example from [rOpenSci](https://ropensci.org/); a community led initiative that curates open source, statistical R packages. rOpenSci apply a rigorous peer review process to assure the quality of packages before including them in their collection. This peer review process is entirely remote and is performed in the open, via GitHub pull requests.
 
 In this example, from colleagues at Public Health England, [the `fingertipsR` package is reviewed](https://github.com/ropensci/software-review/issues/168). The initial comment describes the package that is being submitted and includes a check against a list of minimum requirements. The [`goodpractice` R package](http://mangothecat.github.io/goodpractice/) is used to check that good R packaging practices have been followed. [Continuous integration](https://www.atlassian.com/continuous-delivery/continuous-integration#:~:text=Continuous%20integration%20(CI)%20is%20the,builds%20and%20tests%20then%20run.) is commonly used to carry out automated checks on code repositories. The reports from these checks can save reviewers time, by providing indicators of things like code complexity and test coverage.
 
