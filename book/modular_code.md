@@ -34,6 +34,7 @@ This chapter highlights ways to write modular code that is easier to read, revie
 
 Breaking your code down into smaller, more manageable chunks is a sensible way to improve readability. Regardless of the language, there are often techniques to containerise your code into self-contained parts such as modules, classes or functions.
 
+(functions)=
 ### Write re-usable code as functions
 
 In the early stages of analysis we often copy and paste code to 'make it work'. As this work matures, it is worth taking repetitive code and turning it into functions. Functions allow us to make a  piece of logic reusable in a consistent and readable way, and also makes it easier for us to [test our logic](testing_code.md).
