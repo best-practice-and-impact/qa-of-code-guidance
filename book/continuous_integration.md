@@ -117,13 +117,13 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: [3.6, 3.7, 3.8, 3.9]
+        python-version: [3.8, 3.9, 3.10, 3.11]
 
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
 
     - name: Set up Python ${{ matrix.python-version }}
-      uses: actions/setup-python@v2
+      uses: actions/setup-python@v4
       with:
         python-version: ${{ matrix.python-version }}
 
@@ -140,9 +140,9 @@ jobs:
 
 The first section of this example describes when our workflow should be run. In this case, we're running the CI workflow whenever code is `push`ed to the `master` branch or where any Pull Request is created. In the case of Pull Requests, the results of the CI workflow will be report on the request's page. If any of the workflow stages fail, this can block the merge of these changes onto a more stable branch. Subsequent commits to the source branch will trigger the CI workflow to run again.
 
-Below `jobs`, we're defining what tasks we would like to run when our workflow is triggered. We define what operating system we would like to run our workflow on - the Linux operating system `ubuntu` here. The `matrix` section under `strategy` defines parameters for the workflow. The workflow will be repeated for each combination of parameters supplied here - in this case the 4 latest Python versions.
+Below `jobs`, we're defining what tasks we would like to run when our workflow is triggered. We define what operating system we would like to run our workflow on - the Linux operating system `ubuntu` here. The `matrix` section under `strategy` defines parameters for the workflow. The workflow will be repeated for each combination of parameters supplied here - in this case 4 recent Python versions.
 
-The individual stages of the workflow are defined under `steps`. `steps` typically have an informative name and run code to perform an action. Here `uses: actions/checkout@v2` references [existing code](https://github.com/actions/checkout) that will retrieve the code from our repo. The subsequent `steps` will use this code. The next step provides us with a specific Python version, as specified in the `matrix`. Then we install dependencies/requirements for our code and the `pytest` module. Finally, we run `pytest` to check that our code is working as expected.
+The individual stages of the workflow are defined under `steps`. `steps` typically have an informative name and run code to perform an action. Here `uses: actions/checkout@v3` references [existing code](https://github.com/actions/checkout) that will retrieve the code from our repo. The subsequent `steps` will use this code. The next step provides us with a specific Python version, as specified in the `matrix`. Then we install dependencies/requirements for our code and the `pytest` module. Finally, we run `pytest` to check that our code is working as expected.
 
 This workflow will report whether our test code ran successfully for each of the specified Python versions.
 
@@ -164,12 +164,12 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
 
-    - name: Set up Python 3.7
-      uses: actions/setup-python@v1
+    - name: Set up Python 3.11
+      uses: actions/setup-python@v4
       with:
-        python-version: 3.7
+        python-version: 3.11
 
     - name: Install dependencies
       run: |
