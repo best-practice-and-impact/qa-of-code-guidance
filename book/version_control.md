@@ -43,7 +43,7 @@ This may include:
 * Project documentation including readme and contribution guidance
 * Packaged functions and code documentation
 * Unit tests
-* Dummy data and configuration files
+* Dummy data and example configuration files
 * User documentation such as desk notes and installation guidance
 
 Whilst inclusion of [configuration](configuration.md) files is needed to help users understand the parameters to be set, it is best to include example files. Since configuration files often contain sensitive data or credentials, which should **not** be committed to version control, example files should contain clear dummy values that are indicative of the expected values.
