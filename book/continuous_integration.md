@@ -31,7 +31,7 @@ Automation of routine tasks in this way reduces the effort required to merge cha
 
 ## Pre-Commit and git hooks
 
-An alternative to continuous integration, is using a Git hook.
+One method of automating tests is the use of pre-commit hooks.
 [Git hooks](https://git-scm.com/docs/githooks) are scripts that can be set to run locally at specific points in your Git workflow.
 For example, we might set up a `pre-commit` or `pre-push` hook that runs our tests before we make each commit or push to the remote repository.
 This might stop our commit/push if the tests fail, so that we don't push breaking changes to our remote repository.
