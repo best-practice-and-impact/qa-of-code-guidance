@@ -46,8 +46,6 @@ This may include:
 * Dummy data and example configuration files
 * User documentation such as desk notes and installation guidance
 
-Whilst inclusion of [configuration](configuration.md) files is needed to help users understand the parameters to be set, it is best to include example files. Since configuration files often contain sensitive data or credentials, which should **not** be committed to version control, example files should contain clear dummy values that are indicative of the expected values.
-
 ## Exclude sensitive information from version control
 
 In a public repository, you may need to omit confidential or sensitive aspects of the project.
@@ -57,7 +55,7 @@ In a public repository, you may need to omit confidential or sensitive aspects o
 You should **never** include the following in your code repository:
 
 * passwords, credentials or keys
-* configuration files that are environment-dependent (e.g. containing file paths)
+* real configuration files
 * code that contains sensitive information
   * for example, code that describes a method for fraud detection
   * or code that contains references to personally identifiable data
@@ -68,6 +66,10 @@ You should **never** include the following in your code repository:
 See [](excluding-from-git) for details on how to mitigate the risk of including sensitive information in a Git repository.
 
 It is again worth stressing the importance of not committing sensitive, unpublished or disclosive data to your Git history. If you would like to include an example for end-users, a minimal dummy dataset can be committed to the repository. However, dummy datasets following the same layout can disclose the types of variables in the real data. As such, you should consider the inclusion of this data with caution, particularly for repositories intended to be hosted publicly.
+
+Whilst inclusion of [configuration](configuration.md) files can be helpful to understand the parameters to be set, it is best to include example files.
+Since configuration files are usually environment-specific, for example containing user file paths, they are not useful to those wanting to reproduce your analysis.
+Often, they will also contain sensitive data or credentials, which should **not** be committed to version control. Therefore, example files should contain clear dummy values that are indicative of the expected values.
 
 ## Using Git for version control
 
