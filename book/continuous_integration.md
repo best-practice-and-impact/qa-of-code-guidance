@@ -24,7 +24,11 @@ Additionally, it allows others, who are reviewing your code, to see the results 
 
 Committing small changes regularly is often referred to as Continuous Integration (CI).
 This can be achieved easily through the use of [version control](version_control.md), such as Git.
-\\ add something about frequency of commit and push
+
+You should commit every time you make a working change.
+Fixed a typo? Commit. Fixed a bug? Commit. Added a function? Commit. Added a test? Commit.
+As a very rough guide, you should expect to commit a few times each hour and push at least once a day.
+If the task is unfinished at the end of the day, you should consider if the task has been sufficiently broken down.
 
 CI should be underpinned by automating routine code quality assurance tasks.
 This quality assurance includes verifying that your code successfully builds or installs and that your [code tests](testing_code.md) run successfully.
