@@ -1,8 +1,23 @@
 # Automating Code Quality Assurance
 
-## Introduction
+## Motivation
 
 There are various tasks which can be automated to increase the quality of code and make development easier and less tedious. Automating the running of unit tests is especially important to ensuring trust in your pipeline or package, by ensuring that all unit tests pass before every merge.
+
+
+(automate-tests)=
+## Automate tests to reduce risk of errors
+
+Tests should be run whenever you make changes to your project.
+This ensures that changes do not break the existing, intended functionality of your code.
+However, it is easy to forget to run your tests at regular intervals.
+
+"Surely this could be automated too?"
+
+Absolutely! Automatic testing, amongst other quality assurance measures, can be triggered when changes are made to your remote version control repository.
+These tools can be used to ensure that all changes to a project are tested.
+Additionally, it allows others, who are reviewing your code, to see the results of your tests.
+
 
 (continuous-integration)=
 ## Continous Integration, Delivery, and Deployment
@@ -17,21 +32,6 @@ This includes verifying that your code successfully builds or installs and that 
 
 Collectively referred to as CI/CD, these processes can include the use of both workflows and hooks.
 
-
-(automate-tests)=
-### Automate tests to reduce risk of errors
-
-Tests should be run whenever you make changes to your project.
-This ensures that changes do not break the existing, intended functionality of your code.
-However, it is easy to forget to run your tests at regular intervals.
-You're already putting effort into `commit`ing your changes to a version control system regularly.
-
-And you're right to think "surely this could be automated too?"
-Continuous integration can be used to automate testing, amongst other quality assurance measures, and can be triggered when changes are made to your remote version control repository.
-These tools can be used to ensure that all changes to a project are tested.
-Additionally, it allows others, who are reviewing your code, to see the results of your tests.
-
-Automation of routine tasks in this way reduces the effort required to merge changes onto the existing code base. This supports frequent commiting and merging of changes. As such, conflicts between multiple contributions should be minimal and review of these changes is simpler. Additionally, the execution environment for CI is defined in a CI workflow configuration, which improves reproducibility when running tests.
 
 ## Pre-Commit and git hooks
 
