@@ -36,7 +36,7 @@ Git is invaluable when recording and combining changes from multiple developers,
 
 ## Include code and documentation in version control
 
-Ideally, you should include all code and documentation that is required to run your analysis.
+Ideally, you should include all code and documentation that is required to understand and run your analysis.
 
 This may include:
 
