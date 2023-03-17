@@ -51,7 +51,9 @@ If your code is likely to be run on a range of software versions or operating sy
 (linters-formatters)=
 ### Linters and formatters
 
-As discussed in [](automate-style-checks), the process of checking and fixing code for style and formatting is tedious. Automation can speed up this work, either by providing suggestions as the code is written or by reformatting your code to comply with some style.
+Style guides are important in the readability and clarity of your code and should form part of your quality assurance process.
+However, as discussed in [](automate-style-checks), the process of checking and fixing code for style and formatting is tedious.
+Automation can speed up this work, either by providing suggestions as the code is written or by reformatting your code to comply with your chosen style.
 
 Two main types of tool exist for these tasks:
 
@@ -71,9 +73,18 @@ Two main types of tool exist for these tasks:
 * - R
   - `lintr`
   - `formatR`, `styler`
+* - Markdown
+  - `pymarkdownlnt`
+  -
 ```
 
-Be sure to read the documentation for any of these tools, to understand what they are checking or changing in your code. Some can be configured to ignore or detect specific types of formatting error. You can run multiple of these, to catch a broader range of stylistic or programmatic errors.
+These tools can be used locally (in the command line) or as git pre-commit hooks.
+As described above, using pre-commit hooks allows you to run these automatically every time there are changes,
+thus reducing the burden on developers and reviewers in checking that code conforms to style guides. 
+
+Be sure to read the documentation for any of these tools, to understand what they are checking or changing in your code.
+Some can be configured to ignore or detect specific types of formatting error.
+You can run multiple of these, to catch a broader range of stylistic or programmatic errors.
 
 ## Worflows
 
