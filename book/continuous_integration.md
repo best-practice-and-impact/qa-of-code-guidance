@@ -33,21 +33,18 @@ these can be achieved in a number of ways such as use of Git hooks and workflows
 
 ## Use Git hooks to encourage good practice
 
-[Git hooks](https://git-scm.com/docs/githooks) are scripts that can be set to run locally at specific points in your Git workflow.
-They can be used to automate git behaviours at certain points, such as pre-commit, pre-push, etc.
-They can be used to run tests, ensure contributors conform to style requirements, or enforce commit standards.
-
-One method of automating tests is the use of pre-commit hooks.
+[Git hooks](https://git-scm.com/docs/githooks) are scripts that can be set to run locally at specific points in your Git workflow,
+such as pre-commit, pre-push, etc.
+They can be used to automate code quality assurance tasks, e.g. run tests, ensure style guides are followed, or enforce commit standards.
 
 For example, we might set up a `pre-commit` or `pre-push` hook that runs our tests before we make each commit or push to the remote repository.
 This might stop our commit/push if the tests fail, so that we don't push breaking changes to our remote repository.
 
 ```{note}
 If your code is likely to be run on a range of software versions or operating systems, you might want to test on a variety of these. Tools exists to support local testing of combinations software versions and package dependency versions:
+
 * [tox](https://tox.readthedocs.io/en/latest/) or [nox](https://nox.thea.codes/en/stable/) for Python
 * [rhub](https://r-hub.github.io/rhub/) for R
-
-However, [continuous integration](continuous-integration) can be used to automate these tests on a broader range on parameters.
 ```
 
 
