@@ -5,14 +5,18 @@
 There are various tasks which can be automated to increase the quality of code and make development easier and less tedious. Automating the running of unit tests is especially important to ensuring trust in your pipeline or package, by ensuring that all unit tests pass before every merge.
 
 (continuous-integration)=
-## Continous Integration
+## Continous Integration, Delivery, and Deployment
 
-Continuous integration (CI) describes the practice of frequently committing changes to your code. [CI tools](CI-tools) support this working pattern by automating routine quality assurance tasks. This includes verifying that your code successfully builds or installs and that your [code tests](testing_code.md) run successfully.
+Continuous integration (CI) is driven by the principle of making small changes often and is underpinned by automating routine code quality assurance tasks.
+This includes verifying that your code successfully builds or installs and that your [code tests](testing_code.md) run successfully.
 
 [CI is often linked](https://www.atlassian.com/continuous-delivery/principles/continuous-integration-vs-delivery-vs-deployment) to:
 
 * Continuous delivery - ensuring that your code is fit for use after each integration
 * Continuous deployment - automatically deploying working code into production
+
+Collectively referred to as CI/CD, these processes can include the use of both workflows and hooks.
+
 
 (automate-tests)=
 ### Automate tests to reduce risk of errors
