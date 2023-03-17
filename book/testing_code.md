@@ -268,7 +268,7 @@ If the code changes, the tests may fail but test functions should not break.
 Good tests describe what it is they are testing.
 They do this by using good naming practices within the test code.
 A good test suite should tell a story - given this data, having run this function, we expect this output.
-Tests should follow the relevant practices outlined in [readable code](./readable_code).
+Tests should follow the relevant practices outlined in [](readable_code.md).
 
 The story told in a testing suite helps developers understand what code is meant to do.
 By defining expected outputs from given inputs, developers can understand the use of a particular piece of code.
@@ -329,8 +329,7 @@ This documentation should include what has been tested and who has approved that
 
 ## Write test code only once
 
-Where possible, reduce repetition in your tests.
-Repetitive test code violates the ["Don't repeat yourself"](./core_programming#dont-repeat-yourself) rule.
+Where possible, reduce repetition in your tests. Tests are code too, so you should still [make this code reusable](functions).
 Tests need not be totally singular, but, as with non-test code, repetition makes maintenance of test code more difficult and risky .
 As with functional code, test code is much easier to maintain when it is modular and reusable.
 
