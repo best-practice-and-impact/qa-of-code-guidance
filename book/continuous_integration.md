@@ -6,7 +6,7 @@ There are various tasks which can be automated to increase the quality of code a
 
 
 (automate-tests)=
-## Automate tests to reduce risk of errors
+### Automate tests to reduce risk of errors
 
 Tests should be run whenever you make changes to your project.
 This ensures that changes do not break the existing, intended functionality of your code.
@@ -20,23 +20,25 @@ Additionally, it allows others, who are reviewing your code, to see the results 
 
 
 (continuous-integration)=
-## Continous Integration, Delivery, and Deployment
+## Commit small changes often
 
-Continuous integration (CI) is driven by the principle of making small changes often and is underpinned by automating routine code quality assurance tasks.
-This includes verifying that your code successfully builds or installs and that your [code tests](testing_code.md) run successfully.
+Committing small changes regularly is often referred to as Continuous Integration (CI).
+This can be achieved easily through the use of [version control](version_control.md), such as Git.
+\\ add something about frequency of commit and push
 
-[CI is often linked](https://www.atlassian.com/continuous-delivery/principles/continuous-integration-vs-delivery-vs-deployment) to:
-
-* Continuous delivery - ensuring that your code is fit for use after each integration
-* Continuous deployment - automatically deploying working code into production
-
-Collectively referred to as CI/CD, these processes can include the use of both workflows and hooks.
+CI should be underpinned by automating routine code quality assurance tasks.
+This quality assurance includes verifying that your code successfully builds or installs and that your [code tests](testing_code.md) run successfully.
+these can be achieved in a number of ways such as use of Git hooks and workflows.
 
 
-## Pre-Commit and git hooks
+## Use Git hooks to encourage good practice
+
+[Git hooks](https://git-scm.com/docs/githooks) are scripts that can be set to run locally at specific points in your Git workflow.
+They can be used to automate git behaviours at certain points, such as pre-commit, pre-push, etc.
+They can be used to run tests, ensure contributors conform to style requirements, or enforce commit standards.
 
 One method of automating tests is the use of pre-commit hooks.
-[Git hooks](https://git-scm.com/docs/githooks) are scripts that can be set to run locally at specific points in your Git workflow.
+
 For example, we might set up a `pre-commit` or `pre-push` hook that runs our tests before we make each commit or push to the remote repository.
 This might stop our commit/push if the tests fail, so that we don't push breaking changes to our remote repository.
 
@@ -48,8 +50,9 @@ If your code is likely to be run on a range of software versions or operating sy
 However, [continuous integration](continuous-integration) can be used to automate these tests on a broader range on parameters.
 ```
 
+
 (linters-formatters)=
-## Linters and formatters
+### Linters and formatters
 
 As discussed in [](automate-style-checks), the process of checking and fixing code for style and formatting is tedious. Automation can speed up this work, either by providing suggestions as the code is written or by reformatting your code to comply with some style.
 
@@ -75,11 +78,15 @@ Two main types of tool exist for these tasks:
 
 Be sure to read the documentation for any of these tools, to understand what they are checking or changing in your code. Some can be configured to ignore or detect specific types of formatting error. You can run multiple of these, to catch a broader range of stylistic or programmatic errors.
 
-## Example use cases for GitHub Actions
+## Worflows
+
+\\ add details
+
+### Example use cases for GitHub Actions
 
 The following examples are presented to support understanding of the topic discussed above.
 
-### Configure GitHub actions to automate tests
+#### Configure GitHub actions to automate tests
 
 Below is an example configuration file, for use with GitHub actions. The `YAML` file format, used below, is common to a number of other CI tools.
 
@@ -127,7 +134,7 @@ The individual stages of the workflow are defined under `steps`. `steps` typical
 
 This workflow will report whether our test code ran successfully for each of the specified Python versions.
 
-### Configure GitHub actions to build and deploy documentation
+#### Configure GitHub actions to build and deploy documentation
 
 This book uses the following GitHub Actions configuration to build and deploy the HTML content:
 
@@ -182,7 +189,7 @@ In the second job, the book (including the new changes) is deployed to the site 
 
 You might use a similar approach to this to deploy your code's HTML documentation.
 
-### Comprehensive example
+#### Comprehensive example
 
 You can see a detailed example of CI in practice in the `jupyter-book` project. A recent version of the [`jupyter-book` CI workflow](https://github.com/executablebooks/jupyter-book/blob/6fb0cbe4abb5bc29e9081afbe24f71d864b40475/.github/workflows/tests.yml) includes:
 
