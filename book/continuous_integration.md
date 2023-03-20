@@ -92,7 +92,7 @@ You can run multiple of these, to catch a broader range of stylistic or programm
 
 ## Worflows
 
-\\ add details
+GitHub Actions and GitLab Pipelines both offer the ability to define custom workflows using YAML. Workflow refers to a defined sequence of steps and actions that need to be performed to complete a specific task or process. Workflows are commonly used in software development to automate repetitive or complex tasks, such as building and deploying software, testing code, and managing code reviews. GitHub Actions and GitLab Pipelines both allow automated workflows that trigger builds and tests whenever code changes are pushed to the repository. 
 
 ### Example use cases for GitHub Actions
 
@@ -148,60 +148,16 @@ This workflow will report whether our test code ran successfully for each of the
 
 #### Configure GitHub actions to build and deploy documentation
 
-This book uses the following GitHub Actions configuration to build and deploy the HTML content:
+It is important to maintain the documentation relating to your project to ensure contributors and users can understand, maintain and use your product correctly. One basic way of doing this is maintaining markdown files within a GitHub repository. However, there exists multiple tools that can transform these markdown files into HTML content. A popular tool for building and deploying HTML documentation is [Sphinx](https://www.sphinx-doc.org/en/master/). Here are two examples of repositories that use sphinx to build its documentation:
 
-```yaml
-name: Build and deploy book
+* [Quality assurance of code for analysis and research (this book)](https://github.com/best-practice-and-impact/qa-of-code-guidance/blob/main/.github/workflows/book.yaml)
+* [govcookiecutter](https://github.com/best-practice-and-impact/govcookiecutter/blob/main/.github/workflows/govcookiecutter-deploy-documentation.yml)
 
-on:
-  push:
-    branches:
-      - main
-      - master
-  pull_request:
+### Example GitLab Pipeline
 
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v3
+GitLab has an equivalent to GitHub Actions called GitLab Pipelines. The use cases for these are practically the same, with a change in syntax and file structure. [This blog](https://www.patricksoftwareblog.com/setting-up-gitlab-ci-for-a-python-application/) provides a simple GitLab pipeline example and detailed description on how to use it. 
 
-    - name: Set up Python 3.11
-      uses: actions/setup-python@v4
-      with:
-        python-version: 3.11
-
-    - name: Install dependencies
-      run: |
-        pip install -r requirements.txt
-
-    - name: Build the book
-      run: |
-        jb build book -W -v --keep-going && touch ./book/_build/html/.nojekyll
-
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    if: startsWith( github.ref, 'refs/tags/v')
-    steps:
-    - name: "Deploy book to GitHub Pages"
-      uses: peaceiris/actions-gh-pages@v3.6.1
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./book/_build/html
-```
-
-This workflow runs whenever a pull request is create or changes are pushed directly to the main branch. It has two jobs - one that builds the book's HTML content and another that deploys the content to this website.
-
-As with the previous example, we start the workflow by setting up an environment with Python. We install the dependencies for the project, which includes `jupyter-book` to build to the book.
-
-Our workflow then builds the book's HTML content, where the workflow will fail if warnings or errors are raised.
-
-In the second job, the book (including the new changes) is deployed to the site that you are reading now. This job needs the build job to have completed successfully before it will run. It will only run if a new Git tag has been created, to indicate a new version of the book. This allows us to accumulate changes on the main branch, before releasing a collection of changes in the next version. This deployment step requires authentication, which is managed by a secret/token that is accessed from the Action's environment.
-
-You might use a similar approach to this to deploy your code's HTML documentation.
-
-#### Comprehensive example
+### Comprehensive example of automating code quality assurance
 
 You can see a detailed example of CI in practice in the `jupyter-book` project. A recent version of the [`jupyter-book` CI workflow](https://github.com/executablebooks/jupyter-book/blob/6fb0cbe4abb5bc29e9081afbe24f71d864b40475/.github/workflows/tests.yml) includes:
 
