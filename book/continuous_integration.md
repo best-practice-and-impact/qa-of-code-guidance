@@ -148,14 +148,14 @@ This workflow will report whether our test code ran successfully for each of the
 
 #### Configure GitHub actions to build and deploy documentation
 
-It is important to maintain the documentation relating to your project to ensure contributors and users can understand, maintain and use your product correctly. One basic way of doing this is maintaining markdown files within a GitHub repository. However, there exists multiple tools that can transform these markdown files into HTML content. A popular tool for building and deploying HTML documentation is [Sphinx](https://www.sphinx-doc.org/en/master/). Here are two examples of repositories that use sphinx to build its documentation:
+It is important to maintain the documentation relating to your project to ensure contributors and users can understand, maintain and use your product correctly. One basic way of doing this is maintaining markdown files within a GitHub repository. However, there exist multiple tools that can transform these markdown files into HTML content. A popular tool for building and deploying HTML documentation is [Sphinx](https://www.sphinx-doc.org/en/master/). Here are two examples of repositories that use sphinx to build its documentation:
 
 * [Quality assurance of code for analysis and research (this book)](https://github.com/best-practice-and-impact/qa-of-code-guidance/blob/main/.github/workflows/book.yaml)
 * [govcookiecutter](https://github.com/best-practice-and-impact/govcookiecutter/blob/main/.github/workflows/govcookiecutter-deploy-documentation.yml)
 
 ### Example GitLab Pipeline
 
-GitLab has an equivalent to GitHub Actions called GitLab Pipelines. The use cases for these are practically the same, with a change in syntax and file structure. [This blog](https://www.patricksoftwareblog.com/setting-up-gitlab-ci-for-a-python-application/) provides a simple GitLab pipeline example and detailed description on how to use it. 
+GitLab has an equivalent to GitHub Actions called GitLab Pipelines. The use cases for these are practically the same, with a change in syntax and file structure. [PATRICK'S SOFTWARE BLOG](https://www.patricksoftwareblog.com/setting-up-gitlab-ci-for-a-python-application/) provides a simple GitLab pipeline example and detailed description on how to use it. For further details [GitLab provides documentation on how to create and use GitLab Pipelines](https://docs.gitlab.com/ee/ci/). 
 
 ### Comprehensive example of automating code quality assurance
 
