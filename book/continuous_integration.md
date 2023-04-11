@@ -90,7 +90,7 @@ Be sure to read the documentation for any of these tools, to understand what the
 Some can be configured to ignore or detect specific types of formatting error.
 You can run multiple of these, to catch a broader range of stylistic or programmatic errors.
 
-## Worflows
+## Workflows
 
 GitHub Actions and GitLab Pipelines both offer the ability to define custom workflows using YAML. Workflow refers to a defined sequence of steps and actions that need to be performed to complete a specific task or process. Workflows are commonly used in software development to automate repetitive or complex tasks, such as building and deploying software, testing code, and managing code reviews. GitHub Actions and GitLab Pipelines both allow automated workflows that trigger builds and tests whenever code changes are pushed to the repository. 
 
