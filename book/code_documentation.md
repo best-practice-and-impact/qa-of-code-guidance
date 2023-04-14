@@ -134,7 +134,6 @@ It is easy to forget which parts of code have been commented out and why they ha
 
 You should instead use appropriate control flow (such as `if/else` statements) to determine when these sections should be run. When changes are required between individual runs of your analysis, you should consider [defining these options in a dedicated configuration file](configuration.md).
 
-
 In summary, you should use comments sparingly but purposefully. Make sure comments:
 
 - explain **why** certain things are done, in order to provide context around the decisions that you have made
@@ -142,6 +141,7 @@ In summary, you should use comments sparingly but purposefully. Make sure commen
 - are accurate and still relevant after code changes
 
 (docstrings)=
+
 ## Docstrings
 
 When your code is structured as functions or classes, these functional units can be efficiently documented using docstrings. Docstrings are specialised multi-line descriptions that appear at the start of a function definition and are the de facto way of documenting these individual components. In practice they can be either strings (as in Python docstrings) or comments (as in R). Note that module or script level docstrings are also commonly used (usually at the top of the module file in the case of Python). Use of docstrings keeps the documentation of your code closely associated with the relevant sections of code. This close association means it is easier to keep documentation up to date as changes are introduced to the code.
@@ -229,7 +229,7 @@ add_to_each <- function(numbers, add) {
 
 In this example, the function docstring starts with a brief description. It then lists the parameters that our function takes, along with the suggested type for each parameter and a brief description of what they control. It also tells us that the function will raise an error if the wrong type is provided for the first parameter. Note that the listed errors are the errors that are expected by the writer of the documentation, other unexpected issues can still occur if the function is not properly tested and will not be signposted in the docstring. Then there is a description of the object that is returned from the function, followed by an example of the functions use. Finally, it references a similar related function that might be of interest to the end-user.
 
-The R example uses a format called [roxygen](https://roxygen2.r-lib.org/). You should use it to write function documentation as part of R packages. If you are documenting functions that are not part of a package, you can use regular code comments. However, documenting functions using roxygen syntax can be helpful if you are planning on packaging the code in future and gives a clear structure to your documentation. 
+The R example uses a format called [roxygen](https://roxygen2.r-lib.org/). You should use it to write function documentation as part of R packages. If you are documenting functions that are not part of a package, you can use regular code comments. However, documenting functions using roxygen syntax can be helpful if you are planning on packaging the code in future and gives a clear structure to your documentation.
 
 You might find that writing function, class or package descriptions prior to writing their code helps you to focus on the task at hand. The documentation should be a specification of what the code is expected to do. As documentation tends to be user-focussed, this approach helps you to keep the user's needs in mind when developing code and provides a quick reference when more information on its capabilities are required.
 
@@ -250,7 +250,7 @@ Other useful resources include:
 - Guidance for [documenting objects and functions in R](http://r-pkgs.had.co.nz/man.html)
 ```
 
-### Writing script or module doctstrings
+### Document scripts or modules using doctstrings
 
 Docstrings are not just for function documentation. You will often want to include explanatory notes alongside modules containing multiple functions or standalone scripts.
 
@@ -282,7 +282,6 @@ Functions to tidy and clean ingested csv and SQL data
 
 The examples above document a simple module as part of an analysis package. The notes are brief and explain the main purpose of the module. Please note: in R, it is considered acceptable to include either multiple functions per file or have separate files for each function. You do not need to include module documentation if a file only contains one function.
 
-
 ````{tabs}
 
 ```{code-tab} py
@@ -306,11 +305,11 @@ Check the configuration file before running and run from the command line. Detai
 
 ````
 
-These examples document a main analysis script. They include enough information that a user can get started, without repeating too much that should be documented elsewhere. 
-
+These examples document a main analysis script. They include enough information that a user can get started, without repeating too much that should be documented elsewhere.
 
 (generating_docs)=
-## Automatic documentation generation
+
+## Generate documentation automatically
 
 This section does not describe a tool that writes your documentation for you. It does, however, describe tools that automate generation of searchable, user-friendly HTML documentation that can really provide a great experience for end-users. Accurate, up to date and accessible documentation is one of the cornerstones of well-adopted, open-source packages.
 
@@ -318,7 +317,7 @@ Perhaps it is worth reflecting on truly how much we use well-rendered documentat
 
 The information presented in this section seeks to inform you of how you can take your well-crafted [docstrings](docstrings) and turn them into more widely accessible hosted documentation.
 
-### Generating HTML documentation
+### Generate HTML documentation
 
 #### Python
 
@@ -338,7 +337,7 @@ For R projects, you might want to consider [`pkgdown`](https://pkgdown.r-lib.org
 
 The [package's website](https://pkgdown.r-lib.org/) and [its source code](https://github.com/r-lib/pkgdown/) provide a good demonstration of how you would apply it in practice.
 
-### Hosting HTML documentation
+### Make human readable documentation easily available to users
 
 Once built, the HTML files containing your documentation can be opened in any browser. Usually this means looking for an `index.html` file in the output directory and opening it with your browser. This is sufficient for local usage, however, in order to improve the end-user experience and remove the need to browse the files looking for `index.html`, it is wise to host this documentation somewhere where it will be publicly available.
 

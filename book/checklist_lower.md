@@ -47,11 +47,12 @@ Quality assurance checklist from [the quality assurance of code for analysis and
 ### Configuration
 
 - Credentials and other secrets are not written in code but are configured as environment variables.
-- Configuration is written as code, and is clearly separated from code used for analysis.
+- Configuration is clearly separated from code used for analysis, so that it is simple to identify and update.
 - The configuration used to generate particular outputs, releases and publications is recorded.
 
 ### Data management
 
+- Published outputs meet [accessibility regulations](https://analysisfunction.civilservice.gov.uk/area_of_work/accessibility/).
 - All data for analysis are stored in an open format, so that specific software is not required to access them.
 - Input data are stored safely and are treated as read-only.
 - Input data are versioned. All changes to the data result in new versions being created, or [changes are recorded as new records](https://en.wikipedia.org/wiki/Slowly_changing_dimension).
@@ -66,7 +67,7 @@ Quality assurance checklist from [the quality assurance of code for analysis and
 
 ### Testing
 
-- Core functionality is unit tested as code. See [`pytest` for Python](https://docs.pytest.org/en/stable/) and [`testthat` for R](https://testthat.r-lib.org/). 
+- Core functionality is unit tested as code. See [`pytest` for Python](https://docs.pytest.org/en/stable/) and [`testthat` for R](https://testthat.r-lib.org/).
 - Code based tests are run regularly, ideally being automated using continuous integration.
 - Bug fixes include implementing new unit tests to ensure that the same bug does not reoccur.
 - Informal tests are recorded near to the code.
@@ -91,7 +92,6 @@ Quality assurance checklist from [the quality assurance of code for analysis and
 - New issues or tasks are guided by users’ needs and stories.
 - Acceptance criteria are noted for issues and tasks. Fulfilment of acceptance criteria is recorded.
 - Quality assurance standards and processes for the project are defined. These are based around [the quality assurance of code for analysis and research guidance document](https://best-practice-and-impact.github.io/qa-of-code-guidance/intro.html).
-
 
 ## Template checklist
 
@@ -145,11 +145,12 @@ Quality assurance checklist from [the quality assurance of code for analysis and
 ### Configuration
 
 - [ ] Credentials and other secrets are not written in code but are configured as environment variables.
-- [ ] Configuration is written as code, and is clearly separated from code used for analysis.
+- [ ] Configuration is clearly separated from code used for analysis, so that it is simple to identify and update.
 - [ ] The configuration used to generate particular outputs, releases and publications is recorded.
 
 ### Data management
 
+- [ ] Published outputs meet [accessibility regulations](https://analysisfunction.civilservice.gov.uk/area_of_work/accessibility/).
 - [ ] All data for analysis are stored in an open format, so that specific software is not required to access them.
 - [ ] Input data are stored safely and are treated as read-only.
 - [ ] Input data are versioned. All changes to the data result in new versions being created, or [changes are recorded as new records](https://en.wikipedia.org/wiki/Slowly_changing_dimension).
