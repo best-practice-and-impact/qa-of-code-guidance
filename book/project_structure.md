@@ -83,7 +83,7 @@ A typical analytical project folder might look like:
 
 ```` {tabs}
 
-``` {tab} Python
+``` {code-tab} py
 |-- README.md
 |-- requirements.txt
 |-- data/
@@ -101,7 +101,7 @@ A typical analytical project folder might look like:
 |   -- generate_plots.py
 ```
 
-``` {tab} R
+``` {code-tab} r R
 |-- README.md
 |-- project.Rproj
 |-- data/
