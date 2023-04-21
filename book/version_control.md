@@ -65,7 +65,10 @@ You should **never** include the following in your code repository:
 
 See [](excluding-from-git) for details on how to mitigate the risk of including sensitive information in a Git repository.
 
-It is again worth stressing the importance of not committing sensitive, unpublished or disclosive data to your Git history. If you would like to include an example for end-users, a minimal dummy dataset can be committed to the repository. However, dummy datasets following the same layout can disclose the types of variables in the real data. As such, you should consider the inclusion of this data with caution, particularly for repositories intended to be hosted publicly.
+It is again worth stressing the importance of not committing sensitive, unpublished or disclosive data to your Git history.
+If you would like to include an example for end-users, a minimal dummy dataset can be committed to the repository.
+When creating realistic dummy data, care should be taken not to disclose sensitive features of the true data such as distributions and trends.
+Dummy data should always be carefully peer reviewed before being added to a repository.
 
 Whilst inclusion of [configuration](configuration.md) files can be helpful to understand the parameters to be set, it is best to include example files.
 Since configuration files are usually environment-specific, for example containing user file paths, they are not useful to those wanting to reproduce your analysis.
