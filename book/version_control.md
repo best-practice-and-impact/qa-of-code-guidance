@@ -55,7 +55,10 @@ See [](excluding-from-git) for details on how to mitigate the risk of including 
 
 You might also want to include example [configuration](configuration.md) files, to help users trying to run your code understand what parameters need to be set. However, note that sometimes configuration files contain sensitive data or credentials, which should not be commited to version control. In this case, example configuration files should contain clear dummy values that are indicative of the expected values to be filled in.
 
-It is again worth stressing the importance of not committing sensitive, unpublished or disclosive data to your Git history. If you would like to include an example for end-users, a minimal dummy dataset can be committed to the repository. However, dummy datasets following the same layout can disclose the types of variables in the real data. As such, you should consider the inclusion of this data with caution, particularly for repositories intended to be hosted publicly.  
+It is again worth stressing the importance of not committing sensitive, unpublished or disclosive data to your Git history.
+If you would like to include an example for end-users, a minimal dummy dataset can be committed to the repository.
+When creating realistic dummy data, care should be taken not to disclose sensitive features of the true data such as distributions and trends.
+Dummy data should always be carefully peer reviewed before being added to a repository.
 
 ## Using Git for version control
 
