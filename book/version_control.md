@@ -34,16 +34,28 @@ When used effectively, version control helps us to identify which changes have n
 
 Git is invaluable when recording and combining changes from multiple developers, as merging allows us to resolve conflicts between overlapping changes. Using a remote Git repository maintains a single source of truth, even when multiple individuals are working on a project. Additionally, version control platforms, like GitHub and GitLab, can make it easier to track and review ongoing work. This avoids duplication of effort and keeps review embedded in the development workflow.
 
-## Include or exclude
+## Include code and documentation in version control
 
-Ideally, you should include any code that is required to run your analysis. In a public repository, you may need to omit confidential or sensitive aspects of the project.
+Ideally, you should include all code and documentation that is required to understand and run your analysis.
+
+This may include:
+
+* Project documentation including readme and contribution guidance
+* Packaged functions and code documentation
+* Unit tests
+* Dummy data and example configuration files
+* User documentation such as desk notes and installation guidance
+
+## Exclude sensitive information from version control
+
+In a public repository, you may need to omit confidential or sensitive aspects of the project.
 
 ```{caution}
 
-You should **not** include the following in your code repository:
+You should **never** include the following in your code repository:
 
 * passwords, credentials or keys
-* configuration files that are environment-dependent (e.g. containing file paths)
+* real configuration files
 * code that contains sensitive information
   * for example, code that describes a method for fraud detection
   * or code that contains references to personally identifiable data
@@ -53,7 +65,10 @@ You should **not** include the following in your code repository:
 
 See [](excluding-from-git) for details on how to mitigate the risk of including sensitive information in a Git repository.
 
-You might also want to include example [configuration](configuration.md) files, to help users trying to run your code understand what parameters need to be set. However, note that sometimes configuration files contain sensitive data or credentials, which should not be commited to version control. In this case, example configuration files should contain clear dummy values that are indicative of the expected values to be filled in.
+It is again worth stressing the importance of not committing sensitive, unpublished or disclosive data to your Git history.
+If you would like to include an example for end-users, a minimal dummy dataset can be committed to the repository.
+When creating realistic dummy data, care should be taken not to disclose sensitive features of the true data such as distributions and trends.
+Dummy data should always be carefully peer reviewed before being added to a repository.
 
 It is again worth stressing the importance of not committing sensitive, unpublished or disclosive data to your Git history.
 If you would like to include an example for end-users, a minimal dummy dataset can be committed to the repository.
@@ -190,11 +205,11 @@ Git is effective at merging different branches. However, when the same file is e
 When merge conflicts happen, git will mark the clashes using this syntax:
 
 ```
-<<<<<<< HEAD
-Changes on the current branch
-=======
-Changes on the branch being merged
->>>>>>> new
+ <<<<<<< HEAD
+ Changes on the current branch
+ =======
+ Changes on the branch being merged
+ >>>>>>> new
 ```
 
 The row of equals signs divides the old from the new. The contents in the first division are the changes in the current branch. Changes in the second division are from the new branch. You can choose to keep one, both or neither. To resolve the merge conflict, you will need to make the necessary changes and delete the relevant symbols that git added to the text. Once you have resolved all conflicting text manually (there may be more than one), then you can add and commit the changes to resolve the merge conflicts.
