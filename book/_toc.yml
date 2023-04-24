@@ -25,6 +25,9 @@ parts:
   - file: data
   - file: peer_review
   - file: testing_code
+  - file: continuous_integration
+
+
 - caption: Resources
   chapters:
   - file: learning
