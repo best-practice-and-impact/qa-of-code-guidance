@@ -70,9 +70,10 @@ If you would like to include an example for end-users, a minimal dummy dataset c
 When creating realistic dummy data, care should be taken not to disclose sensitive features of the true data such as distributions and trends.
 Dummy data should always be carefully peer reviewed before being added to a repository.
 
-Whilst inclusion of [configuration](configuration.md) files can be helpful to understand the parameters to be set, it is best to include example files.
-Since configuration files are usually environment-specific, for example containing user file paths, they are not useful to those wanting to reproduce your analysis.
-Often, they will also contain sensitive data or credentials, which should **not** be committed to version control. Therefore, example files should contain clear dummy values that are indicative of the expected values.
+It is again worth stressing the importance of not committing sensitive, unpublished or disclosive data to your Git history.
+If you would like to include an example for end-users, a minimal dummy dataset can be committed to the repository.
+When creating realistic dummy data, care should be taken not to disclose sensitive features of the true data such as distributions and trends.
+Dummy data should always be carefully peer reviewed before being added to a repository.
 
 ## Using Git for version control
 
@@ -204,11 +205,11 @@ Git is effective at merging different branches. However, when the same file is e
 When merge conflicts happen, git will mark the clashes using this syntax:
 
 ```
-<<<<<<< HEAD
-Changes on the current branch
-=======
-Changes on the branch being merged
->>>>>>> new
+ <<<<<<< HEAD
+ Changes on the current branch
+ =======
+ Changes on the branch being merged
+ >>>>>>> new
 ```
 
 The row of equals signs divides the old from the new. The contents in the first division are the changes in the current branch. Changes in the second division are from the new branch. You can choose to keep one, both or neither. To resolve the merge conflict, you will need to make the necessary changes and delete the relevant symbols that git added to the text. Once you have resolved all conflicting text manually (there may be more than one), then you can add and commit the changes to resolve the merge conflicts.
@@ -467,135 +468,9 @@ Note that forks do not automatically synchronise with the original repo. This me
 
 See the GitHub documentation for [instructions on forking a repo and keeping your fork up to date](https://docs.github.com/en/free-pro-team@latest/github/getting-started-with-github/fork-a-repo) with a project and also [working with forks](https://docs.github.com/en/free-pro-team@latest/github/collaborating-with-issues-and-pull-requests/working-with-forks).
 
-(continuous-integration)=
+### Use GitHub Actions for continous integration
 
-### Using GitHub Actions for continous integration
-
-Continuous integration (CI) describes the practice of frequently committing changes to your code. CI tools support this working pattern by automating routine quality assurance tasks. This subsection describes how the GitHub CI tool, [GitHub Actions](https://github.com/features/actions), can be used in an analytical workflow. This includes verifying that your code successfully builds or installs and that your [code tests](testing_code.md) run successfully.
-
-Automation of routine tasks in this way reduces the effort required to merge changes onto the existing code base. This supports frequent commiting and merging of changes. As such, conflicts between multiple contributions should be minimal and that review of these changes simpler. Additionally, the execution environment for CI is defined in a CI workflow configuration, which improves reproducibility when running tests.
-
-CI is often linked to:
-
-* Continuous delivery - ensuring that your code is fit for use after each integration
-* Continuous deployment - automatically deploying working code into production
-
-#### Example - Testing
-
-Below is an example configuration file, for use with GitHub actions. The `YAML` file format, used below, is common to a number of other CI tools.
-
-```yaml
-name: Test python package
-
-on:
-  push:
-    branches:
-      - master
-  pull_request:
-
-
-jobs:
-  build:
-
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        python-version: [3.6, 3.7, 3.8, 3.9]
-
-    steps:
-    - uses: actions/checkout@v2
-
-    - name: Set up Python ${{ matrix.python-version }}
-      uses: actions/setup-python@v2
-      with:
-        python-version: ${{ matrix.python-version }}
-
-    - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install pytest 
-        pip install -r requirements.txt
-        
-    - name: Test with pytest
-      run: |
-        pytest
-```
-
-The first section of this example describes when our workflow should be run. In this case, we're running the CI workflow whenever code is `push`ed to the `master` branch or where any Pull Request is created. In the case of Pull Requests, the results of the CI workflow will be report on the request's page. If any of the workflow stages fail, this can block the merge of these changes onto a more stable branch. Subsequent commits to the source branch will trigger the CI workflow to run again.
-
-Below `jobs`, we're defining what tasks we would like to run when our workflow is triggered. We define what operating system we would like to run our workflow on - the Linux operating system `ubuntu` here. The `matrix` section under `strategy` defines parameters for the workflow. The workflow will be repeated for each combination of parameters supplied here - in this case the 4 latest Python versions.
-
-The individual stages of the workflow are defined under `steps`. `steps` typically have an informative name and run code to perform an action. Here `uses: actions/checkout@v2` references [existing code](https://github.com/actions/checkout) that will retrieve the code from our repo. The subsequent `steps` will use this code. The next step provides us with a specific Python version, as specified in the `matrix`. Then we install dependencies/requirements for our code and the `pytest` module. Finally, we run `pytest` to check that our code is working as expected.
-
-This workflow will report whether our test code ran successfully for each of the specified Python versions.
-
-#### Example - Documentation
-
-This book uses the following GitHub Actions configuration to build and deploy the HTML content:
-
-```yaml
-name: Build and deploy book
-
-on:
-  push:
-    branches:
-      - main
-      - master
-  pull_request:
-
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v2
-
-    - name: Set up Python 3.7
-      uses: actions/setup-python@v1
-      with:
-        python-version: 3.7
-
-    - name: Install dependencies
-      run: |
-        pip install -r requirements.txt
-
-    - name: Build the book
-      run: |
-        jb build book -W -v --keep-going && touch ./book/_build/html/.nojekyll
-
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    if: startsWith( github.ref, 'refs/tags/v')
-    steps:
-    - name: "Deploy book to GitHub Pages"
-      uses: peaceiris/actions-gh-pages@v3.6.1
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./book/_build/html
-```
-
-This workflow runs whenever a pull request is create or changes are pushed directly to the main branch. It has two jobs - one that builds the book's HTML content and another that deploys the content to this website.
-
-As with the previous example, we start the workflow by setting up an environment with Python. We install the dependencies for the project, which includes `jupyter-book` to build to the book.
-
-Our workflow then builds the book's HTML content, where the workflow will fail if warnings or errors are raised.
-
-In the second job, the book (including the new changes) is deployed to the site that you are reading now. This job needs the build job to have completed successfully before it will run. It will only run if a new Git tag has been created, to indicate a new version of the book. This allows us to accumulate changes on the main branch, before releasing a collection of changes in the next version. This deployment step requires authentication, which is managed by a secret/token that is accessed from the Action's environment.
-
-You might use a similar approach to this to deploy your code's HTML documentation.
-
-#### Comprehensive example
-
-You can see a detailed example of CI in practice in the `jupyter-book` project. A recent version of the [`jupyter-book` CI workflow](https://github.com/executablebooks/jupyter-book/blob/6fb0cbe4abb5bc29e9081afbe24f71d864b40475/.github/workflows/tests.yml) includes:
-
-* Checking code against style guidelines, using [pre-commit](https://pre-commit.com/)
-* Running code tests over
-  * a range of Python versions
-  * multiple versions of specific dependencies (`sphinx` here)
-  * multiple operating systems
-* Reporting test coverage
-* Checking that documentation builds successfully
-* Deploying a new version of the `jupyter-book` package to [the python package index (PyPI)](https://pypi.org/)
+Continuous Integration is discussed in more detail in [](continuous_integration.md). 
 
 ### Other GitHub features
 
