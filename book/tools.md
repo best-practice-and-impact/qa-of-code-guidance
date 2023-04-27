@@ -120,6 +120,7 @@ Automated code format repair.
 * [renv (R)](https://rstudio.github.io/renv/articles/renv.html)
 
 
+(CI-tools)=
 ## Continuous Integration Platforms
 
 * [GitHub Actions](https://github.com/features/actions)

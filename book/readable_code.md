@@ -426,6 +426,7 @@ That said, we should still prefer readability over idioms that might make our co
 For example, attempting to fit too much logic into a single line of code can make it considerably harder to understand.
 
 
+(automate-style-checks)=
 #### Automate style checks
 
 It is good practice to follow a style guide from the beginning of a project.
@@ -433,32 +434,7 @@ However, it can be tedious to check that code continues to follow a particular s
 Hence, automated support can be sought to speed up this work,
 either by providing suggestions as the code is written or by reformatting your code to comply with some style.
 
-Two main types of tool exist for these tasks:
-
-- Linters - these analyse your code to flag stylistic errors (and sometimes bugs or security issues too).
-- Formatters - these not only detect when you have diverged from a style, but will automatically correct the formatting of your code to conform to a particular style.
-
-```{list-table} Packages that can be used for linting or formatting in Python and R
-:header-rows: 1
-:name: linters
-
-* - Language
-  - Linters
-  - Formatters
-* - Python
-  - `flake8`, `pylint`, `Bandit`
-  - `Black`, `Isort`
-* - R
-  - `lintr`
-  - `formatR`, `styler`
-```
-
-Be sure to read the documentation for any of these tools, to understand what they are checking or changing in your code.
-Some can be configured to ignore or detect specific types of formatting error.
-You can run multiple of these, to catch a broader range of stylistic or programmatic errors.
-
-If you're considering these tools as part of a project, see [Continuous Integration](continuous-integration) for advice on automating them.
-Alternatively, explore other options, such as [pre-commit](https://pre-commit.com/), that do the formatting and checking on your machine prior to a Git commit.
+For further information on automating these checks see [](linters-formatters).
 
 
 (software-ideas-for-analysts)=

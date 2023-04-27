@@ -42,6 +42,7 @@ Breaking your code down into smaller, more manageable chunks is a sensible way t
 Regardless of the language, there are often techniques to containerise your code into self-contained parts such as modules, classes or functions.
 
 
+(functions)=
 ### Write re-usable code as functions
 
 In the early stages of analysis we often copy and paste code to 'make it work'. As this work matures, it is worth taking repetitive code and turning it into functions.
