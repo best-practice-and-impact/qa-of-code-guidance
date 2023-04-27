@@ -10,11 +10,13 @@ It will help others to read your code more easily, and you will write better cod
 Some structures have been found to be generally quite effective through trial and error.
 Others are more specific, and - as with all guidelines - should not be taken as mandatory.
 
+
 ## Run scripts from end to end to ensure your code is executed reproducibly
 
 As you begin developing your project, it's a good idea to save your working code in a script file.
 In R these are saved as `.R` files, and in Python as `.py`.
-Scripts can be used within an Integrated Development Environment (IDE) like [Visual Studio Code](https://code.visualstudio.com/), [RStudio](https://rstudio.com/), or [PyCharm](https://www.jetbrains.com/pycharm/).
+Scripts can be used within an Integrated Development Environment (IDE) like
+[Visual Studio Code](https://code.visualstudio.com/), [RStudio](https://rstudio.com/), or [PyCharm](https://www.jetbrains.com/pycharm/).
 Inside an IDE you can usually run through your script line-by-line, or run the whole file at once.
 This can be an easier workflow than running code in the Python or the R console and then rewriting the same code in a script later.
 
@@ -30,11 +32,13 @@ For example you can use the `Rcmd <script-path>` command to run your R scripts o
 Running your analysis files from end to end ensures that your code is executed in the same order each time.
 It also runs the code with a clean environment, not containing variables or other objects from previous runs that can be a common source of errors.
 
+
 ## Keep your project structure clean
 
 As your analysis project grows it becomes more important to keep your project structure clean.
 Every project is different and the right way to organise your project might differ from another project.
 However, there are some principles that are useful to consider.
+
 
 ### Use good filename conventions
 
@@ -50,12 +54,14 @@ Good naming conventions include:
 * Use of consistent date formatting (e.g. [YYYY-MM-DD](https://en.wikipedia.org/wiki/ISO_8601))
 * Padding the left side of numbers with zeros to maintain order -  e.g. `001` instead of `1`. The number of zeros should reflect the expected number of files.
 
-When using dates or times to name files, start with the largest unit of time and work towards the smallest.  So we would use `2020-10-15_data_input`, and not `15-10-2020_data_input`.
+When using dates or times to name files, start with the largest unit of time and work towards the smallest.
+So we would use `2020-10-15_data_input`, and not `15-10-2020_data_input`.
 This will ensure that the default ordering of these files is in chronological order.
 This makes it much easier to find the earliest or latest files.
 
 You should start filenames with numbers to order files, if ordering is logical and informative.
 For example, where the `001_introduction` should come before `002_methodology` and `003_results`.
+
 
 ### Organise analysis as a Directed Acyclic Graph
 
@@ -120,12 +126,14 @@ A typical analytical project folder might look like:
 Where you have written code that is used by multiple projects, this code should reside in its own separate folder.
 This will allow you to record changes to your code independent of other dependencies of each project.
 
+
 ### Preserve raw data
 
 You should not alter raw data - treat it as read-only.
 Even data cleaning should take place on a copy of the raw data, so that you can document which cleaning decisions have been made.
 
 There must be an immutable store for raw data in your project structure.
+
 
 ### Check that outputs are disposable
 
@@ -134,6 +142,7 @@ If you are worried about deleting your outputs (i.e. results) then it is unlikel
 
 It is good practice to delete and regenerate your outputs frequently when developing analysis.
 
+
 ## Structure code as modules and packages
 
 Code that is more complex, high risk or reusable between projects can benefit from being structured into a package.
@@ -141,15 +150,19 @@ Modules are single files that contain one or more reusable units of code.
 Multiple related modules are typically collected together within a package.
 
 It's likely that you've already used a package written by somebody else as part of your analysis.
-For example, installing additional functionality for Python using `pip install <package>` on the command line or running `install.packages("<package>")` in an R interpreter.
+For example, installing additional functionality for Python using `pip install <package>` on the command line or
+running `install.packages("<package>")` in an R interpreter.
 
 ```{admonition} Key Learning
 :class: admonition-learning
 
-[The Python Packaging User Guide](https://python-packaging-user-guide.readthedocs.io/) describes good packaging practices using the most up-to-date Python tools. While [the R Packages book](https://r-pkgs.org/) provides a comprehensive summary of packaging in R. [The rOpenSci packaging guide](https://devguide.ropensci.org/building.html) also contains useful tips for packaging in R.
+[The Python Packaging User Guide](https://python-packaging-user-guide.readthedocs.io/) describes good packaging practices using the most up-to-date Python tools.
+While [the R Packages book](https://r-pkgs.org/) provides a comprehensive summary of packaging in R.
+[The rOpenSci packaging guide](https://devguide.ropensci.org/building.html) also contains useful tips for packaging in R.
 ```
 
 See [](project_documentation.md) for a summary of common package and project documentation types.
+
 
 ## Use project templates
 
@@ -168,9 +181,12 @@ Useful cookiecutters include:
 * The comprehensive Python data science project template [cookiecutter-data-science](http://drivendata.github.io/cookiecutter-data-science/).
 * The Python package template [cookiecutter-pypackage](https://cookiecutter-pypackage.readthedocs.io/en/latest/).
 
-Rstudio provides a standard template for R packages via `File > New Project... > New Directory > R Package`.  We have created some basic templates for an [R package](https://github.com/best-practice-and-impact/example-package-r) and a [Python package](https://github.com/best-practice-and-impact/example-package-python) that may be helpful.
+Rstudio provides a standard template for R packages via `File > New Project... > New Directory > R Package`.
+We have created some basic templates for an [R package](https://github.com/best-practice-and-impact/example-package-r)
+and a [Python package](https://github.com/best-practice-and-impact/example-package-python) that may be helpful.
 R project structures can also be set up or extended, one component at a time, using the [`usethis` workflow package](https://usethis.r-lib.org/).
 For example, `use_test()` will add the directories necessary for testing using `testthat` and generate basic test file templates for a given function name.
+
 
 ## Use version controlled repositories
 
