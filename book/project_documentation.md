@@ -1,6 +1,8 @@
 # Project documentation
 
-Whether you're developing a package or collaborating on a piece of analysis, documenting your project will makes it much easier for others to understand your goal and ways of working.
+Whether you're developing a package or collaborating on a piece of analysis,
+documenting your project will makes it much easier for others to understand your goal and ways of working.
+
 
 ## README
 
@@ -18,6 +20,7 @@ We suggest the following for a good README:
 - Screenshot if your project has a graphical user interface
 - Links to related projects
 
+
 ## Contributing guidance
 
 When collaborating, it is also useful to outline the standards used within your project.
@@ -30,7 +33,6 @@ For an example, see the CONTRIBUTING file from our [gptables package](https://gi
 `````{tabs}
 
 ````{tab} Markdown
-
 ```{code-block}
 # Contributing
 
@@ -70,11 +72,9 @@ non-minor changes.
 3. Reviewers will be requested from associated communities.
 4. Only once reviewers are satisfied, will the `dev` branch be released.
 ```
-
 ````
 
 ````{tab} HTML
-
 <h1>Contributing</h1>
 
 When contributing to this repository, please first discuss the change you wish
@@ -114,15 +114,19 @@ non-minor changes.
 3. Reviewers will be requested from associated communities.
 4. Only once reviewers are satisfied, will the `dev` branch be released.
 ````
-
 `````
 
-In this case we have outlined our standard practices for using version control on GitHub, the code style that we are using in the project and the review process that we follow.
-We have used the [Markdown](https://daringfireball.net/projects/markdown/syntax) (`.md`) markup language for this document, which is formatted into HTML when viewed on our repository.
+In this case we have outlined our standard practices for using version control on GitHub,
+the code style that we are using in the project and the review process that we follow.
+We have used the [Markdown](https://daringfireball.net/projects/markdown/syntax) (`.md`) markup language for this document,
+which is formatted into HTML when viewed on our repository.
+
 
 ## User desk instructions
 
-If your project is very user focussed for one particular task, for example developing a statistic production pipeline for other analysts to execute, it is very important that the code users understand how to appropriately run your code.
+If your project is very user focussed for one particular task,
+for example developing a statistic production pipeline for other analysts to execute,
+it is very important that the code users understand how to appropriately run your code.
 
 These instructions should include:
 
@@ -131,6 +135,7 @@ These instructions should include:
 - What outputs (if any) your code or system produces and how these should be interpreted
 - What quality assurance has been carried out and what further quality assurance of outputs is required
 - How to maintain your project (including how to update data sources)
+
 
 ## Dependencies
 
@@ -147,7 +152,10 @@ You can get a list of your installed python packages using `pip freeze` in the c
 Packages are listed under the `Imports` key.
 You can get a list of your installed R packages using the `installed.packages()` function.
 
-Environment management tools, such as [`renv`](https://rstudio.github.io/renv/articles/renv.html) for R or [`pyenv`](https://github.com/pyenv/pyenv) for python, are very useful for keeping track of software and package versions used in a project.
+Environment management tools, such as
+[`renv`](https://rstudio.github.io/renv/articles/renv.html) for R or
+[`pyenv`](https://github.com/pyenv/pyenv) for python, are very useful for keeping track of software and package versions used in a project.
+
 
 ## Citation
 
@@ -155,7 +163,7 @@ For research or analytical code that is likely to be referenced by others, it ca
 This can be included in your code repository as a `CITATION` file or part of your `README`.
 For example, the R package `ggplot2` provides the following:
 
-```
+```none
  To cite ggplot2 in publications, please use:
 
  H. Wickham. ggplot2: elegant graphics for data analysis. Springer New York,
@@ -173,25 +181,31 @@ A BibTeX entry for LaTeX users is
  }
 ```
 
-This might include multiple citations, if your project includes multiple datasets, pieces of code or outputs with their own [DOI's](https://en.wikipedia.org/wiki/Digital_object_identifier).
+This might include multiple citations, if your project includes multiple datasets, pieces of code or outputs with their own
+[DOI's](https://en.wikipedia.org/wiki/Digital_object_identifier).
 
 See this [GitHub guide for more information on making your public code citable](https://guides.github.com/activities/citable-code/).
+
 
 ## Vignettes
 
 Vignettes are a form of supplementary documentation, containing applied examples that demonstrate the intended use of the code in your project or package.
 Docstrings may contain examples applying individual functional units, while vignettes may show multiple units being used together.
-The term vignette is usually used with reference to R packages, for example this introduction to the [`dplyr` package](https://cran.r-project.org/web/packages/dplyr/vignettes/dplyr.html) for data manipulation.
-However, the same long-form documentation is beneficial for projects in any programming language - for instance the [`pandas` basics guide](https://pandas.pydata.org/docs/user_guide/basics.html).
+The term vignette is usually used with reference to R packages, for example this introduction to the
+[`dplyr` package](https://cran.r-project.org/web/packages/dplyr/vignettes/dplyr.html) for data manipulation.
+However, the same long-form documentation is beneficial for projects in any programming language - for instance the
+[`pandas` basics guide](https://pandas.pydata.org/docs/user_guide/basics.html).
 
 We've seen that [docstrings](docstrings) can be used to describe individual functional code elements.
 Vignettes provide a demonstration of the intended use for these classes and functions, in a realistic context.
 This can help users to understand how different code elements interact, and how they might use your code in their own program.
 
 Another good example is this vignette describing [how to design vignettes](http://r-pkgs.had.co.nz/vignettes.html) in Rmarkdown.
-You can produce this type of documentation in any format, though Rmarkdown is particularly effectively at combining sections of code, code outputs and descriptive text.
+You can produce this type of documentation in any format, though Rmarkdown is particularly effectively at combining sections of code,
+code outputs and descriptive text.
 
 You might also consider providing examples in an interactive notebook, that users can run for themselves.
+
 
 ## Versioning
 
@@ -201,7 +215,8 @@ When used in combination with [](version_control.md), versioning allows you to r
 
 [Semantic versioning](https://semver.org/) provides useful rules for versioning releases of your code.
 Following these rules also helps other users of your code to understand how changes in your code may affect their software.
-Each level of version number indicates the extent of changes to the application programming interface (API) of your code, i.e. the part of the code that a user interacts with directly.
+Each level of version number indicates the extent of changes to the application programming interface (API) of your code,
+i.e. the part of the code that a user interacts with directly.
 Changes to the major version number indicate changes to the API that are not compatible with use of previous versions of the code.
 While changes is the minor and patch numbers indicate changes that are either compatible or have no effect on the use of the code, respectively.
 
@@ -221,11 +236,12 @@ You'll see the current version below the site's table of contents, where the fir
 The incremental number following the full stop indicates how many versions of the guidance have been published in that year.
 As this guidance will change over time, this version number provides users with a reference for citing a specific state of the guidance.
 
+
 ## Changelog
 
 A changelog records the major changes that have occurred to a project or package, between versioned releases of the code.
 
-```
+```{code-block}
 # Changelog
 All notable changes to this project will be documented in this file.
 
@@ -254,27 +270,37 @@ Your changelog can be in any format and should be associated with your code docu
 
 [keep a changelog](https://keepachangelog.com/en/1.0.0/) provides a simple but effective template for recording changes to your code.
 
+
 ## Copyright and Licenses
 
 Copyright indicates ownership of work.
-All material created by civil servants, ministers, government departments and their agencies are covered by [Crown copyright](https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/).
+All material created by civil servants, ministers, government departments and their agencies are covered by
+[Crown copyright](https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/).
 It is not essential to include a copyright notice on your work, but doing so can help to avoid confusion around ownership.
 
 Licences outline the conditions under which others may use, modify and/or redistribute your work.
 As such, including a licence with code is important for users and other developers alike.
 This [online tool](https://choosealicense.com/) might help you to choose an appropriate license for your project.
-The Government Digital Service generally recommends using the [MIT license](https://opensource.org/licenses/MIT) for code and the [Open Government License (OGL)](http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/) for documentation.
+The Government Digital Service generally recommends using the
+[MIT license](https://opensource.org/licenses/MIT) for code and the
+[Open Government License (OGL)](http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/) for documentation.
 
 Both copyright and license are usually placed in a LICENSE file in your project.
 For example, an MIT LICENSE file might look like:
 
 > Copyright 2020, Crown copyright
 >
-> Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+> Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"),
+> to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense,
+>and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 >
 > The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 >
-> THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+> THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
+> INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+> IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+> WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
 
 ## Open source your code
 
@@ -297,5 +323,7 @@ While the public benefit from:
 - Sharing value - others can benefit from our work, either through reuse or demonstration of good practices.
 - Sharing opportunity - others can gain insight and experience from reading and possibly contributing to  your code.
 
-Please see the [Government Data Service (GDS) guidance](https://www.gov.uk/government/publications/open-source-guidance/when-code-should-be-open-or-closed) for help deciding when code should be open or closed.
-Security concerns for coding in the open are also addressed in further [GDS guidance](https://www.gov.uk/government/publications/open-source-guidance/security-considerations-when-coding-in-the-open).
+Please see the [Government Data Service (GDS) guidance](https://www.gov.uk/government/publications/open-source-guidance/when-code-should-be-open-or-closed)
+for help deciding when code should be open or closed.
+Security concerns for coding in the open are also addressed in further
+[GDS guidance](https://www.gov.uk/government/publications/open-source-guidance/security-considerations-when-coding-in-the-open).

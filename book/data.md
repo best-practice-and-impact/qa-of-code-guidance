@@ -2,7 +2,8 @@
 
 Data management covers a broad range of disciplines, including organising, storing and maintaining data.
 This management is typically handled by dedicated data architects and engineers, however, we appreciate that analysts are often expected to manage their own data.
-This section aims to highlight good data management practices, so that you can either appreciate how your organisation handles its data or implement your own data management solutions.
+This section aims to highlight good data management practices, so that you can either appreciate how your organisation handles its data
+or implement your own data management solutions.
 
 In order to reproduce a piece of analysis we need to be able to identify and access the same data that our analysis used.
 This requires suitable storage of data, with documentation and versioning of the data where it may change over time.
@@ -10,10 +11,14 @@ This requires suitable storage of data, with documentation and versioning of the
 ```{admonition} Key strategies
 :class: admonition-strategies
 
-[The Government Data Quality Framework](https://www.gov.uk/government/publications/the-government-data-quality-framework/the-government-data-quality-framework) focuses primarily on assessing and improving the quality of input data. It should be a primary resource for all analysts working with data in the public sector.
+[The Government Data Quality Framework](https://www.gov.uk/government/publications/the-government-data-quality-framework/the-government-data-quality-framework)
+focuses primarily on assessing and improving the quality of input data.
+It should be a primary resource for all analysts working with data in the public sector.
 
-The Office for Statistics Regulation provides a standard for [quality assurance of administrative data](https://osr.statisticsauthority.gov.uk/guidance/administrative-data-and-official-statistics/).
+The Office for Statistics Regulation provides a standard for
+[quality assurance of administrative data](https://osr.statisticsauthority.gov.uk/guidance/administrative-data-and-official-statistics/).
 ```
+
 
 ## Data storage
 
@@ -21,10 +26,12 @@ It is assumed that most data are now stored digitally.
 
 Digital data risk becoming inaccessible as technology develops and commonly used software changes.
 Long term data storage should use open or standard file formats.
-There are [recommended formats](https://www.ukdataservice.ac.uk/manage-data/format/recommended-formats.aspx) for storing different data types, though we suggest avoiding formats that depend on proprietary software like SPSS, STATA and SAS.
+There are [recommended formats](https://www.ukdataservice.ac.uk/manage-data/format/recommended-formats.aspx) for storing different data types,
+though we suggest avoiding formats that depend on proprietary software like SPSS, STATA and SAS.
 
 Short term storage, for use in analysis, might use any format that is suitable for the analysis task.
 However, most analysis tools should support reading data directly from safe long term storage, including databases.
+
 
 ### Spreadsheets
 
@@ -51,7 +58,9 @@ Issues when using spreadsheets for data storage include:
   * Converting dates to a different datetime format.
   * Converting numbers or text that resemble dates to dates.
 
-See the European Spreadsheet Risks Interest Group document [spreadsheet related errors and their consequences](http://www.eusprig.org/horror-stories.htm) for more information.
+See the European Spreadsheet Risks Interest Group document
+[spreadsheet related errors and their consequences](http://www.eusprig.org/horror-stories.htm) for more information.
+
 
 ### Databases
 
@@ -76,7 +85,8 @@ Most DBMS use structured query language (SQL) to communicate with databases.
 ```{admonition} Key Learning
 :class: admonition-learning
 
-You might find this [foundations of SQL (government analysts only course)](https://learninghub.ons.gov.uk/enrol/index.php?id=490) or [w3schools SQL tutorials](https://www.w3schools.com/sql/default.asp) useful for learning the basics of SQL.
+You might find this [foundations of SQL (government analysts only course)](https://learninghub.ons.gov.uk/enrol/index.php?id=490)
+or [w3schools SQL tutorials](https://www.w3schools.com/sql/default.asp) useful for learning the basics of SQL.
 ```
 
 Common analysis tools can interface with databases using SQL packages, or those which provide an object-relational mapping (ORM).
@@ -105,7 +115,8 @@ Good practices when working with databases include:
 
 Other resources:
 
-* This [SQL lecture from Harvard's computer science course](https://www.youtube.com/watch?v=u5pDdEKnbKA) may be a useful introduction to working with databases from Python.
+* This [SQL lecture from Harvard's computer science course](https://www.youtube.com/watch?v=u5pDdEKnbKA)
+may be a useful introduction to working with databases from Python.
 * A guide to [using the `sqldf` R package](https://dept.stat.lsa.umich.edu/~jerrick/courses/stat701/notes/sql.html).
 
 ## Documenting data
@@ -121,6 +132,7 @@ For our analysis, we should be able to quickly grasp:
 * How am I ethically and legally permitted to use the data?
 
 This information should be created by data providers and analysts, in the form of documentation.
+
 
 ### Data dictionary
 
@@ -138,9 +150,13 @@ For variables in tabular datasets, you might document:
 * if derived, detail how variables were obtained or calculated
 * any rules for use or processing of the data, set by the data owner
 
-See this detailed example - the [National Workforce Data Set](https://www.datadictionary.nhs.uk/data_sets/administrative_data_sets/national_workforce_data_set.html#dataset_national_workforce_data_set), from the NHS Data Model and Dictionary.
+See this detailed example -
+the [National Workforce Data Set](https://www.datadictionary.nhs.uk/data_sets/administrative_data_sets/national_workforce_data_set.html#dataset_national_workforce_data_set),
+from the NHS Data Model and Dictionary.
 
-Please see [UK Data Service guidance on documenting other data](https://www.ukdataservice.ac.uk/manage-data/document/data-level/tabular.aspx), including qualitative data.
+Please see [UK Data Service guidance on documenting other data](https://www.ukdataservice.ac.uk/manage-data/document/data-level/tabular.aspx),
+including qualitative data.
+
 
 ### Information Asset Register (IAR)
 
@@ -148,7 +164,8 @@ An information asset register (IAR) documents the information assets within your
 Your department should have an IAR in place, to document its information assets.
 As an analyst, you might use the register to identify contacts for data required for your analyses.
 
-This form of documentation may not contain detailed information on how to use each data source (provided by data dictionaries), but an IAR does increase visibility of data flows.
+This form of documentation may not contain detailed information on how to use each data source (provided by data dictionaries),
+but an IAR does increase visibility of data flows.
 An IAR may include:
 
 * the owner of each dataset
@@ -158,6 +175,7 @@ An IAR may include:
 * the risk of information being lost or compromised
 
 GOV.UK provides [IAR templates](https://www.gov.uk/government/publications/information-asset-register) that your department might use to structure their IAR.
+
 
 ## Version control data
 
@@ -196,15 +214,17 @@ Diagram of good manual data versioning workflow.
 Finally, for this to be effective, your analysis should record the version of data used to generate a specified set of outputs.
 This might be documented in analysis reports or automatically logged by your code.
 
+
 ## Use these standards and guidance when publishing data
 
-You should use the [5-star open data standards](https://5stardata.info/en/) to understand and improve the current utility of your published data. The [CSV on the Web (CSVW) standard](https://csvw.org/) is recommended for achieving the highest ratings of open data.
+You should use the [5-star open data standards](https://5stardata.info/en/) to understand and improve the current utility of your published data.
+The [CSV on the Web (CSVW) standard](https://csvw.org/) is recommended for achieving the highest ratings of open data.
 
 When publishing statistics you should follow government guidance for [releasing statistics in spreadsheets](https://analysisfunction.civilservice.gov.uk/policy-store/releasing-statistics-in-spreadsheets/).
 
 When publishing or sharing tabular data, you should follow the [GOV.UK Tabular data standard](https://www.gov.uk/government/publications/recommended-open-standards-for-government/tabular-data-standard).
 
-Analysts producing published statistics may also be interested in [Connected Open Government Statistics (COGS)](https://analysisfunction.civilservice.gov.uk/the-gss-data-project/) and [the review of government data linking methods](https://www.gov.uk/government/publications/joined-up-data-in-government-the-future-of-data-linking-methods)
-.
+Analysts producing published statistics may also be interested in [Connected Open Government Statistics (COGS)](https://analysisfunction.civilservice.gov.uk/the-gss-data-project/)
+and [the review of government data linking methods](https://www.gov.uk/government/publications/joined-up-data-in-government-the-future-of-data-linking-methods).
 
 Guidance from the UK Data Service describes [data security considerations](https://www.ukdataservice.ac.uk/manage-data/store/security).

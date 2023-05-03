@@ -1,0 +1,22 @@
+{
+    "plugins" : {
+        "md003" : {
+            "style" : "atx"
+        },
+        "md012" : { 
+            "maximum" : 2
+        },
+        "md013" : {
+            "line_length" : 160,
+            "heading_line_length" : 160,
+            "code_block_line_length" : 160
+        },
+        "md022" : {
+            "enabled" : false
+        },
+        "md024" : {
+            "allow_different_nesting" : true
+        }
+        
+    }
+}
