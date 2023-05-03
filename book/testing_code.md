@@ -51,17 +51,26 @@ Tests should be run whenever you make changes to your analysis. This ensures tha
 
 Running tests regularly allows your to fix any issues before adding changes to a stable or production version of your code.
 
-If you have altered the functionality of your code, this will likely break existing tests. Failing tests here are a good reminder that your should update your documentation and tests to reflect the new functionality.
+If you have altered the functionality of your code, this will likely break existing tests. Failing tests here act as a good reminder that your should update your documentation and tests to reflect the new functionality.
 
 It's not easy to remember to run your tests manually at regular intervals. And you're right to think "surely this could be automated too?". [Continuous integration](continuous-integration) can be used to automate the running of tests and can be triggered when changes are made to your remote version control repository.
 
 ## Record the outcomes of your tests
 
-For auditability, it is important that we record the outcomes from running tests. You should record the test outcomes with the code, so that they can be reviewed together.
+For auditability, it is important that the outcome from running tests is recorded. You should record the test outcomes with the code, so that it is clear what tests have been carried out for a given version of the code.
 
-As mentioned above, automating the running of tests on a version control platform is the simplest way to achieve this.
+As mentioned above, automating the running of tests on a version control platform is the simplest and most effective way to achieve this association between the code version and test outcomes.
 
-## Use minimal and realistic test cases
+## Minimise your test data
+
+Tests for analytical code will usually require data.
+
+```{warning} Key Learning
+
+You must not copy the output from running your code to create your expected test outcomes. If you do this the test will check that the function is running in the same way that it ran when you generated the data. This assumes that your function is working correctly.
+
+You must create your test data independently, ensuring that it reflects how you want your code to work, rather than how it currently works.
+```
 
 ## Structure test files to match code structure
 
@@ -77,4 +86,4 @@ As mentioned above, automating the running of tests on a version control platfor
 
 ## Write tests before writing logic (TDD)
 
-## Write tests to ensure that bugs are fixed
+## Write tests to assure that bugs are fixed
