@@ -10,7 +10,7 @@ Blue AF #193f54
 
 ```
  */
-.admonition-learning p.admonition-title::after {
+ .admonition-learning p.admonition-title::after {
     content: "\f5fc";
     left: .35rem;
     top: .5rem;
