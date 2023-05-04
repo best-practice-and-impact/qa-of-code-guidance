@@ -8,7 +8,6 @@ As such, we must take the right steps to ensure high quality analysis.
 This book recognises three founding principles of good analysis, each supported by the one before it.
 Programming in analysis makes each of these principles easier to fulfil in most cases.
 
-
 ```{figure} ./_static/repro_stack.png
 ---
 width: 50%
@@ -27,10 +26,17 @@ Assurance improves the average quality and includes the communication of that qu
 
 Government guidance is available to help you when developing analysis.
 We recommend:
-1. The [Aqua book](https://www.gov.uk/government/publications/the-aqua-book-guidance-on-producing-quality-analysis-for-government) to understand guidance around assurance.
-2. The [GSS Quality Strategy](https://gss.civilservice.gov.uk/policy-store/government-statistical-service-gss-quality-strategy/) when thinking about the quality of statistics.
-3. The [DCMS Data Ethics Framework](https://www.gov.uk/government/publications/data-ethics-framework/data-ethics-framework) when approaching any analysis.
-4. The [Communicating quality, uncertainty and change guidance](https://gss.civilservice.gov.uk/policy-store/communicating-quality-uncertainty-and-change/) whenever you must develop user-facing products.
+
+1. The [Analysis Function reproducible analytical pipelines (RAP) strategy](https://analysisfunction.civilservice.gov.uk/policy-store/reproducible-analytical-pipelines-strategy/),
+when considering how your department should adopt good practices.
+2. The [Aqua book](https://www.gov.uk/government/publications/the-aqua-book-guidance-on-producing-quality-analysis-for-government)
+to understand guidance around assurance.
+3. The [Analysis Function Quality Strategy](https://analysisfunction.civilservice.gov.uk/policy-store/government-statistical-service-gss-quality-strategy/)
+when thinking about the quality of statistics.
+4. The [DCMS Data Ethics Framework](https://www.gov.uk/government/publications/data-ethics-framework/data-ethics-framework)
+when approaching any analysis.
+5. The [Communicating quality, uncertainty and change guidance](https://analysisfunction.civilservice.gov.uk/policy-store/communicating-quality-uncertainty-and-change/)
+whenever you must develop user-facing products.
 
 Each of these pieces of guidance advocate reproducibility as a core tenet of quality analysis.
 ```
@@ -41,25 +47,28 @@ Each of these pieces of guidance advocate reproducibility as a core tenet of qua
 Reproducibility is the only thing that you can guarantee in your analysis.
 It is the first pillar of good analysis.
 If you can't prove that you can run the same analysis, with the same data, and obtain the same results then you are not adding a valuable analysis.
-The additional assurances of peer review, rigorous testing, and validity are secondary to being able to reproduce any analysis that you carry out in a proportionate amount of time.
+The additional assurances of peer review, rigorous testing,
+and validity are secondary to being able to reproduce any analysis that you carry out in a proportionate amount of time.
 
 Reproducible analysis relies on a transparent production process, so that anyone can follow your steps and understand your results.
-This transparency eases reuse of your methods and results. 
+This transparency eases reuse of your methods and results.
 Easy reproducibility helps your colleagues test and validate what you have done.
-When reproducibility is guaranteed, users and colleagues can focus on verifying that the implementation is correct and that the research is useful for its intended purpose.
+When reproducibility is guaranteed,
+users and colleagues can focus on verifying that the implementation is correct and that the research is useful for its intended purpose.
 
 Reproducibility relies on effective documentation.
 Good documentation should show how your methodology and your implementation map to each other.
 Good documentation should allow users and other researchers to reuse and adapt your analysis.
 
-Reproducible analysis supports the requirements of the [Code of Practice for Statistics](https://www.statisticsauthority.gov.uk/code-of-practice/) around quality assurance and transparency (auditability).
+Reproducible analysis supports the requirements of the [Code of Practice for Statistics](https://www.statisticsauthority.gov.uk/code-of-practice/)
+around quality assurance and transparency (auditability).
 Wherever possible, we share the code we used to produce our outputs, along with enough data to allow for proper testing.
 
 
 ## Auditable
 
 If decisions are made, based on your analysis, then you must make sure that your analysis and the evidence that you provide are available for scrutiny and audit.
-Auditable analysis is about being able to, at any point, answer: 
+Auditable analysis is about being able to, at any point, answer:
 
 * Who made each decision?
 * When was this decision made?
@@ -103,23 +112,26 @@ Guarantees of quality assurance should be published alongside any report, or be 
 Producing analysis, such as official statistics, can be time-consuming and painstaking.
 We need to make sure that our outputs are both accurate and timely.
 We aim to develop effective and efficient analytical workflows that are repeatable and sustainable over time.
-These workflows should follow the principles of reproducible analysis. 
+These workflows should follow the principles of reproducible analysis.
 We call these [Reproducible Analytical Pipelines (RAP)](https://analysisfunction.civilservice.gov.uk/support/reproducible-analytical-pipelines/).
 
 Reproducible analysis is still not widely practised across government.
-Many analysts use proprietary (paid-for) analytical tools like SAS or SPSS in combination with programs like Excel, Word or Acrobat to create statistical products. 
+Many analysts use proprietary (paid-for) analytical tools like SAS or SPSS in combination with programs like Excel, Word or Acrobat to create statistical products.
 The processes for creating statistics in this way are usually manual or semi-manual.
 Colleagues then typically repeat parts of the process manually to quality assure the outputs.
 
-This way of working is time consuming and can be frustrating, especially where the manual steps are difficult to replicate quickly. 
+This way of working is time consuming and can be frustrating, especially where the manual steps are difficult to replicate quickly.
 Processes like this are also prone to error, because the input data and the outputs are not connected directly, only through the analyst’s manual intervention.
 
-More recently, the tools and techniques available to analysts have evolved. 
+More recently, the tools and techniques available to analysts have evolved.
 Open-source tools like [Python](https://www.python.org/) and [R](https://www.r-project.org/) have become available.
-Coupled with version control and software management platforms like [Git](https://git-scm.com/) and Git-services, these tools have made it possible to develop automatic, streamlined processes, accompanied by a full audit trail.
+Coupled with version control and software management platforms like [Git](https://git-scm.com/) and Git-services,
+these tools have made it possible to develop automatic, streamlined processes, accompanied by a full audit trail.
 
-RAP was [first piloted in the Government Statistical Service in 2017](https://dataingovernment.blog.gov.uk/2017/03/27/reproducible-analytical-pipeline/) by analysts in the Department for Digital, Culture, Media and Sport (DCMS) and the Department for Education (DfE). 
+RAP was [first piloted in the Government Statistical Service in 2017](https://dataingovernment.blog.gov.uk/2017/03/27/reproducible-analytical-pipeline/)
+by analysts in the Department for Digital, Culture, Media and Sport (DCMS) and the Department for Education (DfE).
 They collaborated with data scientists from the Government Digital Service (GDS) to automate the production of statistical bulletins.
 
-To support the adoption of RAP across government, there is a network of [RAP champions](https://analysisfunction.civilservice.gov.uk/support/reproducible-analytical-pipelines/reproducible-analytical-pipeline-rap-champions/). 
-RAP champions are responsible for promoting reproducible analysis through the use of reproducible analytical pipelines, and supporting others who want to develop RAP in their own departments.
+To support the adoption of RAP across government, there is a network of [RAP champions](https://analysisfunction.civilservice.gov.uk/support/reproducible-analytical-pipelines/reproducible-analytical-pipeline-rap-champions/).
+RAP champions are responsible for promoting reproducible analysis through the use of reproducible analytical pipelines,
+and supporting others who want to develop RAP in their own departments.

@@ -1,40 +1,50 @@
 
+
 <!DOCTYPE html>
 
-<html lang="en">
+
+<html lang="en" >
+
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
     <title>Testing code &#8212; Quality Assurance of Code for Analysis and Research</title>
-    
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="_static/accessibility.css" />
     <link rel="stylesheet" type="text/css" href="_static/logo.css" />
     <link rel="stylesheet" type="text/css" href="_static/admonitions.css" />
     <link rel="stylesheet" type="text/css" href="_static/markdown_within_tabs.css" />
-    <link rel="stylesheet" type="text/css" href="_static/accessibility.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
-    
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -42,13 +52,13 @@
     <script src="_static/doctools.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="_static/togglebutton.js"></script>
     <script src="_static/tabs.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
@@ -56,615 +66,378 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'testing_code';</script>
     <link rel="shortcut icon" href="_static/favicon.ico"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Learning resources" href="learning.html" />
+    <link rel="next" title="Automating Code Quality Assurance" href="continuous_integration.html" />
     <link rel="prev" title="Peer review" href="peer_review.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en">
-    
-
-    <!-- Google Analytics -->
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
-    <div class="container-fluid" id="banner"></div>
-
-    
-
-    <div class="container-xl">
-      <div class="row">
-          
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="index.html">
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+      <div class="bd-sidebar-primary bd-sidebar">
         
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+    
+    
       
-      
-      <img src="_static/duck_book_logo.svg" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">Quality Assurance of Code for Analysis and Research</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
-        <p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Overview
- </span>
-</p>
+    
+    
+    <img src="_static/duck_book_logo.svg" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/duck_book_logo.svg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Overview</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="glossary.html">
-   Glossary of terms
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="managers_guide.html">
-   Managing analytical code development
-  </a>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="checklists.html">
-   Code quality assurance checklists
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
-  <label for="toctree-checkbox-1">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="checklist_lower.html">
-     Lower quality assurance
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="checklist_moderate.html">
-     Moderate quality assurance
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="checklist_higher.html">
-     Higher quality assurance
-    </a>
-   </li>
-  </ul>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary of terms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="managers_guide.html">Managing analytical code development</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="checklists.html">Code quality assurance checklists</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="checklist_lower.html">Lower quality assurance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="checklist_moderate.html">Moderate quality assurance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="checklist_higher.html">Higher quality assurance</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Guidance
- </span>
-</p>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Guidance</span></p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="principles.html">
-   Principles
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="modular_code.html">
-   Modular code
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="readable_code.html">
-   Readable code
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="project_structure.html">
-   Structuring your project
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="code_documentation.html">
-   Code documentation
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="project_documentation.html">
-   Project documentation
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="version_control.html">
-   Version control
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="configuration.html">
-   Configuration
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="data.html">
-   Data Management
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="peer_review.html">
-   Peer review
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   Testing code
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="principles.html">Principles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modular_code.html">Modular code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="readable_code.html">Readable code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="project_structure.html">Structuring your project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code_documentation.html">Code documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="project_documentation.html">Project documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="version_control.html">Version control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configuration.html">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data.html">Data Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="peer_review.html">Peer review</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Testing code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="continuous_integration.html">Automating Code Quality Assurance</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Resources
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Resources</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="learning.html">
-   Learning resources
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="tools.html">
-   Tools
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="learning.html">Learning resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tools.html">Tools</a></li>
 </ul>
 
     </div>
 </nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            <p>Book version 2022.4</p><a href='https://www.gov.uk/government/organisations/government-analysis-function' target='_blank'><img src='./_static/af_logo.png' alt='The Government Analysis Function logo' style='width:50%;'></a>
-            </div>
-            
-        </div>
     </div>
-    <div id="rtd-footer-container"></div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/best-practice-and-impact/qa-of-code-guidance" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/best-practice-and-impact/qa-of-code-guidance/edit/master/book/testing_code.md" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/best-practice-and-impact/qa-of-code-guidance/issues/new?title=Issue%20on%20page%20%2Ftesting_code.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
 </div>
 
 
-          
-
-
-          
-<!-- A tiny helper pixel to detect if we've scrolled -->
-<div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
-    
-    <div class="header-article row sticky-top noprint">
-        
 
 
 
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/testing_code.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
   </span>
-
-</label>
-
-        
-    </div>
-    <div class="header-article__right">
-<button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
   <i class="fas fa-expand"></i>
   </span>
 
 </button>
 
-<div class="menu-dropdown menu-dropdown-repository-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Source repositories">
-      <i class="fab fa-github"></i>
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://github.com/best-practice-and-impact/qa-of-code-guidance"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Source repository"
->
-  
+`);
+</script>
 
-<span class="headerbtn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-<span class="headerbtn__text-container">repository</span>
-</a>
-
-      </li>
-      
-      <li>
-        <a href="https://github.com/best-practice-and-impact/qa-of-code-guidance/issues/new?title=Issue%20on%20page%20%2Ftesting_code.html&body=Your%20issue%20content%20here."
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Open an issue"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="headerbtn__text-container">open issue</span>
-</a>
-
-      </li>
-      
-      <li>
-        <a href="https://github.com/best-practice-and-impact/qa-of-code-guidance/edit/master/book/testing_code.md"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Edit this page"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-pencil-alt"></i>
-  </span>
-<span class="headerbtn__text-container">suggest edit</span>
-</a>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="_sources/testing_code.md"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="headerbtn__text-container">.md</span>
-</a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="headerbtn__text-container">.pdf</span>
-</button>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
 </label>
-
+</div></div>
+      
     </div>
+  
 </div>
-
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#introduction">
-   Introduction
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#good-test-suites-are-thorough-but-realistic">
-   Good test suites are thorough but realistic
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#structure-your-tests-to-reflect-how-the-code-works">
-   Structure your tests to reflect how the code works
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#use-minimal-data-for-tests">
-     Use minimal data for tests
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#write-your-test-code-to-mirror-your-codebase">
-     Write your test code to mirror your codebase
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#good-tests-do-not-rely-on-external-states">
-     Good tests do not rely on external states
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#tests-are-documentation-and-tests-are-documented">
-     Tests are documentation and tests are documented
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#use-bugs-to-improve-your-test-suite">
-     Use bugs to improve your test suite
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#avoid-flickering-tests-by-making-them-deterministic">
-     Avoid flickering tests by making them deterministic
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#writing-tests-at-a-later-date">
-     Writing tests at a later date
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#write-test-code-only-once">
-   Write test code only once
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#use-fixtures-to-reduce-repetition">
-     Use fixtures to reduce repetition
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#use-parametrization-to-test-multiple-cases-at-once">
-     Use parametrization to test multiple cases at once
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#run-tests-whenever-you-make-changes-to-your-project">
-   Run tests whenever you make changes to your project
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#testing-at-multiple-levels">
-   Testing at multiple levels
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#unit-testing">
-     Unit testing
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#integration-testing">
-     Integration testing
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#systems-testing">
-     Systems testing
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#use-mocks-where-code-cannot-be-easily-decoupled">
-   Use mocks where code cannot be easily decoupled
-  </a>
- </li>
-</ul>
-
-    </nav>
 </div>
-    </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Testing code</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#introduction">
-   Introduction
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#good-test-suites-are-thorough-but-realistic">
-   Good test suites are thorough but realistic
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#structure-your-tests-to-reflect-how-the-code-works">
-   Structure your tests to reflect how the code works
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#use-minimal-data-for-tests">
-     Use minimal data for tests
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#write-your-test-code-to-mirror-your-codebase">
-     Write your test code to mirror your codebase
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#good-tests-do-not-rely-on-external-states">
-     Good tests do not rely on external states
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#tests-are-documentation-and-tests-are-documented">
-     Tests are documentation and tests are documented
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#use-bugs-to-improve-your-test-suite">
-     Use bugs to improve your test suite
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#avoid-flickering-tests-by-making-them-deterministic">
-     Avoid flickering tests by making them deterministic
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#writing-tests-at-a-later-date">
-     Writing tests at a later date
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#write-test-code-only-once">
-   Write test code only once
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#use-fixtures-to-reduce-repetition">
-     Use fixtures to reduce repetition
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#use-parametrization-to-test-multiple-cases-at-once">
-     Use parametrization to test multiple cases at once
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#run-tests-whenever-you-make-changes-to-your-project">
-   Run tests whenever you make changes to your project
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#testing-at-multiple-levels">
-   Testing at multiple levels
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#unit-testing">
-     Unit testing
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#integration-testing">
-     Integration testing
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#systems-testing">
-     Systems testing
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#use-mocks-where-code-cannot-be-easily-decoupled">
-   Use mocks where code cannot be easily decoupled
-  </a>
- </li>
-</ul>
+              
+              
 
-                        </nav>
-                    </div>
-                </div>
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Testing code</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
             </div>
-            <main id="main-content" role="main">
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#good-test-suites-are-thorough-but-realistic">Good test suites are thorough but realistic</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#structure-your-tests-to-reflect-how-the-code-works">Structure your tests to reflect how the code works</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#use-minimal-data-for-tests">Use minimal data for tests</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#write-your-test-code-to-mirror-your-codebase">Write your test code to mirror your codebase</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#good-tests-do-not-rely-on-external-states">Good tests do not rely on external states</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tests-are-documentation-and-tests-are-documented">Tests are documentation and tests are documented</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#use-bugs-to-improve-your-test-suite">Use bugs to improve your test suite</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#avoid-flickering-tests-by-making-them-deterministic">Avoid flickering tests by making them deterministic</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#writing-tests-at-a-later-date">Writing tests at a later date</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#write-test-code-only-once">Write test code only once</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#use-fixtures-to-reduce-repetition">Use fixtures to reduce repetition</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#use-parametrization-to-test-multiple-cases-at-once">Use parametrization to test multiple cases at once</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#run-tests-whenever-you-make-changes-to-your-project">Run tests whenever you make changes to your project</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#testing-at-multiple-levels">Testing at multiple levels</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#unit-testing">Unit testing</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#integration-testing">Integration testing</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#systems-testing">Systems testing</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#use-mocks-where-code-cannot-be-easily-decoupled">Use mocks where code cannot be easily decoupled</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
                 
-              <div>
-                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
   <section class="tex2jax_ignore mathjax_ignore" id="testing-code">
 <h1>Testing code<a class="headerlink" href="#testing-code" title="Permalink to this headline">#</a></h1>
 <p>Tests are bits of code that verify that your analytical code is working as expected.
-Where code documentation helps others to understand what you expect your code to do, testing assures that the the code meets these expectations.</p>
+Where code documentation helps others to understand what you expect your code to do,
+testing assures that the the code meets these expectations.</p>
 <p>Tests should be used proportionately across your codebase.
-Hadley Wickham gives advice on designing test suites in <a class="reference external" href="https://r-pkgs.org/testing-design.html#what-to-test">his book on writing packages for R</a>.
+Hadley Wickham gives advice on designing test suites in
+<a class="reference external" href="https://r-pkgs.org/testing-design.html#what-to-test">his book on writing packages for R</a>.
 Although this book is written for R developers the advice at the start of the chapter is more general.</p>
 <section id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h2>
@@ -689,10 +462,9 @@ However, it is usual for it to seem a daunting learning curve.</p>
 <section id="good-test-suites-are-thorough-but-realistic">
 <h2>Good test suites are thorough but realistic<a class="headerlink" href="#good-test-suites-are-thorough-but-realistic" title="Permalink to this headline">#</a></h2>
 <blockquote>
-<div><p>A quality assurance engineer walks into a bar. They order 1 beer. They order 3.14 beers. They order -1 beers. They order 99999999999 beers. They order a lizard. They order <code class="docutils literal notranslate"><span class="pre">NULL</span></code>.</p>
-</div></blockquote>
-<blockquote>
-<div><p>The first customer walks in and asks where the bathroom is. The bar bursts into flames.</p>
+<div><p>A quality assurance engineer walks into a bar. They order 1 beer.
+They order 3.14 beers. They order -1 beers. They order 99999999999 beers. They order a lizard. They order <code class="docutils literal notranslate"><span class="pre">NULL</span></code>.</p>
+<p>The first customer walks in and asks where the bathroom is. The bar bursts into flames.</p>
 </div></blockquote>
 <p>When writing code outside dedicated testing frameworks, we manually test our code.
 We might do this by running our code and seeing what the outputs are.
@@ -713,17 +485,19 @@ We can use general guides to direct where most of our testing effort goes.</p>
 <p>You shouldn’t:</p>
 <ul class="simple">
 <li><p>Attempt to test every possible input and type of input</p></li>
-<li><p>Focus on things that are already sufficiently tested (e.g. it should not be necessary to test the functionality from your dependencies packages if you are confident that they are already been subjected to sufficient assurance)</p></li>
+<li><p>Focus on things that are already sufficiently tested
+(e.g. it should not be necessary to test the functionality from your dependencies packages
+if you are confident that they are already been subjected to sufficient assurance)</p></li>
 <li><p>Write tests that have an element of randomness - tests should be deterministic</p></li>
 </ul>
 <p>You may want to use a short check-list for questions to ask when writing tests. For example:</p>
-<ul class="contains-task-list simple">
-<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Have I tested realistic combinations of my code’s input parameters?</p></li>
-<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Have I tested any discrete outputs once?</p></li>
-<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Have I tested the boundaries of non-discrete outputs?</p></li>
-<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Are informative errors raised when the code is not used in a valid or correct way?</p></li>
-<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Are informative warnings raised when the code is not used in a standard way?</p></li>
-</ul>
+<div class="highlight-md notranslate"><div class="highlight"><pre><span></span><span class="k">- [ ]</span> Have I tested realistic combinations of my code&#39;s input parameters?
+<span class="k">- [ ]</span> Have I tested any discrete outputs once?
+<span class="k">- [ ]</span> Have I tested the boundaries of non-discrete outputs?
+<span class="k">- [ ]</span> Are informative errors raised when the code is not used in a valid or correct way?
+<span class="k">- [ ]</span> Are informative warnings raised when the code is not used in a standard way?
+</pre></div>
+</div>
 <p>Don’t worry if writing all of these tests sounds like a large task.
 You’ll find that tests are repetitive, so we can reuse testing code to broaden the cases that our tests cover.
 We’ll describe two useful ways of reducing the burden of writing and maintaining tests in a later section.</p>
@@ -748,7 +522,7 @@ including <a class="reference external" href="https://www.jeremyjordan.me/testin
 <section id="structure-your-tests-to-reflect-how-the-code-works">
 <h2>Structure your tests to reflect how the code works<a class="headerlink" href="#structure-your-tests-to-reflect-how-the-code-works" title="Permalink to this headline">#</a></h2>
 <p>Tests come in many shapes and sizes, but usually follow the pattern:</p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p>Arrange - set up any objects for your test, e.g. example input data and expected output data.</p></li>
 <li><p>Act - run the code that you are testing (1 or more functions or methods).</p></li>
 <li><p>Assert - verify that the code performed the expected action, e.g. that the output matched the expected output.</p></li>
@@ -759,7 +533,7 @@ Here we’ve a basic function to get the absolute equivalent of a number:</p>
 <div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-0-UHl0aG9u" aria-selected="true" class="sphinx-tabs-tab code-tab group-tab" id="tab-0-UHl0aG9u" name="UHl0aG9u" role="tab" tabindex="0">Python</button><button aria-controls="panel-0-Ug==" aria-selected="false" class="sphinx-tabs-tab code-tab group-tab" id="tab-0-Ug==" name="Ug==" role="tab" tabindex="-1">R</button></div><div aria-labelledby="tab-0-UHl0aG9u" class="sphinx-tabs-panel code-tab group-tab" id="panel-0-UHl0aG9u" name="UHl0aG9u" role="tabpanel" tabindex="0"><div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">sqrt</span>
 
 <span class="k">def</span> <span class="nf">absolute</span><span class="p">(</span><span class="n">number</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Get the non-negative equivalent of a real number.&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Get the non-negative equivalent of a real number.&quot;&quot;&quot;</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">number</span><span class="p">,</span> <span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">float</span><span class="p">)):</span>
         <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;Input number must be numeric.&quot;</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">sqrt</span><span class="p">(</span><span class="n">number</span> <span class="o">*</span> <span class="n">number</span><span class="p">)</span> 
@@ -769,12 +543,12 @@ Here we’ve a basic function to get the absolute equivalent of a number:</p>
 <span class="c1">#&#39;</span>
 <span class="c1">#&#39; Get the non-negative equivalent of a real number.</span>
 
-<span class="n">absolute</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">number</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nf">if </span><span class="p">(</span><span class="o">!</span><span class="nf">is.numeric</span><span class="p">(</span><span class="n">number</span><span class="p">))</span> <span class="p">{</span>
-        <span class="nf">stop</span><span class="p">(</span><span class="s">&quot;Input number must be numeric.&quot;</span><span class="p">)</span>
-    <span class="p">}</span>
+<span class="n">absolute</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">function</span><span class="p">(</span><span class="n">number</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nf">if </span><span class="p">(</span><span class="o">!</span><span class="nf">is.numeric</span><span class="p">(</span><span class="n">number</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nf">stop</span><span class="p">(</span><span class="s">&quot;Input number must be numeric.&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="p">}</span>
 
-    <span class="nf">return</span><span class="p">(</span><span class="nf">sqrt</span><span class="p">(</span><span class="n">number</span> <span class="o">*</span> <span class="n">number</span><span class="p">))</span>
+<span class="w">    </span><span class="nf">return</span><span class="p">(</span><span class="nf">sqrt</span><span class="p">(</span><span class="n">number</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">number</span><span class="p">))</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -784,7 +558,7 @@ In Python this is another function, whereas in R it is simply a statement.
 We’ve spread the code out over separate lines, to make it clear how this test follows the arrange, act, assert pattern:</p>
 <div class="sphinx-tabs docutils container">
 <div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-1-UHl0aG9u" aria-selected="true" class="sphinx-tabs-tab code-tab group-tab" id="tab-1-UHl0aG9u" name="UHl0aG9u" role="tab" tabindex="0">Python</button><button aria-controls="panel-1-Ug==" aria-selected="false" class="sphinx-tabs-tab code-tab group-tab" id="tab-1-Ug==" name="Ug==" role="tab" tabindex="-1">R</button></div><div aria-labelledby="tab-1-UHl0aG9u" class="sphinx-tabs-panel code-tab group-tab" id="panel-1-UHl0aG9u" name="UHl0aG9u" role="tabpanel" tabindex="0"><div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">test_absolute_converts_negative_inputs</span><span class="p">():</span>
-    <span class="sd">&quot;&quot;&quot;Makes negative numbers positive.&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Makes negative numbers positive.&quot;&quot;&quot;</span>
     <span class="c1"># Arrange</span>
     <span class="n">input_value</span> <span class="o">=</span> <span class="o">-</span><span class="mi">5</span>
     <span class="n">expected_output</span> <span class="o">=</span> <span class="mi">5</span>
@@ -797,16 +571,16 @@ We’ve spread the code out over separate lines, to make it clear how this test 
 </pre></div>
 </div>
 </div><div aria-labelledby="tab-1-Ug==" class="sphinx-tabs-panel code-tab group-tab" hidden="true" id="panel-1-Ug==" name="Ug==" role="tabpanel" tabindex="0"><div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Arrange</span>
-<span class="n">input_value</span> <span class="o">&lt;-</span> <span class="m">-5</span>
-<span class="n">expected_output</span> <span class="o">&lt;-</span> <span class="m">5</span>
+<span class="n">input_value</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">-5</span>
+<span class="n">expected_output</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">5</span>
 
 <span class="c1"># Act</span>
-<span class="n">actual_output</span> <span class="o">&lt;-</span> <span class="nf">absolute</span><span class="p">(</span><span class="n">input_value</span><span class="p">)</span>
+<span class="n">actual_output</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">absolute</span><span class="p">(</span><span class="n">input_value</span><span class="p">)</span>
 
 <span class="c1"># Assert</span>
-<span class="nf">test_that</span><span class="p">(</span><span class="s">&quot;absolute converts negative inputs to positive&quot;</span><span class="p">,</span> <span class="p">{</span>
-    <span class="nf">expect_equal</span><span class="p">(</span><span class="n">expected_output</span><span class="p">,</span> <span class="n">actual_output</span><span class="p">)</span>
-    <span class="p">}</span>
+<span class="nf">test_that</span><span class="p">(</span><span class="s">&quot;absolute converts negative inputs to positive&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nf">expect_equal</span><span class="p">(</span><span class="n">expected_output</span><span class="p">,</span><span class="w"> </span><span class="n">actual_output</span><span class="p">)</span>
+<span class="w">    </span><span class="p">}</span>
 <span class="p">)</span>
 </pre></div>
 </div>
@@ -841,45 +615,48 @@ Directories of testing code should mirror the source code directories.
 You might want one file per function/class or one per module.
 Overall, it should be easy to identify which functions or classes your tests are for.</p>
 <div class="sphinx-tabs docutils container">
-<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-2-2-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-2-2-0" name="2-0" role="tab" tabindex="0">Python</button><button aria-controls="panel-2-2-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-2-2-1" name="2-1" role="tab" tabindex="-1">R</button></div><div aria-labelledby="tab-2-2-0" class="sphinx-tabs-panel" id="panel-2-2-0" name="2-0" role="tabpanel" tabindex="0"><p>project/
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-2-2-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-2-2-0" name="2-0" role="tab" tabindex="0">Python</button><button aria-controls="panel-2-2-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-2-2-1" name="2-1" role="tab" tabindex="-1">R</button></div><div aria-labelledby="tab-2-2-0" class="sphinx-tabs-panel" id="panel-2-2-0" name="2-0" role="tabpanel" tabindex="0"><div class="highlight-default notranslate"><div class="highlight"><pre><span></span>project/
 │
 ├── src/
-|   ├── <strong>init</strong>.py
-│   ├── <a class="reference external" href="http://math.py">math.py</a>
-│   ├── <a class="reference external" href="http://strings.py">strings.py</a>
-|   └── <a class="reference external" href="http://api.py">api.py</a>
+│   ├── __init__.py
+│   ├── math.py
+│   ├── strings.py
+│   └── api.py
 │
 └── tests/
-|
-├── unit/
-|   ├── <strong>init</strong>.py
-|   ├── test_math.py
-|   └── test_strings.py
-|
-├── integration/
-|   ├── <strong>init</strong>.py
-|   └── test_sum.py
-|
-└── end_to_end/
-├── <strong>init</strong>.py
-└── test_end_to_end.py</p>
-</div><div aria-labelledby="tab-2-2-1" class="sphinx-tabs-panel" hidden="true" id="panel-2-2-1" name="2-1" role="tabpanel" tabindex="0"><p>project/
-│
-├── .Rproj
-|
-├── R/
-│   ├── math.R
-│   ├── strings.R
-|   └── api.R
-│
-└── tests/
-|
-├── testthat/
-|   ├── test-maths_abs.R
-|   ├── test-maths_sum.R
-|   └── test-strings_option.R
-|
-└── testthat.R</p>
+    ├── unit/
+    │   ├── __init__.py
+    │   ├── test_math.py
+    │   └── test_strings.py
+    │
+    ├── integration/
+    │   ├── __init__.py
+    │   └── test_sum.py
+    │
+    └── end_to_end/
+        ├── __init__.py
+        └── test_end_to_end.py
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-2-2-1" class="sphinx-tabs-panel" hidden="true" id="panel-2-2-1" name="2-1" role="tabpanel" tabindex="0"><div class="highlight-default notranslate"><div class="highlight"><pre><span></span>project/  
+│  
+├── .Rproj  
+│  
+├── R/  
+│   ├── math.R  
+│   ├── strings.R  
+│   └── api.R  
+│  
+└── tests/  
+    │  
+    ├── testthat/  
+    │   ├── test-maths_abs.R  
+    │   ├── test-maths_sum.R  
+    │   └── test-strings_option.R  
+    │  
+    └── testthat.R  
+</pre></div>
+</div>
 </div></div>
 </section>
 <section id="good-tests-do-not-rely-on-external-states">
@@ -899,7 +676,7 @@ If the code changes, the tests may fail but test functions should not break.</p>
 <p>Good tests describe what it is they are testing.
 They do this by using good naming practices within the test code.
 A good test suite should tell a story - given this data, having run this function, we expect this output.
-Tests should follow the relevant practices outlined in <a class="reference internal" href="readable_code.html"><span class="doc std std-doc">readable code</span></a>.</p>
+Tests should follow the relevant practices outlined in <a class="reference internal" href="readable_code.html"><span class="doc std std-doc">Readable code</span></a>.</p>
 <p>The story told in a testing suite helps developers understand what code is meant to do.
 By defining expected outputs from given inputs, developers can understand the use of a particular piece of code.
 Good testing suites recognise this and supplement other forms of documentation.</p>
@@ -923,7 +700,13 @@ Running the same test with the same tested code should always produce the same o
 <p>You should write tests when you write code.
 However, this may not always be possible because of time, capability or tooling constraints.
 Write test shells where you intend to write test - this highlights where testing is missing, which makes it easy to come back to later.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>pytest
+<div class="admonition-todo admonition" id="id2">
+<p class="admonition-title">Todo</p>
+<p>Add more examples here</p>
+<p><a class="reference external" href="https://github.com/best-practice-and-impact/qa-of-code-guidance/issues/116">#116</a></p>
+</div>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-3-UHl0aG9u" aria-selected="true" class="sphinx-tabs-tab code-tab group-tab" id="tab-3-UHl0aG9u" name="UHl0aG9u" role="tab" tabindex="0">Python</button><button aria-controls="panel-3-Ug==" aria-selected="false" class="sphinx-tabs-tab code-tab group-tab" id="tab-3-Ug==" name="Ug==" role="tab" tabindex="-1">R</button></div><div aria-labelledby="tab-3-UHl0aG9u" class="sphinx-tabs-panel code-tab group-tab" id="panel-3-UHl0aG9u" name="UHl0aG9u" role="tabpanel" tabindex="0"><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>pytest
 <span class="go">...</span>
 
 <span class="go">snippets/pytest_example.py::test_absolute_converts_negative_inputs PASSED [ 25%]</span>
@@ -932,27 +715,26 @@ Write test shells where you intend to write test - this highlights where testing
 <span class="go">snippets/pytest_example.py::test_absolute_na SKIPPED                     [100%]</span>
 
 <span class="go">===================== 3 passed, 1 skipped in 0.11 seconds =====================</span>
+<span class="gp">                                                                                    $</span>
 </pre></div>
 </div>
-<div class="sphinx-tabs docutils container">
-<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-3-Ug==" aria-selected="true" class="sphinx-tabs-tab code-tab group-tab" id="tab-3-Ug==" name="Ug==" role="tab" tabindex="0">R</button></div><div aria-labelledby="tab-3-Ug==" class="sphinx-tabs-panel code-tab group-tab" id="panel-3-Ug==" name="Ug==" role="tabpanel" tabindex="0"><div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">if </span><span class="p">(</span><span class="m">1</span> <span class="o">!=</span> <span class="m">1</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nf">stop</span><span class="p">(</span><span class="s">&quot;Something has gone terribly wrong&quot;</span><span class="p">)</span>
+</div><div aria-labelledby="tab-3-Ug==" class="sphinx-tabs-panel code-tab group-tab" hidden="true" id="panel-3-Ug==" name="Ug==" role="tabpanel" tabindex="0"><div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">if </span><span class="p">(</span><span class="m">1</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="m">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nf">stop</span><span class="p">(</span><span class="s">&quot;Something has gone terribly wrong&quot;</span><span class="p">)</span>
 <span class="p">}</span>
 </pre></div>
 </div>
 </div></div>
-<p>Use Continuous Integration where possible as it keeps testing associated with version control.</p>
+<p>Use <a class="reference internal" href="continuous_integration.html#continuous-integration"><span class="std std-ref">Continuous Integration</span></a> where possible as it keeps testing associated with version control.</p>
 <p>Where manual testing is carried out instead of writing test code, this must be documented to create an audit trail.
 This documentation should include what has been tested and who has approved that it works as expected.</p>
 </section>
 </section>
 <section id="write-test-code-only-once">
 <h2>Write test code only once<a class="headerlink" href="#write-test-code-only-once" title="Permalink to this headline">#</a></h2>
-<p>Where possible, reduce repetition in your tests.
-Repetitive test code violates the <a class="reference external" href="./core_programming#dont-repeat-yourself">“Don’t repeat yourself”</a> rule.
+<p>Where possible, reduce repetition in your tests. Tests are code too, so you should still <a class="reference internal" href="modular_code.html#functions"><span class="std std-ref">make this code reusable</span></a>.
 Tests need not be totally singular, but, as with non-test code, repetition makes maintenance of test code more difficult and risky .
 As with functional code, test code is much easier to maintain when it is modular and reusable.</p>
-<div class="admonition-todo admonition" id="id2">
+<div class="admonition-todo admonition" id="id3">
 <p class="admonition-title">Todo</p>
 <p>Add examples to reducing repetition in tests to demonstrate these</p>
 <p><a class="reference external" href="https://github.com/best-practice-and-impact/qa-of-code-guidance/issues/29">#29</a></p>
@@ -984,7 +766,8 @@ We specify the pairs of inputs and expected outputs, so that our testing tool ca
 <p>This approach is equivalent to using a for-loop to apply a test function over multiple inputs and expected outputs.
 Using functionality from test packages may improve running efficiency and the detail given in test logs.</p>
 <p>In <code class="docutils literal notranslate"><span class="pre">pytest</span></code>, this can be achieved using the <a class="reference external" href="https://docs.pytest.org/en/stable/parametrize.html">Parametrize mark</a>.</p>
-<p>In R, the <code class="docutils literal notranslate"><span class="pre">patrick</span></code> package extends <code class="docutils literal notranslate"><span class="pre">testthat</span></code> to provide a <a class="reference external" href="https://rdrr.io/cran/patrick/man/with_parameters_test_that.html"><code class="docutils literal notranslate"><span class="pre">with_parameters_test_that</span></code></a> function to achieve this.</p>
+<p>In R, the <code class="docutils literal notranslate"><span class="pre">patrick</span></code> package extends <code class="docutils literal notranslate"><span class="pre">testthat</span></code> to provide a
+<a class="reference external" href="https://rdrr.io/cran/patrick/man/with_parameters_test_that.html"><code class="docutils literal notranslate"><span class="pre">with_parameters_test_that</span></code></a> function to achieve this.</p>
 </section>
 </section>
 <section id="run-tests-whenever-you-make-changes-to-your-project">
@@ -993,30 +776,10 @@ Using functionality from test packages may improve running efficiency and the de
 This ensures that changes do not break the existing, intended functionality of your code.
 Where tests fail, fix these before adding changes to a stable or production version of your code.</p>
 <p>If you have altered the functionality of your code, this will likely break existing tests.
-Failing tests here are a good reminder that your should update your documentation and tests to reflect the new functionality.</p>
-<p>If your collection of tests runs quickly, it’s simplest to run them all often.
-If some tests take longer to run, you might want to run these less often - perhaps only when relevant changes have been made.
-Otherwise, running the entire collection of tests has the added benefit of capturing unexpected side-effects of your changes.
+Failing tests are a good reminder that you should update your documentation and tests to reflect the new functionality.</p>
+<p>If your collection of tests runs quickly, it’s simplest to run them all often. This has the added benefit of capturing unexpected side-effects of your changes.
 For example, you might pick up an unexpected failure in part of your code that you have not directly changed.</p>
-<p>It’s not easy to remember to run your tests at regular intervals.
-You’re already putting effort into <code class="docutils literal notranslate"><span class="pre">commit</span></code>ing your changes to a version control system regularly.
-And you’re right to think “surely this could be automated too?”
-<a class="reference internal" href="version_control.html#continuous-integration"><span class="std std-ref">Continuous integration</span></a> can be used to automate testing, amongst other quality assurance measures, and can be triggered when changes are made to your remote version control repository.
-These tools can be used to ensure that all changes to a particular project are tested.
-Additionally, it allows others that are reviewing your code to see the results of your tests.</p>
-<p>An alternative to continuous integration, is using a Git hook.
-<a class="reference external" href="https://git-scm.com/docs/githooks">Git hooks</a> are scripts that can be set to run locally at specific points in your Git workflow.
-For example, we might set up a <code class="docutils literal notranslate"><span class="pre">pre-commit</span></code> or <code class="docutils literal notranslate"><span class="pre">pre-push</span></code> hook that runs our tests before we make each commit or push to the remote repository.
-This might stop our commit/push if the tests fail, so that we don’t push breaking changes to our remote repository.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>If your code is likely to be run on a range of software versions or operating systems, you might want to test on a variety of these. Tools exists to support local testing of combinations software versions and package dependency versions:</p>
-<ul class="simple">
-<li><p><a class="reference external" href="https://tox.readthedocs.io/en/latest/">tox</a> or <a class="reference external" href="https://nox.thea.codes/en/stable/">nox</a> for Python</p></li>
-<li><p><a class="reference external" href="https://r-hub.github.io/rhub/">rhub</a> for R</p></li>
-</ul>
-<p>However, <a class="reference internal" href="version_control.html#continuous-integration"><span class="std std-ref">continuous integration</span></a> can be used to automate these tests on a broader range on parameters.</p>
-</div>
+<p>To ensure that tests are run consistently every time changes to code are made, you should automate the process using <a class="reference internal" href="continuous_integration.html#automate-tests"><span class="std std-ref">continuous integration</span></a>.</p>
 </section>
 <section id="testing-at-multiple-levels">
 <h2>Testing at multiple levels<a class="headerlink" href="#testing-at-multiple-levels" title="Permalink to this headline">#</a></h2>
@@ -1025,7 +788,7 @@ This might stop our commit/push if the tests fail, so that we don’t push break
 <h3>Unit testing<a class="headerlink" href="#unit-testing" title="Permalink to this headline">#</a></h3>
 <div class="admonition-learning admonition">
 <p class="admonition-title">Key Learning</p>
-<p>You should follow the <a class="reference external" href="https://learninghub.ons.gov.uk/enrol/index.php?id=539">Introduction to Unit Testing course</a> (GSS only) for applied examples in Python and R.
+<p>You should follow the <a class="reference external" href="https://learninghub.ons.gov.uk/course/view.php?id=499">Introduction to Unit Testing course</a> for applied examples in Python and R.
 The course also covers writing and documenting functions, and error handling.</p>
 <p>Other resources include:</p>
 <ul class="simple">
@@ -1034,7 +797,7 @@ The course also covers writing and documenting functions, and error handling.</p
 <li><p>Real Python <a class="reference external" href="https://realpython.com/python-testing/">Getting Started With Testing in Python</a></p></li>
 </ul>
 </div>
-<div class="admonition-todo admonition" id="id3">
+<div class="admonition-todo admonition" id="id4">
 <p class="admonition-title">Todo</p>
 <p>Testing in multiple environments?</p>
 <ul class="simple">
@@ -1070,7 +833,7 @@ Mocking is useful for removing things that we don’t care about from the the te
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./."
         },
         predefinedOutput: true
@@ -1078,50 +841,121 @@ Mocking is useful for removing things that we don’t care about from the the te
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="peer_review.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Peer review</p>
-        </div>
-    </a>
-    <a class='right-next' id="next-link" href="learning.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Learning resources</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
-</div>
-            </footer>
-        </div>
-    </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
   
-    <div class="extra_footer">
-      <p>Analysis Function reproducible analytical pipelines (RAP) support</p><p>This is a living document, please help use to make it grow by providing any feedback <a href='mailto:Analysis.Function@ons.gov.uk'>by email</a> or via the <a href='https://github.com/best-practice-and-impact/qa-of-code-guidance'>GitHub repository</a>.
-    </div>
-</p>
-        </footer>
-    </div>
-    
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="peer_review.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Peer review</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="continuous_integration.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Automating Code Quality Assurance</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
 </div>
 
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
-      </div>
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#good-test-suites-are-thorough-but-realistic">Good test suites are thorough but realistic</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#structure-your-tests-to-reflect-how-the-code-works">Structure your tests to reflect how the code works</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#use-minimal-data-for-tests">Use minimal data for tests</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#write-your-test-code-to-mirror-your-codebase">Write your test code to mirror your codebase</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#good-tests-do-not-rely-on-external-states">Good tests do not rely on external states</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tests-are-documentation-and-tests-are-documented">Tests are documentation and tests are documented</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#use-bugs-to-improve-your-test-suite">Use bugs to improve your test suite</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#avoid-flickering-tests-by-making-them-deterministic">Avoid flickering tests by making them deterministic</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#writing-tests-at-a-later-date">Writing tests at a later date</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#write-test-code-only-once">Write test code only once</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#use-fixtures-to-reduce-repetition">Use fixtures to reduce repetition</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#use-parametrization-to-test-multiple-cases-at-once">Use parametrization to test multiple cases at once</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#run-tests-whenever-you-make-changes-to-your-project">Run tests whenever you make changes to your project</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#testing-at-multiple-levels">Testing at multiple levels</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#unit-testing">Unit testing</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#integration-testing">Integration testing</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#systems-testing">Systems testing</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#use-mocks-where-code-cannot-be-easily-decoupled">Use mocks where code cannot be easily decoupled</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  <p>Analysis Function - Analytical Standards and Pipelines hub</p><p>This is a living document, please help use to make it grow by providing any feedback <a href='mailto:ASAP@ons.gov.uk'>by email</a> or via the <a href='https://github.com/best-practice-and-impact/qa-of-code-guidance'>GitHub repository</a>.
+</div>
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
     </div>
+  </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
 
-
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>

@@ -1,40 +1,50 @@
 
+
 <!DOCTYPE html>
 
-<html lang="en">
+
+<html lang="en" >
+
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
     <title>Readable code &#8212; Quality Assurance of Code for Analysis and Research</title>
-    
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="_static/accessibility.css" />
     <link rel="stylesheet" type="text/css" href="_static/logo.css" />
     <link rel="stylesheet" type="text/css" href="_static/admonitions.css" />
     <link rel="stylesheet" type="text/css" href="_static/markdown_within_tabs.css" />
-    <link rel="stylesheet" type="text/css" href="_static/accessibility.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
-    
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -42,13 +52,13 @@
     <script src="_static/doctools.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="_static/togglebutton.js"></script>
     <script src="_static/tabs.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
@@ -58,579 +68,376 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'readable_code';</script>
     <link rel="shortcut icon" href="_static/favicon.ico"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Structuring your project" href="project_structure.html" />
     <link rel="prev" title="Modular code" href="modular_code.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en">
-    
-
-    <!-- Google Analytics -->
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
-    <div class="container-fluid" id="banner"></div>
-
-    
-
-    <div class="container-xl">
-      <div class="row">
-          
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="index.html">
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+      <div class="bd-sidebar-primary bd-sidebar">
         
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+    
+    
       
-      
-      <img src="_static/duck_book_logo.svg" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">Quality Assurance of Code for Analysis and Research</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
-        <p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Overview
- </span>
-</p>
+    
+    
+    <img src="_static/duck_book_logo.svg" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/duck_book_logo.svg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Overview</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="glossary.html">
-   Glossary of terms
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="managers_guide.html">
-   Managing analytical code development
-  </a>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="checklists.html">
-   Code quality assurance checklists
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
-  <label for="toctree-checkbox-1">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="checklist_lower.html">
-     Lower quality assurance
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="checklist_moderate.html">
-     Moderate quality assurance
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="checklist_higher.html">
-     Higher quality assurance
-    </a>
-   </li>
-  </ul>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary of terms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="managers_guide.html">Managing analytical code development</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="checklists.html">Code quality assurance checklists</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="checklist_lower.html">Lower quality assurance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="checklist_moderate.html">Moderate quality assurance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="checklist_higher.html">Higher quality assurance</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Guidance
- </span>
-</p>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Guidance</span></p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="principles.html">
-   Principles
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="modular_code.html">
-   Modular code
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   Readable code
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="project_structure.html">
-   Structuring your project
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="code_documentation.html">
-   Code documentation
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="project_documentation.html">
-   Project documentation
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="version_control.html">
-   Version control
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="configuration.html">
-   Configuration
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="data.html">
-   Data Management
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="peer_review.html">
-   Peer review
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="testing_code.html">
-   Testing code
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="principles.html">Principles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modular_code.html">Modular code</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Readable code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="project_structure.html">Structuring your project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code_documentation.html">Code documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="project_documentation.html">Project documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="version_control.html">Version control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configuration.html">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data.html">Data Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="peer_review.html">Peer review</a></li>
+<li class="toctree-l1"><a class="reference internal" href="testing_code.html">Testing code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="continuous_integration.html">Automating Code Quality Assurance</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Resources
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Resources</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="learning.html">
-   Learning resources
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="tools.html">
-   Tools
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="learning.html">Learning resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tools.html">Tools</a></li>
 </ul>
 
     </div>
 </nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            <p>Book version 2022.4</p><a href='https://www.gov.uk/government/organisations/government-analysis-function' target='_blank'><img src='./_static/af_logo.png' alt='The Government Analysis Function logo' style='width:50%;'></a>
-            </div>
-            
-        </div>
     </div>
-    <div id="rtd-footer-container"></div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/best-practice-and-impact/qa-of-code-guidance" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/best-practice-and-impact/qa-of-code-guidance/edit/master/book/readable_code.md" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/best-practice-and-impact/qa-of-code-guidance/issues/new?title=Issue%20on%20page%20%2Freadable_code.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
 </div>
 
 
-          
-
-
-          
-<!-- A tiny helper pixel to detect if we've scrolled -->
-<div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
-    
-    <div class="header-article row sticky-top noprint">
-        
 
 
 
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/readable_code.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
   </span>
-
-</label>
-
-        
-    </div>
-    <div class="header-article__right">
-<button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
   <i class="fas fa-expand"></i>
   </span>
 
 </button>
 
-<div class="menu-dropdown menu-dropdown-repository-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Source repositories">
-      <i class="fab fa-github"></i>
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://github.com/best-practice-and-impact/qa-of-code-guidance"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Source repository"
->
-  
+`);
+</script>
 
-<span class="headerbtn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-<span class="headerbtn__text-container">repository</span>
-</a>
-
-      </li>
-      
-      <li>
-        <a href="https://github.com/best-practice-and-impact/qa-of-code-guidance/issues/new?title=Issue%20on%20page%20%2Freadable_code.html&body=Your%20issue%20content%20here."
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Open an issue"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="headerbtn__text-container">open issue</span>
-</a>
-
-      </li>
-      
-      <li>
-        <a href="https://github.com/best-practice-and-impact/qa-of-code-guidance/edit/master/book/readable_code.md"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Edit this page"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-pencil-alt"></i>
-  </span>
-<span class="headerbtn__text-container">suggest edit</span>
-</a>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="_sources/readable_code.md"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="headerbtn__text-container">.md</span>
-</a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="headerbtn__text-container">.pdf</span>
-</button>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
 </label>
-
+</div></div>
+      
     </div>
+  
 </div>
-
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#motivation">
-   Motivation
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#clean-code">
-   Clean code
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#use-informative-names">
-     Use informative names
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#give-variables-clear-and-concise-names">
-       Give variables clear and concise names
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#name-functions-after-the-task-that-they-perform">
-       Name functions after the task that they perform
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#make-classes-easy-to-identify">
-       Make classes easy to identify
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#make-code-easier-to-read-by-following-a-consistent-style">
-     Make code easier to read by following a consistent style
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#write-code-that-other-programmers-will-find-easy-to-read">
-       Write code that other programmers will find easy to read
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#automate-style-checks">
-       Automate style checks
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#software-ideas-for-analysts">
-   Software ideas for analysts
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#keep-it-simple">
-     Keep it simple
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#don-t-repeat-yourself">
-     Don’t repeat yourself
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#be-explicit">
-     Be explicit
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#separate-responsibilities">
-     Separate responsibilities
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#make-functions-open-to-extension-but-closed-for-modification">
-     Make functions open to extension, but closed for modification
-    </a>
-   </li>
-  </ul>
- </li>
-</ul>
-
-    </nav>
 </div>
-    </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Readable code</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#motivation">
-   Motivation
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#clean-code">
-   Clean code
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#use-informative-names">
-     Use informative names
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#give-variables-clear-and-concise-names">
-       Give variables clear and concise names
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#name-functions-after-the-task-that-they-perform">
-       Name functions after the task that they perform
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#make-classes-easy-to-identify">
-       Make classes easy to identify
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#make-code-easier-to-read-by-following-a-consistent-style">
-     Make code easier to read by following a consistent style
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#write-code-that-other-programmers-will-find-easy-to-read">
-       Write code that other programmers will find easy to read
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#automate-style-checks">
-       Automate style checks
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#software-ideas-for-analysts">
-   Software ideas for analysts
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#keep-it-simple">
-     Keep it simple
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#don-t-repeat-yourself">
-     Don’t repeat yourself
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#be-explicit">
-     Be explicit
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#separate-responsibilities">
-     Separate responsibilities
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#make-functions-open-to-extension-but-closed-for-modification">
-     Make functions open to extension, but closed for modification
-    </a>
-   </li>
-  </ul>
- </li>
-</ul>
+              
+              
 
-                        </nav>
-                    </div>
-                </div>
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Readable code</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
             </div>
-            <main id="main-content" role="main">
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#motivation">Motivation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#clean-code">Clean code</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#use-informative-names">Use informative names</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#give-variables-clear-and-concise-names">Give variables clear and concise names</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#name-functions-after-the-task-that-they-perform">Name functions after the task that they perform</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#make-classes-easy-to-identify">Make classes easy to identify</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#make-code-easier-to-read-by-following-a-consistent-style">Make code easier to read by following a consistent style</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#write-code-that-other-programmers-will-find-easy-to-read">Write code that other programmers will find easy to read</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#automate-style-checks">Automate style checks</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#software-ideas-for-analysts">Software ideas for analysts</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#keep-it-simple">Keep it simple</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#don-t-repeat-yourself">Don’t repeat yourself</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#be-explicit">Be explicit</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#separate-responsibilities">Separate responsibilities</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#make-functions-open-to-extension-but-closed-for-modification">Make functions open to extension, but closed for modification</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
                 
-              <div>
-                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
   <section class="tex2jax_ignore mathjax_ignore" id="readable-code">
 <h1>Readable code<a class="headerlink" href="#readable-code" title="Permalink to this headline">#</a></h1>
-<p>The principles outlined in this chapter represent good practices for general programming and software development. These have been tailored to a more analytical workflow.</p>
+<p>The principles outlined in this chapter represent good practices for general programming and software development.
+These have been tailored to a more analytical workflow.</p>
 <div class="admonition-learning admonition">
 <p class="admonition-title">Pre-requisites</p>
-<p>To get the most benefit from this section, you should have an understanding modular code, which was covered in the <a class="reference internal" href="modular_code.html"><span class="doc std std-doc">previous chapter</span></a>. You should also have an understand of core programming concepts such as:</p>
+<p>To get the most benefit from this section, you should have an understanding modular code, which was covered in the <a class="reference internal" href="modular_code.html"><span class="doc std std-doc">previous chapter</span></a>.
+You should also have an understand of core programming concepts such as:</p>
 <ul class="simple">
 <li><p>storing information in variables</p></li>
 <li><p>using control flow, such as if-statements and for-loops</p></li>
@@ -643,8 +450,13 @@ title="Print to PDF"
 <div><p>Code is read more often than it is written.</p>
 <p class="attribution">—Guido van Rossum (creator of Python)</p>
 </div></blockquote>
-<p>When writing code, we should expect that at some point someone else will need to understand, use and adapt it. This might be yourself in six months time. As such, it is important to empathise with these potential users and write code that is tidy, understandable and does not add unnecessary complexity. Doing this will make for a ‘self-documenting’ codebase that does not need as much additional documentation.</p>
-<p>This chapter highlights good coding practices that will improve the readability and maintainability of your code. Here, readability refers to how easily another analyst can gain a decent understand of how your code works, within a reasonable amount of time. Maintainability refers to how easily other analysts can understand your code well enough to modify and repair it.</p>
+<p>When writing code, we should expect that at some point someone else will need to understand, use and adapt it.
+This might be yourself in six months time.
+As such, it is important to empathise with these potential users and write code that is tidy, understandable and does not add unnecessary complexity.
+Doing this will make for a ‘self-documenting’ codebase that does not need as much additional documentation.</p>
+<p>This chapter highlights good coding practices that will improve the readability and maintainability of your code.
+Here, readability refers to how easily another analyst can gain a decent understand of how your code works, within a reasonable amount of time.
+Maintainability refers to how easily other analysts can understand your code well enough to modify and repair it.</p>
 </section>
 <section id="clean-code">
 <h2>Clean code<a class="headerlink" href="#clean-code" title="Permalink to this headline">#</a></h2>
@@ -652,12 +464,18 @@ title="Print to PDF"
 <div><p>Programs are meant to be read by humans and only incidentally for computers to execute.</p>
 <p class="attribution">—Donald Knuth, The Art of Computer Programming</p>
 </div></blockquote>
-<p>Code with high readability is often referred to as ‘clean code’. Clean code helps us understand a program faster, as it avoids points of confusion and ambiguity.</p>
-<p>The following sections will present some key aspects of writing clean code that are fairly widely applicable. That said, each individual programming language has idiomatic ways of writing code that are specific to its features. Additionally, each language usually has some form of accepted style guide.</p>
-<p>Make sure to consult the style guides for your language as first point of call. This is an important point to stress, as these guides will capture the most up to date guidance for your language of choice, which may not be available in this document.</p>
+<p>Code with high readability is often referred to as ‘clean code’.
+Clean code helps us understand a program faster, as it avoids points of confusion and ambiguity.</p>
+<p>The following sections will present some key aspects of writing clean code that are fairly widely applicable.
+That said, each individual programming language has idiomatic ways of writing code that are specific to its features.
+Additionally, each language usually has some form of accepted style guide.</p>
+<p>Make sure to consult the style guides for your language as first point of call.
+This is an important point to stress, as these guides will capture the most up to date guidance for your language of choice,
+which may not be available in this document.</p>
 <section id="use-informative-names">
 <span id="naming"></span><h3>Use informative names<a class="headerlink" href="#use-informative-names" title="Permalink to this headline">#</a></h3>
-<p>The most important aspect of clean code is the naming of identifiers within your code. This includes variables, functions, classes and any other objects that can be assigned a name.</p>
+<p>The most important aspect of clean code is the naming of identifiers within your code.
+This includes variables, functions, classes and any other objects that can be assigned a name.</p>
 <p>Someone reading your code will benefit greatly if you use names that are:</p>
 <ul class="simple">
 <li><p>informative and not misleading</p></li>
@@ -678,19 +496,25 @@ title="Print to PDF"
 <span class="n">my_favourite_number</span> <span class="o">=</span> <span class="s2">&quot;ssh, I&#39;m a string&quot;</span>
 </pre></div>
 </div>
-</div><div aria-labelledby="tab-0-Ug==" class="sphinx-tabs-panel code-tab group-tab" hidden="true" id="panel-0-Ug==" name="Ug==" role="tabpanel" tabindex="0"><div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">&lt;-</span> <span class="s">&quot;Sioban&quot;</span>
+</div><div aria-labelledby="tab-0-Ug==" class="sphinx-tabs-panel code-tab group-tab" hidden="true" id="panel-0-Ug==" name="Ug==" role="tabpanel" tabindex="0"><div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="s">&quot;Sioban&quot;</span>
 
-<span class="n">y</span> <span class="o">&lt;-</span> <span class="m">42</span>
+<span class="n">y</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">42</span>
 
-<span class="n">z</span> <span class="o">&lt;-</span> <span class="nf">data.frame</span><span class="p">()</span>
+<span class="n">z</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">data.frame</span><span class="p">()</span>
 
-<span class="n">my_favourite_number</span> <span class="o">&lt;-</span> <span class="s">&quot;ssh, I&#39;m a string&quot;</span>
+<span class="n">my_favourite_number</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="s">&quot;ssh, I&#39;m a string&quot;</span>
 </pre></div>
 </div>
 </div></div>
-<p>Another developer, or even ‘future you’, would be unable to correctly interpret what these variable names to represent. Therefore, you should strive to avoid cryptic or single-letter identifiers.</p>
-<p>That said, there are situations where some seemingly cryptic identifiers make sense. Using single letters to name variables is suitable when implementing methodologies from mathematical notation. However, even in these cases you must make sure that the formulas being implemented are clear, readily available to the reader and are consistent throughout your code. Be sure to cite the source of the mathematical formula in these cases.</p>
-<p>In other cases, using variable names that contain a few (3 or so) informative words can drastically improve the readability of your code. How these words are separated (be it <code class="docutils literal notranslate"><span class="pre">CamelCase</span></code> or <code class="docutils literal notranslate"><span class="pre">snake_case</span></code>) will depend on your language of choice.</p>
+<p>Another developer, or even ‘future you’, would be unable to correctly interpret what these variable names to represent.
+Therefore, you should strive to avoid cryptic or single-letter identifiers.</p>
+<p>That said, there are situations where some seemingly cryptic identifiers make sense.
+Using single letters to name variables is suitable when implementing methodologies from mathematical notation.
+However, even in these cases you must make sure that the formulas being implemented are clear,
+readily available to the reader and are consistent throughout your code.
+Be sure to cite the source of the mathematical formula in these cases.</p>
+<p>In other cases, using variable names that contain a few (3 or so) informative words can drastically improve the readability of your code.
+How these words are separated (be it <code class="docutils literal notranslate"><span class="pre">CamelCase</span></code> or <code class="docutils literal notranslate"><span class="pre">snake_case</span></code>) will depend on your language of choice.</p>
 <div class="sphinx-tabs docutils container">
 <div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-1-UHl0aG9u" aria-selected="true" class="sphinx-tabs-tab code-tab group-tab" id="tab-1-UHl0aG9u" name="UHl0aG9u" role="tab" tabindex="0">Python</button><button aria-controls="panel-1-Ug==" aria-selected="false" class="sphinx-tabs-tab code-tab group-tab" id="tab-1-Ug==" name="Ug==" role="tab" tabindex="-1">R</button></div><div aria-labelledby="tab-1-UHl0aG9u" class="sphinx-tabs-panel code-tab group-tab" id="panel-1-UHl0aG9u" name="UHl0aG9u" role="tabpanel" tabindex="0"><div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
@@ -711,32 +535,35 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div><div aria-labelledby="tab-1-Ug==" class="sphinx-tabs-panel code-tab group-tab" hidden="true" id="panel-1-Ug==" name="Ug==" role="tabpanel" tabindex="0"><div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Defining variables</span>
-<span class="n">first_name</span> <span class="o">&lt;-</span> <span class="s">&quot;Sioban&quot;</span>
+<span class="n">first_name</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="s">&quot;Sioban&quot;</span>
 
-<span class="n">number_of_attendees</span> <span class="o">&lt;-</span> <span class="m">42</span>
+<span class="n">number_of_attendees</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">42</span>
 
-<span class="n">empty_dataframe</span> <span class="o">&lt;-</span> <span class="nf">data.frame</span><span class="p">()</span>
+<span class="n">empty_dataframe</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">data.frame</span><span class="p">()</span>
 
 
 <span class="c1"># Using variables</span>
-<span class="nf">paste</span><span class="p">(</span><span class="s">&quot;Hi&quot;</span><span class="p">,</span> <span class="n">first_name</span><span class="p">)</span>
+<span class="nf">paste</span><span class="p">(</span><span class="s">&quot;Hi&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">first_name</span><span class="p">)</span>
 
-<span class="n">number_of_attendees</span> <span class="o">&lt;-</span> <span class="n">number_of_attendees</span> <span class="o">+</span> <span class="m">1</span>
+<span class="n">number_of_attendees</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">number_of_attendees</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">1</span>
 
 <span class="n">plyr</span><span class="o">::</span><span class="nf">empty</span><span class="p">(</span><span class="n">empty_dataframe</span><span class="p">)</span>
 </pre></div>
 </div>
 </div></div>
 <p>Ideally, the purpose of variables should be clear from reading their names.
-In addition, the variable names should make logical sense in the context that they are used later on in the code. This removes the need for explanatory comments, as your intentions can be interpreted from the code itself (‘self-documenting’ code).</p>
-<p>Naming is important for distinguishing between similar variables. A first instinct might be to assign numerical suffixes or other similar tags to differentiate variables. However, unless the suffix itself is meaningful within the context of the rest of the code, it will not make the code more understandable:</p>
+In addition, the variable names should make logical sense in the context that they are used later on in the code.
+This removes the need for explanatory comments, as your intentions can be interpreted from the code itself (‘self-documenting’ code).</p>
+<p>Naming is important for distinguishing between similar variables.
+A first instinct might be to assign numerical suffixes or other similar tags to differentiate variables.
+However, unless the suffix itself is meaningful within the context of the rest of the code, it will not make the code more understandable:</p>
 <div class="sphinx-tabs docutils container">
 <div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-2-UHl0aG9u" aria-selected="true" class="sphinx-tabs-tab code-tab group-tab" id="tab-2-UHl0aG9u" name="UHl0aG9u" role="tab" tabindex="0">Python</button><button aria-controls="panel-2-Ug==" aria-selected="false" class="sphinx-tabs-tab code-tab group-tab" id="tab-2-Ug==" name="Ug==" role="tab" tabindex="-1">R</button></div><div aria-labelledby="tab-2-UHl0aG9u" class="sphinx-tabs-panel code-tab group-tab" id="panel-2-UHl0aG9u" name="UHl0aG9u" role="tabpanel" tabindex="0"><div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="n">letters_1</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">]</span>
 <span class="n">letters_2</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="s2">&quot;z&quot;</span><span class="p">]</span>
 </pre></div>
 </div>
-</div><div aria-labelledby="tab-2-Ug==" class="sphinx-tabs-panel code-tab group-tab" hidden="true" id="panel-2-Ug==" name="Ug==" role="tabpanel" tabindex="0"><div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">letters_1</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;a&quot;</span><span class="p">,</span> <span class="s">&quot;b&quot;</span><span class="p">,</span> <span class="s">&quot;c&quot;</span><span class="p">)</span>
-<span class="n">letters_2</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;x&quot;</span><span class="p">,</span> <span class="s">&quot;y&quot;</span><span class="p">,</span> <span class="s">&quot;z&quot;</span><span class="p">)</span>
+</div><div aria-labelledby="tab-2-Ug==" class="sphinx-tabs-panel code-tab group-tab" hidden="true" id="panel-2-Ug==" name="Ug==" role="tabpanel" tabindex="0"><div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">letters_1</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;a&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;b&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;c&quot;</span><span class="p">)</span>
+<span class="n">letters_2</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;x&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;y&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;z&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div></div>
@@ -749,17 +576,17 @@ In addition, the variable names should make logical sense in the context that th
 <span class="n">letters_first_three_reversed</span> <span class="o">=</span> <span class="nb">reversed</span><span class="p">(</span><span class="n">letters_first_three</span><span class="p">)</span>
 </pre></div>
 </div>
-</div><div aria-labelledby="tab-3-Ug==" class="sphinx-tabs-panel code-tab group-tab" hidden="true" id="panel-3-Ug==" name="Ug==" role="tabpanel" tabindex="0"><div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">letters_first_three</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;a&quot;</span><span class="p">,</span> <span class="s">&quot;b&quot;</span><span class="p">,</span> <span class="s">&quot;c&quot;</span><span class="p">)</span>
-<span class="n">letters_last_three</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;x&quot;</span><span class="p">,</span> <span class="s">&quot;y&quot;</span><span class="p">,</span> <span class="s">&quot;z&quot;</span><span class="p">)</span>
+</div><div aria-labelledby="tab-3-Ug==" class="sphinx-tabs-panel code-tab group-tab" hidden="true" id="panel-3-Ug==" name="Ug==" role="tabpanel" tabindex="0"><div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">letters_first_three</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;a&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;b&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;c&quot;</span><span class="p">)</span>
+<span class="n">letters_last_three</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;x&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;y&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;z&quot;</span><span class="p">)</span>
 
-<span class="n">letters_first_three_reversed</span> <span class="o">&lt;-</span> <span class="nf">rev</span><span class="p">(</span><span class="n">letters_first_three</span><span class="p">)</span>
+<span class="n">letters_first_three_reversed</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">rev</span><span class="p">(</span><span class="n">letters_first_three</span><span class="p">)</span>
 </pre></div>
 </div>
 </div></div>
 <p>Here the naming convention indicates that both lists are similar, but also describes the differences between them.
 It is also clear how the third, new list relates to the first list that was used to create it.</p>
 <p>With more informative names, we obviously lose the brevity of variable names:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">letters_first_three_reversed_plus_t_minus_a_converted_to_greek</span>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>letters_first_three_reversed_plus_t_minus_a_converted_to_greek
 </pre></div>
 </div>
 <p>There is a clear trade-off between the usability and informativeness of variable names.
@@ -767,13 +594,17 @@ You’ll need to use your best judgement to adapt variable names in order to kee
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>In languages like Python, where indentation is part of the syntax to denote code blocks, you will be much more aware of this trade-off.</p>
-<p>In practice, the PEP8 style guide for Python recommends line widths of 79 characters and having overly descriptive names might impact your compliance with a style guide like that.</p>
+<p>In practice, the PEP8 style guide for Python recommends line widths of 79 characters
+and having overly descriptive names might impact your compliance with a style guide like that.</p>
 </div>
 </section>
 <section id="name-functions-after-the-task-that-they-perform">
 <span id="naming-functions"></span><h4>Name functions after the task that they perform<a class="headerlink" href="#name-functions-after-the-task-that-they-perform" title="Permalink to this headline">#</a></h4>
-<p>Naming functions should respect the best practices already covered in the <a class="reference internal" href="#naming-variables"><span class="std std-ref">Naming variables</span></a>, however, there are a few other points worth raising that are exclusive to function and method names.</p>
-<p>Firstly, your user should be able to infer the purpose or action of a function from its name. If you can’t describe the overall task performed by the function in a few words, then it may be that your function is overly complex or it requires further detail in its documentation.</p>
+<p>Naming functions should respect the best practices already covered in the <a class="reference internal" href="#naming-variables"><span class="std std-ref">Naming variables</span></a>,
+however, there are a few other points worth raising that are exclusive to function and method names.</p>
+<p>Firstly, your user should be able to infer the purpose or action of a function from its name.
+If you can’t describe the overall task performed by the function in a few words,
+then it may be that your function is overly complex or it requires further detail in its documentation.</p>
 <p>Where a function performs a specific task, it can be effective to describe this task in the function name, starting with a verb:</p>
 <div class="sphinx-tabs docutils container">
 <div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-4-UHl0aG9u" aria-selected="true" class="sphinx-tabs-tab code-tab group-tab" id="tab-4-UHl0aG9u" name="UHl0aG9u" role="tab" tabindex="0">Python</button><button aria-controls="panel-4-Ug==" aria-selected="false" class="sphinx-tabs-tab code-tab group-tab" id="tab-4-Ug==" name="Ug==" role="tab" tabindex="-1">R</button></div><div aria-labelledby="tab-4-UHl0aG9u" class="sphinx-tabs-panel code-tab group-tab" id="panel-4-UHl0aG9u" name="UHl0aG9u" role="tabpanel" tabindex="0"><div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">process_text</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
@@ -782,15 +613,16 @@ You’ll need to use your best judgement to adapt variable names in order to kee
 <span class="n">processed_text</span> <span class="o">=</span> <span class="n">process_text</span><span class="p">(</span><span class="s2">&quot;The following document was handled using...&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-</div><div aria-labelledby="tab-4-Ug==" class="sphinx-tabs-panel code-tab group-tab" hidden="true" id="panel-4-Ug==" name="Ug==" role="tabpanel" tabindex="0"><div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">process_text</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="p">{</span>
-    <span class="kc">...</span>
+</div><div aria-labelledby="tab-4-Ug==" class="sphinx-tabs-panel code-tab group-tab" hidden="true" id="panel-4-Ug==" name="Ug==" role="tabpanel" tabindex="0"><div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">process_text</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">function</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kc">...</span>
 <span class="p">}</span>
 
-<span class="n">processed_text</span> <span class="o">&lt;-</span> <span class="nf">process_text</span><span class="p">(</span><span class="s">&quot;The following document was handled using...&quot;</span><span class="p">)</span>
+<span class="n">processed_text</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">process_text</span><span class="p">(</span><span class="s">&quot;The following document was handled using...&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div></div>
-<p>This is often a tidy way to structure high-level functions in your pipeline. Well defined, verb-based names often lead to clear pipelines such as:</p>
+<p>This is often a tidy way to structure high-level functions in your pipeline.
+Well defined, verb-based names often lead to clear pipelines such as:</p>
 <div class="sphinx-tabs docutils container">
 <div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-5-UHl0aG9u" aria-selected="true" class="sphinx-tabs-tab code-tab group-tab" id="tab-5-UHl0aG9u" name="UHl0aG9u" role="tab" tabindex="0">Python</button><button aria-controls="panel-5-Ug==" aria-selected="false" class="sphinx-tabs-tab code-tab group-tab" id="tab-5-Ug==" name="Ug==" role="tab" tabindex="-1">R</button></div><div aria-labelledby="tab-5-UHl0aG9u" class="sphinx-tabs-panel code-tab group-tab" id="panel-5-UHl0aG9u" name="UHl0aG9u" role="tabpanel" tabindex="0"><div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="n">data_path</span> <span class="o">=</span> <span class="s2">&quot;path/to/data&quot;</span>
 
@@ -804,16 +636,16 @@ You’ll need to use your best judgement to adapt variable names in order to kee
 <span class="n">report_data</span> <span class="o">=</span> <span class="n">generate_report</span><span class="p">(</span><span class="n">model_results</span><span class="p">)</span>
 </pre></div>
 </div>
-</div><div aria-labelledby="tab-5-Ug==" class="sphinx-tabs-panel code-tab group-tab" hidden="true" id="panel-5-Ug==" name="Ug==" role="tabpanel" tabindex="0"><div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">data_path</span> <span class="o">&lt;-</span> <span class="s">&quot;path/to/data&quot;</span>
+</div><div aria-labelledby="tab-5-Ug==" class="sphinx-tabs-panel code-tab group-tab" hidden="true" id="panel-5-Ug==" name="Ug==" role="tabpanel" tabindex="0"><div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">data_path</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="s">&quot;path/to/data&quot;</span>
 
 <span class="c1"># in short</span>
-<span class="n">report_data</span> <span class="o">&lt;-</span> <span class="nf">generate_report</span><span class="p">(</span><span class="nf">model</span><span class="p">(</span><span class="nf">clean</span><span class="p">(</span><span class="nf">load</span><span class="p">(</span><span class="n">data_path</span><span class="p">))))</span>
+<span class="n">report_data</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">generate_report</span><span class="p">(</span><span class="nf">model</span><span class="p">(</span><span class="nf">clean</span><span class="p">(</span><span class="nf">load</span><span class="p">(</span><span class="n">data_path</span><span class="p">))))</span>
 
 <span class="c1"># or, more explicitly</span>
-<span class="n">data</span> <span class="o">&lt;-</span> <span class="nf">load</span><span class="p">(</span><span class="n">data_path</span><span class="p">)</span>
-<span class="n">clean_data</span> <span class="o">&lt;-</span> <span class="nf">clean</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
-<span class="n">model_results</span> <span class="o">&lt;-</span> <span class="nf">model</span><span class="p">(</span><span class="n">clean_data</span><span class="p">)</span>
-<span class="n">report_data</span> <span class="o">&lt;-</span> <span class="nf">generate_report</span><span class="p">(</span><span class="n">model_results</span><span class="p">)</span>
+<span class="n">data</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">load</span><span class="p">(</span><span class="n">data_path</span><span class="p">)</span>
+<span class="n">clean_data</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">clean</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="n">model_results</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">model</span><span class="p">(</span><span class="n">clean_data</span><span class="p">)</span>
+<span class="n">report_data</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">generate_report</span><span class="p">(</span><span class="n">model_results</span><span class="p">)</span>
 </pre></div>
 </div>
 </div></div>
@@ -826,12 +658,12 @@ You’ll need to use your best judgement to adapt variable names in order to kee
         <span class="k">return</span> <span class="kc">False</span>
 </pre></div>
 </div>
-</div><div aria-labelledby="tab-6-Ug==" class="sphinx-tabs-panel code-tab group-tab" hidden="true" id="panel-6-Ug==" name="Ug==" role="tabpanel" tabindex="0"><div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">are_missing_values_present</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nf">if </span><span class="p">(</span><span class="kc">NA</span> <span class="o">%in%</span> <span class="n">data</span><span class="p">)</span> <span class="p">{</span>
-      <span class="kc">TRUE</span>
-  <span class="p">}</span> <span class="n">else</span> <span class="p">{</span>
-      <span class="kc">FALSE</span>
-  <span class="p">}</span>
+</div><div aria-labelledby="tab-6-Ug==" class="sphinx-tabs-panel code-tab group-tab" hidden="true" id="panel-6-Ug==" name="Ug==" role="tabpanel" tabindex="0"><div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">are_missing_values_present</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">function</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nf">if </span><span class="p">(</span><span class="kc">NA</span><span class="w"> </span><span class="o">%in%</span><span class="w"> </span><span class="n">data</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="kc">TRUE</span>
+<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="n">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="kc">FALSE</span>
+<span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -842,8 +674,8 @@ You’ll need to use your best judgement to adapt variable names in order to kee
    <span class="n">model</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
 </pre></div>
 </div>
-</div><div aria-labelledby="tab-7-Ug==" class="sphinx-tabs-panel code-tab group-tab" hidden="true" id="panel-7-Ug==" name="Ug==" role="tabpanel" tabindex="0"><div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">if </span><span class="p">(</span><span class="nf">is_clean</span><span class="p">(</span><span class="n">data</span><span class="p">))</span> <span class="p">{</span>
-    <span class="nf">model</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</div><div aria-labelledby="tab-7-Ug==" class="sphinx-tabs-panel code-tab group-tab" hidden="true" id="panel-7-Ug==" name="Ug==" role="tabpanel" tabindex="0"><div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">if </span><span class="p">(</span><span class="nf">is_clean</span><span class="p">(</span><span class="n">data</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nf">model</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -851,8 +683,13 @@ You’ll need to use your best judgement to adapt variable names in order to kee
 </section>
 <section id="make-classes-easy-to-identify">
 <h4>Make classes easy to identify<a class="headerlink" href="#make-classes-easy-to-identify" title="Permalink to this headline">#</a></h4>
-<p>Class names are usually started with a capital letter, and in <code class="docutils literal notranslate"><span class="pre">CamelCase</span></code>, as this differentiates them from <code class="docutils literal notranslate"><span class="pre">variableNames</span></code> and <code class="docutils literal notranslate"><span class="pre">variable_names</span></code>. Class names follow the same advice as for <a class="reference internal" href="#naming-functions"><span class="std std-ref">Name functions after the task that they perform</span></a> - namely, is it obvious from the class name what it does? If its too complex to name concisely, it is an indication of too many <a class="reference internal" href="modular_code.html#class-responsibilities"><span class="std std-ref">responsibilities</span></a> and you should refactor your code into more, smaller classes.</p>
-<p>Method names in a class closely follow the requirements for <a class="reference internal" href="#naming-functions"><span class="std std-ref">Name functions after the task that they perform</span></a>, as methods are just functions that are tied to a class. They should ideally read clearly when called from a class instance - such as <code class="docutils literal notranslate"><span class="pre">bookParser</span> <span class="pre">=</span> <span class="pre">TextParser(book_data)</span></code> followed with <code class="docutils literal notranslate"><span class="pre">bookParser.getNextWord()</span></code>. Compare this against <code class="docutils literal notranslate"><span class="pre">bp</span> <span class="pre">=</span> <span class="pre">Reader(book_data)</span></code> then <code class="docutils literal notranslate"><span class="pre">bp.fetch()</span></code>, where there is not enough context.</p>
+<p>Class names are usually started with a capital letter, and in <code class="docutils literal notranslate"><span class="pre">CamelCase</span></code>, as this differentiates them from <code class="docutils literal notranslate"><span class="pre">variableNames</span></code> and <code class="docutils literal notranslate"><span class="pre">variable_names</span></code>.
+Class names follow the same advice as for <a class="reference internal" href="#naming-functions"><span class="std std-ref">Name functions after the task that they perform</span></a> - namely, is it obvious from the class name what it does?
+If its too complex to name concisely, it is an indication of too many <a class="reference internal" href="modular_code.html#class-responsibilities"><span class="std std-ref">responsibilities</span></a>
+and you should refactor your code into more, smaller classes.</p>
+<p>Method names in a class closely follow the requirements for <a class="reference internal" href="#naming-functions"><span class="std std-ref">Name functions after the task that they perform</span></a>, as methods are just functions that are tied to a class.
+They should ideally read clearly when called from a class instance - such as <code class="docutils literal notranslate"><span class="pre">bookParser</span> <span class="pre">=</span> <span class="pre">TextParser(book_data)</span></code> followed with <code class="docutils literal notranslate"><span class="pre">bookParser.getNextWord()</span></code>.
+Compare this against <code class="docutils literal notranslate"><span class="pre">bp</span> <span class="pre">=</span> <span class="pre">Reader(book_data)</span></code> then <code class="docutils literal notranslate"><span class="pre">bp.fetch()</span></code>, where there is not enough context.</p>
 <div class="admonition note" id="code-style">
 <p class="admonition-title">Note</p>
 <p>As discussed in the <a class="reference internal" href="modular_code.html"><span class="doc std std-doc">Modular code</span></a> chapter, writing custom classes is more common in python than in R. As such, the examples above only apply to python.</p>
@@ -861,8 +698,13 @@ You’ll need to use your best judgement to adapt variable names in order to kee
 </section>
 <section id="make-code-easier-to-read-by-following-a-consistent-style">
 <h3>Make code easier to read by following a consistent style<a class="headerlink" href="#make-code-easier-to-read-by-following-a-consistent-style" title="Permalink to this headline">#</a></h3>
-<p>Programming languages can differ in a myriad of ways. One way R and Python differ, for example, is their use of indentation. Indentation is part of the well defined syntax of Python while it is not for R. This does not mean that you shouldn’t use indentation in R to make your code more readable. If in doubt it is often wise to consult how to use formatting to write more readable code by finding the style guidelines for your language.</p>
-<p>Generally, code style guides provide a standard or convention for formatting and laying out your code. The purpose of these style guides is to increase consistency across the programming community for a given language.</p>
+<p>Programming languages can differ in a myriad of ways.
+One way R and Python differ, for example, is their use of indentation.
+Indentation is part of the well defined syntax of Python while it is not for R.
+This does not mean that you shouldn’t use indentation in R to make your code more readable.
+If in doubt it is often wise to consult how to use formatting to write more readable code by finding the style guidelines for your language.</p>
+<p>Generally, code style guides provide a standard or convention for formatting and laying out your code.
+The purpose of these style guides is to increase consistency across the programming community for a given language.</p>
 <p>They might include how to appropriately:</p>
 <ul class="simple">
 <li><p>comment or document your code</p></li>
@@ -871,15 +713,20 @@ You’ll need to use your best judgement to adapt variable names in order to kee
 <li><p>use indentation to make sure your code is readable</p></li>
 <li><p>provide other useful guidance regarding formatting</p></li>
 </ul>
-<p>The existence of such style guides does not necessarily mean that each individual or team will apply these conventions to the letter. Organisations and developer teams often have needs that might not be addressed in a general style guidance document. After all, these documents aim to capture the needs of a diverse group of developers. Therefore, these guides are more useful as starting points in a discussion on ‘how should our team be consistent internally in the way we write code?’.</p>
+<p>The existence of such style guides does not necessarily mean that each individual or team will apply these conventions to the letter.
+Organisations and developer teams often have needs that might not be addressed in a general style guidance document.
+After all, these documents aim to capture the needs of a diverse group of developers.
+Therefore, these guides are more useful as starting points in a discussion on ‘how should our team be consistent internally in the way we write code?’.</p>
 <figure class="align-default" id="code-quality">
 <a class="reference internal image-reference" href="_images/code_quality.png"><img alt="Comic strip describing a brutal code review." src="_images/code_quality.png" style="width: 80%;" /></a>
 <figcaption>
 <p><span class="caption-number">Fig. 2 </span><span class="caption-text">Code Quality, from <a class="reference external" href="https://xkcd.com/1513/">xkcd</a></span><a class="headerlink" href="#code-quality" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
-<p>The core idea around these guides is that individual teams have to either adopt them or adapt them for use while writing code. The goals are readability and consistency.
-This consistency between developers will most likely aid speed of development and review, as well as the ability of one developer to comprehend code written by their colleagues.</p>
+<p>The core idea around these guides is that individual teams have to either adopt them or adapt them for use while writing code.
+The goals are readability and consistency.
+This consistency between developers will most likely aid speed of development and review,
+as well as the ability of one developer to comprehend code written by their colleagues.</p>
 <div class="admonition-common-style-guides admonition">
 <p class="admonition-title">Common Style Guides</p>
 <p><a class="reference external" href="https://www.python.org/dev/peps/pep-0008/">PEP8</a> is an official Python style guide, which is widely used.
@@ -888,9 +735,15 @@ The <a class="reference external" href="https://google.github.io/styleguide/Rgui
 <section id="write-code-that-other-programmers-will-find-easy-to-read">
 <h4>Write code that other programmers will find easy to read<a class="headerlink" href="#write-code-that-other-programmers-will-find-easy-to-read" title="Permalink to this headline">#</a></h4>
 <p>There is perhaps a misconception that following style guidelines and formatting your code accordingly is the fundamental goal of writing good code in a given language.</p>
-<p>In reality, guidelines may encourage code-reviews to focus on style over more fundamental problems with the code. They have the potential to detract from assessment of whether the code is making the best use of a given language.</p>
-<p>The notion of style goes beyond simple spacing or capitalisation. In the same way that knowing and using common idioms such as ‘over the moon’ or ‘cold feet’ make you seem like a more fluent speaker of English, a part of being fluent in a programming language is being able to write ‘idiomatic’ code. Idiomatic stands for ‘using, containing, or denoting expressions that are natural to a native speaker’. In Python, idiomatic approaches to writing code are commonly referred to as ‘pythonic’.</p>
-<p>This might mean simplifying complex and perhaps hard to read patterns into a simpler, but well established alternative. In Python for example these two pieces of code are equivalent:</p>
+<p>In reality, guidelines may encourage code-reviews to focus on style over more fundamental problems with the code.
+They have the potential to detract from assessment of whether the code is making the best use of a given language.</p>
+<p>The notion of style goes beyond simple spacing or capitalisation.
+In the same way that knowing and using common idioms such as ‘over the moon’ or ‘cold feet’ make you seem like a more fluent speaker of English,
+a part of being fluent in a programming language is being able to write ‘idiomatic’ code.
+Idiomatic stands for ‘using, containing, or denoting expressions that are natural to a native speaker’.
+In Python, idiomatic approaches to writing code are commonly referred to as ‘pythonic’.</p>
+<p>This might mean simplifying complex and perhaps hard to read patterns into a simpler, but well established alternative.
+In Python for example these two pieces of code are equivalent:</p>
 <div class="sphinx-tabs docutils container">
 <div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-8-UHl0aG9u" aria-selected="true" class="sphinx-tabs-tab code-tab group-tab" id="tab-8-UHl0aG9u" name="UHl0aG9u" role="tab" tabindex="0">Python</button><button aria-controls="panel-8-Ug==" aria-selected="false" class="sphinx-tabs-tab code-tab group-tab" id="tab-8-Ug==" name="Ug==" role="tab" tabindex="-1">R</button></div><div aria-labelledby="tab-8-UHl0aG9u" class="sphinx-tabs-panel code-tab group-tab" id="panel-8-UHl0aG9u" name="UHl0aG9u" role="tabpanel" tabindex="0"><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 1 - very unpythonic</span>
 <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
@@ -909,94 +762,91 @@ The <a class="reference external" href="https://google.github.io/styleguide/Rgui
 </pre></div>
 </div>
 </div><div aria-labelledby="tab-8-Ug==" class="sphinx-tabs-panel code-tab group-tab" hidden="true" id="panel-8-Ug==" name="Ug==" role="tabpanel" tabindex="0"><div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 1 - not idiomatic</span>
-<span class="n">i</span> <span class="o">=</span> <span class="m">0</span>
-<span class="n">my_data</span> <span class="o">=</span> <span class="nf">c</span><span class="p">()</span>
-<span class="nf">while </span><span class="p">(</span><span class="n">i</span> <span class="o">&lt;</span> <span class="m">100</span><span class="p">)</span> <span class="p">{</span>
-  <span class="n">my_data</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="n">my_data</span><span class="p">,</span> <span class="n">i</span> <span class="o">*</span> <span class="n">i</span> <span class="o">/</span> <span class="m">356</span><span class="p">)</span>
-  <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="m">1</span>
+<span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span>
+<span class="n">my_data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">()</span>
+<span class="nf">while </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="m">100</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">my_data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="n">my_data</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="m">356</span><span class="p">)</span>
+<span class="w">  </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">1</span>
 <span class="p">}</span>
 
 <span class="c1"># Example 2 - more use of R features, e.g. `append` and idiomatic assignment (&#39; &lt;- &#39;)</span>
-<span class="n">my_data</span> <span class="o">=</span> <span class="nf">c</span><span class="p">()</span>
-<span class="nf">for </span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="m">0</span><span class="o">:</span><span class="m">100</span><span class="p">)</span> <span class="p">{</span>
-  <span class="n">my_data</span> <span class="o">&lt;-</span> <span class="nf">append</span><span class="p">(</span><span class="n">my_data</span><span class="p">,</span> <span class="n">i</span><span class="o">^</span><span class="m">2</span> <span class="o">/</span> <span class="m">365</span><span class="p">)</span>
+<span class="n">my_data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">()</span>
+<span class="nf">for </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="m">0</span><span class="o">:</span><span class="m">100</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">my_data</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">append</span><span class="p">(</span><span class="n">my_data</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="o">^</span><span class="m">2</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="m">365</span><span class="p">)</span>
 <span class="p">}</span>
 
 <span class="c1"># Example 3 - making  use of R&#39;s built-in vectors</span>
-<span class="n">my_data</span> <span class="o">&lt;-</span> <span class="p">(</span><span class="m">0</span><span class="o">:</span><span class="m">100</span><span class="p">)</span> <span class="o">^</span> <span class="m">2</span> <span class="o">/</span> <span class="m">365</span>
+<span class="n">my_data</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="p">(</span><span class="m">0</span><span class="o">:</span><span class="m">100</span><span class="p">)</span><span class="w"> </span><span class="o">^</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="m">365</span>
 </pre></div>
 </div>
 </div></div>
-<p>The ability to write idiomatic code in a given language comes with time. However, it is important to think about it while looking at a given piece of code: is it using everything that language ‘X’ has to offer?</p>
-<p>That said, we should still prefer readability over idioms that might make our code more complex. For example, attempting to fit too much logic into a single line of code can make it considerably harder to understand.</p>
+<p>The ability to write idiomatic code in a given language comes with time.
+However, it is important to think about it while looking at a given piece of code: is it using everything that language ‘X’ has to offer?</p>
+<p>That said, we should still prefer readability over idioms that might make our code more complex.
+For example, attempting to fit too much logic into a single line of code can make it considerably harder to understand.</p>
 </section>
 <section id="automate-style-checks">
-<h4>Automate style checks<a class="headerlink" href="#automate-style-checks" title="Permalink to this headline">#</a></h4>
-<p>It is good practice to follow a style guide from the beginning of a project. However, it can be tedious to check that code continues to follow a particular style, or to fix code formatting when it doesn’t. Hence, automated support can be sought to speed up this work, either by providing suggestions as the code is written or by reformatting your code to comply with some style.</p>
-<p>Two main types of tool exist for these tasks:</p>
-<ul class="simple">
-<li><p>Linters - these analyse your code to flag stylistic errors (and sometimes bugs or security issues too).</p></li>
-<li><p>Formatters - these not only detect when you have diverged from a style, but will automatically correct the formatting of your code to conform to a particular style.</p></li>
-</ul>
-<table class="table" id="linters">
-<caption><span class="caption-number">Table 1 </span><span class="caption-text">Packages that can be used for linting or formatting in Python and R</span><a class="headerlink" href="#linters" title="Permalink to this table">#</a></caption>
-<colgroup>
-<col style="width: 33%" />
-<col style="width: 33%" />
-<col style="width: 33%" />
-</colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><p>Language</p></th>
-<th class="head"><p>Linters</p></th>
-<th class="head"><p>Formatters</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>Python</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">flake8</span></code>, <code class="docutils literal notranslate"><span class="pre">pylint</span></code>, <code class="docutils literal notranslate"><span class="pre">Bandit</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">Black</span></code>, <code class="docutils literal notranslate"><span class="pre">Isort</span></code></p></td>
-</tr>
-<tr class="row-odd"><td><p>R</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">lintr</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">formatR</span></code>, <code class="docutils literal notranslate"><span class="pre">styler</span></code></p></td>
-</tr>
-</tbody>
-</table>
-<p>Be sure to read the documentation for any of these tools, to understand what they are checking or changing in your code. Some can be configured to ignore or detect specific types of formatting error. You can run multiple of these, to catch a broader range of stylistic or programmatic errors.</p>
-<p>If you’re considering these tools as part of a project, see <a class="reference internal" href="version_control.html#continuous-integration"><span class="std std-ref">Continuous Integration</span></a> for advice on automating them. Alternatively, explore other options, such as <a class="reference external" href="https://pre-commit.com/">pre-commit</a>, that do the formatting and checking on your machine prior to a Git commit.</p>
+<span id="id1"></span><h4>Automate style checks<a class="headerlink" href="#automate-style-checks" title="Permalink to this headline">#</a></h4>
+<p>It is good practice to follow a style guide from the beginning of a project.
+However, it can be tedious to check that code continues to follow a particular style, or to fix code formatting when it doesn’t.
+Hence, automated support can be sought to speed up this work,
+either by providing suggestions as the code is written or by reformatting your code to comply with some style.</p>
+<p>For further information on automating these checks see <a class="reference internal" href="continuous_integration.html#linters-formatters"><span class="std std-ref">Linters and formatters</span></a>.</p>
 </section>
 </section>
 </section>
 <section id="software-ideas-for-analysts">
-<span id="id1"></span><h2>Software ideas for analysts<a class="headerlink" href="#software-ideas-for-analysts" title="Permalink to this headline">#</a></h2>
-<p>It’s important to remember that when we write code for analysis, we are developing software. Over many years, software engineering teams have developed good practices for creating robust software. These practices help to make our code simple, readable and easier to maintain. Analysts using code as a means to perform analysis can benefit from at least partially applying such practices in their own codebases.</p>
-<p>This chapter will try to condense key messages and guidelines from these practices, for use by analysts who write code. That said, reading and learning more about these practices is likely to benefit the quality of your code and is highly encouraged.</p>
+<span id="id2"></span><h2>Software ideas for analysts<a class="headerlink" href="#software-ideas-for-analysts" title="Permalink to this headline">#</a></h2>
+<p>It’s important to remember that when we write code for analysis, we are developing software.
+Over many years, software engineering teams have developed good practices for creating robust software.
+These practices help to make our code simple, readable and easier to maintain.
+Analysts using code as a means to perform analysis can benefit from at least partially applying such practices in their own codebases.</p>
+<p>This chapter will try to condense key messages and guidelines from these practices, for use by analysts who write code.
+That said, reading and learning more about these practices is likely to benefit the quality of your code and is highly encouraged.</p>
 <section id="keep-it-simple">
 <h3>Keep it simple<a class="headerlink" href="#keep-it-simple" title="Permalink to this headline">#</a></h3>
 <p>The ability to convey information in a simple and clear way matters.</p>
-<p>This is particularly true when explaining concepts that are already complex. When writing code you are often trying to solve problems that are complex in nature. You should avoid introducing extra complexity to these problems, wherever possible.</p>
+<p>This is particularly true when explaining concepts that are already complex.
+When writing code you are often trying to solve problems that are complex in nature.
+You should avoid introducing extra complexity to these problems, wherever possible.</p>
 <p>Here are a few tips to make sure you keep your project nice and simple:</p>
 <ul class="simple">
 <li><p>Solve the problem - do not get distracted and make sure you have a clear outcome in mind.</p></li>
-<li><p>Try not to ‘reinvent the wheel’ - use existing packages when they solve the problem. They will most likely be better documented and won’t need extra maintenance.</p></li>
+<li><p>Try not to ‘reinvent the wheel’ - use existing packages when they solve the problem.
+They will most likely be better documented and won’t need extra maintenance.</p></li>
 <li><p>Split your code into understandable parts - consider how to <a class="reference internal" href="modular_code.html#modular"><span class="std std-ref">make your code modular</span></a>.</p></li>
 <li><p>Don’t over-engineer your solution - if it is understandable and works, refrain from over-complicating for the sake of small increases in efficiency.</p></li>
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>It’s important to capture the requirements of your code before writing it. This includes when your code needs to be adapted to meet changing needs. You should then aim to meet these requirements in the functionality that your code provides.</p>
-<p>It can be tempting to try to account for every eventuality in your program, but developing anything more than these requirements may not be beneficial. There’s a good chance that many cases that you account for will never occur, so you should try to prioritise based on what you’re certain is needed from your code.</p>
+<p>It’s important to capture the requirements of your code before writing it.
+This includes when your code needs to be adapted to meet changing needs.
+You should then aim to meet these requirements in the functionality that your code provides.</p>
+<p>It can be tempting to try to account for every eventuality in your program, but developing anything more than these requirements may not be beneficial.
+There’s a good chance that many cases that you account for will never occur, so you should try to prioritise based on what you’re certain is needed from your code.</p>
 <blockquote>
 <div><p>You ain’t gonna need it</p>
 </div></blockquote>
-<p>Remember that additional features will require more documentation and testing to ensure that they are working correctly. Really consider if adding these extras will make your code more or less maintainable, user-friendly and correct.</p>
+<p>Remember that additional features will require more documentation and testing to ensure that they are working correctly.
+Really consider if adding these extras will make your code more or less maintainable, user-friendly and correct.</p>
 </div>
-<p>Lastly, it is worth stressing that complex problems might require complex solutions. In those cases make sure that you only introduce complexity where it is needed. You should address necessary complexity with proportionate quality assurance - through documentation, testing and review. For instance, if the execution time of your code is critical, then making the code more complex to achieve a faster runtime may be an acceptable trade-off.</p>
+<p>Lastly, it is worth stressing that complex problems might require complex solutions.
+In those cases make sure that you only introduce complexity where it is needed.
+You should address necessary complexity with proportionate quality assurance - through documentation, testing and review.
+For instance, if the execution time of your code is critical, then making the code more complex to achieve a faster runtime may be an acceptable trade-off.</p>
 </section>
 <section id="don-t-repeat-yourself">
 <h3>Don’t repeat yourself<a class="headerlink" href="#don-t-repeat-yourself" title="Permalink to this headline">#</a></h3>
-<p>In the section on <a class="reference internal" href="modular_code.html#modular"><span class="std std-ref">modular code</span></a>, you were encouraged to refactor your code into more self-contained components for ease of testing, reproducibility and reusability. However, it is worth stressing that ‘quick and dirty’ solutions often involve copy-pasted code that is functionally identical. This is expected and is natural in the initial stages of a project. Nonetheless, repetition not only wastes your time, but it also makes your code more difficult to read.
-Consider a script that contains three copies of a similar piece of code. If the code that is used to perform the repetitive task is found to be incorrect, or if a developer wishes to modify the task being performed by this code, they must implement a similar change in each of the three copies. If only two copies were spotted and amended, there is now a bug sleeping in the code waiting to be triggered… Moreover, anyone reviewing the code would need to check that the right logic is being used three times over.</p>
+<p>In the section on <a class="reference internal" href="modular_code.html#modular"><span class="std std-ref">modular code</span></a>, you were encouraged to refactor your code into more self-contained components for ease of testing,
+reproducibility and reusability.
+However, it is worth stressing that ‘quick and dirty’ solutions often involve copy-pasted code that is functionally identical.
+This is expected and is natural in the initial stages of a project.
+Nonetheless, repetition not only wastes your time, but it also makes your code more difficult to read.
+Consider a script that contains three copies of a similar piece of code.
+If the code that is used to perform the repetitive task is found to be incorrect, or if a developer wishes to modify the task being performed by this code,
+they must implement a similar change in each of the three copies.
+If only two copies were spotted and amended, there is now a bug sleeping in the code waiting to be triggered…
+Moreover, anyone reviewing the code would need to check that the right logic is being used three times over.</p>
 <p>To put this in context, let us use an example where the developer wants to get the odd numbers from three different lists of numbers:</p>
 <div class="sphinx-tabs docutils container">
 <div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-9-UHl0aG9u" aria-selected="true" class="sphinx-tabs-tab code-tab group-tab" id="tab-9-UHl0aG9u" name="UHl0aG9u" role="tab" tabindex="0">Python</button><button aria-controls="panel-9-Ug==" aria-selected="false" class="sphinx-tabs-tab code-tab group-tab" id="tab-9-Ug==" name="Ug==" role="tab" tabindex="-1">R</button></div><div aria-labelledby="tab-9-UHl0aG9u" class="sphinx-tabs-panel code-tab group-tab" id="panel-9-UHl0aG9u" name="UHl0aG9u" role="tabpanel" tabindex="0"><div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="c1"># Note: this is an example of bad practice</span>
@@ -1021,39 +871,46 @@ Consider a script that contains three copies of a similar piece of code. If the 
 </pre></div>
 </div>
 </div><div aria-labelledby="tab-9-Ug==" class="sphinx-tabs-panel code-tab group-tab" hidden="true" id="panel-9-Ug==" name="Ug==" role="tabpanel" tabindex="0"><div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Note: this is an example of bad practice</span>
-<span class="n">first_ten_numbers</span> <span class="o">&lt;-</span> <span class="m">1</span><span class="o">:</span><span class="m">10</span>
-<span class="n">second_ten_numbers</span> <span class="o">&lt;-</span> <span class="m">11</span><span class="o">:</span><span class="m">20</span>
-<span class="n">third_ten_numbers</span> <span class="o">&lt;-</span> <span class="m">21</span><span class="o">:</span><span class="m">30</span>
+<span class="n">first_ten_numbers</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="m">10</span>
+<span class="n">second_ten_numbers</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">11</span><span class="o">:</span><span class="m">20</span>
+<span class="n">third_ten_numbers</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">21</span><span class="o">:</span><span class="m">30</span>
 
-<span class="n">odd_first</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">()</span>
-<span class="nf">for </span><span class="p">(</span><span class="n">number</span> <span class="n">in</span> <span class="n">first_ten_numbers</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nf">if </span><span class="p">(</span><span class="n">number</span> <span class="o">%%</span> <span class="m">2</span> <span class="o">==</span> <span class="m">1</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">odd_first</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="n">odd_first</span><span class="p">,</span> <span class="n">number</span><span class="p">)</span>
-  <span class="p">}</span>
+<span class="n">odd_first</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">()</span>
+<span class="nf">for </span><span class="p">(</span><span class="n">number</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">first_ten_numbers</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nf">if </span><span class="p">(</span><span class="n">number</span><span class="w"> </span><span class="o">%%</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">odd_first</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="n">odd_first</span><span class="p">,</span><span class="w"> </span><span class="n">number</span><span class="p">)</span>
+<span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>
 
-<span class="n">odd_second</span> <span class="o">=</span> <span class="nf">c</span><span class="p">()</span>
-<span class="nf">for </span><span class="p">(</span><span class="n">number</span> <span class="n">in</span> <span class="n">second_ten_numbers</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nf">if </span><span class="p">(</span><span class="n">number</span> <span class="o">%%</span> <span class="m">2</span> <span class="o">==</span> <span class="m">1</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">odd_second</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="n">odd_second</span><span class="p">,</span> <span class="n">number</span><span class="p">)</span>
-  <span class="p">}</span>
+<span class="n">odd_second</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">()</span>
+<span class="nf">for </span><span class="p">(</span><span class="n">number</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">second_ten_numbers</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nf">if </span><span class="p">(</span><span class="n">number</span><span class="w"> </span><span class="o">%%</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">odd_second</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="n">odd_second</span><span class="p">,</span><span class="w"> </span><span class="n">number</span><span class="p">)</span>
+<span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>
 
-<span class="n">odd_third</span> <span class="o">=</span> <span class="nf">c</span><span class="p">()</span>
-<span class="nf">for </span><span class="p">(</span><span class="n">number</span> <span class="n">in</span> <span class="n">third_ten_numbers</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nf">if </span><span class="p">(</span><span class="n">number</span> <span class="o">%%</span> <span class="m">2</span> <span class="o">==</span> <span class="m">0</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">odd_third</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="n">odd_third</span><span class="p">,</span> <span class="n">number</span><span class="p">)</span>
-  <span class="p">}</span>
+<span class="n">odd_third</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">()</span>
+<span class="nf">for </span><span class="p">(</span><span class="n">number</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">third_ten_numbers</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nf">if </span><span class="p">(</span><span class="n">number</span><span class="w"> </span><span class="o">%%</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">odd_third</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="n">odd_third</span><span class="p">,</span><span class="w"> </span><span class="n">number</span><span class="p">)</span>
+<span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
 </div>
 </div></div>
-<p>In this example, the third repeated snippet of code actually collects even numbers, but incorrectly assigns them to the <code class="docutils literal notranslate"><span class="pre">odd_third</span></code> variable. Because each copy looks very similar, you might assume that all copies of the code are performing the same task. Even when you are aware of the difference between the copies, you might be unable to tell if the difference is intentional or a mistake. The example demonstrates how repetition can add confusion when trying to maintain or review code.</p>
-<p>Modifying multiple copies of a code snippet is laborious and presents a risk - some copies of the repeated code may be modified while others erroneously remain the same. This is analogous to modifying the formula in individual cells of a spreadsheet. If you refactor repetitive code into functions or classes, then bug fixes or modifications need only be carried out once to change all uses of that code. New, intended behaviour is then consistently given by each call of the function or method.</p>
+<p>In this example, the third repeated snippet of code actually collects even numbers, but incorrectly assigns them to the <code class="docutils literal notranslate"><span class="pre">odd_third</span></code> variable.
+Because each copy looks very similar, you might assume that all copies of the code are performing the same task.
+Even when you are aware of the difference between the copies, you might be unable to tell if the difference is intentional or a mistake.
+The example demonstrates how repetition can add confusion when trying to maintain or review code.</p>
+<p>Modifying multiple copies of a code snippet is laborious and presents a risk - some copies of the repeated code may be modified,
+while others erroneously remain the same.
+This is analogous to modifying the formula in individual cells of a spreadsheet.
+If you refactor repetitive code into functions or classes, then bug fixes or modifications need only be carried out once to change all uses of that code.
+New, intended behaviour is then consistently given by each call of the function or method.</p>
 <p>The following presents how one could change the previous example for the better:</p>
 <div class="sphinx-tabs docutils container">
 <div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-10-UHl0aG9u" aria-selected="true" class="sphinx-tabs-tab code-tab group-tab" id="tab-10-UHl0aG9u" name="UHl0aG9u" role="tab" tabindex="0">Python</button><button aria-controls="panel-10-Ug==" aria-selected="false" class="sphinx-tabs-tab code-tab group-tab" id="tab-10-Ug==" name="Ug==" role="tab" tabindex="-1">R</button></div><div aria-labelledby="tab-10-UHl0aG9u" class="sphinx-tabs-panel code-tab group-tab" id="panel-10-UHl0aG9u" name="UHl0aG9u" role="tabpanel" tabindex="0"><div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_odd</span><span class="p">(</span><span class="n">numbers</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Get only the odd numbers&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Get only the odd numbers&quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="p">[</span><span class="n">number</span> <span class="k">for</span> <span class="n">number</span> <span class="ow">in</span> <span class="n">numbers</span> <span class="k">if</span> <span class="n">number</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">1</span><span class="p">]</span>
 
 <span class="n">first_ten_numbers</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">))</span>
@@ -1065,22 +922,23 @@ Consider a script that contains three copies of a similar piece of code. If the 
 <span class="n">odd_third</span> <span class="o">=</span> <span class="n">get_odd</span><span class="p">(</span><span class="n">third_ten_numbers</span><span class="p">)</span>
 </pre></div>
 </div>
-</div><div aria-labelledby="tab-10-Ug==" class="sphinx-tabs-panel code-tab group-tab" hidden="true" id="panel-10-Ug==" name="Ug==" role="tabpanel" tabindex="0"><div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">get_odd</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span> <span class="p">{</span>
+</div><div aria-labelledby="tab-10-Ug==" class="sphinx-tabs-panel code-tab group-tab" hidden="true" id="panel-10-Ug==" name="Ug==" role="tabpanel" tabindex="0"><div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">get_odd</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">function</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="c1"># Get only the odd numbers</span>
-  <span class="n">numbers</span><span class="p">[</span><span class="n">numbers</span> <span class="o">%%</span> <span class="m">2</span> <span class="o">==</span> <span class="m">1</span><span class="p">]</span>
+<span class="w">  </span><span class="n">numbers</span><span class="p">[</span><span class="n">numbers</span><span class="w"> </span><span class="o">%%</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">1</span><span class="p">]</span>
 <span class="p">}</span>
 
-<span class="n">first_ten_numbers</span> <span class="o">=</span> <span class="m">1</span><span class="o">:</span><span class="m">10</span>
-<span class="n">second_ten_numbers</span> <span class="o">=</span> <span class="m">11</span><span class="o">:</span><span class="m">20</span>
-<span class="n">third_ten_numbers</span> <span class="o">=</span> <span class="m">21</span><span class="o">:</span><span class="m">30</span>
+<span class="n">first_ten_numbers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="m">10</span>
+<span class="n">second_ten_numbers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">11</span><span class="o">:</span><span class="m">20</span>
+<span class="n">third_ten_numbers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">21</span><span class="o">:</span><span class="m">30</span>
 
-<span class="n">odd_first</span> <span class="o">=</span> <span class="nf">get_odd</span><span class="p">(</span><span class="n">first_ten_numbers</span><span class="p">)</span>
-<span class="n">odd_second</span> <span class="o">=</span> <span class="nf">get_odd</span><span class="p">(</span><span class="n">second_ten_numbers</span><span class="p">)</span>
-<span class="n">odd_third</span> <span class="o">=</span> <span class="nf">get_odd</span><span class="p">(</span><span class="n">third_ten_numbers</span><span class="p">)</span>
+<span class="n">odd_first</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">get_odd</span><span class="p">(</span><span class="n">first_ten_numbers</span><span class="p">)</span>
+<span class="n">odd_second</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">get_odd</span><span class="p">(</span><span class="n">second_ten_numbers</span><span class="p">)</span>
+<span class="n">odd_third</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">get_odd</span><span class="p">(</span><span class="n">third_ten_numbers</span><span class="p">)</span>
 </pre></div>
 </div>
 </div></div>
-<p>If the functionality of <code class="docutils literal notranslate"><span class="pre">get_odd</span></code> needs to be modified, it now need only be done once. Additionally, this code is more concise and its purpose is easier to interpret.</p>
+<p>If the functionality of <code class="docutils literal notranslate"><span class="pre">get_odd</span></code> needs to be modified, it now need only be done once.
+Additionally, this code is more concise and its purpose is easier to interpret.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>If two slightly different tasks must be carried out, for example you need both the odd and the even numbers, you might approach this in one of two ways:</p>
@@ -1091,24 +949,24 @@ Consider a script that contains three copies of a similar piece of code. If the 
 <div class="sphinx-tabs docutils container">
 <div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-11-UHl0aG9u" aria-selected="true" class="sphinx-tabs-tab code-tab group-tab" id="tab-11-UHl0aG9u" name="UHl0aG9u" role="tab" tabindex="0">Python</button><button aria-controls="panel-11-Ug==" aria-selected="false" class="sphinx-tabs-tab code-tab group-tab" id="tab-11-Ug==" name="Ug==" role="tab" tabindex="-1">R</button></div><div aria-labelledby="tab-11-UHl0aG9u" class="sphinx-tabs-panel code-tab group-tab" id="panel-11-UHl0aG9u" name="UHl0aG9u" role="tabpanel" tabindex="0"><div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="c1"># Simple and modular</span>
 <span class="k">def</span> <span class="nf">is_odd</span><span class="p">(</span><span class="n">number</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Check if a number is odd.&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Check if a number is odd.&quot;&quot;&quot;</span>
     <span class="k">if</span> <span class="n">number</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
         <span class="k">return</span> <span class="kc">True</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="k">return</span> <span class="kc">False</span>
 
 <span class="k">def</span> <span class="nf">get_odd</span><span class="p">(</span><span class="n">numbers</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Get only the odd numbers.&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Get only the odd numbers.&quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="p">[</span><span class="n">number</span> <span class="k">for</span> <span class="n">number</span> <span class="ow">in</span> <span class="n">numbers</span> <span class="k">if</span> <span class="n">is_odd</span><span class="p">(</span><span class="n">number</span><span class="p">)]</span>
 
 <span class="k">def</span> <span class="nf">get_even</span><span class="p">(</span><span class="n">numbers</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Get only the even numbers.&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Get only the even numbers.&quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="p">[</span><span class="n">number</span> <span class="k">for</span> <span class="n">number</span> <span class="ow">in</span> <span class="n">numbers</span> <span class="k">if</span> <span class="n">is_odd</span><span class="p">(</span><span class="n">number</span><span class="p">)</span> <span class="o">==</span> <span class="kc">False</span><span class="p">]</span>
 
 
 <span class="c1"># More concise, but also more complex - not always best</span>
 <span class="k">def</span> <span class="nf">get_numbers_with_parity</span><span class="p">(</span><span class="n">numbers</span><span class="p">,</span> <span class="n">parity</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Get numbers with a given parity (&#39;odd&#39; or &#39;even&#39;).&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Get numbers with a given parity (&#39;odd&#39; or &#39;even&#39;).&quot;&quot;&quot;</span>
     <span class="k">if</span> <span class="n">parity</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;odd&quot;</span><span class="p">,</span> <span class="s2">&quot;even&quot;</span><span class="p">]:</span>
         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;parity must be &#39;odd&#39; or &#39;even&#39;&quot;</span><span class="p">)</span>
     <span class="n">remainder</span> <span class="o">=</span> <span class="mi">1</span> <span class="k">if</span> <span class="n">parity</span> <span class="o">==</span> <span class="s2">&quot;odd&quot;</span> <span class="k">else</span> <span class="mi">0</span><span class="p">:</span>
@@ -1118,39 +976,43 @@ Consider a script that contains three copies of a similar piece of code. If the 
 </pre></div>
 </div>
 </div><div aria-labelledby="tab-11-Ug==" class="sphinx-tabs-panel code-tab group-tab" hidden="true" id="panel-11-Ug==" name="Ug==" role="tabpanel" tabindex="0"><div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Simple and modular</span>
-<span class="n">is_odd</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nf">ifelse</span><span class="p">(</span><span class="n">numbers</span> <span class="o">%%</span> <span class="m">2</span> <span class="o">==</span> <span class="m">1</span><span class="p">,</span> <span class="kc">TRUE</span><span class="p">,</span> <span class="kc">FALSE</span><span class="p">)</span> 
+<span class="n">is_odd</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">function</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nf">ifelse</span><span class="p">(</span><span class="n">numbers</span><span class="w"> </span><span class="o">%%</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">,</span><span class="w"> </span><span class="kc">FALSE</span><span class="p">)</span><span class="w"> </span>
 <span class="p">}</span>
 
-<span class="n">get_odd</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span> <span class="p">{</span>
-  <span class="n">numbers</span><span class="p">[</span><span class="nf">is_odd</span><span class="p">(</span><span class="n">numbers</span><span class="p">)]</span>
+<span class="n">get_odd</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">function</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">numbers</span><span class="p">[</span><span class="nf">is_odd</span><span class="p">(</span><span class="n">numbers</span><span class="p">)]</span>
 <span class="p">}</span>
 
-<span class="n">get_even</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span> <span class="p">{</span>
-  <span class="n">numbers</span><span class="p">[</span><span class="o">!</span><span class="nf">is_odd</span><span class="p">(</span><span class="n">numbers</span><span class="p">)]</span>
+<span class="n">get_even</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">function</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">numbers</span><span class="p">[</span><span class="o">!</span><span class="nf">is_odd</span><span class="p">(</span><span class="n">numbers</span><span class="p">)]</span>
 <span class="p">}</span>
 
 <span class="c1"># More concise, but also more complex - not always best</span>
-<span class="n">get_numbers_with_parity</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">numbers</span><span class="p">,</span> <span class="n">parity</span><span class="p">)</span> <span class="p">{</span>
-  <span class="n">numbers_with_parity</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">()</span>
-  <span class="nf">if </span><span class="p">(</span><span class="n">parity</span> <span class="o">==</span> <span class="s">&quot;odd&quot;</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">remainder</span> <span class="o">&lt;-</span> <span class="m">1</span>
-  <span class="p">}</span> <span class="n">else</span> <span class="nf">if </span><span class="p">(</span><span class="n">parity</span> <span class="o">==</span> <span class="s">&quot;even&quot;</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">remainder</span> <span class="o">&lt;-</span> <span class="m">0</span>
-  <span class="p">}</span> <span class="n">else</span> <span class="p">{</span>
-    <span class="nf">stop</span><span class="p">(</span><span class="s">&quot;parity must be &#39;odd&#39; or &#39;even&#39;&quot;</span><span class="p">)</span>
-  <span class="p">}</span>
-  
-  <span class="n">numbers</span><span class="p">[</span><span class="n">numbers</span> <span class="o">%%</span> <span class="m">2</span> <span class="o">==</span> <span class="n">remainder</span><span class="p">]</span>
+<span class="n">get_numbers_with_parity</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">function</span><span class="p">(</span><span class="n">numbers</span><span class="p">,</span><span class="w"> </span><span class="n">parity</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">numbers_with_parity</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">()</span>
+<span class="w">  </span><span class="nf">if </span><span class="p">(</span><span class="n">parity</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;odd&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">remainder</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">1</span>
+<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="n">else</span><span class="w"> </span><span class="nf">if </span><span class="p">(</span><span class="n">parity</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;even&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">remainder</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">0</span>
+<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="n">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nf">stop</span><span class="p">(</span><span class="s">&quot;parity must be &#39;odd&#39; or &#39;even&#39;&quot;</span><span class="p">)</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="w">  </span>
+<span class="w">  </span><span class="n">numbers</span><span class="p">[</span><span class="n">numbers</span><span class="w"> </span><span class="o">%%</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">remainder</span><span class="p">]</span>
 <span class="p">}</span>
 
-<span class="n">odd_numbers</span> <span class="o">&lt;-</span> <span class="nf">get_numbers_with_parity</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">10</span><span class="p">,</span> <span class="s">&quot;odd&quot;</span><span class="p">)</span>
+<span class="n">odd_numbers</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">get_numbers_with_parity</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">10</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;odd&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div></div>
 <p>You should use your best judgement to decide which is most appropriate in a given situation.</p>
 </div>
-<p>It can be difficult to decide when repetition warrants refactoring of code into reusable functions or classes. The ‘Rule of Three’ suggests that if similar code has been written more than two times, then it is worth extracting its logic to a reproducible procedure like a function or class. However, as you write code you should try to anticipate whether it is likely to be reused in future. If the answer is yes, you might opt to write it straight into something more modular and reusable.</p>
+<p>It can be difficult to decide when repetition warrants refactoring of code into reusable functions or classes.
+The ‘Rule of Three’ suggests that if similar code has been written more than two times,
+then it is worth extracting its logic to a reproducible procedure like a function or class.
+However, as you write code you should try to anticipate whether it is likely to be reused in future.
+If the answer is yes, you might opt to write it straight into something more modular and reusable.</p>
 </section>
 <section id="be-explicit">
 <h3>Be explicit<a class="headerlink" href="#be-explicit" title="Permalink to this headline">#</a></h3>
@@ -1170,11 +1032,11 @@ For example, in Python <code class="docutils literal notranslate"><span class="p
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;There are &quot;</span> <span class="o">+</span> <span class="n">student_count</span> <span class="o">+</span> <span class="s2">&quot; students!&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-</div><div aria-labelledby="tab-12-Ug==" class="sphinx-tabs-panel code-tab group-tab" hidden="true" id="panel-12-Ug==" name="Ug==" role="tabpanel" tabindex="0"><div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">student_count</span> <span class="o">&lt;-</span> <span class="kc">FALSE</span>
+</div><div aria-labelledby="tab-12-Ug==" class="sphinx-tabs-panel code-tab group-tab" hidden="true" id="panel-12-Ug==" name="Ug==" role="tabpanel" tabindex="0"><div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">student_count</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="kc">FALSE</span>
 
 <span class="c1"># Relying on falseness of FALSE</span>
-<span class="nf">if </span><span class="p">(</span><span class="n">student_count</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nf">paste</span><span class="p">(</span><span class="s">&quot;There are&quot;</span><span class="p">,</span> <span class="n">student_count</span><span class="p">,</span> <span class="s">&quot;students!&quot;</span><span class="p">)</span>
+<span class="nf">if </span><span class="p">(</span><span class="n">student_count</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nf">paste</span><span class="p">(</span><span class="s">&quot;There are&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">student_count</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;students!&quot;</span><span class="p">)</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -1192,11 +1054,11 @@ If a count of 0 should be printed, then this lack of specificity has created a b
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;There are &quot;</span> <span class="o">+</span> <span class="n">student_count</span> <span class="o">+</span> <span class="s2">&quot; students!&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-</div><div aria-labelledby="tab-13-Ug==" class="sphinx-tabs-panel code-tab group-tab" hidden="true" id="panel-13-Ug==" name="Ug==" role="tabpanel" tabindex="0"><div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">student_count</span> <span class="o">&lt;-</span> <span class="m">0</span>
+</div><div aria-labelledby="tab-13-Ug==" class="sphinx-tabs-panel code-tab group-tab" hidden="true" id="panel-13-Ug==" name="Ug==" role="tabpanel" tabindex="0"><div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">student_count</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">0</span>
 
 <span class="c1"># Explicitly only print if more than 0</span>
-<span class="nf">if </span><span class="p">(</span><span class="n">student_count</span> <span class="o">&gt;=</span> <span class="m">0</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nf">paste</span><span class="p">(</span><span class="s">&quot;There are&quot;</span><span class="p">,</span> <span class="n">student_count</span><span class="p">,</span> <span class="s">&quot;students!&quot;</span><span class="p">)</span>
+<span class="nf">if </span><span class="p">(</span><span class="n">student_count</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="m">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nf">paste</span><span class="p">(</span><span class="s">&quot;There are&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">student_count</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;students!&quot;</span><span class="p">)</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -1210,31 +1072,53 @@ It’s clear that we intend for this to be the case.</p>
 <div><p>An object should have a single responsibility.
 Only changes to one part of the software’s specification should be able to affect the specification of the class.</p>
 </div></blockquote>
-<p>Th ‘single responsibility’ principle suggests that a single element of your code (a function or class) should be responsible for a single part of your software’s functionality. It should take on one task and perform it well. This is because each piece of code is more robust if there are fewer reasons to change it in the future.</p>
-<p>When you work with code that is designed to multitask, it is often difficult to modify this code without having an unintentional effect on other aspects of the software.</p>
-<p>Imagine trying to create a model of the economy, which is a complex web of interconnected interactions. Creating ‘abstractions’ in the form of classes or functions that try to model multiple aspects of the economy at once might seem helpful, but when used incorrectly might instead add to the complexity.</p>
-<p>For example, consider a class that represents a whole country (<code class="docutils literal notranslate"><span class="pre">Country</span></code>). This would represent a model that is trying to predict economic statistics for a country such as unemployment or inflation. One can imagine that this class will quickly grow into something unmanageable, as its responsibilities grow in the form of additional methods and attributes.</p>
-<p>Based on the other chapters in this guidance, you might eventually realise that you need to break this class down further. If you had applied the idea of single responsibility, you might have broken the <code class="docutils literal notranslate"><span class="pre">Country</span></code> class down into smaller components such as <code class="docutils literal notranslate"><span class="pre">UnemploymentModel</span></code>, <code class="docutils literal notranslate"><span class="pre">InflationModel</span></code>. These classes would be responsible for doing specific modelling, while the <code class="docutils literal notranslate"><span class="pre">Country</span></code> class might only responsible for presenting the results to, lets say, a higher level economy model that tries to model cross-country trade.</p>
+<p>The ‘single responsibility’ principle suggests that a single element of your code (a function or class)
+should be responsible for a single part of your software’s functionality.
+It should take on one task and perform it well.
+This is because each piece of code is more robust if there are fewer reasons to change it in the future.</p>
+<p>When you work with code that is designed to multitask,
+it is often difficult to modify this code without having an unintentional effect on other aspects of the software.</p>
+<p>Imagine trying to create a model of the economy, which is a complex web of interconnected interactions.
+Creating ‘abstractions’ in the form of classes or functions that try to model multiple aspects of the economy at once might seem helpful,
+but when used incorrectly might instead add to the complexity.</p>
+<p>For example, consider a class that represents a whole country (<code class="docutils literal notranslate"><span class="pre">Country</span></code>).
+This would represent a model that is trying to predict economic statistics for a country such as unemployment or inflation.
+One can imagine that this class will quickly grow into something unmanageable, as its responsibilities grow in the form of additional methods and attributes.</p>
+<p>Based on the other chapters in this guidance, you might eventually realise that you need to break this class down further.
+If you had applied the idea of single responsibility,
+you might have broken the <code class="docutils literal notranslate"><span class="pre">Country</span></code> class down into smaller components such as <code class="docutils literal notranslate"><span class="pre">UnemploymentModel</span></code>, <code class="docutils literal notranslate"><span class="pre">InflationModel</span></code>.
+These classes would be responsible for doing specific modelling, while the <code class="docutils literal notranslate"><span class="pre">Country</span></code> class might only responsible for presenting the results to,
+let’s say, a higher level economy model that tries to model cross-country trade.</p>
 <p>This simplicity also increases usability, by minimising the number of parameters that each function or class might require.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>If you remember the <a class="reference internal" href="modular_code.html#interfaces"><span class="std std-ref">section on interfaces</span></a>, the different model classes here are a prime example where defining an interface would help you make sure each <code class="docutils literal notranslate"><span class="pre">*Model</span></code> object is interchangeable.</p>
+<p>If you remember the <a class="reference internal" href="modular_code.html#interfaces"><span class="std std-ref">section on interfaces</span></a>,
+the different model classes here are a prime example where defining an interface would help you make sure each <code class="docutils literal notranslate"><span class="pre">*Model</span></code> object is interchangeable.</p>
 </div>
-<p>The ‘separation of concerns’ principle captures a similar concept to single responsibility, but on a higher level. This principle suggests that your software should be separated into distinct sections that each address a single concern.</p>
+<p>The ‘separation of concerns’ principle captures a similar concept to single responsibility, but on a higher level.
+This principle suggests that your software should be separated into distinct sections that each address a single concern.</p>
 <p>In the previous economic modelling example, you might establish your concerns to be:</p>
 <ul>
 <li><p>Model economy at low level: <code class="docutils literal notranslate"><span class="pre">UnemploymentModel</span></code> and <code class="docutils literal notranslate"><span class="pre">InflationModel</span></code>.</p>
-<p>These are concerned with the ‘low-level’ details of giving estimates of economic output. They are independent of each other and concerned only by what they are trying to estimate.</p>
+<p>These are concerned with the ‘low-level’ details of giving estimates of economic output.
+They are independent of each other and concerned only by what they are trying to estimate.</p>
 </li>
 <li><p>Model country level interactions and trade blocks: <code class="docutils literal notranslate"><span class="pre">Country</span></code> and <code class="docutils literal notranslate"><span class="pre">TradeBlock</span></code>.</p>
-<p>These parts of your code relate to higher level concepts. They will be using the lower level <code class="docutils literal notranslate"><span class="pre">Model</span></code> classes, but are primarily concerned with interactions between countries.</p>
+<p>These parts of your code relate to higher level concepts.
+They will be using the lower level <code class="docutils literal notranslate"><span class="pre">Model</span></code> classes, but are primarily concerned with interactions between countries.</p>
 </li>
 <li><p>Run simulations given a description of the desired economy.</p>
-<p>Once the model is ready, there might be a <code class="docutils literal notranslate"><span class="pre">SimulationRunner</span></code> that takes in your model of the world economy and runs simulations. In this case, this part of your codebase will only revolve around running the actual simulations.</p>
+<p>Once the model is ready, there might be a <code class="docutils literal notranslate"><span class="pre">SimulationRunner</span></code> that takes in your model of the world economy and runs simulations.
+In this case, this part of your codebase will only revolve around running the actual simulations.</p>
 </li>
 </ul>
-<p>In each of these distinct sections of your codebase there will be multiple classes and functions, which should follow the single responsibility concepts outlined earlier.</p>
-<p>For example, within the section of your code concerned with modelling data, you might have a set of functions to download data from an external data store. These functions should only be responsible for receiving the required data safely and providing it to the <code class="docutils literal notranslate"><span class="pre">Model</span></code> object. If you had the need to download data from different sources online (i.e. Database, CSV or other), you might create several download functions. To pick the right function for each model you might create a <a class="reference external" href="https://en.wikipedia.org/wiki/Factory_(object-oriented_programming)">‘LoaderFactory’</a> who’s only responsibility is to provide the <code class="docutils literal notranslate"><span class="pre">Model</span></code> with the right loading function for the right data source.</p>
+<p>In each of these distinct sections of your codebase there will be multiple classes and functions,
+which should follow the single responsibility concepts outlined earlier.</p>
+<p>For example, within the section of your code concerned with modelling data, you might have a set of functions to download data from an external data store.
+These functions should only be responsible for receiving the required data safely and providing it to the <code class="docutils literal notranslate"><span class="pre">Model</span></code> object.
+If you had the need to download data from different sources online (i.e. Database, CSV or other), you might create several download functions.
+To pick the right function for each model you might create a <a class="reference external" href="https://en.wikipedia.org/wiki/Factory_(object-oriented_programming)">‘LoaderFactory’</a>
+who’s only responsibility is to provide the <code class="docutils literal notranslate"><span class="pre">Model</span></code> with the right loading function for the right data source.</p>
 <figure class="align-default" id="separation-of-concerns">
 <a class="reference internal image-reference" href="_images/separation_of_concerns.png"><img alt="Representation of concerns and responsibilities within a piece of software." src="_images/separation_of_concerns.png" style="width: 80%;" /></a>
 <figcaption>
@@ -1245,13 +1129,15 @@ Only changes to one part of the software’s specification should be able to aff
 Within each section of your software, distinct functions or classes should be responsible for each task that is required for that section’s overall functionality.</p>
 <div class="admonition-in-the-context-of-functions admonition">
 <p class="admonition-title">In the context of functions</p>
-<p>The previous example was heavily focused on classes and Object-Oriented Programming. The same principles apply in the world of functions. You define each concern that is addressed by a module containing functions who follow the single responsibility principle.</p>
+<p>The previous example was heavily focused on classes and Object-Oriented Programming. The same principles apply in the world of functions.
+You define each concern that is addressed by a module containing functions who follow the single responsibility principle.</p>
 <p>So the previous example could equally include:</p>
 <ul class="simple">
 <li><p>An <code class="docutils literal notranslate"><span class="pre">unemployment_model</span></code> - function running the unemployment modelling.</p></li>
 <li><p>An <code class="docutils literal notranslate"><span class="pre">inflation_model</span></code> - function running the inflation modelling.</p></li>
 </ul>
-<p>These functions would produce data about a given country, to be stored in an object. Another function might then take these data for multiple countries and start modelling it across country boundaries.</p>
+<p>These functions would produce data about a given country, to be stored in an object.
+Another function might then take these data for multiple countries and start modelling it across country boundaries.</p>
 <p>The same core concepts still fully apply.</p>
 </div>
 </section>
@@ -1275,37 +1161,40 @@ Within each section of your software, distinct functions or classes should be re
 </pre></div>
 </div>
 </div><div aria-labelledby="tab-14-Ug==" class="sphinx-tabs-panel code-tab group-tab" hidden="true" id="panel-14-Ug==" name="Ug==" role="tabpanel" tabindex="0"><div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># some function that we want to keep closed for modification</span>
-<span class="n">core_method</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kc">...</span>
-  <span class="nf">return</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+<span class="n">core_method</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">function</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kc">...</span>
+<span class="w">  </span><span class="nf">return</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
 <span class="p">}</span>
 
 <span class="c1"># if we want to extend a function without modifying it, we can always do the following</span>
-<span class="n">extended_functionality</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">result</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kc">...</span>
-  <span class="nf">return</span><span class="p">(</span><span class="n">extended_result</span><span class="p">)</span>
+<span class="n">extended_functionality</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">function</span><span class="p">(</span><span class="n">result</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kc">...</span>
+<span class="w">  </span><span class="nf">return</span><span class="p">(</span><span class="n">extended_result</span><span class="p">)</span>
 <span class="p">}</span>
 
-<span class="n">extended_methodology</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="p">{</span>
-  <span class="n">core_results</span> <span class="o">=</span> <span class="nf">core_method</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
-  <span class="nf">return</span><span class="p">(</span>
-    <span class="nf">extended_functionality</span><span class="p">(</span><span class="n">core_results</span><span class="p">)</span>
-  <span class="p">)</span>
+<span class="n">extended_methodology</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">function</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">core_results</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">core_method</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="w">  </span><span class="nf">return</span><span class="p">(</span>
+<span class="w">    </span><span class="nf">extended_functionality</span><span class="p">(</span><span class="n">core_results</span><span class="p">)</span>
+<span class="w">  </span><span class="p">)</span>
 <span class="p">}</span>
 </pre></div>
 </div>
 </div></div>
 <p>Same would apply with classes through ideas like inheritance.</p>
 <p>When you think about the consequences of this, the open-closed principle gives you:</p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p>Confidence that essential behaviour of parts of your code should not be expected to change.</p></li>
 <li><p>The ability to easily add more functionality, as your code evolves.</p></li>
 </ol>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>In functional programming we use higher-order functions and functional composition to enact these principles. ‘Functional composition’ deserves a brief explanation, as a concept that might be keenly used in a data analytics pipeline.</p>
-<p>In simple terms, functional composition is a mathematical idea that takes two functions <span class="math notranslate nohighlight">\(f\)</span> and <span class="math notranslate nohighlight">\(g\)</span> and produces function <span class="math notranslate nohighlight">\(h\)</span>, such that <span class="math notranslate nohighlight">\(h(x) = g(f(x))\)</span>. Analysts familiar with R’s <code class="docutils literal notranslate"><span class="pre">%&gt;%</span></code> operator will find this idea familiar.</p>
-<p>Imagine you have a task to perform modelling and report generation from data. You can lay out your code to be easily composable with the following functions, with single responsibilities:</p>
+<p>In functional programming we use higher-order functions and functional composition to enact these principles.
+‘Functional composition’ deserves a brief explanation, as a concept that might be keenly used in a data analytics pipeline.</p>
+<p>In simple terms, functional composition is a mathematical idea that takes two functions <span class="math notranslate nohighlight">\(f\)</span> and <span class="math notranslate nohighlight">\(g\)</span> and produces function <span class="math notranslate nohighlight">\(h\)</span>, such that <span class="math notranslate nohighlight">\(h(x) = g(f(x))\)</span>.
+Analysts familiar with R’s <code class="docutils literal notranslate"><span class="pre">%&gt;%</span></code> operator will find this idea familiar.</p>
+<p>Imagine you have a task to perform modelling and report generation from data.
+You can lay out your code to be easily composable with the following functions, with single responsibilities:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">load</span></code> - loads data.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">model</span></code> - runs the model on data.</p></li>
@@ -1316,16 +1205,16 @@ Within each section of your software, distinct functions or classes should be re
 <div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-15-UHl0aG9u" aria-selected="true" class="sphinx-tabs-tab code-tab group-tab" id="tab-15-UHl0aG9u" name="UHl0aG9u" role="tab" tabindex="0">Python</button><button aria-controls="panel-15-Ug==" aria-selected="false" class="sphinx-tabs-tab code-tab group-tab" id="tab-15-Ug==" name="Ug==" role="tab" tabindex="-1">R</button></div><div aria-labelledby="tab-15-UHl0aG9u" class="sphinx-tabs-panel code-tab group-tab" id="panel-15-UHl0aG9u" name="UHl0aG9u" role="tabpanel" tabindex="0"><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">report</span> <span class="o">=</span> <span class="n">report</span><span class="p">(</span><span class="n">model</span><span class="p">(</span><span class="n">load</span><span class="p">(</span><span class="n">filepath</span><span class="p">)))</span>
 </pre></div>
 </div>
-</div><div aria-labelledby="tab-15-Ug==" class="sphinx-tabs-panel code-tab group-tab" hidden="true" id="panel-15-Ug==" name="Ug==" role="tabpanel" tabindex="0"><div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">report</span> <span class="o">&lt;-</span> <span class="nf">report</span><span class="p">(</span><span class="nf">model</span><span class="p">(</span><span class="nf">load</span><span class="p">(</span><span class="n">filepath</span><span class="p">)))</span>
+</div><div aria-labelledby="tab-15-Ug==" class="sphinx-tabs-panel code-tab group-tab" hidden="true" id="panel-15-Ug==" name="Ug==" role="tabpanel" tabindex="0"><div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">report</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">report</span><span class="p">(</span><span class="nf">model</span><span class="p">(</span><span class="nf">load</span><span class="p">(</span><span class="n">filepath</span><span class="p">)))</span>
 </pre></div>
 </div>
 </div></div>
 </div>
-<p>We will now assume that these individual functions are closed for modification. However, we can extend the functionality of <code class="docutils literal notranslate"><span class="pre">load</span></code> by adding a <code class="docutils literal notranslate"><span class="pre">clean</span></code> function that cleans the data. In which case, we end up with:</p>
+<p>We will now assume that these individual functions are closed for modification.
+However, we can extend the functionality of <code class="docutils literal notranslate"><span class="pre">load</span></code> by adding a <code class="docutils literal notranslate"><span class="pre">clean</span></code> function that cleans the data. In which case, we end up with:</p>
 <div class="sphinx-tabs docutils container">
 <div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-16-UHl0aG9u" aria-selected="true" class="sphinx-tabs-tab code-tab group-tab" id="tab-16-UHl0aG9u" name="UHl0aG9u" role="tab" tabindex="0">Python</button><button aria-controls="panel-16-Ug==" aria-selected="false" class="sphinx-tabs-tab code-tab group-tab" id="tab-16-Ug==" name="Ug==" role="tab" tabindex="-1">R</button></div><div aria-labelledby="tab-16-UHl0aG9u" class="sphinx-tabs-panel code-tab group-tab" id="panel-16-UHl0aG9u" name="UHl0aG9u" role="tabpanel" tabindex="0"><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># We can extend this without modifying the source code of `load`</span>
 <span class="n">report</span> <span class="o">=</span> <span class="n">report</span><span class="p">(</span><span class="n">model</span><span class="p">(</span><span class="n">clean</span><span class="p">(</span><span class="n">load</span><span class="p">(</span><span class="n">filepath</span><span class="p">))))</span>
-
 
 <span class="c1"># or we can first define a new load as follows</span>
 <span class="k">def</span> <span class="nf">new_load</span><span class="p">(</span><span class="n">filepath</span><span class="p">):</span>
@@ -1333,11 +1222,9 @@ Within each section of your software, distinct functions or classes should be re
 
 <span class="n">report</span> <span class="o">=</span> <span class="n">report</span><span class="p">(</span><span class="n">model</span><span class="p">(</span><span class="n">new_load</span><span class="p">(</span><span class="n">filepath</span><span class="p">)))</span>
 
-
 <span class="c1"># or with the help of anonymous (lambda)</span>
 <span class="n">new_load</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">data</span><span class="p">:</span> <span class="n">clean</span><span class="p">(</span><span class="n">load</span><span class="p">(</span><span class="n">data</span><span class="p">))</span>
 <span class="n">report</span> <span class="o">=</span> <span class="n">report</span><span class="p">(</span><span class="n">model</span><span class="p">(</span><span class="n">new_load</span><span class="p">(</span><span class="n">filepath</span><span class="p">)))</span>
-
 
 <span class="c1"># We can even use this to create a single function to run our defined pipeline</span>
 <span class="n">pipeline</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">data</span><span class="p">:</span> <span class="n">report</span><span class="p">(</span><span class="n">model</span><span class="p">(</span><span class="n">clean</span><span class="p">(</span><span class="n">load</span><span class="p">(</span><span class="n">filepath</span><span class="p">))))</span>
@@ -1345,16 +1232,16 @@ Within each section of your software, distinct functions or classes should be re
 </pre></div>
 </div>
 </div><div aria-labelledby="tab-16-Ug==" class="sphinx-tabs-panel code-tab group-tab" hidden="true" id="panel-16-Ug==" name="Ug==" role="tabpanel" tabindex="0"><div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># We can extend this without modifying the source code of `load`</span>
-<span class="n">report</span> <span class="o">&lt;-</span> <span class="nf">report</span><span class="p">(</span><span class="nf">model</span><span class="p">(</span><span class="nf">clean</span><span class="p">(</span><span class="nf">load</span><span class="p">(</span><span class="n">filepath</span><span class="p">))))</span>
+<span class="n">report</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">report</span><span class="p">(</span><span class="nf">model</span><span class="p">(</span><span class="nf">clean</span><span class="p">(</span><span class="nf">load</span><span class="p">(</span><span class="n">filepath</span><span class="p">))))</span>
 
 <span class="c1"># or we can first define a new load as follows</span>
-<span class="n">new_load</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">filepath</span><span class="p">)</span> <span class="nf">clean</span><span class="p">(</span><span class="nf">load</span><span class="p">(</span><span class="n">filepath</span><span class="p">))</span>
+<span class="n">new_load</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">function</span><span class="p">(</span><span class="n">filepath</span><span class="p">)</span><span class="w"> </span><span class="nf">clean</span><span class="p">(</span><span class="nf">load</span><span class="p">(</span><span class="n">filepath</span><span class="p">))</span>
 
-<span class="n">report</span> <span class="o">&lt;-</span> <span class="nf">report</span><span class="p">(</span><span class="nf">model</span><span class="p">(</span><span class="nf">new_load</span><span class="p">(</span><span class="n">filepath</span><span class="p">)))</span>
+<span class="n">report</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">report</span><span class="p">(</span><span class="nf">model</span><span class="p">(</span><span class="nf">new_load</span><span class="p">(</span><span class="n">filepath</span><span class="p">)))</span>
 
 <span class="c1"># We can even use this to create a single function to run our defined pipeline</span>
-<span class="n">pipeline</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="nf">report</span><span class="p">(</span><span class="nf">model</span><span class="p">(</span><span class="nf">clean</span><span class="p">(</span><span class="nf">load</span><span class="p">(</span><span class="n">filepath</span><span class="p">))))</span>
-<span class="n">report</span> <span class="o">=</span> <span class="nf">pipeline</span><span class="p">(</span><span class="n">filepath</span><span class="p">)</span>
+<span class="n">pipeline</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">function</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="w"> </span><span class="nf">report</span><span class="p">(</span><span class="nf">model</span><span class="p">(</span><span class="nf">clean</span><span class="p">(</span><span class="nf">load</span><span class="p">(</span><span class="n">filepath</span><span class="p">))))</span>
+<span class="n">report</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">pipeline</span><span class="p">(</span><span class="n">filepath</span><span class="p">)</span>
 </pre></div>
 </div>
 </div></div>
@@ -1374,7 +1261,7 @@ Within each section of your software, distinct functions or classes should be re
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./."
         },
         predefinedOutput: true
@@ -1382,50 +1269,119 @@ Within each section of your software, distinct functions or classes should be re
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="modular_code.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Modular code</p>
-        </div>
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="modular_code.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Modular code</p>
+      </div>
     </a>
-    <a class='right-next' id="next-link" href="project_structure.html" title="next page">
-    <div class="prev-next-info">
+    <a class="right-next"
+       href="project_structure.html"
+       title="next page">
+      <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title">Structuring your project</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
-</div>
-            </footer>
-        </div>
-    </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
-  
-    <div class="extra_footer">
-      <p>Analysis Function reproducible analytical pipelines (RAP) support</p><p>This is a living document, please help use to make it grow by providing any feedback <a href='mailto:Analysis.Function@ons.gov.uk'>by email</a> or via the <a href='https://github.com/best-practice-and-impact/qa-of-code-guidance'>GitHub repository</a>.
-    </div>
-</p>
-        </footer>
-    </div>
-    
-</div>
-
-
       </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#motivation">Motivation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#clean-code">Clean code</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#use-informative-names">Use informative names</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#give-variables-clear-and-concise-names">Give variables clear and concise names</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#name-functions-after-the-task-that-they-perform">Name functions after the task that they perform</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#make-classes-easy-to-identify">Make classes easy to identify</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#make-code-easier-to-read-by-following-a-consistent-style">Make code easier to read by following a consistent style</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#write-code-that-other-programmers-will-find-easy-to-read">Write code that other programmers will find easy to read</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#automate-style-checks">Automate style checks</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#software-ideas-for-analysts">Software ideas for analysts</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#keep-it-simple">Keep it simple</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#don-t-repeat-yourself">Don’t repeat yourself</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#be-explicit">Be explicit</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#separate-responsibilities">Separate responsibilities</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#make-functions-open-to-extension-but-closed-for-modification">Make functions open to extension, but closed for modification</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  <p>Analysis Function - Analytical Standards and Pipelines hub</p><p>This is a living document, please help use to make it grow by providing any feedback <a href='mailto:ASAP@ons.gov.uk'>by email</a> or via the <a href='https://github.com/best-practice-and-impact/qa-of-code-guidance'>GitHub repository</a>.
+</div>
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
     </div>
+  </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
 
-
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>

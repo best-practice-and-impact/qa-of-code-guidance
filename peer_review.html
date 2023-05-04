@@ -1,40 +1,50 @@
 
+
 <!DOCTYPE html>
 
-<html lang="en">
+
+<html lang="en" >
+
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
     <title>Peer review &#8212; Quality Assurance of Code for Analysis and Research</title>
-    
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="_static/accessibility.css" />
     <link rel="stylesheet" type="text/css" href="_static/logo.css" />
     <link rel="stylesheet" type="text/css" href="_static/admonitions.css" />
     <link rel="stylesheet" type="text/css" href="_static/markdown_within_tabs.css" />
-    <link rel="stylesheet" type="text/css" href="_static/accessibility.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
-    
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -42,12 +52,12 @@
     <script src="_static/doctools.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
@@ -60,517 +70,470 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Testing code" href="testing_code.html" />
     <link rel="prev" title="Data Management" href="data.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en">
-    
-
-    <!-- Google Analytics -->
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
-    <div class="container-fluid" id="banner"></div>
-
-    
-
-    <div class="container-xl">
-      <div class="row">
-          
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="index.html">
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+      <div class="bd-sidebar-primary bd-sidebar">
         
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+    
+    
       
-      
-      <img src="_static/duck_book_logo.svg" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">Quality Assurance of Code for Analysis and Research</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
-        <p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Overview
- </span>
-</p>
+    
+    
+    <img src="_static/duck_book_logo.svg" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/duck_book_logo.svg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Overview</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="glossary.html">
-   Glossary of terms
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="managers_guide.html">
-   Managing analytical code development
-  </a>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="checklists.html">
-   Code quality assurance checklists
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
-  <label for="toctree-checkbox-1">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="checklist_lower.html">
-     Lower quality assurance
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="checklist_moderate.html">
-     Moderate quality assurance
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="checklist_higher.html">
-     Higher quality assurance
-    </a>
-   </li>
-  </ul>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary of terms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="managers_guide.html">Managing analytical code development</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="checklists.html">Code quality assurance checklists</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="checklist_lower.html">Lower quality assurance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="checklist_moderate.html">Moderate quality assurance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="checklist_higher.html">Higher quality assurance</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Guidance
- </span>
-</p>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Guidance</span></p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="principles.html">
-   Principles
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="modular_code.html">
-   Modular code
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="readable_code.html">
-   Readable code
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="project_structure.html">
-   Structuring your project
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="code_documentation.html">
-   Code documentation
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="project_documentation.html">
-   Project documentation
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="version_control.html">
-   Version control
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="configuration.html">
-   Configuration
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="data.html">
-   Data Management
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   Peer review
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="testing_code.html">
-   Testing code
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="principles.html">Principles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modular_code.html">Modular code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="readable_code.html">Readable code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="project_structure.html">Structuring your project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code_documentation.html">Code documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="project_documentation.html">Project documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="version_control.html">Version control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configuration.html">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data.html">Data Management</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Peer review</a></li>
+<li class="toctree-l1"><a class="reference internal" href="testing_code.html">Testing code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="continuous_integration.html">Automating Code Quality Assurance</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Resources
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Resources</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="learning.html">
-   Learning resources
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="tools.html">
-   Tools
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="learning.html">Learning resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tools.html">Tools</a></li>
 </ul>
 
     </div>
 </nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            <p>Book version 2022.4</p><a href='https://www.gov.uk/government/organisations/government-analysis-function' target='_blank'><img src='./_static/af_logo.png' alt='The Government Analysis Function logo' style='width:50%;'></a>
-            </div>
-            
-        </div>
     </div>
-    <div id="rtd-footer-container"></div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/best-practice-and-impact/qa-of-code-guidance" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/best-practice-and-impact/qa-of-code-guidance/edit/master/book/peer_review.md" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/best-practice-and-impact/qa-of-code-guidance/issues/new?title=Issue%20on%20page%20%2Fpeer_review.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
 </div>
 
 
-          
-
-
-          
-<!-- A tiny helper pixel to detect if we've scrolled -->
-<div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
-    
-    <div class="header-article row sticky-top noprint">
-        
 
 
 
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/peer_review.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
   </span>
-
-</label>
-
-        
-    </div>
-    <div class="header-article__right">
-<button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
   <i class="fas fa-expand"></i>
   </span>
 
 </button>
 
-<div class="menu-dropdown menu-dropdown-repository-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Source repositories">
-      <i class="fab fa-github"></i>
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://github.com/best-practice-and-impact/qa-of-code-guidance"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Source repository"
->
-  
+`);
+</script>
 
-<span class="headerbtn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-<span class="headerbtn__text-container">repository</span>
-</a>
-
-      </li>
-      
-      <li>
-        <a href="https://github.com/best-practice-and-impact/qa-of-code-guidance/issues/new?title=Issue%20on%20page%20%2Fpeer_review.html&body=Your%20issue%20content%20here."
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Open an issue"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="headerbtn__text-container">open issue</span>
-</a>
-
-      </li>
-      
-      <li>
-        <a href="https://github.com/best-practice-and-impact/qa-of-code-guidance/edit/master/book/peer_review.md"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Edit this page"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-pencil-alt"></i>
-  </span>
-<span class="headerbtn__text-container">suggest edit</span>
-</a>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="_sources/peer_review.md"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="headerbtn__text-container">.md</span>
-</a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="headerbtn__text-container">.pdf</span>
-</button>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
 </label>
-
+</div></div>
+      
     </div>
+  
 </div>
-
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#why-do-we-need-peer-review">
-   Why do we need peer review?
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#what-should-we-review">
-   What should we review?
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#how-do-we-approach-code-review">
-   How do we approach code review?
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#pair-programming">
-     Pair programming
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#remote-review">
-     Remote review
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#case-studies">
-       Case studies
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
-</ul>
-
-    </nav>
 </div>
-    </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Peer review</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#why-do-we-need-peer-review">
-   Why do we need peer review?
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#what-should-we-review">
-   What should we review?
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#how-do-we-approach-code-review">
-   How do we approach code review?
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#pair-programming">
-     Pair programming
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#remote-review">
-     Remote review
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#case-studies">
-       Case studies
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
-</ul>
+              
+              
 
-                        </nav>
-                    </div>
-                </div>
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Peer review</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
             </div>
-            <main id="main-content" role="main">
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#focus-reviews-on-code-quality">Focus reviews on code quality</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#can-i-easily-understand-what-the-code-does">Can I easily understand what the code does?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#is-the-required-functionality-tested-sufficiently">Is the required functionality tested sufficiently?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-easy-will-it-be-to-alter-this-code-when-requirements-change">How easy will it be to alter this code when requirements change?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#can-i-generate-the-same-outputs-that-the-analysis-claims-to-produce">Can I generate the same outputs that the analysis claims to produce?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#give-practical-feedback">Give practical feedback</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#document-review-feedback-and-outcomes">Document review feedback and outcomes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#give-consistent-feedback">Give consistent feedback</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#give-timely-feedback">Give timely feedback</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#review-through-pair-programming">Review through pair programming</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#review-separately-when-necessary">Review separately when necessary</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#case-study-ropensci-review">Case study - rOpenSci review</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#case-studies">Case studies</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
                 
-              <div>
-                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
   <section class="tex2jax_ignore mathjax_ignore" id="peer-review">
 <h1>Peer review<a class="headerlink" href="#peer-review" title="Permalink to this headline">#</a></h1>
-<p>Peer review of code is a quality assurance activity, where a developer other than the code’s author, views and tests the usage of a piece of code.</p>
-<blockquote>
-<div><p>For analysis to be used to inform a decision it must be possible to assess its utility, reliability, and the degree of validation and verification to which it has been subjected.</p>
+<p>Peer review of code is a quality assurance activity where a developer, other than the code’s author, views and tests the usage of a piece of code.</p>
+<p>Peer review allows a fresh pair of eyes to take a look at your work.
+It helps to assure that you have taken an appropriate approach to your analysis and may highlight errors in the analysis process.
+Constructive review feedback helps you to improve your code quality and provides confidence in your work.
+It acts to assure that our analysis is fit for purpose.</p>
+<blockquote class="epigraph">
+<div><p>For analysis to be used to inform a decision it must be possible to assess its utility, reliability,
+and the degree of validation and verification to which it has been subjected.</p>
+<p class="attribution">—<a class="reference external" href="https://www.gov.uk/government/publications/the-aqua-book-guidance-on-producing-quality-analysis-for-government">The Aqua book</a></p>
 </div></blockquote>
-<p><a class="reference external" href="https://www.gov.uk/government/publications/the-aqua-book-guidance-on-producing-quality-analysis-for-government">The Aqua book</a></p>
-<section id="why-do-we-need-peer-review">
-<h2>Why do we need peer review?<a class="headerlink" href="#why-do-we-need-peer-review" title="Permalink to this headline">#</a></h2>
-<p>Peer review allows a fresh pair of eyes to take a look at your work. It validates that you have taken a correct approach to your analysis and may highlight errors. This constructive feedback helps you to improve your code quality and provides confidence in your work. It acts to make sure that our analysis is fit for purpose.</p>
-<blockquote>
+<p><a class="reference external" href="https://www.gov.uk/government/publications/the-aqua-book-guidance-on-producing-quality-analysis-for-government">The Aqua book</a>
+tells us that quality assurance of our analysis should be proportional to the complexity and business risk of the analysis.
+This means that both internal and external peer review may be required to adequately assure your analysis.
+External review is recommended if your analysis uses novel or complex techniques,
+if comparison with other analyses cannot be used to challenge your results, or if the analysis is business critical.</p>
+<blockquote class="epigraph">
 <div><p>Continuous challenge and improvement is essential to ensure that the people we serve – ministers and, of course, the public – have trust in our analysis.</p>
+<p class="attribution">—Nick Macphereson, former Permanent Secretary to the Treasury</p>
 </div></blockquote>
-<p>Nick Macphereson, former Permanent Secretary to the Treasury</p>
-<p><a class="reference external" href="https://www.gov.uk/government/publications/the-aqua-book-guidance-on-producing-quality-analysis-for-government">The Aqua book</a> tells us that quality assurance of our analysis should be proportional to the complexity and business risk of the analysis. This means that both internal and external peer review may be required to adequately assure your analysis. Particularly if your analysis uses novel or complex techniques, where comparison with other analyses cannot be used to challenge your results, or if the analysis is business critical.</p>
-<p>Most analysis stems from some form of customer engagement. Throughout design, implementation and review of analysis we must continue to assess whether our analysis is fit for purpose: Does it meet the needs of the customer? Your project should document the scope of your analysis and any requirements, to make this assessment as easy as possible. Regular contact with customers helps to keep these requirements up to date. Additional documentation that supports the auditability of your analysis includes assumption logs, technical reports describing the analysis and documentation on any verification or validation that has already been carried out.</p>
-<p>As we discussed in <a class="reference internal" href="readable_code.html"><span class="doc std std-doc">Readable code</span></a>, good quality code is easier to read, understand and maintain. Peer review improves the quality of our code through the constructive challenges from the reviewer. A reviewer might do this by suggesting alternative ways to represent your analysis or they may ask questions to check the reasons behind decisions in your coding approach and analysis as a whole.</p>
-<p>Moreover, effective peer review requires and, therefore, enforces reproducibility. A key aspect of review is checking that the same results are acquired when running your code with the same input data. Assurance that your analysis can be reproduced increases the trust in your results.</p>
-<p>Another benefit, particularly of internal review, is knowledge transfer. Both the reviewer and reviewee are exposed to new ideas. The reviewer must gain a low-level understanding of what the code is doing, in order to validate that it works as expected. This may provide your team members with the understanding required to use and maintain your code in the future.</p>
-</section>
-<section id="what-should-we-review">
-<h2>What should we review?<a class="headerlink" href="#what-should-we-review" title="Permalink to this headline">#</a></h2>
-<p>When reviewing code, you can ask yourself the following questions:</p>
+<section id="focus-reviews-on-code-quality">
+<h2>Focus reviews on code quality<a class="headerlink" href="#focus-reviews-on-code-quality" title="Permalink to this headline">#</a></h2>
+<p>Our <a class="reference internal" href="checklists.html"><span class="doc std std-doc">Code quality assurance checklists</span></a> provide an extensive list of good practices that reviewers can look for.
+Many of these criteria consider the whole project.
+You should tailor your review to the quality assurance criteria that the project is trying to meet and the scale of the review.</p>
+<p>Reviewing is centered around conversations - asking yourself and the reviewer questions.
+While reviewing changes to analytical code, example questions might be:</p>
+<section id="can-i-easily-understand-what-the-code-does">
+<h3>Can I easily understand what the code does?<a class="headerlink" href="#can-i-easily-understand-what-the-code-does" title="Permalink to this headline">#</a></h3>
+<p>In more depth:</p>
 <ul class="simple">
-<li><p>Can I easily understand what the code does?</p>
-<ul>
 <li><p>Is the code sufficiently documented for me to understand it?</p></li>
 <li><p>Is there duplication in the code that could be simplified by refactoring into functions and classes?</p></li>
 <li><p>Are functions and class methods simple, using few parameters?</p></li>
 </ul>
-</li>
-<li><p>Does the code fulfil its requirements?</p></li>
-<li><p>Is the required functionality tested sufficiently?</p></li>
-<li><p>How easy will it be to alter this code when requirements change? They always do.</p>
-<ul>
-<li><p>Are high level parameters kept in dedicated configuration files? Or would somebody need to work their way through the code with lots of manual edits to reconfigure for a new run?</p></li>
+<p>As we discussed in <a class="reference internal" href="readable_code.html"><span class="doc std std-doc">Readable code</span></a>, good quality code is easier to read, understand and maintain.
+Peer review improves the quality of our code through the constructive challenges of the reviewer.
+As a reviewer, you might do this by suggesting alternative ways to represent the analysis or
+by asking about decisions that have been made in the approach to the analysis.</p>
+<p>Another benefit, particularly of internal review, is knowledge transfer.
+Both the reviewer and reviewee are exposed to new ideas.
+The reviewer must gain a low-level understanding of what the code is doing, in order to validate that it works as expected.
+This may provide your team members with the understanding required to use and maintain your code in the future.</p>
+</section>
+<section id="is-the-required-functionality-tested-sufficiently">
+<h3>Is the required functionality tested sufficiently?<a class="headerlink" href="#is-the-required-functionality-tested-sufficiently" title="Permalink to this headline">#</a></h3>
+<p>If there are not tests for each part of the code, then we can’t be sure that it works as expected.
+As a reviewer, you should ask whether the amount of testing is proportionate given the risk to the analysis if the code does not work.</p>
+</section>
+<section id="how-easy-will-it-be-to-alter-this-code-when-requirements-change">
+<h3>How easy will it be to alter this code when requirements change?<a class="headerlink" href="#how-easy-will-it-be-to-alter-this-code-when-requirements-change" title="Permalink to this headline">#</a></h3>
+<p>In more depth:</p>
+<ul class="simple">
+<li><p>Are high level parameters kept in dedicated configuration files?</p></li>
+<li><p>Or would somebody need to work their way through the code with lots of manual edits to reconfigure for a new run?</p></li>
 </ul>
-</li>
-<li><p>Can I generate the same outputs that the analysis claims to produce?</p>
-<ul>
+<p>Most analysis stems from some form of customer engagement.
+Throughout design, implementation and review of analysis we must continue to assess whether our analysis is fit for purpose:
+Does it meet the needs of the customer?
+A project should document the scope of your analysis and any requirements, to make this assessment as easy as possible.
+Additional documentation that supports the auditability of your analysis includes assumption logs,
+technical reports describing the analysis and documentation on any verification or validation that has already been carried out.</p>
+</section>
+<section id="can-i-generate-the-same-outputs-that-the-analysis-claims-to-produce">
+<h3>Can I generate the same outputs that the analysis claims to produce?<a class="headerlink" href="#can-i-generate-the-same-outputs-that-the-analysis-claims-to-produce" title="Permalink to this headline">#</a></h3>
+<p>In more depth:</p>
+<ul class="simple">
 <li><p>Have dependencies been sufficiently documented?</p></li>
 <li><p>Is the code version, input data version and configuration recorded?</p></li>
 </ul>
-</li>
-<li><p>Is the code style consistent?</p></li>
-</ul>
-<p>In addition to asking these questions, you might formalise your review using a template. Templates are useful for setting criteria to review against. You should tailor any template to reflect the scope of your review. For example, small regular reviews may focus on smaller aspects of the analysis compared to a large project-wide review. The general example below is written in Markdown, so that it can be used in Git platform pull/merge requests:</p>
+<p>A key aspect of review is checking that the same results are acquired when running your code with the same input data.
+Assurance that  analysis can be reproduced increases the trust in the results.</p>
+<p>Note that each of these example questions focuses on important quality assurance practices in the code, rather than minor issues like code layout and style.</p>
+</section>
+</section>
+<section id="give-practical-feedback">
+<h2>Give practical feedback<a class="headerlink" href="#give-practical-feedback" title="Permalink to this headline">#</a></h2>
+<p>Feedback should be practical and constructive.
+For example, you should suggest an improvement or alternative that the developer may consider and learn from.
+Although it may be necessary to highlight specific examples, you should avoid making feedback personal.</p>
+<p>The CEDAR feedback model can be a useful framework for structuring review comments.
+This model breaks review down into five sections:</p>
+<ol class="arabic simple">
+<li><p>Context - describe the issue and the potential impact.</p></li>
+<li><p>Examples - give specific examples of when and where the issue has been present.</p></li>
+<li><p>Diagnosis - use the example to discuss why this approach was taken, what could have been done differently and why the alternatives could be an improvement.</p></li>
+<li><p>Actions - ask the person receiving feedback to suggest actions that they could follow to avoid this issue in future.</p></li>
+<li><p>Review - revisit the discussion to look for progress following on the feedback.</p></li>
+</ol>
+<p>This approach has been designed from a coaching or mentoring perspective, and can work well in verbal discussion or when giving written feedback.</p>
+</section>
+<section id="document-review-feedback-and-outcomes">
+<h2>Document review feedback and outcomes<a class="headerlink" href="#document-review-feedback-and-outcomes" title="Permalink to this headline">#</a></h2>
+<p>When you identify issues with code functionality or quality you should suggest improvements to solve these issues.
+The code developer may respond to your comments to justify why they have taken a certain approach, otherwise they should act on your feedback before using the analysis.</p>
+<p>It may be necessary to re-review changes that have resulted from your initial review, to confirm that your feedback has been actioned appropriately.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>It is essential that you document what you have considered in your review and how the developer has responded to your feedback.
+This documentation should be kept close to the relevant version of the code, so that others can see what has been reviewed.
+The easiest way to manage this is by using the Merge Request or Pull Request feature on your version control platform to conduct the review.
+See <a class="reference internal" href="version_control.html"><span class="doc std std-doc">Version control</span></a> for more information.</p>
+</div>
+</section>
+<section id="give-consistent-feedback">
+<h2>Give consistent feedback<a class="headerlink" href="#give-consistent-feedback" title="Permalink to this headline">#</a></h2>
+<p>You might formalise your review using a template, to ensure that review is consistent within a project.
+Templates are useful for setting criteria to review against.
+You should tailor any template to reflect the scope of your review.
+For example, small regular reviews may focus on smaller aspects of the analysis compared to a large project-wide review.
+The general example below is written in Markdown, so that it can be used in version control platform Merge or Pull requests:</p>
 <div class="highlight-md notranslate"><div class="highlight"><pre><span></span><span class="gu">##  Code review</span>
 
 <span class="gu">#### Documentation</span>
@@ -587,16 +550,8 @@ Any new code includes all the following forms of documentation:
 <span class="k">- [ ]</span> <span class="gs">**Automated tests**</span>: Unit tests cover essential functions for a reasonable range
   of inputs and conditions. All tests pass on your local machine.
 <span class="k">- [ ]</span> <span class="gs">**Packaging guidelines**</span>: New code conforms to the project contribution
-  guidelines.
-
-<span class="gu">#### Final approval (post-review)</span>
-
-The author has responded to my review and made changes to my satisfaction.
-<span class="k">- [ ]</span> <span class="gs">**I recommend merging this request.**</span>
-
-Estimated time spent reviewing: #
-
----
+<span class="gu">  guidelines.</span>
+<span class="gu">---</span>
 
 <span class="gu">### Review comments</span>
 
@@ -604,48 +559,104 @@ Estimated time spent reviewing: #
 
 These might include, but not exclusively:
 
-<span class="k">-</span> bugs that need fixing (does it work as expected? and does it work with other code
-  that it is likely to interact with?)
-<span class="k">-</span> alternative methods (could it be written more efficiently or with more clarity?)
-<span class="k">-</span> documentation improvements (does the documentation reflect how the code actually works?)
-<span class="k">-</span> additional tests that should be implemented (do the tests effectively assure that it
-  works correctly?)
-<span class="k">-</span> code style improvements (could the code be written more clearly?)
+<span class="k">-</span><span class="w"> </span>bugs that need fixing (does it work as expected? and does it work with other code that it is likely to interact with?)
+<span class="k">-</span><span class="w"> </span>alternative methods (could it be written more efficiently or with more clarity?)
+<span class="k">-</span><span class="w"> </span>documentation improvements (does the documentation reflect how the code actually works?)
+<span class="k">-</span><span class="w"> </span>additional tests that should be implemented (do the tests effectively assure that it  works correctly?)
+<span class="k">-</span><span class="w"> </span>code style improvements (could the code be written more clearly?)
 
 Your suggestions should be tailored to the code that you are reviewing.
 Be critical and clear, but not mean. Ask questions and set actions.
 </pre></div>
 </div>
-<p>Internal review should be carried out within your teams. Reviewing code from those with more and less experience is beneficial.</p>
+<p>Internal review should be carried out regularly within the development team.
+Reviewing code written by those with more and less experience than you is beneficial for both reviewer and developer.
+Similar questions can be asked from both perspectives, for the reviewer to get a good understanding of the approach and decisions behind the analysis.</p>
 </section>
-<section id="how-do-we-approach-code-review">
-<h2>How do we approach code review?<a class="headerlink" href="#how-do-we-approach-code-review" title="Permalink to this headline">#</a></h2>
-<section id="pair-programming">
-<h3>Pair programming<a class="headerlink" href="#pair-programming" title="Permalink to this headline">#</a></h3>
+<section id="give-timely-feedback">
+<h2>Give timely feedback<a class="headerlink" href="#give-timely-feedback" title="Permalink to this headline">#</a></h2>
+<p>It’s important that feedback is provided in good time, so that the review process does not hold up development of the code
+and that issues can be addressed before more code is written using the same practices.</p>
+<p>We strongly recommend applying pair programming for code review, as the most timely and practical method.
+However, a separate review process may be necessary when multiple developers are not available to work at the same time.</p>
+<section id="review-through-pair-programming">
+<h3>Review through pair programming<a class="headerlink" href="#review-through-pair-programming" title="Permalink to this headline">#</a></h3>
 <blockquote>
 <div><p>Two heads are better than one.</p>
 </div></blockquote>
-<p>This practice combines the code writing and the review process into one step. Here, two or three developers work together to write a single piece of code. Each developer takes turns to actively author parts of the code, while others provide real-time feedback on the code being written.</p>
-<p>This practice encourages developers to consider why they are writing code in a particular way and to vocalise this (‘programming out loud’). Additionally, it gives reviewers a chance to suggest improvements and question the author’s approach as the code is written. Working in this way can be more efficient than reviewing code separately and the resulting code often contains fewer bugs.</p>
-<p>The rotational aspect of pair programming ensures that all team members gain experience from both the author and review perspective. From both angles, you’ll learn new techniques and practices. In addition to this shared knowledge, developers can also improve their interpersonal skills by working in this way.</p>
-<p>This blog post from the Government Digital Service provides <a class="reference external" href="https://gds.blog.gov.uk/2018/02/06/how-to-pair-program-effectively-in-6-steps/">more detailed steps to apply pair programming</a>.</p>
+<p>Review doesn’t have to be an arduous standalone task.
+Pair programming combines the code writing and the review process into a single step.
+Here, two or three developers work together to write a single piece of code.
+Each developer takes turns to actively author parts of the code, while others provide real-time feedback on the code being written.</p>
+<p>This practice encourages developers to consider why they are writing code in a particular way and to vocalise this (“programming out loud”).
+Additionally, it gives reviewers a chance to suggest improvements and question the author’s approach as the code is written.
+Working in this way can be more efficient than reviewing code separately - issues are identified sooner, so they are easier to fix.
+Despite the upfront cost of two individuals writing the code, the resulting code is often higher quality and contains fewer bugs.</p>
+<p>The rotational aspect of pair programming ensures that all team members gain experience from both the author and review perspective.
+From both angles, you’ll learn new programming and communication techniques.
+In addition to this, sharing knowledge of how the code works across the team prevents too much risk being put on individuals.</p>
+<p>Developers working in pairs can approve changes to code as it is written, however,
+key discussions from pair programming sessions should still be documented to demonstrate which aspects of the code have been reviewed and discussed.</p>
+<p>This blog post from the Government Digital Service provides
+<a class="reference external" href="https://gds.blog.gov.uk/2018/02/06/how-to-pair-program-effectively-in-6-steps/">more detailed steps to apply pair programming</a>.</p>
 </section>
-<section id="remote-review">
-<h3>Remote review<a class="headerlink" href="#remote-review" title="Permalink to this headline">#</a></h3>
-<p>Remote review involves sharing your code with a reviewer, and receiving a review in the form of constructive comments. We describe this as remote, in the sense that the code author does not need to be present for the review. This is often an iterative process, where the reviewer may make additional suggestions until they are satisfied with the code.</p>
-<p>This form of review works well when changes to the code are small and frequent. Requesting review of small but regular changes reduces the burden on reviewers, relative to large review of a complete project. When carrying out a review of larger pieces of work, it may be worth reviewing different aspects of the code in separate sessions. For example, focussing on documentation in one session and functionality in the next.</p>
+<section id="review-separately-when-necessary">
+<h3>Review separately when necessary<a class="headerlink" href="#review-separately-when-necessary" title="Permalink to this headline">#</a></h3>
+<p>A separate review involves sharing your code with a reviewer, and receiving written feedback.
+We describe this as separate, because code development and review are separate and the code author does not need to be present for the review.
+This type of review is an iterative process, where the reviewer may make additional suggestions until they are satisfied with the code changes.</p>
+<p>This form of review works best when changes to the code are small and frequent.
+Requesting review of small but regular changes reduces the burden on reviewers, relative to large review of a complete project.
+Similarly to pair programming, reviewing small changes to code allows you to catch issues sooner.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>If a project is only reviewed when all of the code has been written, this significantly reduces the benefit of review.</p>
+<p>This creates a much larger burden on the reviewer.
+Additionaly, any issues that are identified may take a lot of time to fix across the whole project.
+A reviewer might highlight that certain quality assurance practices have not been used -
+for example, there has not been enough documentation or automated testing in the project.
+It would take a substantial amount of effort to add documentation and testing for the whole project.
+If this was identified earlier, the improved practices could be applied as the remaining code is developed.</p>
+</div>
+<p>When you must carry out a review of larger or complete pieces of work, it may be worth reviewing different aspects of the code in separate sessions.
+For example, focussing on documentation in one session and functionality in the next.</p>
 <p>The thought of someone else reviewing your code in this way encourages good practices from the outset:</p>
 <ul class="simple">
 <li><p>Clear code and documentation - so that others with no experience can use and test your code</p></li>
 <li><p>Usable dependency management - so that others can run your code in their own environment</p></li>
 </ul>
-<p>Remote review is aided by features of most version control platforms, namely the pull request (or equivalent). See <a class="reference internal" href="version_control.html"><span class="doc std std-doc">Version control</span></a> for more information.</p>
+<p>Separate review is aided by features of most version control platforms. See <a class="reference internal" href="version_control.html"><span class="doc std std-doc">Version control</span></a> for more information.</p>
+<section id="case-study-ropensci-review">
+<h4>Case study - rOpenSci review<a class="headerlink" href="#case-study-ropensci-review" title="Permalink to this headline">#</a></h4>
+<p>Here we discuss a <a class="reference external" href="https://ropensci.org/">review example from rOpenSci</a>;
+a community led initiative that curates open source, statistical R packages.
+rOpenSci apply a rigorous peer review process to assure the quality of packages before including them in their collection.
+This peer review process is entirely remote and is performed in the open, via GitHub pull requests.</p>
+<p>In this example, from colleagues at Public Health England,
+<a class="reference external" href="https://github.com/ropensci/software-review/issues/168">the <code class="docutils literal notranslate"><span class="pre">fingertipsR</span></code> package is reviewed</a>.
+The initial comment describes the package that is being submitted and includes a check against a list of minimum requirements.
+The <a class="reference external" href="http://mangothecat.github.io/goodpractice/"><code class="docutils literal notranslate"><span class="pre">goodpractice</span></code> R package</a> is used to check that good R packaging practices have been followed.
+<a class="reference internal" href="continuous_integration.html#continuous-integration"><span class="std std-ref">Continuous integration</span></a> is commonly used to carry out automated checks on code repositories.
+The reports from these checks can save reviewers time, by providing indicators of things like code complexity and test coverage.</p>
+</section>
 <section id="case-studies">
 <h4>Case studies<a class="headerlink" href="#case-studies" title="Permalink to this headline">#</a></h4>
-<p>Here we discuss an example from <a class="reference external" href="https://ropensci.org/">rOpenSci</a>; a community led initiative that curates open source, statistical R packages. rOpenSci apply a rigorous peer review process to assure the quality of packages before including them in their collection. This peer review process is entirely remote and is performed in the open, via GitHub pull requests.</p>
-<p>In this example, from colleagues at Public Health England, <a class="reference external" href="https://github.com/ropensci/software-review/issues/168">the <code class="docutils literal notranslate"><span class="pre">fingertipsR</span></code> package is reviewed</a>. The initial comment describes the package that is being submitted and includes a check against a list of minimum requirements. The <a class="reference external" href="http://mangothecat.github.io/goodpractice/"><code class="docutils literal notranslate"><span class="pre">goodpractice</span></code> R package</a> is used to check that good R packaging practices have been followed. <a class="reference external" href="https://www.atlassian.com/continuous-delivery/continuous-integration#:~:text=Continuous%20integration%20(CI)%20is%20the,builds%20and%20tests%20then%20run.">Continuous integration</a> is commonly used to carry out automated checks on code repositories. The reports from these checks can save reviewers time, by providing indicators of things like code complexity and test coverage.</p>
-<p>Two detailed external reviews are then conducted before the package is accepted - these reviews include additional checks for common aspects of code packages, like documentation, examples and automated testing. Perhaps the most informative part of these reviews, however, is the detailed bespoke comments. Here the reviewers highlight problems, ask questions to clarify aspects of the package design and suggest improvements to the implementation of the code (with examples).</p>
-<p>Following the reviews, additional comments describe how the reviewers requested changes have been addressed. And finally, there is a sign off to confirm that the reviewers are satisfied with the package.</p>
+<p>Here we discuss an example from <a class="reference external" href="https://ropensci.org/">rOpenSci</a>; a community led initiative that curates open source, statistical R packages.
+rOpenSci apply a rigorous peer review process to assure the quality of packages before including them in their collection.
+This peer review process is entirely remote and is performed in the open, via GitHub pull requests.</p>
+<p>In this example, from colleagues at Public Health England, <a class="reference external" href="https://github.com/ropensci/software-review/issues/168">the <code class="docutils literal notranslate"><span class="pre">fingertipsR</span></code> package is reviewed</a>.
+The initial comment describes the package that is being submitted and includes a check against a list of minimum requirements.
+The <a class="reference external" href="http://mangothecat.github.io/goodpractice/"><code class="docutils literal notranslate"><span class="pre">goodpractice</span></code> R package</a> is used to check that good R packaging practices have been followed.
+<a class="reference external" href="https://www.atlassian.com/continuous-delivery/continuous-integration#:~:text=Continuous%20integration%20(CI)%20is%20the,builds%20and%20tests%20then%20run.">Continuous integration</a>
+is commonly used to carry out automated checks on code repositories.
+The reports from these checks can save reviewers time, by providing indicators of things like code complexity and test coverage.</p>
+<p>Two detailed external reviews are then conducted before the package is accepted - these reviews include additional checks for common aspects of code packages,
+like documentation, examples and automated testing.
+Perhaps the most informative part of these reviews, however, is the detailed bespoke comments.
+Here the reviewers highlight problems, ask questions to clarify aspects of the package design and suggest improvements to the implementation of the code
+(with examples).</p>
+<p>Following the reviews, additional comments describe how the reviewers requested changes have been addressed.
+And finally, there is a sign off to confirm that the reviewers are satisfied with the package.</p>
 <p>Although this review looked at an entire, mature package, you can apply parts of this review process to smaller pieces of code as required.</p>
 </section>
 </section>
@@ -664,7 +675,7 @@ Be critical and clear, but not mean. Ask questions and set actions.
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./."
         },
         predefinedOutput: true
@@ -672,50 +683,115 @@ Be critical and clear, but not mean. Ask questions and set actions.
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="data.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Data Management</p>
-        </div>
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="data.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Data Management</p>
+      </div>
     </a>
-    <a class='right-next' id="next-link" href="testing_code.html" title="next page">
-    <div class="prev-next-info">
+    <a class="right-next"
+       href="testing_code.html"
+       title="next page">
+      <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title">Testing code</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
-</div>
-            </footer>
-        </div>
-    </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
-  
-    <div class="extra_footer">
-      <p>Analysis Function reproducible analytical pipelines (RAP) support</p><p>This is a living document, please help use to make it grow by providing any feedback <a href='mailto:Analysis.Function@ons.gov.uk'>by email</a> or via the <a href='https://github.com/best-practice-and-impact/qa-of-code-guidance'>GitHub repository</a>.
-    </div>
-</p>
-        </footer>
-    </div>
-    
-</div>
-
-
       </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#focus-reviews-on-code-quality">Focus reviews on code quality</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#can-i-easily-understand-what-the-code-does">Can I easily understand what the code does?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#is-the-required-functionality-tested-sufficiently">Is the required functionality tested sufficiently?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-easy-will-it-be-to-alter-this-code-when-requirements-change">How easy will it be to alter this code when requirements change?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#can-i-generate-the-same-outputs-that-the-analysis-claims-to-produce">Can I generate the same outputs that the analysis claims to produce?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#give-practical-feedback">Give practical feedback</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#document-review-feedback-and-outcomes">Document review feedback and outcomes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#give-consistent-feedback">Give consistent feedback</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#give-timely-feedback">Give timely feedback</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#review-through-pair-programming">Review through pair programming</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#review-separately-when-necessary">Review separately when necessary</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#case-study-ropensci-review">Case study - rOpenSci review</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#case-studies">Case studies</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  <p>Analysis Function - Analytical Standards and Pipelines hub</p><p>This is a living document, please help use to make it grow by providing any feedback <a href='mailto:ASAP@ons.gov.uk'>by email</a> or via the <a href='https://github.com/best-practice-and-impact/qa-of-code-guidance'>GitHub repository</a>.
+</div>
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
     </div>
+  </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
 
-
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>

@@ -1,40 +1,50 @@
 
+
 <!DOCTYPE html>
 
-<html lang="en">
+
+<html lang="en" >
+
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
     <title>Version control &#8212; Quality Assurance of Code for Analysis and Research</title>
-    
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="_static/accessibility.css" />
     <link rel="stylesheet" type="text/css" href="_static/logo.css" />
     <link rel="stylesheet" type="text/css" href="_static/admonitions.css" />
     <link rel="stylesheet" type="text/css" href="_static/markdown_within_tabs.css" />
-    <link rel="stylesheet" type="text/css" href="_static/accessibility.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
-    
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -42,12 +52,12 @@
     <script src="_static/doctools.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
@@ -60,708 +70,425 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Configuration" href="configuration.html" />
     <link rel="prev" title="Project documentation" href="project_documentation.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en">
-    
-
-    <!-- Google Analytics -->
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
-    <div class="container-fluid" id="banner"></div>
-
-    
-
-    <div class="container-xl">
-      <div class="row">
-          
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="index.html">
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+      <div class="bd-sidebar-primary bd-sidebar">
         
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+    
+    
       
-      
-      <img src="_static/duck_book_logo.svg" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">Quality Assurance of Code for Analysis and Research</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
-        <p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Overview
- </span>
-</p>
+    
+    
+    <img src="_static/duck_book_logo.svg" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/duck_book_logo.svg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Overview</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="glossary.html">
-   Glossary of terms
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="managers_guide.html">
-   Managing analytical code development
-  </a>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="checklists.html">
-   Code quality assurance checklists
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
-  <label for="toctree-checkbox-1">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="checklist_lower.html">
-     Lower quality assurance
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="checklist_moderate.html">
-     Moderate quality assurance
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="checklist_higher.html">
-     Higher quality assurance
-    </a>
-   </li>
-  </ul>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary of terms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="managers_guide.html">Managing analytical code development</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="checklists.html">Code quality assurance checklists</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="checklist_lower.html">Lower quality assurance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="checklist_moderate.html">Moderate quality assurance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="checklist_higher.html">Higher quality assurance</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Guidance
- </span>
-</p>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Guidance</span></p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="principles.html">
-   Principles
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="modular_code.html">
-   Modular code
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="readable_code.html">
-   Readable code
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="project_structure.html">
-   Structuring your project
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="code_documentation.html">
-   Code documentation
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="project_documentation.html">
-   Project documentation
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   Version control
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="configuration.html">
-   Configuration
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="data.html">
-   Data Management
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="peer_review.html">
-   Peer review
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="testing_code.html">
-   Testing code
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="principles.html">Principles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modular_code.html">Modular code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="readable_code.html">Readable code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="project_structure.html">Structuring your project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code_documentation.html">Code documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="project_documentation.html">Project documentation</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Version control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configuration.html">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data.html">Data Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="peer_review.html">Peer review</a></li>
+<li class="toctree-l1"><a class="reference internal" href="testing_code.html">Testing code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="continuous_integration.html">Automating Code Quality Assurance</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Resources
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Resources</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="learning.html">
-   Learning resources
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="tools.html">
-   Tools
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="learning.html">Learning resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tools.html">Tools</a></li>
 </ul>
 
     </div>
 </nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            <p>Book version 2022.4</p><a href='https://www.gov.uk/government/organisations/government-analysis-function' target='_blank'><img src='./_static/af_logo.png' alt='The Government Analysis Function logo' style='width:50%;'></a>
-            </div>
-            
-        </div>
     </div>
-    <div id="rtd-footer-container"></div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/best-practice-and-impact/qa-of-code-guidance" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/best-practice-and-impact/qa-of-code-guidance/edit/master/book/version_control.md" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/best-practice-and-impact/qa-of-code-guidance/issues/new?title=Issue%20on%20page%20%2Fversion_control.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
 </div>
 
 
-          
-
-
-          
-<!-- A tiny helper pixel to detect if we've scrolled -->
-<div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
-    
-    <div class="header-article row sticky-top noprint">
-        
 
 
 
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/version_control.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
   </span>
-
-</label>
-
-        
-    </div>
-    <div class="header-article__right">
-<button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
   <i class="fas fa-expand"></i>
   </span>
 
 </button>
 
-<div class="menu-dropdown menu-dropdown-repository-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Source repositories">
-      <i class="fab fa-github"></i>
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://github.com/best-practice-and-impact/qa-of-code-guidance"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Source repository"
->
-  
+`);
+</script>
 
-<span class="headerbtn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-<span class="headerbtn__text-container">repository</span>
-</a>
-
-      </li>
-      
-      <li>
-        <a href="https://github.com/best-practice-and-impact/qa-of-code-guidance/issues/new?title=Issue%20on%20page%20%2Fversion_control.html&body=Your%20issue%20content%20here."
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Open an issue"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="headerbtn__text-container">open issue</span>
-</a>
-
-      </li>
-      
-      <li>
-        <a href="https://github.com/best-practice-and-impact/qa-of-code-guidance/edit/master/book/version_control.md"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Edit this page"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-pencil-alt"></i>
-  </span>
-<span class="headerbtn__text-container">suggest edit</span>
-</a>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="_sources/version_control.md"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="headerbtn__text-container">.md</span>
-</a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="headerbtn__text-container">.pdf</span>
-</button>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
 </label>
-
+</div></div>
+      
     </div>
+  
 </div>
-
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#why-version-control">
-   Why version control?
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#what-should-i-version-control">
-   What should I version control?
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#git">
-   Git
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#commit-standards">
-     Commit standards
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#appropriate-use-of-branching">
-     Appropriate use of branching
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#merge-conflicts">
-     Merge conflicts
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#versioning-large-files">
-     Versioning large files
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#releases-tagging">
-     Releases (tagging)
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#avoid-commiting-sensitive-information-to-git-repositories">
-   Avoid commiting sensitive information to Git repositories
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#gitignore-files">
-     .gitignore files
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#excluding-rdata-and-rhistory-files">
-     Excluding
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       .Rdata
-      </span>
-     </code>
-     and
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       .Rhistory
-      </span>
-     </code>
-     files
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#jupyter-notebooks">
-     Jupyter Notebooks
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#access-control">
-     Access control
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#handling-data-breaches-via-git">
-     Handling data breaches via Git
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#github">
-   GitHub
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#efficient-use-of-issues">
-     Efficient use of issues
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#making-the-most-of-pull-requests">
-     Making the most of Pull Requests
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#forking">
-     Forking
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#github-actions">
-     GitHub Actions
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#testing-example">
-       Testing example
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#documentation-example">
-       Documentation example
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#comprehensive-example">
-       Comprehensive example
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#other-github-features">
-     Other GitHub features
-    </a>
-   </li>
-  </ul>
- </li>
-</ul>
-
-    </nav>
 </div>
-    </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Version control</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#why-version-control">
-   Why version control?
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#what-should-i-version-control">
-   What should I version control?
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#git">
-   Git
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#commit-standards">
-     Commit standards
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#appropriate-use-of-branching">
-     Appropriate use of branching
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#merge-conflicts">
-     Merge conflicts
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#versioning-large-files">
-     Versioning large files
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#releases-tagging">
-     Releases (tagging)
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#avoid-commiting-sensitive-information-to-git-repositories">
-   Avoid commiting sensitive information to Git repositories
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#gitignore-files">
-     .gitignore files
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#excluding-rdata-and-rhistory-files">
-     Excluding
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       .Rdata
-      </span>
-     </code>
-     and
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       .Rhistory
-      </span>
-     </code>
-     files
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#jupyter-notebooks">
-     Jupyter Notebooks
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#access-control">
-     Access control
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#handling-data-breaches-via-git">
-     Handling data breaches via Git
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#github">
-   GitHub
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#efficient-use-of-issues">
-     Efficient use of issues
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#making-the-most-of-pull-requests">
-     Making the most of Pull Requests
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#forking">
-     Forking
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#github-actions">
-     GitHub Actions
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#testing-example">
-       Testing example
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#documentation-example">
-       Documentation example
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#comprehensive-example">
-       Comprehensive example
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#other-github-features">
-     Other GitHub features
-    </a>
-   </li>
-  </ul>
- </li>
-</ul>
+              
+              
 
-                        </nav>
-                    </div>
-                </div>
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Version control</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
             </div>
-            <main id="main-content" role="main">
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#keep-an-audit-trail-of-changes">Keep an audit trail of changes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#include-code-and-documentation-in-version-control">Include code and documentation in version control</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exclude-sensitive-information-from-version-control">Exclude sensitive information from version control</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-git-for-version-control">Using Git for version control</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#write-short-and-informative-commits">Write short and informative commits</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#use-branching-appropriately">Use branching appropriately</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#resolve-merge-conflicts">Resolve merge conflicts</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#versioning-large-files">Versioning large files</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tag-new-releases">Tag new releases</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#avoid-committing-sensitive-information-to-git-repositories">Avoid committing sensitive information to Git repositories</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#automatically-avoid-committing-unwanted-files-using-gitignore">Automatically avoid committing unwanted files using .gitignore</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exclude-rdata-and-rhistory-files">Exclude <code class="docutils literal notranslate"><span class="pre">.Rdata</span></code> and <code class="docutils literal notranslate"><span class="pre">.Rhistory</span></code> files</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#avoid-saving-data-from-jupyter-notebooks">Avoid saving data from Jupyter Notebooks</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#control-access-to-code-only-when-essential">Control access to code only when essential</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#handle-data-breaches-via-git">Handle data breaches via Git</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-github">Using GitHub</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#use-git-issues-to-plan-and-discuss-development-of-your-project">Use Git issues to plan and discuss development of your project</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#use-pull-requests-for-reviewing-changes">Use pull requests for reviewing changes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fork-a-repository-to-maintain-an-independent-copy">Fork a repository to maintain an independent copy</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#use-github-actions-for-continous-integration">Use GitHub Actions for continous integration</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#other-github-features">Other GitHub features</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
                 
-              <div>
-                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
   <section class="tex2jax_ignore mathjax_ignore" id="version-control">
 <h1>Version control<a class="headerlink" href="#version-control" title="Permalink to this headline">#</a></h1>
-<p>Version control is managing changes to your analysis over time. In this chapter, we primarily discuss the benefits of using <a class="reference external" href="https://git-scm.com/">the Git version control system</a> .</p>
+<p>Version control is managing changes to your analysis over time.
+In this chapter, we primarily discuss the benefits of using <a class="reference external" href="https://git-scm.com/">the Git version control system</a>.</p>
 <div class="admonition-learning admonition">
 <p class="admonition-title">Pre-requisites</p>
-<p>To get the most benefit from this section, you should have a basic understanding of how to use Git. Many of the examples used in this section refer to the command-line interface for Git, so general command-line knowledge may also help.</p>
+<p>To get the most benefit from this section, you should have a basic understanding of how to use Git.
+Many of the examples used in this section refer to the command-line interface for Git, so general command-line knowledge may also help.</p>
 <p>You can find links to relevant training in the <a class="reference internal" href="learning.html"><span class="doc std std-doc">Learning resources</span></a> section of the book.</p>
 </div>
-<section id="why-version-control">
-<h2>Why version control?<a class="headerlink" href="#why-version-control" title="Permalink to this headline">#</a></h2>
-<p>As we discussed in <a class="reference internal" href="principles.html"><span class="doc std std-doc">Principles</span></a>, an audit trail is essential for assuring quality analysis. It’s important for us to be able to answer the following questions about our analysis:</p>
+<section id="keep-an-audit-trail-of-changes">
+<h2>Keep an audit trail of changes<a class="headerlink" href="#keep-an-audit-trail-of-changes" title="Permalink to this headline">#</a></h2>
+<p>As we discussed in <a class="reference internal" href="principles.html"><span class="doc std std-doc">Principles</span></a>, an audit trail is essential for assuring quality analysis.
+It’s important for us to be able to answer the following questions about our analysis:</p>
 <ul class="simple">
 <li><p>What changes have been made to our project?</p></li>
 <li><p>When were those changes made?</p></li>
 <li><p>Why were those changes made?</p></li>
 <li><p>Who made those changes?</p></li>
 </ul>
-<p>Version control software, like Git, records the answers to these questions throughout the development of a project. We can detail our development decisions alongside changes, using commit messages and Pull or Merge Requests. In turn, this keeps our analysis workspace clean of commented-out old code and numerous files containing previous versions.</p>
+<p>Version control software, like Git, records the answers to these questions throughout the development of a project.
+We can detail our development decisions alongside changes, using commit messages and Pull or Merge Requests.
+In turn, this keeps our analysis workspace clean of commented-out old code and numerous files containing previous versions.</p>
 <figure class="align-default" id="file-names">
 <a class="reference internal image-reference" href="https://imgs.xkcd.com/comics/documents.png"><img alt="Comic demonstrating poor file naming, like &quot;Untitled 138 Copy.docx&quot;." src="https://imgs.xkcd.com/comics/documents.png" style="width: 30%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 6 </span><span class="caption-text">Documents, from <a class="reference external" href="https://xkcd.com/1459/">xkcd</a>. This work is licensed under a <a class="reference external" href="https://creativecommons.org/licenses/by-nc/2.5/">Creative Commons Attribution-NonCommercial 2.5 License</a>.</span><a class="headerlink" href="#file-names" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 6 </span><span class="caption-text">Documents, from <a class="reference external" href="https://xkcd.com/1459/">xkcd</a>.
+This work is licensed under a <a class="reference external" href="https://creativecommons.org/licenses/by-nc/2.5/">Creative Commons Attribution-NonCommercial 2.5 License</a>.</span><a class="headerlink" href="#file-names" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
-<p>When used effectively, version control helps us to identify which changes have negatively impacted our work and remove them. Furthermore, a detailed audit trail allows us to refer to specific versions of our code that have been used to produce outputs, which is important for reproducing our analysis.</p>
-<p>Git is invaluable when recording and combining changes from multiple developers, as merging allows us to resolve conflicts between overlapping changes. Using a remote Git repository maintains a single source of truth, even when multiple individuals are working on a project. Additionally, version control platforms, like GitHub and GitLab, can make it easier to track and review ongoing work. This avoids duplication of effort and keeps review embedded in the development workflow.</p>
+<p>When used effectively, version control helps us to identify which changes have negatively impacted our work and remove them.
+Furthermore, a detailed audit trail allows us to refer to specific versions of our code that have been used to produce outputs,
+which is important for reproducing our analysis.</p>
+<p>Git is invaluable when recording and combining changes from multiple developers, as merging allows us to resolve conflicts between overlapping changes.
+Using a remote Git repository maintains a single source of truth, even when multiple individuals are working on a project.
+Additionally, version control platforms, like GitHub and GitLab, can make it easier to track and review ongoing work.
+This avoids duplication of effort and keeps review embedded in the development workflow.</p>
 </section>
-<section id="what-should-i-version-control">
-<h2>What should I version control?<a class="headerlink" href="#what-should-i-version-control" title="Permalink to this headline">#</a></h2>
-<p>Ideally, you should include any code that is required to run your analysis. In a public repository, you may need to omit confidential or sensitive aspects of the project.</p>
+<section id="include-code-and-documentation-in-version-control">
+<h2>Include code and documentation in version control<a class="headerlink" href="#include-code-and-documentation-in-version-control" title="Permalink to this headline">#</a></h2>
+<p>Ideally, you should include all code and documentation that is required to understand and run your analysis.</p>
+<p>This may include:</p>
+<ul class="simple">
+<li><p>Project documentation including readme and contribution guidance</p></li>
+<li><p>Packaged functions and code documentation</p></li>
+<li><p>Unit tests</p></li>
+<li><p>Dummy data and example configuration files</p></li>
+<li><p>User documentation such as desk notes and installation guidance</p></li>
+</ul>
+</section>
+<section id="exclude-sensitive-information-from-version-control">
+<h2>Exclude sensitive information from version control<a class="headerlink" href="#exclude-sensitive-information-from-version-control" title="Permalink to this headline">#</a></h2>
+<p>In a public repository, you may need to omit confidential or sensitive aspects of the project.</p>
 <div class="admonition caution">
 <p class="admonition-title">Caution</p>
-<p>You should <strong>not</strong> include the following in your code repository:</p>
+<p>You should <strong>never</strong> include the following in your code repository:</p>
 <ul class="simple">
 <li><p>passwords, credentials or keys</p></li>
-<li><p>configuration files that are environment-dependent (e.g. containing file paths)</p></li>
+<li><p>real configuration files</p></li>
 <li><p>code that contains sensitive information</p>
 <ul>
 <li><p>for example, code that describes a method for fraud detection</p></li>
@@ -772,22 +499,41 @@ title="Print to PDF"
 <li><p>data, except for small example datasets</p></li>
 </ul>
 </div>
-<p>See <a class="reference internal" href="#excluding-from-git"><span class="std std-ref">Avoid commiting sensitive information to Git repositories</span></a> for details on how to mitigate the risk of including sensitive information in a Git repository.</p>
-<p>You might also want to include example (configuration)[<a class="reference external" href="http://configuration.md">configuration.md</a>] files, to help users trying to run your code understand what parameters need to be set. However, note that sometimes configuration files contain sensitive data or credentials, which should not be commited to version control. In this case, example configuration files should contain clear dummy values that are indicative of the expected values to be filled in.</p>
-<p>It is again worth stressing the importance of not committing sensitive, unpublished or disclosive data to your Git history. If you would like to include an example for end-users, a minimal dummy dataset can be committed to the repository. However, dummy datasets following the same layout can disclose the types of variables in the real data. As such, you should consider the inclusion of this data with caution, particularly for repositories intended to be hosted publicly.</p>
+<p>See <a class="reference internal" href="#excluding-from-git"><span class="std std-ref">Avoid committing sensitive information to Git repositories</span></a> for details on how to mitigate the risk of including sensitive information in a Git repository.</p>
+<p>It is again worth stressing the importance of not committing sensitive, unpublished or disclosive data to your Git history.
+If you would like to include an example for end-users, a minimal dummy dataset can be committed to the repository.
+When creating realistic dummy data, care should be taken not to disclose sensitive features of the true data such as distributions and trends.
+Dummy data should always be carefully peer reviewed before being added to a repository.</p>
+<p>It is again worth stressing the importance of not committing sensitive, unpublished or disclosive data to your Git history.
+If you would like to include an example for end-users, a minimal dummy dataset can be committed to the repository.
+When creating realistic dummy data, care should be taken not to disclose sensitive features of the true data such as distributions and trends.
+Dummy data should always be carefully peer reviewed before being added to a repository.</p>
 </section>
-<section id="git">
-<h2>Git<a class="headerlink" href="#git" title="Permalink to this headline">#</a></h2>
-<p>Git is a distributed version control system. This means that all users have access to a complete and self-contained history of changes to a given project. The software can be used to record local changes, with the option of then synchronising these changes with a central, remote repository. Remote repositories are typically hosted on a platform like GitHub or GitLab.</p>
-<p>The following sections describe useful concepts for using Git to version control your analysis. We use examples of Git commands throughout, but do not provide detailed descriptions of Git usage. If you are not familiar with using command line tools, or Git specifically, you should first look into <a class="reference internal" href="learning.html#git-learning"><span class="std std-ref">introductory training</span></a>.</p>
-<section id="commit-standards">
-<h3>Commit standards<a class="headerlink" href="#commit-standards" title="Permalink to this headline">#</a></h3>
-<p>Commits are collections of changes to one or more files in a repository. Every commit is attributed to the author of the changes, providing an audit trail. Each commit has a unique hash - or identifier - associated with it, which has a long (e.g. <code class="docutils literal notranslate"><span class="pre">121b5b4f18231e4ee32c9c61f6754429f9572743</span></code>) and short version (e.g. <code class="docutils literal notranslate"><span class="pre">121b5b4</span></code>). These hashes allow us to refer to specific changes, but each commit also has an associated message that is used to describe the changes.</p>
+<section id="using-git-for-version-control">
+<h2>Using Git for version control<a class="headerlink" href="#using-git-for-version-control" title="Permalink to this headline">#</a></h2>
+<p>Git is a distributed version control system.
+This means that all users have access to a complete and self-contained history of changes to a given project.
+The software can be used to record local changes, with the option of then synchronising these changes with a central, remote repository.
+Remote repositories are typically hosted on a platform like GitHub or GitLab.</p>
+<p>The following sections describe useful concepts for using Git to version control your analysis.
+We use examples of Git commands throughout, but do not provide detailed descriptions of Git usage.
+If you are not familiar with using command line tools, or Git specifically, you should first look into <a class="reference internal" href="learning.html#git-learning"><span class="std std-ref">introductory training</span></a>.</p>
+<section id="write-short-and-informative-commits">
+<h3>Write short and informative commits<a class="headerlink" href="#write-short-and-informative-commits" title="Permalink to this headline">#</a></h3>
+<p>Commits are collections of changes to one or more files in a repository.
+Every commit is attributed to the author of the changes, providing an audit trail.
+Each commit has a unique hash - or identifier - associated with it, which has a long (e.g. <code class="docutils literal notranslate"><span class="pre">121b5b4f18231e4ee32c9c61f6754429f9572743</span></code>) and short version (e.g. <code class="docutils literal notranslate"><span class="pre">121b5b4</span></code>).
+These hashes allow us to refer to specific changes, but each commit also has an associated message that is used to describe the changes.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>When adding changes to be included in a commit, you should preferentially add individual files or directories. For example, using <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">src/my_file.txt</span></code> rather than a catch-all like <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">.</span></code>. This specificity ensures that only intended changes are included, reducing the likelihood of including unrelated changes or files that should not be versioned (when they are not included in <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code>). Using <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code> after adding changes can help to confirm that only the desired changes are included.</p>
+<p>When adding changes to be included in a commit, you should preferentially add individual files or directories.
+For example, using <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">src/my_file.txt</span></code> rather than a catch-all like <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">.</span></code>.
+This specificity ensures that only intended changes are included, reducing the likelihood of including unrelated changes or files that should not be versioned
+(when they are not included in <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code>).
+Using <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code> after adding changes can help to confirm that only the desired changes are included.</p>
 </div>
-<p>Most commit messages are short and informative, but in some cases you may want to provide more detail. Common standards follow this model commit message from <a class="reference external" href="https://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html">“A note about Git commit messages”</a>:</p>
+<p>Most commit messages are short and informative, but in some cases you may want to provide more detail.
+Common standards follow this model commit message from <a class="reference external" href="https://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html">“A note about Git commit messages”</a>:</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Capitalized, short (50 chars or less) summary
 
 More detailed explanatory text, if necessary. Wrap it to about 72
@@ -811,88 +557,177 @@ Further paragraphs come after blank lines.
 - Use a hanging indent
 </pre></div>
 </div>
-<p>A concise summary of your change is usually sufficient, but remember that it is these commit messages that will be used in the future to understand what changes have been made to your project. You might rely on these to identify where an error has been introduced, so it is important that you write these messages clearly and informatively.</p>
-<p>How often you commit when working on a project should depend on what benefit you would like to get from versioning your work. When reviewing code that has been version controlled, the commit history provides a chronological summary of the changes that have been made to a project. To make this audit trail useful, commits should be made whenever a discrete unit of work has been completed. When useful commit messages have been used to describe these units of work, it is easier for others to understand steps taken to develop the analysis to its current state.</p>
-<p>You should also make commits whenever you have made changes that you might wish to revisit or undo. As Git allows us to easily <code class="docutils literal notranslate"><span class="pre">revert</span></code> changes by referring to a commit’s hash, you should try to ensure that each commit only contains changes to single aspect of your analysis. Consider a commit that includes changes to several files. We discover that one change in this commit has created a bug in our analysis code. We can revert the commit to remove the bug, but this also removes the other changes that were made in the same commit. As such, we’ll need to invest more effort to work out which change causes the bug and selectively undo that change.</p>
+<p>A concise summary of your change is usually sufficient,
+but remember that it is these commit messages that will be used in the future to understand what changes have been made to your project.
+You might rely on these to identify where an error has been introduced, so it is important that you write these messages clearly and informatively.</p>
+<p>How often you commit when working on a project should depend on what benefit you would like to get from versioning your work.
+When reviewing code that has been version controlled, the commit history provides a chronological summary of the changes that have been made to a project.
+To make this audit trail useful, commits should be made whenever a discrete unit of work has been completed.
+When useful commit messages have been used to describe these units of work,
+it is easier for others to understand steps taken to develop the analysis to its current state.</p>
+<p>You should also make commits whenever you have made changes that you might wish to revisit or undo.
+As Git allows us to easily <code class="docutils literal notranslate"><span class="pre">revert</span></code> changes by referring to a commit’s hash,
+you should try to ensure that each commit only contains changes to single aspect of your analysis.
+Consider a commit that includes changes to several files.
+We discover that one change in this commit has created a bug in our analysis code.
+We can revert the commit to remove the bug, but this also removes the other changes that were made in the same commit.
+As such, we’ll need to invest more effort to work out which change causes the bug and selectively undo that change.</p>
 </section>
-<section id="appropriate-use-of-branching">
-<h3>Appropriate use of branching<a class="headerlink" href="#appropriate-use-of-branching" title="Permalink to this headline">#</a></h3>
-<p>Branches are independent copies of a project’s history, copied from a parent branch at a specific point in its history. A new branch is typically created to make a change to your code, which might be building a new feature or fixing a bug in your analysis. Multiple branches can be created from a single parent branch when multiple changes are being worked on independently. This is especially useful when multiple analysts are working collaboratively and are making changes in parallel.</p>
-<p>Once changes have been implemented and sufficiently quality assured (think documentation and testing), the branch containing the changes can be merged onto another branch. The target branch for this merging is typically the parent branch, which the branch was branched from. Complete changes should eventually be merged onto the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch, which is the public-facing branch that is ready for use. During merging any overlapping or ‘conflicting’ changes between the current and target branches must be resolved.</p>
-<p>It is important to note that your approach to branching within a project should be proportional to number of collaborators and the complexity of the development work. For example, if working alone on a project you might only be working a single development branch at any moment in time, or might choose to track all changes on a single <code class="docutils literal notranslate"><span class="pre">main</span></code> branch. The <code class="docutils literal notranslate"><span class="pre">main</span></code> or <code class="docutils literal notranslate"><span class="pre">master</span></code> branch is the default highest level branch in a Git repository.</p>
+<section id="use-branching-appropriately">
+<h3>Use branching appropriately<a class="headerlink" href="#use-branching-appropriately" title="Permalink to this headline">#</a></h3>
+<p>Branches are independent copies of a project’s history, copied from a parent branch at a specific point in its history.
+A new branch is typically created to make a change to your code, which might be building a new feature or fixing a bug in your analysis.
+Multiple branches can be created from a single parent branch when multiple changes are being worked on independently.
+This is especially useful when multiple analysts are working collaboratively and are making changes in parallel.</p>
+<p>Once changes have been implemented and sufficiently quality assured (think documentation and testing),
+the branch containing the changes can be merged onto another branch.
+The target branch for this merging is typically the parent branch, which the branch was branched from.
+Complete changes should eventually be merged onto the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch, which is the public-facing branch that is ready for use.
+During merging any overlapping or ‘conflicting’ changes between the current and target branches must be resolved.</p>
+<p>It is important to note that your approach to branching within a project
+should be proportional to number of collaborators and the complexity of the development work.
+For example, if working alone on a project you might only be working a single development branch at any moment in time,
+or might choose to track all changes on a single <code class="docutils literal notranslate"><span class="pre">main</span></code> branch.
+The <code class="docutils literal notranslate"><span class="pre">main</span></code> or <code class="docutils literal notranslate"><span class="pre">master</span></code> branch is the default highest level branch in a Git repository.</p>
 <figure class="align-default" id="git-master">
 <a class="reference internal image-reference" href="_images/git_main.png"><img alt="Commits along a single &quot;main&quot; Git branch." src="_images/git_main.png" style="width: 70%;" /></a>
 <figcaption>
 <p><span class="caption-number">Fig. 7 </span><span class="caption-text">Commits along a single “main” Git branch.</span><a class="headerlink" href="#git-master" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
-<p>More complex projects may warrant using branching. When using branches, the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch should be considered as the most ‘stable’ branch in the repository - meaning that the code on this branch builds successfully and executes as expected. When making changes to code, changes may initially be less stable or reliable. As such, you should make these changes on a new branch so that the working code on the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch is unaffected. As the changes to the code are refined, it becomes safer to merge these changes onto a higher level branch such as <code class="docutils literal notranslate"><span class="pre">main</span></code>. For example, when the code has been reviewed and suitably tested. You should aim to only merge onto a more stable branch when you don’t expect it to break the working code on the target branch.</p>
+<p>More complex projects may warrant using branching.
+When using branches, the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch should be considered as the most ‘stable’ branch in the repository -
+meaning that the code on this branch builds successfully and executes as expected.
+When making changes to code, changes may initially be less stable or reliable.
+As such, you should make these changes on a new branch so that the working code on the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch is unaffected.
+As the changes to the code are refined, it becomes safer to merge these changes onto a higher level branch such as <code class="docutils literal notranslate"><span class="pre">main</span></code>.
+For example, when the code has been reviewed and suitably tested.
+You should aim to only merge onto a more stable branch when you don’t expect it to break the working code on the target branch.</p>
 <figure class="align-default" id="git-feature">
 <a class="reference internal image-reference" href="_images/git_feature.png"><img alt="Creating a feature branch from a main branch." src="_images/git_feature.png" style="width: 70%;" /></a>
 <figcaption>
 <p><span class="caption-number">Fig. 8 </span><span class="caption-text">Working on changes on a single <code class="docutils literal notranslate"><span class="pre">feature</span></code> branch.</span><a class="headerlink" href="#git-feature" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
-<p>Here we show a single <code class="docutils literal notranslate"><span class="pre">feature</span></code> branch being created from the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch. Changes are initially quite experimental, but are refined over a few commits. Finally, the complete, working feature is merged back onto the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch.</p>
-<p>Many small scale projects iteratively work on individual feature or development branches in this way. The <a class="reference external" href="https://guides.github.com/introduction/flow/">GitHub flow branching strategy</a> uses this approach in combination with <a class="reference internal" href="#pull-requests"><span class="std std-ref">Pull Requests</span></a>, to incorporate peer review into the development workflow.</p>
+<p>Here we show a single <code class="docutils literal notranslate"><span class="pre">feature</span></code> branch being created from the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch.
+Changes are initially quite experimental, but are refined over a few commits.
+Finally, the complete, working feature is merged back onto the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch.</p>
+<p>Many small scale projects iteratively work on individual feature or development branches in this way.
+The <a class="reference external" href="https://guides.github.com/introduction/flow/">GitHub flow branching strategy</a> uses this approach in combination with <a class="reference internal" href="#pull-requests"><span class="std std-ref">Pull Requests</span></a>,
+to incorporate peer review into the development workflow.</p>
 <figure class="align-default" id="git-develop">
 <a class="reference internal image-reference" href="_images/git_develop.png"><img alt="Iteratively creating and merging a develop branch from a main branch." src="_images/git_develop.png" style="width: 90%;" /></a>
 <figcaption>
 <p><span class="caption-number">Fig. 9 </span><span class="caption-text">Iteratively working on a <code class="docutils literal notranslate"><span class="pre">develop</span></code> branch.</span><a class="headerlink" href="#git-develop" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
-<p>We can create multiple branches from our <code class="docutils literal notranslate"><span class="pre">main</span></code> branch at any point. We might do this when multiple features are being developed in parallel, or perhaps when multiple analysts wish to make changes to the same piece of code independently.</p>
+<p>We can create multiple branches from our <code class="docutils literal notranslate"><span class="pre">main</span></code> branch at any point.
+We might do this when multiple features are being developed in parallel, or perhaps when multiple analysts wish to make changes to the same piece of code independently.</p>
 <figure class="align-default" id="git-multiple-features">
 <a class="reference internal image-reference" href="_images/git_multiple_features.png"><img alt="Two features branches created from a single main branch." src="_images/git_multiple_features.png" style="width: 90%;" /></a>
 <figcaption>
 <p><span class="caption-number">Fig. 10 </span><span class="caption-text">Working on multiple parallel branches.</span><a class="headerlink" href="#git-multiple-features" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
-<p>Here we create two feature branches from <code class="docutils literal notranslate"><span class="pre">main</span></code>. Work on each feature is carried out independently of the other feature and can be merged onto <code class="docutils literal notranslate"><span class="pre">main</span></code> once it is complete. If changes from separate branches affect the same files, merging these branches to <code class="docutils literal notranslate"><span class="pre">main</span></code> may lead to merge conflicts. In these cases you should ensure that you resolve the conflicts to keep the desired overall change.</p>
+<p>Here we create two feature branches from <code class="docutils literal notranslate"><span class="pre">main</span></code>.
+Work on each feature is carried out independently of the other feature and can be merged onto <code class="docutils literal notranslate"><span class="pre">main</span></code> once it is complete.
+If changes from separate branches affect the same files, merging these branches to <code class="docutils literal notranslate"><span class="pre">main</span></code> may lead to merge conflicts.
+In these cases you should ensure that you resolve the conflicts to keep the desired overall change.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>If you are able to break up your work into independent features that are not expected to affect the same files, you should do this. This helps to avoid conflicts in the merging process that need to be resolved manually.</p>
+<p>If you are able to break up your work into independent features that are not expected to affect the same files, you should do this.
+This helps to avoid conflicts in the merging process that need to be resolved manually.</p>
 </div>
-<p>In addition to having multiple branches from our <code class="docutils literal notranslate"><span class="pre">main</span></code> branch, we can also create deeper branches from our other branches. You might create additional sub-branches when the development of a feature involves multiple sub-tasks, or when a problem needs to be fixed during development of a feature. Deeper branching usually reflects work that is less stable and more exploratory or experimental.</p>
+<p>In addition to having multiple branches from our <code class="docutils literal notranslate"><span class="pre">main</span></code> branch, we can also create deeper branches from our other branches.
+You might create additional sub-branches when the development of a feature involves multiple sub-tasks,
+or when a problem needs to be fixed during development of a feature.
+Deeper branching usually reflects work that is less stable and more exploratory or experimental.</p>
 <figure class="align-default" id="git-deeper-branching">
 <a class="reference internal image-reference" href="_images/git_deeper_branching.png"><img alt="A sub branch being created from a feature branch." src="_images/git_deeper_branching.png" style="width: 90%;" /></a>
 <figcaption>
 <p><span class="caption-number">Fig. 11 </span><span class="caption-text">Using deeper branching to manage sub-tasks.</span><a class="headerlink" href="#git-deeper-branching" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
-<p>In this example, we have created a <code class="docutils literal notranslate"><span class="pre">feature</span></code> branch. Early in development of the feature we want to fix a bug that has been created, but this work can be carried out independently to the remaining development of the feature. As such, we create another, deeper branch to carry out the bug fix. Once the bug is fixed, we merge the <code class="docutils literal notranslate"><span class="pre">bug-fix</span></code> onto our <code class="docutils literal notranslate"><span class="pre">feature</span></code> branch. And finally, the finished <code class="docutils literal notranslate"><span class="pre">feature</span></code> can be merged back onto <code class="docutils literal notranslate"><span class="pre">main</span></code>.</p>
-<p>The <a class="reference external" href="https://nvie.com/posts/a-successful-git-branching-model/">Git flow branching strategy</a> describes an alternative to progressively merging our changes onto <code class="docutils literal notranslate"><span class="pre">main</span></code>. Development work is instead branched from a <code class="docutils literal notranslate"><span class="pre">develop</span></code> branch. Merges from <code class="docutils literal notranslate"><span class="pre">develop</span></code> onto the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch are only used to release a new version of the code. This approach can be useful when code from the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch is deployed directly into production, however, analysts should opt to use the most simple and beneficial approach to branching depending on their project.</p>
+<p>In this example, we have created a <code class="docutils literal notranslate"><span class="pre">feature</span></code> branch.
+Early in development of the feature we want to fix a bug that has been created,
+but this work can be carried out independently to the remaining development of the feature.
+As such, we create another, deeper branch to carry out the bug fix.
+Once the bug is fixed, we merge the <code class="docutils literal notranslate"><span class="pre">bug-fix</span></code> onto our <code class="docutils literal notranslate"><span class="pre">feature</span></code> branch. And finally, the finished <code class="docutils literal notranslate"><span class="pre">feature</span></code> can be merged back onto <code class="docutils literal notranslate"><span class="pre">main</span></code>.</p>
+<p>The <a class="reference external" href="https://nvie.com/posts/a-successful-git-branching-model/">Git flow branching strategy</a> describes an alternative to progressively merging our changes onto <code class="docutils literal notranslate"><span class="pre">main</span></code>.
+Development work is instead branched from a <code class="docutils literal notranslate"><span class="pre">develop</span></code> branch.
+Merges from <code class="docutils literal notranslate"><span class="pre">develop</span></code> onto the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch are only used to release a new version of the code.
+This approach can be useful when code from the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch is deployed directly into production,
+however, analysts should opt to use the most simple and beneficial approach to branching depending on their project.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Although we have used very simple branch names in the examples above, it’s important that you use informative names for your branches in practice. If using an <a class="reference internal" href="#issues"><span class="std std-ref">issue tracker</span></a> (e.g. GitHub Issues or Jira), it can be useful to include the issue number in branch names (e.g. <code class="docutils literal notranslate"><span class="pre">#155-fix-index-aggregation</span></code>). This makes it easy to trace the branch back to the associated issue or task. Otherwise, aim to use meaningful names that describe the feature or bug that the changes will be focussed on.</p>
+<p>Although we have used very simple branch names in the examples above, it’s important that you use informative names for your branches in practice.
+If using an <a class="reference internal" href="#issues"><span class="std std-ref">issue tracker</span></a> (e.g. GitHub Issues or Jira), it can be useful to include the issue number in branch names (e.g. <code class="docutils literal notranslate"><span class="pre">#155-fix-index-aggregation</span></code>).
+This makes it easy to trace the branch back to the associated issue or task.
+Otherwise, aim to use meaningful names that describe the feature or bug that the changes will be focussed on.</p>
 </div>
 </section>
-<section id="merge-conflicts">
-<h3>Merge conflicts<a class="headerlink" href="#merge-conflicts" title="Permalink to this headline">#</a></h3>
-<p>Git is effective at merging different branches. However, when the same file is edited in two different branches at the same time, this can lead to a merge conflict when you try to merge those branches. When this happens, you will see a message telling you there is a merge conflict and which files are affected. The file name will appear as <code class="docutils literal notranslate"><span class="pre">branch-name|MERGING</span></code>. You can fix this by manually selecting which changes to keep. If using the command line, you can also run <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code> to output the names of the affected files.</p>
+<section id="resolve-merge-conflicts">
+<h3>Resolve merge conflicts<a class="headerlink" href="#resolve-merge-conflicts" title="Permalink to this headline">#</a></h3>
+<p>Git is effective at merging different branches.
+However, when the same file is edited in two different branches at the same time, this can lead to a merge conflict when you try to merge those branches.
+When this happens, you will see a message telling you there is a merge conflict and which files are affected.
+The file name will appear as <code class="docutils literal notranslate"><span class="pre">branch-name|MERGING</span></code>.
+You can fix this by manually selecting which changes to keep.
+If using the command line, you can also run <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code> to output the names of the affected files.</p>
 <p>When merge conflicts happen, git will mark the clashes using this syntax:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;&lt;&lt;&lt;&lt;&lt;&lt;</span> <span class="n">HEAD</span>
-<span class="n">Changes</span> <span class="n">on</span> <span class="n">the</span> <span class="n">current</span> <span class="n">branch</span>
-<span class="o">=======</span>
-<span class="n">Changes</span> <span class="n">on</span> <span class="n">the</span> <span class="n">branch</span> <span class="n">being</span> <span class="n">merged</span>
-<span class="o">&gt;&gt;&gt;&gt;&gt;&gt;&gt;</span> <span class="n">new</span>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
+Changes on the current branch
+=======
+Changes on the branch being merged
+&gt;&gt;&gt;&gt;&gt;&gt;&gt; new
+=======
 </pre></div>
 </div>
-<p>The row of equals signs divides the old from the new. The contents in the first division are the changes in the current branch. Changes in the second division are from the new branch. You can choose to keep one, both or neither. To resolve the merge conflict, you will need to make the necessary changes and delete the relevant symbols that git added to the text. Once you have resolved all conflicting text manually (there may be more than one), then you can add and commit the changes to resolve the merge conflicts.</p>
-<p>Avoid merge conflicts whenever possible. Do this by not editing the same files across different branches. If this is difficult to do, it may be that your scripts are too monolithic and should be modularised or split into multiple scripts.</p>
+<p>The row of equals signs divides the old from the new.
+The contents in the first division are the changes in the current branch.
+Changes in the second division are from the new branch.
+You can choose to keep one, both or neither.
+To resolve the merge conflict, you will need to make the necessary changes and delete the relevant symbols that git added to the text.
+Once you have resolved all conflicting text manually (there may be more than one), then you can add and commit the changes to resolve the merge conflicts.</p>
+<p>Avoid merge conflicts whenever possible.
+Do this by not editing the same files across different branches.
+If this is difficult to do, it may be that your scripts are too monolithic and should be modularised or split into multiple scripts.</p>
 </section>
 <section id="versioning-large-files">
 <h3>Versioning large files<a class="headerlink" href="#versioning-large-files" title="Permalink to this headline">#</a></h3>
-<p>When versioning your repository, Git stores compressed copies of all previous versions of each file. Despite the file compression, this means that versioning very large or binary files quickly increase the size of your repository’s history, especially if there are multiple versions of them. The size of your Git history determines how long it takes to <code class="docutils literal notranslate"><span class="pre">clone</span></code> or <code class="docutils literal notranslate"><span class="pre">pull</span></code> and <code class="docutils literal notranslate"><span class="pre">push</span></code> changes to and from your remote repository. This includes when a continuous integration platform downloads your repo to run tests and other checks. Therefore, storing large files in Git typically slows down your development workflow.</p>
-<p><a class="reference external" href="https://git-lfs.github.com/">Git Large Files Storage (LFS)</a> is a Git extension that allows you to version large files, but without storing the files in your repository history. Large files in your repository’s history are instead replaced with a small text-based pointer. This pointer references versions of the actual files, which are stored in a separate part of your remote repository (e.g. GitHub or GitLab). When you <code class="docutils literal notranslate"><span class="pre">pull</span></code> a repository including large files, only the current version of the file is retrieved from the remote server, rather than its whole history. This reduces the size of your local repository and the time taken to <code class="docutils literal notranslate"><span class="pre">push</span></code> and <code class="docutils literal notranslate"><span class="pre">pull</span></code> changes. <a class="reference external" href="https://www.youtube.com/watch?v=uLR1RNqJ1Mw">Git-LFS integrates well with a normal Git workflow</a> and can be used for specific files, or even all files of a particular type within your repository.</p>
+<p>When versioning your repository, Git stores compressed copies of all previous versions of each file.
+Despite the file compression, this means that versioning very large or binary files quickly increase the size of your repository’s history,
+especially if there are multiple versions of them.
+The size of your Git history determines how long it takes to <code class="docutils literal notranslate"><span class="pre">clone</span></code> or <code class="docutils literal notranslate"><span class="pre">pull</span></code> and <code class="docutils literal notranslate"><span class="pre">push</span></code> changes to and from your remote repository.
+This includes when a continuous integration platform downloads your repo to run tests and other checks.
+Therefore, storing large files in Git typically slows down your development workflow.</p>
+<p><a class="reference external" href="https://git-lfs.github.com/">Git Large Files Storage (LFS)</a> is a Git extension that allows you to version large files,
+but without storing the files in your repository history.
+Large files in your repository’s history are instead replaced with a small text-based pointer.
+This pointer references versions of the actual files, which are stored in a separate part of your remote repository (e.g. GitHub or GitLab).
+When you <code class="docutils literal notranslate"><span class="pre">pull</span></code> a repository including large files, only the current version of the file is retrieved from the remote server, rather than its whole history.
+This reduces the size of your local repository and the time taken to <code class="docutils literal notranslate"><span class="pre">push</span></code> and <code class="docutils literal notranslate"><span class="pre">pull</span></code> changes.
+<a class="reference external" href="https://www.youtube.com/watch?v=uLR1RNqJ1Mw">Git-LFS integrates well with a normal Git workflow</a> and can be used for specific files,
+or even all files of a particular type within your repository.</p>
 <p>Other tools, including <a class="reference external" href="https://git-annex.branchable.com/">git-annex</a> can be used for a similar purpose.</p>
-<p>Despite this support for large files, we recommend that remote Git repositories are not used to store data. Versioning of your data could instead be handled independently to your code; the version of your code should not be influenced directly by changes in the data and vice versa. This separation can be achieved using a tool like <a class="reference external" href="https://dvc.org/">DVC</a>, which allows you to specify where data versions are store (locally or on the cloud). Alternative, third party storage (e.g. cloud-based ‘buckets’ or databases) can provide easy data storage with varying levels of version control capability.</p>
+<p>Despite this support for large files, we recommend that remote Git repositories are not used to store data.
+Versioning of your data could instead be handled independently to your code;
+the version of your code should not be influenced directly by changes in the data and vice versa.
+This separation can be achieved using a tool like <a class="reference external" href="https://dvc.org/">DVC</a>, which allows you to specify where data versions are store (locally or on the cloud).
+Alternative, third party storage (e.g. cloud-based ‘buckets’ or databases) can provide easy data storage with varying levels of version control capability.</p>
 </section>
-<section id="releases-tagging">
-<h3>Releases (tagging)<a class="headerlink" href="#releases-tagging" title="Permalink to this headline">#</a></h3>
-<p>Regularly <code class="docutils literal notranslate"><span class="pre">commit</span></code>ing changes using Git helps us to create a thorough audit trail of changes to our project. However, there may be discrete points in the history of the project that we want to mark for easier future reference. This is incredibly useful, commit hashes like <code class="docutils literal notranslate"><span class="pre">121b5b4</span></code> serve as really poor identifiers for human users.</p>
-<p>To reference specific points in project’s history, Git allows us to create “tags”. These tags essentially act as an alias for a particular commit hash, allowing us to refer to it by an informative label. In analytical projects, we might use tags to mark a particular model version or an important stage of our analysis. For example, we might tag code that has been used to generate a particular output so that it can easily be accessed to reproduce that output in future. If developing a package as part of your analysis, these tags are also commonly used to indicate new package versions.</p>
-<p>By default, tags will reference the current position in history (i.e. the latest commit or <code class="docutils literal notranslate"><span class="pre">HEAD</span></code>). An annotated tag might be created for a new model version like so:</p>
+<section id="tag-new-releases">
+<h3>Tag new releases<a class="headerlink" href="#tag-new-releases" title="Permalink to this headline">#</a></h3>
+<p>Regularly <code class="docutils literal notranslate"><span class="pre">commit</span></code>ing changes using Git helps us to create a thorough audit trail of changes to our project.
+However, there may be discrete points in the history of the project that we want to mark for easier future reference.
+This is incredibly useful, commit hashes like <code class="docutils literal notranslate"><span class="pre">121b5b4</span></code> serve as really poor identifiers for human users.</p>
+<p>To reference specific points in project’s history, Git allows us to create “tags”.
+These tags essentially act as an alias for a particular commit hash, allowing us to refer to it by an informative label.
+In analytical projects, we might use tags to mark a particular model version or an important stage of our analysis.
+For example, we might tag code that has been used to generate a particular output so that it can easily be accessed to reproduce that output in future.
+If developing a package as part of your analysis, these tags are also commonly used to indicate new package versions.</p>
+<p>By default, tags will reference the current position in history (i.e. the latest commit or <code class="docutils literal notranslate"><span class="pre">HEAD</span></code>).
+An annotated tag might be created for a new model version like so:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">tag</span> <span class="o">-</span><span class="n">a</span> <span class="n">v0</span><span class="mf">.2.7</span> <span class="o">-</span><span class="n">m</span> <span class="s2">&quot;Model version 0.2.7&quot;</span>
 <span class="n">git</span> <span class="n">push</span> <span class="n">origin</span> <span class="n">v0</span><span class="mf">.2.7</span>
 </pre></div>
@@ -913,121 +748,176 @@ Further paragraphs come after blank lines.
 </div>
 </section>
 </section>
-<section id="avoid-commiting-sensitive-information-to-git-repositories">
-<span id="excluding-from-git"></span><h2>Avoid commiting sensitive information to Git repositories<a class="headerlink" href="#avoid-commiting-sensitive-information-to-git-repositories" title="Permalink to this headline">#</a></h2>
-<p>Code itself is very rarely sensitive, so we should be open to sharing it. However, analysts may be required to use sensitive information in their analysis. This might be in the form of credentials, used to access a service, or data that contains personally identifiable information.</p>
-<p>In these cases, we need to minimise the risk of inadvertently sharing this information with our code. This subsection suggests how you might mitigate this risk in your analysis.</p>
-<p>In the case of passwords or credentials that are used in your code, you should ensure that these are stored in <a class="reference internal" href="configuration.html#environment-variables"><span class="std std-ref">environment variables</span></a> and are not written directly into code. This includes in the early stages of development, as your version control history will retain copies of these.</p>
-<section id="gitignore-files">
-<h3>.gitignore files<a class="headerlink" href="#gitignore-files" title="Permalink to this headline">#</a></h3>
-<p>As mentioned above, you may not want to include all of the files associated with your project in a Git repository. A <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> file allows you to exclude folders or files from being tracked by Git. Within this file, you provide a list of text patterns. If a folder matches one of your <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> file patterns, none of the files or folders below that folder will be tracked. If an individual file matches one of the patterns, this file will not be tracked.</p>
+<section id="avoid-committing-sensitive-information-to-git-repositories">
+<span id="excluding-from-git"></span><h2>Avoid committing sensitive information to Git repositories<a class="headerlink" href="#avoid-committing-sensitive-information-to-git-repositories" title="Permalink to this headline">#</a></h2>
+<p>Code itself is very rarely sensitive, so we should be open to sharing it.
+However, analysts may be required to use sensitive information in their analysis.
+This might be in the form of credentials, used to access a service, or data that contains personally identifiable information.</p>
+<p>In these cases, we need to minimise the risk of inadvertently sharing this information with our code.
+This subsection suggests how you might mitigate this risk in your analysis.</p>
+<p>In the case of passwords or credentials that are used in your code, you should ensure that these are stored in <a class="reference internal" href="configuration.html#environment-variables"><span class="std std-ref">environment variables</span></a>
+and are not written directly into code.
+This includes in the early stages of development, as your version control history will retain copies of these.</p>
+<section id="automatically-avoid-committing-unwanted-files-using-gitignore">
+<h3>Automatically avoid committing unwanted files using .gitignore<a class="headerlink" href="#automatically-avoid-committing-unwanted-files-using-gitignore" title="Permalink to this headline">#</a></h3>
+<p>As mentioned above, you may not want to include all of the files associated with your project in a Git repository.
+A <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> file allows you to exclude folders or files from being tracked by Git. Within this file, you provide a list of text patterns.
+If a folder matches one of your <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> file patterns, none of the files or folders below that folder will be tracked.
+If an individual file matches one of the patterns, this file will not be tracked.</p>
 <p>Given this example <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> file:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">secrets</span><span class="o">.</span><span class="n">yaml</span>
-<span class="n">sandpit</span><span class="o">/</span>
-<span class="o">*.</span><span class="n">csv</span>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>secrets.yaml
+sandpit/
+*.csv
 </pre></div>
 </div>
-<p>The first pattern tells Git to ignore any file with the exact name <code class="docutils literal notranslate"><span class="pre">secrets.yaml</span></code>. The second will ignore all files within a folder named <code class="docutils literal notranslate"><span class="pre">sandpit/</span></code>. Note that if there are multiple folders in the project named <code class="docutils literal notranslate"><span class="pre">sandpit/</span></code>, they will all be excluded. You should make the pattern more specific if you want to exclude particular directories. The third pattern will exclude all <code class="docutils literal notranslate"><span class="pre">.csv</span></code> files, regardless of which folder or sub-folder they are in.</p>
+<p>The first pattern tells Git to ignore any file with the exact name <code class="docutils literal notranslate"><span class="pre">secrets.yaml</span></code>.
+The second will ignore all files within a folder named <code class="docutils literal notranslate"><span class="pre">sandpit/</span></code>.
+Note that if there are multiple folders in the project named <code class="docutils literal notranslate"><span class="pre">sandpit/</span></code>, they will all be excluded.
+You should make the pattern more specific if you want to exclude particular directories.
+The third pattern will exclude all <code class="docutils literal notranslate"><span class="pre">.csv</span></code> files, regardless of which folder or sub-folder they are in.</p>
 <div class="admonition caution">
 <p class="admonition-title">Caution</p>
-<p>Files that are already being tracked by Git will not be excluded when you add new patterns to your <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> file. Ensure that you set up your <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> before adding files to be tracked in your repository.</p>
+<p>Files that are already being tracked by Git will not be excluded when you add new patterns to your <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> file.
+Ensure that you set up your <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> before adding files to be tracked in your repository.</p>
 </div>
 <p>Please see the <a class="reference external" href="https://git-scm.com/docs/gitignore">Git documentation for <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code></a> for more details.</p>
-<p>While we may not want to share files containing credentials, configuration and data, it can be useful to provide dummy examples of these files. Demonstrating the format of these files can help others to reuse your code, without sharing sensitive information.</p>
+<p>While we may not want to share files containing credentials, configuration and data, it can be useful to provide dummy examples of these files.
+Demonstrating the format of these files can help others to reuse your code, without sharing sensitive information.</p>
 </section>
-<section id="excluding-rdata-and-rhistory-files">
-<h3>Excluding <code class="docutils literal notranslate"><span class="pre">.Rdata</span></code> and <code class="docutils literal notranslate"><span class="pre">.Rhistory</span></code> files<a class="headerlink" href="#excluding-rdata-and-rhistory-files" title="Permalink to this headline">#</a></h3>
-<p>R saves objects from your workspace (working environment) into an <code class="docutils literal notranslate"><span class="pre">.RData</span></code> file at the end of your session. This can save time when reloading large objects into R, when returning to a project. Depending on your settings, it may prompt you to ask if you would like to save them or it may do this automatically. If you have read sensitive information into R during the session, this information may be saved to the <code class="docutils literal notranslate"><span class="pre">.RData</span></code> file. As such, we must be careful not to include this information in commits to remote repositories.</p>
-<p>Similarly, R stores a record of all commands executed in your session in a <code class="docutils literal notranslate"><span class="pre">.Rhistory</span></code> file. If you have referenced sensitive information directly in your R commands, then this information will be written to the <code class="docutils literal notranslate"><span class="pre">.Rhistory</span></code> file.</p>
-<p>To handle this, we can exclude these files (via <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code>) or prevent R from generating them. If you do not use these files, it is safest not to generate them in the first place.</p>
+<section id="exclude-rdata-and-rhistory-files">
+<h3>Exclude <code class="docutils literal notranslate"><span class="pre">.Rdata</span></code> and <code class="docutils literal notranslate"><span class="pre">.Rhistory</span></code> files<a class="headerlink" href="#exclude-rdata-and-rhistory-files" title="Permalink to this headline">#</a></h3>
+<p>R saves objects from your workspace (working environment) into an <code class="docutils literal notranslate"><span class="pre">.RData</span></code> file at the end of your session.
+This can save time when reloading large objects into R, when returning to a project.
+Depending on your settings, it may prompt you to ask if you would like to save them or it may do this automatically.
+If you have read sensitive information into R during the session, this information may be saved to the <code class="docutils literal notranslate"><span class="pre">.RData</span></code> file.
+As such, we must be careful not to include this information in commits to remote repositories.</p>
+<p>Similarly, R stores a record of all commands executed in your session in a <code class="docutils literal notranslate"><span class="pre">.Rhistory</span></code> file.
+If you have referenced sensitive information directly in your R commands, then this information will be written to the <code class="docutils literal notranslate"><span class="pre">.Rhistory</span></code> file.</p>
+<p>To handle this, we can exclude these files (via <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code>) or prevent R from generating them.
+If you do not use these files, it is safest not to generate them in the first place.</p>
 <p>In Rstudio, you can disable writing of these files via <code class="docutils literal notranslate"><span class="pre">Tools</span> <span class="pre">&gt;</span> <span class="pre">Global</span> <span class="pre">options</span></code>:</p>
 <ul class="simple">
 <li><p>Under Workspace, select <code class="docutils literal notranslate"><span class="pre">Never</span></code> for <code class="docutils literal notranslate"><span class="pre">Save</span> <span class="pre">workspace</span> <span class="pre">to</span> <span class="pre">.RData</span> <span class="pre">on</span> <span class="pre">exit:</span></code>.</p></li>
 <li><p>Under History, deselect <code class="docutils literal notranslate"><span class="pre">Always</span> <span class="pre">save</span> <span class="pre">history</span></code>.</p></li>
 </ul>
 <p>Or to set these for a particular project you can include the following in your <code class="docutils literal notranslate"><span class="pre">.Rproj</span></code> file:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">RestoreWorkspace</span><span class="p">:</span> <span class="n">No</span>
-<span class="n">SaveWorkspace</span><span class="p">:</span> <span class="n">No</span>
-<span class="n">AlwaysSaveHistory</span><span class="p">:</span> <span class="n">No</span>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>RestoreWorkspace: No
+SaveWorkspace: No
+AlwaysSaveHistory: No
 </pre></div>
 </div>
 </section>
-<section id="jupyter-notebooks">
-<h3>Jupyter Notebooks<a class="headerlink" href="#jupyter-notebooks" title="Permalink to this headline">#</a></h3>
-<p>By default, Jupyter Notebooks save a copy of the data that is used to create cell outputs. For example, the data used to generate a chart, table or print a section of a dataframe. This can be useful for sharing your code outputs without others needing to re-execute the code cells.</p>
-<p>If you work with sensitive datasets in notebooks, this means that your notebooks may store sensitive data to display cell outputs. If these notebooks are subsequently shared in code repositories, you may be making sensitive data available to unauthorised individuals.</p>
+<section id="avoid-saving-data-from-jupyter-notebooks">
+<h3>Avoid saving data from Jupyter Notebooks<a class="headerlink" href="#avoid-saving-data-from-jupyter-notebooks" title="Permalink to this headline">#</a></h3>
+<p>By default, Jupyter Notebooks save a copy of the data that is used to create cell outputs.
+For example, the data used to generate a chart, table or print a section of a dataframe.
+This can be useful for sharing your code outputs without others needing to re-execute the code cells.</p>
+<p>If you work with sensitive datasets in notebooks, this means that your notebooks may store sensitive data to display cell outputs.
+If these notebooks are subsequently shared in code repositories, you may be making sensitive data available to unauthorised individuals.</p>
 <p>It is <a class="reference external" href="https://github.com/ipython/ipython/issues/1280">not currently possible to prevent the notebooks from retaining cell outputs</a>.</p>
-<p>The best way to handle this situation is to clear the outputs from your notebooks before commiting them to Git repositories. This can be done from the notebook itself, by going to the menu <code class="docutils literal notranslate"><span class="pre">Cell</span> <span class="pre">&gt;</span> <span class="pre">All</span> <span class="pre">&gt;</span> <span class="pre">Output</span> <span class="pre">&gt;</span> <span class="pre">Clear</span></code> and then saving your notebook. Alternatively, this can be done from the command line, by running this command with your notebook file path:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">jupyter</span> <span class="n">nbconvert</span> <span class="o">--</span><span class="n">ClearOutputPreprocessor</span><span class="o">.</span><span class="n">enabled</span><span class="o">=</span><span class="kc">True</span> <span class="o">--</span><span class="n">inplace</span> <span class="o">&lt;</span><span class="n">notebook_file_path</span><span class="o">&gt;</span>
+<p>The best way to handle this situation is to clear the outputs from your notebooks before committing them to Git repositories.
+This can be done from the notebook itself, by going to the menu <code class="docutils literal notranslate"><span class="pre">Cell</span> <span class="pre">&gt;</span> <span class="pre">All</span> <span class="pre">&gt;</span> <span class="pre">Output</span> <span class="pre">&gt;</span> <span class="pre">Clear</span></code> and then saving your notebook.
+Alternatively, this can be done from the command line, by running this command with your notebook file path:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>jupyter nbconvert --ClearOutputPreprocessor.enabled=True --inplace &lt;notebook_file_path&gt;
 </pre></div>
 </div>
-<p>This approach is quite laborious and could easily be forgotten. As such, we advise you to automate the cell clearing using <a class="reference external" href="https://git-scm.com/docs/gitattributes/#_filter">Git filter</a> as follows. First, we tell Git to set an attribute on our notebook files by creating a <code class="docutils literal notranslate"><span class="pre">.gitattributes</span></code> file in the root of our repo:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">*.</span><span class="n">ipynb</span> <span class="nb">filter</span><span class="o">=</span><span class="n">jupyternotebook</span>
+<p>This approach is quite laborious and could easily be forgotten.
+As such, we advise you to automate the cell clearing using <a class="reference external" href="https://git-scm.com/docs/gitattributes/#_filter">Git filter</a> as follows.
+First, we tell Git to set an attribute on our notebook files by creating a <code class="docutils literal notranslate"><span class="pre">.gitattributes</span></code> file in the root of our repo:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>*.ipynb filter=jupyternotebook
 </pre></div>
 </div>
 <p>We can then define our cleaning instructions in a <code class="docutils literal notranslate"><span class="pre">.gitconfig</span></code> configuration file:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="nb">filter</span> <span class="s2">&quot;jupyternotebook&quot;</span><span class="p">]</span>
-    <span class="n">clean</span> <span class="o">=</span> <span class="n">jupyter</span> <span class="n">nbconvert</span> <span class="o">--</span><span class="n">ClearOutputPreprocessor</span><span class="o">.</span><span class="n">enabled</span><span class="o">=</span><span class="kc">True</span> <span class="o">--</span><span class="n">inplace</span> <span class="o">%</span><span class="n">f</span>
-    <span class="n">required</span>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>[filter &quot;jupyternotebook&quot;]
+    clean = jupyter nbconvert --ClearOutputPreprocessor.enabled=True --inplace %f
+    required
 </pre></div>
 </div>
-<p>You can add this to your global <code class="docutils literal notranslate"><span class="pre">.gitconfig</span></code> or create a local <code class="docutils literal notranslate"><span class="pre">.gitconfig</span></code> file in the root of your repo. If you create a new config in your repo, you must run the following in that repo:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">config</span> <span class="o">--</span><span class="n">local</span> <span class="n">include</span><span class="o">.</span><span class="n">path</span> <span class="o">../.</span><span class="n">gitconfig</span>
+<p>You can add this to your global <code class="docutils literal notranslate"><span class="pre">.gitconfig</span></code> or create a local <code class="docutils literal notranslate"><span class="pre">.gitconfig</span></code> file in the root of your repo.
+If you create a new config in your repo, you must run the following in that repo:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>git config --local include.path ../.gitconfig
 </pre></div>
 </div>
-<p>This configuration will now run the notebook output cleaning command every time a change to an <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code> file is added to your local repo. You will need to then <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code> the file a second time to add the changes from the cleaning. This should prevent notebook outputs from being included in commits to this repository.</p>
+<p>This configuration will now run the notebook output cleaning command every time a change to an <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code> file is added to your local repo.
+You will need to then <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code> the file a second time to add the changes from the cleaning.
+This should prevent notebook outputs from being included in commits to this repository.</p>
 <p>If you adjust the filter at any point, you should run this command to apply the changes to existing files:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">add</span> <span class="o">--</span><span class="n">renormalize</span> <span class="o">.</span>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>git add --renormalize .
 </pre></div>
 </div>
 <p>This approach has been borrowed from this <a class="reference external" href="https://zhauniarovich.com/post/2020/2020-10-clearing-jupyter-output-p3/">blog post by Yury Zhauniarovich</a>.</p>
 </section>
-<section id="access-control">
-<h3>Access control<a class="headerlink" href="#access-control" title="Permalink to this headline">#</a></h3>
-<p>Remote version control platforms, like GitHub, have a <a class="reference external" href="https://docs.github.com/en/free-pro-team&#64;latest/github/administering-a-repository/setting-repository-visibility">visibility setting</a> that represents whether the repo can be viewed publicly or only by owners of the project. We find that some analytical teams choose to develop code in the open, as per guidance from the <a class="reference external" href="https://www.gov.uk/service-manual/service-standard/point-12-make-new-source-code-open">Government Service Manual</a>. Others work in a private repositories, and then might either change to public or migrate to a fresh public repository to make the code open.</p>
+<section id="control-access-to-code-only-when-essential">
+<h3>Control access to code only when essential<a class="headerlink" href="#control-access-to-code-only-when-essential" title="Permalink to this headline">#</a></h3>
+<p>Remote version control platforms, like GitHub,
+have a <a class="reference external" href="https://docs.github.com/en/free-pro-team&#64;latest/github/administering-a-repository/setting-repository-visibility">visibility setting</a>
+that represents whether the repo can be viewed publicly or only by owners of the project
+We find that some analytical teams choose to develop code in the open, as per guidance from the
+<a class="reference external" href="https://www.gov.uk/service-manual/service-standard/point-12-make-new-source-code-open">Government Service Manual</a>.
+Others work in a private repositories, and then might either change to public or migrate to a fresh public repository to make the code open.</p>
 <div class="admonition caution">
 <p class="admonition-title">Caution</p>
-<p>Access control should not be used instead of the good practices outlined above. Restricting access can help to limit the risk of releasing sensitive information, but correct use of version control tools avoids these issues.</p>
+<p>Access control should not be used instead of the good practices outlined above.
+Restricting access can help to limit the risk of releasing sensitive information, but correct use of version control tools avoids these issues.</p>
 </div>
-<p>On GitHub, Organizations provide an area for collating multiple repos that are associated with a particular team or department. Within Organizations, Teams can be also created to manage view and contribution permissions for specific projects within the Organization. External collaborators can also be added to projects, to allow direct contribution from those outside of the Organization. Detailed setup and management of Organizations and Teams are described in the <a class="reference external" href="https://docs.github.com/en/free-pro-team&#64;latest/github/setting-up-and-managing-organizations-and-teams">relevant section of the GitHub documentation</a>.</p>
-<p>Regardless of the visibility status of a repo, only Organization members and collaborators may make direct contributions to the code in the repo. Others can contribute by Forking and using Pull Requests.</p>
+<p>On GitHub, Organizations provide an area for collating multiple repos that are associated with a particular team or department.
+Within Organizations, Teams can be also created to manage view and contribution permissions for specific projects within the Organization.
+External collaborators can also be added to projects, to allow direct contribution from those outside of the Organization.
+Detailed setup and management of Organizations and Teams are described in the
+<a class="reference external" href="https://docs.github.com/en/free-pro-team&#64;latest/github/setting-up-and-managing-organizations-and-teams">relevant section of the GitHub documentation</a>.</p>
+<p>Regardless of the visibility status of a repo, only Organization members and collaborators may make direct contributions to the code in the repo.
+Others can contribute by Forking and using Pull Requests.</p>
 </section>
-<section id="handling-data-breaches-via-git">
-<h3>Handling data breaches via Git<a class="headerlink" href="#handling-data-breaches-via-git" title="Permalink to this headline">#</a></h3>
-<p>If unauthorised individuals may access sensitive information through their accidental inclusion in a remote repository, this is a data breach. For example, pushing credentials or sensitive data to a remote public GitHub repository.</p>
+<section id="handle-data-breaches-via-git">
+<h3>Handle data breaches via Git<a class="headerlink" href="#handle-data-breaches-via-git" title="Permalink to this headline">#</a></h3>
+<p>If unauthorised individuals may access sensitive information through their accidental inclusion in a remote repository, this is a data breach.
+For example, pushing credentials or sensitive data to a remote public GitHub repository.</p>
 <p>To handle a data breach, you should:</p>
-<ol class="simple">
-<li><p>Prevent further access to the information.</p>
 <ul class="simple">
+<li><p>Firstly, prevent further access to the information.</p>
+<ul>
 <li><p>Restrict access of the repository to only those who should have access to the information. For example, make a public repository private.</p></li>
 <li><p>Remove the offending files from the <strong>commit history</strong> of the repository.</p></li>
 <li><p>If credentials (passwords or keys) have been revealed, you should change these credentials.</p></li>
 <li><p>Ask anyone that you know has access to the repository to delete their local copy and re-clone the cleaned remote repository.</p></li>
 </ul>
 </li>
-<li><p>Report the incident.</p>
-<ul class="simple">
+<li><p>Secondly, report the incident.</p>
+<ul>
 <li><p>Record roughly how long the information was available for and the potential impact of releasing this information.</p></li>
 <li><p>Inform the data owner of the breach.</p></li>
-<li><p>Discuss the breach with the Data Protection Officer in your department. They should be able to advise you on the steps you should take as well, according to your departments data security policy.</p></li>
+<li><p>Discuss the breach with the Data Protection Officer in your department.
+They should be able to advise you on the steps you should take as well, according to your departments data security policy.</p></li>
 <li><p>If the breach includes pre-publication statistics, you must also report the breach to the <a class="reference external" href="https://osr.statisticsauthority.gov.uk/">Office for Statistics Regulation</a>.</p></li>
 </ul>
 </li>
-</ol>
+</ul>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>Deleting a sensitive file and commiting this change is not sufficient. All previous versions of files are retained in a repository’s history, so sensitive parts of the file must be entirely removed from the history.</p>
-<p>The <a class="reference external" href="https://git-scm.com/book/en/v2/Git-Tools-Rewriting-History">Pro Git book section on rewriting history</a> details methods for editing and deleting files from your repository’s commit history. Git has a built-in way to do this. If you are able to install them in your department, you may use one of the simpler alternatives, such as <a class="reference external" href="https://github.com/newren/git-filter-repo">git-filter-repo</a> (python) or <a class="reference external" href="https://rtyley.github.io/bfg-repo-cleaner/">BFG repo-cleaner tool</a> (Java).</p>
+<p>Deleting a sensitive file and committing this change is not sufficient.
+All previous versions of files are retained in a repository’s history, so sensitive parts of the file must be entirely removed from the history.</p>
+<p>The <a class="reference external" href="https://git-scm.com/book/en/v2/Git-Tools-Rewriting-History">Pro Git book section on rewriting history</a>
+details methods for editing and deleting files from your repository’s commit history.
+Git has a built-in way to do this.
+If you are able to install them in your department, you may use one of the simpler alternatives, such as
+<a class="reference external" href="https://github.com/newren/git-filter-repo">git-filter-repo</a> (python) or
+<a class="reference external" href="https://rtyley.github.io/bfg-repo-cleaner/">BFG repo-cleaner tool</a> (Java).</p>
 </div>
 </section>
 </section>
-<section id="github">
-<h2>GitHub<a class="headerlink" href="#github" title="Permalink to this headline">#</a></h2>
+<section id="using-github">
+<h2>Using GitHub<a class="headerlink" href="#using-github" title="Permalink to this headline">#</a></h2>
 <p>A number of version control platforms extend the functionality of Git, to further improve collaborative working.</p>
-<p>Here we describe some of the beneficial features supported by <a class="reference external" href="https://github.com/">GitHub</a>, the world’s leading software development platform. GitHub provides additional tools for better management of collaborative work. Many of these tools are also discussed in detail on the <a class="reference external" href="https://github.com/features/project-management/">GitHub features page</a>, but we will describe how they may be applied in analytical workflows here.</p>
-<section id="efficient-use-of-issues">
-<span id="issues"></span><h3>Efficient use of issues<a class="headerlink" href="#efficient-use-of-issues" title="Permalink to this headline">#</a></h3>
-<p>Issues offer a method for requesting or recording tasks, including enhancements and bug fixes in a project. They act as a collaborative todo list, which users and developers can easily contribute to. When combined with <a class="reference external" href="https://docs.github.com/en/free-pro-team&#64;latest/github/managing-your-work-on-github/about-project-boards">Project boards</a>, the issues system works very similarly to other tools like Trello and Jira.</p>
+<p>Here we describe some of the beneficial features supported by <a class="reference external" href="https://github.com/">GitHub</a>, the world’s leading software development platform.
+GitHub provides additional tools for better management of collaborative work. Many of these tools are also discussed in detail on the
+<a class="reference external" href="https://github.com/features/project-management/">GitHub features page</a>,
+but we will describe how they may be applied in analytical workflows here.</p>
+<section id="use-git-issues-to-plan-and-discuss-development-of-your-project">
+<span id="issues"></span><h3>Use Git issues to plan and discuss development of your project<a class="headerlink" href="#use-git-issues-to-plan-and-discuss-development-of-your-project" title="Permalink to this headline">#</a></h3>
+<p>Issues offer a method for requesting or recording tasks, including enhancements and bug fixes in a project.
+They act as a collaborative todo list, which users and developers can easily contribute to.
+When combined with <a class="reference external" href="https://docs.github.com/en/free-pro-team&#64;latest/github/managing-your-work-on-github/about-project-boards">Project boards</a>,
+the issues system works very similarly to other tools like Trello and Jira.</p>
 <p>The basic elements of an issue are the:</p>
 <ul class="simple">
 <li><p>Title and description, provided by the person that submitted the issue</p></li>
@@ -1035,168 +925,105 @@ Further paragraphs come after blank lines.
 <li><p>Comments section where the issue can be discussed</p></li>
 <li><p>Assigned developers that are working on resolving the issue</p></li>
 </ul>
-<p>Within an issue’s description and comments, you can reference other issues both within (e.g. <code class="docutils literal notranslate"><span class="pre">#12</span></code>) and between repos, and tag individuals to notify them of your comments (<code class="docutils literal notranslate"><span class="pre">&#64;whatstheirface</span></code>). Similarly, issues can be linked to specific <a class="reference internal" href="#pull-requests"><span class="std std-ref">changes that will be merged to resolve or help to solve the issue</span></a>. This makes them useful for discussing bugs and new features within a team.</p>
-<p>When a GitHub repo is publicly visible, the issues are also open and can be contributed to by others, including users. Open source projects benefit from this transparency by providing users with a platform to highlight which changes to the project will be most beneficial for them. In turn, developers in the community can then address these issues to improve the project.</p>
-<p>Analytical projects might use issues to plan and discuss the steps involved in developing the project. Where additional help is required, collaborators might be tagged or assigned to the task. If your analysis code is widely useful, others that use your code may also suggest improvement and offer to contribute to the project via these issues.</p>
-<p><a class="reference external" href="https://docs.github.com/en/free-pro-team&#64;latest/github/building-a-strong-community/configuring-issue-templates-for-your-repository">Setting issue templates</a> for your project can be an effective way of encouraging users and collaborators to use informative descriptions when creating issues. For example, a bug issue should include simple instructions to help maintainers reproduce the problem. While feature requests might include information on how the user expects the new feature to work and details what problem it will help them to overcome.</p>
+<p>Within an issue’s description and comments, you can reference other issues both within (e.g. <code class="docutils literal notranslate"><span class="pre">#12</span></code>) and between repos,
+and tag individuals to notify them of your comments (<code class="docutils literal notranslate"><span class="pre">&#64;whatstheirface</span></code>).
+Similarly, issues can be linked to specific <a class="reference internal" href="#pull-requests"><span class="std std-ref">changes that will be merged to resolve or help to solve the issue</span></a>.
+This makes them useful for discussing bugs and new features within a team.</p>
+<p>When a GitHub repo is publicly visible, the issues are also open and can be contributed to by others, including users.
+Open source projects benefit from this transparency by providing users with a platform to highlight which changes to the project will be most beneficial for them.
+In turn, developers in the community can then address these issues to improve the project.</p>
+<p>Analytical projects might use issues to plan and discuss the steps involved in developing the project.
+Where additional help is required, collaborators might be tagged or assigned to the task.
+If your analysis code is widely useful, others that use your code may also suggest improvement and offer to contribute to the project via these issues.</p>
+<p><a class="reference external" href="https://docs.github.com/en/free-pro-team&#64;latest/github/building-a-strong-community/configuring-issue-templates-for-your-repository">Setting issue templates</a>
+for your project can be an effective way of encouraging users and collaborators to use informative descriptions when creating issues.
+For example, a bug issue should include simple instructions to help maintainers reproduce the problem.
+While feature requests might include information on how the user expects the new feature to work and details what problem it will help them to overcome.</p>
 </section>
-<section id="making-the-most-of-pull-requests">
-<span id="pull-requests"></span><h3>Making the most of Pull Requests<a class="headerlink" href="#making-the-most-of-pull-requests" title="Permalink to this headline">#</a></h3>
-<p>Once changes have been implemented, perhaps to meet the requirements of an issue, Pull Requests (PRs) provide a useful interface for incorporating those changes into the main project. PRs are typically used to merge a development branch (the source branch) onto a more stable branch in the main project (the target branch). The development branch here may be within the same repo, a <a class="reference internal" href="#forking"><span class="std std-ref">Fork</span></a> of this project, or even a completely separate project.</p>
-<p>The initial description of the PR should include the high level changes that have been made and might point to any relevant issues that it resolves.  Much like issues, PRs can be linked to other issues and PRs, providing a coherent narrative of development work. <a class="reference external" href="https://docs.github.com/en/github/managing-your-work-on-github/linking-a-pull-request-to-an-issue#linking-a-pull-request-to-an-issue-using-a-keyword">Keywords can be used when linking an issue (e.g. ‘fixes #42’)</a> to trigger the issue to close the PR is merged. Contributors can also be assigned or tagged in discussion, which can be useful for requesting help or review of a group of changes.</p>
-<p>Put checklists into your pull request comments.  These come with check boxes that can be ticked. This is useful when breaking down tasks into smaller chunks. When requesting a review, use checklists to help the reviewer review all the relevant parts of the pull request. As a reviewer, use checklists to list changes needed before the pull request can be approved. <a class="reference external" href="https://github.com/alphagov/github-organisation-administration/pull/1">The Government Digital Service have good examples of what this can look like.</a></p>
-<p>Alongside the main “Conversation” view of a PR, the GitHub web interface also provides a useful overview of changes that are included in the PR. You’re able to view the list of individual commits that are included in the PR and, better still, you can view changes to each file in detail.</p>
+<section id="use-pull-requests-for-reviewing-changes">
+<span id="pull-requests"></span><h3>Use pull requests for reviewing changes<a class="headerlink" href="#use-pull-requests-for-reviewing-changes" title="Permalink to this headline">#</a></h3>
+<p>Once changes have been implemented, perhaps to meet the requirements of an issue,
+Pull Requests (PRs) provide a useful interface for incorporating those changes into the main project.
+PRs are typically used to merge a development branch (the source branch) onto a more stable branch in the main project (the target branch).
+The development branch here may be within the same repo, a <a class="reference internal" href="#forking"><span class="std std-ref">Fork</span></a> of this project, or even a completely separate project.</p>
+<p>The initial description of the PR should include the high level changes that have been made and might point to any relevant issues that it resolves.
+Much like issues, PRs can be linked to other issues and PRs, providing a coherent narrative of development work.
+<a class="reference external" href="https://docs.github.com/en/github/managing-your-work-on-github/linking-a-pull-request-to-an-issue#linking-a-pull-request-to-an-issue-using-a-keyword">Keywords can be used when linking an issue (e.g. ‘fixes #42’)</a>
+to trigger the issue to close the PR is merged.
+Contributors can also be assigned or tagged in discussion, which can be useful for requesting help or review of a group of changes.</p>
+<p>Put checklists into your pull request comments.
+These come with check boxes that can be ticked.
+This is useful when breaking down tasks into smaller chunks.
+When requesting a review, use checklists to help the reviewer review all the relevant parts of the pull request.
+As a reviewer, use checklists to list changes needed before the pull request can be approved.
+<a class="reference external" href="https://github.com/alphagov/github-organisation-administration/pull/1">The Government Digital Service have good examples of what this can look like.</a></p>
+<p>Alongside the main “Conversation” view of a PR, the GitHub web interface also provides a useful overview of changes that are included in the PR.
+You’re able to view the list of individual commits that are included in the PR and, better still, you can view changes to each file in detail.</p>
 <figure class="align-default" id="github-pr-changes">
 <a class="reference internal image-reference" href="_images/github_pr_changes.png"><img alt="The GitHub Pull Request web interface." src="_images/github_pr_changes.png" style="width: 90%;" /></a>
 <figcaption>
 <p><span class="caption-number">Fig. 12 </span><span class="caption-text">Changes from <a class="reference external" href="https://github.com/ropensci/fingertipsR/pull/91/files">an example Pull Request on the <code class="docutils literal notranslate"><span class="pre">fingertipsR</span></code> package</a>.</span><a class="headerlink" href="#github-pr-changes" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
-<p>In the “Files changed” section of a PR (shown above) altered sections of files are shown before and after the changes were made, on the left and right respectively. Where changes have deleted lines of code, these lines are highlighted in red on the left panel. And changes that add lines of code to the file are shown on the right.</p>
-<p>This highlighted summary of changes provides a useful interface for <a class="reference internal" href="peer_review.html"><span class="doc std std-doc">peer review</span></a>. When carrying out a review using this view, comments can added to specific lines of code and these comments can include suggested changes. All comments made using this view are also shown in the main Conversation view. When completing a review, a reviewer can indicate whether the PR should be merged or additional changes are required.</p>
-<p>Once a PR has been reviewed and the reviewer is happy with the changes, the Conversation view can be used by internal developers to merge the PR changes onto the target branch.</p>
+<p>In the “Files changed” section of a PR (shown above) altered sections of files are shown before and after the changes were made, on the left and right respectively.
+Where changes have deleted lines of code, these lines are highlighted in red on the left panel. And changes that add lines of code to the file are shown on the right.</p>
+<p>This highlighted summary of changes provides a useful interface for <a class="reference internal" href="peer_review.html"><span class="doc std std-doc">peer review</span></a>.
+When carrying out a review using this view, comments can added to specific lines of code and these comments can include suggested changes.
+All comments made using this view are also shown in the main Conversation view.
+When completing a review, a reviewer can indicate whether the PR should be merged or additional changes are required.</p>
+<p>Once a PR has been reviewed and the reviewer is happy with the changes,
+the Conversation view can be used by internal developers to merge the PR changes onto the target branch.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The repository settings can be adjust to project branches against specific actions. To enforce peer review, you should consider preventing merging onto the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch without an approved Pull Request. Combining this with a <a class="reference external" href="https://docs.github.com/en/github/building-a-strong-community/creating-a-pull-request-template-for-your-repository">Pull Request template</a> ensures that a standard peer review process is followed for all changes.</p>
+<p>The repository settings can be adjust to project branches against specific actions.
+To enforce peer review, you should consider preventing merging onto the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch without an approved Pull Request.
+Combining this with a <a class="reference external" href="https://docs.github.com/en/github/building-a-strong-community/creating-a-pull-request-template-for-your-repository">Pull Request template</a>
+ensures that a standard peer review process is followed for all changes.</p>
 </div>
 </section>
-<section id="forking">
-<span id="id1"></span><h3>Forking<a class="headerlink" href="#forking" title="Permalink to this headline">#</a></h3>
-<p>Forking a repository takes a complete copy of a third-party project’s current state, including its history and all existing branches and tags. Any changes made to a fork do not affect the code on the original repo, and <em>vice versa</em>.</p>
+<section id="fork-a-repository-to-maintain-an-independent-copy">
+<span id="forking"></span><h3>Fork a repository to maintain an independent copy<a class="headerlink" href="#fork-a-repository-to-maintain-an-independent-copy" title="Permalink to this headline">#</a></h3>
+<p>Forking a repository takes a complete copy of a third-party project’s current state, including its history and all existing branches and tags.
+Any changes made to a fork do not affect the code on the original repo, and <em>vice versa</em>.</p>
 <p>You might fork a repository when you want to:</p>
 <ul class="simple">
 <li><p>Contribute to a project as an external collaborator</p></li>
 <li><p>Make changes to a project for your own use, or to maintain a copy that is independent to the original</p></li>
 </ul>
-<p>In the first case, lets consider that an issue describes a bug in a project’s code. Looking at the code, you think that you know where the source of the bug is. You create a fork of the project and clone your copy of the project locally. Here you make commits that include changes to fix the bug and test that these changes work. Once the bug is fixed, you create a Pull Request on the original project and describe how your changes fix the bug. The source branch of this PR will be the branch that you committed to on your fork of the project, while the target will be the development or main branch of the original repo.</p>
-<p>In the second case, perhaps you want to reuse or adapt code from an existing project. If the changes that you wish to make to the code are not in line with the aim of the original project or the project is no longer actively maintained, then you might create a fork to contain these changes.</p>
-<p>Note that forks do not automatically synchronise with the original repo. This means that changes to the original repo, after you create a fork, need to be manually synchronised if you want to include them in your repo. When you would like to offer to contribute your changes to the original project (see <a class="reference internal" href="#pull-requests"><span class="std std-ref">Pull Requests</span></a>), you should ensure that you synchronise your branch with any new changes first.</p>
-<p>See the GitHub documentation for <a class="reference external" href="https://docs.github.com/en/free-pro-team&#64;latest/github/getting-started-with-github/fork-a-repo">instructions on forking a repo and keeping your fork up to date</a> with a project and also <a class="reference external" href="https://docs.github.com/en/free-pro-team&#64;latest/github/collaborating-with-issues-and-pull-requests/working-with-forks">working with forks</a>.</p>
+<p>In the first case, lets consider that an issue describes a bug in a project’s code.
+Looking at the code, you think that you know where the source of the bug is.
+You create a fork of the project and clone your copy of the project locally.
+Here you make commits that include changes to fix the bug and test that these changes work.
+Once the bug is fixed, you create a Pull Request on the original project and describe how your changes fix the bug.
+The source branch of this PR will be the branch that you committed to on your fork of the project,
+while the target will be the development or main branch of the original repo.</p>
+<p>In the second case, perhaps you want to reuse or adapt code from an existing project.
+If the changes that you wish to make to the code are not in line with the aim of the original project or the project is no longer actively maintained,
+then you might create a fork to contain these changes.</p>
+<p>Note that forks do not automatically synchronise with the original repo.
+This means that changes to the original repo, after you create a fork, need to be manually synchronised if you want to include them in your repo.
+When you would like to offer to contribute your changes to the original project (see <a class="reference internal" href="#pull-requests"><span class="std std-ref">Pull Requests</span></a>),
+you should ensure that you synchronise your branch with any new changes first.</p>
+<p>See the GitHub documentation for
+<a class="reference external" href="https://docs.github.com/en/free-pro-team&#64;latest/github/getting-started-with-github/fork-a-repo">instructions on forking a repo and keeping your fork up to date</a>
+with a project and also
+<a class="reference external" href="https://docs.github.com/en/free-pro-team&#64;latest/github/collaborating-with-issues-and-pull-requests/working-with-forks">working with forks</a>.</p>
 </section>
-<section id="github-actions">
-<span id="continuous-integration"></span><h3>GitHub Actions<a class="headerlink" href="#github-actions" title="Permalink to this headline">#</a></h3>
-<p>Continuous integration (CI) describes the practice of frequently committing changes to your code. CI tools support this working pattern by automating routine quality assurance tasks. This subsection describes how the GitHub CI tool, <a class="reference external" href="https://github.com/features/actions">GitHub Actions</a>, can be used in an analytical workflow. This includes verifying that your code successfully builds or installs and that your <a class="reference internal" href="testing_code.html"><span class="doc std std-doc">code tests</span></a> run successfully.</p>
-<p>Automation of routine tasks in this way reduces the effort required to merge changes onto the existing code base. This supports frequent commiting and merging of changes. As such, conflicts between multiple contributions should be minimal and that review of these changes simpler. Additionally, the execution environment for CI is defined in a CI workflow configuration, which improves reproducibility when running tests.</p>
-<p>CI is often linked to:</p>
-<ul class="simple">
-<li><p>Continuous delivery - ensuring that your code is fit for use after each integration</p></li>
-<li><p>Continuous deployment - automatically deploying working code into production</p></li>
-</ul>
-<section id="testing-example">
-<h4>Testing example<a class="headerlink" href="#testing-example" title="Permalink to this headline">#</a></h4>
-<p>Below is an example configuration file, for use with GitHub actions. The <code class="docutils literal notranslate"><span class="pre">YAML</span></code> file format, used below, is common to a number of other CI tools.</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Test python package</span><span class="w"></span>
-
-<span class="nt">on</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">push</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="nt">branches</span><span class="p">:</span><span class="w"></span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">master</span><span class="w"></span>
-<span class="w">  </span><span class="nt">pull_request</span><span class="p">:</span><span class="w"></span>
-
-
-<span class="nt">jobs</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">build</span><span class="p">:</span><span class="w"></span>
-
-<span class="w">    </span><span class="nt">runs-on</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ubuntu-latest</span><span class="w"></span>
-<span class="w">    </span><span class="nt">strategy</span><span class="p">:</span><span class="w"></span>
-<span class="w">      </span><span class="nt">matrix</span><span class="p">:</span><span class="w"></span>
-<span class="w">        </span><span class="nt">python-version</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">3.6</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">3.7</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">3.8</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">3.9</span><span class="p p-Indicator">]</span><span class="w"></span>
-
-<span class="w">    </span><span class="nt">steps</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/checkout@v2</span><span class="w"></span>
-
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Set up Python ${{ matrix.python-version }}</span><span class="w"></span>
-<span class="w">      </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/setup-python@v2</span><span class="w"></span>
-<span class="w">      </span><span class="nt">with</span><span class="p">:</span><span class="w"></span>
-<span class="w">        </span><span class="nt">python-version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${{ matrix.python-version }}</span><span class="w"></span>
-
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Install dependencies</span><span class="w"></span>
-<span class="w">      </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span><span class="w"></span>
-<span class="w">        </span><span class="no">python -m pip install --upgrade pip</span><span class="w"></span>
-<span class="w">        </span><span class="no">pip install pytest </span><span class="w"></span>
-<span class="w">        </span><span class="no">pip install -r requirements.txt</span><span class="w"></span>
-<span class="w">        </span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Test with pytest</span><span class="w"></span>
-<span class="w">      </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span><span class="w"></span>
-<span class="w">        </span><span class="no">pytest</span><span class="w"></span>
-</pre></div>
-</div>
-<p>The first section of this example describes when our workflow should be run. In this case, we’re running the CI workflow whenever code is <code class="docutils literal notranslate"><span class="pre">push</span></code>ed to the <code class="docutils literal notranslate"><span class="pre">master</span></code> branch or where any Pull Request is created. In the case of Pull Requests, the results of the CI workflow will be report on the request’s page. If any of the workflow stages fail, this can block the merge of these changes onto a more stable branch. Subsequent commits to the source branch will trigger the CI workflow to run again.</p>
-<p>Below <code class="docutils literal notranslate"><span class="pre">jobs</span></code>, we’re defining what tasks we would like to run when our workflow is triggered. We define what operating system we would like to run our workflow on - the Linux operating system <code class="docutils literal notranslate"><span class="pre">ubuntu</span></code> here. The <code class="docutils literal notranslate"><span class="pre">matrix</span></code> section under <code class="docutils literal notranslate"><span class="pre">strategy</span></code> defines parameters for the workflow. The workflow will be repeated for each combination of parameters supplied here - in this case the 4 latest Python versions.</p>
-<p>The individual stages of the workflow are defined under <code class="docutils literal notranslate"><span class="pre">steps</span></code>. <code class="docutils literal notranslate"><span class="pre">steps</span></code> typically have an informative name and run code to perform an action. Here <code class="docutils literal notranslate"><span class="pre">uses:</span> <span class="pre">actions/checkout&#64;v2</span></code> references <a class="reference external" href="https://github.com/actions/checkout">existing code</a> that will retrieve the code from our repo. The subsequent <code class="docutils literal notranslate"><span class="pre">steps</span></code> will use this code. The next step provides us with a specific Python version, as specified in the <code class="docutils literal notranslate"><span class="pre">matrix</span></code>. Then we install dependencies/requirements for our code and the <code class="docutils literal notranslate"><span class="pre">pytest</span></code> module. Finally, we run <code class="docutils literal notranslate"><span class="pre">pytest</span></code> to check that our code is working as expected.</p>
-<p>This workflow will report whether our test code ran successfully for each of the specified Python versions.</p>
-</section>
-<section id="documentation-example">
-<h4>Documentation example<a class="headerlink" href="#documentation-example" title="Permalink to this headline">#</a></h4>
-<p>This book uses the following GitHub Actions configuration to build and deploy the HTML content:</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Build and deploy book</span><span class="w"></span>
-
-<span class="nt">on</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">push</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="nt">branches</span><span class="p">:</span><span class="w"></span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">main</span><span class="w"></span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">master</span><span class="w"></span>
-<span class="w">  </span><span class="nt">pull_request</span><span class="p">:</span><span class="w"></span>
-
-<span class="nt">jobs</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">build</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="nt">runs-on</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ubuntu-latest</span><span class="w"></span>
-<span class="w">    </span><span class="nt">steps</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/checkout@v2</span><span class="w"></span>
-
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Set up Python 3.7</span><span class="w"></span>
-<span class="w">      </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/setup-python@v1</span><span class="w"></span>
-<span class="w">      </span><span class="nt">with</span><span class="p">:</span><span class="w"></span>
-<span class="w">        </span><span class="nt">python-version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3.7</span><span class="w"></span>
-
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Install dependencies</span><span class="w"></span>
-<span class="w">      </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span><span class="w"></span>
-<span class="w">        </span><span class="no">pip install -r requirements.txt</span><span class="w"></span>
-
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Build the book</span><span class="w"></span>
-<span class="w">      </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span><span class="w"></span>
-<span class="w">        </span><span class="no">jb build book -W -v --keep-going &amp;&amp; touch ./book/_build/html/.nojekyll</span><span class="w"></span>
-
-<span class="w">  </span><span class="nt">deploy</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="nt">needs</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">build</span><span class="w"></span>
-<span class="w">    </span><span class="nt">runs-on</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ubuntu-latest</span><span class="w"></span>
-<span class="w">    </span><span class="nt">if</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">startsWith( github.ref, &#39;refs/tags/v&#39;)</span><span class="w"></span>
-<span class="w">    </span><span class="nt">steps</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Deploy</span><span class="nv"> </span><span class="s">book</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">GitHub</span><span class="nv"> </span><span class="s">Pages&quot;</span><span class="w"></span>
-<span class="w">      </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">peaceiris/actions-gh-pages@v3.6.1</span><span class="w"></span>
-<span class="w">      </span><span class="nt">with</span><span class="p">:</span><span class="w"></span>
-<span class="w">        </span><span class="nt">github_token</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${{ secrets.GITHUB_TOKEN }}</span><span class="w"></span>
-<span class="w">        </span><span class="nt">publish_dir</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./book/_build/html</span><span class="w"></span>
-</pre></div>
-</div>
-<p>This workflow runs whenever a pull request is create or changes are pushed directly to the main branch. It has two jobs - one that builds the book’s HTML content and another that deploys the content to this website.</p>
-<p>As with the previous example, we start the workflow by setting up an environment with Python. We install the dependencies for the project, which includes <code class="docutils literal notranslate"><span class="pre">jupyter-book</span></code> to build to the book.</p>
-<p>Our workflow then builds the book’s HTML content, where the workflow will fail if warnings or errors are raised.</p>
-<p>In the second job, the book (including the new changes) is deployed to the site that you are reading now. This job needs the build job to have completed successfully before it will run. It will only run if a new Git tag has been created, to indicate a new version of the book. This allows us to accumulate changes on the main branch, before releasing a collection of changes in the next version. This deployment step requires authentication, which is managed by a secret/token that is accessed from the Action’s environment.</p>
-<p>You might use a similar approach to this to deploy your code’s HTML documentation.</p>
-</section>
-<section id="comprehensive-example">
-<h4>Comprehensive example<a class="headerlink" href="#comprehensive-example" title="Permalink to this headline">#</a></h4>
-<p>You can see a detailed example of CI in practice in the <code class="docutils literal notranslate"><span class="pre">jupyter-book</span></code> project. A recent version of the <a class="reference external" href="https://github.com/executablebooks/jupyter-book/blob/6fb0cbe4abb5bc29e9081afbe24f71d864b40475/.github/workflows/tests.yml"><code class="docutils literal notranslate"><span class="pre">jupyter-book</span></code> CI workflow</a> includes:</p>
-<ul class="simple">
-<li><p>Checking code against style guidelines, using <a class="reference external" href="https://pre-commit.com/">pre-commit</a></p></li>
-<li><p>Running code tests over</p>
-<ul>
-<li><p>a range of Python versions</p></li>
-<li><p>multiple versions of specific dependencies (<code class="docutils literal notranslate"><span class="pre">sphinx</span></code> here)</p></li>
-<li><p>multiple operating systems</p></li>
-</ul>
-</li>
-<li><p>Reporting test coverage</p></li>
-<li><p>Checking that documentation builds successfully</p></li>
-<li><p>Deploying a new version of the <code class="docutils literal notranslate"><span class="pre">jupyter-book</span></code> package to <a class="reference external" href="https://pypi.org/">the python package index (PyPI)</a></p></li>
-</ul>
-</section>
+<section id="use-github-actions-for-continous-integration">
+<h3>Use GitHub Actions for continous integration<a class="headerlink" href="#use-github-actions-for-continous-integration" title="Permalink to this headline">#</a></h3>
+<p>Continuous Integration is discussed in more detail in <a class="reference internal" href="continuous_integration.html"><span class="doc std std-doc">Automating Code Quality Assurance</span></a>.</p>
 </section>
 <section id="other-github-features">
 <h3>Other GitHub features<a class="headerlink" href="#other-github-features" title="Permalink to this headline">#</a></h3>
-<p><a class="reference external" href="https://docs.github.com/en/free-pro-team&#64;latest/github/managing-your-work-on-github/about-project-boards">Project boards</a> offer project management features through a <a class="reference external" href="https://en.wikipedia.org/wiki/Kanban_board">Kanban-style board</a>. These boards can be used to track assignment and progress of specific tasks. This is aided by linking tasks to specific issues and pull requests.</p>
-<p><a class="reference external" href="https://pages.github.com/">GitHub Pages</a> offers hosting of static web content, which can be useful for code documentation. GitHub Actions can be used to generate this documentation from the code and deploy directly to the Pages site. Alternatively, <a class="reference external" href="https://docs.github.com/en/free-pro-team&#64;latest/github/building-a-strong-community/about-wikis">project Wikis</a> can be used to manually document your project using <a class="reference external" href="https://www.markdownguide.org/basic-syntax/">Markdown</a>.</p>
+<p><a class="reference external" href="https://docs.github.com/en/free-pro-team&#64;latest/github/managing-your-work-on-github/about-project-boards">Project boards</a>
+offer project management features through a
+<a class="reference external" href="https://en.wikipedia.org/wiki/Kanban_board">Kanban-style board</a>.
+These boards can be used to track assignment and progress of specific tasks.
+This is aided by linking tasks to specific issues and pull requests.</p>
+<p><a class="reference external" href="https://pages.github.com/">GitHub Pages</a> offers hosting of static web content, which can be useful for code documentation.
+GitHub Actions can be used to generate this documentation from the code and deploy directly to the Pages site.
+Alternatively, <a class="reference external" href="https://docs.github.com/en/free-pro-team&#64;latest/github/building-a-strong-community/about-wikis">project Wikis</a>
+can be used to manually document your project using <a class="reference external" href="https://www.markdownguide.org/basic-syntax/">Markdown</a>.</p>
 </section>
 </section>
 </section>
@@ -1213,7 +1040,7 @@ Further paragraphs come after blank lines.
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./."
         },
         predefinedOutput: true
@@ -1221,50 +1048,123 @@ Further paragraphs come after blank lines.
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="project_documentation.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Project documentation</p>
-        </div>
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="project_documentation.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Project documentation</p>
+      </div>
     </a>
-    <a class='right-next' id="next-link" href="configuration.html" title="next page">
-    <div class="prev-next-info">
+    <a class="right-next"
+       href="configuration.html"
+       title="next page">
+      <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title">Configuration</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
-</div>
-            </footer>
-        </div>
-    </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
-  
-    <div class="extra_footer">
-      <p>Analysis Function reproducible analytical pipelines (RAP) support</p><p>This is a living document, please help use to make it grow by providing any feedback <a href='mailto:Analysis.Function@ons.gov.uk'>by email</a> or via the <a href='https://github.com/best-practice-and-impact/qa-of-code-guidance'>GitHub repository</a>.
-    </div>
-</p>
-        </footer>
-    </div>
-    
-</div>
-
-
       </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#keep-an-audit-trail-of-changes">Keep an audit trail of changes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#include-code-and-documentation-in-version-control">Include code and documentation in version control</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exclude-sensitive-information-from-version-control">Exclude sensitive information from version control</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-git-for-version-control">Using Git for version control</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#write-short-and-informative-commits">Write short and informative commits</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#use-branching-appropriately">Use branching appropriately</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#resolve-merge-conflicts">Resolve merge conflicts</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#versioning-large-files">Versioning large files</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tag-new-releases">Tag new releases</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#avoid-committing-sensitive-information-to-git-repositories">Avoid committing sensitive information to Git repositories</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#automatically-avoid-committing-unwanted-files-using-gitignore">Automatically avoid committing unwanted files using .gitignore</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exclude-rdata-and-rhistory-files">Exclude <code class="docutils literal notranslate"><span class="pre">.Rdata</span></code> and <code class="docutils literal notranslate"><span class="pre">.Rhistory</span></code> files</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#avoid-saving-data-from-jupyter-notebooks">Avoid saving data from Jupyter Notebooks</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#control-access-to-code-only-when-essential">Control access to code only when essential</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#handle-data-breaches-via-git">Handle data breaches via Git</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-github">Using GitHub</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#use-git-issues-to-plan-and-discuss-development-of-your-project">Use Git issues to plan and discuss development of your project</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#use-pull-requests-for-reviewing-changes">Use pull requests for reviewing changes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fork-a-repository-to-maintain-an-independent-copy">Fork a repository to maintain an independent copy</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#use-github-actions-for-continous-integration">Use GitHub Actions for continous integration</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#other-github-features">Other GitHub features</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  <p>Analysis Function - Analytical Standards and Pipelines hub</p><p>This is a living document, please help use to make it grow by providing any feedback <a href='mailto:ASAP@ons.gov.uk'>by email</a> or via the <a href='https://github.com/best-practice-and-impact/qa-of-code-guidance'>GitHub repository</a>.
+</div>
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
     </div>
+  </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
 
-
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>
