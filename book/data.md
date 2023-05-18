@@ -1,4 +1,4 @@
-# Data Management
+# Data management
 
 Data management covers a broad range of disciplines, including organising, storing and maintaining data.
 This management is typically handled by dedicated data architects and engineers, however, we appreciate that analysts are often expected to manage their own data.
