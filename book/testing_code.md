@@ -103,7 +103,7 @@ Good test data are:
 * fake, static (hardcoded) and readable
 * stored closely to the test
 
-```{warning} Key Learning
+```{warning}
 You must not copy the output from running your code to create your expected test outcomes.
 If you do this the test will check that the function is running in the same way that it ran when you generated the data.
 This assumes that your function is working correctly.
@@ -111,9 +111,40 @@ This assumes that your function is working correctly.
 You must create your test data independently, ensuring that it reflects how you want your code to work, rather than how it currently works.
 ```
 
-```{todo}
-EXAMPLE OF MINIMISING TEST DATA
+It's tempting to create a test dataset that closely mimics your real data, like the example below:
+
+```{code-block} python
+from my_package import add_columns
+from pandas.testing import assert_frame_equal
+import pandas as pd
+
+def test_add_columns():
+    input_data = pd.DataFrame()
+    expected_output pd.DataFrame()
+
+    actual_output = add_columns(df=input_data, column_to_assign="total_sales", columns_to_add=["region_1_sales", "region_2_sales"])
+    assert_frame_equal(expected_output, actual_output)
 ```
+
+However, we can still conduct the same test with much less data like so:
+
+```{code-block} python
+...
+
+def test_add_columns():
+    input_data = pd.DataFrame()
+    expected_output pd.DataFrame()
+
+    actual_output = add_columns(df=input_data, column_to_assign="outcome", columns_to_add=["value_1", "value_2"])
+    assert_frame_equal(expected_output, actual_output)
+```
+
+Using more minimal and general data in the test has made it much clearer what is been tested.
+
+Note that the way we write our test affects how the function is implemented.
+Using minimal, generalised data here encourages you to follow good practices when designing your function.
+This function doesn't know the name of the columns that it will use in advance, so they are passed as parameters.
+This makes the function reusable.
 
 ## Structure test files to match code structure
 
@@ -254,8 +285,10 @@ def test_another_function(spark_session):
 ```
 
 This examples shows a fixture named `spark_session` with a testing session scope.
-Starting a new spark session can take a few seconds, so creating a new session for each test function would significantly increase the time it takes to run all of the tests.
-With a session level scope, the function is called once for the whole testing session and the resulting `SparkSession` object is shared between our tests.
+Starting a new spark session can take a few seconds, so creating a new session
+for each test function would significantly increase the time it takes to run all of the tests.
+With a session level scope, the function is called once for the whole testing session
+and the resulting `SparkSession` object is shared between our tests.
 Reusing the same `SparkSession` object is safe to do if none of our tests modify the object.
 
 ```{python}
@@ -295,7 +328,8 @@ Using functionality from test packages may provide improved running efficiency a
 
 In `pytest`, this can be achieved using the [Parametrize mark](https://docs.pytest.org/en/stable/parametrize.html).
 
-In R, the `patrick` package extends `testthat` to provide a [`with_parameters_test_that`](https://rdrr.io/cran/patrick/man/with_parameters_test_that.html) function to achieve this.
+In R, the `patrick` package extends `testthat` to provide a
+[`with_parameters_test_that`](https://rdrr.io/cran/patrick/man/with_parameters_test_that.html) function to achieve this.
 
 ```{todo}
 EXAMPLES SHOWING REPEATED TEST LOGIC AND PARAMETERISED TEST
