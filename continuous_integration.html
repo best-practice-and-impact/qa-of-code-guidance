@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Automating Code Quality Assurance &#8212; Quality Assurance of Code for Analysis and Research</title>
+    <title>Automating code quality assurance &#8212; Quality Assurance of Code for Analysis and Research</title>
   
   
   
@@ -36,10 +36,10 @@
     <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="_static/tabs.css" />
-    <link rel="stylesheet" type="text/css" href="_static/accessibility.css" />
     <link rel="stylesheet" type="text/css" href="_static/logo.css" />
-    <link rel="stylesheet" type="text/css" href="_static/admonitions.css" />
+    <link rel="stylesheet" type="text/css" href="_static/accessibility.css" />
     <link rel="stylesheet" type="text/css" href="_static/markdown_within_tabs.css" />
+    <link rel="stylesheet" type="text/css" href="_static/admonitions.css" />
     <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -173,10 +173,10 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="project_documentation.html">Project documentation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="version_control.html">Version control</a></li>
 <li class="toctree-l1"><a class="reference internal" href="configuration.html">Configuration</a></li>
-<li class="toctree-l1"><a class="reference internal" href="data.html">Data Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data.html">Data management</a></li>
 <li class="toctree-l1"><a class="reference internal" href="peer_review.html">Peer review</a></li>
 <li class="toctree-l1"><a class="reference internal" href="testing_code.html">Testing code</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Automating Code Quality Assurance</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Automating code quality assurance</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Resources</span></p>
 <ul class="nav bd-sidenav">
@@ -382,7 +382,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Automating Code Quality Assurance</h1>
+    <h1>Automating code quality assurance</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -423,10 +423,11 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="automating-code-quality-assurance">
-<h1>Automating Code Quality Assurance<a class="headerlink" href="#automating-code-quality-assurance" title="Permalink to this headline">#</a></h1>
+<h1>Automating code quality assurance<a class="headerlink" href="#automating-code-quality-assurance" title="Permalink to this headline">#</a></h1>
 <section id="motivation">
 <h2>Motivation<a class="headerlink" href="#motivation" title="Permalink to this headline">#</a></h2>
-<p>There are various tasks which can be automated to increase the quality of code and make development easier and less tedious. Automating the running of unit tests is especially important to ensuring trust in your pipeline or package, by ensuring that all unit tests pass before every merge.</p>
+<p>There are various tasks which can be automated to increase the quality of code and make development easier and less tedious.
+Automating the running of unit tests is especially important to ensuring trust in your pipeline or package, by ensuring that all unit tests pass before every merge.</p>
 <section id="automate-tests-to-reduce-risk-of-errors">
 <span id="automate-tests"></span><h3>Automate tests to reduce risk of errors<a class="headerlink" href="#automate-tests-to-reduce-risk-of-errors" title="Permalink to this headline">#</a></h3>
 <p>Tests should be run whenever you make changes to your project.
@@ -459,7 +460,8 @@ They can be used to automate code quality assurance tasks, e.g. run tests, ensur
 This might stop our commit/push if the tests fail, so that we don’t push breaking changes to our remote repository.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>If your code is likely to be run on a range of software versions or operating systems, you might want to test on a variety of these. Tools exists to support local testing of combinations software versions and package dependency versions:</p>
+<p>If your code is likely to be run on a range of software versions or operating systems, you might want to test on a variety of these.
+Tools exists to support local testing of combinations software versions and package dependency versions:</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://tox.readthedocs.io/en/latest/">tox</a> or <a class="reference external" href="https://nox.thea.codes/en/stable/">nox</a> for Python</p></li>
 <li><p><a class="reference external" href="https://r-hub.github.io/rhub/">rhub</a> for R</p></li>
@@ -513,13 +515,20 @@ You can run multiple of these, to catch a broader range of stylistic or programm
 </section>
 <section id="workflows">
 <h2>Workflows<a class="headerlink" href="#workflows" title="Permalink to this headline">#</a></h2>
-<p>GitHub Actions and GitLab Pipelines both offer the ability to define custom workflows using YAML. Workflow refers to a defined sequence of steps and actions that need to be performed to complete a specific task or process. Workflows are commonly used in software development to automate repetitive or complex tasks, such as building and deploying software, testing code, and managing code reviews. GitHub Actions and GitLab Pipelines both allow automated workflows that trigger builds and tests whenever code changes are pushed to the repository.</p>
+<p>GitHub Actions and GitLab Pipelines both offer the ability to define custom workflows using YAML.
+Workflow refers to a defined sequence of steps and actions that need to be performed
+to complete a specific task or process.
+Workflows are commonly used in software development to automate repetitive or complex tasks,
+such as building and deploying software, testing code, and managing code reviews.
+GitHub Actions and GitLab Pipelines both allow automated workflows that trigger
+builds and tests whenever code changes are pushed to the repository.</p>
 <section id="example-use-cases-for-github-actions">
 <h3>Example use cases for GitHub Actions<a class="headerlink" href="#example-use-cases-for-github-actions" title="Permalink to this headline">#</a></h3>
 <p>The following examples are presented to support understanding of the topic discussed above.</p>
 <section id="configure-github-actions-to-automate-tests">
 <h4>Configure GitHub actions to automate tests<a class="headerlink" href="#configure-github-actions-to-automate-tests" title="Permalink to this headline">#</a></h4>
-<p>Below is an example configuration file, for use with GitHub actions. The <code class="docutils literal notranslate"><span class="pre">YAML</span></code> file format, used below, is common to a number of other CI tools.</p>
+<p>Below is an example configuration file, for use with GitHub actions.
+The <code class="docutils literal notranslate"><span class="pre">YAML</span></code> file format, used below, is common to a number of other CI tools.</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Test python package</span>
 
 <span class="nt">on</span><span class="p">:</span>
@@ -555,14 +564,31 @@ You can run multiple of these, to catch a broader range of stylistic or programm
 <span class="w">        </span><span class="no">pytest</span>
 </pre></div>
 </div>
-<p>The first section of this example describes when our workflow should be run. In this case, we’re running the CI workflow whenever code is <code class="docutils literal notranslate"><span class="pre">push</span></code>ed to the <code class="docutils literal notranslate"><span class="pre">master</span></code> branch or where any Pull Request is created. In the case of Pull Requests, the results of the CI workflow will be report on the request’s page. If any of the workflow stages fail, this can block the merge of these changes onto a more stable branch. Subsequent commits to the source branch will trigger the CI workflow to run again.</p>
-<p>Below <code class="docutils literal notranslate"><span class="pre">jobs</span></code>, we’re defining what tasks we would like to run when our workflow is triggered. We define what operating system we would like to run our workflow on - the Linux operating system <code class="docutils literal notranslate"><span class="pre">ubuntu</span></code> here. The <code class="docutils literal notranslate"><span class="pre">matrix</span></code> section under <code class="docutils literal notranslate"><span class="pre">strategy</span></code> defines parameters for the workflow. The workflow will be repeated for each combination of parameters supplied here - in this case 4 recent Python versions.</p>
-<p>The individual stages of the workflow are defined under <code class="docutils literal notranslate"><span class="pre">steps</span></code>. <code class="docutils literal notranslate"><span class="pre">steps</span></code> typically have an informative name and run code to perform an action. Here <code class="docutils literal notranslate"><span class="pre">uses:</span> <span class="pre">actions/checkout&#64;v3</span></code> references <a class="reference external" href="https://github.com/actions/checkout">existing code</a> that will retrieve the code from our repo. The subsequent <code class="docutils literal notranslate"><span class="pre">steps</span></code> will use this code. The next step provides us with a specific Python version, as specified in the <code class="docutils literal notranslate"><span class="pre">matrix</span></code>. Then we install dependencies/requirements for our code and the <code class="docutils literal notranslate"><span class="pre">pytest</span></code> module. Finally, we run <code class="docutils literal notranslate"><span class="pre">pytest</span></code> to check that our code is working as expected.</p>
+<p>The first section of this example describes when our workflow should be run.
+In this case, we’re running the CI workflow whenever code is <code class="docutils literal notranslate"><span class="pre">push</span></code>ed to the <code class="docutils literal notranslate"><span class="pre">master</span></code> branch or where any Pull Request is created.
+In the case of Pull Requests, the results of the CI workflow will be report on the request’s page.
+If any of the workflow stages fail, this can block the merge of these changes onto a more stable branch.
+Subsequent commits to the source branch will trigger the CI workflow to run again.</p>
+<p>Below <code class="docutils literal notranslate"><span class="pre">jobs</span></code>, we’re defining what tasks we would like to run when our workflow is triggered.
+We define what operating system we would like to run our workflow on - the Linux operating system <code class="docutils literal notranslate"><span class="pre">ubuntu</span></code> here.
+The <code class="docutils literal notranslate"><span class="pre">matrix</span></code> section under <code class="docutils literal notranslate"><span class="pre">strategy</span></code> defines parameters for the workflow.
+The workflow will be repeated for each combination of parameters supplied here - in this case 4 recent Python versions.</p>
+<p>The individual stages of the workflow are defined under <code class="docutils literal notranslate"><span class="pre">steps</span></code>.
+<code class="docutils literal notranslate"><span class="pre">steps</span></code> typically have an informative name and run code to perform an action.
+Here <code class="docutils literal notranslate"><span class="pre">uses:</span> <span class="pre">actions/checkout&#64;v3</span></code> references <a class="reference external" href="https://github.com/actions/checkout">existing code</a> that will retrieve the code from our repo.
+The subsequent <code class="docutils literal notranslate"><span class="pre">steps</span></code> will use this code.
+The next step provides us with a specific Python version, as specified in the <code class="docutils literal notranslate"><span class="pre">matrix</span></code>.
+Then we install dependencies/requirements for our code and the <code class="docutils literal notranslate"><span class="pre">pytest</span></code> module.
+Finally, we run <code class="docutils literal notranslate"><span class="pre">pytest</span></code> to check that our code is working as expected.</p>
 <p>This workflow will report whether our test code ran successfully for each of the specified Python versions.</p>
 </section>
 <section id="configure-github-actions-to-build-and-deploy-documentation">
 <h4>Configure GitHub actions to build and deploy documentation<a class="headerlink" href="#configure-github-actions-to-build-and-deploy-documentation" title="Permalink to this headline">#</a></h4>
-<p>It is important to maintain the documentation relating to your project to ensure contributors and users can understand, maintain and use your product correctly. One basic way of doing this is maintaining markdown files within a GitHub repository. However, there exist multiple tools that can transform these markdown files into HTML content. A popular tool for building and deploying HTML documentation is <a class="reference external" href="https://www.sphinx-doc.org/en/master/">Sphinx</a>. Here are two examples of repositories that use sphinx to build its documentation:</p>
+<p>It is important to maintain the documentation relating to your project to ensure contributors and users can understand, maintain and use your product correctly.
+One basic way of doing this is maintaining markdown files within a GitHub repository.
+However, there exist multiple tools that can transform these markdown files into HTML content.
+A popular tool for building and deploying HTML documentation is <a class="reference external" href="https://www.sphinx-doc.org/en/master/">Sphinx</a>.
+Here are two examples of repositories that use sphinx to build its documentation:</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://github.com/best-practice-and-impact/qa-of-code-guidance/blob/main/.github/workflows/book.yaml">Quality assurance of code for analysis and research (this book)</a></p></li>
 <li><p><a class="reference external" href="https://github.com/best-practice-and-impact/govcookiecutter/blob/main/.github/workflows/govcookiecutter-deploy-documentation.yml">govcookiecutter</a></p></li>
@@ -571,11 +597,17 @@ You can run multiple of these, to catch a broader range of stylistic or programm
 </section>
 <section id="example-gitlab-pipeline">
 <h3>Example GitLab Pipeline<a class="headerlink" href="#example-gitlab-pipeline" title="Permalink to this headline">#</a></h3>
-<p>GitLab has an equivalent to GitHub Actions called GitLab Pipelines. The use cases for these are practically the same, with a change in syntax and file structure. <a class="reference external" href="https://www.patricksoftwareblog.com/setting-up-gitlab-ci-for-a-python-application/">PATRICK’S SOFTWARE BLOG</a> provides a simple GitLab pipeline example and detailed description on how to use it. For further details <a class="reference external" href="https://docs.gitlab.com/ee/ci/">GitLab provides documentation on how to create and use GitLab Pipelines</a>.</p>
+<p>GitLab has an equivalent to GitHub Actions called GitLab Pipelines.
+The use cases for these are practically the same, with a change in syntax and file structure.
+<a class="reference external" href="https://www.patricksoftwareblog.com/setting-up-gitlab-ci-for-a-python-application/">PATRICK’S SOFTWARE BLOG</a> provides a simple GitLab
+pipeline example and detailed description on how to use it.
+For further details <a class="reference external" href="https://docs.gitlab.com/ee/ci/">GitLab provides documentation on how to create and use GitLab Pipelines</a>.</p>
 </section>
 <section id="comprehensive-example-of-automating-code-quality-assurance">
 <h3>Comprehensive example of automating code quality assurance<a class="headerlink" href="#comprehensive-example-of-automating-code-quality-assurance" title="Permalink to this headline">#</a></h3>
-<p>You can see a detailed example of CI in practice in the <code class="docutils literal notranslate"><span class="pre">jupyter-book</span></code> project. A recent version of the <a class="reference external" href="https://github.com/executablebooks/jupyter-book/blob/6fb0cbe4abb5bc29e9081afbe24f71d864b40475/.github/workflows/tests.yml"><code class="docutils literal notranslate"><span class="pre">jupyter-book</span></code> CI workflow</a> includes:</p>
+<p>You can see a detailed example of CI in practice in the <code class="docutils literal notranslate"><span class="pre">jupyter-book</span></code> project.
+A recent version of the
+<a class="reference external" href="https://github.com/executablebooks/jupyter-book/blob/6fb0cbe4abb5bc29e9081afbe24f71d864b40475/.github/workflows/tests.yml"><code class="docutils literal notranslate"><span class="pre">jupyter-book</span></code> CI workflow</a> includes:</p>
 <ul class="simple">
 <li><p>Checking code against style guidelines, using <a class="reference external" href="https://pre-commit.com/">pre-commit</a></p></li>
 <li><p>Running code tests over</p>

@@ -10,9 +10,9 @@ Blue AF #193f54
 
 ```
  */
-.admonition-learning p.admonition-title::before {
+ .admonition-learning p.admonition-title::after {
     content: "\f5fc";
-    left: .45rem;
+    left: .35rem;
     top: .5rem;
 }
 
@@ -23,7 +23,7 @@ Blue AF #193f54
 
 ```
  */
-.admonition-strategies p.admonition-title::before {
+.admonition-strategies p.admonition-title::after {
     content: "\f439";
     left: .55rem;
 }
