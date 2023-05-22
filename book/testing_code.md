@@ -232,7 +232,7 @@ class TestSum:
 
 The R example above has one test file per function in the modules.
 There are multiple test files for the `math.R` module because it contains more than one function.
-Tests in these test files do not need grouping into classes, as the file name is used to indicate exactly which code is being tested.
+Tests in these test files do not need grouping into classes, as the file name is used to indicate exactly which function or class is being tested.
 
 These are the common conventions for each of Python and R, but are interchangeable.
 Use the approach that makes it easiest for developers to identify the relationship between tests and the code they are testing.
@@ -319,12 +319,12 @@ For usage details see the documentation for packages that offer fixtures:
 
 ### Use parametrization to reduce repetition in test logic
 
-Often, similar steps are taken when testing multiple combinations of inputs and outputs.
-Parametrization allows us to reduce repetition in our code, in a similar way to reusable functions.
-We specify pairs of inputs and expected outputs, so that our testing tool can repeat a test for each scenario.
+Similar steps are often repeated when testing multiple combinations of inputs and outputs.
+Parametrization allows us to reduce repetition in our test code, in a similar way to writing our logic in functions.
+We specify pairs of inputs and expected outputs, so that our testing tool can repeat the same test for each scenario.
 
 This approach is equivalent to using a for-loop to apply a test function over multiple inputs and expected outputs.
-Using functionality from test packages may provide improved running efficiency and detail given in test logs.
+Using functionality from test packages may provide improved running efficiency and more detailed reporting of test failures.
 
 In `pytest`, this can be achieved using the [Parametrize mark](https://docs.pytest.org/en/stable/parametrize.html).
 
@@ -335,7 +335,33 @@ In R, the `patrick` package extends `testthat` to provide a
 EXAMPLES SHOWING REPEATED TEST LOGIC AND PARAMETERISED TEST
 ```
 
-## Write tests before writing logic (TDD)
+## Write tests before writing logic
+
+The best practice for testing code is to use test-driven development (TDD).
+This is an iterative approach that involves writing tests before writing the logic to meet the tests.
+
+For a piece of analysis logic, we know in advance what the desired outcome is.
+This might be from a user need (e.g. someone needs output data in a certain shape) or an internal requirement (e.g. we need to impute all missing values).
+Given that we know the expected outcome, we can write the test before we even think about how we are going to write the solution.
+
+TDD typically repeats three steps:
+1. Red - Write a test that we expect to fail
+2. Green - Write or update our code to pass the new test
+3. Refactor - Make improvements to the quality of the code without changing the functionality
+
+As with any code that is adequately covered by tests, code written using TDD can be safely refactored.
+We can be more confident that our tests will capture any changes that would unintentionally alter the way our code works.
+
+The three steps above are repeated to gradually increase the complexity of our code.
+The first test that is written should focus on the minimum functionality.
+Then this minimal functionality is implemented, to do nothing more than the test requires.
+On the next iteration the test becomes more complex, as does the code logic.
+In each iteration the refactoring steps means that the increasing complexity of the code is managed.
+
+This approach provides benefits beyond having good test coverage.
+The iterative nature of TDD encourages us to follow a number of other good practices.
+These include keeping our test data minimal and keeping functions or classes simple and focussed on doing one thing well.
+TDD produces clean, robust and adaptable code.
 
 ## Write tests to assure that bugs are fixed
 
