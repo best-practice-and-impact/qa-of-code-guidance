@@ -237,14 +237,94 @@ Tests in these test files do not need grouping into classes, as the file name is
 These are the common conventions for each of Python and R, but are interchangeable.
 Use the approach that makes it easiest for developers to identify the relationship between tests and the code they are testing.
 
+## Test that new logic is correct using unit tests
 
-## Test that new logic is correct (unit tests)
+When we implement new logic in code, tests are required to assure us that the code works as expected.
 
-## Test that different parts of the code interact correctly (integration tests)
+The simplest way to test this is to write tests for each individual unit in out code.
+A unit is the smallest modular piece of logic in the code - a function or method.
 
-## Test that the whole system works (end to end tests)
+Unit tests should cover realistic uses for your function, such as:
+* boundary cases, like the highest and lowest expected input values
+* positive, negative, zero and missing value inputs
+* examples that trigger errors that have been defined in your code
 
-## Test that user needs are met (user acceptance tests)
+When your function documentation describes the expected inputs to your function, there is less need to test unexpected cases.
+If missuse is still likely or risky, then providing the user with an error is the best approach to mitigate this risk.
+
+Logic that is reused from an existing packages that is already tested do not require tests when we use that logic alone.
+You should be aware of weather your dependencies are sufficiently tested.
+Newly developed packages or those with very few users are more likely to not be tested.
+
+## Test that different parts of the code interact correctly using integration tests
+
+We define integration tests as those that test on a higher level that a unit. This includes testing that:
+* multiple units work together correctly
+* multiple high level functions work together (e.g. stages of a pipeline)
+* the end to end analysis runs correctly and meets users needs
+* the analysis works with typical inputs from other systems
+
+Integration tests give us assurance that our analysis is fit for purpose.
+Additionally, they give us safety when refactoring or rearranging large parts of of code.
+Refactoring is an important part of managing the complexity of our analysis as it grows.
+
+Consider a piece of analysis that has an end to end test to, check that the overall system gives an expected outcome.
+For example, it tests that output data are the right shape, in the right format and have specific properties (maybe a distribution).
+There might also be a "regression" test that check that the exact values in the output remain the same.
+After any changes that are made to tidy up or refactor the
+code, the end to end tests can be run to assure us that no functionality has been inadvertently changed.
+
+We can similarly consider a high level stage of an analysis pipeline.
+If we have a stage responsible for imputing missing values, we might create integration tests to check that all values are
+imputed and that particular imputation methods were used for specific cases in our test data.
+When changes are made to individual imputation methods we might not expect these general characteristics to change.
+This test helps to identify cases where this inadvertently has changed.
+
+Note that integration tests are more robust when they focus on general high level outcomes that we don't expect to change often.
+Integration tests that check very specific outcomes will need to be updated with any small change to the logic within the part that is being tested.
+
+User acceptance tests are those that check that a high level user requirement has been met.
+In analysis, these are likely part of an end to end test that checks that the output is fit for purpose.
+
+## Write tests to assure that bugs are fixed
+
+Each time you find a bug in your code, write a new test to assert that the code works correctly.
+This gives you confidence that the bug has been fixed.
+When you change or refactor your code in future, the new tests
+will continue to assure that bugs you have already fixed will not reappear.
+Doing this increases the coverage of your tests in a proportionate way.
+
+## Write tests before writing logic
+
+The best practice for testing code is to use test-driven development (TDD).
+This is an iterative approach that involves writing tests before writing the logic to meet the tests.
+
+For a piece of analysis logic, we know in advance what the desired outcome is.
+This might be from a user need (e.g. someone needs output data in a certain shape) or an internal requirement (e.g. we need to impute all missing values).
+Given that we know the expected outcome, we can write the test before we even think about how we are going to write the solution.
+
+TDD typically repeats three steps:
+1. Red - Write a test that we expect to fail
+2. Green - Write or update our code to pass the new test
+3. Refactor - Make improvements to the quality of the code without changing the functionality
+
+As with any code that is adequately covered by tests, code written using TDD can be safely refactored.
+We can be more confident that our tests will capture any changes that would unintentionally alter the way our code works.
+
+The three steps above are repeated to gradually increase the complexity of our code.
+The first test that is written should focus on the minimum functionality.
+Then this minimal functionality is implemented, to do nothing more than the test requires.
+On the next iteration the test becomes more complex, as does the code logic.
+In each iteration the refactoring steps means that the increasing complexity of the code is managed.
+
+This approach provides benefits beyond having good test coverage.
+The iterative nature of TDD encourages us to follow a number of other good practices.
+These include keeping our test data minimal and keeping functions or classes simple and focussed on doing one thing well.
+TDD produces clean, robust and adaptable code.
+
+[Behaviour driven development](https://en.wikipedia.org/wiki/Behavior-driven_development) and
+[acceptance test driven development](https://en.wikipedia.org/wiki/Acceptance_test-driven_development)
+are extensions of TDD with a useful focus on user needs.
 
 ## Reduce repetition in test code (fixtures and parameterised tests)
 
@@ -334,39 +414,3 @@ In R, the `patrick` package extends `testthat` to provide a
 ```{todo}
 EXAMPLES SHOWING REPEATED TEST LOGIC AND PARAMETERISED TEST
 ```
-
-## Write tests before writing logic
-
-The best practice for testing code is to use test-driven development (TDD).
-This is an iterative approach that involves writing tests before writing the logic to meet the tests.
-
-For a piece of analysis logic, we know in advance what the desired outcome is.
-This might be from a user need (e.g. someone needs output data in a certain shape) or an internal requirement (e.g. we need to impute all missing values).
-Given that we know the expected outcome, we can write the test before we even think about how we are going to write the solution.
-
-TDD typically repeats three steps:
-1. Red - Write a test that we expect to fail
-2. Green - Write or update our code to pass the new test
-3. Refactor - Make improvements to the quality of the code without changing the functionality
-
-As with any code that is adequately covered by tests, code written using TDD can be safely refactored.
-We can be more confident that our tests will capture any changes that would unintentionally alter the way our code works.
-
-The three steps above are repeated to gradually increase the complexity of our code.
-The first test that is written should focus on the minimum functionality.
-Then this minimal functionality is implemented, to do nothing more than the test requires.
-On the next iteration the test becomes more complex, as does the code logic.
-In each iteration the refactoring steps means that the increasing complexity of the code is managed.
-
-This approach provides benefits beyond having good test coverage.
-The iterative nature of TDD encourages us to follow a number of other good practices.
-These include keeping our test data minimal and keeping functions or classes simple and focussed on doing one thing well.
-TDD produces clean, robust and adaptable code.
-
-## Write tests to assure that bugs are fixed
-
-Each time you find a bug in your code, write a new test to assert that the code works correctly.
-This gives you confidence that the bug has been fixed.
-When you change or refactor your code in future, the new tests will continue to assure that bugs you have already fixed will not reappear.
-Doing this increases the coverage of your tests in a proportionate way.
-
