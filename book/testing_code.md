@@ -323,6 +323,8 @@ In analysis, these are likely part of an end to end test that checks that the ou
 
 ```{todo}
 Discuss testing interface with external systems (e.g. database).
+Test that your code works, given the format of response that the system can give.
+Mocks?
 ```
 
 ## Write tests to assure that bugs are fixed
