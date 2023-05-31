@@ -5,7 +5,8 @@ This includes tools for general software development and bespoke packages that h
 Those developed or contributed to within government are marked with an asterisk (*).
 
 If you have developed a package for use in analysis or use any that are not included here, please add to the list.
-You can [request a new tool to be added to the list by creating an issue](https://github.com/best-practice-and-impact/qa-of-code-guidance/issues/new/choose).
+You can request a new tool to be added to the list by [creating an issue on GitHub](https://github.com/best-practice-and-impact/qa-of-code-guidance/issues/new/choose)
+or [contacting us by email](mailto:ASAP@ons.gov.uk?subject=Duck%20Book%20Tools)
 Alternatively, you can add it directly to the project by creating a Pull Request.
 You can do this using the "Suggest edit" link under the GitHub logo at the top of this page.
 Please include a link and brief description when requesting a new tool to be added.
