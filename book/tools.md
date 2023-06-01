@@ -4,7 +4,7 @@ This section highlights tools that support reproducible analysis and research.
 This includes tools for general software development and bespoke packages that have been developed for government analysis.
 Those developed or contributed to within government are marked with an asterisk (*).
 
-If you have developed a package for use in analysis or use any that are not included here, please add to the list.
+If you have developed a package for use in analysis or recommend any that are not included here, please add them to the list.
 You can request a new tool to be added to the list by [creating an issue on GitHub](https://github.com/best-practice-and-impact/qa-of-code-guidance/issues/new/choose)
 or [contacting us by email](mailto:ASAP@ons.gov.uk?subject=Duck%20Book%20Tools)
 Alternatively, you can add it directly to the project by creating a Pull Request.
