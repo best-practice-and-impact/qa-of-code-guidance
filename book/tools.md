@@ -6,7 +6,7 @@ Those developed or contributed to within government are marked with an asterisk 
 
 If you have developed a package for use in analysis or recommend any that are not included here, please add them to the list.
 You can request a new tool to be added to the list by [creating an issue on GitHub](https://github.com/best-practice-and-impact/qa-of-code-guidance/issues/new/choose)
-or [contacting us by email](mailto:ASAP@ons.gov.uk?subject=Duck%20Book%20Tools)
+or [contacting us by email](mailto:ASAP@ons.gov.uk?subject=Duck%20Book%20Tools).
 Alternatively, you can add it directly to the project by creating a Pull Request.
 You can do this using the "Suggest edit" link under the GitHub logo at the top of this page.
 Please include a link and brief description when requesting a new tool to be added.
@@ -30,7 +30,7 @@ Manipulating and analysing data.
 ## Publishing
 
 * [Quarto](https://quarto.org/) - reproducible documents for Python and R
-* [a11tables (R only)](https://co-analysis.github.io/a11ytables/index.html) * - creating reproducible, accessible spreadsheets
+* [a11ytables (R only)](https://co-analysis.github.io/a11ytables/index.html) * - creating reproducible, accessible spreadsheets
 * [gptables (Python and R)](https://gptables.readthedocs.io/en/latest/index.html) * - creating reproducible, accessible spreadsheets
 
 ## Testing

@@ -25,7 +25,7 @@ For changes to anything other than lines of text, you should follow these steps 
 
 To start contributing, you'll need Python installed.
 If you sit outside of Quality and Improvement Division, the you'll need to [create a Fork of this repository to make changes](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/working-with-forks).
-Once forked, you should clone the fork repository to get a copy of the book. Then install it's Python dependencies like so:
+Once forked, you should clone the fork repository to get a copy of the book. Then install its Python dependencies like so:
 
 ```{none}
 git clone https://github.com/<your-username>/qa-of-code-guidance.git
@@ -50,7 +50,7 @@ We also require developers to conform to a specific Markdown style.
 You can do this by installing our pre-commit `pymarkdownlnt`:
 
 ```{none}
-pip install -r dev-dependencies.txt
+pip install -r dev-requirements.txt
 pre-commit install
 ```
 
