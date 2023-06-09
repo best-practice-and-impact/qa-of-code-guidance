@@ -2,7 +2,7 @@
 
 This section highlights tools that support reproducible analysis and research.
 This includes tools for general software development and bespoke packages that have been developed for government analysis.
-Those developed or contributed to within government are marked with an asterisk (*).
+Those developed or contributed to within government are marked with the abbreviation (gov).
 
 If you have developed a package for use in analysis or recommend any that are not included here, please add them to the list.
 You can request a new tool to be added to the list by [creating an issue on GitHub](https://github.com/best-practice-and-impact/qa-of-code-guidance/issues/new/choose)
@@ -20,7 +20,7 @@ Manipulating and analysing data.
 * [pandas](https://pandas.pydata.org/) - common data analysis and manipulation
 * [Polars](https://www.pola.rs/) - high performance data manipulation
 * [PySpark](https://spark.apache.org/docs/latest/api/python/)  - data manipulation for distributed (large) data
-* [Splink](https://moj-analytical-services.github.io/splink/) * - probabilistic data linkage
+* [Splink](https://moj-analytical-services.github.io/splink/) (gov) - probabilistic data linkage
 
 ### R
 
@@ -30,8 +30,8 @@ Manipulating and analysing data.
 ## Publishing
 
 * [Quarto](https://quarto.org/) - reproducible documents for Python and R
-* [a11ytables (R only)](https://co-analysis.github.io/a11ytables/index.html) * - creating reproducible, accessible spreadsheets
-* [gptables (Python and R)](https://gptables.readthedocs.io/en/latest/index.html) * - creating reproducible, accessible spreadsheets
+* [a11ytables (R only)](https://co-analysis.github.io/a11ytables/index.html) (gov) - creating reproducible, accessible spreadsheets
+* [gptables (Python and R)](https://gptables.readthedocs.io/en/latest/index.html) (gov) - creating reproducible, accessible spreadsheets
 
 ## Testing
 
@@ -67,8 +67,8 @@ Tools for implementing automated code testing.
 
 ## Project templates
 
-* [govcookiecutter (Python)](https://github.com/best-practice-and-impact/govcookiecutter) * - template project for reproducible analysis
-* [Rgovcookiecutter (R)](https://github.com/best-practice-and-impact/Rgovcookiecutter) * - template project for reproducible analysis
+* [govcookiecutter (Python)](https://github.com/best-practice-and-impact/govcookiecutter) (gov) - template project for reproducible analysis
+* [Rgovcookiecutter (R)](https://github.com/best-practice-and-impact/Rgovcookiecutter) (gov) - template project for reproducible analysis
 
 ## Code Linters
 
