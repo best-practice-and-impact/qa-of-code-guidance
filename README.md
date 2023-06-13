@@ -9,19 +9,23 @@ This document forms part of the Quality Guidance, published by the Quality and I
 We welcome all constructive feedback and contributions.
 
 To provide feedback or request new content, you can [create an issue](https://github.com/best-practice-and-impact/qa-of-code-guidance/issues) on this book's repository.
-Alternatively, you can always drop us an [email](mailto:Analysis.Function@ons.gov.uk).
+Alternatively, you can always drop us an [email](mailto:ASAP@ons.gov.uk).
 
 If you'd like to contribute, please also
 [create or comment on an issue](https://github.com/best-practice-and-impact/qa-of-code-guidance/issues)
 to describe the changes that you'd like to make.
-This will allow discussion around whether content is suitable for this book, before you put the hard work into implementing it.
+This will allow discussion around whether content is suitable for the book, before you put the hard work into implementing it.
 
 
 ### Getting started
 
-To start contributing, you'll need python installed.
+Minor text edits can be submitted as a Pull Request using the "Suggest edit" button under the GitHub logo at the top of the page you would like to change.
+
+For changes to anything other than lines of text, you should follow these steps to make the changes locally:
+
+To start contributing, you'll need Python installed.
 If you sit outside of Quality and Improvement Division, the you'll need to [create a Fork of this repository to make changes](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/working-with-forks).
-Once forked, you should clone the fork repository to get a copy of the book. Then install it's Python dependencies like so:
+Once forked, you should clone the fork repository to get a copy of the book. Then install its Python dependencies like so:
 
 ```{none}
 git clone https://github.com/<your-username>/qa-of-code-guidance.git
@@ -36,15 +40,17 @@ jb build book
 ```
 
 Jupyter book will write the book's `HTML` content to `book/_build/html/`, so you can open `index.html` from there to view the local build.
+Run the build command after making a change to the text to update the HTML that you view here.
 
 All content for the book is currently written in
 [Markedly Structured Text](https://myst-parser.readthedocs.io/en/latest/),
 which is based on standard Markdown (`.md`) but allows use of "directives" for generating content.
 
-We also require developers to conform to our style guide. You can do this by installing our pre-commit `pymarkdownlnt`:
+We also require developers to conform to a specific Markdown style.
+You can do this by installing our pre-commit `pymarkdownlnt`:
 
 ```{none}
-pip install -r dev-dependencies.txt
+pip install -r dev-requirements.txt
 pre-commit install
 ```
 
