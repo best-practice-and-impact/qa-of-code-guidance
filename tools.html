@@ -36,9 +36,9 @@
     <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="_static/tabs.css" />
-    <link rel="stylesheet" type="text/css" href="_static/logo.css" />
-    <link rel="stylesheet" type="text/css" href="_static/accessibility.css" />
     <link rel="stylesheet" type="text/css" href="_static/markdown_within_tabs.css" />
+    <link rel="stylesheet" type="text/css" href="_static/accessibility.css" />
+    <link rel="stylesheet" type="text/css" href="_static/logo.css" />
     <link rel="stylesheet" type="text/css" href="_static/admonitions.css" />
     <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
@@ -391,16 +391,20 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#testing">Testing</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-manipulation-and-analysis">Data manipulation and analysis</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python">Python</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#r">R</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#test-coverage">Test Coverage</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#publishing">Publishing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#testing">Testing</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Python</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">R</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dependency-management">Dependency management</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#version-control">Version control</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#project-templates">Project templates</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code-linters">Code Linters</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Python</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">R</a></li>
@@ -411,29 +415,13 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">R</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code-complexity">Code Complexity</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Python</a></li>
-</ul>
-</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#packaging-code">Packaging Code</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">Python</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">R</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#static-type-checking">Static Type Checking</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">Python</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Python</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">R</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pipeline-orchestration">Pipeline Orchestration</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dependency-management">Dependency management</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#continuous-integration-platforms">Continuous Integration Platforms</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#git-hook-automation">Git hook automation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-processing-analysis-and-publishing">Data processing, analysis, and publishing</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-linkage">Data linkage</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-engineering">Data engineering</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#publishing">Publishing</a></li>
-</ul>
-</li>
 </ul>
             </nav>
         </div>
@@ -447,69 +435,117 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="tools">
 <h1>Tools<a class="headerlink" href="#tools" title="Permalink to this headline">#</a></h1>
-<p>This section points you to useful tools that support reproducible analysis.</p>
-<section id="testing">
-<h2>Testing<a class="headerlink" href="#testing" title="Permalink to this headline">#</a></h2>
-<p>Implementing automated code testing.</p>
+<p>This section highlights tools that support reproducible analysis and research.
+This includes tools for general software development and bespoke packages that have been developed for government analysis.
+Those developed or contributed to within government are marked with the abbreviation (gov).</p>
+<p>If you have developed a package for use in analysis or recommend any that are not included here, please add them to the list.
+You can request a new tool to be added to the list by <a class="reference external" href="https://github.com/best-practice-and-impact/qa-of-code-guidance/issues/new/choose">creating an issue on GitHub</a>
+or <a class="reference external" href="mailto:ASAP&#37;&#52;&#48;ons&#46;gov&#46;uk?subject=Duck%20Book%20Tools">contacting us by email</a>.
+Alternatively, you can add it directly to the project by creating a Pull Request.
+You can do this using the “Suggest edit” link under the GitHub logo at the top of this page.
+Please include a link and brief description when requesting a new tool to be added.</p>
+<p>The tools included on this page will in general follow the good quality assurance practices described in this guidance.
+However, as with any software there is a chance that they may still contain bugs or limitations.
+Please apply your own judgement when using them.
+If you feel a tool should no longer be included in this list, please suggest an edit or get in touch.</p>
+<section id="data-manipulation-and-analysis">
+<h2>Data manipulation and analysis<a class="headerlink" href="#data-manipulation-and-analysis" title="Permalink to this headline">#</a></h2>
+<p>Manipulating and analysing data.</p>
 <section id="python">
 <h3>Python<a class="headerlink" href="#python" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
-<li><p><a class="reference external" href="https://docs.pytest.org/en/stable/">pytest</a></p></li>
-<li><p><a class="reference external" href="https://hypothesis.readthedocs.io/en/latest/">hypothesis</a></p></li>
-<li><p><a class="reference external" href="https://docs.python.org/3/library/unittest.html">unittest</a></p></li>
-<li><p><a class="reference external" href="https://tox.readthedocs.io/en/latest/">tox</a></p></li>
-<li><p><a class="reference external" href="https://nox.thea.codes/en/stable/">nox</a></p></li>
-<li><p><a class="reference external" href="https://pypi.org/project/chispa/">chispa (PySpark)</a></p></li>
+<li><p><a class="reference external" href="https://pandas.pydata.org/">pandas</a> - common data analysis and manipulation</p></li>
+<li><p><a class="reference external" href="https://www.pola.rs/">Polars</a> - high performance data manipulation</p></li>
+<li><p><a class="reference external" href="https://spark.apache.org/docs/latest/api/python/">PySpark</a>  - data manipulation for distributed (large) data</p></li>
+<li><p><a class="reference external" href="https://moj-analytical-services.github.io/splink/">Splink</a> (gov) - probabilistic data linkage</p></li>
 </ul>
 </section>
 <section id="r">
 <h3>R<a class="headerlink" href="#r" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
-<li><p><a class="reference external" href="https://testthat.r-lib.org/">testthat</a></p></li>
-<li><p><a class="reference external" href="https://docs.ropensci.org/assertr/">assertr</a></p></li>
-<li><p><a class="reference external" href="https://github.com/google/patrick">patrick</a></p></li>
-<li><p><a class="reference external" href="https://r-hub.github.io/rhub/">rhub</a></p></li>
+<li><p><a class="reference external" href="https://dplyr.tidyverse.org/">dplyr</a>  - common data analysis and manipulation</p></li>
+<li><p><a class="reference external" href="https://spark.rstudio.com/">sparklyr</a> - for distributed (large) data</p></li>
 </ul>
 </section>
 </section>
-<section id="test-coverage">
-<h2>Test Coverage<a class="headerlink" href="#test-coverage" title="Permalink to this headline">#</a></h2>
-<p>Identifying which parts of your code are covered by existing tests.</p>
+<section id="publishing">
+<h2>Publishing<a class="headerlink" href="#publishing" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://quarto.org/">Quarto</a> - reproducible documents for Python and R</p></li>
+<li><p><a class="reference external" href="https://co-analysis.github.io/a11ytables/index.html">a11ytables (R only)</a> (gov) - creating reproducible, accessible spreadsheets</p></li>
+<li><p><a class="reference external" href="https://gptables.readthedocs.io/en/latest/index.html">gptables (Python and R)</a> (gov) - creating reproducible, accessible spreadsheets</p></li>
+</ul>
+</section>
+<section id="testing">
+<h2>Testing<a class="headerlink" href="#testing" title="Permalink to this headline">#</a></h2>
+<p>Tools for implementing automated code testing.</p>
 <section id="id1">
 <h3>Python<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
-<li><p><a class="reference external" href="https://coverage.readthedocs.io/en/coverage-5.3/">coverage</a></p></li>
+<li><p><a class="reference external" href="https://docs.pytest.org/en/stable/">pytest</a> - common testing framework</p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/library/unittest.html">unittest</a> - common testing framework</p></li>
+<li><p><a class="reference external" href="https://hypothesis.readthedocs.io/en/latest/">hypothesis</a> - property-based testing</p></li>
+<li><p><a class="reference external" href="https://pypi.org/project/chispa/">chispa (PySpark)</a> - helper for testing PySpark code</p></li>
+<li><p><a class="reference external" href="https://coverage.readthedocs.io/en/coverage-5.3/">coverage</a> - measuring test coverage</p></li>
 </ul>
 </section>
 <section id="id2">
 <h3>R<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
-<li><p><a class="reference external" href="https://covr.r-lib.org/">covr</a></p></li>
+<li><p><a class="reference external" href="https://testthat.r-lib.org/">testthat</a> - common testing framework</p></li>
+<li><p><a class="reference external" href="https://docs.ropensci.org/assertr/">assertr</a> - common testing framework</p></li>
+<li><p><a class="reference external" href="https://github.com/google/patrick">patrick</a> - parameterised testing extension for <code class="docutils literal notranslate"><span class="pre">testthat</span></code></p></li>
+<li><p><a class="reference external" href="https://covr.r-lib.org/">covr</a> - measuring test coverage</p></li>
 </ul>
 </section>
 </section>
+<section id="dependency-management">
+<h2>Dependency management<a class="headerlink" href="#dependency-management" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://docs.python.org/3/library/venv.html">venv (Python)</a> - manage packages using virtual environments</p></li>
+<li><p><a class="reference external" href="https://github.com/pyenv/pyenv">pyenv (Python)</a> - manage independent Python versions for different projects</p></li>
+<li><p><a class="reference external" href="https://rstudio.github.io/renv/articles/renv.html">renv (R)</a> - virtual environments for managing packages</p></li>
+<li><p><a class="reference external" href="https://docs.conda.io/en/latest/">conda</a> - manage language versions and packages for most languages</p></li>
+</ul>
+</section>
+<section id="version-control">
+<h2>Version control<a class="headerlink" href="#version-control" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://git-scm.com/">Git</a> - common open source version control system</p></li>
+<li><p><a class="reference external" href="https://pre-commit.com/">pre-commit</a> - trigger checks (e.g. linters and formatters) before Git commits are created</p></li>
+</ul>
+</section>
+<section id="project-templates">
+<h2>Project templates<a class="headerlink" href="#project-templates" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/best-practice-and-impact/govcookiecutter">govcookiecutter (Python)</a> (gov) - template project for reproducible analysis</p></li>
+<li><p><a class="reference external" href="https://github.com/best-practice-and-impact/Rgovcookiecutter">Rgovcookiecutter (R)</a> (gov) - template project for reproducible analysis</p></li>
+</ul>
+</section>
 <section id="code-linters">
 <h2>Code Linters<a class="headerlink" href="#code-linters" title="Permalink to this headline">#</a></h2>
-<p>Analyse code for stylistic errors, and sometimes bugs.</p>
+<p>Analysing code for stylistic errors, and sometimes bugs.</p>
 <section id="id3">
 <h3>Python<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
-<li><p><a class="reference external" href="https://www.pylint.org/">pylint</a></p></li>
-<li><p><a class="reference external" href="https://pypi.org/project/pyflakes/">Pyflakes</a></p></li>
-<li><p><a class="reference external" href="https://flake8.pycqa.org/en/latest/">flake8</a></p></li>
-<li><p><a class="reference external" href="https://bandit.readthedocs.io/en/latest/">Bandit</a></p></li>
+<li><p><a class="reference external" href="https://www.pylint.org/">pylint</a> - check coding style and identify some logical errors</p></li>
+<li><p><a class="reference external" href="https://flake8.pycqa.org/en/latest/">flake8</a> - check code style</p></li>
+<li><p><a class="reference external" href="https://bandit.readthedocs.io/en/latest/">Bandit</a> - check for common security issues</p></li>
+<li><p><a class="reference external" href="https://mypy.readthedocs.io/en/stable/">mypy</a> - check static types</p></li>
+<li><p><a class="reference external" href="https://radon.readthedocs.io/en/latest/">Radon</a> - check code complexity</p></li>
 </ul>
 </section>
 <section id="id4">
 <h3>R<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
-<li><p><a class="reference external" href="https://github.com/jimhester/lintr">lintr</a></p></li>
+<li><p><a class="reference external" href="https://github.com/jimhester/lintr">lintr</a> - check code style</p></li>
 </ul>
 </section>
 </section>
 <section id="code-formatters">
 <h2>Code Formatters<a class="headerlink" href="#code-formatters" title="Permalink to this headline">#</a></h2>
-<p>Automated code format repair.</p>
+<p>Automated code formatters.
+These check code style, like linters, but also actively make changes to your code to meet a particular style.</p>
 <section id="id5">
 <h3>Python<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
@@ -525,54 +561,28 @@ document.write(`
 </ul>
 </section>
 </section>
-<section id="code-complexity">
-<h2>Code Complexity<a class="headerlink" href="#code-complexity" title="Permalink to this headline">#</a></h2>
+<section id="packaging-code">
+<h2>Packaging Code<a class="headerlink" href="#packaging-code" title="Permalink to this headline">#</a></h2>
+<p>Creating and releasing code as a package.</p>
 <section id="id7">
 <h3>Python<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
-<li><p><a class="reference external" href="https://pypi.org/project/wily/">wily</a></p></li>
-<li><p><a class="reference external" href="https://radon.readthedocs.io/en/latest/">radon</a></p></li>
+<li><p><a class="reference external" href="https://pypi.org/project/twine/">twine</a> - utility for publishing Python packages to <a class="reference external" href="https://pypi.org/">the Python Package Index PyPI</a></p></li>
 </ul>
 </section>
-</section>
-<section id="packaging-code">
-<h2>Packaging Code<a class="headerlink" href="#packaging-code" title="Permalink to this headline">#</a></h2>
 <section id="id8">
-<h3>Python<a class="headerlink" href="#id8" title="Permalink to this headline">#</a></h3>
+<h3>R<a class="headerlink" href="#id8" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
-<li><p><a class="reference external" href="https://pypi.org/project/twine/">twine</a></p></li>
-</ul>
-</section>
-<section id="id9">
-<h3>R<a class="headerlink" href="#id9" title="Permalink to this headline">#</a></h3>
-<ul class="simple">
-<li><p><a class="reference external" href="http://mangothecat.github.io/goodpractice/">goodpractice</a></p></li>
-<li><p><a class="reference external" href="https://thinkr-open.github.io/fusen/">fusen</a></p></li>
-</ul>
-</section>
-</section>
-<section id="static-type-checking">
-<h2>Static Type Checking<a class="headerlink" href="#static-type-checking" title="Permalink to this headline">#</a></h2>
-<section id="id10">
-<h3>Python<a class="headerlink" href="#id10" title="Permalink to this headline">#</a></h3>
-<ul class="simple">
-<li><p><a class="reference external" href="https://mypy.readthedocs.io/en/stable/">mypy</a></p></li>
-<li><p><a class="reference external" href="https://github.com/microsoft/pyright">pyright</a></p></li>
+<li><p><a class="reference external" href="http://mangothecat.github.io/goodpractice/">goodpractice</a> - gives advice on the quality of your R packages</p></li>
+<li><p><a class="reference external" href="https://thinkr-open.github.io/fusen/">fusen</a> - builds R packages from Rmarkdown file specifications</p></li>
 </ul>
 </section>
 </section>
 <section id="pipeline-orchestration">
 <h2>Pipeline Orchestration<a class="headerlink" href="#pipeline-orchestration" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
-<li><p><a class="reference external" href="https://airflow.apache.org/">Apache Airflow</a></p></li>
-<li><p><a class="reference external" href="https://wlandau.github.io/targets-manual/">targets R package</a></p></li>
-<li><p><a class="reference external" href="https://hamilton-docs.gitbook.io/docs/">Hamilton (Python)</a></p></li>
-</ul>
-</section>
-<section id="dependency-management">
-<h2>Dependency management<a class="headerlink" href="#dependency-management" title="Permalink to this headline">#</a></h2>
-<ul class="simple">
-<li><p><a class="reference external" href="https://rstudio.github.io/renv/articles/renv.html">renv (R)</a></p></li>
+<li><p><a class="reference external" href="https://airflow.apache.org/">Apache Airflow</a> - workflow management platform</p></li>
+<li><p><a class="reference external" href="https://wlandau.github.io/targets-manual/">targets (R)</a> - defining and executing pipelines in R</p></li>
 </ul>
 </section>
 <section id="continuous-integration-platforms">
@@ -584,35 +594,6 @@ document.write(`
 <li><p><a class="reference external" href="https://www.jenkins.io/">Jenkins</a></p></li>
 <li><p><a class="reference external" href="https://coveralls.io/">Coveralls</a></p></li>
 </ul>
-</section>
-<section id="git-hook-automation">
-<h2>Git hook automation<a class="headerlink" href="#git-hook-automation" title="Permalink to this headline">#</a></h2>
-<ul class="simple">
-<li><p><a class="reference external" href="https://pre-commit.com/">pre-commit</a></p></li>
-</ul>
-</section>
-<section id="data-processing-analysis-and-publishing">
-<h2>Data processing, analysis, and publishing<a class="headerlink" href="#data-processing-analysis-and-publishing" title="Permalink to this headline">#</a></h2>
-<section id="data-linkage">
-<h3>Data linkage<a class="headerlink" href="#data-linkage" title="Permalink to this headline">#</a></h3>
-<ul class="simple">
-<li><p><a class="reference external" href="https://www.gov.uk/government/publications/joined-up-data-in-government-the-future-of-data-linking-methods/splink-mojs-open-source-library-for-probabilistic-record-linkage-at-scale#introduction">Splink (Python)</a></p></li>
-</ul>
-</section>
-<section id="data-engineering">
-<h3>Data engineering<a class="headerlink" href="#data-engineering" title="Permalink to this headline">#</a></h3>
-<ul class="simple">
-<li><p><a class="reference external" href="https://www.pola.rs/">Polars (Python)</a></p></li>
-</ul>
-</section>
-<section id="publishing">
-<h3>Publishing<a class="headerlink" href="#publishing" title="Permalink to this headline">#</a></h3>
-<ul class="simple">
-<li><p><a class="reference external" href="https://quarto.org/">Quarto</a></p></li>
-<li><p><a class="reference external" href="https://co-analysis.github.io/a11ytables/index.html">a11tables (R only)</a></p></li>
-<li><p><a class="reference external" href="https://gptables.readthedocs.io/en/latest/index.html#">gptables (Python)</a></p></li>
-</ul>
-</section>
 </section>
 </section>
 
@@ -674,16 +655,20 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#testing">Testing</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-manipulation-and-analysis">Data manipulation and analysis</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python">Python</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#r">R</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#test-coverage">Test Coverage</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#publishing">Publishing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#testing">Testing</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Python</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">R</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dependency-management">Dependency management</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#version-control">Version control</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#project-templates">Project templates</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code-linters">Code Linters</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Python</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">R</a></li>
@@ -694,29 +679,13 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">R</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code-complexity">Code Complexity</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Python</a></li>
-</ul>
-</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#packaging-code">Packaging Code</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">Python</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">R</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#static-type-checking">Static Type Checking</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">Python</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Python</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">R</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pipeline-orchestration">Pipeline Orchestration</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dependency-management">Dependency management</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#continuous-integration-platforms">Continuous Integration Platforms</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#git-hook-automation">Git hook automation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-processing-analysis-and-publishing">Data processing, analysis, and publishing</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-linkage">Data linkage</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-engineering">Data engineering</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#publishing">Publishing</a></li>
-</ul>
-</li>
 </ul>
   </nav></div>
 
