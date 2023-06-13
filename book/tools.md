@@ -11,6 +11,11 @@ Alternatively, you can add it directly to the project by creating a Pull Request
 You can do this using the "Suggest edit" link under the GitHub logo at the top of this page.
 Please include a link and brief description when requesting a new tool to be added.
 
+The tools included on this page will in general follow the good quality assurance practices described in this guidance.
+However, as with any software there is a chance that they may still contain bugs or limitations.
+Please apply your own judgement when using them.
+If you feel a tool should no longer be included in this list, please suggest an edit or get in touch.
+
 ## Data manipulation and analysis
 
 Manipulating and analysing data.
