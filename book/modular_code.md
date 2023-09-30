@@ -211,7 +211,7 @@ In short:
 However, we should be wary that inheritance locks our class in to the object that it inherits from.
 If the superclass changes, our class is forced to change with it.
 When using inheritance to reuse code from an unrelated class, 'encapsulation' may be more appropriate.
-For example, a `Car` class might want use a method from an `Engine` class, but a car could not be substituted for an engine.
+For example, a `Car` class might want to use a method from an `Engine` class, but a car could not be substituted for an engine.
 It would not be suitable for `Car` to inherit from `Engine`.
 Therefore, you might keep a private instance of the `Engine` class you wish to re-use, and delegate the work down to it in the `Car` methods.
 Then, if you change your mind about using this `Engine` class in your `Car` class, you aren't tied to it and can easily replace it.
@@ -383,7 +383,6 @@ project
 ├── processing.py 
 ├── reporting.py 
 ├── README.md 
-└── project.Rproj
 ```
 ````
 
@@ -395,7 +394,7 @@ project
 ├── processing.R 
 ├── reporting.R 
 ├── README.md
-└── project.rproj 
+└── project.Rproj 
 ```
 ````
 `````

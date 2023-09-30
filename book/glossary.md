@@ -65,7 +65,7 @@ Ability to easily understand, modify and repair the code.
 
 ### Open source
 
-A type of software license that allows users to do view the software's code.
+A type of software license that allows users to view the software's code.
 Open-source code is openly available to anyone.
 Using open-source software and publishing our code with open-source licenses ensures that our users can easily understand and reproduce our analysis.
 
@@ -155,7 +155,7 @@ The most common cloud platforms are Google cloud platform (GCP), Amazon web serv
 ### Code
 
 The part of software that contains program instructions.
-In analysis, code is a set of human-readable instructions that tell a computed how to carry out our analysis.
+In analysis, code is a set of human-readable instructions that tell a computer how to carry out our analysis.
 
 
 ### Scripts
@@ -182,7 +182,7 @@ Packages in Python and R act as extensions, to allow us to reuse code that has a
 ### Code repository
 
 A folder for storing the code and associated documents for a piece of software.
-These are often associate with Git, as the folder that is being version controlled.
+These are often associated with Git, as the folder that is being version controlled.
 
 
 ### Variables
@@ -205,7 +205,7 @@ You might define a function for a particular statistical method, validation chec
 Parameters are the variables that a piece of code expects to be provided when it is used.
 They act as placeholders, to allow us to make code more generic.
 A function might have parameters to allow it to be run on different inputs.
-For example, there may be a parameter to allow the user to select which column of data a piece of logic should be use.
+For example, there may be a parameter to allow the user to select which column of data a piece of logic should use.
 
 An argument is the value that is being passed to a given parameter.
 
