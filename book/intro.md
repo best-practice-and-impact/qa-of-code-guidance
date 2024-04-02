@@ -48,6 +48,12 @@ You can find us on:
 
 ## Citing the book
 
+The book uses an Open Government Licence which can be read on the National Archives website:
+[National Archives](https://nationalarchives.gov.uk/doc/open-government-licence/version/3/)
+
+In summary, you are free to use, adapt and distribute the information in this book with citation but not imply endorsement,
+and that the information is provided 'as is' without warranty.
+
 The following structure can be used to reference the current version of the book:
 
 > UK Government Analytical Community. (2020). Quality assurance of code for analysis and research (version 2023.2).
