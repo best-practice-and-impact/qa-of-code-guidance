@@ -203,7 +203,7 @@ The YAML example above could be read into our analysis as follows:
 import yaml
 
 with open("./my_config.yaml") as file:
-    config = yaml.load(file)
+    config = yaml.safe_load(file)
 
 data = read_csv(config["input_path"])
 ...
@@ -240,13 +240,13 @@ This can be achieved in a number of ways, but we'll discuss a minimal example he
 import sys
 import yaml
 
-if sys.argv < 2:
+if len(sys.argv) < 2:
     # The Python script name is counted as the first argument
     raise ValueError("Configuration file must be passed as an argument.")
 
 config_path = sys.argv[1]
 with open(config_path) as file:
-    config = yaml.load(file)
+    config = yaml.safe_load(file)
 ...
 ```
 

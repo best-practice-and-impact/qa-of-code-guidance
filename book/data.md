@@ -1,4 +1,4 @@
-# Data Management
+# Data management
 
 Data management covers a broad range of disciplines, including organising, storing and maintaining data.
 This management is typically handled by dedicated data architects and engineers, however, we appreciate that analysts are often expected to manage their own data.
@@ -59,7 +59,7 @@ Issues when using spreadsheets for data storage include:
   * Converting numbers or text that resemble dates to dates.
 
 See the European Spreadsheet Risks Interest Group document
-[spreadsheet related errors and their consequences](http://www.eusprig.org/horror-stories.htm) for more information.
+[spreadsheet related errors and their consequences](https://eusprig.org/research-info/horror-stories/) for more information.
 
 
 ### Databases
