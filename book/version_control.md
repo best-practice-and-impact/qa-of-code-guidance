@@ -83,11 +83,6 @@ If you would like to include an example for end-users, a minimal dummy dataset c
 When creating realistic dummy data, care should be taken not to disclose sensitive features of the true data such as distributions and trends.
 Dummy data should always be carefully peer reviewed before being added to a repository.
 
-It is again worth stressing the importance of not committing sensitive, unpublished or disclosive data to your Git history.
-If you would like to include an example for end-users, a minimal dummy dataset can be committed to the repository.
-When creating realistic dummy data, care should be taken not to disclose sensitive features of the true data such as distributions and trends.
-Dummy data should always be carefully peer reviewed before being added to a repository.
-
 
 ## Using Git for version control
 
