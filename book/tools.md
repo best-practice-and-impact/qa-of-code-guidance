@@ -34,6 +34,7 @@ Manipulating and analysing data.
 
 ## Publishing
 
+* afcolours ([Python](https://pypi.org/project/py-af-colours/) and [R](https://cran.r-project.org/web/packages/afcolours/index.html)) (gov) - ease the use of the Analysis Function colour palettes for visually accessible graphs.
 * [Quarto](https://quarto.org/) - reproducible documents for Python and R
 * [a11ytables (R only)](https://co-analysis.github.io/a11ytables/index.html) (gov) - creating reproducible, accessible spreadsheets
 * [gptables (Python and R)](https://gptables.readthedocs.io/en/latest/index.html) (gov) - creating reproducible, accessible spreadsheets
