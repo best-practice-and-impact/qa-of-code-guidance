@@ -158,9 +158,19 @@ The part of software that contains program instructions.
 In analysis, code is a set of human-readable instructions that tell a computer how to carry out our analysis.
 
 
+### Program
+
+A main script that can contain statements, functions and methods. The main script may import functions and methods from other scripts. This is the script that would be run by the user/orchestration tool.
+
+
 ### Scripts
 
 A script is a single file containing code. Code in scripts can be run interactively or procedurally.
+
+
+### Module
+
+A module is a script grouping related functions and/or classes that are reused across larger programs. It may also include statements used to initialise the module when it is imported in another script. 
 
 
 ### Notebooks
@@ -177,6 +187,11 @@ These collections of code are designed to be installed and re-used with ease.
 Packages in Python and R act as extensions, to allow us to reuse code that has already been written.
 
 "Library" is similarly used to describe a software collection, however, packages are more specifically for distribution of code.
+
+
+### Pipeline
+
+A orchestrated chain of programs that will execute the next program(s) in the chain when a program completes successfully. Outputs will be stored on completion of a program and will feed in as inputs to the next program(s) in the chain.
 
 
 ### Code repository
@@ -198,6 +213,18 @@ Functions and methods are crucial for creating modular code.
 
 Functions are written to generalise a piece of logic, so that it can be used consistently in multiple places in our code.
 You might define a function for a particular statistical method, validation check or to manipulate data in a certain way.
+
+
+### Class
+Contains code to create instances of objects and methods to edit these instances of classes and their attributes. Methods may also produce output other than the class instance.
+
+Examples of built in python classes are float, string, and bool.
+
+Examples of built in R classes are double, character, and logical.
+
+
+### Instance
+When an object is created by a constructor of a class, the resulting object is called an instance of the class. The variables specific to an object are called instance variables.
 
 
 ### Parameters and arguments
