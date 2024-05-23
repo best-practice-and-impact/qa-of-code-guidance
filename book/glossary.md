@@ -71,6 +71,11 @@ Where a script is executed as statements run one after the other.
 Where a script is run as expressions with immediate feedback given, such as in a terminal or command line.
 
 
+### Dual Running
+
+In a RAP context, where a pipeline or process is run in different ways, on different systems, or by different people to verify reproducibility.
+
+
 ## Tools
 
 ### Open source
