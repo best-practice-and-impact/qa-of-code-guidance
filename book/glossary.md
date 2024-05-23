@@ -61,6 +61,16 @@ Ability to gain an understanding of code within a reasonable amount of time.
 Ability to easily understand, modify and repair the code.
 
 
+### Procedural Running
+
+Where a script is executed as statements run one after the other.
+
+
+### Interative Running
+
+Where a script is run as expressions with immediate feedback given, such as in a terminal or command line.
+
+
 ## Tools
 
 ### Open source
@@ -216,6 +226,7 @@ You might define a function for a particular statistical method, validation chec
 
 
 ### Class
+
 Contains code to create instances of objects and methods to edit these instances of classes and their attributes. Methods may also produce output other than the class instance.
 
 Examples of built in python classes are float, string, and bool.
@@ -224,7 +235,13 @@ Examples of built in R classes are double, character, and logical.
 
 
 ### Instance
+
 When an object is created by a constructor of a class, the resulting object is called an instance of the class. The variables specific to an object are called instance variables.
+
+
+### Attributes
+
+A variable associated with a class object.
 
 
 ### Parameters and arguments
