@@ -6,6 +6,7 @@ This section is a draft, while we ensure that it meets user needs.
 Please get in touch with feedback [by creating a GitHub Issue](https://github.com/best-practice-and-impact/qa-of-code-guidance/issues) or [emailing us](mailto:ASAP@ons.gov.uk).
 ```
 
+## Terms
 ### Abstraction
 
 Treating a problem as an idea or concept, rather than a detailed individual example.
