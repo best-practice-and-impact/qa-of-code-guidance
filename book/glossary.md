@@ -34,7 +34,7 @@ Test are like a controlled experience, to check that our code produces the expec
 Tests can check code multiple levels, for example, checking that an individual function works or checking that a pipeline runs from end to end.
 
 
-#### Code interpreter
+### Code interpreter
 
 A computer program that runs code in a particular programming language.
 For example, the program that reads your Python or R analysis code and runs it.
@@ -59,7 +59,7 @@ Examples of built in R classes are double, character, and logical.
 Cloud computing allows us to access computing power and data storage on-demand.
 This means that we can access high-specification hardware or store large amounts of data, usually only paying for what we have used.
 
-The most common cloud platforms are Google cloud platform (GCP), Amazon web service (AWS) and Microsoft azure.
+The most common cloud platforms are Google Cloud Platform (GCP), Amazon Web Service (AWS) and Microsoft Azure.
 
 
 ### Code
