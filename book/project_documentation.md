@@ -326,4 +326,4 @@ While the public benefit from:
 Please see the [Government Data Service (GDS) guidance](https://www.gov.uk/government/publications/open-source-guidance/when-code-should-be-open-or-closed)
 for help deciding when code should be open or closed.
 Security concerns for coding in the open are also addressed in further
-[GDS guidance](https://www.gov.uk/government/publications/open-source-guidance/security-considerations-when-coding-in-the-open).
+[GDS guidance](https://www.gov.uk/government/publications/open-source-guidance/security-considerations-when-coding-in-the-open). Additional guidance on deciding when and how to open source, the benefits, and good practice is available from the [Analysis Function](https://analysisfunction.civilservice.gov.uk/policy-store/open-sourcing-analytical-code/).
