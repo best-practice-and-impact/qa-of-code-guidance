@@ -92,16 +92,16 @@ pip install -r dev-requirements.txt
 
 ### Releasing
 
-To create a new release, use the command line tool `bump2version`, which will be installed with the dev dependencies.
+To create a new release, use the command line tool `bump-my-version`, which will be installed with the dev dependencies.
 The version number references the current `year` and an incremental `build` count.
 
 For a the first release of a year, provide the `year` as the command argument, otherwise provide `build`.
 
 ```{none}
-bump2version build
+bump-my-version bump year
 ```
 
-`bumpversion` will create a new Git `tag` and `commit`.
+`bump-my-version` will create a new Git `tag` and `commit`.
 If you're happy with the version increase, `push` these to the remote to trigger the publication, by running both:
 
 ```{none}

@@ -1,0 +1,21 @@
+[tool.bumpversion]
+current_version = "2023.4"
+parse = "(?P<year>\\d+)\\.(?P<build>\\d+)"
+serialize = ["{year}.{build}"]
+tag = true
+sign_tags = false
+tag_name = "v{new_version}"
+tag_message = "Bump version: {current_version} → {new_version}"
+allow_dirty = false
+commit = true
+message = "Bump version: {current_version} → {new_version}"
+ 
+[[tool.bumpversion.files]]
+filename = "book/_config.yml"
+search = "Book version {current_version}"
+replace = "Book version {new_version}"
+ 
+[[tool.bumpversion.files]]
+filename = "book/intro.md"
+search = "(version {current_version})"
+replace = "(version {new_version})"
