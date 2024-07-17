@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="./" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Managing analytical code development &#8212; Quality Assurance of Code for Analysis and Research</title>
   
@@ -15,57 +14,56 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/tabs.css" />
-    <link rel="stylesheet" type="text/css" href="_static/markdown_within_tabs.css" />
-    <link rel="stylesheet" type="text/css" href="_static/accessibility.css" />
-    <link rel="stylesheet" type="text/css" href="_static/logo.css" />
-    <link rel="stylesheet" type="text/css" href="_static/admonitions.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/tabs.css?v=a5c4661c" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=87e54e7c" />
+    <link rel="stylesheet" type="text/css" href="_static/admonitions.css?v=1956eba1" />
+    <link rel="stylesheet" type="text/css" href="_static/markdown_within_tabs.css?v=d7e1104e" />
+    <link rel="stylesheet" type="text/css" href="_static/accessibility.css?v=6e02104c" />
+    <link rel="stylesheet" type="text/css" href="_static/logo.css?v=1c56504a" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/clipboard.min.js"></script>
-    <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
-    <link rel="shortcut icon" href="_static/favicon.ico"/>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'managers_guide';</script>
+    <link rel="icon" href="_static/favicon.ico"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Code quality assurance checklists" href="checklists.html" />
@@ -79,19 +77,23 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
   
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
@@ -113,12 +115,20 @@ const thebe_selector_output = ".output, .cell_output"
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -133,9 +143,13 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
+  
+    
   
 
 <a class="navbar-brand logo" href="intro.html">
+  
   
   
   
@@ -145,23 +159,34 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="_static/duck_book_logo.svg" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="_static/duck_book_logo.svg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="_static/duck_book_logo.svg" class="logo__image only-light" alt="Quality Assurance of Code for Analysis and Research - Home"/>
+    <script>document.write(`<img src="_static/duck_book_logo.svg" class="logo__image only-dark" alt="Quality Assurance of Code for Analysis and Research - Home"/>`);</script>
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Overview</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary of terms</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Managing analytical code development</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="checklists.html">Code quality assurance checklists</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="checklists.html">Code quality assurance checklists</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="checklist_lower.html">Lower quality assurance</a></li>
 <li class="toctree-l2"><a class="reference internal" href="checklist_moderate.html">Moderate quality assurance</a></li>
 <li class="toctree-l2"><a class="reference internal" href="checklist_higher.html">Higher quality assurance</a></li>
 </ul>
-</li>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Guidance</span></p>
 <ul class="nav bd-sidenav">
@@ -197,7 +222,7 @@ const thebe_selector_output = ".output, .cell_output"
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -206,14 +231,14 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -253,7 +278,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/best-practice-and-impact/qa-of-code-guidance/edit/master/book/managers_guide.md" target="_blank"
+      <li><a href="https://github.com/best-practice-and-impact/qa-of-code-guidance/edit/main/book/managers_guide.md" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -352,26 +377,28 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
   </button>
 `);
 </script>
 
+
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -421,10 +448,10 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="managing-analytical-code-development">
-<h1>Managing analytical code development<a class="headerlink" href="#managing-analytical-code-development" title="Permalink to this headline">#</a></h1>
+<h1>Managing analytical code development<a class="headerlink" href="#managing-analytical-code-development" title="Link to this heading">#</a></h1>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>This section is a draft, while we ensure that it meets user needs.</p>
@@ -444,14 +471,14 @@ You should also be aware of any specific tools and platforms that are used in yo
 <p><a class="reference external" href="https://www.gov.uk/service-manual/service-standard">The Government Service Standard</a> outlines best practices for creating public services, which include analysis.
 You should use this when designing and managing the development of analysis as code.</p>
 <section id="apply-quality-assurance-proportional-to-risk">
-<h2>Apply quality assurance proportional to risk<a class="headerlink" href="#apply-quality-assurance-proportional-to-risk" title="Permalink to this headline">#</a></h2>
+<h2>Apply quality assurance proportional to risk<a class="headerlink" href="#apply-quality-assurance-proportional-to-risk" title="Link to this heading">#</a></h2>
 <p>As described by <a class="reference external" href="https://www.gov.uk/government/publications/the-aqua-book-guidance-on-producing-quality-analysis-for-government">the Aqua book</a>,
 the quality assurance of our analysis should be proportional to the complexity and risk of the analysis.</p>
 <p>When managing analytical work, you should not need an in-depth understanding of the analysis code to trust that it is working correctly.
 However, you should be confident that the approach the team has taken is appropriate given the user need,
 and that proportionate quality assurance is being applied to the development and running of the analysis.</p>
 <p>You should work with your team to decide on which quality assurance practices are necessary given each piece of analysis.
-You might find our <a class="reference internal" href="checklists.html"><span class="doc std std-doc">Code quality assurance checklists</span></a> useful templates for defining the target level of assurance.
+You might find our <a class="reference internal" href="checklists.html"><span class="std std-doc">Code quality assurance checklists</span></a> useful templates for defining the target level of assurance.
 When possible, you should define the target assurance level before starting the analysis.</p>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
@@ -477,10 +504,10 @@ This might include dual running the analysis with an independent system and cons
 <p>The remaining parts of this section provide questions that aim to help you assess the quality assurance practices that your team are applying in their analysis.</p>
 </section>
 <section id="design-quality-analysis">
-<h2>Design quality analysis<a class="headerlink" href="#design-quality-analysis" title="Permalink to this headline">#</a></h2>
+<h2>Design quality analysis<a class="headerlink" href="#design-quality-analysis" title="Link to this heading">#</a></h2>
 <p>These questions aim to help you assess the design decisions at the beginning of the analysis.</p>
 <section id="why-have-you-chosen-to-do-the-analysis-this-way">
-<h3>Why have you chosen to do the analysis this way?<a class="headerlink" href="#why-have-you-chosen-to-do-the-analysis-this-way" title="Permalink to this headline">#</a></h3>
+<h3>Why have you chosen to do the analysis this way?<a class="headerlink" href="#why-have-you-chosen-to-do-the-analysis-this-way" title="Link to this heading">#</a></h3>
 <p>Understanding user needs ensures that the analysis is valuable.</p>
 <ul class="simple">
 <li><p>There should be a plan to consult users at the beginning and throughout the development process, to ensure that their needs are being met.</p></li>
@@ -491,7 +518,7 @@ Your team should be able to explain why they have chosen the analysis tools and 
 </ul>
 </section>
 <section id="how-are-you-storing-input-data">
-<h3>How are you storing input data?<a class="headerlink" href="#how-are-you-storing-input-data" title="Permalink to this headline">#</a></h3>
+<h3>How are you storing input data?<a class="headerlink" href="#how-are-you-storing-input-data" title="Link to this heading">#</a></h3>
 <p>Versioning input data ensures that we can reproduce our analysis.</p>
 <ul class="simple">
 <li><p>Input data should be versioned, so that analysis outputs can be reproduced.</p></li>
@@ -501,8 +528,8 @@ Your team should be able to explain why they have chosen the analysis tools and 
 </ul>
 </section>
 <section id="how-will-you-keep-track-of-changes-to-the-code-and-why-they-were-made">
-<h3>How will you keep track of changes to the code and why they were made?<a class="headerlink" href="#how-will-you-keep-track-of-changes-to-the-code-and-why-they-were-made" title="Permalink to this headline">#</a></h3>
-<p><a class="reference internal" href="version_control.html"><span class="doc std std-doc">Version control</span></a> of changes provides an audit trail.</p>
+<h3>How will you keep track of changes to the code and why they were made?<a class="headerlink" href="#how-will-you-keep-track-of-changes-to-the-code-and-why-they-were-made" title="Link to this heading">#</a></h3>
+<p><a class="reference internal" href="version_control.html"><span class="std std-doc">Version control</span></a> of changes provides an audit trail.</p>
 <ul class="simple">
 <li><p>The code, documentation, and peer reviews should all be version controlled. Git software is most commonly used for this.</p></li>
 <li><p>The code should be developed on an open source code platform, like GitHub. This transparency increases your users trust in the analysis.</p></li>
@@ -513,12 +540,12 @@ Your team should be able to explain why they have chosen the analysis tools and 
 </section>
 </section>
 <section id="quality-assure-throughout-development">
-<h2>Quality assure throughout development<a class="headerlink" href="#quality-assure-throughout-development" title="Permalink to this headline">#</a></h2>
+<h2>Quality assure throughout development<a class="headerlink" href="#quality-assure-throughout-development" title="Link to this heading">#</a></h2>
 <p>These questions can be used throughout the development of the analysis,
 to assess how the team are progressing towards the target quality assurance practices that you have agreed.</p>
 <section id="how-is-your-code-structured">
-<h3>How is your code structured?<a class="headerlink" href="#how-is-your-code-structured" title="Permalink to this headline">#</a></h3>
-<p><a class="reference internal" href="modular_code.html"><span class="doc std std-doc">Modular code</span></a> makes it easier to understand, update and reuse the code.</p>
+<h3>How is your code structured?<a class="headerlink" href="#how-is-your-code-structured" title="Link to this heading">#</a></h3>
+<p><a class="reference internal" href="modular_code.html"><span class="std std-doc">Modular code</span></a> makes it easier to understand, update and reuse the code.</p>
 <ul class="simple">
 <li><p>Logic should be written as functions, so that it can be reused consistently and tested.</p></li>
 <li><p>Related functions should be grouped together in the same file, so that it is easy to find them.</p></li>
@@ -527,16 +554,16 @@ to assess how the team are progressing towards the target quality assurance prac
 </ul>
 </section>
 <section id="how-easy-is-it-to-adjust-the-way-that-the-analysis-runs">
-<h3>How easy is it to adjust the way that the analysis runs?<a class="headerlink" href="#how-easy-is-it-to-adjust-the-way-that-the-analysis-runs" title="Permalink to this headline">#</a></h3>
-<p><a class="reference internal" href="configuration.html"><span class="doc std std-doc">Configuration files</span></a> allow you to change the way the code runs without editing the code.</p>
+<h3>How easy is it to adjust the way that the analysis runs?<a class="headerlink" href="#how-easy-is-it-to-adjust-the-way-that-the-analysis-runs" title="Link to this heading">#</a></h3>
+<p><a class="reference internal" href="configuration.html"><span class="std std-doc">Configuration files</span></a> allow you to change the way the code runs without editing the code.</p>
 <ul class="simple">
 <li><p>Parts of the code that may change should be stored in separate configuration files.</p></li>
 <li><p>Things that often change in analysis code include input and output file paths, reference dates and model parameters.</p></li>
 </ul>
 </section>
 <section id="how-is-the-analysis-documented">
-<h3>How is the analysis documented?<a class="headerlink" href="#how-is-the-analysis-documented" title="Permalink to this headline">#</a></h3>
-<p><a class="reference internal" href="code_documentation.html"><span class="doc std std-doc">Code documentation</span></a> is essential for business continuity and sustainability.</p>
+<h3>How is the analysis documented?<a class="headerlink" href="#how-is-the-analysis-documented" title="Link to this heading">#</a></h3>
+<p><a class="reference internal" href="code_documentation.html"><span class="std std-doc">Code documentation</span></a> is essential for business continuity and sustainability.</p>
 <ul class="simple">
 <li><p>Every function should be documented in the code, so that it is clear what the function is supposed to do.</p></li>
 <li><p>Function documentation should include what goes in and what comes out of each function.</p></li>
@@ -544,8 +571,8 @@ to assess how the team are progressing towards the target quality assurance prac
 </ul>
 </section>
 <section id="what-are-the-dependencies">
-<h3>What are the dependencies?<a class="headerlink" href="#what-are-the-dependencies" title="Permalink to this headline">#</a></h3>
-<p><a class="reference internal" href="project_documentation.html"><span class="doc std std-doc">Project documentation</span></a> ensures that others can reproduce our analysis.</p>
+<h3>What are the dependencies?<a class="headerlink" href="#what-are-the-dependencies" title="Link to this heading">#</a></h3>
+<p><a class="reference internal" href="project_documentation.html"><span class="std std-doc">Project documentation</span></a> ensures that others can reproduce our analysis.</p>
 <ul class="simple">
 <li><p>User instructions should be provided for running the analysis.</p></li>
 <li><p>Software and package versions should be documented with the code.
@@ -556,7 +583,7 @@ Typically package versions are recorded using <code class="docutils literal notr
 </ul>
 </section>
 <section id="what-assumptions-does-the-analysis-make">
-<h3>What assumptions does the analysis make?<a class="headerlink" href="#what-assumptions-does-the-analysis-make" title="Permalink to this headline">#</a></h3>
+<h3>What assumptions does the analysis make?<a class="headerlink" href="#what-assumptions-does-the-analysis-make" title="Link to this heading">#</a></h3>
 <p>Transparency of our analysis increases trust.</p>
 <ul class="simple">
 <li><p>Assumptions and caveats of the analysis should be recorded close to the code.</p></li>
@@ -564,8 +591,8 @@ Typically package versions are recorded using <code class="docutils literal notr
 </ul>
 </section>
 <section id="how-has-peer-review-been-done">
-<h3>How has peer review been done?<a class="headerlink" href="#how-has-peer-review-been-done" title="Permalink to this headline">#</a></h3>
-<p><a class="reference internal" href="peer_review.html"><span class="doc std std-doc">Peer review</span></a> increases the quality of our analysis and transfers skills and knowledge.</p>
+<h3>How has peer review been done?<a class="headerlink" href="#how-has-peer-review-been-done" title="Link to this heading">#</a></h3>
+<p><a class="reference internal" href="peer_review.html"><span class="std std-doc">Peer review</span></a> increases the quality of our analysis and transfers skills and knowledge.</p>
 <ul class="simple">
 <li><p>Technical colleagues should conduct internal peer reviews of each change to the code.
 This will identify issues early on and makes the review process more manageable than reviewing only the final analysis.</p></li>
@@ -575,8 +602,8 @@ This will identify issues early on and makes the review process more manageable 
 </ul>
 </section>
 <section id="how-have-you-tested-the-code">
-<h3>How have you tested the code?<a class="headerlink" href="#how-have-you-tested-the-code" title="Permalink to this headline">#</a></h3>
-<p><a class="reference internal" href="testing_code.html"><span class="doc std std-doc">Testing</span></a> assures us that the code is working correctly.</p>
+<h3>How have you tested the code?<a class="headerlink" href="#how-have-you-tested-the-code" title="Link to this heading">#</a></h3>
+<p><a class="reference internal" href="testing_code.html"><span class="std std-doc">Testing</span></a> assures us that the code is working correctly.</p>
 <ul class="simple">
 <li><p>Testing means making sure that the code produces the right outputs for realistic example input data.</p></li>
 <li><p>Automated ‘unit’ testing should be applied to each function, to ensure that code continues to work after future changes to the code.</p></li>
@@ -588,7 +615,7 @@ This will identify issues early on and makes the review process more manageable 
 </ul>
 </section>
 <section id="what-happens-when-the-analysis-fails-to-run">
-<h3>What happens when the analysis fails to run?<a class="headerlink" href="#what-happens-when-the-analysis-fails-to-run" title="Permalink to this headline">#</a></h3>
+<h3>What happens when the analysis fails to run?<a class="headerlink" href="#what-happens-when-the-analysis-fails-to-run" title="Link to this heading">#</a></h3>
 <p>Recording and reporting errors provides an audit trail and makes it easier for users to correctly use the code.</p>
 <ul class="simple">
 <li><p>When code fails to run, it should provide informative error messages to describe the problem.</p></li>
@@ -598,7 +625,7 @@ This will identify issues early on and makes the review process more manageable 
 </ul>
 </section>
 <section id="how-does-the-analysis-result-differ-from-the-previous-analysis">
-<h3>How does the analysis result differ from the previous analysis?<a class="headerlink" href="#how-does-the-analysis-result-differ-from-the-previous-analysis" title="Permalink to this headline">#</a></h3>
+<h3>How does the analysis result differ from the previous analysis?<a class="headerlink" href="#how-does-the-analysis-result-differ-from-the-previous-analysis" title="Link to this heading">#</a></h3>
 <p>Comparing analysis to previous results can help to ensure reproducibility and identify errors.</p>
 <ul class="simple">
 <li><p>When repeating analysis over time, you should compare results between analyses.
@@ -607,7 +634,7 @@ Large differences in the outcome of the results may indicate an issue with the a
 </ul>
 </section>
 <section id="how-can-we-further-improve-the-quality-of-the-analysis">
-<h3>How can we further improve the quality of the analysis?<a class="headerlink" href="#how-can-we-further-improve-the-quality-of-the-analysis" title="Permalink to this headline">#</a></h3>
+<h3>How can we further improve the quality of the analysis?<a class="headerlink" href="#how-can-we-further-improve-the-quality-of-the-analysis" title="Link to this heading">#</a></h3>
 <p>Code quality improves over time, as your team learn more about good practices.</p>
 <ul class="simple">
 <li><p>The team should be aiming to meet the agreed assurance level, but should also consider which practices could be applied next to improve the code beyond this.</p></li>
@@ -642,11 +669,10 @@ Large differences in the outcome of the results may indicate an issue with the a
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer d-print-none">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="glossary.html"
@@ -666,10 +692,7 @@ Large differences in the outcome of the results may indicate an issue with the a
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -677,6 +700,7 @@ Large differences in the outcome of the results may indicate an issue with the a
             
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -721,6 +745,7 @@ Large differences in the outcome of the results may indicate an issue with the a
   
   <div class="footer-item">
     
+
   </div>
   
   <div class="footer-item">
@@ -743,8 +768,8 @@ Large differences in the outcome of the results may indicate an issue with the a
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>

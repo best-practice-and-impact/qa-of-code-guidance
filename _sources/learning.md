@@ -98,7 +98,7 @@ Other courses below can be used to supplement this learning.
 * [ONS Data Science Campus RAP learning materials](https://github.com/datasciencecampus/gov-uk-rap-materials)
 
 
-## Learing from mistakes
+## Learning from mistakes
 
 Finally, it is often good to see what not to do and learn from the mistakes of others.
 The following is a compliation of bad code in Python, but worth a read whatever your language as most apply to R and Python, as well as other languages.
