@@ -85,7 +85,7 @@ Most DBMS use structured query language (SQL) to communicate with databases.
 ```{admonition} Key Learning
 :class: admonition-learning
 
-You might find this [foundations of SQL (government analysts only course)](https://learninghub.ons.gov.uk/enrol/index.php?id=490)
+You might find this [foundations of SQL (government analysts only course)](https://learninghub.ons.gov.uk/enrol/index.php?id=1162)
 or [w3schools SQL tutorials](https://www.w3schools.com/sql/default.asp) useful for learning the basics of SQL.
 ```
 

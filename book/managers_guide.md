@@ -18,7 +18,7 @@ It aims to help you support your team to apply the good quality assurance practi
 Processes that apply these good practices are referred to as a reproducible analytical pipelines (RAP).
 
 Before applying this guidance, you should have a basic awareness of the tools and
-techniques used to do quality analysis as code - the [introduction to RAP course](https://learninghub.ons.gov.uk/course/view.php?id=662) outlines these.
+techniques used to do quality analysis as code - the [introduction to RAP course](https://learninghub.ons.gov.uk/course/view.php?id=1236) outlines these.
 You should also be aware of any specific tools and platforms that are used in your department.
 
 [The Government Service Standard](https://www.gov.uk/service-manual/service-standard) outlines best practices for creating public services, which include analysis.

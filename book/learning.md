@@ -19,7 +19,7 @@ Other courses below can be used to supplement this learning.
 
 ### Python
 
-* [Introduction to object-oriented programming (OOP) in Python](https://learninghub.ons.gov.uk/enrol/index.php?id=567)
+* [Introduction to object-oriented programming (OOP) in Python](https://learninghub.ons.gov.uk/enrol/index.php?id=1199)
 * [The Official Python Getting Started Guide](https://www.python.org/about/gettingstarted/)
 * [Learn Python](https://www.learnpython.org/), supported by DataCamp
 
@@ -39,21 +39,21 @@ Other courses below can be used to supplement this learning.
 
 ### Python
 
-* [Dataframes, manipulation and cleaning in Python](https://learninghub.ons.gov.uk/enrol/index.php?id=484)
+* [Dataframes, manipulation and cleaning in Python](https://learninghub.ons.gov.uk/enrol/index.php?id=1156)
 * [Python Data Science Handbook](https://jakevdp.github.io/PythonDataScienceHandbook/index.html)
 * [Python for Data Analysis](https://github.com/wesm/pydata-book)
 
 
 ### R
 
-* [Dataframes, manipulation and cleaning in R](https://learninghub.ons.gov.uk/enrol/index.php?id=486)
+* [Dataframes, manipulation and cleaning in R](https://learninghub.ons.gov.uk/enrol/index.php?id=1158)
 * [R for Data Science](https://r4ds.had.co.nz/)
 * [Advanced R](https://adv-r.hadley.nz/index.html)
 
 
 ### SQL
 
-* [Foundations of SQL](https://learninghub.ons.gov.uk/enrol/index.php?id=490)
+* [Foundations of SQL](https://learninghub.ons.gov.uk/enrol/index.php?id=1162)
 * [w3schools.com SQL Tutorial](https://www.w3schools.com/sql/default.asp)
 * [Python SQL libraries](https://realpython.com/python-sql-libraries/)
 * [SQL databases and R](http://datacarpentry.org/R-ecology-lesson/05-r-and-databases.html)
@@ -63,7 +63,7 @@ Other courses below can be used to supplement this learning.
 
 ### General
 
-* [Windows and UNIX Command Line Basics](https://learninghub.ons.gov.uk/enrol/index.php?id=494)
+* [Windows and UNIX Command Line Basics](https://learninghub.ons.gov.uk/enrol/index.php?id=1166)
 * [Learn enough (UNIX) command line to be dangerous](https://www.learnenough.com/command-line-tutorial/basics)
 * [The UNIX workbench](https://seankross.com/the-unix-workbench/)
 
@@ -71,8 +71,8 @@ Other courses below can be used to supplement this learning.
 (git-learning)=
 ### Git
 
-* [Intro to Git](https://learninghub.ons.gov.uk/enrol/index.php?id=493)
-* [Introduction to continous integration](https://learninghub.ons.gov.uk/enrol/index.php?id=568)
+* [Intro to Git](https://learninghub.ons.gov.uk/enrol/index.php?id=1165)
+* [Introduction to continous integration](https://learninghub.ons.gov.uk/course/view.php?id=1200)
 * [The Pro Git book](https://git-scm.com/book/en/v2)
 * [Software Carpentry: Version Control with Git](https://swcarpentry.github.io/git-novice/) - an applied project
 * Interactive online training with [Katacoda](https://www.katacoda.com/courses/git) or [Learn Git Branching](https://learngitbranching.js.org/)
@@ -83,7 +83,7 @@ Other courses below can be used to supplement this learning.
 
 ## Testing
 
-* [Introduction to Unit Testing in Python and R](https://learninghub.ons.gov.uk/enrol/index.php?id=539)
+* [Introduction to Unit Testing in Python and R](https://learninghub.ons.gov.uk/course/view.php?id=1171)
 
 
 ## Making software accessible
