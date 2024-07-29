@@ -1,7 +1,7 @@
 # Testing code
 
 Code tests verify that your analytical code is working as expected.
-Where code documentation helps others to understand what you expect your code to do, testing assures that the the code meets these expectations.
+Where code documentation helps others to understand what you expect your code to do, testing assures that the code meets these expectations.
 Without carrying out tests we have no assurance that our code works correctly, so we can't be sure that our analysis is fit for purpose.
 
 Tests should be used proportionately for your analysis.
@@ -43,7 +43,7 @@ Code changes over time, so we need to be able to repeat these checks against the
 Additionally, other analysts should be able to carry out the same checks and get the same results.
 
 Representing our tests as code allows us to consistently repeat the same steps.
-This lets us or another analyst to carry out the same verification again to get the same results.
+This lets us or another analyst carry out the same verification again to get the same results.
 When you have carried out a test manually, you should ensure that you add a code test to reproduce this.
 
 Code that we write for testing should also follow the good practices described earlier on in this book, in particular [](readable_code).
@@ -51,13 +51,13 @@ Code that we write for testing should also follow the good practices described e
 ## Write repeatable tests
 
 For us to be able to trust the results of our tests we need them to be repeatable.
-That is for them to give them same outcome if we run them more than once against the same version of our analysis code.
+That is for them to give the same outcome if we run them more than once against the same version of our analysis code.
 
 For tests to run repeatably each test must be independent.
 There should not be a shared state between tests, for example a test should not depend on another test having already run.
 Many test runners will intentionally randomise the order that tests are executed to encourage this.
 
-Where possible, test should be deterministic.
+Where possible, tests should be deterministic.
 As such, the only reason for a test to fail should be that the code being tested is incorrect.
 Where your code relies on randomness tests should reuse the same random seed each time they are run.
 
@@ -76,8 +76,8 @@ For example, you might detect an unexpected failure in part of your code that yo
 Running tests regularly allows you to fix any issues before  changes are added to a stable or production version of your code (e.g. the `main` Git branch).
 
 If you have altered the functionality of your code, this will likely break existing tests.
-Failing tests here act as a good reminder that your should update your tests and documentation to reflect the new functionality.
-Many testing frameworks supporting writing tests as examples in the function documentation, which ties these together nicely.
+Failing tests here act as a good reminder that you should update your tests and documentation to reflect the new functionality.
+Many testing frameworks support writing tests as examples in the function documentation, which ties these together nicely.
 
 It's not easy to remember to run your tests manually at regular intervals.
 And you're right to think "surely this could be automated too?".
@@ -234,7 +234,7 @@ project/
 
 The Python example above has one file containing unit tests for each module (group of related functions and classes).
 When using this structure you may want to also group multiple test functions into test classes.
-Having one test class per function/class that you are testing will make it clear that the group of tests relates to a that function or class in your source code.
+Having one test class per function/class that you are testing will make it clear that the group of tests relates to that function or class in your source code.
 
 ```{code-block} python
 # An example for tests/unit/test_math.py
@@ -274,7 +274,7 @@ but you should ensure that good modular code practices are followed to separate 
 
 When we implement new logic in code, tests are required to assure us that the code works as expected.
 
-To make sure that your code work as expected, you should is to write tests for each individual unit in your code.
+To make sure that your code works as expected, you should write tests for each individual unit in your code.
 A unit is the smallest modular piece of logic in the code - a function or method.
 
 Unit tests should cover realistic use cases for your function, such as:
@@ -283,27 +283,27 @@ Unit tests should cover realistic use cases for your function, such as:
 * examples that trigger errors that have been defined in your code
 
 When your function documentation describes the expected inputs to your function, there is less need to test unexpected cases.
-If missuse is still likely or risky, then providing the user with an error is the best approach to mitigate this risk.
+If misuse is still likely or risky, then providing the user with an error is the best approach to mitigate this risk.
 
-Logic that is reused from an existing packages that is already tested do not require tests when we use that logic alone.
-You should be aware of wether your dependencies are sufficiently tested.
+Logic that is reused from an existing package that is already tested does not require tests when we use that logic alone.
+You should be aware of whether your dependencies are sufficiently tested.
 Newly developed packages or those with very few users are more likely to not be thoroughly tested.
 
 ## Test that different parts of the code interact correctly using integration tests
 
-We define integration tests as those that test on a higher level that a unit. This includes testing that:
+We define integration tests as those that test on a higher level than a unit. This includes testing that:
 * multiple units work together correctly
 * multiple high level functions work together (e.g. many units grouped into stages of a pipeline)
 * the end to end analysis runs correctly and meets users needs
 * the analysis works with typical inputs from other systems
 
 Integration tests give us assurance that our analysis is fit for purpose.
-Additionally, they give us safety when refactoring or rearranging large parts of of code.
+Additionally, they give us safety when refactoring or rearranging large parts of code.
 Refactoring is an important part of managing the complexity of our analysis as it grows.
 
 Consider a piece of analysis that has an end to end test to check that the overall system gives an expected outcome.
 For example, it tests that output data are the right shape, in the right format and have specific properties (e.g. a specific distribution).
-There might also be a "regression" test that check that the exact values in the output remain the same.
+There might also be a "regression" test that checks that the exact values in the output remain the same.
 After any changes that are made to tidy up or refactor the
 code, these end to end tests can be run to assure us that no functionality has been inadvertently changed.
 
@@ -346,7 +346,7 @@ This might be from a user need (e.g. someone needs output data in a certain shap
 Given that you know the expected outcome, you can write the test before even thinking about how you are going to write the solution.
 
 ```{note}
-This section is framed more like training. Once dedicated training has been produced this section will likely adapted to provide more concise guidance on the practice.
+This section is framed more like training. Once dedicated training has been produced this section will likely be adapted to provide more concise guidance on the practice.
 ```
 
 TDD typically repeats three steps:
@@ -380,10 +380,10 @@ As with functional code, test code is much easier to maintain when it is modular
 ### Use fixtures to reduce repetition in test set up
 
 As your test suite grows, many of your tests may use similar code to prepare your tests or to clean up after each test has run.
-You can be more tolerant of repetition in in test code.
+You can be more tolerant of repetition in test code.
 However, copying code snippets for each test is laborious and increases the risk of applying those steps inconsistently.
 
-You can use fixtures help to avoid this form of repetition in tests.
+You can use fixtures to help avoid this form of repetition in tests.
 A fixture allows you to define your test preparation and clean up as functions.
 You then use the fixture to carry out these steps consistently for each test that they are required for.
 
@@ -411,7 +411,7 @@ def test_another_function(spark_session):
     ...
 ```
 
-This examples shows a fixture named `spark_session` with a testing session scope.
+This example shows a fixture named `spark_session` with a testing session scope.
 Starting a new spark session can take a few seconds, so creating a new session
 for each test function would significantly increase the time it takes to run all of the tests.
 With a session level scope, the function is called once for the whole testing session
@@ -434,7 +434,7 @@ def test_another_function(database_connection):
     ...
 ```
 
-Fixtures can also useful for undoing any effects each test run might have on the global environment.
+Fixtures can also be useful for undoing any effects each test run might have on the global environment.
 For example, they can remove test data which has been written to a temporary file or database.
 The example above shows how a fixture might be used to reset a test database between each test.
 Here a test function scope is used, so the fixture is run separately for each test function that uses it.
@@ -514,8 +514,8 @@ defined that returns a dictionary of the expected values. For example:
 def expected_answers() -> dict:
     """A nested dictionary of expected answers for all combinations in 0:5.
 
-    First level key corresponds to `num1` and second level key is `num2`. The
-    dictionary values are the expected answers. So that when we subset the
+    First level key corresponds to `num1` and the second level key to `num2`.
+    The dictionary values are the expected answers. So that when we subset the
     dictionary with parametrized values, we provide the expected values to
     assert statements.
 
