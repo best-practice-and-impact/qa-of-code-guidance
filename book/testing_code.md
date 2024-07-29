@@ -458,7 +458,47 @@ In `pytest`, this can be achieved using the [Parametrize mark](https://docs.pyte
 In R, the `patrick` package extends `testthat` to provide a
 [`with_parameters_test_that`](https://rdrr.io/cran/patrick/man/with_parameters_test_that.html) function to achieve this.
 
-```{todo}
-Add examples of applying the same test logic to multiple cases.
-Add emphasis on documenting each case or at least making it clear what is being tested.
+### Define Source Code
+
+Take the below function for example, it can take 2 arguments. 
+
+```{code-block} python
+def sum_two_nums(num1:int, num2:int) -> int:
+    """Sum two numbers. Numbers can be integer or float."""
+    return num1 + num2
 ```
+
+### Simple Parametrization
+
+It is simple to check multiple assertions for this simple function. In the most
+basic example, simply define a parametrized list of parameter values and
+expected outcomes.
+
+```{code-block} python
+import pytest
+
+@pytest.mark.parametrize("num_1s, expected_out", [(1, 2), (-1, 0), (0, 1)])
+def test_sum_two_nums_parametrize_arg_1(num_1s, expected_out):
+    assert sum_two_nums(num1=num_1s, num2=1) == expected_out
+
+```
+
+We reference the parameter values and expected answers in the same way that we
+access pytest fixtures, covered earlier in this article. Running `pytest -v`
+reveals 3 tests are run, with the parametrized values printed to the console:
+
+```{code-block}
+
+collected 3 items                                                             
+
+foo.py::test_sum_two_nums_parametrize_arg_1[1-2] PASSED                  [ 33%]
+foo.py::test_sum_two_nums_parametrize_arg_1[-1-0] PASSED                 [ 66%]
+foo.py::test_sum_two_nums_parametrize_arg_1[0-1] PASSED                  [100%]
+
+============================= 3 passed in 0.00s ==============================
+
+```
+
+It would be trivial to repeat a similar parametrized test for `num_2` values.
+But how is it possible to make assertions when parametrizing **both**
+arguments?
