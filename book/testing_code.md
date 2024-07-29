@@ -372,7 +372,7 @@ TDD requires practice but is proven to produce clean, robust and adaptable code.
 [acceptance test driven development](https://en.wikipedia.org/wiki/Acceptance_test-driven_development)
 are extensions of TDD with a useful focus on user needs.
 
-## Reduce repetition in test code (fixtures and parameterised tests)
+## Reduce repetition in test code (fixtures and parametrized tests)
 
 Where possible, reduce repetition in your tests. Tests are code too, so you should still [make this code reusable](functions).
 As with functional code, test code is much easier to maintain when it is modular and reusable.
@@ -450,7 +450,7 @@ Similar steps are often repeated when testing multiple combinations of inputs an
 Parametrization allows us to reduce repetition in our test code, in a similar way to writing our logic in functions.
 You should specify pairs of inputs and expected outputs, so that your testing tool can repeat the same test for each scenario.
 
-Using parameterisation in a test framework is equivalent to using a for-loop to apply a test function over multiple inputs and expected outputs.
+Using parametrization in a test framework is equivalent to using a for-loop to apply a test function over multiple inputs and expected outputs.
 Using functionality from test packages may provide improved running efficiency and more detailed reporting of test failures.
 
 In `pytest`, this can be achieved using the [Parametrize mark](https://docs.pytest.org/en/stable/parametrize.html).
