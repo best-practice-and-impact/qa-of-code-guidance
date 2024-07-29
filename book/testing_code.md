@@ -502,3 +502,85 @@ foo.py::test_sum_two_nums_parametrize_arg_1[0-1] PASSED                  [100%]
 It would be trivial to repeat a similar parametrized test for `num_2` values.
 But how is it possible to make assertions when parametrizing **both**
 arguments?
+
+### Stacked Parametrization
+
+In order to test multiple values for `num1` and `num2`, a fixture should be
+defined that returns a dictionary of the expected values. For example:
+
+```{code-block} python
+
+@pytest.fixture
+def expected_answers() -> dict:
+    """A nested dictionary of expected answers for all combinations in 0:5.
+
+    First level key corresponds to `num1` and second level key is `num2`. The
+    dictionary values are the expected answers. So that when we subset the
+    dictionary with parametrized values, we provide the expected values to
+    assert statements.
+
+    Returns
+    -------
+    dict
+        Dictionary of cases and their expected tuples.
+    """
+    expected= {
+        0: {0: 0, 1: 1, 2: 2, 3: 3, 4: 4,},
+        1: {0: 1, 1: 2, 2: 3, 3: 4, 4: 5,},
+        2: {0: 2, 1: 3, 2: 4, 3: 5, 4: 6,},
+        3: {0: 3, 1: 4, 2: 5, 3: 6, 4: 7,},
+        4: {0: 4, 1: 5, 2: 6, 3: 7, 4: 8,},
+    }
+    return expected
+
+```
+
+This fixture of expected answers can be served to a parametrized test and the
+returned dictionary can be accessed to provide the expected answer for
+parameter combinations. In order to parametrize both of the required arguments,
+the parametrize statements are simply stacked on top of each other:
+
+```{code-block} python
+
+@pytest.mark.parametrize("num1s", range(0,5))
+@pytest.mark.parametrize("num2s", range(0,5))
+def test_sum_two_nums_stacked_parametrize(num1s, num2s, expected_answers):
+    assert sum_two_nums(
+        num1=num1s, num2=num2s
+        ) == expected_answers[num1s][num2s]
+```
+
+Executing this test with `pytest -v` shows all combinations are tested:
+
+```{code-block}
+collected 25 items                                                            
+
+foo.py::test_sum_two_nums_stacked_parametrize[0-0] PASSED                [ 14%]
+foo.py::test_sum_two_nums_stacked_parametrize[0-1] PASSED                [ 17%]
+foo.py::test_sum_two_nums_stacked_parametrize[0-2] PASSED                [ 21%]
+foo.py::test_sum_two_nums_stacked_parametrize[0-3] PASSED                [ 25%]
+foo.py::test_sum_two_nums_stacked_parametrize[0-4] PASSED                [ 28%]
+foo.py::test_sum_two_nums_stacked_parametrize[1-0] PASSED                [ 32%]
+foo.py::test_sum_two_nums_stacked_parametrize[1-1] PASSED                [ 35%]
+foo.py::test_sum_two_nums_stacked_parametrize[1-2] PASSED                [ 39%]
+foo.py::test_sum_two_nums_stacked_parametrize[1-3] PASSED                [ 42%]
+foo.py::test_sum_two_nums_stacked_parametrize[1-4] PASSED                [ 46%]
+foo.py::test_sum_two_nums_stacked_parametrize[2-0] PASSED                [ 50%]
+foo.py::test_sum_two_nums_stacked_parametrize[2-1] PASSED                [ 53%]
+foo.py::test_sum_two_nums_stacked_parametrize[2-2] PASSED                [ 57%]
+foo.py::test_sum_two_nums_stacked_parametrize[2-3] PASSED                [ 60%]
+foo.py::test_sum_two_nums_stacked_parametrize[2-4] PASSED                [ 64%]
+foo.py::test_sum_two_nums_stacked_parametrize[3-0] PASSED                [ 67%]
+foo.py::test_sum_two_nums_stacked_parametrize[3-1] PASSED                [ 71%]
+foo.py::test_sum_two_nums_stacked_parametrize[3-2] PASSED                [ 75%]
+foo.py::test_sum_two_nums_stacked_parametrize[3-3] PASSED                [ 78%]
+foo.py::test_sum_two_nums_stacked_parametrize[3-4] PASSED                [ 82%]
+foo.py::test_sum_two_nums_stacked_parametrize[4-0] PASSED                [ 85%]
+foo.py::test_sum_two_nums_stacked_parametrize[4-1] PASSED                [ 89%]
+foo.py::test_sum_two_nums_stacked_parametrize[4-2] PASSED                [ 92%]
+foo.py::test_sum_two_nums_stacked_parametrize[4-3] PASSED                [ 96%]
+foo.py::test_sum_two_nums_stacked_parametrize[4-4] PASSED                [100%]
+
+============================= 25 passed in 0.01s =============================
+
+```
