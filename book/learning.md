@@ -12,7 +12,7 @@ You should compare and contrast your learning to the good practices outlined in 
 
 ## Core programming
 
-The [RAP learning pathway](https://learninghub.ons.gov.uk/mod/page/view.php?id=8699) covers training for most of the good practices outlined in this book,
+The [RAP learning pathway](https://learninghub.ons.gov.uk/course/view.php?id=1273) covers training for most of the good practices outlined in this book,
 with a focus on Python and R.
 Other courses below can be used to supplement this learning.
 
