@@ -274,7 +274,7 @@ but you should ensure that good modular code practices are followed to separate 
 
 When we implement new logic in code, tests are required to assure us that the code works as expected.
 
-To make sure that your code work as expected, you should is to write tests for each individual unit in your code.
+To make sure that your code work as expected, you should aim to write tests for each individual unit in your code.
 A unit is the smallest modular piece of logic in the code - a function or method.
 
 Unit tests should cover realistic use cases for your function, such as:
