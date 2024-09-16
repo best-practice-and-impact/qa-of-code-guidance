@@ -23,7 +23,7 @@ This guidance is relevant if you are:
 
 The good practices outlined in the book are general to many applications of programming, so may also be relevant for those outside of government.
 
-The [RAP learning pathway](https://learninghub.ons.gov.uk/mod/page/view.php?id=8699) provides training for many of these good practices.
+The [RAP learning pathway](https://learninghub.ons.gov.uk/course/view.php?id=1273) provides training for many of these good practices.
 This book can be used to guide your learning and as a reference when applying these practices in your work.
 Each chapter describes the risks that each practice may help to address.
 As recommended by [the Aqua book](https://www.gov.uk/government/publications/the-aqua-book-guidance-on-producing-quality-analysis-for-government),

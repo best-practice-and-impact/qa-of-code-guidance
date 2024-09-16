@@ -20,7 +20,7 @@ Tests come in many shapes and sizes, but usually follow the pattern:
 ```{admonition} Key Learning
 :class: admonition-learning
 
-You should follow the [Introduction to Unit Testing course](https://learninghub.ons.gov.uk/course/view.php?id=499) for applied examples in Python and R.
+You should follow the [Introduction to Unit Testing course](https://learninghub.ons.gov.uk/course/view.php?id=1171) for applied examples in Python and R.
 This course also covers writing and documenting functions, and error handling.
 
 Other useful learning resources include:
