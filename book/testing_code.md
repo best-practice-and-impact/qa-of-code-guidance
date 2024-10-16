@@ -274,7 +274,8 @@ but you should ensure that good modular code practices are followed to separate 
 
 When we implement new logic in code, tests are required to assure us that the code works as expected.
 
-To make sure that your code works as expected, you should write tests for each individual unit in your code. A unit is the smallest modular piece of logic in the code - a function or method.
+To make sure that your code works as expected, you should write tests for each individual unit in your code.
+A unit is the smallest modular piece of logic in the code - a function or method.
 
 Unit tests should cover realistic use cases for your function, such as:
 * boundary cases, like the highest and lowest expected input values
@@ -345,7 +346,8 @@ This might be from a user need (e.g. someone needs output data in a certain shap
 Given that you know the expected outcome, you can write the test before even thinking about how you are going to write the solution.
 
 ```{note}
-This section is framed more like training. Once dedicated training has been produced this section will likely be adapted to provide more concise guidance on the practice.
+This section is framed more like training. Once dedicated training has been produced this section will likely be adapted to provide more concise guidance on
+the practice.
 ```
 
 TDD typically repeats three steps:
@@ -371,7 +373,7 @@ TDD requires practice but is proven to produce clean, robust and adaptable code.
 [acceptance test driven development](https://en.wikipedia.org/wiki/Acceptance_test-driven_development)
 are extensions of TDD with a useful focus on user needs.
 
-## Reduce repetition in test code (fixtures and parametrized tests)
+## Reduce repetition in test code (fixtures and parameterised tests)
 
 Where possible, reduce repetition in your tests. Tests are code too, so you should still [make this code reusable](functions).
 As with functional code, test code is much easier to maintain when it is modular and reusable.
@@ -443,13 +445,13 @@ For usage details see the documentation for packages that offer fixtures:
 * [Python `pytest` Fixture](https://docs.pytest.org/en/stable/fixture.html) documentation
 * [R `testthat` Fixture](https://testthat.r-lib.org/articles/test-fixtures.html) documentation
 
-### Use parametrization to reduce repetition in test logic
+### Use parameterisation to reduce repetition in test logic
 
 Similar steps are often repeated when testing multiple combinations of inputs and outputs.
-Parametrization allows us to reduce repetition in our test code, in a similar way to writing our logic in functions.
+Parameterisation allows us to reduce repetition in our test code, in a similar way to writing our logic in functions.
 You should specify pairs of inputs and expected outputs, so that your testing tool can repeat the same test for each scenario.
 
-Using parametrization in a test framework is equivalent to using a for-loop to apply a test function over multiple inputs and expected outputs.
+Using parameterisation in a test framework is equivalent to using a for-loop to apply a test function over multiple inputs and expected outputs.
 Using functionality from test packages may provide improved running efficiency and more detailed reporting of test failures.
 
 In `pytest`, this can be achieved using the [Parametrize mark](https://docs.pytest.org/en/stable/parametrize.html).
@@ -459,7 +461,7 @@ In R, the `patrick` package extends `testthat` to provide a
 
 ### Define Source Code
 
-Take the below function for example, it can take 2 arguments. 
+Take the below function for example, it can take 2 arguments.
 
 ```{code-block} python
 def sum_two_nums(num1:int, num2:int) -> int:
@@ -467,42 +469,42 @@ def sum_two_nums(num1:int, num2:int) -> int:
     return num1 + num2
 ```
 
-### Simple Parametrization
+### Simple Parameterisation
 
 It is simple to check multiple assertions for this simple function. In the most
-basic example, simply define a parametrized list of parameter values and
+basic example, simply define a parameterised list of parameter values and
 expected outcomes.
 
 ```{code-block} python
 import pytest
 
 @pytest.mark.parametrize("num_1s, expected_out", [(1, 2), (-1, 0), (0, 1)])
-def test_sum_two_nums_parametrize_arg_1(num_1s, expected_out):
+def test_sum_two_nums_parameterise_arg_1(num_1s, expected_out):
     assert sum_two_nums(num1=num_1s, num2=1) == expected_out
 
 ```
 
 We reference the parameter values and expected answers in the same way that we
 access pytest fixtures, covered earlier in this article. Running `pytest -v`
-reveals 3 tests are run, with the parametrized values printed to the console:
+reveals 3 tests are run, with the parameterised values printed to the console:
 
 ```{code-block}
 
 collected 3 items                                                             
 
-foo.py::test_sum_two_nums_parametrize_arg_1[1-2] PASSED                  [ 33%]
-foo.py::test_sum_two_nums_parametrize_arg_1[-1-0] PASSED                 [ 66%]
-foo.py::test_sum_two_nums_parametrize_arg_1[0-1] PASSED                  [100%]
+foo.py::test_sum_two_nums_parameterise_arg_1[1-2] PASSED                  [ 33%]
+foo.py::test_sum_two_nums_parameterise_arg_1[-1-0] PASSED                 [ 66%]
+foo.py::test_sum_two_nums_parameterise_arg_1[0-1] PASSED                  [100%]
 
 ============================= 3 passed in 0.00s ==============================
 
 ```
 
-It would be trivial to repeat a similar parametrized test for `num_2` values.
-But how is it possible to make assertions when parametrizing **both**
+It would be trivial to repeat a similar parameterised test for `num_2` values.
+But how is it possible to make assertions when parameterising **both**
 arguments?
 
-### Stacked Parametrization
+### Stacked Parameterisation
 
 In order to test multiple values for `num1` and `num2`, a fixture should be
 defined that returns a dictionary of the expected values. For example:
@@ -515,7 +517,7 @@ def expected_answers() -> dict:
 
     First level key corresponds to `num1` and the second level key to `num2`.
     The dictionary values are the expected answers. So that when we subset the
-    dictionary with parametrized values, we provide the expected values to
+    dictionary with parameterised values, we provide the expected values to
     assert statements.
 
     Returns
@@ -534,16 +536,16 @@ def expected_answers() -> dict:
 
 ```
 
-This fixture of expected answers can be served to a parametrized test and the
+This fixture of expected answers can be served to a parameterised test and the
 returned dictionary can be accessed to provide the expected answer for
-parameter combinations. In order to parametrize both of the required arguments,
-the parametrize statements are simply stacked on top of each other:
+parameter combinations. In order to parameterise both of the required arguments,
+the parameterise statements are simply stacked on top of each other:
 
 ```{code-block} python
 
 @pytest.mark.parametrize("num1s", range(0,5))
 @pytest.mark.parametrize("num2s", range(0,5))
-def test_sum_two_nums_stacked_parametrize(num1s, num2s, expected_answers):
+def test_sum_two_nums_stacked_parameterise(num1s, num2s, expected_answers):
     assert sum_two_nums(
         num1=num1s, num2=num2s
         ) == expected_answers[num1s][num2s]
@@ -554,31 +556,31 @@ Executing this test with `pytest -v` shows all combinations are tested:
 ```{code-block}
 collected 25 items                                                            
 
-foo.py::test_sum_two_nums_stacked_parametrize[0-0] PASSED                [ 14%]
-foo.py::test_sum_two_nums_stacked_parametrize[0-1] PASSED                [ 17%]
-foo.py::test_sum_two_nums_stacked_parametrize[0-2] PASSED                [ 21%]
-foo.py::test_sum_two_nums_stacked_parametrize[0-3] PASSED                [ 25%]
-foo.py::test_sum_two_nums_stacked_parametrize[0-4] PASSED                [ 28%]
-foo.py::test_sum_two_nums_stacked_parametrize[1-0] PASSED                [ 32%]
-foo.py::test_sum_two_nums_stacked_parametrize[1-1] PASSED                [ 35%]
-foo.py::test_sum_two_nums_stacked_parametrize[1-2] PASSED                [ 39%]
-foo.py::test_sum_two_nums_stacked_parametrize[1-3] PASSED                [ 42%]
-foo.py::test_sum_two_nums_stacked_parametrize[1-4] PASSED                [ 46%]
-foo.py::test_sum_two_nums_stacked_parametrize[2-0] PASSED                [ 50%]
-foo.py::test_sum_two_nums_stacked_parametrize[2-1] PASSED                [ 53%]
-foo.py::test_sum_two_nums_stacked_parametrize[2-2] PASSED                [ 57%]
-foo.py::test_sum_two_nums_stacked_parametrize[2-3] PASSED                [ 60%]
-foo.py::test_sum_two_nums_stacked_parametrize[2-4] PASSED                [ 64%]
-foo.py::test_sum_two_nums_stacked_parametrize[3-0] PASSED                [ 67%]
-foo.py::test_sum_two_nums_stacked_parametrize[3-1] PASSED                [ 71%]
-foo.py::test_sum_two_nums_stacked_parametrize[3-2] PASSED                [ 75%]
-foo.py::test_sum_two_nums_stacked_parametrize[3-3] PASSED                [ 78%]
-foo.py::test_sum_two_nums_stacked_parametrize[3-4] PASSED                [ 82%]
-foo.py::test_sum_two_nums_stacked_parametrize[4-0] PASSED                [ 85%]
-foo.py::test_sum_two_nums_stacked_parametrize[4-1] PASSED                [ 89%]
-foo.py::test_sum_two_nums_stacked_parametrize[4-2] PASSED                [ 92%]
-foo.py::test_sum_two_nums_stacked_parametrize[4-3] PASSED                [ 96%]
-foo.py::test_sum_two_nums_stacked_parametrize[4-4] PASSED                [100%]
+foo.py::test_sum_two_nums_stacked_parameterise[0-0] PASSED                [ 14%]
+foo.py::test_sum_two_nums_stacked_parameterise[0-1] PASSED                [ 17%]
+foo.py::test_sum_two_nums_stacked_parameterise[0-2] PASSED                [ 21%]
+foo.py::test_sum_two_nums_stacked_parameterise[0-3] PASSED                [ 25%]
+foo.py::test_sum_two_nums_stacked_parameterise[0-4] PASSED                [ 28%]
+foo.py::test_sum_two_nums_stacked_parameterise[1-0] PASSED                [ 32%]
+foo.py::test_sum_two_nums_stacked_parameterise[1-1] PASSED                [ 35%]
+foo.py::test_sum_two_nums_stacked_parameterise[1-2] PASSED                [ 39%]
+foo.py::test_sum_two_nums_stacked_parameterise[1-3] PASSED                [ 42%]
+foo.py::test_sum_two_nums_stacked_parameterise[1-4] PASSED                [ 46%]
+foo.py::test_sum_two_nums_stacked_parameterise[2-0] PASSED                [ 50%]
+foo.py::test_sum_two_nums_stacked_parameterise[2-1] PASSED                [ 53%]
+foo.py::test_sum_two_nums_stacked_parameterise[2-2] PASSED                [ 57%]
+foo.py::test_sum_two_nums_stacked_parameterise[2-3] PASSED                [ 60%]
+foo.py::test_sum_two_nums_stacked_parameterise[2-4] PASSED                [ 64%]
+foo.py::test_sum_two_nums_stacked_parameterise[3-0] PASSED                [ 67%]
+foo.py::test_sum_two_nums_stacked_parameterise[3-1] PASSED                [ 71%]
+foo.py::test_sum_two_nums_stacked_parameterise[3-2] PASSED                [ 75%]
+foo.py::test_sum_two_nums_stacked_parameterise[3-3] PASSED                [ 78%]
+foo.py::test_sum_two_nums_stacked_parameterise[3-4] PASSED                [ 82%]
+foo.py::test_sum_two_nums_stacked_parameterise[4-0] PASSED                [ 85%]
+foo.py::test_sum_two_nums_stacked_parameterise[4-1] PASSED                [ 89%]
+foo.py::test_sum_two_nums_stacked_parameterise[4-2] PASSED                [ 92%]
+foo.py::test_sum_two_nums_stacked_parameterise[4-3] PASSED                [ 96%]
+foo.py::test_sum_two_nums_stacked_parameterise[4-4] PASSED                [100%]
 
 ============================= 25 passed in 0.01s =============================
 
