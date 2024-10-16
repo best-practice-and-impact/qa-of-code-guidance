@@ -23,7 +23,7 @@ This guidance is relevant if you are:
 
 The good practices outlined in the book are general to many applications of programming, so may also be relevant for those outside of government.
 
-The [RAP learning pathway](https://learninghub.ons.gov.uk/mod/page/view.php?id=8699) provides training for many of these good practices.
+The [RAP learning pathway](https://learninghub.ons.gov.uk/course/view.php?id=1273) provides training for many of these good practices.
 This book can be used to guide your learning and as a reference when applying these practices in your work.
 Each chapter describes the risks that each practice may help to address.
 As recommended by [the Aqua book](https://www.gov.uk/government/publications/the-aqua-book-guidance-on-producing-quality-analysis-for-government),
@@ -56,7 +56,7 @@ and that the information is provided 'as is' without warranty.
 
 The following structure can be used to reference the current version of the book:
 
-> UK Government Analytical Community. (2020). Quality assurance of code for analysis and research (version 2024.0).
+> UK Government Analytical Community. (2020). Quality assurance of code for analysis and research (version 2024.1).
 > Office for National Statistics, Analytical Standards and Pipelines hub:
 > [https://best-practice-and-impact.github.io/qa-of-code-guidance/](https://best-practice-and-impact.github.io/qa-of-code-guidance/)
 

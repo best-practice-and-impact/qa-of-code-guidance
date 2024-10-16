@@ -20,7 +20,7 @@ Tests come in many shapes and sizes, but usually follow the pattern:
 ```{admonition} Key Learning
 :class: admonition-learning
 
-You should follow the [Introduction to Unit Testing course](https://learninghub.ons.gov.uk/course/view.php?id=499) for applied examples in Python and R.
+You should follow the [Introduction to Unit Testing course](https://learninghub.ons.gov.uk/course/view.php?id=1171) for applied examples in Python and R.
 This course also covers writing and documenting functions, and error handling.
 
 Other useful learning resources include:
@@ -274,8 +274,7 @@ but you should ensure that good modular code practices are followed to separate 
 
 When we implement new logic in code, tests are required to assure us that the code works as expected.
 
-To make sure that your code works as expected, you should write tests for each individual unit in your code.
-A unit is the smallest modular piece of logic in the code - a function or method.
+To make sure that your code works as expected, you should write tests for each individual unit in your code. A unit is the smallest modular piece of logic in the code - a function or method.
 
 Unit tests should cover realistic use cases for your function, such as:
 * boundary cases, like the highest and lowest expected input values
