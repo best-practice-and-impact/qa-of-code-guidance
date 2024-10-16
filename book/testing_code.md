@@ -1,7 +1,7 @@
 # Testing code
 
 Code tests verify that your analytical code is working as expected.
-Where code documentation helps others to understand what you expect your code to do, testing assures that the the code meets these expectations.
+Where code documentation helps others to understand what you expect your code to do, testing assures that the code meets these expectations.
 Without carrying out tests we have no assurance that our code works correctly, so we can't be sure that our analysis is fit for purpose.
 
 Tests should be used proportionately for your analysis.
@@ -43,7 +43,7 @@ Code changes over time, so we need to be able to repeat these checks against the
 Additionally, other analysts should be able to carry out the same checks and get the same results.
 
 Representing our tests as code allows us to consistently repeat the same steps.
-This lets us or another analyst to carry out the same verification again to get the same results.
+This lets us or another analyst carry out the same verification again to get the same results.
 When you have carried out a test manually, you should ensure that you add a code test to reproduce this.
 
 Code that we write for testing should also follow the good practices described earlier on in this book, in particular [](readable_code).
@@ -51,13 +51,13 @@ Code that we write for testing should also follow the good practices described e
 ## Write repeatable tests
 
 For us to be able to trust the results of our tests we need them to be repeatable.
-That is for them to give them same outcome if we run them more than once against the same version of our analysis code.
+That is for them to give the same outcome if we run them more than once against the same version of our analysis code.
 
 For tests to run repeatably each test must be independent.
 There should not be a shared state between tests, for example a test should not depend on another test having already run.
 Many test runners will intentionally randomise the order that tests are executed to encourage this.
 
-Where possible, test should be deterministic.
+Where possible, tests should be deterministic.
 As such, the only reason for a test to fail should be that the code being tested is incorrect.
 Where your code relies on randomness tests should reuse the same random seed each time they are run.
 
@@ -76,8 +76,8 @@ For example, you might detect an unexpected failure in part of your code that yo
 Running tests regularly allows you to fix any issues before  changes are added to a stable or production version of your code (e.g. the `main` Git branch).
 
 If you have altered the functionality of your code, this will likely break existing tests.
-Failing tests here act as a good reminder that your should update your tests and documentation to reflect the new functionality.
-Many testing frameworks supporting writing tests as examples in the function documentation, which ties these together nicely.
+Failing tests here act as a good reminder that you should update your tests and documentation to reflect the new functionality.
+Many testing frameworks support writing tests as examples in the function documentation, which ties these together nicely.
 
 It's not easy to remember to run your tests manually at regular intervals.
 And you're right to think "surely this could be automated too?".
@@ -234,7 +234,7 @@ project/
 
 The Python example above has one file containing unit tests for each module (group of related functions and classes).
 When using this structure you may want to also group multiple test functions into test classes.
-Having one test class per function/class that you are testing will make it clear that the group of tests relates to a that function or class in your source code.
+Having one test class per function/class that you are testing will make it clear that the group of tests relates to that function or class in your source code.
 
 ```{code-block} python
 # An example for tests/unit/test_math.py
@@ -274,8 +274,7 @@ but you should ensure that good modular code practices are followed to separate 
 
 When we implement new logic in code, tests are required to assure us that the code works as expected.
 
-To make sure that your code work as expected, you should aim to write tests for each individual unit in your code.
-A unit is the smallest modular piece of logic in the code - a function or method.
+To make sure that your code works as expected, you should write tests for each individual unit in your code. A unit is the smallest modular piece of logic in the code - a function or method.
 
 Unit tests should cover realistic use cases for your function, such as:
 * boundary cases, like the highest and lowest expected input values
@@ -283,27 +282,27 @@ Unit tests should cover realistic use cases for your function, such as:
 * examples that trigger errors that have been defined in your code
 
 When your function documentation describes the expected inputs to your function, there is less need to test unexpected cases.
-If missuse is still likely or risky, then providing the user with an error is the best approach to mitigate this risk.
+If misuse is still likely or risky, then providing the user with an error is the best approach to mitigate this risk.
 
-Logic that is reused from an existing packages that is already tested do not require tests when we use that logic alone.
-You should be aware of wether your dependencies are sufficiently tested.
+Logic that is reused from an existing package that is already tested does not require tests when we use that logic alone.
+You should be aware of whether your dependencies are sufficiently tested.
 Newly developed packages or those with very few users are more likely to not be thoroughly tested.
 
 ## Test that different parts of the code interact correctly using integration tests
 
-We define integration tests as those that test on a higher level that a unit. This includes testing that:
+We define integration tests as those that test on a higher level than a unit. This includes testing that:
 * multiple units work together correctly
 * multiple high level functions work together (e.g. many units grouped into stages of a pipeline)
 * the end to end analysis runs correctly and meets users needs
 * the analysis works with typical inputs from other systems
 
 Integration tests give us assurance that our analysis is fit for purpose.
-Additionally, they give us safety when refactoring or rearranging large parts of of code.
+Additionally, they give us safety when refactoring or rearranging large parts of code.
 Refactoring is an important part of managing the complexity of our analysis as it grows.
 
 Consider a piece of analysis that has an end to end test to check that the overall system gives an expected outcome.
 For example, it tests that output data are the right shape, in the right format and have specific properties (e.g. a specific distribution).
-There might also be a "regression" test that check that the exact values in the output remain the same.
+There might also be a "regression" test that checks that the exact values in the output remain the same.
 After any changes that are made to tidy up or refactor the
 code, these end to end tests can be run to assure us that no functionality has been inadvertently changed.
 
@@ -346,7 +345,7 @@ This might be from a user need (e.g. someone needs output data in a certain shap
 Given that you know the expected outcome, you can write the test before even thinking about how you are going to write the solution.
 
 ```{note}
-This section is framed more like training. Once dedicated training has been produced this section will likely adapted to provide more concise guidance on the practice.
+This section is framed more like training. Once dedicated training has been produced this section will likely be adapted to provide more concise guidance on the practice.
 ```
 
 TDD typically repeats three steps:
@@ -372,7 +371,7 @@ TDD requires practice but is proven to produce clean, robust and adaptable code.
 [acceptance test driven development](https://en.wikipedia.org/wiki/Acceptance_test-driven_development)
 are extensions of TDD with a useful focus on user needs.
 
-## Reduce repetition in test code (fixtures and parameterised tests)
+## Reduce repetition in test code (fixtures and parametrized tests)
 
 Where possible, reduce repetition in your tests. Tests are code too, so you should still [make this code reusable](functions).
 As with functional code, test code is much easier to maintain when it is modular and reusable.
@@ -380,10 +379,10 @@ As with functional code, test code is much easier to maintain when it is modular
 ### Use fixtures to reduce repetition in test set up
 
 As your test suite grows, many of your tests may use similar code to prepare your tests or to clean up after each test has run.
-You can be more tolerant of repetition in in test code.
+You can be more tolerant of repetition in test code.
 However, copying code snippets for each test is laborious and increases the risk of applying those steps inconsistently.
 
-You can use fixtures help to avoid this form of repetition in tests.
+You can use fixtures to help avoid this form of repetition in tests.
 A fixture allows you to define your test preparation and clean up as functions.
 You then use the fixture to carry out these steps consistently for each test that they are required for.
 
@@ -411,7 +410,7 @@ def test_another_function(spark_session):
     ...
 ```
 
-This examples shows a fixture named `spark_session` with a testing session scope.
+This example shows a fixture named `spark_session` with a testing session scope.
 Starting a new spark session can take a few seconds, so creating a new session
 for each test function would significantly increase the time it takes to run all of the tests.
 With a session level scope, the function is called once for the whole testing session
@@ -434,7 +433,7 @@ def test_another_function(database_connection):
     ...
 ```
 
-Fixtures can also useful for undoing any effects each test run might have on the global environment.
+Fixtures can also be useful for undoing any effects each test run might have on the global environment.
 For example, they can remove test data which has been written to a temporary file or database.
 The example above shows how a fixture might be used to reset a test database between each test.
 Here a test function scope is used, so the fixture is run separately for each test function that uses it.
@@ -450,7 +449,7 @@ Similar steps are often repeated when testing multiple combinations of inputs an
 Parametrization allows us to reduce repetition in our test code, in a similar way to writing our logic in functions.
 You should specify pairs of inputs and expected outputs, so that your testing tool can repeat the same test for each scenario.
 
-Using parameterisation in a test framework is equivalent to using a for-loop to apply a test function over multiple inputs and expected outputs.
+Using parametrization in a test framework is equivalent to using a for-loop to apply a test function over multiple inputs and expected outputs.
 Using functionality from test packages may provide improved running efficiency and more detailed reporting of test failures.
 
 In `pytest`, this can be achieved using the [Parametrize mark](https://docs.pytest.org/en/stable/parametrize.html).
@@ -458,7 +457,129 @@ In `pytest`, this can be achieved using the [Parametrize mark](https://docs.pyte
 In R, the `patrick` package extends `testthat` to provide a
 [`with_parameters_test_that`](https://rdrr.io/cran/patrick/man/with_parameters_test_that.html) function to achieve this.
 
-```{todo}
-Add examples of applying the same test logic to multiple cases.
-Add emphasis on documenting each case or at least making it clear what is being tested.
+### Define Source Code
+
+Take the below function for example, it can take 2 arguments. 
+
+```{code-block} python
+def sum_two_nums(num1:int, num2:int) -> int:
+    """Sum two numbers. Numbers can be integer or float."""
+    return num1 + num2
+```
+
+### Simple Parametrization
+
+It is simple to check multiple assertions for this simple function. In the most
+basic example, simply define a parametrized list of parameter values and
+expected outcomes.
+
+```{code-block} python
+import pytest
+
+@pytest.mark.parametrize("num_1s, expected_out", [(1, 2), (-1, 0), (0, 1)])
+def test_sum_two_nums_parametrize_arg_1(num_1s, expected_out):
+    assert sum_two_nums(num1=num_1s, num2=1) == expected_out
+
+```
+
+We reference the parameter values and expected answers in the same way that we
+access pytest fixtures, covered earlier in this article. Running `pytest -v`
+reveals 3 tests are run, with the parametrized values printed to the console:
+
+```{code-block}
+
+collected 3 items                                                             
+
+foo.py::test_sum_two_nums_parametrize_arg_1[1-2] PASSED                  [ 33%]
+foo.py::test_sum_two_nums_parametrize_arg_1[-1-0] PASSED                 [ 66%]
+foo.py::test_sum_two_nums_parametrize_arg_1[0-1] PASSED                  [100%]
+
+============================= 3 passed in 0.00s ==============================
+
+```
+
+It would be trivial to repeat a similar parametrized test for `num_2` values.
+But how is it possible to make assertions when parametrizing **both**
+arguments?
+
+### Stacked Parametrization
+
+In order to test multiple values for `num1` and `num2`, a fixture should be
+defined that returns a dictionary of the expected values. For example:
+
+```{code-block} python
+
+@pytest.fixture
+def expected_answers() -> dict:
+    """A nested dictionary of expected answers for all combinations in 0:5.
+
+    First level key corresponds to `num1` and the second level key to `num2`.
+    The dictionary values are the expected answers. So that when we subset the
+    dictionary with parametrized values, we provide the expected values to
+    assert statements.
+
+    Returns
+    -------
+    dict
+        Dictionary of cases and their expected tuples.
+    """
+    expected= {
+        0: {0: 0, 1: 1, 2: 2, 3: 3, 4: 4,},
+        1: {0: 1, 1: 2, 2: 3, 3: 4, 4: 5,},
+        2: {0: 2, 1: 3, 2: 4, 3: 5, 4: 6,},
+        3: {0: 3, 1: 4, 2: 5, 3: 6, 4: 7,},
+        4: {0: 4, 1: 5, 2: 6, 3: 7, 4: 8,},
+    }
+    return expected
+
+```
+
+This fixture of expected answers can be served to a parametrized test and the
+returned dictionary can be accessed to provide the expected answer for
+parameter combinations. In order to parametrize both of the required arguments,
+the parametrize statements are simply stacked on top of each other:
+
+```{code-block} python
+
+@pytest.mark.parametrize("num1s", range(0,5))
+@pytest.mark.parametrize("num2s", range(0,5))
+def test_sum_two_nums_stacked_parametrize(num1s, num2s, expected_answers):
+    assert sum_two_nums(
+        num1=num1s, num2=num2s
+        ) == expected_answers[num1s][num2s]
+```
+
+Executing this test with `pytest -v` shows all combinations are tested:
+
+```{code-block}
+collected 25 items                                                            
+
+foo.py::test_sum_two_nums_stacked_parametrize[0-0] PASSED                [ 14%]
+foo.py::test_sum_two_nums_stacked_parametrize[0-1] PASSED                [ 17%]
+foo.py::test_sum_two_nums_stacked_parametrize[0-2] PASSED                [ 21%]
+foo.py::test_sum_two_nums_stacked_parametrize[0-3] PASSED                [ 25%]
+foo.py::test_sum_two_nums_stacked_parametrize[0-4] PASSED                [ 28%]
+foo.py::test_sum_two_nums_stacked_parametrize[1-0] PASSED                [ 32%]
+foo.py::test_sum_two_nums_stacked_parametrize[1-1] PASSED                [ 35%]
+foo.py::test_sum_two_nums_stacked_parametrize[1-2] PASSED                [ 39%]
+foo.py::test_sum_two_nums_stacked_parametrize[1-3] PASSED                [ 42%]
+foo.py::test_sum_two_nums_stacked_parametrize[1-4] PASSED                [ 46%]
+foo.py::test_sum_two_nums_stacked_parametrize[2-0] PASSED                [ 50%]
+foo.py::test_sum_two_nums_stacked_parametrize[2-1] PASSED                [ 53%]
+foo.py::test_sum_two_nums_stacked_parametrize[2-2] PASSED                [ 57%]
+foo.py::test_sum_two_nums_stacked_parametrize[2-3] PASSED                [ 60%]
+foo.py::test_sum_two_nums_stacked_parametrize[2-4] PASSED                [ 64%]
+foo.py::test_sum_two_nums_stacked_parametrize[3-0] PASSED                [ 67%]
+foo.py::test_sum_two_nums_stacked_parametrize[3-1] PASSED                [ 71%]
+foo.py::test_sum_two_nums_stacked_parametrize[3-2] PASSED                [ 75%]
+foo.py::test_sum_two_nums_stacked_parametrize[3-3] PASSED                [ 78%]
+foo.py::test_sum_two_nums_stacked_parametrize[3-4] PASSED                [ 82%]
+foo.py::test_sum_two_nums_stacked_parametrize[4-0] PASSED                [ 85%]
+foo.py::test_sum_two_nums_stacked_parametrize[4-1] PASSED                [ 89%]
+foo.py::test_sum_two_nums_stacked_parametrize[4-2] PASSED                [ 92%]
+foo.py::test_sum_two_nums_stacked_parametrize[4-3] PASSED                [ 96%]
+foo.py::test_sum_two_nums_stacked_parametrize[4-4] PASSED                [100%]
+
+============================= 25 passed in 0.01s =============================
+
 ```
