@@ -107,7 +107,7 @@ Quality assurance checklist from [the quality assurance of code for analysis and
 - Stakeholder or user acceptance sign-offs are recorded near to the code.
 - Test are automatically run and recorded using continuous integration or git hooks.
 - The whole process is tested from start to finish using one or more realistic end-to-end tests.
-- Test code is clean an readable. Tests make use of fixtures and parameterisation to reduce repetition.
+- Test code is clean and readable. Tests make use of fixtures and parameterisation to reduce repetition.
 - Formal user acceptance testing is conducted and recorded.
 - Integration tests ensure that multiple units of code work together as expected.
 
@@ -256,7 +256,7 @@ Quality assurance checklist from
 - [ ] Stakeholder or user acceptance sign-offs are recorded near to the code.
 - [ ] Test are automatically run and recorded using continuous integration or git hooks.
 - [ ] The whole process is tested from start to finish using one or more realistic end-to-end tests.
-- [ ] Test code is clean an readable. Tests make use of fixtures and parameterisation to reduce repetition.
+- [ ] Test code is clean and readable. Tests make use of fixtures and parameterisation to reduce repetition.
 - [ ] Formal user acceptance testing is conducted and recorded.
 - [ ] Integration tests ensure that multiple units of code work together as expected.
 
