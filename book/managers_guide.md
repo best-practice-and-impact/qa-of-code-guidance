@@ -34,7 +34,7 @@ When managing analytical work, you should not need an in-depth understanding of 
 However, you should be confident that the approach the team has taken is appropriate given the user need,
 and that proportionate quality assurance is being applied to the development and running of the analysis.
 
-You should work with your team to decide on which quality assurance practices are necessary given each piece of analysis.
+You should work with your team to decide which quality assurance practices are necessary given each piece of analysis.
 You might find our [](checklists.md) useful templates for defining the target level of assurance.
 When possible, you should define the target assurance level before starting the analysis.
 
@@ -50,7 +50,7 @@ can be used as a reference to apply these practices to analysis.
 You should identify where each analyst is along the pathway - they should look to develop the next skill in the pathway and apply this,
 rather than attempting to adopt them all at once.
 
-Note that it is important to maintain technical skills in the analysis team for sustainability, to ensure that the analysis can be understood, updated and maintained.
+Note that it is important to maintain technical skills in the analysis team for sustainability, to ensure that the analysis can be understood, updated, and maintained.
 ```
 
 Despite the initial cost of developing technical skills,
@@ -80,7 +80,7 @@ Understanding user needs ensures that the analysis is valuable.
 
 * There should be a plan to consult users at the beginning and throughout the development process, to ensure that their needs are being met.
 * The methodology and data should be suitable for the question being asked.
-* The analysis must be developed by more than one individual, to allow pair programming, peer review and mentoring. This increases the sustainability of analysis.
+* The analysis must be developed by more than one individual, to allow pair programming, peer review, and mentoring. This increases the sustainability of analysis.
 * The analysis should be carried out using open-source analysis tools, wherever possible.
 Your team should be able to explain why they have chosen the analysis tools and why they are confident that they are fit for purpose.
 
@@ -118,7 +118,7 @@ to assess how the team are progressing towards the target quality assurance prac
 
 * Logic should be written as functions, so that it can be reused consistently and tested.
 * Related functions should be grouped together in the same file, so that it is easy to find them.
-* Logic with different responsibilities (e.g. reading data versus transforming data) should be clearly separated.
+* Logic with different responsibilities (e.g., reading data versus transforming data) should be clearly separated.
 * When code can be reused for other analyses, it should be stored and shared as a package.
 
 
@@ -134,7 +134,7 @@ to assess how the team are progressing towards the target quality assurance prac
 
 [Code documentation](code_documentation.md) is essential for business continuity and sustainability.
 
-* Every function should be documented in the code, so that it is clear what the function is supposed to do.
+* Every function should be documented in the code, so it is clear what the function is supposed to do.
 * Function documentation should include what goes in and what comes out of each function.
 * Where code will be run or re-used by others, documentation should include usage examples and test data.
 
@@ -147,7 +147,7 @@ to assess how the team are progressing towards the target quality assurance prac
 * Software and package versions should be documented with the code.
 Typically package versions are recorded using `setup.py` and `requirements.txt` files (Python) or a `DESCRIPTION` file (R).
 * Code should not be dependent on a specific computer to run. Running it on a colleague's system can help to check this.
-* When the same analysis is run multiple times or on different systems it should give reproducible outcomes.
+* When the same analysis is run multiple times or on different systems, it should give reproducible outcomes.
 * Container systems, like Docker, help to create reproducible environments to run code.
 
 
@@ -207,4 +207,4 @@ Large differences in the outcome of the results may indicate an issue with the a
 Code quality improves over time, as your team learn more about good practices.
 
 * The team should be aiming to meet the agreed assurance level, but should also consider which practices could be applied next to improve the code beyond this.
-* You should review training needs in your team and allow time for continuos personal development of these practices.
+* You should review training needs in your team and allow time for continuous personal development of these practices.
