@@ -594,7 +594,7 @@ similar to breaking up functions. Integration testing can be used to verify
 that queries and functions behave as expected when combined.
 
 Functions that interact with a database (DB) should be tested within a development
-environment, rather than a production database. This is in order to prevent
+environment, rather than with a production database. This is in order to prevent
 unintended data modification or deletion. Functions can also be unit tested
 from simplified dummy data.
 
