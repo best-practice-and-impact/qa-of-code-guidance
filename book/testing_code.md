@@ -588,10 +588,10 @@ foo.py::test_sum_two_nums_stacked_parameterise[4-4] PASSED                [100%]
 
 ## Testing SQL
 Many of the concepts discussed in this guidance are also applicable to SQL. In SQL,
-single queries are often contain many different parts. These can be more readily
-tested by breaking up these queries, similarly to how functions can be broken up,
-and taking a more step-by-step approach. Integration testing can be applied
-in order to verify that queries and functions behave as expected when combined.
+single queries often contain several parts. These can be more readily
+tested by breaking up these queries and taking a more step-by-step approach,
+similar to breaking up functions. Integration testing can be used to verify
+that queries and functions behave as expected when combined.
 
 Functions that interact with a database (DB) should be tested within a development
 environment, rather than a production database. This is in order to prevent
