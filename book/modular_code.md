@@ -9,9 +9,9 @@ These have been tailored to a more analytical workflow.
 To get the most benefit from this section, you should have an understanding of core programming concepts such as:
 
 * storing information in variables
-* using control flow, such as if-statements and for-loops
-* writing code as functions or classes
-* using functions or classes in your code
+* using control flow, such as if-statements and for-loops.
+* writing code as functions or classes.
+* using functions or classes in your code.
 
 You can find links to relevant training in the [](learning.md) section of the book.
 ```
@@ -19,18 +19,18 @@ You can find links to relevant training in the [](learning.md) section of the bo
 
 ## Motivation
 
-Code that is repetitive, disorganised or overly complex can be difficult to understand, even for experienced programmers.
+Code that is repetitive, disorganised, or overly complex can be difficult to understand, even for experienced programmers.
 This makes assuring, testing or changing the code more burdersome.
-It also makes it harder to spot and fix mistakes.
+You may also find it harder to spot and fix mistakes.
 
 Code that isn't modular can cause a range of issues:
 
-- walls of repetitive code that is hard to absorb
-- long, complex scripts that are hard to follow
-- over-complicated code where a simpler solution could be used
-- a code base that makes it difficult to find what you're looking for
+- walls of repetitive code that is hard to absorb.
+- long, complex scripts that are hard to follow.
+- over-complicated code where a simpler solution could be used.
+- a code base that makes it difficult to find what you're looking for.
 
-This chapter highlights ways to write modular code that is easier to read, review and maintain.
+This chapter highlights ways to write modular code that is easier to read, review, and maintain.
 These practices will also help you implement the other good coding practices you will come across in this book, such as version control, review, testing and documentation.
 Because of this, modular code is fundamental to making analysis more reproducible, auditable and assured.
 
@@ -39,13 +39,13 @@ Because of this, modular code is fundamental to making analysis more reproducibl
 ## Modular code
 
 Breaking your code down into smaller, more manageable chunks is a sensible way to improve readability.
-Regardless of the language, there are often techniques to containerise your code into self-contained parts such as modules, classes or functions.
+Regardless of the language, there are often techniques to containerise your code into self-contained parts such as modules, classes, or functions.
 
 
 (functions)=
 ### Write re-usable code as functions
 
-In the early stages of analysis we often copy and paste code to 'make it work'. As this work matures, it is worth taking repetitive code and turning it into functions.
+In the early stages of analysis, we often copy and paste code to 'make it work'. As this work matures, it is worth taking repetitive code and turning it into functions.
 Functions allow us to make a  piece of logic reusable in a consistent and readable way, and also makes it easier for us to [test our logic](testing_code.md).
 
 When starting to write functions, you should consider what is the right level of complexity for a single function.
@@ -272,7 +272,7 @@ When multiple classes have a similar application programming interface (API, i.e
 A good real-world example of this can be seen in the `scikit-learn` package, where the different linear model types are represented by different classes.
 Each linear model class supports a common set of methods, e.g. `fit()` and `predict()`.
 As such, any model can then be used in a pipeline and swapped out with minimal effort.
-Therefore, when thinking about how to break you code up into classes consider the use of standardised methods across similar objects to make them interchangeable.
+Therefore, when thinking about how to break you code up into classes, consider the use of standardised methods across similar objects to make them interchangeable.
 
 
 (class-responsibilities)=
@@ -545,10 +545,10 @@ That said, great strengths of notebooks include their flexibility in displaying 
 and their ability to present final research code alongside a narrative.
 Therefore the top 2 reasons to use notebooks in the project lifecycle is to:
 
-- explore and 'play' with the data while developing your methods.
-- turn notebooks into HTML reports to present results to end users.
+- Explore and 'play' with the data while developing your methods.
+- Turn notebooks into HTML reports to present results to end users.
 
-In short, notebooks are not suitable for modularising analysis pipelines, however, they are a great way to do research analytics and to present results.
+In short, notebooks are not suitable for modularising analysis pipelines. However, they are a great way to do research analytics and to present results.
 Therefore, as the exploratory part of your analysis draws to a close, or there is a need to produce similar analysis more regularly, it is wise to refactor notebooks.
 Reusable functions and classes can be moved to modules and the main analysis pipeline might instead be reproducibly run from a script.
 Here are a few suggestions to consider when refactoring code from notebooks:
