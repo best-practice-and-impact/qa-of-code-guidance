@@ -1,6 +1,6 @@
 # Principles
 
-When we do analysis it must be fit for purpose.
+When we do analysis, it must be fit for purpose.
 If it isn't, we risk misinforming decisions.
 Bad analysis can result in harm or misallocation of public funds.
 As such, we must take the right steps to ensure high quality analysis.
@@ -46,7 +46,7 @@ Each of these pieces of guidance advocate reproducibility as a core tenet of qua
 
 Reproducibility is the only thing that you can guarantee in your analysis.
 It is the first pillar of good analysis.
-If you can't prove that you can run the same analysis, with the same data, and obtain the same results then you are not adding a valuable analysis.
+If you can't prove that you can run the same analysis, with the same data, and obtain the same results, then you are not adding a valuable analysis.
 The additional assurances of peer review, rigorous testing,
 and validity are secondary to being able to reproduce any analysis that you carry out in a proportionate amount of time.
 
@@ -98,11 +98,11 @@ We don't want to overburden analysts with QA procedures when they are not requir
 In government we advocate **proportionality** - the right quality assurance procedures for the right analysis.
 Analysis can be proportionately assured through peer review and defensive design.
 
-We advocate following your department's guidance on what proportionate quality assurance looks like.
+We suggest following your department's guidance on what proportionate quality assurance looks like.
 Most departments derive their guidance from the [Aqua book](https://www.gov.uk/government/publications/the-aqua-book-guidance-on-producing-quality-analysis-for-government).
 Assurance is best demonstrated through peer review.
 Peer reviewers must be able to understand your analytical choices and be able to reproduce your conclusions.
-In particularly high risk analysis, dual running should be considered.
+Dual running should be considered, particularly for high risk analysis.
 
 Guarantees of quality assurance should be published alongside any report, or be taken into consideration by decision makers.
 
@@ -116,7 +116,7 @@ These workflows should follow the principles of reproducible analysis.
 We call these [Reproducible Analytical Pipelines (RAP)](https://analysisfunction.civilservice.gov.uk/support/reproducible-analytical-pipelines/).
 
 Reproducible analysis is still not widely practised across government.
-Many analysts use proprietary (paid-for) analytical tools like SAS or SPSS in combination with programs like Excel, Word or Acrobat to create statistical products.
+Many analysts use proprietary (paid-for) analytical tools like SAS or SPSS in combination with programs like Excel, Word, or Acrobat to create statistical products.
 The processes for creating statistics in this way are usually manual or semi-manual.
 Colleagues then typically repeat parts of the process manually to quality assure the outputs.
 
