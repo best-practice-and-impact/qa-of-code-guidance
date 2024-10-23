@@ -175,6 +175,14 @@ that we could use this to sum columns in any other context.
 We used a single test function above, but could have created separate tests for each scenario and included tests for more than two input columns, for example.
 
 ## Structure test files to match code structure
+*Add more information on how to structure tests. For example:*
+
+*when should use you test classes (what are the benefits) - This is covered for Python in [section]
+test file per module or function - Should mimic the structure of your main file / module
+best way to write tests
+where should your tests file be
+the importance of importing your package**
+etc...*
 
 In [](modular_code) we describe how complexity can be managed by separating code into related groups.
 Modular, well-structured code is easier to write tests for.
@@ -240,24 +248,46 @@ Having one test class per function/class that you are testing will make it clear
 # An example for tests/unit/test_math.py
 
 class TestAbs:
-    def test_abs_all_positive_values():
+    def test_abs_all_positive_values(self):
         ...
 
-    def test_abs_all_negative_values():
+    def test_abs_all_negative_values(self):
         ...
     
     ...
 
 
 class TestSum:
-    def test_sum_all_positive_values():
+    def test_sum_all_positive_values(self):
         ...
 
-    def test_sum_all_negative_values():
+    def test_sum_all_negative_values(self):
         ...
     
     ...
 ```
+
+Using classes for unit tests has a number of additional benefits, this allows us to reuse the same logic either by class inheritance, or through fixtures.
+Similar to fixtures (covered [here](#use-fixtures-to-reduce-repetition-in-test-set-up)),
+we are able to use the same pieces of logic through class inheritance in python.
+However, it should be noted that it is easier to mix up and link unit tests when using class inheritance.
+The following code block demonstrates an example of class inheritance which will inherit both the
+variable and the `test_var_positive` unit test, meaning three unit tests are run.
+We are able to overwrite the variable within the subclass at any time, but will still inherit defined functions/tests from the parent class.
+
+```{code-block} python
+class TestBase:
+    var = 3
+
+    def test_var_positive(self):
+        assert self.var >= 0
+
+class TestSub(TestBase):
+    var = 8
+    def test_var_even(self):
+        assert self.var % 2 == 0
+```
+
 
 The R  project structure above has one test file per function in the modules.
 There are multiple test files for the `math.R` module because it contains more than one function.
@@ -269,6 +299,11 @@ Use the approach that makes it easiest for developers to identify the relationsh
 Note that some test frameworks allow you to keep the tests in the same file as the code that is being tested.
 This is a good way of keeping tests and code associated,
 but you should ensure that good modular code practices are followed to separate unrelated code into different files.
+Additional arguments are made to separate tests and functions when you are packaging your code.
+If unit tests and code are located together in the same file,
+the unit tests would also be packaged and installed by additional users.
+Therefore when packaging code,
+the unit tests should be moved to an adjacent test folder as users will not need to have unit tests installed when installing the package.
 
 ## Test that new logic is correct using unit tests
 
