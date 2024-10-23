@@ -9,8 +9,8 @@ These have been tailored to a more analytical workflow.
 To get the most benefit from this section, you should have an understanding modular code, which was covered in the [previous chapter](modular_code.md).
 You should also have an understand of core programming concepts such as:
 
-* storing information in variables
-* using control flow, such as if-statements and for-loops
+* storing information in variables.
+* using control flow, such as if-statements and for-loops.
 
 You can find links to relevant training in the [](learning.md) section of the book.
 ```
@@ -24,9 +24,9 @@ Code is read more often than it is written.
 -- Guido van Rossum (creator of Python)
 ```
 
-When writing code, we should expect that at some point someone else will need to understand, use and adapt it.
+When writing code, we should expect that at some point someone else will need to understand, use, and adapt it.
 This might be yourself in six months time.
-As such, it is important to empathise with these potential users and write code that is tidy, understandable and does not add unnecessary complexity.
+As such, it is important to empathise with these potential users and write code that is tidy, understandable, and does not add unnecessary complexity.
 Doing this will make for a 'self-documenting' codebase that does not need as much additional documentation.
 
 This chapter highlights good coding practices that will improve the readability and maintainability of your code.
@@ -62,8 +62,8 @@ This includes variables, functions, classes and any other objects that can be as
 
 Someone reading your code will benefit greatly if you use names that are:
 
-- informative and not misleading
-- concise but not cryptic
+- informative and not misleading.
+- concise but not cryptic.
 
 
 (naming-variables)=
@@ -307,7 +307,7 @@ if (is_clean(data)) {
 
 Class names are usually started with a capital letter, and in `CamelCase`, as this differentiates them from `variableNames` and `variable_names`.
 Class names follow the same advice as for [](naming-functions) - namely, is it obvious from the class name what it does?
-If its too complex to name concisely, it is an indication of too many [responsibilities](class-responsibilities)
+If it is too complex to name concisely, it is an indication of too many [responsibilities](class-responsibilities)
 and you should refactor your code into more, smaller classes.
 
 Method names in a class closely follow the requirements for [](naming-functions), as methods are just functions that are tied to a class.
@@ -325,20 +325,20 @@ As discussed in the [](modular_code.md) chapter, writing custom classes is more 
 
 Programming languages can differ in a myriad of ways.
 One way R and Python differ, for example, is their use of indentation.
-Indentation is part of the well defined syntax of Python while it is not for R.
+Indentation is part of the well defined syntax of Python but is not for R.
 This does not mean that you shouldn't use indentation in R to make your code more readable.
-If in doubt it is often wise to consult how to use formatting to write more readable code by finding the style guidelines for your language.
+If in doubt, you should consider consulting how to use formatting to write more readable code by finding the style guidelines for your language.
 
 Generally, code style guides provide a standard or convention for formatting and laying out your code.
 The purpose of these style guides is to increase consistency across the programming community for a given language.
 
 They might include how to appropriately:
 
-- comment or document your code
-- name your functions, variables or classes
-- separate elements of your code with whitespace
-- use indentation to make sure your code is readable
-- provide other useful guidance regarding formatting
+- comment or document your code.
+- name your functions, variables or classes.
+- separate elements of your code with whitespace.
+- use indentation to make sure your code is readable.
+- provide other useful guidance regarding formatting.
 
 The existence of such style guides does not necessarily mean that each individual or team will apply these conventions to the letter.
 Organisations and developer teams often have needs that might not be addressed in a general style guidance document.
@@ -800,7 +800,7 @@ which should follow the single responsibility concepts outlined earlier.
 
 For example, within the section of your code concerned with modelling data, you might have a set of functions to download data from an external data store.
 These functions should only be responsible for receiving the required data safely and providing it to the `Model` object.
-If you had the need to download data from different sources online (i.e. Database, CSV or other), you might create several download functions.
+If you had the need to download data from different sources online (i.e., Database, CSV or other), you might create several download functions.
 To pick the right function for each model you might create a ['LoaderFactory'](<https://en.wikipedia.org/wiki/Factory_(object-oriented_programming)>)
 who's only responsibility is to provide the `Model` with the right loading function for the right data source.
 
