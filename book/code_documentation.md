@@ -279,9 +279,9 @@ You should use it to write function documentation as part of R packages.
 If you are documenting functions that are not part of a package, you can use regular code comments.
 However, documenting functions using roxygen syntax can be helpful if you are planning on packaging the code in future and gives a clear structure to your documentation.
 
-You might find that writing function, class or package descriptions prior to writing their code helps you to focus on the task at hand.
+You might find that writing function, class, or package descriptions prior to writing their code helps you to focus on the task at hand.
 The documentation should be a specification of what the code is expected to do.
-As documentation tends to be user-focussed, this approach helps you to keep the user's needs in mind when developing code and
+As documentation tends to be user-focused, this approach helps you to keep the user's needs in mind when developing code and
 provides a quick reference when more information on its capabilities are required.
 
 Lastly, perhaps one of the key things to remember when writing docstrings is to **keep them up to date**.
@@ -323,11 +323,11 @@ In those cases, the structure is a lot looser and will depend on what the script
 The docstrings should be brief and avoid repeating details found in function documentation or other code comments later in the script.
 You may want to include:
 
-- a title
-- a brief description
-- any important usage notes not covered elsewhere
-- any copyright information if the script reproduces open source code from elsewhere
-- academic citations, if applicable
+- A title.
+- A brief description.
+- Any important usage notes not covered elsewhere.
+- Any copyright information if the script reproduces open source code from elsewhere.
+- Academic citations, if applicable.
 
 ````{tabs}
 
@@ -359,7 +359,8 @@ Duck census main analysis
 
 Produces the duck census bulletin outputs for the annual publication.
 
-Check the configuration file before running and run from the command line. Detailed setup and desk instructions can be found in README.md.
+Check the configuration file before running and run from the command line. 
+Detailed setup and desk instructions can be found in README.md.
 
 """
 ```
@@ -369,7 +370,8 @@ Check the configuration file before running and run from the command line. Detai
 #
 # Produces the duck census bulletin outputs for the annual publication.
 #
-# Check the configuration file before running and run from the command line. Detailed setup and desk instructions can be found in README.md.
+# Check the configuration file before running and run from the command line. 
+Detailed setup and desk instructions can be found in README.md.
 ```
 
 ````
@@ -432,7 +434,7 @@ provide a good demonstration of how you would apply it in practice.
 
 Once built, the HTML files containing your documentation can be opened in any browser.
 Usually this means looking for an `index.html` file in the output directory and opening it with your browser.
-This is sufficient for local usage, however, in order to improve the end-user experience and remove the need to browse the files looking for `index.html`,
+This is sufficient for local usage. However, in order to improve the end-user experience and remove the need to browse the files looking for `index.html`,
 it is wise to host this documentation somewhere where it will be publicly available.
 
 Your version control platform might support hosting web pages already.
