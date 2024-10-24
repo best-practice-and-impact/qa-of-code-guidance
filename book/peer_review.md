@@ -234,30 +234,16 @@ For example, focussing on documentation in one session and functionality in the 
 
 The thought of someone else reviewing your code in this way encourages good practices from the outset:
 
-* Clear code and documentation - so that others with no experience can use and test your code
-* Usable dependency management - so that others can run your code in their own environment
+* Clear code and documentation - so that others with no experience can use and test your code.
+* Usable dependency management - so that others can run your code in their own environment.
 
-Separate review is aided by features of most version control platforms. See [](version_control.md) for more information.
+Most version control platforms have features that can aid separate review. See [](version_control.md) for more information.
 
 
 #### Case study - rOpenSci review
 
 Here we discuss a [review example from rOpenSci](https://ropensci.org/);
 a community led initiative that curates open source, statistical R packages.
-rOpenSci apply a rigorous peer review process to assure the quality of packages before including them in their collection.
-This peer review process is entirely remote and is performed in the open, via GitHub pull requests.
-
-In this example, from colleagues at Public Health England,
-[the `fingertipsR` package is reviewed](https://github.com/ropensci/software-review/issues/168).
-The initial comment describes the package that is being submitted and includes a check against a list of minimum requirements.
-The [`goodpractice` R package](http://mangothecat.github.io/goodpractice/) is used to check that good R packaging practices have been followed.
-[Continuous integration](continuous-integration) is commonly used to carry out automated checks on code repositories.
-The reports from these checks can save reviewers time, by providing indicators of things like code complexity and test coverage.
-
-
-#### Case studies
-
-Here we discuss an example from [rOpenSci](https://ropensci.org/); a community led initiative that curates open source, statistical R packages.
 rOpenSci apply a rigorous peer review process to assure the quality of packages before including them in their collection.
 This peer review process is entirely remote and is performed in the open, via GitHub pull requests.
 
