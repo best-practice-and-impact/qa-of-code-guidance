@@ -585,3 +585,19 @@ foo.py::test_sum_two_nums_stacked_parameterise[4-4] PASSED                [100%]
 ============================= 25 passed in 0.01s =============================
 
 ```
+
+## Testing SQL
+Although testing SQL is outside the scope of this guidance, many of the concepts discussed
+in this guidance are also applicable to SQL. In SQL,
+single queries often contain several parts. These can be more readily
+tested by breaking up these queries and taking a more step-by-step approach,
+similar to breaking up functions. Integration testing can be used to verify
+that queries and functions behave as expected when combined.
+
+Functions that interact with a database (DB) should be tested within a development
+environment, rather than with a production database. This is in order to prevent
+unintended data modification or deletion. Functions can also be unit tested
+from simplified dummy data.
+
+There are a range of established SQL testing frameworks. Examples include [tSQLt](https://github.com/tSQLt-org/tSQLt)
+and [pgTAP](https://github.com/theory/pgtap/) for Postgres.
