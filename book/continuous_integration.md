@@ -40,7 +40,7 @@ these can be achieved in a number of ways such as use of Git hooks and workflows
 
 [Git hooks](https://git-scm.com/docs/githooks) are scripts that can be set to run locally at specific points in your Git workflow,
 such as pre-commit, pre-push, etc.
-They can be used to automate code quality assurance tasks, e.g. run tests, ensure style guides are followed, or enforce commit standards.
+They can be used to automate code quality assurance tasks, e.g., run tests, ensure style guides are followed, or enforce commit standards.
 
 For example, we might set up a `pre-commit` or `pre-push` hook that runs our tests before we make each commit or push to the remote repository.
 This might stop our commit/push if the tests fail, so that we don't push breaking changes to our remote repository.
@@ -172,7 +172,7 @@ This workflow will report whether our test code ran successfully for each of the
 
 It is important to maintain the documentation relating to your project to ensure contributors and users can understand, maintain and use your product correctly.
 One basic way of doing this is maintaining markdown files within a GitHub repository.
-However, there exist multiple tools that can transform these markdown files into HTML content.
+However, multiple tools exist that can transform these markdown files into HTML content.
 A popular tool for building and deploying HTML documentation is [Sphinx](https://www.sphinx-doc.org/en/master/).
 Here are two examples of repositories that use sphinx to build its documentation:
 
@@ -193,11 +193,11 @@ You can see a detailed example of CI in practice in the `jupyter-book` project.
 A recent version of the
 [`jupyter-book` CI workflow](https://github.com/executablebooks/jupyter-book/blob/6fb0cbe4abb5bc29e9081afbe24f71d864b40475/.github/workflows/tests.yml) includes:
 
-* Checking code against style guidelines, using [pre-commit](https://pre-commit.com/)
-* Running code tests over
-  * a range of Python versions
-  * multiple versions of specific dependencies (`sphinx` here)
-  * multiple operating systems
-* Reporting test coverage
-* Checking that documentation builds successfully
-* Deploying a new version of the `jupyter-book` package to [the python package index (PyPI)](https://pypi.org/)
+* Checking code against style guidelines, using [pre-commit](https://pre-commit.com/).
+* Running code tests over:
+  * a range of Python versions.
+  * multiple versions of specific dependencies (`sphinx` here).
+  * multiple operating systems.
+* Reporting test coverage.
+* Checking that documentation builds successfully.
+* Deploying a new version of the `jupyter-book` package to [the python package index (PyPI)](https://pypi.org/).
