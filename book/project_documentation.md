@@ -13,19 +13,19 @@ This file can be any text type, including `.txt`, `.md`, and `.rst`, and can be 
 
 We suggest the following for a good README:
 
-- Short statement of intent
-- Longer description describing the problem that your project solves and how it solves it
-- Basic installation instructions or link to installation guide
-- Example usage
-- Screenshot if your project has a graphical user interface
-- Links to related projects
+- Short statement of intent.
+- Longer description describing the problem that your project solves and how it solves it.
+- Basic installation instructions or link to installation guide.
+- Example usage.
+- Screenshot if your project has a graphical user interface.
+- Links to related projects.
 
 
 ## Contributing guidance
 
 When collaborating, it is also useful to outline the standards used within your project.
 This might include particular packages that should used for certain tasks and guidance on the [code style](code-style) used in the project.
-If you plan to have contributors from outside your organisation it is useful to include a code of conduct too.
+If you plan to have contributors from outside your organisation, it is useful to include a code of conduct too.
 Please [see GitHub](https://docs.github.com/en/github/building-a-strong-community/adding-a-code-of-conduct-to-your-project) for advice on creating a code of conduct.
 
 For an example, see the CONTRIBUTING file from our [gptables package](https://github.com/best-practice-and-impact/gptables/blob/master/CONTRIBUTING.md):
@@ -70,7 +70,7 @@ format for documenting features using docstrings.
 non-minor changes.
 2. The review process follows a similar process to ROpenSci.
 3. Reviewers will be requested from associated communities.
-4. Only once reviewers are satisfied, will the `dev` branch be released.
+4. The `dev` branch will only be released once reviewers are satisfied.
 ```
 ````
 
@@ -124,17 +124,17 @@ which is formatted into HTML when viewed on our repository.
 
 ## User desk instructions
 
-If your project is very user focussed for one particular task,
+If your project is very user focused for one particular task,
 for example developing a statistic production pipeline for other analysts to execute,
 it is very important that the code users understand how to appropriately run your code.
 
 These instructions should include:
 
-- How to set up an environment to run your code (including how to install dependencies)
-- How to run your code
-- What outputs (if any) your code or system produces and how these should be interpreted
-- What quality assurance has been carried out and what further quality assurance of outputs is required
-- How to maintain your project (including how to update data sources)
+- How to set up an environment to run your code (including how to install dependencies).
+- How to run your code.
+- What outputs (if any) your code or system produces and how these should be interpreted.
+- What quality assurance has been carried out and what further quality assurance of outputs is required.
+- How to maintain your project (including how to update data sources).
 
 
 ## Dependencies
@@ -142,7 +142,7 @@ These instructions should include:
 The environment that your code runs in includes the machine, the operating system (Windows, Mac, Linux...), the programming language, and any external packages.
 It is important to record this information to ensure reproducibility.
 
-The simplest way to document which packages your code is dependent on, is to record them in a text file.
+The simplest way to document which packages your code is dependent on is to record them in a text file.
 This is typically called `requirements.txt`.
 
 Python packages record their dependencies within their `setup.py` file, via `setup(install_requires=...)`.
@@ -182,7 +182,7 @@ A BibTeX entry for LaTeX users is
 ```
 
 This might include multiple citations, if your project includes multiple datasets, pieces of code or outputs with their own
-[DOI's](https://en.wikipedia.org/wiki/Digital_object_identifier).
+[DOIs](https://en.wikipedia.org/wiki/Digital_object_identifier).
 
 See this [GitHub guide for more information on making your public code citable](https://guides.github.com/activities/citable-code/).
 
@@ -202,9 +202,9 @@ This can help users to understand how different code elements interact, and how 
 
 Another good example is this vignette describing [how to design vignettes](http://r-pkgs.had.co.nz/vignettes.html) in Rmarkdown.
 You can produce this type of documentation in any format, though Rmarkdown is particularly effectively at combining sections of code,
-code outputs and descriptive text.
+code outputs, and descriptive text.
 
-You might also consider providing examples in an interactive notebook, that users can run for themselves.
+You might also consider providing examples in an interactive notebook that users can run for themselves.
 
 
 ## Versioning
