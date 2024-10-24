@@ -27,7 +27,7 @@ It is assumed that most data are now stored digitally.
 Digital data risk becoming inaccessible as technology develops and commonly used software changes.
 Long term data storage should use open or standard file formats.
 There are [recommended formats](https://www.ukdataservice.ac.uk/manage-data/format/recommended-formats.aspx) for storing different data types,
-though we suggest avoiding formats that depend on proprietary software like SPSS, STATA and SAS.
+though we suggest avoiding formats that depend on proprietary software like SPSS, STATA, and SAS.
 
 Short term storage, for use in analysis, might use any format that is suitable for the analysis task.
 However, most analysis tools should support reading data directly from safe long term storage, including databases.
@@ -35,7 +35,7 @@ However, most analysis tools should support reading data directly from safe long
 
 ### Spreadsheets
 
-Spreadsheets (e.g. Microsoft Excel formats and open equivalents) are a very general data analysis tool.
+Spreadsheets (e.g., Microsoft Excel formats and open equivalents) are a very general data analysis tool.
 The cost of their easy to use interface and flexibility is increased difficulty of quality assurance.
 
 ```{figure} https://imgs.xkcd.com/comics/norm_normal_file_format.png
@@ -76,7 +76,7 @@ Popular open source DBMS include:
 * Redis
 
 The most common form of database is a relational database.
-Data in the tables of a relational database are linked by common keys (e.g. unique identifiers).
+Data in the tables of a relational database are linked by common keys (e.g., unique identifiers).
 This allows you to store data with minimal duplication within a table, but quickly collect related data when required.
 Relational DBMS are called RDBMS.
 
@@ -140,15 +140,15 @@ A data dictionary describes the contents and format of a dataset.
 
 For variables in tabular datasets, you might document:
 
-* a short description of what each variable represents
-* the frame of reference of the data
-* variable labels, if categorical
-* valid values or ranges, if numerical
-* representation of missing data
-* reference to the question, if survey data
-* reference to any related variables in the dataset
-* if derived, detail how variables were obtained or calculated
-* any rules for use or processing of the data, set by the data owner
+* A short description of what each variable represents.
+* The frame of reference of the data.
+* Variable labels, if categorical.
+* Valid values or ranges, if numerical.
+* Representation of missing data.
+* Reference to the question, if survey data.
+* Reference to any related variables in the dataset.
+* If derived, detail how variables were obtained or calculated.
+* Any rules for use or processing of the data, set by the data owner.
 
 See this detailed example -
 the [National Workforce Data Set](https://www.datadictionary.nhs.uk/data_sets/administrative_data_sets/national_workforce_data_set.html#dataset_national_workforce_data_set),
@@ -168,11 +168,11 @@ This form of documentation may not contain detailed information on how to use ea
 but an IAR does increase visibility of data flows.
 An IAR may include:
 
-* the owner of each dataset
-* a high level description of the dataset
-* the reason that your organisation holds the dataset
-* how the information is stored and secured
-* the risk of information being lost or compromised
+* The owner of each dataset.
+* A high level description of the dataset.
+* The reason that your organisation holds the dataset.
+* How the information is stored and secured.
+* The risk of information being lost or compromised.
 
 GOV.UK provides [IAR templates](https://www.gov.uk/government/publications/information-asset-register) that your department might use to structure their IAR.
 
