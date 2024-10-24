@@ -53,11 +53,11 @@ Ideally, you should include all code and documentation that is required to under
 
 This may include:
 
-* Project documentation including readme and contribution guidance
-* Packaged functions and code documentation
-* Unit tests
-* Dummy data and example configuration files
-* User documentation such as desk notes and installation guidance
+* Project documentation including readme and contribution guidance.
+* Packaged functions and code documentation.
+* Unit tests.
+* Dummy data and example configuration files.
+* User documentation such as desk notes and installation guidance.
 
 ## Exclude sensitive information from version control
 
@@ -67,18 +67,18 @@ In a public repository, you may need to omit confidential or sensitive aspects o
 
 You should **never** include the following in your code repository:
 
-* passwords, credentials or keys
-* real configuration files
-* code that contains sensitive information
-  * for example, code that describes a method for fraud detection
-  * or code that contains references to personally identifiable data
-  * or code that might compromise security protocols
-* data, except for small example datasets
+* Passwords, credentials or keys.
+* Real configuration files.
+* Code that contains sensitive information.
+  * for example, code that describes a method for fraud detection.
+  * or code that contains references to personally identifiable data.
+  * or code that might compromise security protocols.
+* Data, except for small example datasets.
 ```
 
 See [](excluding-from-git) for details on how to mitigate the risk of including sensitive information in a Git repository.
 
-It is again worth stressing the importance of not committing sensitive, unpublished or disclosive data to your Git history.
+It is again worth stressing the importance of not committing sensitive, unpublished, or disclosive data to your Git history.
 If you would like to include an example for end-users, a minimal dummy dataset can be committed to the repository.
 When creating realistic dummy data, care should be taken not to disclose sensitive features of the true data such as distributions and trends.
 Dummy data should always be carefully peer reviewed before being added to a repository.
@@ -100,7 +100,7 @@ If you are not familiar with using command line tools, or Git specifically, you 
 
 Commits are collections of changes to one or more files in a repository.
 Every commit is attributed to the author of the changes, providing an audit trail.
-Each commit has a unique hash - or identifier - associated with it, which has a long (e.g. `121b5b4f18231e4ee32c9c61f6754429f9572743`) and short version (e.g. `121b5b4`).
+Each commit has a unique hash - or identifier - associated with it, which has a long (e.g., `121b5b4f18231e4ee32c9c61f6754429f9572743`) and short version (e.g., `121b5b4`).
 These hashes allow us to refer to specific changes, but each commit also has an associated message that is used to describe the changes.
 
 ```{note}
@@ -270,9 +270,9 @@ however, analysts should opt to use the most simple and beneficial approach to b
 
 ```{note}
 Although we have used very simple branch names in the examples above, it's important that you use informative names for your branches in practice.
-If using an [issue tracker](issues) (e.g. GitHub Issues or Jira), it can be useful to include the issue number in branch names (e.g. `#155-fix-index-aggregation`).
+If using an [issue tracker](issues) (e.g. GitHub Issues or Jira), it can be useful to include the issue number in branch names (e.g., `#155-fix-index-aggregation`).
 This makes it easy to trace the branch back to the associated issue or task.
-Otherwise, aim to use meaningful names that describe the feature or bug that the changes will be focussed on. 
+Otherwise, aim to use meaningful names that describe the feature or bug that the changes will be ed on. 
 ```
 
 
@@ -288,11 +288,7 @@ If using the command line, you can also run `git status` to output the names of 
 When merge conflicts happen, git will mark the clashes using this syntax:
 
 ```none
-<<<<<<< HEAD
-Changes on the current branch
-=======
 Changes on the branch being merged
->>>>>>> new
 =======
 ```
 
@@ -304,7 +300,7 @@ To resolve the merge conflict, you will need to make the necessary changes and d
 Once you have resolved all conflicting text manually (there may be more than one), then you can add and commit the changes to resolve the merge conflicts.
 
 Avoid merge conflicts whenever possible.
-Do this by not editing the same files across different branches.
+Do this by avoiding editing the same files across different branches.
 If this is difficult to do, it may be that your scripts are too monolithic and should be modularised or split into multiple scripts.
 
 
@@ -320,7 +316,7 @@ Therefore, storing large files in Git typically slows down your development work
 [Git Large Files Storage (LFS)](https://git-lfs.github.com/) is a Git extension that allows you to version large files,
 but without storing the files in your repository history.
 Large files in your repository's history are instead replaced with a small text-based pointer.
-This pointer references versions of the actual files, which are stored in a separate part of your remote repository (e.g. GitHub or GitLab).
+This pointer references versions of the actual files, which are stored in a separate part of your remote repository (e.g., GitHub or GitLab).
 When you `pull` a repository including large files, only the current version of the file is retrieved from the remote server, rather than its whole history.
 This reduces the size of your local repository and the time taken to `push` and `pull` changes.
 [Git-LFS integrates well with a normal Git workflow](https://www.youtube.com/watch?v=uLR1RNqJ1Mw) and can be used for specific files,
@@ -332,7 +328,7 @@ Despite this support for large files, we recommend that remote Git repositories 
 Versioning of your data could instead be handled independently to your code;
 the version of your code should not be influenced directly by changes in the data and vice versa.
 This separation can be achieved using a tool like [DVC](https://dvc.org/), which allows you to specify where data versions are store (locally or on the cloud).
-Alternative, third party storage (e.g. cloud-based 'buckets' or databases) can provide easy data storage with varying levels of version control capability.
+Alternative, third party storage (e.g., cloud-based 'buckets' or databases) can provide easy data storage with varying levels of version control capability.
 
 
 ### Tag new releases
@@ -464,7 +460,7 @@ It is [not currently possible to prevent the notebooks from retaining cell outpu
 
 The best way to handle this situation is to clear the outputs from your notebooks before committing them to Git repositories.
 This can be done from the notebook itself, by going to the menu `Cell > All > Output > Clear` and then saving your notebook.
-Alternatively, this can be done from the command line, by running this command with your notebook file path:
+Alternatively, this can be done from the command line by running this command with your notebook file path:
 
 ```none
 jupyter nbconvert --ClearOutputPreprocessor.enabled=True --inplace <notebook_file_path>
@@ -582,12 +578,12 @@ the issues system works very similarly to other tools like Trello and Jira.
 
 The basic elements of an issue are the:
 
-* Title and description, provided by the person that submitted the issue
-* Labels that categorise the issue (e.g. enhancement or bug)
-* Comments section where the issue can be discussed
-* Assigned developers that are working on resolving the issue
+* Title and description, provided by the person that submitted the issue.
+* Labels that categorise the issue (e.g., enhancement or bug).
+* Comments section where the issue can be discussed.
+* Assigned developers that are working on resolving the issue.
 
-Within an issue's description and comments, you can reference other issues both within (e.g. `#12`) and between repos,
+Within an issue's description and comments, you can reference other issues both within (e.g., `#12`) and between repos,
 and tag individuals to notify them of your comments (`@whatstheirface`).
 Similarly, issues can be linked to specific [changes that will be merged to resolve or help to solve the issue](pull-requests).
 This makes them useful for discussing bugs and new features within a team.
@@ -616,7 +612,7 @@ The development branch here may be within the same repo, a [Fork](forking) of th
 
 The initial description of the PR should include the high level changes that have been made and might point to any relevant issues that it resolves.
 Much like issues, PRs can be linked to other issues and PRs, providing a coherent narrative of development work.
-[Keywords can be used when linking an issue (e.g. 'fixes #42')](https://docs.github.com/en/github/managing-your-work-on-github/linking-a-pull-request-to-an-issue#linking-a-pull-request-to-an-issue-using-a-keyword)
+[Keywords can be used when linking an issue (e.g., 'fixes #42')](https://docs.github.com/en/github/managing-your-work-on-github/linking-a-pull-request-to-an-issue#linking-a-pull-request-to-an-issue-using-a-keyword)
 to trigger the issue to close the PR is merged.
 Contributors can also be assigned or tagged in discussion, which can be useful for requesting help or review of a group of changes.
 
@@ -639,7 +635,7 @@ alt: The GitHub Pull Request web interface.
 Changes from [an example Pull Request on the `fingertipsR` package](https://github.com/ropensci/fingertipsR/pull/91/files).
 ```
 
-In the "Files changed" section of a PR (shown above) altered sections of files are shown before and after the changes were made, on the left and right respectively.
+In the "Files changed" section of a PR (shown above), altered sections of files are shown before and after the changes were made, on the left and right respectively.
 Where changes have deleted lines of code, these lines are highlighted in red on the left panel. And changes that add lines of code to the file are shown on the right.
 
 This highlighted summary of changes provides a useful interface for [peer review](peer_review.md).
