@@ -10,7 +10,7 @@ This section describes how we can define analysis configuration that is easy to 
 ## Basic configuration
 
 Configuration for your analysis code should include high level parameters (settings) that can be used to easily adjust how your analysis runs.
-This might include paths to input and output files, database connection settings and model parameters that are likely to be adjusted between runs.
+This might include paths to input and output files, database connection settings, and model parameters that are likely to be adjusted between runs.
 
 In early development of our analysis, lets imagine that we have a script that looks something like this:
 
@@ -66,7 +66,7 @@ As such, other analysts would need to read through the script and replace these 
 As we'll demonstrate below, collecting flexible parts of our code together makes it easier for others to update them.
 
 When splitting our data and using our model to make predictions, we've provided some parameters to the functions that we have used to perform these tasks.
-Eventually, we might reuse some of these parameters elsewhere in our script (e.g. the random seed)
+Eventually, we might reuse some of these parameters elsewhere in our script (e.g., the random seed)
 and we are likely to adjust these parameters between runs of our analysis.
 To make it easier to adjust these consistently throughout our script, we should store them in variables.
 We should also store these variables with any other parameters and options, so that it's easy to identify where they should be adjusted.
