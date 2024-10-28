@@ -160,7 +160,7 @@ def test_sum_columns():
     assert_frame_equal(expected_output, actual_output)
 ```
 
-Using  minimal and general data in the test has made it clearer what is being tested.
+Using  minimal and general data in the test has made it clearer what is being tested, and also avoids any unnecessary disclosure.
 In this case our function is very generic, so our test doesn't need to know the names of real columns in our data or even have similar values in the data.
 The test data are focussed on testing specific, realistic cases.
 This makes it easy to see that this function works correctly with positive, negative and zero values.
@@ -321,11 +321,62 @@ Integration tests that check very specific outcomes will need to be updated with
 User acceptance tests are those that check that a high level user requirement has been met.
 In analysis, these are likely part of an end to end test that checks that the output is fit for purpose.
 
-```{todo}
-Discuss testing interface with external systems (e.g. database).
-Test that your code works, given the format of response that the system can give.
-Mocks?
+## Isolate code tests from external systems
+
+Testing code that interacts with an external system can be particularly challenging when you can't guarantee
+that the system will provide you with the same response each time; this includes database queries, API requests, for example.
+
+Best practice is to seperate external system dependencies from your code as much as possible. This can mitigate against various risks, depending on your application:
+
+- For example, testing database interaction with a production database could result in damage to or loss of data.
+- Or, if making real API calls when testing a function that handles requests, this could incur unintended monetary costs.
+
+Isolating code from external systems allows for tests to run without reliance on the real systems. An example is that when testing a database interaction, code tests should still run even if the database connection goes down.
+
+One way of achieving this is with mocking, where a response from an outside system is replaced with a mock object that your code can be tested against. In this example, there's a function making an API request in `src/handle_api_request.py`, and a test function in `tests/test_handle_api_request.py`.
+
+```{code-block} python
+# src/handle_api_request.py
+import requests
+
+def make_api_request():
+    # example involving requests.get()
+    return None
+
+...
+
+# tests/test_handle_api_request.py
+import pytest
+from src.handle_api_request import make_api_request
+
+def test_make_api_request():
+    # mock requests.get
+    assert(output == expected)
+
 ```
+
+This can also be achieved with `pytest`, instead by using `unittest.mock`:
+
+```{code-block} python
+# src/handle_api_request.py
+import requests
+
+def make_api_request():
+    # example involving requests.get()
+    return None
+
+...
+
+# tests/test_handle_api_request.py
+from src.handle_api_request import make_api_request
+
+def test_make_api_request():
+    # mock requests.get
+    assert(output == expected)
+
+```
+
+Testing your code in this way means that tests evaluate how your code handles an output or response, and not the system dependency itself. This has the added benefit of helping you understand when errors are coming from an external system, as opposed to your code. 
 
 ## Write tests to assure that bugs are fixed
 
