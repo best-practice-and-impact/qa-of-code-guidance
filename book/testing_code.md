@@ -324,59 +324,61 @@ In analysis, these are likely part of an end to end test that checks that the ou
 ## Isolate code tests from external systems
 
 Testing code that interacts with an external system can be particularly challenging when you can't guarantee
-that the system will provide you with the same response each time; this includes database queries, API requests, for example.
+that the system will provide you with the same response each time; this could include code querying a database or
+making API requests, for example.
 
-Best practice is to seperate external system dependencies from your code as much as possible. This can mitigate against various risks, depending on your application:
+Best practice is to seperate external system dependencies from your code tests as much as possible. This can mitigate against various risks, depending on your application:
 
-- For example, testing database interaction with a production database could result in damage to or loss of data.
-- Or, if making real API calls when testing a function that handles requests, this could incur unintended monetary costs.
+- Testing database interaction with a production database could result in damage to, or loss of, data.
+- Making real API calls when testing a function that handles requests could incur unintended monetary costs.
 
-Isolating code from external systems allows for tests to run without reliance on the real systems. An example is that when testing a database interaction, code tests should still run even if the database connection goes down.
+Isolating code from external systems allows for tests to run without reliance on the real systems; for example, tests for a database interaction that can still run even if the database connection goes down.
+Testing your code in this way means that tests evaluate how your code handles an output or response, and not the system dependency itself. This has the added benefit of helping you understand when errors are coming from an external system, as opposed to your code.
 
-One way of achieving this is with mocking, where a response from an outside system is replaced with a mock object that your code can be tested against. In this example, there's a function making an API request in `src/handle_api_request.py`, and a test function in `tests/test_handle_api_request.py`.
+One way of achieving this is with mocking, where a response from an outside system is replaced with a mock object that your code can be tested against. In this example, there's a function making an API request in `src/handle_api_request.py`, and two test functions in `tests/test_handle_api_request.py`. The response from `requests.get()` is mocked with a `Mock()` object, to which `text` and `status_code` attributes are assigned, so that the `get_response()` function can be evaluated for how it handles successful and unsuccessful requests. Thanks to the mocking, get requests are not made to `http://example.com`. AI has been used to produce content within this artefact.
 
 ```{code-block} python
 # src/handle_api_request.py
 import requests
 
-def make_api_request():
-    # example involving requests.get()
-    return None
+def get_response(url: str):
+    response = requests.get(url)
+    if response.status_code != 200:
+        raise(requests.HTTPError("Unsuccessful request"))
+
+    return response.text
 
 ...
 
 # tests/test_handle_api_request.py
+from src.api_requests import get_response
+import requests
 import pytest
-from src.handle_api_request import make_api_request
+from unittest import mock
 
-def test_make_api_request():
-    # mock requests.get
-    assert(output == expected)
+@mock.patch("requests.get")
+def test_get_response_success(mock_requests_get):
+    mock_response = mock.Mock()
+    mock_response.text = "Successful"
+    mock_response.status_code = 200
 
-```
+    mock_requests_get.return_value = mock_response
+    
+    actual = get_response("http://example.com")
+    assert(actual == "Successful")
 
-This can also be achieved with `pytest`, instead by using `unittest.mock`:
-
-```{code-block} python
-# src/handle_api_request.py
-import requests
-
-def make_api_request():
-    # example involving requests.get()
-    return None
-
-...
-
-# tests/test_handle_api_request.py
-from src.handle_api_request import make_api_request
-
-def test_make_api_request():
-    # mock requests.get
-    assert(output == expected)
+@mock.patch("requests.get")
+def test_get_response_fail(mock_requests_get):
+    mock_response = mock.Mock()
+    mock_response.status_code = 400
+    mock_requests_get.return_value = mock_response
+    
+    with pytest.raises(requests.HTTPError):
+        actual = get_response("http://example.com")
 
 ```
 
-Testing your code in this way means that tests evaluate how your code handles an output or response, and not the system dependency itself. This has the added benefit of helping you understand when errors are coming from an external system, as opposed to your code. 
+[Monkeypatching](https://docs.pytest.org/en/stable/how-to/monkeypatch.html#how-to-monkeypatch-mock-modules-and-environments) in `pytest` provides an alterative way of handling mock objects and attributes, and also allows for the mocking of environment variables.
 
 ## Write tests to assure that bugs are fixed
 
