@@ -40,7 +40,7 @@ A computer program that runs code in a particular programming language.
 For example, the program that reads your Python or R analysis code and runs it.
 A non-interactive interpreter runs code in order, which is important for reproducibility.
 
-Interactive interpreters allow you to run individual lines of code, which means that code can be run out of order.
+Interactive interpreters allow you to run individual lines of code, which means that you can run code  out of order.
 Notebooks use interactive interpreters.
 These are not suitable for running analysis pipelines, because they do not ensure that the code is run reproducibly.
 
@@ -200,13 +200,13 @@ We recommend using Python and R, which support the good practices outlined in th
 
 Proprietary software, including SPSS, SAS, and Stata are closed source.
 These are expensive to use and do not support many of the good analysis practices outlined in this guidance.
-Not using open source analysis tools means that our users need to purchase software to reproduce our results.
+Not using open source analysis tools means that your users need to purchase software to reproduce your results.
 
 
 ### Packages
 
 Packages are file structures that contain code and documentation.
-These collections of code are designed to be installed and re-used with ease.
+These collections of code are designed for you to install and re-use them with ease.
 Packages in Python and R act as extensions, to allow us to reuse code that has already been written.
 
 "Library" is similarly used to describe a software collection, however, packages are more specifically for distribution of code.
