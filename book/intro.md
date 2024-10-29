@@ -10,7 +10,7 @@ We are extremely grateful for any feedback that you are able to provide on exist
 ## How to get the most out of the book
 
 This guidance describes software engineering good practices that are tailored to those working with data using code.
-It is designed for those who would like to quality assure their code and increase the reproducibility of their analyses.
+It is designed to support you to quality assure your code and increase the reproducibility of your analyses.
 Software that apply these practices are referred to as reproducible analytical pipelines (RAP).
 
 This guidance is relevant if you are:
@@ -31,7 +31,7 @@ you should strive to apply the most appropriate quality assurance practices give
 
 The principles in this book are language agnostic.
 The book does not aim to form a comprehensive learning resource and you may often need to study further resources to implement these practices.
-That said, examples and useful references are provided for **Python** and **R**, as open source languages that are commonly applied across government.
+That said, we have provided examples and useful references for **Python** and **R**, as these open source languages that are commonly applied across government.
 
 
 ## About us
