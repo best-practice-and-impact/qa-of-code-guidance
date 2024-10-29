@@ -10,12 +10,12 @@ Please get in touch with feedback or case studies to support the guidance
 or emailing us at [emailing us](mailto:ASAP@ons.gov.uk).
 ```
 
-This section of the guidance is targeted at those who manage data analysis/science/engineering work in government
+This section of the guidance targets those who manage data analysis/science/engineering work in government
 or those acting as product owners for analytical products.
 
 It aims to help you support your team to apply the good quality assurance practices described in the wider
 [Quality assurance of code for analysis and research guidance](https://best-practice-and-impact.github.io/qa-of-code-guidance/intro.html).
-Processes that apply these good practices are referred to as a reproducible analytical pipelines (RAP).
+We refer to processes that apply these good practices as a reproducible analytical pipelines (RAP).
 
 Before applying this guidance, you should have a basic awareness of the tools and
 techniques used to do quality analysis as code - the [introduction to RAP course](https://learninghub.ons.gov.uk/course/view.php?id=1236) outlines these.
@@ -27,11 +27,11 @@ You should use this when designing and managing the development of analysis as c
 
 ## Apply quality assurance proportional to risk
 
-As described by [the Aqua book](https://www.gov.uk/government/publications/the-aqua-book-guidance-on-producing-quality-analysis-for-government),
+As the [the Aqua book](https://www.gov.uk/government/publications/the-aqua-book-guidance-on-producing-quality-analysis-for-government) notes,
 the quality assurance of our analysis should be proportional to the complexity and risk of the analysis.
 
 When managing analytical work, you should not need an in-depth understanding of the analysis code to trust that it is working correctly.
-However, you should be confident that the approach the team has taken is appropriate given the user need,
+However, you should be confident that the team has taken an appropriate approach given the user need,
 and that proportionate quality assurance is being applied to the development and running of the analysis.
 
 You should work with your team to decide which quality assurance practices are necessary given each piece of analysis.
@@ -45,8 +45,8 @@ While quality assurance must be applied relative to the risk and complexity of t
 It will take time to learn to apply the necessary good practices, so you should support their gradual development of these skills.
 
 [The RAP learning pathway](https://learninghub.ons.gov.uk/mod/page/view.php?id=8699) provides training in good practices.
-Then the wider [Quality assurance of code for analysis and research guidance](https://best-practice-and-impact.github.io/qa-of-code-guidance/intro.html)
-can be used as a reference to apply these practices to analysis.
+You can use the wider [Quality assurance of code for analysis and research guidance](https://best-practice-and-impact.github.io/qa-of-code-guidance/intro.html)
+as a reference to apply these practices to analysis.
 You should identify where each analyst is along the pathway - they should look to develop the next skill in the pathway and apply this,
 rather than attempting to adopt them all at once.
 
@@ -59,11 +59,11 @@ There are number of case studies that describe how
 [good quality assurance practices have improved government analysis](https://analysisfunction.civilservice.gov.uk/support/reproducible-analytical-pipelines/rap-case-studies/).
 
 Not following good practices creates [technical debt](https://en.wikipedia.org/wiki/Technical_debt), which slows down further development of the analysis.
-This can be necessary for delivering to short deadlines, but time should be set aside to address this for continued development of the analysis.
+This can be necessary for delivering to short deadlines, but you should set aside time to address this for continued development of the analysis.
 
 Where quality assurance of the code doesn't meet your target level of assurance,
 for example where there is limited time or skill,
-then it is necessary to supplement this with more in-depth assurance of outputs.
+then you should supplement this with more in-depth assurance of outputs.
 This might include dual running the analysis with an independent system and consistency checks across the output data.
 
 The remaining parts of this section provide questions that aim to help you assess the quality assurance practices that your team are applying in their analysis.
@@ -78,10 +78,10 @@ These questions aim to help you assess the design decisions at the beginning of 
 
 Understanding user needs ensures that the analysis is valuable.
 
-* There should be a plan to consult users at the beginning and throughout the development process, to ensure that their needs are being met.
+* You should have a plan to consult users at the beginning and throughout the development process, to ensure that you meet their needs.
 * The methodology and data should be suitable for the question being asked.
-* The analysis must be developed by more than one individual, to allow pair programming, peer review, and mentoring. This increases the sustainability of analysis.
-* The analysis should be carried out using open-source analysis tools, wherever possible.
+* More than one person should develop the analysis to allow pair programming, peer review, and mentoring. This increases the sustainability of analysis.
+* You should use open-source analysis tools to carry out the analysis, wherever possible.
 Your team should be able to explain why they have chosen the analysis tools and why they are confident that they are fit for purpose.
 
 
@@ -89,9 +89,9 @@ Your team should be able to explain why they have chosen the analysis tools and 
 
 Versioning input data ensures that we can reproduce our analysis.
 
-* Input data should be versioned, so that analysis outputs can be reproduced.
-* Data should be stored in an open format (e.g. CSV or ODS), not formats that are restricted to proprietary software like SAS and Stata.
-* Large or complex datasets should be stored in a database.
+* You should version input data so that you can reproduce analysis outputs.
+* You should store data in an open format (e.g. CSV or ODS), not formats that are restricted to proprietary software like SAS and Stata.
+* You should store large or complex datasets in a database.
 * You should monitor the quality of data, following [the government data quality framework](https://www.gov.uk/government/publications/the-government-data-quality-framework/the-government-data-quality-framework).
 
 
@@ -99,11 +99,11 @@ Versioning input data ensures that we can reproduce our analysis.
 
 [Version control](version_control.md) of changes provides an audit trail.
 
-* The code, documentation, and peer reviews should all be version controlled. Git software is most commonly used for this.
-* The code should be developed on an open source code platform, like GitHub. This transparency increases your users trust in the analysis.
-* There should be a clear record of every change and who made it.
+* You should version control the code, documentation, and peer reviews. Git software is most commonly used for this.
+* You should develop the code on an open source code platform, like GitHub. This transparency increases your users trust in the analysis.
+* You should have a clear record of every change and who made it.
 * Each change should be linked to a reason, for example, a new requirement or an issue in the existing code.
-* Reviews of changes should be stored with the version of the analysis that was reviewed.
+* You should store reviews of changes with the version of the analysis that was reviewed.
 
 
 ## Quality assure throughout development
@@ -116,17 +116,17 @@ to assess how the team are progressing towards the target quality assurance prac
 
 [Modular code](modular_code.md) makes it easier to understand, update and reuse the code.
 
-* Logic should be written as functions, so that it can be reused consistently and tested.
-* Related functions should be grouped together in the same file, so that it is easy to find them.
-* Logic with different responsibilities (e.g., reading data versus transforming data) should be clearly separated.
-* When code can be reused for other analyses, it should be stored and shared as a package.
+* You should write logic as functions, so that it can be reused consistently and tested.
+* You should group related functions together in the same file, so that it is easy to find them.
+* You should clearly separate logic with different responsibilities (e.g., reading data versus transforming data).
+* When code can be reused for other analyses, you should store and share this as a package.
 
 
 ### How easy is it to adjust the way that the analysis runs?
 
 [Configuration files](configuration.md) allow you to change the way the code runs without editing the code.
 
-* Parts of the code that may change should be stored in separate configuration files.
+* You should store parts of the code that may change in separate configuration files.
 * Things that often change in analysis code include input and output file paths, reference dates and model parameters.
 
 
@@ -134,20 +134,20 @@ to assess how the team are progressing towards the target quality assurance prac
 
 [Code documentation](code_documentation.md) is essential for business continuity and sustainability.
 
-* Every function should be documented in the code, so it is clear what the function is supposed to do.
+* You should document every function in the code, so it is clear what each function is supposed to do.
 * Function documentation should include what goes in and what comes out of each function.
-* Where code will be run or re-used by others, documentation should include usage examples and test data.
+* Where others will run or re-used the code, documentation should include usage examples and test data.
 
 
 ### What are the dependencies?
 
 [Project documentation](project_documentation.md) ensures that others can reproduce our analysis.
 
-* User instructions should be provided for running the analysis.
-* Software and package versions should be documented with the code.
-Typically package versions are recorded using `setup.py` and `requirements.txt` files (Python) or a `DESCRIPTION` file (R).
+* You should provide user instructions for running the analysis.
+* You should document software and package versions with the code.
+Typically, you record package versions using `setup.py` and `requirements.txt` files (Python) or a `DESCRIPTION` file (R).
 * Code should not be dependent on a specific computer to run. Running it on a colleague's system can help to check this.
-* When the same analysis is run multiple times or on different systems, it should give reproducible outcomes.
+* When you run the same analysis multiple times or on different systems, it should give reproducible outcomes.
 * Container systems, like Docker, help to create reproducible environments to run code.
 
 
@@ -155,8 +155,8 @@ Typically package versions are recorded using `setup.py` and `requirements.txt` 
 
 Transparency of our analysis increases trust.
 
-* Assumptions and caveats of the analysis should be recorded close to the code.
-* These must be communicated to users when releasing results from the analysis.
+* You should record assumptions and caveats of the analysis close to the code.
+* You must communicate these to users when releasing results from the analysis.
 
 
 ### How has peer review been done?
@@ -166,8 +166,8 @@ Transparency of our analysis increases trust.
 * Technical colleagues should conduct internal peer reviews of each change to the code.
 This will identify issues early on and makes the review process more manageable than reviewing only the final analysis.
 * Peer review should follow a standard procedure, so that reviews are consistent. Reviewers should check that each change follows the agreed good practices.
-* There should be evidence that peer reviews are acted on. When issues or concerns are raised, they should be addressed before the analysis is used.
-* If the product is high risk, external peer review should also be conducted.
+* You should evidence that peer reviews are acted on and how. When issues or concerns are raised, they should be addressed before the analysis is used.
+* If the product is high risk,  you should arrange and conduct external peer review.
 
 
 ### How have you tested the code?
@@ -175,12 +175,12 @@ This will identify issues early on and makes the review process more manageable 
 [Testing](testing_code.md) assures us that the code is working correctly.
 
 * Testing means making sure that the code produces the right outputs for realistic example input data.
-* Automated 'unit' testing should be applied to each function, to ensure that code continues to work after future changes to the code.
-* Each function and the end-to-end analysis should be tested using minimal, realistic data.
-* Testing should be more extensive on the most important or complex parts of the code. However, ideally every single function should be tested.
+* You should apply automated 'unit' testing to each function to ensure that code continues to work after future changes.
+* You should test each function and the end-to-end analysis using minimal, realistic data.
+* Your testing should be more extensive on the most important or complex parts of the code. However, ideally you would test every single function.
 * Tests should account for realistic cases, which might include missing data, zeroes, infinities, negative numbers, wrong data types, and invalid inputs.
 * Reviewers should sign-off that there is enough testing to assure that the code is working as expected.
-* Each time an error is found in the code, a test should be added to assure that the error does not reoccur.
+* Each time you identify an error in the code,you should add a test to assure that the error does not reoccur.
 
 
 ### What happens when the analysis fails to run?
