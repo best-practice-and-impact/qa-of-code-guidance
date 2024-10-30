@@ -1,7 +1,7 @@
 # Modular code
 
 The principles outlined in this chapter represent good practices for general programming and software development.
-These have been tailored to a more analytical workflow.
+We have tailored these to a more analytical workflow.
 
 ```{admonition} Pre-requisites
 :class: admonition-learning
@@ -199,7 +199,7 @@ Liskov substitution strengthens this statement to '`BankAccount` is interchangea
 we can replace any `Account` with `BankAccount` without changing how our code runs.
 This is because `BankAccount` provides all of the same methods that an `Account` does, no less.
 
-This can be similarly applied to functions.
+You can apply this similarly to functions.
 If you were to increase the domain and range of a function, to account for new cases, then this function should observe the same interface as the previous function.
 
 In short:
@@ -271,7 +271,7 @@ class SqlHandler(FileHandler):
 When multiple classes have a similar application programming interface (API, i.e. the methods they supply for users), we can easily switch between them.
 A good real-world example of this can be seen in the `scikit-learn` package, where the different linear model types are represented by different classes.
 Each linear model class supports a common set of methods, e.g. `fit()` and `predict()`.
-As such, any model can then be used in a pipeline and swapped out with minimal effort.
+As such, you can use any model in a pipeline and swap them out with minimal effort.
 Therefore, when thinking about how to break you code up into classes, consider the use of standardised methods across similar objects to make them interchangeable.
 
 
@@ -283,7 +283,7 @@ It is easy to start to mapping nouns in system descriptions to classes, and any 
 For example: 'the model loads the data', which implies that `Model` is a class that should have a `load_data` method.
 This works well for small systems, but as the complexity of your code grows you might find that one of your classes gains the majority of the underlying logic.
 This often leads to one class with many methods, while other classes just store data with very few methods.
-This can be described as 'Data Driven Design'.
+We describe this as 'Data Driven Design'.
 
 When most of your code resides in a single class, this can indicate that this class is responsible for too much of your code's logic.
 This class might become overly complex and hence difficult to maintain.
@@ -321,12 +321,12 @@ so we've added a method to `publisher` as well as `book`; we're trading maintain
 To summarise:
 
 - Classes hide implementation detail from users, enabling implementation to be changed without affecting users.
-- Look to use consistent methods in a group of related classes, so that you can switch between them without affecting the code using it.
-Consider Python 'duck typing' or abstract classes and methods.
-- Avoid storing all logic in a single class. Instead, distribute logic based on responsibilities.
+- You should look to use consistent methods in a group of related classes, so that you can switch between them without affecting the code using it.
+You should consider Python 'duck typing' or abstract classes and methods.
+- You should avoid storing all logic in a single class. Instead, distribute logic based on responsibilities.
 - Be aware of trading maintainability for complexity - one large class or too many classes can be hard to understand.
-- Design Patterns have solutions to many common problems and are a useful toolbox.
-- Prefer encapsulation over inheritance, especially with code reuse.
+- You will find Design Patterns a useful toolbox as they have solutions to many common problems.
+- You should opt for encapsulation over inheritance, especially with code reuse.
 
 
 ### Split complex code into multiple scripts
@@ -343,8 +343,6 @@ Manually executing individual lines of code allows for a slew of errors when thi
 
 Ultimately for code pipelines you will need to have some way of running your code - the humble script is
 the primary way of orchestrating your functions and classes in a pipeline fashion.
-
-<!-- The first sentence of the note below doesn't make sense to me. -->
 
 ```{note}
 Using a script does not guarantee that your code will run reproducibly, but it does ensure that code is run in the same fashion across multiple runs.
@@ -366,8 +364,8 @@ you might decide that you want these functions to sit outside of your main pipel
 This is where modules come in, to separate reusable code into logical groups.
 
 Consider a project where an analyst has created one large data analysis script.
-Upon reflection, they decide to split the logic from their pipeline into groups of functions relating to 'data processing', 'data modelling' and 'result presentation'.
-They then create a file to contain each of these groups of functions: `processing.py`, `modelling.py` and `reporting.py`.
+Upon reflection, they decide to split the logic from their pipeline into groups of functions relating to 'data processing', 'data modelling', and 'result presentation'.
+They then create a file to contain each of these groups of functions: `processing.py`, `modelling.py`, and `reporting.py`.
 They decide that they want to have a pipeline script called `main`, but they want to keep this script readable and simple.
 In R, it's best to also use an R project file.
 Working within a project allows you to use relative file paths and avoid the need to refer to specific script locations.
@@ -452,7 +450,7 @@ This requires users to manually alter file paths in the code, which is highly di
 ```
 
 ``````{admonition} A step further
-Another step that can be taken to improve clarity is to further wrap these modules into their own folder like so:
+Another step that you can take to improve clarity is to further wrap these modules into their own folder like so:
 
 `````{tabs}
 ````{tab} Python
@@ -562,5 +560,5 @@ Here are a few suggestions to consider when refactoring code from notebooks:
 After this, you might turn existing notebooks into HTML to send them stakeholders, or save them as is so that analytical peers can re-run and review your notebooks.
 The steps that you've taken to simplify your notebook code will make your code much easier to understand by readers.
 
-Bear in mind that notebook files can still be run out of order by other analysts, and that they should not be used as the main method of actually generating outputs.
+Bear in mind that other analysts can still run notebook files out of order, so they should not be used as the main method of actually generating outputs.
 Output generation should instead be trusted to scripts, where human decisions do not alter the order that code is run.
