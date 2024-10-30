@@ -1,25 +1,25 @@
 # Modular code
 
-The principles outlined in this chapter represent good practices for general programming and software development.
+This chapter outlines principles that represent good practices for general programming and software development.
 We have tailored these to a more analytical workflow.
 
 ```{admonition} Pre-requisites
 :class: admonition-learning
 
-To get the most benefit from this section, you should have an understanding of core programming concepts such as:
+You will get the most benefit from this section, if you have an understanding of core programming concepts such as:
 
 * storing information in variables
 * using control flow, such as if-statements and for-loops.
 * writing code as functions or classes.
 * using functions or classes in your code.
 
-You can find links to relevant training in the [](learning.md) section of the book.
+There are links in the [](learning.md) section of the book to relevant training.
 ```
 
 
 ## Motivation
 
-Code that is repetitive, disorganised, or overly complex can be difficult to understand, even for experienced programmers.
+Even experienced programmers can find it difficult to understand code that is repetitive, disorganised, or overly complex.
 This makes assuring, testing or changing the code more burdersome.
 You may also find it harder to spot and fix mistakes.
 
@@ -38,8 +38,8 @@ Because of this, modular code is fundamental to making analysis more reproducibl
 (modular)=
 ## Modular code
 
-Breaking your code down into smaller, more manageable chunks is a sensible way to improve readability.
-Regardless of the language, there are often techniques to containerise your code into self-contained parts such as modules, classes, or functions.
+Improve readability often involves break your code down into smaller, more manageable chunks.
+Regardless of the language, you can containerise your code into self-contained parts such as modules, classes, or functions.
 
 
 (functions)=
@@ -71,7 +71,7 @@ In turn, this makes it easier to locate bugs in the code and assure its function
 
 When it is not possible or practical to follow these practices, you should ensure that any 'side-effects' are adequately documented for both users and developers.
 This may be the case where your code interacts with a file, database or an external service.
-Ultimately, if you do signal where these kind of things might happen, someone trying to debug issues will know where to look.
+Ultimately, signalling where these kind of things might happen, helps someone trying to debug issues know where to look.
 
 To summarise:
 
@@ -85,7 +85,7 @@ break down your code into smaller functions and build up your functionality with
 
 Classes are fundamental parts of [object-orientated programming (OOP)](https://en.wikipedia.org/wiki/Object-oriented_programming).
 They create an association between data (attributes of the class) and logic (methods of the class).
-As you will see in the examples below, classes can be useful when representing real objects in our code.
+Classes can be useful when representing real objects in our code, as the examples below demonstrate.
 
 Although classes exist in R, [writing custom classes](https://adv-r.hadley.nz/oo.html) is less common than it is in Python (and other OOP enabling languages).
 Because of this, the following sub-section will focus primarily on Python classes.
@@ -93,7 +93,7 @@ Because of this, the following sub-section will focus primarily on Python classe
 With a more complex system, OOP can help to reduce complexity by hiding low-level details from users, such as an internal state.
 
 ```{note}
-The 'state' of an object is usually a set of variables that are particular to a given instance of a class.
+An object's 'state' is usually a set of variables that are particular to a given instance of a class.
 To illustrate, imagine a bank account that is represented by an `Account` class.
 You can have many instances of this class (many unique bank accounts), each defined by the following internal state:
 
@@ -102,7 +102,7 @@ You can have many instances of this class (many unique bank accounts), each defi
 - balance
 ```
 
-Since the end user does not need to know all of the state associated with an object, when writing classes consider marking such state as 'private'.
+When writing classes consider marking such state as 'private', since the end user does not need to know all of the state associated with an object.
 This prevents users from accessing attributes directly, instead accessing them through class methods (functions defined with the class).
 
 ````{admonition} Method vs Function
@@ -197,15 +197,15 @@ They should extend their usefulness, but retain their original functionality.
 If our `BankAccount` class inherits from `Account` we should consider that 'a `BankAccount` is an `Account`'.
 Liskov substitution strengthens this statement to '`BankAccount` is interchangeable with an `Account`';
 we can replace any `Account` with `BankAccount` without changing how our code runs.
-This is because `BankAccount` provides all of the same methods that an `Account` does, no less.
+This is because `BankAccount` provides all of the same methods that an `Account` does.
 
 You can apply this similarly to functions.
 If you were to increase the domain and range of a function, to account for new cases, then this function should observe the same interface as the previous function.
 
 In short:
 
-- Objects should be replaceable with instances of their subclasses, without altering the correctness of that program.
-- Functions should be replaceable with similar functions that share the same interface.
+- You should be able to replace objects with instances of their subclasses, without altering the correctness of that program.
+- You should be able to replace functions with similar functions that share the same interface.
 ```
 
 However, we should be wary that inheritance locks our class in to the object that it inherits from.
