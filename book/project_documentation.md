@@ -124,7 +124,7 @@ which is formatted into HTML when viewed on our repository.
 ## User desk instructions
 
 If your project is very user focused for one particular task,
-for example developing a statistic production pipeline for other analysts to execute,
+for example, developing a statistic production pipeline for other analysts to execute,
 it is very important that the code users understand how to appropriately run your code.
 
 These instructions should include:
@@ -263,8 +263,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - bug in `multiple_each_in_list()`, where output was not returned
 ```
 
-Similarly to versioning, a changelog is useful for users to determine whether an update to your code is compatible with their work, which may depend on your code.
-It can also document which parts of your code will no longer be supported in future version and which bugs in your code have been addressed.
+Similarly to versioning, users find a changelog is useful to determine whether an update to your code is compatible with their work, which may depend on your code.
+It can also document which parts of your code will no longer be supported in future version and which bugs in your code you have addressed.
 Your changelog can be in any format and should be associated with your code documentation, so that it is easy for users and other contributors to find.
 
 [keep a changelog](https://keepachangelog.com/en/1.0.0/) provides a simple but effective template for recording changes to your code.
@@ -305,9 +305,9 @@ For example, an MIT LICENSE file might look like:
 
 In government, we [support and promote open source](https://www.gov.uk/service-manual/service-standard/point-12-make-new-source-code-open) whenever possible.
 [Open source](https://opensource.com/resources/what-open-source) software is software with source code that anyone can freely inspect, modify and enhance.
-As a government analyst, you should aim to make all new source code open, unless justification can be provided for withholding part of your source code.
+As a government analyst, you should aim to make all new source code open, unless you can justify witholding part of your source code.
 
-Open sourcing code benefits yourself, other government analysts and the public.
+Open sourcing code benefits you, other government analysts, and the public.
 
 Personal benefits from open sourcing include:
 
@@ -324,5 +324,5 @@ While the public benefit from:
 
 Please see the [Government Data Service (GDS) guidance](https://www.gov.uk/government/publications/open-source-guidance/when-code-should-be-open-or-closed)
 for help deciding when code should be open or closed.
-Security concerns for coding in the open are also addressed in further
-[GDS guidance](https://www.gov.uk/government/publications/open-source-guidance/security-considerations-when-coding-in-the-open). Additional guidance on deciding when and how to open source, the benefits, and good practice is available from the [Analysis Function](https://analysisfunction.civilservice.gov.uk/policy-store/open-sourcing-analytical-code/).
+Further
+[GDS guidance](https://www.gov.uk/government/publications/open-source-guidance/security-considerations-when-coding-in-the-open) addresses security concerns for coding in the open. Additional guidance on deciding when and how to open source, the benefits, and good practice is available from the [Analysis Function](https://analysisfunction.civilservice.gov.uk/policy-store/open-sourcing-analytical-code/).
