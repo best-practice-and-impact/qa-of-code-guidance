@@ -1,7 +1,6 @@
 # Project documentation
 
-Whether you're developing a package or collaborating on a piece of analysis,
-documenting your project will makes it much easier for others to understand your goal and ways of working.
+Documenting your project will makes it much easier for others to understand your goal and ways of working, whether you're developing a package or collaborating on a piece of analysis.
 
 
 ## README
@@ -24,11 +23,11 @@ We suggest the following for a good README:
 ## Contributing guidance
 
 When collaborating, it is also useful to outline the standards used within your project.
-This might include particular packages that should used for certain tasks and guidance on the [code style](code-style) used in the project.
-If you plan to have contributors from outside your organisation, it is useful to include a code of conduct too.
+This might include particular packages required for certain tasks and guidance on the [code style](code-style) used in the project.
+Consider including a code of conduct if you plan to have contributors from outside your organisation.
 Please [see GitHub](https://docs.github.com/en/github/building-a-strong-community/adding-a-code-of-conduct-to-your-project) for advice on creating a code of conduct.
 
-For an example, see the CONTRIBUTING file from our [gptables package](https://github.com/best-practice-and-impact/gptables/blob/master/CONTRIBUTING.md):
+See the CONTRIBUTING file from our [gptables package](https://github.com/best-practice-and-impact/gptables/blob/master/CONTRIBUTING.md) for an example:
 
 `````{tabs}
 
@@ -143,7 +142,7 @@ The environment that your code runs in includes the machine, the operating syste
 It is important to record this information to ensure reproducibility.
 
 The simplest way to document which packages your code is dependent on is to record them in a text file.
-This is typically called `requirements.txt`.
+We typically call this text file `requirements.txt`.
 
 Python packages record their dependencies within their `setup.py` file, via `setup(install_requires=...)`.
 You can get a list of your installed python packages using `pip freeze` in the command line.
@@ -152,15 +151,15 @@ You can get a list of your installed python packages using `pip freeze` in the c
 Packages are listed under the `Imports` key.
 You can get a list of your installed R packages using the `installed.packages()` function.
 
-Environment management tools, such as
+You will find environment management tools, such as
 [`renv`](https://rstudio.github.io/renv/articles/renv.html) for R or
-[`pyenv`](https://github.com/pyenv/pyenv) for python, are very useful for keeping track of software and package versions used in a project.
+[`pyenv`](https://github.com/pyenv/pyenv) for python useful for keeping track of software and package versions used in a project.
 
 
 ## Citation
 
-For research or analytical code that is likely to be referenced by others, it can be helpful to provide a citation template.
-This can be included in your code repository as a `CITATION` file or part of your `README`.
+It can be helpful to provide a citation template for research or analytical code that is likely to be referenced by others.
+You can include this in your code repository as a `CITATION` file or part of your `README`.
 For example, the R package `ggplot2` provides the following:
 
 ```none
@@ -181,8 +180,8 @@ A BibTeX entry for LaTeX users is
  }
 ```
 
-This might include multiple citations, if your project includes multiple datasets, pieces of code or outputs with their own
-[DOIs](https://en.wikipedia.org/wiki/Digital_object_identifier).
+If your project includes multiple datasets, pieces of code or outputs with their own
+[DOIs](https://en.wikipedia.org/wiki/Digital_object_identifier), this might include multiple citations.
 
 See this [GitHub guide for more information on making your public code citable](https://guides.github.com/activities/citable-code/).
 
@@ -191,14 +190,14 @@ See this [GitHub guide for more information on making your public code citable](
 
 Vignettes are a form of supplementary documentation, containing applied examples that demonstrate the intended use of the code in your project or package.
 Docstrings may contain examples applying individual functional units, while vignettes may show multiple units being used together.
-The term vignette is usually used with reference to R packages, for example this introduction to the
+We use the term vignette with reference to R packages, for example this introduction to the
 [`dplyr` package](https://cran.r-project.org/web/packages/dplyr/vignettes/dplyr.html) for data manipulation.
 However, the same long-form documentation is beneficial for projects in any programming language - for instance the
 [`pandas` basics guide](https://pandas.pydata.org/docs/user_guide/basics.html).
 
 We've seen that [docstrings](docstrings) can be used to describe individual functional code elements.
-Vignettes provide a demonstration of the intended use for these classes and functions, in a realistic context.
-This can help users to understand how different code elements interact, and how they might use your code in their own program.
+Vignettes demonstrate the intended use for these classes and functions in a realistic context.
+This shows users how different code elements interact and how they might use your code in their own program.
 
 Another good example is this vignette describing [how to design vignettes](http://r-pkgs.had.co.nz/vignettes.html) in Rmarkdown.
 You can produce this type of documentation in any format, though Rmarkdown is particularly effectively at combining sections of code,
@@ -211,14 +210,14 @@ You might also consider providing examples in an interactive notebook that users
 
 Documenting the version of your code provides distinct points of reference in the code's development.
 Recording the version of code used for analysis is important for reproducing your work.
-When used in combination with [](version_control.md), versioning allows you to recover the exact code used to run your analysis and thus reproduce the same results.
+Combining versioning with [](version_control.md) allows you to recover the exact code used to run your analysis, and thus reproduce the same results.
 
 [Semantic versioning](https://semver.org/) provides useful rules for versioning releases of your code.
-Following these rules also helps other users of your code to understand how changes in your code may affect their software.
+Follow these rules to help other users of your code  understand how changes in your code may affect their software.
 Each level of version number indicates the extent of changes to the application programming interface (API) of your code,
-i.e. the part of the code that a user interacts with directly.
+i.e., the part of the code that a user interacts with directly.
 Changes to the major version number indicate changes to the API that are not compatible with use of previous versions of the code.
-While changes is the minor and patch numbers indicate changes that are either compatible or have no effect on the use of the code, respectively.
+While changes to the minor and patch numbers indicate changes that are either compatible or have no effect on the use of the code, respectively.
 
 ```{figure} ./_static/semantic_versioning.png
 ---
@@ -239,7 +238,7 @@ As this guidance will change over time, this version number provides users with 
 
 ## Changelog
 
-A changelog records the major changes that have occurred to a project or package, between versioned releases of the code.
+A changelog records the major changes that have occurred to a project or package between versioned releases of the code.
 
 ```{code-block}
 # Changelog
