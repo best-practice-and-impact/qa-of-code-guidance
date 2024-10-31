@@ -15,15 +15,13 @@ Comments are lines of text in source code files that typically aren't executed a
 They are small notes or annotations written by those working on the code.
 Often, they provide context or explain the reasoning behind implementation decisions.
 
-Comments are essential to help those working on the code in the future to understand any non-obvious details
-around how and why the code has been written in a particular way.
+Comments are essential for explaining non-obvious details around around how and why the code has been written in a particular way to help those working on the code in the future.
 As such, when it comes to providing relevant and perhaps higher-level documentation to the end consumer on the functionality of your code,
 there are much more appropriate solutions such as [docstrings](docstrings).
 
 Although extremely useful, comments should be used sparingly.
 Excessive use of code comments often leads to redundancy and can, ironically, make your code harder to read.
-It is easy for comments to not be updated as changes are made to the code.
-Outdated, or irrelevant comments can confuse or mislead.
+It is easy to fail to update comments as you change code. However, outdated, or irrelevant comments can confuse or mislead.
 
 ```{note}
 **Remember**: the only point of 'truth' is the code that is executed - if the comments are out of date compared to the actual code, it may not be immediately apparent.
@@ -156,20 +154,20 @@ print("Run me!")
 ````
 
 It is easy to forget which parts of code have been commented out and why they have been commented.
-It introduces a human factor into the equation, which might not be accounted for if someone in the future is not aware of the commented-out code.
+A human factor is then introduced into the equation, which might not be accounted for if someone in the future is not aware of the commented-out code.
 This is likely to produce inconsistent runs of the same piece of code.
 This code might quickly become out of sync with the rest of the changes in the codebase,
 as developers may not consider updating code that is commented out if they assume it is obsolete.
 
 You should instead use appropriate control flow (such as `if/else` statements) to determine when these sections should be run.
-When changes are required between individual runs of your analysis, you should consider [defining these options in a dedicated configuration file](configuration.md).
+You should consider [defining these options in a dedicated configuration file](configuration.md) when changes are required between individual runs of your analysis.
 
 In summary, you should use comments sparingly but purposefully.
 Make sure comments:
 
-- explain **why** certain things are done, in order to provide context around the decisions that you have made
-- do not echo what your code is already telling the reader
-- are accurate and still relevant after code changes
+- explain **why** certain things are done, in order to provide context around the decisions that you have made.
+- do not echo what your code is already telling the reader.
+- are accurate and still relevant after code changes.
 
 
 (docstrings)=
@@ -404,13 +402,12 @@ Sphinx primarily uses the [`reStructuredText`](https://docutils.sourceforge.io/d
 That said, for those more familiar with `markdown` and in teams/environments where learning a new markup language is not a top priority,
 [`sphinx` can be extended to also support `markdown`](https://www.sphinx-doc.org/en/master/usage/markdown.html).
 
-Sphinx supports code highlighting for multiple programming languages within a project,
-however, other tools may be required to automatically collate documentation from code in languages other than Python. These are not addressed here.
+Sphinx supports code highlighting for multiple programming languages within a project. However, you may require other tools to automatically collate documentation from code in languages other than Python. These are not addressed here.
 
 Sphinx also supports theming, with a [myriad of themes](https://www.writethedocs.org/guide/tools/sphinx-themes/) available out of the box.
-With a little bit of extra time you can even develop and adapt the existing themes into a custom theme suitable for your work.
+You can even develop and adapt the existing themes into a custom theme suitable for your work with a little bit of extra time.
 
-As well as theming support, `sphinx` allows users to develop extensions that extend its functionality.
+`Sphinx` allows users to develop extensions that extend its functionality, as well as theming support,.
 This GitHub repository provides a list of [useful ways to extend the functionality of `sphinx`](https://github.com/yoloseem/awesome-sphinxdoc) to suit your needs.
 
 To illustrate how this can be extremely useful, we will introduce the [doctest extension](https://www.sphinx-doc.org/en/master/usage/extensions/doctest.html).
@@ -434,8 +431,7 @@ provide a good demonstration of how you would apply it in practice.
 
 Once built, the HTML files containing your documentation can be opened in any browser.
 Usually this means looking for an `index.html` file in the output directory and opening it with your browser.
-This is sufficient for local usage. However, in order to improve the end-user experience and remove the need to browse the files looking for `index.html`,
-it is wise to host this documentation somewhere where it will be publicly available.
+This is sufficient for local usage. However,it is wise to host this documentation somewhere where it will be publicly available to improve the end-user experience and remove the need to browse the files looking for `index.html`.
 
 Your version control platform might support hosting web pages already.
 GitHub provides this hosting via [GitHub Pages](https://pages.github.com/) and is able to host not only documentation,
