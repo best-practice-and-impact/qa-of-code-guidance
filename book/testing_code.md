@@ -175,14 +175,6 @@ that we could use this to sum columns in any other context.
 We used a single test function above, but could have created separate tests for each scenario and included tests for more than two input columns, for example.
 
 ## Structure test files to match code structure
-*Add more information on how to structure tests. For example:*
-
-*when should use you test classes (what are the benefits) - This is covered for Python in [section]
-test file per module or function - Should mimic the structure of your main file / module
-best way to write tests
-where should your tests file be
-the importance of importing your package**
-etc...*
 
 In [](modular_code) we describe how complexity can be managed by separating code into related groups.
 Modular, well-structured code is easier to write tests for.
@@ -292,6 +284,21 @@ class TestSub(TestBase):
 The R  project structure above has one test file per function in the modules.
 There are multiple test files for the `math.R` module because it contains more than one function.
 Tests in these test files do not need grouping into classes, as the file name is used to indicate exactly which function or class is being tested.
+If we are wishing to link tests in R, we can use contexts to combine tests into blocks which test related functionality.
+The following example links two different tests under the same context named "my_sum testing":
+
+```{code-block} r
+context("my_sum testing")
+
+test_that("my_sum returns correct value", {
+    expect_that(my_sum(1,1), equals(2))
+    expect_that(my_sum(-1,1), equals(0))
+})
+
+test_that("my_sum missing value", {
+    expect_that(my_sum(NA,1), equals(NA))
+})
+```
 
 These are the common conventions for each of Python and R, but are interchangeable.
 Use the approach that makes it easiest for developers to identify the relationship between tests and the code they are testing.
@@ -304,6 +311,33 @@ If unit tests and code are located together in the same file,
 the unit tests would also be packaged and installed by additional users.
 Therefore when packaging code,
 the unit tests should be moved to an adjacent test folder as users will not need to have unit tests installed when installing the package.
+
+When separating unit tests into main package and testing scripts, its important to import your package to ensure the correct functions are being unit tested.
+For the module structure outlined previously, we would use `from src.math import my_math_function`.
+For R you need to specify the name of your package within the `testthat.R` file within your tests folder.
+
+## Structuring tests
+
+In order to maintain a consistency across modules you develop, you should follow pep8 (python)
+or Google / tidyverse (R) standards when structuring unit tests.
+
+For python this involves importing all needed function at the beginning of the test file.
+To ensure that the correct functions are imported from your module,
+it is also recommend to install a local editable version into your virtual environment.
+This is done by running `pip install -e .` and any changes made to your
+module functions will also be updated in your python environment.
+Following this it is recommend to define fixtures, classes and then test functions.
+An example of this can be found below in [](#use-fixtures-to-reduce-repetition-in-test-set-up).
+
+Similar structure should be followed in R, with all modules loaded in the beginning of a test script.
+Test contexts and then functions should be defined in turn as shown above.
+
+Generally tests within the same file should follow some structure or order.
+We reccomend that the order that functions are defined in the main script is also mirrored
+within the test scripts.
+This will be easier for future developers to debug and follow.
+It also ensures that no functions have been missed and do not have unit tests written.
+
 
 ## Test that new logic is correct using unit tests
 
