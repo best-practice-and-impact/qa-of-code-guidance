@@ -318,8 +318,8 @@ For R you need to specify the name of your package within the `testthat.R` file 
 
 ## Structuring tests
 
-In order to maintain a consistency across modules you develop, you should follow pep8 (python)
-or Google / tidyverse (R) standards when structuring unit tests.
+In order to maintain a consistency across modules you develop, you should follow [PEP8](https://www.python.org/dev/peps/pep-0008/) (python)
+or [Google](https://google.github.io/styleguide/Rguide.html) / [tidyverse](https://style.tidyverse.org/) (R) standards when structuring unit tests.
 
 For python this involves importing all needed function at the beginning of the test file.
 To ensure that the correct functions are imported from your module,
