@@ -332,7 +332,10 @@ Best practice is to separate external system dependencies from your code tests a
 - Testing database interaction with a production database could result in damage to, or loss of, data.
 - Making real API calls when testing a function that handles requests could incur unintended monetary costs.
 
-Isolating code from external systems allows for tests to run without reliance on the real systems; for example, tests for a database interaction that can still run even if the database connection goes down. Writing tests in this way means that tests evaluate how your code handles an output or response, and not the system dependency itself. This is another benefit of enforcing isolation in unit tests - helping you understand when errors are coming from an external system, and when they're coming from your code. The unit of code being tested is refered to as the 'System Under Test' (SUT).
+Isolating code from external systems allows for tests to run without reliance on the real systems; for example, tests for a database interaction that can still run even if the database connection goes down.
+Writing tests in this way means that tests evaluate how your code handles an output or response, and not the system dependency itself.
+This is another benefit of enforcing isolation in unit tests - helping you understand when errors are coming from an external system, and when they're coming from your code.
+The unit of code being tested is referred to as the 'System Under Test' (SUT).
 
 One way of achieving this is with mocking. This is where a response from an outside system is replaced with a mock object that your code can be tested against.
 In this example, there's a function making an API request in `src/handle_api_request.py`, and two test functions in `tests/test_handle_api_request.py`.
