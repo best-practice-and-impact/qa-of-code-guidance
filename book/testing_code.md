@@ -294,18 +294,11 @@ Newly developed packages or those with very few users are more likely to not be 
 We define integration tests as those that test on a higher level than a unit. This includes testing that:
 * multiple units work together correctly
 * multiple high level functions work together (e.g. many units grouped into stages of a pipeline)
-* the end to end analysis runs correctly and meets users needs
 * the analysis works with typical inputs from other systems
 
 Integration tests give us assurance that our analysis is fit for purpose.
 Additionally, they give us safety when refactoring or rearranging large parts of code.
 Refactoring is an important part of managing the complexity of our analysis as it grows.
-
-Consider a piece of analysis that has an end to end test to check that the overall system gives an expected outcome.
-For example, it tests that output data are the right shape, in the right format and have specific properties (e.g. a specific distribution).
-There might also be a "regression" test that checks that the exact values in the output remain the same.
-After any changes that are made to tidy up or refactor the
-code, these end to end tests can be run to assure us that no functionality has been inadvertently changed.
 
 We can similarly consider a high level stage of an analysis pipeline.
 If we have a stage responsible for imputing missing values, we might create integration tests to check that all values are
@@ -318,8 +311,14 @@ Integration tests are more robust when they focus on general high level outcomes
 Integration tests that check very specific outcomes will need to be updated with any small change to the logic within the part that is being tested.
 ```
 
-User acceptance tests are those that check that a high level user requirement has been met.
-In analysis, these are likely part of an end to end test that checks that the output is fit for purpose.
+## Test that the analysis runs as expected using end to end tests
+
+End to end testing (sometimes called system testing) checks the entire workflow from start to finish, ensuring all components work correctly in real-world scenarios. While integration testing focuses on the interaction of specific modules, end to end testing involves all elements of a pipeline. This is useful when refactoring code for example, by providing assurance that overall functionality remains unchanged. 
+
+For example, a piece of analysis has an end to end test to check that outputs are generated and the data are the right shape or format. There might also be a "regression" test that checks that the exact values in the output remain the same. After any changes that are made to tidy up or refactor the code, these end to end tests can be run to assure us that no functionality has been inadvertently changed.
+
+End to end tests can also be used to quality assure a project from an end user's perspective, and should be run in an environment that replicates the production environment as closely as possible. This type of testing can catch errors that individual unit tests might miss, and confirm that the output is fit for purpose and the user requirements are met. End to end testing is a form of 'black-box' testing, meaning the tester verifies functionality without focusing on the underlying code. It is therefore important to use end to end testing alongside other forms of testing such as unit tests.
+
 
 ```{todo}
 Discuss testing interface with external systems (e.g. database).
