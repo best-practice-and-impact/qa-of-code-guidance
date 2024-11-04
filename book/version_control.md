@@ -599,27 +599,27 @@ If your analysis code is widely useful, others that use your code may also sugge
 [Setting issue templates](https://docs.github.com/en/free-pro-team@latest/github/building-a-strong-community/configuring-issue-templates-for-your-repository)
 for your project can be an effective way of encouraging users and collaborators to use informative descriptions when creating issues.
 For example, a bug issue should include simple instructions to help maintainers reproduce the problem.
-While feature requests might include information on how the user expects the new feature to work and details what problem it will help them to overcome.
+Feature requests might include information on how the user expects the new feature to work and details what problem it will help them to overcome.
 
 
 (pull-requests)=
 ### Use pull requests for reviewing changes
 
 Once changes have been implemented, perhaps to meet the requirements of an issue,
-Pull Requests (PRs) provide a useful interface for incorporating those changes into the main project.
-PRs are typically used to merge a development branch (the source branch) onto a more stable branch in the main project (the target branch).
+Pull Requests (PRs) provide a useful interface for incorporating changes into the main project.
+We typically use PRs to merge a development branch (the source branch) onto a more stable branch in the main project (the target branch).
 The development branch here may be within the same repo, a [Fork](forking) of this project, or even a completely separate project.
 
-The initial description of the PR should include the high level changes that have been made and might point to any relevant issues that it resolves.
-Much like issues, PRs can be linked to other issues and PRs, providing a coherent narrative of development work.
-[Keywords can be used when linking an issue (e.g., 'fixes #42')](https://docs.github.com/en/github/managing-your-work-on-github/linking-a-pull-request-to-an-issue#linking-a-pull-request-to-an-issue-using-a-keyword)
+You should include the high level changes that have been made in the initial description of the PR, and you might point to any relevant issues that it resolves.
+You can link PRs to other issues and PRs, and should provide a coherent narrative of development work much like issues.
+[You can use Keywords when linking an issue (e.g., 'fixes #42')](https://docs.github.com/en/github/managing-your-work-on-github/linking-a-pull-request-to-an-issue#linking-a-pull-request-to-an-issue-using-a-keyword)
 to trigger the issue to close the PR is merged.
-Contributors can also be assigned or tagged in discussion, which can be useful for requesting help or review of a group of changes.
+You can assign contributors or tag them in discussion, which can be useful for requesting help or review of a group of changes.
 
 Put checklists into your pull request comments.
 These come with check boxes that can be ticked.
 This is useful when breaking down tasks into smaller chunks.
-When requesting a review, use checklists to help the reviewer review all the relevant parts of the pull request.
+Use checklists to help the reviewer review all the relevant parts of the pull request when requesting a review.
 As a reviewer, use checklists to list changes needed before the pull request can be approved.
 [The Government Digital Service have good examples of what this can look like.](https://github.com/alphagov/github-organisation-administration/pull/1)
 
@@ -639,18 +639,18 @@ In the "Files changed" section of a PR (shown above), altered sections of files 
 Where changes have deleted lines of code, these lines are highlighted in red on the left panel. And changes that add lines of code to the file are shown on the right.
 
 This highlighted summary of changes provides a useful interface for [peer review](peer_review.md).
-When carrying out a review using this view, comments can added to specific lines of code and these comments can include suggested changes.
+When carrying out a review using this view, you can add comments to specific lines of code and these comments can include suggested changes.
 All comments made using this view are also shown in the main Conversation view.
-When completing a review, a reviewer can indicate whether the PR should be merged or additional changes are required.
+When completing a review, a reviewer can indicate whether the PR should be merged or if additional changes are required.
 
 Once a PR has been reviewed and the reviewer is happy with the changes,
-the Conversation view can be used by internal developers to merge the PR changes onto the target branch.
+internal developers can use the Conversation view to merge the PR changes onto the target branch.
 
 ```{note}
 The repository settings can be adjust to project branches against specific actions.
-To enforce peer review, you should consider preventing merging onto the `main` branch without an approved Pull Request.
-Combining this with a [Pull Request template](https://docs.github.com/en/github/building-a-strong-community/creating-a-pull-request-template-for-your-repository)
-ensures that a standard peer review process is followed for all changes. 
+You should consider preventing merging onto the `main` branch without an approved Pull Request to enforce peer review.
+You can combine this with a [Pull Request template](https://docs.github.com/en/github/building-a-strong-community/creating-a-pull-request-template-for-your-repository)
+to ensure that a standard peer review process is followed for all changes. 
 ```
 
 
@@ -665,7 +665,7 @@ You might fork a repository when you want to:
 * Contribute to a project as an external collaborator
 * Make changes to a project for your own use, or to maintain a copy that is independent to the original
 
-In the first case, lets consider that an issue describes a bug in a project's code.
+In the first case, lets consider an example where an issue describes a bug in a project's code.
 Looking at the code, you think that you know where the source of the bug is.
 You create a fork of the project and clone your copy of the project locally.
 Here you make commits that include changes to fix the bug and test that these changes work.
@@ -677,10 +677,9 @@ In the second case, perhaps you want to reuse or adapt code from an existing pro
 If the changes that you wish to make to the code are not in line with the aim of the original project or the project is no longer actively maintained,
 then you might create a fork to contain these changes.
 
-Note that forks do not automatically synchronise with the original repo.
-This means that changes to the original repo, after you create a fork, need to be manually synchronised if you want to include them in your repo.
-When you would like to offer to contribute your changes to the original project (see [Pull Requests](pull-requests)),
-you should ensure that you synchronise your branch with any new changes first.
+You should note that forks do not automatically synchronise with the original repo.
+This means that after you create a fork, changes to the original repo need to be manually synchronised if you want to include them in your repo.
+You should ensure that you synchronise your branch with any new changes before offering to contribute your changes to the original project (see [Pull Requests](pull-requests)).
 
 See the GitHub documentation for
 [instructions on forking a repo and keeping your fork up to date](https://docs.github.com/en/free-pro-team@latest/github/getting-started-with-github/fork-a-repo)
@@ -699,9 +698,9 @@ Continuous Integration is discussed in more detail in [](continuous_integration.
 offer project management features through a
 [Kanban-style board](https://en.wikipedia.org/wiki/Kanban_board).
 These boards can be used to track assignment and progress of specific tasks.
-This is aided by linking tasks to specific issues and pull requests.
+Linking tasks to specific issues and pull requests aids the use of boards.
 
 [GitHub Pages](https://pages.github.com/) offers hosting of static web content, which can be useful for code documentation.
-GitHub Actions can be used to generate this documentation from the code and deploy directly to the Pages site.
+You can use GitHub Actions to generate this documentation from the code and deploy directly to the Pages site.
 Alternatively, [project Wikis](https://docs.github.com/en/free-pro-team@latest/github/building-a-strong-community/about-wikis)
 can be used to manually document your project using [Markdown](https://www.markdownguide.org/basic-syntax/).
