@@ -260,7 +260,7 @@ class TestSum:
 ```
 
 Using classes for unit tests has a number of additional benefits, this allows us to reuse the same logic either by class inheritance, or through fixtures.
-Similar to fixtures (covered [here](#use-fixtures-to-reduce-repetition-in-test-set-up)),
+Similar to fixtures,
 we are able to use the same pieces of logic through class inheritance in python.
 However, it should be noted that it is easier to mix up and link unit tests when using class inheritance.
 The following code block demonstrates an example of class inheritance which will inherit both the
@@ -327,7 +327,7 @@ it is also recommend to install a local editable version into your virtual envir
 This is done by running `pip install -e .` and any changes made to your
 module functions will also be updated in your python environment.
 Following this it is recommend to define fixtures, classes and then test functions.
-An example of this can be found below in [](#use-fixtures-to-reduce-repetition-in-test-set-up).
+An example of this can be found below.
 
 Similar structure should be followed in R, with all modules loaded in the beginning of a test script.
 Test contexts and then functions should be defined in turn as shown above.
