@@ -160,7 +160,7 @@ def test_sum_columns():
     assert_frame_equal(expected_output, actual_output)
 ```
 
-Using  minimal and general data in the test has made it clearer what is being tested.
+Using  minimal and general data in the test has made it clearer what is being tested, and also avoids any unnecessary disclosure.
 In this case our function is very generic, so our test doesn't need to know the names of real columns in our data or even have similar values in the data.
 The test data are focussed on testing specific, realistic cases.
 This makes it easy to see that this function works correctly with positive, negative and zero values.
@@ -320,11 +320,151 @@ For example, a piece of analysis has an end to end test to check that outputs ar
 End to end tests can also be used to quality assure a project from an end user's perspective, and should be run in an environment that replicates the production environment as closely as possible. This type of testing can catch errors that individual unit tests might miss, and confirm that the output is fit for purpose and the user requirements are met. End to end testing is a form of 'black-box' testing, meaning the tester verifies functionality without focusing on the underlying code. It is therefore important to use end to end testing alongside other forms of testing such as unit tests.
 
 
-```{todo}
-Discuss testing interface with external systems (e.g. database).
-Test that your code works, given the format of response that the system can give.
-Mocks?
+## Isolate code tests from external systems
+
+Testing code that interacts with an external system can be particularly challenging when you can't guarantee
+that the system will provide you with the same response each time; this could include code querying a database or
+making API requests, for example.
+
+Best practice is to separate external system dependencies from your code tests as much as possible. This can mitigate against various risks, depending on your application:
+
+- Testing database interaction with a production database could result in damage to, or loss of, data.
+- Making real API calls when testing a function that handles requests could incur unintended monetary costs.
+
+Isolating code from external systems allows for tests to run without reliance on the real systems; for example, tests for a database interaction that can still run even if the database connection goes down.
+Writing tests in this way means that tests evaluate how your code handles an output or response, and not the system dependency itself.
+This is another benefit of enforcing isolation in unit tests - helping you understand when errors are coming from an external system, and when they're coming from your code.
+The unit of code being tested is referred to as the 'System Under Test' (SUT).
+
+One way of achieving this is with mocking. This is where a response from an outside system is replaced with a mock object that your code can be tested against.
+In this example, there's a function making an API request in `src/handle_api_request.py`, and two test functions in `tests/test_handle_api_request.py`.
+The response from `requests.get()` is mocked with a `Mock()` object, to which `text` and `status_code` attributes are assigned.
+The `get_response()` function can now be evaluated for how it handles successful and unsuccessful requests; but thanks to the mocking, get requests are not made to `http://example.com`.
+
+```{code-block} python
+# AI has been used to produce content within this artefact.
+
+# src/handle_api_request.py
+import requests
+
+def get_response(url: str):
+    response = requests.get(url)
+    if response.status_code != 200:
+        raise(requests.HTTPError("Unsuccessful request"))
+
+    return response.text
+
+...
+
+# tests/test_handle_api_request.py
+from src.api_requests import get_response
+import requests
+import pytest
+from unittest import mock
+
+@mock.patch("requests.get")
+def test_get_response_success(mock_requests_get):
+    mock_response = mock.Mock()
+    mock_response.text = "Successful"
+    mock_response.status_code = 200
+
+    mock_requests_get.return_value = mock_response
+    
+    actual = get_response("http://example.com/good-request")
+    assert(actual == "Successful")
+
+@mock.patch("requests.get")
+def test_get_response_fail(mock_requests_get):
+    mock_response = mock.Mock()
+    mock_response.status_code = 400
+    mock_requests_get.return_value = mock_response
+    
+    with pytest.raises(requests.HTTPError):
+        actual = get_response("http://example.com/bad-request")
+
 ```
+
+These tests pass successfully. However, if the mocking was implemented incorrectly and the real request executed, our tests may continue to pass depending on how the response was handled by our function. Better practice is to assert that the mock function was called - for example, with `mock_function.assert_called()` or `mock_function.assert_called_one_with(parameter)` - in order be assured of the tests working as expected. Additional stringency comes from matching warnings and error message strings with `pytest.raises()`.
+
+```{code-block} python
+# tests/test_handle_api_request.py
+from src.api_requests import get_response
+import requests
+import pytest
+from unittest import mock
+
+@mock.patch("requests.get")
+def test_get_response_success(mock_requests_get):
+    mock_response = mock.Mock()
+    mock_response.text = "Successful"
+    mock_response.status_code = 200
+
+    mock_requests_get.return_value = mock_response
+    
+    actual = get_response("http://example.com/good-request")
+    assert(actual == "Successful")
+
+    mock_requests_get.assert_called()
+    mock_requests_get.assert_called_once_with("http://example.com/good-request")
+
+
+@mock.patch("requests.get")
+def test_get_response_fail(mock_requests_get):
+    mock_response = mock.Mock()
+    mock_response.status_code = 400
+    mock_requests_get.return_value = mock_response
+    
+    with pytest.raises(requests.HTTPError, match="Unsuccessful request"):
+        get_response("http://example.com/bad-request")
+
+    mock_requests_get.assert_called()
+    mock_requests_get.assert_called_once_with("http://example.com/bad-request")
+
+```
+
+You may also consider using fixtures to make test code more concise by generating the necessary `Mock` object attributes dynamically. [`Mock.reset_mock()`](https://docs.python.org/3/library/unittest.mock.html#unittest.mock.Mock.reset_mock) is used to remove the attributes associated with a mock object between different test cases.
+
+```
+# tests/test_handle_api_request.py
+from src.api_requests import get_response
+import requests
+import pytest
+from unittest import mock
+
+@pytest.fixture(scope="function")
+def mock_response():
+    def _create_mock_response(url):
+        """factory function allows flexible return values when evaluated"""
+        mock_response = mock.Mock()
+        if url == "http://example.com/good-request":
+            mock_response.text = "Successful"
+            mock_response.status_code = 200
+        elif url == "http://example.com/bad-request":
+            mock_response.status_code = 400
+        return mock_response
+    return _create_mock_response
+
+
+@mock.patch("requests.get")
+def test_get_response_all_conditions(mock_requests_get, mock_response):
+
+    good_url = "http://example.com/good-request"
+    mock_requests_get.return_value = mock_response(good_url)
+    actual = get_response(good_url)
+    assert actual == "Successful"
+    mock_requests_get.assert_called_once_with(good_url)
+
+    mock_requests_get.reset_mock()
+
+    bad_url = "http://example.com/bad-request"
+    mock_requests_get.return_value = mock_response(bad_url)
+    with pytest.raises(requests.HTTPError, match="Unsuccessful request"):
+        get_response(bad_url)
+    mock_requests_get.assert_called_once_with(bad_url)
+
+```
+
+[Monkeypatching](https://docs.pytest.org/en/stable/how-to/monkeypatch.html#how-to-monkeypatch-mock-modules-and-environments) in `pytest` provides an alternative way of handling mock objects and attributes, and also allows for the mocking of environment variables.
 
 ## Write tests to assure that bugs are fixed
 
