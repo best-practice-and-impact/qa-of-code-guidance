@@ -309,19 +309,21 @@ For R you need to specify the name of your package within the `testthat.R` file 
 In order to maintain a consistency across modules you develop, you should follow [PEP8](https://www.python.org/dev/peps/pep-0008/) (python)
 or [Google](https://google.github.io/styleguide/Rguide.html) / [tidyverse](https://style.tidyverse.org/) (R) standards when structuring unit tests.
 
-For python this involves importing all needed function at the beginning of the test file.
+For python this involves importing all needed functions at the beginning of the test file.
 To ensure that the correct functions are imported from your module,
-it is also recommend to install a local editable version into your virtual environment.
+it is also recommended to install a local editable version into your virtual environment.
 This is done by running `pip install -e .` and any changes made to your
 module functions will also be updated in your python environment.
-Following this it is recommend to define fixtures, classes and then test functions.
+Following this it is recommended to define fixtures, classes and then test functions.
 An example of this can be found below.
+More information can be found in Real Python [Getting Started With Testing in Python](https://realpython.com/python-testing/).
 
 Similar structure should be followed in R, with all modules loaded in the beginning of a test script.
 Test contexts and then functions should be defined in turn as shown above.
+For more information see [testing design in R](https://r-pkgs.org/testing-design.html).
 
 Generally tests within the same file should follow some structure or order.
-We reccomend that the order that functions are defined in the main script is also mirrored
+We recommend that the order that functions are defined in the main script is also mirrored
 within the test scripts.
 This will be easier for future developers to debug and follow.
 It also ensures that no functions have been missed and do not have unit tests written.
