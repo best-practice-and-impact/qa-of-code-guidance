@@ -300,7 +300,7 @@ the unit tests would also be packaged and installed by additional users.
 Therefore when packaging code,
 the unit tests should be moved to an adjacent test folder as users will not need to have unit tests installed when installing the package.
 
-When separating unit tests into main package and testing scripts, its important to import your package to ensure the correct functions are being unit tested.
+When separating unit tests into main package and testing scripts, it is important to import your package to ensure the correct functions are being unit tested.
 For the module structure outlined previously, we would use `from src.math import my_math_function`.
 For R you need to specify the name of your package within the `testthat.R` file within your tests folder.
 
