@@ -284,21 +284,9 @@ class TestSub(TestBase):
 The R  project structure above has one test file per function in the modules.
 There are multiple test files for the `math.R` module because it contains more than one function.
 Tests in these test files do not need grouping into classes, as the file name is used to indicate exactly which function or class is being tested.
-If we are wishing to link tests in R, we can use contexts to combine tests into blocks which test related functionality.
-The following example links two different tests under the same context named "my_sum testing":
-
-```{code-block} r
-context("my_sum testing")
-
-test_that("my_sum returns correct value", {
-    expect_that(my_sum(1,1), equals(2))
-    expect_that(my_sum(-1,1), equals(0))
-})
-
-test_that("my_sum missing value", {
-    expect_that(my_sum(NA,1), equals(NA))
-})
-```
+Tests in R are now linked together based on the file, previously named [contexts](https://testthat.r-lib.org/reference/context.html).
+Context is now tied to test file name to ensure they are always synced.
+The `context()` function is now depreciated and should be removed from your R script.
 
 These are the common conventions for each of Python and R, but are interchangeable.
 Use the approach that makes it easiest for developers to identify the relationship between tests and the code they are testing.
