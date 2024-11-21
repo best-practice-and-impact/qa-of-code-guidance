@@ -605,9 +605,9 @@ and [pgTAP](https://github.com/theory/pgtap/) for Postgres.
 
 ## In a time crunch? The risks to skipping tests
 In an ideal world, testing code would never be skipped, keeping the software reliable,
-and easily reproducible. However, there are times when skipping tests may seem necessary—
+and easily reproducible. However, in practice there are times when skipping tests may be necessary—
 perhaps due to tight deadlines, limited resources, or the need to quickly get a feature up
 and running. While this can save time in the moment, it’s important to be cautious, as
-skipping tests can lead to hidden problems that may become harder to fix later, as the project
-grows. Whenever tests are set aside, it’s best to have a plan for going back to add them, to avoid
-risks to the stability and quality of the software.
+skipping tests can lead to hidden problems that may become harder to fix later, particularly
+as the project grows. Whenever tests are set aside, it’s best to have a plan for going back to add
+them, to avoid risks to the stability and quality of the software.
