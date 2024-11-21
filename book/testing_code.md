@@ -539,9 +539,7 @@ ML models can produce different results due to randomness in training processes,
 
 ### Model-relevant tests
 
-To ensure that model-relevant tests are conducted within the analysis, it is important to ensure that the data used for testing is representative of real-world scenarios and free from biases. 
-
-Functions like pandas for data manipulation and assert statements for validation can be used. Implementing automated checks to validate the data before it is used for training or testing is also necessary. 
+To ensure that model-relevant tests are conducted within the analysis, it is important to ensure that the data used for testing is representative of real-world scenarios and free from biases. Functions like pandas for data manipulation and assert statements for validation can be used.
 
 Defining and using appropriate metrics to evaluate model performance is essential. Functions from sklearn.metrics such as accuracy_score, precision_score, recall_score, and f1_score can be used. 
 
