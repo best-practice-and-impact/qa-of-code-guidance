@@ -512,6 +512,77 @@ TDD requires practice but is proven to produce clean, robust and adaptable code.
 [acceptance test driven development](https://en.wikipedia.org/wiki/Acceptance_test-driven_development)
 are extensions of TDD with a useful focus on user needs.
 
+## Modelling-relevant testing
+
+### Acceptance testing
+Acceptance testing verifies that the model meets specified requirements and performs well in real-world scenarios. It ensures that the model's predictions and outputs align with business needs and user expectations. There are three types of acceptance testing:
+
+•	User Acceptance Testing (UAT): End-users test the system to ensure it meets their needs and provides accurate predictions.
+
+•	Business Acceptance Testing (BAT): Validates that the system meets business requirements and integrates well with existing workflows.
+
+•	Operational Acceptance Testing (OAT): Ensures the system is operationally ready, including backup, recovery, and maintenance.
+
+Ensuring that the data used for acceptance testing is representative of real-world scenarios and free from biases is a challenge. Evaluating the model's performance in diverse conditions is necessary to ensure its robustness. Engaging end-users and business stakeholders in the testing process helps gather valuable feedback and ensures the model meets their needs. Implementing automated acceptance testing pipelines establish consistent and repeatable testing processes.
+
+### Testing machine learning models
+
+Testing is essential for machine learning models to perform as expected and are reliable in production environments. Traditional testing practices need to be adapted to address the unique challenges posed by ML systems.
+
+•	Unit Tests: Focus on individual components of the ML pipeline, such as data preprocessing functions and model training scripts. Functions like unittest can be used for this purpose.
+
+•	Integration Tests: Ensure that different components of the ML pipeline work together correctly. Functions like unittest and pytest can be used to test the interactions between components.
+
+•	End-to-End Tests: Validate the entire ML pipeline from data ingestion to model deployment and prediction. Functions like unittest and pytest can be used to simulate real-world scenarios.
+
+ML models can produce different results due to randomness in training processes, making it challenging to reproduce results and verify model performance consistently. The quality and characteristics of the data used for training and testing can impact model performance, so ensuring data quality and representativeness is necessary for reliable testing. Evaluating the performance of ML models requires domain-specific metrics and considerations. Standard metrics like accuracy may not be sufficient, and additional metrics such as precision, recall, and F1 score may be needed.
+
+### Model-relevant tests
+
+To ensure that model-relevant tests are conducted within the analysis, it is important to ensure that the data used for testing is representative of real-world scenarios and free from biases. 
+
+Functions like pandas for data manipulation and assert statements for validation can be used. Implementing automated checks to validate the data before it is used for training or testing is also necessary. 
+
+Defining and using appropriate metrics to evaluate model performance is essential. Functions from sklearn.metrics such as accuracy_score, precision_score, recall_score, and f1_score can be used. 
+
+Using cross-validation techniques ensures that the model generalises well to unseen data. Functions like cross_val_score from sklearn.model_selection can be used. 
+
+Stress testing evaluates how the model performs under extreme conditions or with noisy data. Functions like numpy for adding noise and model.predict for predictions can be used. Testing how sensitive the model's outputs are to changes in input data or parameters helps in understanding the robustness of the model under different conditions. numpy can also be used for perturbing input data and model.predict for evaluating the impact can be used. 
+
+Implementing methods to make the model's predictions interpretable is also important. Functions from shap such as TreeExplainer and summary_plot can be used. 
+
+```
+# Cross-validation
+cv_scores = cross_val_score(model, data[['feature1', 'feature2']], data['label'], cv=5)
+print(f'Cross-validation scores: {cv_scores}')
+
+# Train-test split
+from sklearn.model_selection import train_test_split
+X_train, X_test, y_train, y_test = train_test_split(data[['feature1', 'feature2']], data['label'], test_size=0.2, random_state=42)
+
+# Train the model
+model.fit(X_train, y_train)
+
+# Make predictions
+y_pred = model.predict(X_test)
+
+# Evaluate the model
+accuracy = accuracy_score(y_test, y_pred)
+precision = precision_score(y_test, y_pred)
+recall = recall_score(y_test, y_pred)
+f1 = f1_score(y_test, y_pred)
+
+print(f'Accuracy: {accuracy}')
+print(f'Precision: {precision}')
+print(f'Recall: {recall}')
+print(f'F1 Score: {f1}')
+
+# Stress test with noisy data
+noisy_data = data.copy()
+noisy_data['feature1'] += np.random.normal(0, 0.1, size=noisy_data['feature1'].shape)
+noisy_data['feature2'] += np.random.normal(0, 0.1, size=noisy_data['feature2'].shape)
+```
+
 ## Reduce repetition in test code (fixtures and parameterised tests)
 
 Where possible, reduce repetition in your tests. Tests are code too, so you should still [make this code reusable](functions).
