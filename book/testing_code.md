@@ -240,28 +240,53 @@ Having one test class per function/class that you are testing will make it clear
 # An example for tests/unit/test_math.py
 
 class TestAbs:
-    def test_abs_all_positive_values():
+    def test_abs_all_positive_values(self):
         ...
 
-    def test_abs_all_negative_values():
+    def test_abs_all_negative_values(self):
         ...
     
     ...
 
 
 class TestSum:
-    def test_sum_all_positive_values():
+    def test_sum_all_positive_values(self):
         ...
 
-    def test_sum_all_negative_values():
+    def test_sum_all_negative_values(self):
         ...
     
     ...
 ```
 
+Using classes for unit tests has a number of additional benefits, this allows us to reuse the same logic either by class inheritance, or through fixtures.
+Similar to fixtures,
+we are able to use the same pieces of logic through class inheritance in python.
+However, it should be noted that it is easier to mix up and link unit tests when using class inheritance.
+The following code block demonstrates an example of class inheritance which will inherit both the
+variable and the `test_var_positive` unit test, meaning three unit tests are run.
+We are able to overwrite the variable within the subclass at any time, but will still inherit defined functions/tests from the parent class.
+
+```{code-block} python
+class TestBase:
+    var = 3
+
+    def test_var_positive(self):
+        assert self.var >= 0
+
+class TestSub(TestBase):
+    var = 8
+    def test_var_even(self):
+        assert self.var % 2 == 0
+```
+
+
 The R  project structure above has one test file per function in the modules.
 There are multiple test files for the `math.R` module because it contains more than one function.
 Tests in these test files do not need grouping into classes, as the file name is used to indicate exactly which function or class is being tested.
+Tests in R are now linked together based on the file, previously named [contexts](https://testthat.r-lib.org/reference/context.html).
+Context is now tied to test file name to ensure they are always synced.
+The `context()` function is now depreciated and should be removed from your R script.
 
 These are the common conventions for each of Python and R, but are interchangeable.
 Use the approach that makes it easiest for developers to identify the relationship between tests and the code they are testing.
@@ -269,6 +294,40 @@ Use the approach that makes it easiest for developers to identify the relationsh
 Note that some test frameworks allow you to keep the tests in the same file as the code that is being tested.
 This is a good way of keeping tests and code associated,
 but you should ensure that good modular code practices are followed to separate unrelated code into different files.
+Additional arguments are made to separate tests and functions when you are packaging your code.
+If unit tests and code are located together in the same file,
+the unit tests would also be packaged and installed by additional users.
+Therefore when packaging code,
+the unit tests should be moved to an adjacent test folder as users will not need to have unit tests installed when installing the package.
+
+When separating unit tests into main package and testing scripts, it is important to import your package to ensure the correct functions are being unit tested.
+For the module structure outlined previously, we would use `from src.math import my_math_function`.
+For R you need to specify the name of your package within the `testthat.R` file within your tests folder.
+
+## Structuring tests
+
+In order to maintain a consistency across modules you develop, you should follow [PEP8](https://www.python.org/dev/peps/pep-0008/) (python)
+or [Google](https://google.github.io/styleguide/Rguide.html) / [tidyverse](https://style.tidyverse.org/) (R) standards when structuring unit tests.
+
+For python this involves importing all needed functions at the beginning of the test file.
+To ensure that the correct functions are imported from your module,
+it is also recommended to install a local editable version into your virtual environment.
+This is done by running `pip install -e .` and any changes made to your
+module functions will also be updated in your python environment.
+Following this it is recommended to define fixtures, classes and then test functions.
+An example of this can be found below.
+More information can be found in Real Python [Getting Started With Testing in Python](https://realpython.com/python-testing/).
+
+Similar structure should be followed in R, with all modules loaded in the beginning of a test script.
+Test contexts and then functions should be defined in turn as shown above.
+For more information see [testing design in R](https://r-pkgs.org/testing-design.html).
+
+Generally tests within the same file should follow some structure or order.
+We recommend that the order that functions are defined in the main script is also mirrored
+within the test scripts.
+This will be easier for future developers to debug and follow.
+It also ensures that no functions have been missed and do not have unit tests written.
+
 
 ## Test that new logic is correct using unit tests
 
