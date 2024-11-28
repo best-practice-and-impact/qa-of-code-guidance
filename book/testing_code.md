@@ -514,72 +514,40 @@ are extensions of TDD with a useful focus on user needs.
 
 ## Modelling-relevant testing
 
+To ensure that model-relevant tests are conducted within the analysis, it is important to use data that is representative of real-world scenarios and free from biases. This involves selecting diverse datasets that reflect the variety of conditions the model will encounter in practice. Additionally, it is important to regularly update test data to capture any changes in the environment or user behaviour.
+
 ### Acceptance testing
-Acceptance testing verifies that the model meets specified requirements and performs well in real-world scenarios. It ensures that the model's predictions and outputs align with business needs and user expectations. There are three types of acceptance testing:
+Acceptance testing ensures that the model meets specified requirements and performs well in real-world scenarios. It verifies that the model's predictions and outputs align with business needs and user expectations. There are three types of acceptance testing:
 
-•	User Acceptance Testing (UAT): End-users test the system to ensure it meets their needs and provides accurate predictions.
+•	User Acceptance Testing (UAT): End-users test the system to ensure it meets their needs and provides accurate predictions. This involves real-world scenarios where users interact with the model and provide feedback on its performance.
 
-•	Business Acceptance Testing (BAT): Validates that the system meets business requirements and integrates well with existing workflows.
+ •	Business Acceptance Testing (BAT): Validates that the system meets business requirements and integrates well with existing workflows. This type of testing ensures that the model supports business processes and delivers value to the organization.
 
-•	Operational Acceptance Testing (OAT): Ensures the system is operationally ready, including backup, recovery, and maintenance.
+•	Operational Acceptance Testing (OAT): Ensures the system is operationally ready, including backup, recovery, and maintenance. This involves testing the model's performance under different operational conditions to ensure it can handle various scenarios.
 
-Ensuring that the data used for acceptance testing is representative of real-world scenarios and free from biases is a challenge. Evaluating the model's performance in diverse conditions is necessary to ensure its robustness. Engaging end-users and business stakeholders in the testing process helps gather valuable feedback and ensures the model meets their needs. Implementing automated acceptance testing pipelines establish consistent and repeatable testing processes.
+### Defining and Using Appropriate Metrics
 
-### Testing machine learning models
+Evaluating model performance using metrics such as accuracy, precision, recall, and F1 score is essential. These metrics help assess the model's effectiveness in different scenarios. Additionally, metrics like the Area Under the Curve (AUC) can be used to evaluate the model's performance on the test set. It is important to select metrics that align with the specific goals of the project and provide meaningful insights into the model's performance.
 
-Testing is essential for machine learning models to perform as expected and are reliable in production environments. Traditional testing practices need to be adapted to address the unique challenges posed by ML systems.
+### Cross-Validation Techniques
 
-•	Unit Tests: Focus on individual components of the ML pipeline, such as data preprocessing functions and model training scripts. Functions like unittest can be used for this purpose.
+To ensure that the model generalises well to unseen data, techniques like k-fold cross-validation can be used. This method involves dividing the data into k subsets and training the model k times, each time using a different subset as the validation set and the remaining data as the training set. Cross-validation helps identify potential overfitting and ensures that the model performs consistently across different data subsets.
 
-•	Integration Tests: Ensure that different components of the ML pipeline work together correctly. Functions like unittest and pytest can be used to test the interactions between components.
+### Stress Testing
 
-•	End-to-End Tests: Validate the entire ML pipeline from data ingestion to model deployment and prediction. Functions like unittest and pytest can be used to simulate real-world scenarios.
+Stress testing evaluates how the model performs under extreme conditions or with noisy data. This helps identify the model's robustness and ability to handle unexpected inputs. Stress testing involves introducing variations or noise into the input data and observing how the model's predictions are affected. This type of testing is useful for understanding the model's limits and ensuring it can handle real-world challenges.
 
-ML models can produce different results due to randomness in training processes, making it challenging to reproduce results and verify model performance consistently. The quality and characteristics of the data used for training and testing can impact model performance, so ensuring data quality and representativeness is necessary for reliable testing. Evaluating the performance of ML models requires domain-specific metrics and considerations. Standard metrics like accuracy may not be sufficient, and additional metrics such as precision, recall, and F1 score may be needed.
+### Sensitivity Analysis
 
-### Model-relevant tests
+Sensitivity analysis tests how sensitive the model's outputs are to changes in input data or parameters. This analysis helps understand the model's behaviour and identify potential weaknesses. Sensitivity analysis involves systematically varying the input data or model parameters and measuring the impact on the model's predictions. This helps in identifying critical factors that influence the model's performance and making necessary adjustments.
 
-To ensure that model-relevant tests are conducted within the analysis, it is important to ensure that the data used for testing is representative of real-world scenarios and free from biases. Functions like pandas for data manipulation and assert statements for validation can be used.
+### Model Interpretability
 
-Defining and using appropriate metrics to evaluate model performance is essential. Functions from sklearn.metrics such as accuracy_score, precision_score, recall_score, and f1_score can be used. 
+Implementing methods to make the model's predictions interpretable is essential for building trust with stakeholders. Techniques like SHAP (SHapley Additive exPlanations) values or LIME (Local Interpretable Model-agnostic Explanations) can help explain the model's decisions. These methods provide insights into how different features contribute to the model's predictions, making it easier for analysts and stakeholders to understand and trust the model's outputs.
 
-Using cross-validation techniques ensures that the model generalises well to unseen data. Functions like cross_val_score from sklearn.model_selection can be used. 
+### Model Optimisation
 
-Stress testing evaluates how the model performs under extreme conditions or with noisy data. Functions like numpy for adding noise and model.predict for predictions can be used. Testing how sensitive the model's outputs are to changes in input data or parameters helps in understanding the robustness of the model under different conditions. numpy can also be used for perturbing input data and model.predict for evaluating the impact can be used. 
-
-Implementing methods to make the model's predictions interpretable is also important. Functions from shap such as TreeExplainer and summary_plot can be used. 
-
-```
-# Cross-validation
-cv_scores = cross_val_score(model, data[['feature1', 'feature2']], data['label'], cv=5)
-print(f'Cross-validation scores: {cv_scores}')
-
-# Train-test split
-from sklearn.model_selection import train_test_split
-X_train, X_test, y_train, y_test = train_test_split(data[['feature1', 'feature2']], data['label'], test_size=0.2, random_state=42)
-
-# Train the model
-model.fit(X_train, y_train)
-
-# Make predictions
-y_pred = model.predict(X_test)
-
-# Evaluate the model
-accuracy = accuracy_score(y_test, y_pred)
-precision = precision_score(y_test, y_pred)
-recall = recall_score(y_test, y_pred)
-f1 = f1_score(y_test, y_pred)
-
-print(f'Accuracy: {accuracy}')
-print(f'Precision: {precision}')
-print(f'Recall: {recall}')
-print(f'F1 Score: {f1}')
-
-# Stress test with noisy data
-noisy_data = data.copy()
-noisy_data['feature1'] += np.random.normal(0, 0.1, size=noisy_data['feature1'].shape)
-noisy_data['feature2'] += np.random.normal(0, 0.1, size=noisy_data['feature2'].shape)
-```
+Optimisation techniques such as grid search and hyperparameter tuning are essential for improving model performance. These techniques help find the best parameters for the model to enhance its accuracy and efficiency. Grid search involves systematically searching through a predefined set of hyperparameters, while hyperparameter tuning involves adjusting the model's parameters to achieve the best performance. Continuous optimisation ensures that the model remains effective and efficient over time.
 
 ## Reduce repetition in test code (fixtures and parameterised tests)
 
