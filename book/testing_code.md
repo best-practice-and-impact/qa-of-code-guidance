@@ -517,13 +517,14 @@ are extensions of TDD with a useful focus on user needs.
 To ensure that model-relevant tests are conducted within the analysis, it is important to use data that is representative of real-world scenarios and free from biases. This involves selecting diverse datasets that reflect the variety of conditions the model will encounter in practice. Additionally, it is important to regularly update test data to capture any changes in the environment or user behaviour.
 
 ### Acceptance testing
-Acceptance testing ensures that the model meets specified requirements and performs well in real-world scenarios. It verifies that the model's predictions and outputs align with business needs and user expectations. There are three types of acceptance testing:
+Acceptance testing ensures that the model meets specified requirements and performs well in real-world scenarios. It verifies that the model's outputs align with business needs and user expectations. There are three types of acceptance testing:
 
-•	User Acceptance Testing (UAT): End-users test the system to ensure it meets their needs and provides accurate predictions. This involves real-world scenarios where users interact with the model and provide feedback on its performance.
+•	User Acceptance Testing (UAT): End-users test the system to ensure it meets their needs and provides accurate outputs. This involves real-world scenarios where users interact with the model and provide feedback on its performance.
 
- •	Business Acceptance Testing (BAT): Validates that the system meets business requirements and integrates well with existing workflows. This type of testing ensures that the model supports business processes and delivers value to the organization.
+•	Business Acceptance Testing (BAT): Validates that the system meets business requirements and integrates well with existing workflows. This type of testing ensures that the model supports business processes and delivers value to the organization.
 
 •	Operational Acceptance Testing (OAT): Ensures the system is operationally ready, including backup, recovery, and maintenance. This involves testing the model's performance under different operational conditions to ensure it can handle various scenarios.
+
 
 ### Defining and Using Appropriate Metrics
 
@@ -535,15 +536,15 @@ To ensure that the model generalises well to unseen data, techniques like k-fold
 
 ### Stress Testing
 
-Stress testing evaluates how the model performs under extreme conditions or with noisy data. This helps identify the model's robustness and ability to handle unexpected inputs. Stress testing involves introducing variations or noise into the input data and observing how the model's predictions are affected. This type of testing is useful for understanding the model's limits and ensuring it can handle real-world challenges.
+Stress testing evaluates how the model performs under extreme conditions or with noisy data. This helps identify the model's robustness and ability to handle unexpected inputs. Stress testing involves introducing variations or noise into the input data and observing how the model's outputs are affected. This type of testing is useful for understanding the model's limits and ensuring it can handle real-world challenges.
 
 ### Sensitivity Analysis
 
-Sensitivity analysis tests how sensitive the model's outputs are to changes in input data or parameters. This analysis helps understand the model's behaviour and identify potential weaknesses. Sensitivity analysis involves systematically varying the input data or model parameters and measuring the impact on the model's predictions. This helps in identifying critical factors that influence the model's performance and making necessary adjustments.
+Sensitivity analysis tests how sensitive the model's outputs are to changes in input data or parameters. This analysis helps understand the model's behaviour and identify potential weaknesses. Sensitivity analysis involves systematically varying the input data or model parameters and measuring the impact on the model's outputs. This helps in identifying critical factors that influence the model's performance and making necessary adjustments.
 
 ### Model Interpretability
 
-Implementing methods to make the model's predictions interpretable is essential for building trust with stakeholders. Techniques like SHAP (SHapley Additive exPlanations) values or LIME (Local Interpretable Model-agnostic Explanations) can help explain the model's decisions. These methods provide insights into how different features contribute to the model's predictions, making it easier for analysts and stakeholders to understand and trust the model's outputs.
+Implementing methods to make the model's outputs interpretable is essential for building trust with stakeholders. Techniques like SHAP (SHapley Additive exPlanations) values or LIME (Local Interpretable Model-agnostic Explanations) can help explain the model's decisions. These methods provide insights into how different features contribute to the model's outputs, making it easier for analysts and stakeholders to understand and trust the model's outputs.
 
 ### Model Optimisation
 
