@@ -379,6 +379,22 @@ For example, a piece of analysis has an end to end test to check that outputs ar
 End to end tests can also be used to quality assure a project from an end user's perspective, and should be run in an environment that replicates the production environment as closely as possible. This type of testing can catch errors that individual unit tests might miss, and confirm that the output is fit for purpose and the user requirements are met. End to end testing is a form of 'black-box' testing, meaning the tester verifies functionality without focusing on the underlying code. It is therefore important to use end to end testing alongside other forms of testing such as unit tests.
 
 
+## Good practices for integration and end-to-end testing
+
+When devising an integration or end-to-end testing it’s important to follow these good practices:
+
+- Planning ahead: before you start testing, have a clear plan of what you want to test and how.
+- Testing Early:  Start testing integration as soon as parts are combined rather than waiting until everything is finished. This helps catch issues sooner.
+- Use Real Data: Whenever possible, use real data in your tests to make sure everything behaves like it would in the real world. When not possible, make sure the test data reflect the complexities of real data.
+- Automate tests: Automate your integration tests. This makes it easier to run them frequently and catch problems quickly.
+- Checking dependencies: make sure to test how different components rely on each other, as issues can arise there.
+- Test for failures: don’t just test for success; also check how the system behaves when things go wrong. This helps ensure it handles errors gracefully.
+- Keep tests isolated: Try to isolate tests so that one failure doesn’t affect another, making it easier to pinpoint issues.
+- Document: Keep a record of tests, results, and issues found. This helps with future testing and understanding what changes might affect integration.
+
+
+
+
 ## Isolate code tests from external systems
 
 Testing code that interacts with an external system can be particularly challenging when you can't guarantee
