@@ -56,18 +56,30 @@ pre-commit install
 
 ### Guidelines
 
-When contributing to the book, please:
+When contributing to the book:
 
-* Keep text as simple as possible
-* Provide alt text for all images
-* Explain informative image content in text, where possible
-* Attach hyperlinks to informative anchor text (e.g. 'blog post on reproducibility' instead of 'this link')
+* Use plain English and active tense throughout
+* Include only what the user needs to know
+* Explain informative image content in text where possible
 * Provide examples of good and/or bad practices to support your content
+* Avoid duplicating content elsewhere in the book, link to the relevant section instead
 * Take on feedback from users and other developers
 
-Any content that is in early development, should be kept under the `early_development/` directory.
-While content that is ready for publication belongs under `book/`.
+Keep any content that is in early development under the `early_development/` directory.
+Content that is ready for publication belongs under `book/`.
 All pages in `book/` must be referenced in `_toc.yml` or a warning will be raised and the changes will not be published.
+
+### Reviewing contributions
+
+We recommend getting all contributions peer reviewed. Before submitting, check the following:
+
+* Spelling and grammar. Refer to the [Government Digital Service (GDS) style guide](https://www.gov.uk/guidance/style-guide) for commonly used conventions.
+* Text is as simple as possible. The [Hemingway app](https://hemingwayapp.com/) can be used to identify readability issues.
+* Sentence case is used for titles and subheadings
+* All images have informative alt text
+* Technical terms are explained the first time they are used
+* Hyperlinks work and have informative anchor text (e.g. 'blog post on reproducibility' instead of 'this link')
+* Where possible, test new content with a screen reader
 
 
 ### Submitting contributions
