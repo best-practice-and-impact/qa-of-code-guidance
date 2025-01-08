@@ -22,7 +22,7 @@ When you are developing your tests, here are some points to think about:
 
 1.  You don't need to test everything. It is usually reasonable to assume that third party functions and tools which are sufficiently quality assured (and you can verify this) work as intended.  For example, if you use R you would not expect to write tests to verify that simple arithmetic, base R or packages published on [CRAN](https://cran.r-project.org/) operate correctly, because there is already extensive assurance in place about that. You may be less confident about very new functionality from third parties, or experimental tools. Here, you might decide you do need to do some extra validation.    
 2. Think carefully about whether third party tools really do what is needed for your particular context.  For example, R includes a standard "round" function to round numbers, but this behaves differently to the rounding function in Excel. While we can be confident that it works as specified, does it produce what you need?
-3. Testing is a great way to verify your approach. By thinking about what to test, you challenge your own assumptions and approach. This can reveal issues or scenarios that you had not considered, and usually means the code you write is more resilient.
+3. Testing is a great way to verify that your approach is the right one. By thinking about what to test, you challenge your own assumptions and the way you have done things. This can reveal issues or scenarios that you had not considered. This usually means the code you write is more resilient.
 
 ## How are tests structured?
 
