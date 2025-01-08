@@ -550,7 +550,9 @@ Implementing methods to make the model's outputs interpretable is essential for 
 
 ### Model Optimisation
 
-Optimisation techniques such as grid search and hyperparameter tuning are essential for improving model performance. These techniques help find the best parameters for the model to enhance its accuracy and efficiency. Grid search involves systematically searching through a predefined set of hyperparameters, while hyperparameter tuning involves adjusting the model's parameters to achieve the best performance. Continuous optimisation ensures that the model remains effective and efficient over time.
+Optimisation is used to adjust adjusting the model's parameters to achieve the best overall performance. Continuous optimisation ensures that the model remains effective and efficient over time as inputs change. There are lots of techniques available to optimise performance. Most are designed to help find the best parameters for the model to enhance its accuracy and efficiency.
+
+Examples of optimisation techniques for machine learning include grid search and parameter tuning. Grid search involves systematically searching through a predefined set of hyperparameters, while hyperparameter tuning adjusts the model's parameters to achieve the best possible performance.
 
 ## Reduce repetition in test code (fixtures and parameterised tests)
 
