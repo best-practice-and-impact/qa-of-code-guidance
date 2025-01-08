@@ -528,7 +528,9 @@ Acceptance testing ensures that the model meets specified requirements and perfo
 
 ### Defining and Using Appropriate Metrics
 
-Evaluating model performance using metrics such as accuracy, precision, recall, and F1 score is essential. These metrics help assess the model's effectiveness in different scenarios. Additionally, metrics like the Area Under the Curve (AUC) can be used to evaluate the model's performance on the test set. It is important to select metrics that align with the specific goals of the project and provide meaningful insights into the model's performance.
+Evaluating model performance using metrics is essential. You should choose metrics that align with the specific goals of the project and provide meaningful insights into the performance of the model in this context.  It is important to select metrics that align with the specific goals of the project and provide meaningful insights into the model's performance.
+
+Use appropriate metrics to evaluate model performance. For example, precision and recall are well established measures for evaluating the performance of data linkage. The right metrics help assess the model's effectiveness in different scenarios.
 
 ### Cross-Validation Techniques
 
