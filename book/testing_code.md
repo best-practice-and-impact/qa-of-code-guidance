@@ -240,28 +240,53 @@ Having one test class per function/class that you are testing will make it clear
 # An example for tests/unit/test_math.py
 
 class TestAbs:
-    def test_abs_all_positive_values():
+    def test_abs_all_positive_values(self):
         ...
 
-    def test_abs_all_negative_values():
+    def test_abs_all_negative_values(self):
         ...
     
     ...
 
 
 class TestSum:
-    def test_sum_all_positive_values():
+    def test_sum_all_positive_values(self):
         ...
 
-    def test_sum_all_negative_values():
+    def test_sum_all_negative_values(self):
         ...
     
     ...
 ```
 
+Using classes for unit tests has a number of additional benefits, this allows us to reuse the same logic either by class inheritance, or through fixtures.
+Similar to fixtures,
+we are able to use the same pieces of logic through class inheritance in python.
+However, it should be noted that it is easier to mix up and link unit tests when using class inheritance.
+The following code block demonstrates an example of class inheritance which will inherit both the
+variable and the `test_var_positive` unit test, meaning three unit tests are run.
+We are able to overwrite the variable within the subclass at any time, but will still inherit defined functions/tests from the parent class.
+
+```{code-block} python
+class TestBase:
+    var = 3
+
+    def test_var_positive(self):
+        assert self.var >= 0
+
+class TestSub(TestBase):
+    var = 8
+    def test_var_even(self):
+        assert self.var % 2 == 0
+```
+
+
 The R  project structure above has one test file per function in the modules.
 There are multiple test files for the `math.R` module because it contains more than one function.
 Tests in these test files do not need grouping into classes, as the file name is used to indicate exactly which function or class is being tested.
+Tests in R are now linked together based on the file, previously named [contexts](https://testthat.r-lib.org/reference/context.html).
+Context is now tied to test file name to ensure they are always synced.
+The `context()` function is now depreciated and should be removed from your R script.
 
 These are the common conventions for each of Python and R, but are interchangeable.
 Use the approach that makes it easiest for developers to identify the relationship between tests and the code they are testing.
@@ -269,6 +294,40 @@ Use the approach that makes it easiest for developers to identify the relationsh
 Note that some test frameworks allow you to keep the tests in the same file as the code that is being tested.
 This is a good way of keeping tests and code associated,
 but you should ensure that good modular code practices are followed to separate unrelated code into different files.
+Additional arguments are made to separate tests and functions when you are packaging your code.
+If unit tests and code are located together in the same file,
+the unit tests would also be packaged and installed by additional users.
+Therefore when packaging code,
+the unit tests should be moved to an adjacent test folder as users will not need to have unit tests installed when installing the package.
+
+When separating unit tests into main package and testing scripts, it is important to import your package to ensure the correct functions are being unit tested.
+For the module structure outlined previously, we would use `from src.math import my_math_function`.
+For R you need to specify the name of your package within the `testthat.R` file within your tests folder.
+
+## Structuring tests
+
+In order to maintain a consistency across modules you develop, you should follow [PEP8](https://www.python.org/dev/peps/pep-0008/) (python)
+or [Google](https://google.github.io/styleguide/Rguide.html) / [tidyverse](https://style.tidyverse.org/) (R) standards when structuring unit tests.
+
+For python this involves importing all needed functions at the beginning of the test file.
+To ensure that the correct functions are imported from your module,
+it is also recommended to install a local editable version into your virtual environment.
+This is done by running `pip install -e .` and any changes made to your
+module functions will also be updated in your python environment.
+Following this it is recommended to define fixtures, classes and then test functions.
+An example of this can be found below.
+More information can be found in Real Python [Getting Started With Testing in Python](https://realpython.com/python-testing/).
+
+Similar structure should be followed in R, with all modules loaded in the beginning of a test script.
+Test contexts and then functions should be defined in turn as shown above.
+For more information see [testing design in R](https://r-pkgs.org/testing-design.html).
+
+Generally tests within the same file should follow some structure or order.
+We recommend that the order that functions are defined in the main script is also mirrored
+within the test scripts.
+This will be easier for future developers to debug and follow.
+It also ensures that no functions have been missed and do not have unit tests written.
+
 
 ## Test that new logic is correct using unit tests
 
@@ -318,6 +377,22 @@ End to end testing (sometimes called system testing) checks the entire workflow 
 For example, a piece of analysis has an end to end test to check that outputs are generated and the data are the right shape or format. There might also be a "regression" test that checks that the exact values in the output remain the same. After any changes that are made to tidy up or refactor the code, these end to end tests can be run to assure us that no functionality has been inadvertently changed.
 
 End to end tests can also be used to quality assure a project from an end user's perspective, and should be run in an environment that replicates the production environment as closely as possible. This type of testing can catch errors that individual unit tests might miss, and confirm that the output is fit for purpose and the user requirements are met. End to end testing is a form of 'black-box' testing, meaning the tester verifies functionality without focusing on the underlying code. It is therefore important to use end to end testing alongside other forms of testing such as unit tests.
+
+
+## Good practices for integration and end-to-end testing
+
+When devising an integration or end-to-end testing it’s important to follow these good practices:
+
+- Planning ahead: before you start testing, have a clear plan of what you want to test and how.
+- Testing Early:  Start testing integration as soon as parts are combined rather than waiting until everything is finished. This helps catch issues sooner.
+- Use Real Data: Whenever possible, use real data in your tests to make sure everything behaves like it would in the real world. When not possible, make sure the test data reflect the complexities of real data.
+- Automate tests: Automate your integration tests. This makes it easier to run them frequently and catch problems quickly.
+- Checking dependencies: make sure to test how different components rely on each other, as issues can arise there.
+- Test for failures: don’t just test for success; also check how the system behaves when things go wrong. This helps ensure it handles errors gracefully.
+- Keep tests isolated: Try to isolate tests so that one failure doesn’t affect another, making it easier to pinpoint issues.
+- Document: Keep a record of tests, results, and issues found. This helps with future testing and understanding what changes might affect integration.
+
+
 
 
 ## Isolate code tests from external systems
@@ -782,3 +857,13 @@ from simplified dummy data.
 
 There are a range of established SQL testing frameworks. Examples include [tSQLt](https://github.com/tSQLt-org/tSQLt)
 and [pgTAP](https://github.com/theory/pgtap/) for Postgres.
+
+
+## In a time crunch? The risks to skipping tests
+In an ideal world, testing code would never be skipped, keeping the software reliable,
+and easily reproducible. However, in practice there are times when skipping tests may be necessary—
+perhaps due to tight deadlines, limited resources, or the need to quickly get a feature up
+and running. While this can save time in the moment, it’s important to be cautious, as
+skipping tests can lead to hidden problems that may become harder to fix later, particularly
+as the project grows. Whenever tests are set aside, it’s best to have a plan for going back to add
+them, to avoid risks to the stability and quality of the software.
