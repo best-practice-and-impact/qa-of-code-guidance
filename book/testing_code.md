@@ -1,16 +1,32 @@
 # Testing code
 
-Code tests verify that your analytical code is working as expected.
-Where code documentation helps others to understand what you expect your code to do, testing assures that the code meets these expectations.
-Without carrying out tests we have no assurance that our code works correctly, so we can't be sure that our analysis is fit for purpose.
+Code documentation helps others to understand what you expect your code to do and how to use it. Code tests verify that your analytical code is working as expected.  
 
-Tests should be used proportionately for your analysis.
-This means writing more tests for parts of your code that are more complex or carry more risk.
+Without carrying out tests we cannot confirm that our code works correctly, so we cannot be confident that our analysis is fit for purpose.  
+Good tests tell a story - given this data, having run this code, we expect this output.  
 
-Testing helps you assure your code quality and makes developing your code more efficient.
+Testing brings strong benefits. It helps you assure your code quality and makes developing your code more efficient.
 Code that has not been tested is more likely to contain errors and require more maintenance in the future.
 
-Good tests tell a story - given this data, having run this code, we expect this output.
+## What should I test?
+
+The question you need to answer here is a simple one:    
+
+How can I demonstrate that my code does what it is supposed to do?    
+
+As the developer of the code, you are best placed to decide what tests you need to put in place to answer that question confidently.
+
+Take a risk-based approach to testing. Tests should be used proportionately for your analysis.  This usually means writing more tests for parts of your code that are very new, more complex or carry more risk.  
+
+When you are developing your tests, here are some points to think about:    
+
+1.  You don't need to test everything. It is usually reasonable to assume that third party functions and tools which are sufficiently quality assured (and you can verify this) work as intended.  For example, if you use R you would not expect to write tests to verify that simple arithmetic, base R or packages published on [CRAN](https://cran.r-project.org/) operate correctly, because there is already sufficient assurance. You may be less confident about very new functionality from third parties, or experimental tools. Here, you might decide you do need to do some extra validation.    
+2. Think carefully about whether third party tools really do what is needed for your particular context.  For example, the base R `round()` function intentionally behaves differently to the rounding function in Excel. While we can be confident that `round()` works as specified, does it produce what you need?
+3. Testing is a great way to verify that your approach is the right one. By thinking about what to test, you challenge your own assumptions and the way you have done things. This can reveal issues or scenarios that you had not considered. It means the code you write should be more resilient.
+4. Be guided by the risks you need to mitigate. For example, if inputs are invalid or unusual, do you want the code to stop with an error message or do something else? Use tests to check that the code does the right thing at the right time. 
+
+## How are tests structured?
+
 Tests come in many shapes and sizes, but usually follow the pattern:
 
 1. Arrange - set up any objects needed for your test, e.g. example input data and expected output data.
