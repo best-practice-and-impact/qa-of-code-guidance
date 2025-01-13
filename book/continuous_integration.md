@@ -183,7 +183,7 @@ Here are two examples of repositories that use sphinx to build its documentation
 
 GitLab has an equivalent to GitHub Actions called GitLab Pipelines.
 The use cases for these are practically the same, with a change in syntax and file structure.
-[PATRICK'S SOFTWARE BLOG](https://www.patricksoftwareblog.com/setting-up-gitlab-ci-for-a-python-application/) provides a simple GitLab
+[PATRICK'S SOFTWARE BLOG](https://web.archive.org/web/20230321180431/https://www.patricksoftwareblog.com/setting-up-gitlab-ci-for-a-python-application/) provides a simple GitLab
 pipeline example and detailed description on how to use it.
 For further details [GitLab provides documentation on how to create and use GitLab Pipelines](https://docs.gitlab.com/ee/ci/).
 
