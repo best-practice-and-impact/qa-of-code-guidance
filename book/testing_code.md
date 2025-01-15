@@ -2,11 +2,11 @@
 
 Code documentation helps others to understand what you expect your code to do and how to use it. Code tests verify that your analytical code is working as expected.  
 
-Without carrying out tests we cannot confirm that our code works correctly, so we cannot be confident that our analysis is fit for purpose.  
+You cannot confirm your code works correctly if you don’t carry out tests, so you cannot be confident that your analysis is fit for purpose without them.  
 Good tests tell a story - given this data, having run this code, we expect this output.  
 
 Testing brings strong benefits. It helps you assure your code quality and makes developing your code more efficient.
-Code that has not been tested is more likely to contain errors and require more maintenance in the future.
+Code that has not been tested is more likely to contain errors and need more maintenance in the future.
 
 ## What should I test?
 
@@ -16,12 +16,12 @@ How can I demonstrate that my code does what it is supposed to do?
 
 As the developer of the code, you are best placed to decide what tests you need to put in place to answer that question confidently.
 
-Take a risk-based approach to testing. Tests should be used proportionately for your analysis.  This usually means writing more tests for parts of your code that are very new, more complex or carry more risk.  
+Take a risk-based approach to testing. Tests should be used proportionately for your analysis.  This usually means writing more tests for parts of your code that are very new, more complex, or carry more risk.  
 
 When you are developing your tests, here are some points to think about:    
 
-1.  You don't need to test everything. It is usually reasonable to assume that third party functions and tools which are sufficiently quality assured (and you can verify this) work as intended.  For example, if you use R you would not expect to write tests to verify that simple arithmetic, base R or packages published on [CRAN](https://cran.r-project.org/) operate correctly, because there is already sufficient assurance. You may be less confident about very new functionality from third parties, or experimental tools. Here, you might decide you do need to do some extra validation.    
-2. Think carefully about whether third party tools really do what is needed for your particular context.  For example, the base R `round()` function intentionally behaves differently to the rounding function in Excel. While we can be confident that `round()` works as specified, does it produce what you need?
+1.  You don't need to test everything. It is realistic to assume that third party functions and tools which are adequately quality assured (and you can verify this) work as intended.  For example, if you use R you would not expect to write tests to verify that simple arithmetic, base R, or packages published on [CRAN](https://cran.r-project.org/) operate correctly, because there is already sufficient assurance. You may be less confident about very new functionality from third parties, or experimental tools. Here, you might decide you do need to do some extra validation.    
+2. Think carefully about whether third party tools really do what you need for your particular context.  For example, the base R `round()` function intentionally behaves differently to the rounding function in Excel. While we can be confident that `round()` works as specified, does it produce what you need?
 3. Testing is a great way to verify that your approach is the right one. By thinking about what to test, you challenge your own assumptions and the way you have done things. This can reveal issues or scenarios that you had not considered. It means the code you write should be more resilient.
 4. Be guided by the risks you need to mitigate. For example, if inputs are invalid or unusual, do you want the code to stop with an error message or do something else? Use tests to check that the code does the right thing at the right time. 
 
@@ -29,49 +29,49 @@ When you are developing your tests, here are some points to think about:
 
 Tests come in many shapes and sizes, but usually follow the pattern:
 
-1. Arrange - set up any objects needed for your test, e.g. example input data and expected output data.
+1. Arrange - set up any objects needed for your test, for example sample input data and expected output data.
 2. Act - run the code that you are testing (one or more functions or methods).
-3. Assert - verify that the code performed the expected action, e.g. that the output matched the expected output.
+3. Assert - verify that the code performed the expected action, for example that the output matched the expected output.
 
 ```{admonition} Key Learning
 :class: admonition-learning
 
-You should follow the [Introduction to Unit Testing course](https://learninghub.ons.gov.uk/course/view.php?id=1171) for applied examples in Python and R.
+Follow the [Introduction to Unit Testing course](https://learninghub.ons.gov.uk/course/view.php?id=1171) for applied examples in Python and R.
 This course also covers writing and documenting functions, and error handling.
 
 Other useful learning resources include:
-* [`pytest` getting started](https://docs.pytest.org/en/3.0.1/getting-started.html)
+* [`pytest` getting started](https://docs.pytest.org/en/stable/getting-started.html)
 * Real Python [Getting Started With Testing in Python](https://realpython.com/python-testing/)
 * Hadley Wickham's [testthat: getting started with testing](https://vita.had.co.nz/papers/testthat.pdf) and [testing design in R](https://r-pkgs.org/testing-design.html)
 ```
 
-In this section we assume that you are using a testing framework to run your tests (e.g. `pytest` for python or `testthat` for R) and have your code in a package.
-Code that is not in a package can be more difficult to test and follow the testing good practices described here.
+In this section we assume that you are using a testing framework to run your tests (for example `pytest` for python or `testthat` for R) and have your code in a package.
+It is more difficult to test code that is not in a package and therefore follow the testing good practices described here.
 
 ## Write reproducible tests
 
-As analysts we routinely check that our analysis is carried out correctly.
-This might be done informally by running all or part of our analysis with example data or subsets of real data.
+As an analyst, you routinely check that your analysis is carried out correctly.
+You might do this informally by running all or part of your analysis with example data or subsets of real data.
 
-These tests give us confidence that our analysis is correct.
-However, it's important that we are able to reproduce the same checks against our code reproducibly.
-Code changes over time, so we need to be able to repeat these checks against the updated code.
+These tests give you confidence that your analysis is correct.
+However, it's important you are able to produce the same checks against your code reproducibly.
+Code changes over time, so you need to be able to repeat these checks against the updated code.
 Additionally, other analysts should be able to carry out the same checks and get the same results.
 
-Representing our tests as code allows us to consistently repeat the same steps.
-This lets us or another analyst carry out the same verification again to get the same results.
+Representing your tests as code allows you to consistently repeat the same steps.
+This lets you or another analyst carry out the same verification again to get the same results.
 When you have carried out a test manually, you should ensure that you add a code test to reproduce this.
 
-Code that we write for testing should also follow the good practices described earlier on in this book, in particular [](readable_code).
+Code that you write for testing should also follow the good practices described earlier on in this book, in particular [](readable_code).
 
 ## Write repeatable tests
 
-For us to be able to trust the results of our tests we need them to be repeatable.
-That is for them to give the same outcome if we run them more than once against the same version of our analysis code.
+For you to be able to trust the results of your tests you need them to be repeatable.
+This means they should give the same outcome if you run them more than once against the same version of your analysis code.
 
 For tests to run repeatably each test must be independent.
 There should not be a shared state between tests, for example a test should not depend on another test having already run.
-Many test runners will intentionally randomise the order that tests are executed to encourage this.
+You could intentionally randomise the order that tests are executed to encourage this.
 
 Where possible, tests should be deterministic.
 As such, the only reason for a test to fail should be that the code being tested is incorrect.
@@ -79,17 +79,17 @@ Where your code relies on randomness tests should reuse the same random seed eac
 
 Where this is not possible/logical for the scenario that you are testing, you may want to run the test
 case multiple times and make an assertion about the distribution of the outcomes instead.
-For example, if we are testing a function that simulates a coin flip we might run it 100 times and
+For example, if you are testing a function that simulates a coin flip you might run it 100 times and
 check the proportion of heads versus tails is close to half (within a reasonable range).
 
 ## Run all tests against each change to your code
 
-All tests should be run whenever you make changes to your analysis.
+Run **all** tests whenever you make changes to your analysis.
 This ensures that changes do not break the existing, intended functionality of your code.
 Running the entire collection of tests has the added benefit of detecting unexpected side-effects of your changes.
-For example, you might detect an unexpected failure in part of your code that you didn't even change.
+For example, you might detect an unexpected failure in part of your code that you didn't change.
 
-Running tests regularly allows you to fix any issues before  changes are added to a stable or production version of your code (e.g. the `main` Git branch).
+Running tests regularly allows you to fix any issues before changes are added to a stable or production version of your code (e.g. the `main` Git branch).
 
 If you have altered the functionality of your code, this will likely break existing tests.
 Failing tests here act as a good reminder that you should update your tests and documentation to reflect the new functionality.
@@ -97,15 +97,14 @@ Many testing frameworks support writing tests as examples in the function docume
 
 It's not easy to remember to run your tests manually at regular intervals.
 And you're right to think "surely this could be automated too?".
- You should use [continuous integration](continuous-integration) to automate
-the running of tests.
-Using these tools, tests can be triggered to run when any changes are made to your
+Use [continuous integration](continuous-integration) to automate
+the running of tests. This way, tests can be triggered to run when any changes are made to your
 remote version control repository.
 
 ## Record the outcomes of your tests
 
-For auditability, it is important that the outcome from running tests is recorded.
-You should record the test outcomes with the code, so that
+For auditability, it is important you record the outcome from running tests.
+Record the test outcomes with the code, so that
 it is clear which tests have been run successfully for a given version of the code.
 
 As mentioned above, automating the running of tests on a version control platform is the simplest and
@@ -155,7 +154,7 @@ def test_sum_columns():
     assert_frame_equal(expected_output, actual_output)
 ```
 
-However, we can still conduct the same test with much less data like so:
+However, you can still conduct the same test with much less data like so:
 
 ```{code-block} python
 ...
@@ -176,19 +175,19 @@ def test_sum_columns():
     assert_frame_equal(expected_output, actual_output)
 ```
 
-Using  minimal and general data in the test has made it clearer what is being tested, and also avoids any unnecessary disclosure.
-In this case our function is very generic, so our test doesn't need to know the names of real columns in our data or even have similar values in the data.
+Using minimal and general data in the test has made it clearer what is being tested, and also avoids any unnecessary disclosure.
+In this case the function is very generic, so the test doesn't need to know the names of real columns in our data or even have similar values in the data.
 The test data are focussed on testing specific, realistic cases.
 This makes it easy to see that this function works correctly with positive, negative and zero values.
 
-Note that the way we write our test affects how the function is implemented.
+Note that the way you write your test affects how the function is implemented.
 Using minimal, generalised data encourages you to follow good practices when designing your function.
 This function doesn't know the name of the columns that it will use in advance, so they are passed as parameters.
 This makes the function reusable.
-We might have named the original function `sum_sales_columns`, but the more general name used here makes it clear
-that we could use this to sum columns in any other context.
+You might have named the original function `sum_sales_columns`, but the more general name used here makes it clear
+that you could use this to sum columns in any other context.
 
-We used a single test function above, but could have created separate tests for each scenario and included tests for more than two input columns, for example.
+The example above is a single test function, but could have created separate tests for each scenario and included tests for more than two input columns, for example.
 
 ## Structure test files to match code structure
 
@@ -249,7 +248,7 @@ project/
 `````
 
 The Python example above has one file containing unit tests for each module (group of related functions and classes).
-When using this structure you may want to also group multiple test functions into test classes.
+When using this structure, you may want to also group multiple test functions into test classes.
 Having one test class per function/class that you are testing will make it clear that the group of tests relates to that function or class in your source code.
 
 ```{code-block} python
@@ -275,13 +274,13 @@ class TestSum:
     ...
 ```
 
-Using classes for unit tests has a number of additional benefits, this allows us to reuse the same logic either by class inheritance, or through fixtures.
+Using classes for unit tests has many additional benefits, allowing reuse of the same logic either by class inheritance, or through fixtures.
 Similar to fixtures,
-we are able to use the same pieces of logic through class inheritance in python.
-However, it should be noted that it is easier to mix up and link unit tests when using class inheritance.
+you are able to use the same pieces of logic through class inheritance in python.
+Note that it is easier to mix up and link unit tests when using class inheritance.
 The following code block demonstrates an example of class inheritance which will inherit both the
 variable and the `test_var_positive` unit test, meaning three unit tests are run.
-We are able to overwrite the variable within the subclass at any time, but will still inherit defined functions/tests from the parent class.
+You can overwrite the variable within the subclass at any time, but will still inherit defined functions/tests from the parent class.
 
 ```{code-block} python
 class TestBase:
@@ -309,7 +308,7 @@ Use the approach that makes it easiest for developers to identify the relationsh
 
 Note that some test frameworks allow you to keep the tests in the same file as the code that is being tested.
 This is a good way of keeping tests and code associated,
-but you should ensure that good modular code practices are followed to separate unrelated code into different files.
+but you should follow good modular code practices to separate unrelated code into different files.
 Additional arguments are made to separate tests and functions when you are packaging your code.
 If unit tests and code are located together in the same file,
 the unit tests would also be packaged and installed by additional users.
@@ -317,37 +316,37 @@ Therefore when packaging code,
 the unit tests should be moved to an adjacent test folder as users will not need to have unit tests installed when installing the package.
 
 When separating unit tests into main package and testing scripts, it is important to import your package to ensure the correct functions are being unit tested.
-For the module structure outlined previously, we would use `from src.math import my_math_function`.
+For the module structure outlined previously, use `from src.math import my_math_function`.
 For R you need to specify the name of your package within the `testthat.R` file within your tests folder.
 
 ## Structuring tests
 
-In order to maintain a consistency across modules you develop, you should follow [PEP8](https://www.python.org/dev/peps/pep-0008/) (python)
+To maintain a consistency across modules you develop, you should follow [PEP8](https://peps.python.org/pep-0008) (python)
 or [Google](https://google.github.io/styleguide/Rguide.html) / [tidyverse](https://style.tidyverse.org/) (R) standards when structuring unit tests.
 
 For python this involves importing all needed functions at the beginning of the test file.
-To ensure that the correct functions are imported from your module,
+To ensure you import the correct functions from your module,
 it is also recommended to install a local editable version into your virtual environment.
-This is done by running `pip install -e .` and any changes made to your
+Run `pip install -e .` and any changes made to your
 module functions will also be updated in your python environment.
 Following this it is recommended to define fixtures, classes and then test functions.
-An example of this can be found below.
+An example of this is below.
 More information can be found in Real Python [Getting Started With Testing in Python](https://realpython.com/python-testing/).
 
-Similar structure should be followed in R, with all modules loaded in the beginning of a test script.
+You should follow a similar structure in R, with all modules loaded in the beginning of a test script.
 Test contexts and then functions should be defined in turn as shown above.
 For more information see [testing design in R](https://r-pkgs.org/testing-design.html).
 
-Generally tests within the same file should follow some structure or order.
+Generally, tests within the same file should follow some structure or order.
 We recommend that the order that functions are defined in the main script is also mirrored
 within the test scripts.
-This will be easier for future developers to debug and follow.
-It also ensures that no functions have been missed and do not have unit tests written.
+This will be easier for future developers to debug and follow and
+ensures that no functions have been missed and do not have unit tests written.
 
 
 ## Test that new logic is correct using unit tests
 
-When we implement new logic in code, tests are required to assure us that the code works as expected.
+When you implement new logic in code, tests are required to assure that the code works as expected.
 
 To make sure that your code works as expected, you should write tests for each individual unit in your code.
 A unit is the smallest modular piece of logic in the code - a function or method.
@@ -360,50 +359,50 @@ Unit tests should cover realistic use cases for your function, such as:
 When your function documentation describes the expected inputs to your function, there is less need to test unexpected cases.
 If misuse is still likely or risky, then providing the user with an error is the best approach to mitigate this risk.
 
-Logic that is reused from an existing package that is already tested does not require tests when we use that logic alone.
+Reusing logic from an existing package that is already tested does not require tests when we use that logic alone.
 You should be aware of whether your dependencies are sufficiently tested.
 Newly developed packages or those with very few users are more likely to not be thoroughly tested.
 
 ## Test that different parts of the code interact correctly using integration tests
 
-We define integration tests as those that test on a higher level than a unit. This includes testing that:
+Integration tests are those that test on a higher level than a unit. This includes testing that:
 * multiple units work together correctly
 * multiple high level functions work together (e.g. many units grouped into stages of a pipeline)
 * the analysis works with typical inputs from other systems
 
-Integration tests give us assurance that our analysis is fit for purpose.
-Additionally, they give us safety when refactoring or rearranging large parts of code.
-Refactoring is an important part of managing the complexity of our analysis as it grows.
+Integration tests give you assurance that your analysis is fit for purpose.
+Additionally, they give you safety when refactoring or rearranging large parts of code.
+Refactoring is an important part of managing the complexity of your analysis as it grows.
 
-We can similarly consider a high level stage of an analysis pipeline.
-If we have a stage responsible for imputing missing values, we might create integration tests to check that all values are
-imputed and that particular imputation methods were used for specific cases in our test data.
-When changes are made to individual imputation methods we might not expect these general characteristics to change.
+You can similarly consider a high level stage of an analysis pipeline.
+If you have a stage responsible for imputing missing values, you can create integration tests to check that all values are
+imputed and that you used particular imputation methods for specific cases in your test data.
+When changes are made to individual imputation methods you might not expect these general characteristics to change.
 This test helps to identify cases where this inadvertently has changed.
 
 ```{note}
-Integration tests are more robust when they focus on general high level outcomes that we don't expect to change often.
+Integration tests are more robust when they focus on general high level outcomes that you don't expect to change often.
 Integration tests that check very specific outcomes will need to be updated with any small change to the logic within the part that is being tested.
 ```
 
-## Test that the analysis runs as expected using end to end tests
+## Test that the analysis runs as expected using end-to-end tests
 
-End to end testing (sometimes called system testing) checks the entire workflow from start to finish, ensuring all components work correctly in real-world scenarios. While integration testing focuses on the interaction of specific modules, end to end testing involves all elements of a pipeline. This is useful when refactoring code for example, by providing assurance that overall functionality remains unchanged. 
+End-to-end testing (sometimes called system testing) checks the entire workflow from start to finish, ensuring all components work correctly in real-world scenarios. While integration testing focuses on the interaction of specific modules, end-to-end testing involves all elements of a pipeline. This is useful when refactoring code for example, by providing assurance that overall functionality remains unchanged. 
 
-For example, a piece of analysis has an end to end test to check that outputs are generated and the data are the right shape or format. There might also be a "regression" test that checks that the exact values in the output remain the same. After any changes that are made to tidy up or refactor the code, these end to end tests can be run to assure us that no functionality has been inadvertently changed.
+For example, a piece of analysis has an end-to-end test to check that outputs are generated and the data are the right shape or format. There might also be a "regression" test that checks that the exact values in the output remain the same. After you make any changes to tidy up or refactor the code, these end-to-end tests can be run to assure no functionality has accidentally changed.
 
-End to end tests can also be used to quality assure a project from an end user's perspective, and should be run in an environment that replicates the production environment as closely as possible. This type of testing can catch errors that individual unit tests might miss, and confirm that the output is fit for purpose and the user requirements are met. End to end testing is a form of 'black-box' testing, meaning the tester verifies functionality without focusing on the underlying code. It is therefore important to use end to end testing alongside other forms of testing such as unit tests.
+Use end-to-end tests to also quality assure a project from an end user's perspective; these should be run in an environment that replicates the production environment as closely as possible. This type of testing can catch errors that individual unit tests might miss and confirms that the output is fit for purpose and the user requirements are met. End-to-end testing is a form of 'black box' testing, meaning the tester verifies functionality without focusing on the underlying code. It is therefore important to use end to end testing alongside other forms of testing such as unit tests.
 
 
 ## Good practices for integration and end-to-end testing
 
 When devising an integration or end-to-end testing it’s important to follow these good practices:
 
-- Planning ahead: before you start testing, have a clear plan of what you want to test and how.
+- Planning ahead: Have a clear plan of what you want to test and how before you start.
 - Testing Early:  Start testing integration as soon as parts are combined rather than waiting until everything is finished. This helps catch issues sooner.
 - Use Real Data: Whenever possible, use real data in your tests to make sure everything behaves like it would in the real world. When not possible, make sure the test data reflect the complexities of real data.
 - Automate tests: Automate your integration tests. This makes it easier to run them frequently and catch problems quickly.
-- Checking dependencies: make sure to test how different components rely on each other, as issues can arise there.
+- Checking dependencies: Make sure to test how different components rely on each other, as issues can arise there.
 - Test for failures: don’t just test for success; also check how the system behaves when things go wrong. This helps ensure it handles errors gracefully.
 - Keep tests isolated: Try to isolate tests so that one failure doesn’t affect another, making it easier to pinpoint issues.
 - Document: Keep a record of tests, results, and issues found. This helps with future testing and understanding what changes might affect integration.
@@ -427,10 +426,10 @@ Writing tests in this way means that tests evaluate how your code handles an out
 This is another benefit of enforcing isolation in unit tests - helping you understand when errors are coming from an external system, and when they're coming from your code.
 The unit of code being tested is referred to as the 'System Under Test' (SUT).
 
-One way of achieving this is with mocking. This is where a response from an outside system is replaced with a mock object that your code can be tested against.
+One way of achieving this is with mocking. This is where a response from an outside system is replaced with a mock object that you can test your code against.
 In this example, there's a function making an API request in `src/handle_api_request.py`, and two test functions in `tests/test_handle_api_request.py`.
 The response from `requests.get()` is mocked with a `Mock()` object, to which `text` and `status_code` attributes are assigned.
-The `get_response()` function can now be evaluated for how it handles successful and unsuccessful requests; but thanks to the mocking, get requests are not made to `http://example.com`.
+You can now evaluate the `get_response()` function for how it handles successful and unsuccessful requests; but thanks to the mocking, get requests are not made to `http://example.com`.
 
 ```{code-block} python
 # AI has been used to produce content within this artefact.
@@ -513,7 +512,7 @@ def test_get_response_fail(mock_requests_get):
 
 ```
 
-You may also consider using fixtures to make test code more concise by generating the necessary `Mock` object attributes dynamically. [`Mock.reset_mock()`](https://docs.python.org/3/library/unittest.mock.html#unittest.mock.Mock.reset_mock) is used to remove the attributes associated with a mock object between different test cases.
+Consider using fixtures to make test code more concise by generating the necessary `Mock` object attributes dynamically. Use [`Mock.reset_mock()`](https://docs.python.org/3/library/unittest.mock.html#unittest.mock.Mock.reset_mock) to remove the attributes associated with a mock object between different test cases.
 
 ```
 # tests/test_handle_api_request.py
@@ -555,12 +554,12 @@ def test_get_response_all_conditions(mock_requests_get, mock_response):
 
 ```
 
-[Monkeypatching](https://docs.pytest.org/en/stable/how-to/monkeypatch.html#how-to-monkeypatch-mock-modules-and-environments) in `pytest` provides an alternative way of handling mock objects and attributes, and also allows for the mocking of environment variables.
+[Monkeypatching](https://docs.pytest.org/en/stable/how-to/monkeypatch.html#how-to-monkeypatch-mock-modules-and-environments) in `pytest` provides an alternative way of handling mock objects and attributes, and allows for the mocking of environment variables.
 
 ## Write tests to assure that bugs are fixed
 
 Each time you find a bug in your code, you should write a new test to assert that the code works correctly.
-Once the bug is fixed, this new test should pass and give you confidence that the bug has been fixed.
+Once you resolve the issue, this new test should pass and give you confidence that the bug has been fixed.
 
 When you change or refactor your code in future, the new tests
 will continue to assure that bugs you have already fixed will not reappear.
@@ -572,8 +571,8 @@ The best practice for testing code is to use test-driven development (TDD).
 This is an iterative approach that involves writing tests before writing the logic to meet the tests.
 
 For a piece of analysis logic, you should know in advance what the desired outcome is.
-This might be from a user need (e.g. someone needs output data in a certain shape) or an internal requirement (e.g. we need to impute all missing values).
-Given that you know the expected outcome, you can write the test before even thinking about how you are going to write the solution.
+This might be from a user need (for example, someone needs output data in a certain shape) or an internal requirement (For example you need to impute all missing values).
+Given that you know the expected outcome, you can write the test before you think about how you are going to write the solution.
 
 ```{note}
 This section is framed more like training. Once dedicated training has been produced this section will likely be adapted to provide more concise guidance on
@@ -586,13 +585,13 @@ TDD typically repeats three steps:
 3. Refactor - Make improvements to the quality of the code without changing the functionality
 
 As with any code that is adequately covered by tests, code written using TDD can be safely refactored.
-We can be more confident that our tests will capture any changes that would unintentionally alter the way our code works.
+You can be more confident that your tests will capture any changes that would unintentionally alter the way our code works.
 
-The three steps above are repeated to gradually increase the complexity of our code.
-The first test that is written should focus on the minimum functionality.
+Repeat the above three steps to gradually increase the complexity of your code.
+The first test you write should focus on the minimum functionality.
 Then this minimal functionality is implemented, to do nothing more than the test requires.
 On the next iteration the test becomes more complex, as does the code logic.
-In each iteration the refactoring steps means that the increasing complexity of the code is managed.
+In each iteration the refactoring steps means that you manage the increasing complexity of the code.
 
 This approach provides many benefits beyond good test coverage.
 The iterative nature of TDD encourages you to follow a number of other good practices.
@@ -605,7 +604,7 @@ are extensions of TDD with a useful focus on user needs.
 
 ## Modelling-relevant testing
 
-To ensure that model-relevant tests are conducted within the analysis, it is important to use data that is representative of real-world scenarios and free from biases. This involves selecting diverse datasets that reflect the variety of conditions the model will encounter in practice. Additionally, it is important to regularly update test data to capture any changes in the environment or user behaviour.
+To ensure you conduct model-relevant tests within the analysis, it is important to use data that is representative of real-world scenarios and free from biases. Select diverse datasets that reflect the variety of conditions the model will encounter in practice. Additionally, it is important to regularly update test data to capture any changes in the environment or user behaviour.
 
 ### Acceptance testing
 Acceptance testing ensures that the model meets specified requirements and performs well in real-world scenarios. It verifies that the model's outputs align with business needs and user expectations. There are three types of acceptance testing:
@@ -619,17 +618,17 @@ Acceptance testing ensures that the model meets specified requirements and perfo
 
 ### Defining and Using Appropriate Metrics
 
-Evaluating model performance using metrics is essential. You should choose metrics that align with the specific goals of the project and provide meaningful insights into the performance of the model in this context.  It is important to select metrics that align with the specific goals of the project and provide meaningful insights into the model's performance.
+Evaluating model performance using metrics is essential. Choose metrics that align with the specific goals of the project and provide meaningful insights into the performance of the model in this context.
 
 Use appropriate metrics to evaluate model performance. For example, precision and recall are well established measures for evaluating the performance of data linkage. The right metrics help assess the model's effectiveness in different scenarios.
 
 ### Cross-Validation Techniques
 
-To ensure that the model generalises well to unseen data, techniques like k-fold cross-validation can be used. This method involves dividing the data into k subsets and training the model k times, each time using a different subset as the validation set and the remaining data as the training set. Cross-validation helps identify potential overfitting and ensures that the model performs consistently across different data subsets.
+To ensure that the model generalises well to unseen data, you can use techniques like k-fold cross-validation. This method involves dividing the data into k subsets and training the model k times, each time using a different subset as the validation set and the remaining data as the training set. Cross-validation helps identify potential overfitting and ensures that the model performs consistently across different data subsets.
 
 ### Stress Testing
 
-Stress testing evaluates how the model performs under extreme conditions or with noisy data. This helps identify the model's robustness and ability to handle unexpected inputs. Stress testing involves introducing variations or noise into the input data and observing how the model's outputs are affected. This type of testing is useful for understanding the model's limits and ensuring it can handle real-world challenges.
+Stress testing evaluates how the model performs under extreme conditions or with noisy data. This helps identify the model's robustness and ability to handle unexpected inputs. Stress testing involves introducing variations or noise into the input data and observing how this affects the model's outputs. This type of testing is useful for understanding the model's limits and ensuring it can handle real-world challenges.
 
 ### Sensitivity Analysis
 
@@ -641,7 +640,7 @@ Implementing methods to make the model's outputs interpretable is essential for 
 
 ### Model Optimisation
 
-Optimisation is used to adjust adjusting the model's parameters to achieve the best overall performance. Continuous optimisation ensures that the model remains effective and efficient over time as inputs change. There are lots of techniques available to optimise performance. Most are designed to help find the best parameters for the model to enhance its accuracy and efficiency.
+Use optimisation to adjust the model's parameters to achieve the best overall performance. Continuous optimisation ensures that the model remains effective and efficient over time as inputs change. There are lots of techniques available to optimise performance; most are designed to help find the best parameters for the model to enhance its accuracy and efficiency.
 
 Examples of optimisation techniques for machine learning include grid search and parameter tuning. Grid search involves systematically searching through a predefined set of hyperparameters, while hyperparameter tuning adjusts the model's parameters to achieve the best possible performance.
 
@@ -687,8 +686,8 @@ def test_another_function(spark_session):
 This example shows a fixture named `spark_session` with a testing session scope.
 Starting a new spark session can take a few seconds, so creating a new session
 for each test function would significantly increase the time it takes to run all of the tests.
-With a session level scope, the function is called once for the whole testing session
-and the resulting `SparkSession` object is shared between our tests.
+With a session level scope, you call the function once for the whole testing session
+and share the resulting `SparkSession` object between your tests.
 Reusing the same `SparkSession` object is safe to do if none of our tests modify the object.
 
 ```{code-block} python
@@ -707,10 +706,10 @@ def test_another_function(database_connection):
     ...
 ```
 
-Fixtures can also be useful for undoing any effects each test run might have on the global environment.
+Fixtures can also be useful for undoing any effects that each test run might have on the global environment.
 For example, they can remove test data which has been written to a temporary file or database.
-The example above shows how a fixture might be used to reset a test database between each test.
-Here a test function scope is used, so the fixture is run separately for each test function that uses it.
+The example above shows how you might use a fixture to reset a test database between each test.
+It uses a test function scope, so the fixture is run separately for each test function that uses it.
 The fixture performs a reset on the database after the database connection has been used by the test.
 
 For usage details see the documentation for packages that offer fixtures:
@@ -720,8 +719,8 @@ For usage details see the documentation for packages that offer fixtures:
 ### Use parameterisation to reduce repetition in test logic
 
 Similar steps are often repeated when testing multiple combinations of inputs and outputs.
-Parameterisation allows us to reduce repetition in our test code, in a similar way to writing our logic in functions.
-You should specify pairs of inputs and expected outputs, so that your testing tool can repeat the same test for each scenario.
+Parameterisation allows reduction of repetition in test code, in a similar way to writing your logic in functions.
+Specify pairs of inputs and expected outputs, so your testing tool can repeat the same test for each scenario.
 
 Using parameterisation in a test framework is equivalent to using a for-loop to apply a test function over multiple inputs and expected outputs.
 Using functionality from test packages may provide improved running efficiency and more detailed reporting of test failures.
@@ -733,7 +732,7 @@ In R, the `patrick` package extends `testthat` to provide a
 
 ### Define Source Code
 
-Take the below function for example, it can take 2 arguments.
+Take the below function for example, which can take 2 arguments.
 
 ```{code-block} python
 def sum_two_nums(num1:int, num2:int) -> int:
@@ -810,7 +809,7 @@ def expected_answers() -> dict:
 
 This fixture of expected answers can be served to a parameterised test and the
 returned dictionary can be accessed to provide the expected answer for
-parameter combinations. In order to parameterise both of the required arguments,
+parameter combinations. To parameterise both of the required arguments,
 the parameterise statements are simply stacked on top of each other:
 
 ```{code-block} python
@@ -863,11 +862,11 @@ Although testing SQL is outside the scope of this guidance, many of the concepts
 in this guidance are also applicable to SQL. In SQL,
 single queries often contain several parts. These can be more readily
 tested by breaking up these queries and taking a more step-by-step approach,
-similar to breaking up functions. Integration testing can be used to verify
+similar to breaking up functions. Use [Integration testing](https://github.com/best-practice-and-impact/qa-of-code-guidance/blob/main/book/testing_code.md#test-that-different-parts-of-the-code-interact-correctly-using-integration-tests) to verify
 that queries and functions behave as expected when combined.
 
-Functions that interact with a database (DB) should be tested within a development
-environment, rather than with a production database. This is in order to prevent
+Test functions that interact with a database (DB) within a development
+environment, rather than with a production database. This prevents
 unintended data modification or deletion. Functions can also be unit tested
 from simplified dummy data.
 
@@ -876,8 +875,8 @@ and [pgTAP](https://github.com/theory/pgtap/) for Postgres.
 
 
 ## In a time crunch? The risks to skipping tests
-In an ideal world, testing code would never be skipped, keeping the software reliable,
-and easily reproducible. However, in practice there are times when skipping tests may be necessary—
+In an ideal world, you would never skip testing code, ensuring the software is reliable
+and easily reproducible. However, in practice there are times when skipping tests may be necessary —
 perhaps due to tight deadlines, limited resources, or the need to quickly get a feature up
 and running. While this can save time in the moment, it’s important to be cautious, as
 skipping tests can lead to hidden problems that may become harder to fix later, particularly
