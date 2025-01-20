@@ -16,7 +16,7 @@ How can I demonstrate that my code does what it is supposed to do?
 
 As the developer of the code, you are best placed to decide what tests you need to put in place to answer that question confidently.
 
-Take a risk-based approach to testing. Tests should be used proportionately for your analysis.  This usually means writing more tests for parts of your code that are very new, more complex, or carry more risk.  
+Take a risk-based approach to testing. You should use tests proportionately based on your analysis.  This usually means writing more tests for parts of your code that are very new, more complex, or carry more risk.  
 
 When you are developing your tests, here are some points to think about:    
 
@@ -45,7 +45,7 @@ Other useful learning resources include:
 * Hadley Wickham's [testthat: getting started with testing](https://vita.had.co.nz/papers/testthat.pdf) and [testing design in R](https://r-pkgs.org/testing-design.html)
 ```
 
-In this section we assume that you are using a testing framework to run your tests (for example `pytest` for python or `testthat` for R) and have your code in a package.
+In this section, we assume that you are using a testing framework to run your tests (for example `pytest` for python or `testthat` for R) and have your code in a package.
 It is more difficult to test code that is not in a package and therefore follow the testing good practices described here.
 
 ## Write reproducible tests
@@ -58,7 +58,7 @@ However, it's important you are able to produce the same checks against your cod
 Code changes over time, so you need to be able to repeat these checks against the updated code.
 Additionally, other analysts should be able to carry out the same checks and get the same results.
 
-Representing your tests as code allows you to consistently repeat the same steps.
+You can consistently repeat the same steps when you represent your tests as code.
 This lets you or another analyst carry out the same verification again to get the same results.
 When you have carried out a test manually, you should ensure that you add a code test to reproduce this.
 
@@ -66,10 +66,10 @@ Code that you write for testing should also follow the good practices described 
 
 ## Write repeatable tests
 
-For you to be able to trust the results of your tests you need them to be repeatable.
+You need your tests to be repeatable for you to be able to trust their results.
 This means they should give the same outcome if you run them more than once against the same version of your analysis code.
 
-For tests to run repeatably each test must be independent.
+For tests to run repeatably, each test must be independent.
 There should not be a shared state between tests, for example a test should not depend on another test having already run.
 You could intentionally randomise the order that tests are executed to encourage this.
 
@@ -89,7 +89,7 @@ This ensures that changes do not break the existing, intended functionality of y
 Running the entire collection of tests has the added benefit of detecting unexpected side-effects of your changes.
 For example, you might detect an unexpected failure in part of your code that you didn't change.
 
-Running tests regularly allows you to fix any issues before changes are added to a stable or production version of your code (e.g. the `main` Git branch).
+If you run tests regularly, you will be more able to fix any issues before changes are added to a stable or production version of your code (e.g. the `main` Git branch).
 
 If you have altered the functionality of your code, this will likely break existing tests.
 Failing tests here act as a good reminder that you should update your tests and documentation to reflect the new functionality.
@@ -98,7 +98,7 @@ Many testing frameworks support writing tests as examples in the function docume
 It's not easy to remember to run your tests manually at regular intervals.
 And you're right to think "surely this could be automated too?".
 Use [continuous integration](continuous-integration) to automate
-the running of tests. This way, tests can be triggered to run when any changes are made to your
+the running of tests. This way, you can trigger tests to run when any changes are made to your
 remote version control repository.
 
 ## Record the outcomes of your tests
@@ -117,7 +117,7 @@ Tests for analytical code will usually require data. To ensure that tests are cl
 
 Good test data are:
 * only just detailed enough data to carry out the test
-* fake, static (hardcoded) and readable
+* fake, static (hardcoded), and readable
 * stored closely to the test
 
 ```{warning}
@@ -176,7 +176,7 @@ def test_sum_columns():
 ```
 
 Using minimal and general data in the test has made it clearer what is being tested, and also avoids any unnecessary disclosure.
-In this case the function is very generic, so the test doesn't need to know the names of real columns in our data or even have similar values in the data.
+In this case, the function is very generic, so the test doesn't need to know the names of real columns in our data or even have similar values in the data.
 The test data are focussed on testing specific, realistic cases.
 This makes it easy to see that this function works correctly with positive, negative and zero values.
 
@@ -276,7 +276,7 @@ class TestSum:
 
 Using classes for unit tests has many additional benefits, allowing reuse of the same logic either by class inheritance, or through fixtures.
 Similar to fixtures,
-you are able to use the same pieces of logic through class inheritance in python.
+you can use the same pieces of logic through class inheritance in python.
 Note that it is easier to mix up and link unit tests when using class inheritance.
 The following code block demonstrates an example of class inheritance which will inherit both the
 variable and the `test_var_positive` unit test, meaning three unit tests are run.
@@ -310,14 +310,14 @@ Note that some test frameworks allow you to keep the tests in the same file as t
 This is a good way of keeping tests and code associated,
 but you should follow good modular code practices to separate unrelated code into different files.
 Additional arguments are made to separate tests and functions when you are packaging your code.
-If unit tests and code are located together in the same file,
+If you store unit tests and code in the same file,
 the unit tests would also be packaged and installed by additional users.
 Therefore when packaging code,
-the unit tests should be moved to an adjacent test folder as users will not need to have unit tests installed when installing the package.
+you should move the unit tests to an adjacent test folder as users will not need to have unit tests installed when installing the package.
 
 When separating unit tests into main package and testing scripts, it is important to import your package to ensure the correct functions are being unit tested.
 For the module structure outlined previously, use `from src.math import my_math_function`.
-For R you need to specify the name of your package within the `testthat.R` file within your tests folder.
+For R, you need to specify the name of your package within the `testthat.R` file within your tests folder.
 
 ## Structuring tests
 
@@ -326,7 +326,7 @@ or [Google](https://google.github.io/styleguide/Rguide.html) / [tidyverse](https
 
 For python this involves importing all needed functions at the beginning of the test file.
 To ensure you import the correct functions from your module,
-it is also recommended to install a local editable version into your virtual environment.
+we recommended you install a local editable version into your virtual environment.
 Run `pip install -e .` and any changes made to your
 module functions will also be updated in your python environment.
 Following this it is recommended to define fixtures, classes and then test functions.
@@ -353,7 +353,7 @@ A unit is the smallest modular piece of logic in the code - a function or method
 
 Unit tests should cover realistic use cases for your function, such as:
 * boundary cases, like the highest and lowest expected input values
-* positive, negative, zero and missing value inputs
+* positive, negative, zero, and missing value inputs
 * examples that trigger errors that have been defined in your code
 
 When your function documentation describes the expected inputs to your function, there is less need to test unexpected cases.
@@ -367,7 +367,7 @@ Newly developed packages or those with very few users are more likely to not be 
 
 Integration tests are those that test on a higher level than a unit. This includes testing that:
 * multiple units work together correctly
-* multiple high level functions work together (e.g. many units grouped into stages of a pipeline)
+* multiple high level functions work together (e.g., many units grouped into stages of a pipeline)
 * the analysis works with typical inputs from other systems
 
 Integration tests give you assurance that your analysis is fit for purpose.
@@ -571,7 +571,7 @@ The best practice for testing code is to use test-driven development (TDD).
 This is an iterative approach that involves writing tests before writing the logic to meet the tests.
 
 For a piece of analysis logic, you should know in advance what the desired outcome is.
-This might be from a user need (for example, someone needs output data in a certain shape) or an internal requirement (For example you need to impute all missing values).
+This might be from a user need (for example, someone needs output data in a certain shape) or an internal requirement (for example, you need to impute all missing values).
 Given that you know the expected outcome, you can write the test before you think about how you are going to write the solution.
 
 ```{note}
@@ -580,9 +580,9 @@ the practice.
 ```
 
 TDD typically repeats three steps:
-1. Red - Write a test that we expect to fail
-2. Green - Write or update our code to pass the new test
-3. Refactor - Make improvements to the quality of the code without changing the functionality
+1. Red - Write a test that we expect to fail.
+2. Green - Write or update our code to pass the new test.
+3. Refactor - Make improvements to the quality of the code without changing the functionality.
 
 As with any code that is adequately covered by tests, code written using TDD can be safely refactored.
 You can be more confident that your tests will capture any changes that would unintentionally alter the way our code works.
@@ -646,7 +646,7 @@ Examples of optimisation techniques for machine learning include grid search and
 
 ## Reduce repetition in test code (fixtures and parameterised tests)
 
-Where possible, reduce repetition in your tests. Tests are code too, so you should still [make this code reusable](functions).
+Where possible, you should reduce repetition in your tests. Tests are code too, so you should still [make this code reusable](functions).
 As with functional code, test code is much easier to maintain when it is modular and reusable.
 
 ### Use fixtures to reduce repetition in test set up
