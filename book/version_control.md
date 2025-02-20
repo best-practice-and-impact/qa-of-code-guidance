@@ -9,9 +9,9 @@ In this chapter, we primarily discuss the benefits of using [the Git version con
 To get the most benefit from this section, you should have a basic understanding of how to use Git.
 Many of the examples used in this section refer to the command-line interface for Git, so general command-line knowledge may also help. 
 
-You can find links to relevant training in the [](learning.md) section of the book.
 ```
 
+You can find links to relevant training in the [](learning.md) section of the book.
 
 ## Keep an audit trail of changes
 
