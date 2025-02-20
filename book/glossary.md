@@ -13,7 +13,7 @@ Treating a problem as an idea or concept, rather than a detailed individual exam
 
 Abstraction is used to manage the complexity of software, by describing our logic in a more generic way or by hiding complexity.
 When we use similar logic in multiple parts of our code, we can abstract this logic into a generic function or method to be reused.
-When part of our process is very complex but is self-contained we can hide this complexity it by putting it inside a function and referring to the function.
+When part of our process is very complex, but is self-contained, we can hide this complexity it by putting it inside a function and referring to the function.
 
 
 ### Application Programming Interface (API)
@@ -40,7 +40,7 @@ A computer program that runs code in a particular programming language.
 For example, the program that reads your Python or R analysis code and runs it.
 A non-interactive interpreter runs code in order, which is important for reproducibility.
 
-Interactive interpreters allow you to run individual lines of code, which means that code can be run out of order.
+Interactive interpreters allow you to run individual lines of code, which means that you can run code  out of order.
 Notebooks use interactive interpreters.
 These are not suitable for running analysis pipelines, because they do not ensure that the code is run reproducibly.
 
@@ -198,15 +198,15 @@ Using open-source software and publishing our code with open-source licenses ens
 Open-source programming languages are free to use.
 We recommend using Python and R, which support the good practices outlined in this guidance.
 
-Proprietary software, including SPSS, SAS and Stata are closed source.
+Proprietary software, including SPSS, SAS, and Stata are closed source.
 These are expensive to use and do not support many of the good analysis practices outlined in this guidance.
-Not using open source analysis tools means that our users need to purchase software to reproduce our results.
+Not using open source analysis tools means that your users need to purchase software to reproduce your results.
 
 
 ### Packages
 
 Packages are file structures that contain code and documentation.
-These collections of code are designed to be installed and re-used with ease.
+These collections of code are designed for you to install and re-use them with ease.
 Packages in Python and R act as extensions, to allow us to reuse code that has already been written.
 
 "Library" is similarly used to describe a software collection, however, packages are more specifically for distribution of code.
@@ -236,12 +236,12 @@ A orchestrated chain of programs that will execute the next program(s) in the ch
 
 ### Procedural Running
 
-Where a script is executed as statements run one after the other.
+Where a script is executed as statements that run one after the other.
 
 
 ### Program
 
-A main script that can contain statements, functions and methods. The main script may import functions and methods from other scripts. This is the script that would be run by the user/orchestration tool.
+A main script that can contain statements, functions, and methods. The main script may import functions and methods from other scripts. This is the script that would be run by the user/orchestration tool.
 
 
 ### Python and R
@@ -258,7 +258,7 @@ Ability to gain an understanding of code within a reasonable amount of time.
 ### Reproducible Analytical Pipelines (RAP)
 
 Reproducible Analytical Pipelines (RAP) are analyses that are carried out following good software engineering practices that are described by this guidance.
-They focus on the use of open-source analytical tools and a variety of techniques to deliver reproducible, auditable and assured data analyses.
+They focus on the use of open-source analytical tools and a variety of techniques to deliver reproducible, auditable, and assured data analyses.
 RAP is more generally a culture of wanting to improve the quality of our analysis, by improving the quality assurance of our analysis code.
 
 
