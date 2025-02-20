@@ -593,7 +593,7 @@ Open source projects benefit from this transparency by providing users with a pl
 In turn, developers in the community can then address these issues to improve the project.
 
 Analytical projects might use issues to plan and discuss the steps involved in developing the project.
-Collaborators might b[](vscode-file://vscode-app/c%3A/Program%20Files/Microsoft%20VS%20Code/resources/app/out/vs/code/electron-sandbox/workbench/workbench.html)e tagged or assigned to the task where additional help is required.
+Collaborators might be tagged or assigned to the task where additional help is required.
 If your analysis code is widely useful, others that use your code may also suggest improvement and offer to contribute to the project via these issues.
 
 [Setting issue templates](https://docs.github.com/en/free-pro-team@latest/github/building-a-strong-community/configuring-issue-templates-for-your-repository)
