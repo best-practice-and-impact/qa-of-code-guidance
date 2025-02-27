@@ -1,8 +1,8 @@
 # Structuring your project
 
-When you're designing your analysis it can be difficult to keep your thoughts tidy.
+When you are designing your analysis it can be difficult to keep your thoughts tidy.
 Analysis is often exploratory and subject to change.
-This nature means that scripts and programs can become messy.
+This means that scripts and programs can become messy.
 The messier the programs, the harder they are to maintain and change in future.
 
 Good directory structure and file hygiene can go a long way to mitigate this.
@@ -42,7 +42,7 @@ However, there are some principles that are useful to consider.
 
 ### Use good filename conventions
 
-Much like names of elements in your code, good filenames inform you of the purpose of a file.
+Much like the names of elements in your code, good filenames inform you of the purpose of a file.
 Within a project, you should follow a standard file naming convention.
 Good naming practices improve your ability to locate and identify the contents of files.
 
@@ -83,7 +83,7 @@ Each project should be kept in its own folder, with a descriptive name.
 Most analysis will have an ingest or input stage, a processing stage, and a reporting stage.
 You should use folders within each project to separate raw data, documentation, source code (or `src`) and results.
 
-A typical analytical project folder might look like:
+A typical analytical project folder in python might look like:
 
 ```` {tabs}
 ``` {code-tab} py
@@ -132,12 +132,12 @@ This will allow you to record changes to your code independent of other dependen
 You should not alter raw data - treat it as read-only.
 You should conduct data cleaning on a copy of the raw data, so that you can document which cleaning decisions have been made.
 
-Your project structure should include an immutable store for raw data.
+Your project structure should include an immutable store for raw data. This does not have to be inside the code repository and it is usually best to separate operational folders for inputs and outputs from the code base.
 
 
 ### Check that outputs are disposable
 
-You should be able to dispose of your outputs, deleting them, without worrying.
+You should be able to dispose of your outputs, deleting them, without worrying, because you should be able to regenerate them easily by re-running your pipeline.
 If you are worried about deleting your outputs (i.e., results) then it is likely you lack confidence in reproducing your results.
 
 Frequently deleting and regenerating your outputs when developing analysis is good practice.
@@ -145,7 +145,7 @@ Frequently deleting and regenerating your outputs when developing analysis is go
 
 ## Structure code as modules and packages
 
-Code that is more complex, high risk or reusable between projects can benefit from being structured into a package.
+Code that is complex, high risk or reusable between projects can benefit from being structured into a package.
 Modules are single files that contain one or more reusable units of code.
 A package typically contains multiple related modules.
 
@@ -167,7 +167,7 @@ See [](project_documentation.md) for a summary of common package and project doc
 ## Use project templates
 
 Many analysts choose to use similar structures for multiple projects even though project structure can be flexible.
-Consistency in structure makes it easier to navigate unfamiliar projects.
+Consistency in structure makes it easier to navigate unfamiliar projects, especially if they use the same coding style.
 It means that members of the team can quickly orient themselves when joining an existing project or starting a new one.
 
 [Cookiecutter](https://github.com/cookiecutter/cookiecutter) is a command-line tool that creates projects from templates (cookiecutters).
@@ -184,7 +184,7 @@ Useful cookiecutters include:
 Rstudio provides a standard template for R packages via `File > New Project... > New Directory > R Package`.
 We have created some basic templates for an [R package](https://github.com/best-practice-and-impact/example-package-r)
 and a [Python package](https://github.com/best-practice-and-impact/example-package-python) that may be helpful.
-R project structures can also be set up or extended, one component at a time, using the [`usethis` workflow package](https://usethis.r-lib.org/).
+R project structures can also be set up or extended, one component at a time, using the [`usethis` workflow package](https://usethis.r-lib.org/). usethis() sets up packages that follow the structure in the R packages book.
 For example, `use_test()` will add the directories necessary for testing using `testthat` and generate basic test file templates for a given function name.
 
 

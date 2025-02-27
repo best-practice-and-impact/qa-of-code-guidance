@@ -1,7 +1,7 @@
 # Glossary of terms
 
 ```{note}
-This section is a draft, while we ensure that it meets user needs.
+This section is a draft, while we make sure that it meets user needs.
 
 Please get in touch with feedback [by creating a GitHub Issue](https://github.com/best-practice-and-impact/qa-of-code-guidance/issues) or [emailing us](mailto:ASAP@ons.gov.uk).
 ```
@@ -22,7 +22,7 @@ An interface that defines how you can interact with software through code.
 For example, the functions or methods from a package that a typical user will interact with.
 
 
-### Attributes
+### Attribute
 
 A variable associated with a class object.
 
@@ -56,7 +56,7 @@ Examples of built in R classes are double, character, and logical.
 
 ### Cloud computing
 
-Cloud computing allows us to access computing power and data storage on-demand.
+Cloud computing allows us to access scalable computing power and data storage on-demand.
 This means that we can access high-specification hardware or store large amounts of data, usually only paying for what we have used.
 
 The most common cloud platforms are Google Cloud Platform (GCP), Amazon Web Service (AWS) and Microsoft Azure.

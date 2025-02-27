@@ -2,7 +2,7 @@
 
 Configuration describes how your code runs when you execute it.
 
-In analysis, we may want to run our analysis code using different inputs or parameters.
+In analysis, we often want to run our analysis code using different inputs or parameters.
 And we likely want other analysts to be able to run our code on different machines, for example, to reproduce our results.
 This section describes how we can define analysis configuration that is easy to update and can remain separate from the logic in our analysis.
 
@@ -36,7 +36,7 @@ prediction.to_csv("outputs/predictions.csv")
 ```{code-tab} r R
 # Note: this is not an example of good practice
 # This is intended as example of what early pipeline code might look like
-data <- read.csv("C:/a/very/specific/path/to/input_data.csv") 
+data <- utils::read.csv("C:/a/very/specific/path/to/input_data.csv") 
 
 set.seed(42)
 split <- caTools::sample.split(data, SplitRatio = .3)
@@ -47,10 +47,9 @@ test_data <- data[!split, ]
 model <- glm(formula = outcome ~ a + b + c, family = binomial(link = "logit"), data = train_data, method = "model.frame")
 # model <- glm(formula = outcome ~ a + b + c, family = binomial(link = "logit"), data = train_data, method = "glm.fit")
 
-
 prediction <- predict(model, test_data, type = "response")
 
-write.csv(prediction, "outputs/predictions.csv")
+utils::write.csv(prediction, "outputs/predictions.csv")
 
 ```
 
@@ -61,7 +60,7 @@ We use one subset of variables and outcomes to train our model and then use the 
 Finally, we write the model's predictions to a `.csv` file.
 
 The file paths we use to read and write data in our script are particular to our working environment.
-These files and paths may not exist on an other analyst's machine.
+These files and paths may not exist on another analyst's machine.
 As such, to run our code, other analysts need to read through the script and replace these paths.
 As we'll demonstrate below, collecting flexible parts of our code together makes it easier for others to update them.
 
@@ -76,7 +75,7 @@ We've used comments to switch between which of these lines of code runs.
 This practice is common, especially when we want to make a number of changes when developing how our analysis should run.
 However, commenting sections of code in this way makes it difficult for others to understand our code and reproduce our results.
 We should avoid this form of ambiguity because another analyst would not be sure which set of parameters was used to produce a given set of predictions.
-Below, we'll look at some better alternatives to storing and switching our analysis parameters.
+Below, we'll look at some better alternatives for storing and switching analysis parameters.
 
 ````{tabs}
 
@@ -122,7 +121,7 @@ test_split_proportion = .3
 model_method = "glm.fit"
 
 #analysis
-data <- read.csv(input_path) 
+data <- utils::read.csv(input_path) 
 
 set.seed(random_seed)
 split <- caTools::sample.split(data, SplitRatio = test_split_proportion)
@@ -134,7 +133,7 @@ model <- glm(formula = outcome ~ a + b + c, family = binomial(link = "logit"), d
 
 prediction <- predict(model, test_data, type = "response")
 
-write.csv(prediction, output_path)
+utils::write.csv(prediction, output_path)
 ```
 
 ````
@@ -291,7 +290,7 @@ has been used to produce our analysis outputs, for reproducibility.
 
 Environment variables are variables that are available in a particular environment.
 In most analysis contexts, our environment is the user environment that we are running our code from.
-This might be your local machine or dedicated analysis platform.
+This might be your local machine or a analysis platform.
 
 If your code depends on credentials of some kind, do not write these in your code.
 You can store passwords and keys in configuration files, but there is a risk that these files may be included in [version control](version_control.md).

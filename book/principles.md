@@ -3,7 +3,7 @@
 When we do analysis, it must be fit for purpose.
 If it isn't, we risk misinforming decisions.
 Bad analysis can result in harm or misallocation of public funds.
-As such, we must take the right steps to ensure high quality analysis.
+So we must take the right steps to ensure high quality analysis.
 
 This book recognises three founding principles of good analysis, each supported by the one before it.
 Programming in analysis makes each of these principles easier to fulfil in most cases.

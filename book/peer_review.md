@@ -2,10 +2,10 @@
 
 Peer review of code is a quality assurance activity where a developer, other than the code's author, views and tests the usage of a piece of code.
 
-Peer review allows a fresh pair of eyes to take a look at your work.
+Peer review allows for a fresh pair of eyes to take a look at your work.
 It helps to assure that you have taken an appropriate approach to your analysis and may highlight errors in the analysis process.
 Constructive review feedback helps you to improve your code quality and provides confidence in your work.
-It acts to assure that our analysis is fit for purpose.
+It acts to assure that your analysis is fit for purpose.
 
 ```{epigraph}
 For analysis to be used to inform a decision it must be possible to assess its utility, reliability,
@@ -15,7 +15,7 @@ and the degree of validation and verification to which it has been subjected.
 ```
 
 [The Aqua book](https://www.gov.uk/government/publications/the-aqua-book-guidance-on-producing-quality-analysis-for-government)
-tells us that we should proportionatelly quality assurance our analysis depending on the complexity and business risk of the analysis.
+tells us that we should proportionately quality assurance our analysis depending on the complexity and business risk of the analysis.
 This means that you may require both internal and external peer review to adequately assure your analysis.
 We recommend External review if your analysis uses novel or complex techniques,
 if comparison with other analyses cannot be used to challenge your results, or if the analysis is business critical.
@@ -45,7 +45,7 @@ In more depth:
 * Is there duplication in the code that could be simplified by refactoring into functions and classes?
 * Are functions and class methods simple, using few parameters?
 
-As we discussed in [](readable_code.md), good quality code is easier to read, understand, and maintain.
+As we discussed in [](readable_code.md), good quality, modular code is easier to read, understand, and maintain.
 Peer review improves the quality of our code through the reviewer's constructive challenges.
 You might do this as a reviewer by suggesting alternative ways to represent the analysis or
 by asking about decisions that have been made in the approach to the analysis.
@@ -67,7 +67,7 @@ As a reviewer, you should ask whether the amount of testing is proportionate giv
 In more depth:
 
 * Are high level parameters kept in dedicated configuration files?
-* Or would somebody need to work their way through the code with lots of manual edits to reconfigure for a new run?
+* Or would somebody need to work their way through the code with lots of manual edits to reconfigure for a new run? This is much more risky.
 
 Most analysis stems from some form of customer engagement.
 Throughout design, implementation and review of analysis we must continue to assess whether our analysis is fit for purpose:

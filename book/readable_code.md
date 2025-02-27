@@ -1,13 +1,13 @@
 # Readable code
 
 The principles outlined in this chapter represent good practices for general programming and software development.
-These have been tailored to a more analytical workflow.
+These have been tailored to analytical workflows.
 
 ```{admonition} Pre-requisites
 :class: admonition-learning
 
-To get the most benefit from this section, you should have an understanding modular code, which was covered in the [previous chapter](modular_code.md).
-You should also have an understand of core programming concepts such as:
+To get the most benefit from this section, you should have an understanding of modular code, which was covered in the [previous chapter](modular_code.md).
+You should also be familiar with core programming concepts such as:
 
 * storing information in variables.
 * using control flow, such as if-statements and for-loops.
@@ -25,7 +25,7 @@ Code is read more often than it is written.
 ```
 
 When writing code, we should expect that at some point someone else will need to understand, use, and adapt it.
-This might be yourself in six months time.
+That someone might be you in six months time!
 As such, it is important to empathise with these potential users and write code that is tidy, understandable, and does not add unnecessary complexity.
 Doing this will make for a 'self-documenting' codebase that does not need as much additional documentation.
 
@@ -45,7 +45,7 @@ Programs are meant to be read by humans and only incidentally for computers to e
 Code with high readability is often referred to as 'clean code'.
 Clean code helps us understand a program faster, as it avoids points of confusion and ambiguity.
 
-The following sections will present some key aspects of writing clean code that are fairly widely applicable.
+The following sections set out some key aspects of writing clean code that are fairly widely applicable.
 That said, each individual programming language has idiomatic ways of writing code that are specific to its features.
 Additionally, each language usually has some form of accepted style guide.
 
@@ -58,7 +58,7 @@ which may not be available in this document.
 ### Use informative names
 
 The most important aspect of clean code is the naming of identifiers within your code.
-This includes variables, functions, classes and any other objects that can be assigned a name.
+This includes variables, functions, classes, constants and any other objects that can be assigned a name.
 
 Someone reading your code will benefit greatly if you use names that are:
 
@@ -96,7 +96,7 @@ my_favourite_number <- "ssh, I'm a string"
 ````
 
 Another developer, or even 'future you', would be unable to correctly interpret what these variable names to represent.
-Therefore, you should strive to avoid cryptic or single-letter identifiers.
+Therefore, you should try very hard to avoid cryptic or single-letter identifiers.
 
 That said, there are situations where some seemingly cryptic identifiers make sense.
 Using single letters to name variables is suitable when implementing methodologies from mathematical notation.
@@ -211,9 +211,9 @@ You should respect the best practices already covered in the [Naming variables](
 However, there are a few other points worth raising that are exclusive to function and method names.
 
 Firstly, your user should be able to infer the purpose or action of a function from its name.
-Your function may be overly complex or require further detail in its documentation if you can't describe the overall task performed by the function in a few words.
+A warning sign that your function may be overly complex or require further detail in its documentation is when you find that you can't describe the overall task performed by the function in a few words.
 
-It can be effective to describe the specigic task a function performs in its name, starting with a verb:
+It can be effective to describe the specific task a function performs in its name, starting with a verb:
 
 ````{tabs}
 ```{code-tab} py
@@ -321,7 +321,7 @@ Writing custom classes is more common in python than in R, as discussed in the [
 
 ### Make code easier to read by following a consistent style
 
-Programming languages can differ in a myriad of ways.
+Programming languages can differ in lots of ways.
 One way R and Python differ, for example, is their use of indentation.
 Indentation is part of the well defined syntax of Python but is not for R.
 This does not mean that you shouldn't use indentation in R to make your code more readable.
@@ -458,10 +458,11 @@ You should avoid introducing extra complexity to these problems, wherever possib
 Here are a few tips to make sure you keep your project nice and simple:
 
 - Solve the problem - do not get distracted and make sure you have a clear outcome in mind.
-- Try not to 'reinvent the wheel' - use existing packages when they solve the problem.
+- Try not to 'reinvent the wheel' - use existing packages when they already have functionality that solves the problem.
 They will most likely be better documented and won't need extra maintenance.
 - Split your code into understandable parts - consider how to [make your code modular](modular).
 - Don't over-engineer your solution - if it is understandable and works, refrain from over-complicating for the sake of small increases in efficiency.
+- When you have a choice of alternative packages to do the same thing, use one and stick to it. For example, the R packages dplyr and sqldf both enable the use of selection and filtering operations. Stick to one unless there is a very good reason to use both. When choosing between alternatives, think about their familiarity for other coders, ease of use and efficiency.
 
 ```{note}
 It's important to capture the requirements of your code before writing it.
@@ -873,7 +874,7 @@ extended_methodology <- function(data) {
 ```
 ````
 
-Same would apply with classes through ideas like inheritance.
+The same applies to classes through ideas like inheritance.
 
 When you think about the consequences of this, the open-closed principle gives you:
 

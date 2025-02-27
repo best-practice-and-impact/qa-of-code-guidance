@@ -1,7 +1,7 @@
 # Managing analytical code development
 
 ```{note}
-This section is a draft, while we ensure that it meets user needs.
+This section is a draft, while we make sure that it meets user needs.
 
 It would benefit from case studies that demonstrate how to decide what level of quality assurance a piece of analysis requires.
 
@@ -10,7 +10,7 @@ Please get in touch with feedback or case studies to support the guidance
 or emailing us at [emailing us](mailto:ASAP@ons.gov.uk).
 ```
 
-This section of the guidance targets those who manage data analysis/science/engineering work in government
+This section of the guidance targets those who manage data analysis, science and engineering work in government
 or those acting as product owners for analytical products.
 
 It aims to help you support your team to apply the good quality assurance practices described in the wider
@@ -28,10 +28,10 @@ You should use this when designing and managing the development of analysis as c
 ## Apply quality assurance proportional to risk
 
 As the [the Aqua book](https://www.gov.uk/government/publications/the-aqua-book-guidance-on-producing-quality-analysis-for-government) notes,
-the quality assurance of our analysis should be proportional to the complexity and risk of the analysis.
+the quality assurance we apply to our analysis should be proportionate to the complexity and risk that the analysis carries.
 
 When managing analytical work, you should not need an in-depth understanding of the analysis code to trust that it is working correctly.
-However, you should be confident that the team has taken an appropriate approach given the user need,
+However, you should be confident that the team who built the analysis process has taken an appropriate approach given the user need,
 and that proportionate quality assurance is being applied to the development and running of the analysis.
 
 You should work with your team to decide which quality assurance practices are necessary given each piece of analysis.
@@ -100,7 +100,7 @@ Versioning input data ensures that we can reproduce our analysis.
 [Version control](version_control.md) of changes provides an audit trail.
 
 * You should version control the code, documentation, and peer reviews. Git software is most commonly used for this.
-* You should develop the code on an open source code platform, like GitHub. This transparency increases your users trust in the analysis.
+* You should develop the code on an open source code platform, like GitHub. This transparency increases your users trust in the analysis and promotes collaboration and re-use.
 * You should have a clear record of every change and who made it.
 * Each change should be linked to a reason, for example, a new requirement or an issue in the existing code.
 * You should store reviews of changes with the version of the analysis that was reviewed.
@@ -124,9 +124,9 @@ to assess how the team are progressing towards the target quality assurance prac
 
 ### How easy is it to adjust the way that the analysis runs?
 
-[Configuration files](configuration.md) allow you to change the way the code runs without editing the code.
+[Configuration files](configuration.md) allow you to change the way the code runs without editing the code itself.
 
-* You should store parts of the code that may change in separate configuration files.
+* You should store parameters for the code that often change between runs in separate configuration files.
 * Things that often change in analysis code include input and output file paths, reference dates and model parameters.
 
 

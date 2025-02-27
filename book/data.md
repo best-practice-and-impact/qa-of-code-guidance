@@ -1,7 +1,7 @@
 # Data management
 
 Data management covers a broad range of disciplines, including organising, storing and maintaining data.
-Dedicated data architects and engineers typically handle data management. However, we appreciate that analysts are often expected to manage their own data.
+Dedicated data architects and engineers typically handle data management. However, analysts are often expected to manage their own data or will work alongside other data professionals.
 This section aims to highlight good data management practices, so that you can either appreciate how your organisation handles its data
 or implement your own data management solutions.
 
@@ -25,7 +25,7 @@ The Office for Statistics Regulation provides a standard for
 We assume that most data are now stored digitally.
 
 Digital data risk becoming inaccessible as technology develops and commonly used software changes.
-Use open or standard file formats for long term data storage.
+Use open or standard file formats, not proprietary ones, for long term data storage.
 There are [recommended formats](https://www.ukdataservice.ac.uk/manage-data/format/recommended-formats.aspx) for storing different data types,
 though we suggest avoiding formats that depend on proprietary software like SPSS, STATA, and SAS.
 
@@ -48,13 +48,13 @@ alt: A comic strip describing someone sending "data" in the form of a screenshot
 ```
 
 Do not use spreadsheets for storage of data (or statistics production and modelling processes).
-Using spreadsheets to store data introduces usses such as:
+Using spreadsheets to store data introduces problems like these:
 
 * Lack of audibility - changes to data are not recorded.
-* Multiple users can't work with a single spreadsheet file at once.
+* Multiple users can't work with a single spreadsheet file at once, or risk complex versioning clashes which can be hard to resolve.
 * They are error prone and have no built in quality assurance.
 * Large files become cumbersome.
-* Automatic "correction" of grammar and data type, which silently corrupts your data.
+* There is a risk of automatic "correction" of grammar and data type, which silently corrupts your data.
   * Converting dates to a different datetime format.
   * Converting numbers or text that resemble dates to dates.
 

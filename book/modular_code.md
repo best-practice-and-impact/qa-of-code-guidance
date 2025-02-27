@@ -1,12 +1,12 @@
 # Modular code
 
 This chapter outlines principles that represent good practices for general programming and software development.
-We have tailored these to a more analytical workflow.
+We have tailored these to support analytical workflows.
 
 ```{admonition} Pre-requisites
 :class: admonition-learning
 
-You will get the most benefit from this section, if you have an understanding of core programming concepts such as:
+You will get the most benefit from this section, if you understand and are comfortable with core programming concepts such as:
 
 * storing information in variables
 * using control flow, such as if-statements and for-loops.
@@ -20,17 +20,17 @@ There are links in the [](learning.md) section of the book to relevant training.
 ## Motivation
 
 Even experienced programmers can find it difficult to understand code that is repetitive, disorganised, or overly complex.
-This makes assuring, testing or changing the code more burdersome.
+This makes assuring, testing or changing the code more burdensome.
 You may also find it harder to spot and fix mistakes.
 
 Code that isn't modular can cause a range of issues:
 
-- walls of repetitive code that is hard to absorb.
+- walls of repetitive code that are hard to absorb.
 - long, complex scripts that are hard to follow.
 - over-complicated code where a simpler solution could be used.
 - a code base that makes it difficult to find what you're looking for.
 
-This chapter highlights ways to write modular code that is easier to read, review, and maintain.
+This chapter highlights ways to write modular code that is easy to read, review, and maintain.
 These practices will also help you implement the other good coding practices you will come across in this book, such as version control, review, testing and documentation.
 Because of this, modular code is fundamental to making analysis more reproducible, auditable and assured.
 
@@ -38,35 +38,35 @@ Because of this, modular code is fundamental to making analysis more reproducibl
 (modular)=
 ## Modular code
 
-Improve readability often involves break your code down into smaller, more manageable chunks.
+Improving readability often involves breaking your code down into smaller, more manageable chunks.
 Regardless of the language, you can containerise your code into self-contained parts such as modules, classes, or functions.
 
 
 (functions)=
 ### Write re-usable code as functions
 
-In the early stages of analysis, we often copy and paste code to 'make it work'. As this work matures, it is worth taking repetitive code and turning it into functions.
-Functions allow us to make a  piece of logic reusable in a consistent and readable way, and also makes it easier for us to [test our logic](testing_code.md).
+In the early stages of analysis, we often copy and paste code to 'make it work'. As the code matures, it is worth taking repetitive code and turning it into functions.
+Functions allow us to make a piece of logic reusable in a consistent and readable way, and also makes it easier for us to [test our logic](testing_code.md).
 
 When starting to write functions, you should consider what is the right level of complexity for a single function.
-Namely, can the code containing my logic be turned into a concise and readable function as it is, without having to pass too many arguments to the resulting function?
-If not, it might be better to break the code into multiple smaller functions and
+A helpful starting point is to consider if the code containing the logic can be turned into a concise and readable function. Signs that the code is too complex to work as a single function are that the function is very long or you have to pass it lots of arguments to get it to work.
+If this is what you find, it is usually best to break the code into multiple smaller functions. You can 
 then use these smaller functions to build up a larger high-level function that performs the group of actions that you need.
-These smaller functions might also be used in other places in your code. For example, in other high-level functions that perform similar tasks.
+Smaller functions also have the advantage that you might also be able to re-use them in other places in your code. For example, in other high-level functions that perform similar tasks.
 
 This approach helps you break complex logic down into small, understandable chunks that can be documented and tested more easily.
 
-When writing functions, it's also important to consider how they interact with other parts of your code.
+When writing functions, it is also important to consider how they interact with other parts of your code.
 As a general rule of thumb, your code should run in the same way if a call to your function was replaced by the value that it would have returned.
 This is called 'referential transparency'.
 
 In practice, this means that your functions should not depend on or affect variables that have not been explicitly fed into them as arguments.
-For instance, a function should not add columns to a data table that has not been passed as an input to the function.
+For instance, a function should not add columns to a data table that has not been passed as an input to the function. It should not assume that data or other functionality exists if they have not been supplied as arguments or explicitly referenced from other libraries.
 Nor should the action of a function be affected by anything other than arguments that are passed to it.
 For example, running your function twice with the same inputs should always produce the same results.
 
 Avoiding such behaviours makes your code more transparent;
-it will be easier for users and developers to understand which functions affect which data without being concerned about hidden behaviours.
+it is easier for users and developers to understand which functions affect which data without being concerned about hidden behaviours.
 In turn, this makes it easier to locate bugs in the code and assure its function by peer review.
 
 When it is not possible or practical to follow these practices, you should ensure that any 'side-effects' are adequately documented for both users and developers.
@@ -339,13 +339,13 @@ Scripts, if written well, are reproducible.
 In languages like R and Python, when executed from the command line using commands like `python main.py` or `Rscript main.R`
 they are read top to bottom and executed line by line.
 This is in contrast to running code in an interactive interpreter or notebook, where the human has control of the order of execution.
-Manually executing individual lines of code allows for a slew of errors when things are run in the wrong order.
+Manually executing individual lines of code risks creating errors when things are run in the wrong order. Rather, we recommend using end-to-end scripts.
 
-Ultimately for code pipelines you will need to have some way of running your code - the humble script is
+Ultimately for code pipelines you will need to have some way of running your code - the script is
 the primary way of orchestrating your functions and classes in a pipeline fashion.
 
 ```{note}
-Using a script does not guarantee that your code will run reproducibly, but it does ensure that code is run in the same fashion across multiple runs.
+Using a script does not guarantee that your code will run reproducibly, but it does ensure that code is run in the same way across multiple runs.
 ```
 
 To summarise:
@@ -435,7 +435,7 @@ source("modelling.R")
 source("processing.R")
 source("reporting.R")
 
-data <- read.csv("data/path.csv")
+data <- utils::read.csv("data/path.csv")
 data <- preprocess(clean(data))
 results <- predict_results(data)
 report <- generate_report(results)
@@ -493,9 +493,9 @@ In these cases, you may need to build functionality to address a given problem f
 If the solutions you build are useful and reusable, you can then wrap them up in a package to allow other users to install it.
 They can then reuse the work you have put in within their own code to solve similar problems.
 
-In short, packages are self-contained collections of code written by someone else to solve a particular problem.
+Packages are self-contained collections of code written by someone else to solve a particular problem.
 For example, packages like `dplyr` and `pandas` are essential when performing data wrangling in R and Python, respectively.
-They contain a myriad of functions that allows us to avoid rewriting this functionality from scratch every time.
+They contain a toolbox of predefined functions that allows us to avoid rewriting this functionality from scratch every time.
 Inside these packages is a set of [modules](modules) containing relevant functions, classes and other code that someone has written.
 These are wrapped up into a package structure so that the programming language you use can understand, install and make available the code for you to import.
 
@@ -525,14 +525,14 @@ This will make the final polishing and packaging much simpler, and will produce 
 ### Think carefully about whether notebooks are a suitable way to organise your code
 
 Jupyter and other code Notebooks allow you to include live code alongside text and visualisation.
-Although individual notebooks could seem like a good way to modularise your analysis for distribution, for larger projects this is not usually the best idea.
+Although individual notebooks can seem like a good way to modularise your analysis for distribution, for larger projects this is not usually the best idea.
 
 Notebooks are inherently difficult to review and audit through version control software like `git`.
 Simple text files like scripts can be version controlled easily as you can see which lines of text change from one version to another.
 Notebooks store their internal workings in a much more complicated format,
 so seeing the changes as differences line by line is not possible in common version control tools.
 
-Furthermore, defining and keeping functions within notebooks is prohibitive to testing.
+Furthermore, defining and keeping functions within notebooks makes testing them more difficult.
 It is not simple to test individual cells of a notebook with standard external tooling.
 
 Lastly, one of the key issues with notebooks when they are used as methods for running a pipeline is the ability to run cells out of order.
@@ -541,7 +541,7 @@ As such, notebook results may not always be reproducible.
 
 That said, great strengths of notebooks include their flexibility in displaying results while you are exploring data,
 and their ability to present final research code alongside a narrative.
-Therefore the top 2 reasons to use notebooks in the project lifecycle is to:
+Therefore two good places to use notebooks in the project lifecycle is to:
 
 - Explore and 'play' with the data while developing your methods.
 - Turn notebooks into HTML reports to present results to end users.

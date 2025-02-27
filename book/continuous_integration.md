@@ -28,7 +28,7 @@ You can achieve this easily through the use of [version control](version_control
 
 You should commit every time you make a working change.
 Fixed a typo? Commit. Fixed a bug? Commit. Added a function? Commit. Added a test? Commit.
-As a very rough guide, you should expect to commit a few times each hour and push at least once a day.
+As a very rough guide, you should expect to commit a few times each hour and push your changes to your shared software repository at least once a day.
 If the task is unfinished at the end of the day, you should consider if the task has been sufficiently broken down.
 
 CI should be underpinned by automating routine code quality assurance tasks.
@@ -57,7 +57,7 @@ Tools exist to support local testing of combination software versions and packag
 (linters-formatters)=
 ### Linters and formatters
 
-Style guides are important in the readability and clarity of your code and should form part of your quality assurance process.
+Style guides are important for making sure your code is clear and readable and should form part of your quality assurance process.
 However, as discussed in [](automate-style-checks), the process of checking and fixing code for style and formatting is tedious.
 Automation can speed up this work, either by providing suggestions as you write the code or by reformatting your code to follow your chosen style.
 
@@ -88,9 +88,9 @@ You can use these tools locally (in the command line) or as git pre-commit hooks
 As described above, using pre-commit hooks allows you to run these automatically every time there are changes;
 this can reduce the burden on developers and reviewers checking that code conforms to style guides.
 
-Ensure you read the documentation for any of these tools to understand what they are checking or changing in your code.
+Make sure you read the documentation for these tools before you use them to understand what they are checking or changing in your code.
 You can configure some of them to ignore or detect specific types of formatting error.
-You can also run multiples of these to catch a broader range of stylistic or programmatic errors.
+You can also run multiples of the tools to catch a broader range of stylistic or programmatic errors.
 
 ## Workflows
 
@@ -104,11 +104,11 @@ builds and tests whenever code changes are pushed to the repository.
 
 ### Example use cases for GitHub Actions
 
-The following examples are presented to support understanding of the topic discussed above.
+Here are some examples to support understanding of these ideas.
 
 #### Configure GitHub actions to automate tests
 
-Below is an example configuration file, for use with GitHub actions.
+Here is an example configuration file, for use with GitHub actions.
 The `YAML` file format, used below, is common to a number of other CI tools.
 
 ```yaml
