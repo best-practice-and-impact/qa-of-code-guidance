@@ -2,10 +2,10 @@
 
 Peer review of code is a quality assurance activity where a developer, other than the code's author, views and tests the usage of a piece of code.
 
-Peer review allows a fresh pair of eyes to take a look at your work.
+Peer review allows for a fresh pair of eyes to take a look at your work.
 It helps to assure that you have taken an appropriate approach to your analysis and may highlight errors in the analysis process.
 Constructive review feedback helps you to improve your code quality and provides confidence in your work.
-It acts to assure that our analysis is fit for purpose.
+It acts to assure that your analysis is fit for purpose.
 
 ```{epigraph}
 For analysis to be used to inform a decision it must be possible to assess its utility, reliability,
@@ -15,9 +15,9 @@ and the degree of validation and verification to which it has been subjected.
 ```
 
 [The Aqua book](https://www.gov.uk/government/publications/the-aqua-book-guidance-on-producing-quality-analysis-for-government)
-tells us that quality assurance of our analysis should be proportional to the complexity and business risk of the analysis.
-This means that both internal and external peer review may be required to adequately assure your analysis.
-External review is recommended if your analysis uses novel or complex techniques,
+tells us that we should proportionately quality assurance our analysis depending on the complexity and business risk of the analysis.
+This means that you may require both internal and external peer review to adequately assure your analysis.
+We recommend External review if your analysis uses novel or complex techniques,
 if comparison with other analyses cannot be used to challenge your results, or if the analysis is business critical.
 
 ```{epigraph}
@@ -45,20 +45,20 @@ In more depth:
 * Is there duplication in the code that could be simplified by refactoring into functions and classes?
 * Are functions and class methods simple, using few parameters?
 
-As we discussed in [](readable_code.md), good quality code is easier to read, understand and maintain.
-Peer review improves the quality of our code through the constructive challenges of the reviewer.
-As a reviewer, you might do this by suggesting alternative ways to represent the analysis or
+As we discussed in [](readable_code.md), good quality, modular code is easier to read, understand, and maintain.
+Peer review improves the quality of our code through the reviewer's constructive challenges.
+You might do this as a reviewer by suggesting alternative ways to represent the analysis or
 by asking about decisions that have been made in the approach to the analysis.
 
 Another benefit, particularly of internal review, is knowledge transfer.
 Both the reviewer and reviewee are exposed to new ideas.
-The reviewer must gain a low-level understanding of what the code is doing, in order to validate that it works as expected.
+The reviewer must understand what the code is doing to validate that it works as expected.
 This may provide your team members with the understanding required to use and maintain your code in the future.
 
 
 ### Is the required functionality tested sufficiently?
 
-If there are not tests for each part of the code, then we can't be sure that it works as expected.
+If we do not test each part of the code, then we can't be sure that it works as expected.
 As a reviewer, you should ask whether the amount of testing is proportionate given the risk to the analysis if the code does not work.
 
 
@@ -67,13 +67,13 @@ As a reviewer, you should ask whether the amount of testing is proportionate giv
 In more depth:
 
 * Are high level parameters kept in dedicated configuration files?
-* Or would somebody need to work their way through the code with lots of manual edits to reconfigure for a new run?
+* Or would somebody need to work their way through the code with lots of manual edits to reconfigure for a new run? This is much more risky.
 
 Most analysis stems from some form of customer engagement.
 Throughout design, implementation and review of analysis we must continue to assess whether our analysis is fit for purpose:
 Does it meet the needs of the customer?
-A project should document the scope of your analysis and any requirements, to make this assessment as easy as possible.
-Additional documentation that supports the auditability of your analysis includes assumption logs,
+Document the scope of your analysis and any requirements to make this assessment as easy as possible.
+Support the auditability of your analysis with additional documentation, including assumption logs,
 technical reports describing the analysis and documentation on any verification or validation that has already been carried out.
 
 
@@ -84,17 +84,17 @@ In more depth:
 * Have dependencies been sufficiently documented?
 * Is the code version, input data version and configuration recorded?
 
-A key aspect of review is checking that the same results are acquired when running your code with the same input data.
-Assurance that  analysis can be reproduced increases the trust in the results.
+A key aspect of review is checking that you get the same results when running your code with the same input data.
+Assurance that analysis can be reproduced increases the trust in the results.
 
 Note that each of these example questions focuses on important quality assurance practices in the code, rather than minor issues like code layout and style.
 
 
 ## Give practical feedback
 
-Feedback should be practical and constructive.
+Provide practical and constructive feedback.
 For example, you should suggest an improvement or alternative that the developer may consider and learn from.
-Although it may be necessary to highlight specific examples, you should avoid making feedback personal.
+You should avoid making feedback personal, although it may be necessary to highlight specific examples.
 
 The CEDAR feedback model can be a useful framework for structuring review comments.
 This model breaks review down into five sections:
@@ -113,11 +113,11 @@ This approach has been designed from a coaching or mentoring perspective, and ca
 When you identify issues with code functionality or quality you should suggest improvements to solve these issues.
 The code developer may respond to your comments to justify why they have taken a certain approach, otherwise they should act on your feedback before using the analysis.
 
-It may be necessary to re-review changes that have resulted from your initial review, to confirm that your feedback has been actioned appropriately.
+You may need to re-review changes that have resulted from your initial review, to confirm that your feedback has been actioned appropriately.
 
 ```{important}
-It is essential that you document what you have considered in your review and how the developer has responded to your feedback.
-This documentation should be kept close to the relevant version of the code, so that others can see what has been reviewed.
+Document what you have considered in your review and how the developer has responded to your feedback.
+You should keep this documentation close to the relevant version of the code, so that others can see what has been reviewed.
 The easiest way to manage this is by using the Merge Request or Pull Request feature on your version control platform to conduct the review.
 See [](version_control.md) for more information.
 ```
@@ -164,23 +164,23 @@ These might include, but not exclusively:
 - additional tests that should be implemented (do the tests effectively assure that it  works correctly?)
 - code style improvements (could the code be written more clearly?)
 
-Your suggestions should be tailored to the code that you are reviewing.
+Tailor your suggestions to the code that you are reviewing.
 Be critical and clear, but not mean. Ask questions and set actions.
 
 ```
 
-Internal review should be carried out regularly within the development team.
+Carry out internal review regularly within the development team.
 Reviewing code written by those with more and less experience than you is beneficial for both reviewer and developer.
-Similar questions can be asked from both perspectives, for the reviewer to get a good understanding of the approach and decisions behind the analysis.
+You can ask similar questions from both perspectives, for the reviewer to get a good understanding of the approach and decisions behind the analysis.
 
 
 ## Give timely feedback
 
-It's important that feedback is provided in good time, so that the review process does not hold up development of the code
+Provide feedback in good time so the review process does not hold up development of the code
 and that issues can be addressed before more code is written using the same practices.
 
 We strongly recommend applying pair programming for code review, as the most timely and practical method.
-However, a separate review process may be necessary when multiple developers are not available to work at the same time.
+However, you may find a separate review process necessary when multiple developers are not available to work at the same time.
 
 
 ### Review through pair programming
@@ -193,16 +193,16 @@ Here, two or three developers work together to write a single piece of code.
 Each developer takes turns to actively author parts of the code, while others provide real-time feedback on the code being written.
 
 This practice encourages developers to consider why they are writing code in a particular way and to vocalise this ("programming out loud").
-Additionally, it gives reviewers a chance to suggest improvements and question the author's approach as the code is written.
-Working in this way can be more efficient than reviewing code separately - issues are identified sooner, so they are easier to fix.
+Additionally, it gives reviewers a chance to suggest improvements and question the author's approach as they write the code.
+Working in this way can be more efficient than reviewing code separately - you identify issues sooner, so they are easier to fix.
 Despite the upfront cost of two individuals writing the code, the resulting code is often higher quality and contains fewer bugs.
 
 The rotational aspect of pair programming ensures that all team members gain experience from both the author and review perspective.
 From both angles, you'll learn new programming and communication techniques.
-In addition to this, sharing knowledge of how the code works across the team prevents too much risk being put on individuals.
+Additionally, sharing knowledge of how the code works across the team prevents putting too much risk on individuals.
 
-Developers working in pairs can approve changes to code as it is written, however,
-key discussions from pair programming sessions should still be documented to demonstrate which aspects of the code have been reviewed and discussed.
+Developers working in pairs can approve changes to code as it is written. However, you should still document
+key discussions from pair programming sessions to demonstrate which aspects of the code have been reviewed and discussed.
 
 This blog post from the Government Digital Service provides
 [more detailed steps to apply pair programming](https://gds.blog.gov.uk/2018/02/06/how-to-pair-program-effectively-in-6-steps/).
@@ -222,42 +222,28 @@ Similarly to pair programming, reviewing small changes to code allows you to cat
 If a project is only reviewed when all of the code has been written, this significantly reduces the benefit of review.
 
 This creates a much larger burden on the reviewer.
-Additionaly, any issues that are identified may take a lot of time to fix across the whole project.
+Additionally, fixing any issues that are identified may take a lot of time to fix.
 A reviewer might highlight that certain quality assurance practices have not been used -
 for example, there has not been enough documentation or automated testing in the project.
-It would take a substantial amount of effort to add documentation and testing for the whole project.
+Adding documentation and testing for the whole project would take substantial effort.
 If this was identified earlier, the improved practices could be applied as the remaining code is developed.
 ```
 
-When you must carry out a review of larger or complete pieces of work, it may be worth reviewing different aspects of the code in separate sessions.
-For example, focussing on documentation in one session and functionality in the next.
+When you must carry out a review of larger or complete pieces of work, consider reviewing different aspects of the code in separate sessions.
+For example, reviewing documentation in one session and functionality in the next.
 
 The thought of someone else reviewing your code in this way encourages good practices from the outset:
 
-* Clear code and documentation - so that others with no experience can use and test your code
-* Usable dependency management - so that others can run your code in their own environment
+* Clear code and documentation - so others with no experience can use and test your code.
+* Usable dependency management - so others can run your code in their own environment.
 
-Separate review is aided by features of most version control platforms. See [](version_control.md) for more information.
+Separate review is aided by version control platforms' features. See [](version_control.md) for more information.
 
 
 #### Case study - rOpenSci review
 
 Here we discuss a [review example from rOpenSci](https://ropensci.org/);
 a community led initiative that curates open source, statistical R packages.
-rOpenSci apply a rigorous peer review process to assure the quality of packages before including them in their collection.
-This peer review process is entirely remote and is performed in the open, via GitHub pull requests.
-
-In this example, from colleagues at Public Health England,
-[the `fingertipsR` package is reviewed](https://github.com/ropensci/software-review/issues/168).
-The initial comment describes the package that is being submitted and includes a check against a list of minimum requirements.
-The [`goodpractice` R package](http://mangothecat.github.io/goodpractice/) is used to check that good R packaging practices have been followed.
-[Continuous integration](continuous-integration) is commonly used to carry out automated checks on code repositories.
-The reports from these checks can save reviewers time, by providing indicators of things like code complexity and test coverage.
-
-
-#### Case studies
-
-Here we discuss an example from [rOpenSci](https://ropensci.org/); a community led initiative that curates open source, statistical R packages.
 rOpenSci apply a rigorous peer review process to assure the quality of packages before including them in their collection.
 This peer review process is entirely remote and is performed in the open, via GitHub pull requests.
 
@@ -268,13 +254,13 @@ The [`goodpractice` R package](http://mangothecat.github.io/goodpractice/) is us
 is commonly used to carry out automated checks on code repositories.
 The reports from these checks can save reviewers time, by providing indicators of things like code complexity and test coverage.
 
-Two detailed external reviews are then conducted before the package is accepted - these reviews include additional checks for common aspects of code packages,
-like documentation, examples and automated testing.
-Perhaps the most informative part of these reviews, however, is the detailed bespoke comments.
-Here the reviewers highlight problems, ask questions to clarify aspects of the package design and suggest improvements to the implementation of the code
+Two external reviews conduct reviews before the package is accepted - these reviews include checking common aspects of code packages,
+like documentation, examples, and automated testing.
+Perhaps the most informative part of these reviews is the detailed bespoke comments.
+Here the reviewers highlight problems, ask questions to clarify aspects of the package design, and suggest improvements to the implementation of the code
 (with examples).
 
-Following the reviews, additional comments describe how the reviewers requested changes have been addressed.
-And finally, there is a sign off to confirm that the reviewers are satisfied with the package.
+Following the reviews, the authors wrote comments describing how the reviewers requested changes were addressed.
+And finally, a sign off confirmed that the reviewers are satisfied with the package.
 
 Although this review looked at an entire, mature package, you can apply parts of this review process to smaller pieces of code as required.

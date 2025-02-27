@@ -3,14 +3,14 @@
 This Government Analysis Function (AF) guidance, also known as the Duck Book,
 is produced by the Analysis Standards and Pipelines hub of the [Office for National Statistics](https://www.ons.gov.uk).
 
-This guidance is a living document, which is continually updated.
-We are extremely grateful for any feedback that you are able to provide on existing and future content.
+The guidance is a living document, which is continually updated.
+We are extremely grateful for any feedback that you can provide on existing and future content.
 
 
 ## How to get the most out of the book
 
 This guidance describes software engineering good practices that are tailored to those working with data using code.
-It is designed for those who would like to quality assure their code and increase the reproducibility of their analyses.
+It is designed to support you to quality assure your code and increase the reproducibility of your analyses.
 Software that apply these practices are referred to as reproducible analytical pipelines (RAP).
 
 This guidance is relevant if you are:
@@ -27,11 +27,11 @@ The [RAP learning pathway](https://learninghub.ons.gov.uk/course/view.php?id=127
 This book can be used to guide your learning and as a reference when applying these practices in your work.
 Each chapter describes the risks that each practice may help to address.
 As recommended by [the Aqua book](https://www.gov.uk/government/publications/the-aqua-book-guidance-on-producing-quality-analysis-for-government),
-you should strive to apply the most appropriate quality assurance practices given the risks associated with your work.
+you should strive to apply the most appropriate and proportionate quality assurance practices given the risks associated with your work.
 
-The principles in this book are language agnostic.
+The principles in this book are computer language agnostic.
 The book does not aim to form a comprehensive learning resource and you may often need to study further resources to implement these practices.
-That said, examples and useful references are provided for **Python** and **R**, as open source languages that are commonly applied across government.
+That said, we have provided examples and useful references for **Python** and **R**, as these open source languages are commonly applied across government.
 
 
 ## About us
@@ -52,7 +52,7 @@ The book uses an Open Government Licence which can be read on the National Archi
 [National Archives](https://nationalarchives.gov.uk/doc/open-government-licence/version/3/)
 
 In summary, you are free to use, adapt and distribute the information in this book with citation but not imply endorsement,
-and that the information is provided 'as is' without warranty.
+and the information here is provided 'as is' without warranty.
 
 The following structure can be used to reference the current version of the book:
 

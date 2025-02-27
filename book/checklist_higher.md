@@ -101,7 +101,7 @@ Quality assurance checklist from [the quality assurance of code for analysis and
 ### Testing
 
 - Core functionality is unit tested as code. See [`pytest` for Python](https://docs.pytest.org/en/stable/) and [`testthat` for R](https://testthat.r-lib.org/).
-- Code based tests are run regularly.
+- Code based tests are run regularly and after every significant change to the code.
 - Bug fixes include implementing new unit tests to ensure that the same bug does not reoccur.
 - Informal tests are recorded near to the code.
 - Stakeholder or user acceptance sign-offs are recorded near to the code.
@@ -117,7 +117,7 @@ Quality assurance checklist from [the quality assurance of code for analysis and
 - Required libraries and packages are documented, including their versions.
 - Working operating system environments are documented.
 - Example configuration files are provided.
-- Where appropriate, code runs independent of operating system (e.g. suitable management of file paths).
+- Where appropriate, code runs independently of the operating system (for example there is suitable management of file paths for different operating systems).
 - Dependencies are managed separately for users, developers, and testers.
 - There are as few dependencies as possible.
 - Package dependencies are managed using an environment manager such as
@@ -250,7 +250,7 @@ Quality assurance checklist from
 
 - [ ] Core functionality is unit tested as code. See [`pytest` for Python](https://docs.pytest.org/en/stable/) and
  [`testthat` for R](https://testthat.r-lib.org/). 
-- [ ] Code based tests are run regularly.
+- [ ] Code based tests are run regularly and after every significant change to the code base.
 - [ ] Bug fixes include implementing new unit tests to ensure that the same bug does not reoccur.
 - [ ] Informal tests are recorded near to the code.
 - [ ] Stakeholder or user acceptance sign-offs are recorded near to the code.
