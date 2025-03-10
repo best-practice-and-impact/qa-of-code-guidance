@@ -83,7 +83,7 @@ Each project should be kept in its own folder, with a descriptive name.
 Most analysis will have an ingest or input stage, a processing stage, and a reporting stage.
 You should use folders within each project to separate raw data, documentation, source code (or `src`) and results.
 
-A typical analytical project folder in python might look like:
+A typical analytical project folder in Python might look like:
 
 ```` {tabs}
 ``` {code-tab} py

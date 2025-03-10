@@ -315,7 +315,7 @@ Compare this against `bp = Reader(book_data)` then `bp.fetch()`, where there is 
 (code-style)=
 
 ``` {note}
-Writing custom classes is more common in python than in R, as discussed in the [](modular_code.md) chapter. As such, the examples above only apply to python. 
+Writing custom classes is more common in Python than in R, as discussed in the [](modular_code.md) chapter. As such, the examples above only apply to Python. 
 ```
 
 
@@ -377,7 +377,7 @@ Idiomatic stands for 'using, containing, or denoting expressions that are natura
 In Python, idiomatic approaches to writing code are commonly referred to as 'pythonic'.
 
 This might mean simplifying complex and perhaps hard to read patterns into a simpler, but well established alternative.
-In Python, for example, these two pieces of code are equivalent:
+For example, the pieces of code below are equivalent:
 
 ````{tabs}
 ```{code-tab} python

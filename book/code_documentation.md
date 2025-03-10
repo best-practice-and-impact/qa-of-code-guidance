@@ -370,7 +370,7 @@ Detailed setup and desk instructions can be found in README.md.
 # Produces the duck census bulletin outputs for the annual publication.
 #
 # Check the configuration file before running and run from the command line. 
-Detailed setup and desk instructions can be found in README.md.
+# Detailed setup and desk instructions can be found in README.md.
 ```
 
 ````
@@ -407,7 +407,7 @@ Sphinx supports code highlighting for multiple programming languages within a pr
 Sphinx also supports theming, with a [myriad of themes](https://www.writethedocs.org/guide/tools/sphinx-themes/) available out of the box.
 You can even develop and adapt the existing themes into a custom theme suitable for your work with a little bit of extra time.
 
-`Sphinx` allows users to develop extensions that extend its functionality, as well as theming support,.
+`Sphinx` allows users to develop extensions that extend its functionality, as well as theming support.
 This GitHub repository provides a list of [useful ways to extend the functionality of `sphinx`](https://github.com/yoloseem/awesome-sphinxdoc) to suit your needs.
 
 To illustrate how this can be extremely useful, we will introduce the [doctest extension](https://www.sphinx-doc.org/en/master/usage/extensions/doctest.html).
@@ -431,7 +431,7 @@ provide a good demonstration of how you would apply it in practice.
 
 Once built, the HTML files containing your documentation can be opened in any browser.
 Usually this means looking for an `index.html` file in the output directory and opening it with your browser.
-This is sufficient for local usage. However,it is wise to host this documentation somewhere where it will be publicly available to improve the end-user experience and remove the need to browse the files looking for `index.html`.
+This is sufficient for local usage. However, it is wise to host this documentation somewhere where it will be publicly available to improve the end-user experience and remove the need to browse the files looking for `index.html`.
 
 Your version control platform might support hosting web pages already.
 GitHub provides this hosting via [GitHub Pages](https://pages.github.com/) and is able to host not only documentation,

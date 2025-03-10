@@ -290,7 +290,7 @@ has been used to produce our analysis outputs, for reproducibility.
 
 Environment variables are variables that are available in a particular environment.
 In most analysis contexts, our environment is the user environment that we are running our code from.
-This might be your local machine or a analysis platform.
+This might be your local machine or an analysis platform.
 
 If your code depends on credentials of some kind, do not write these in your code.
 You can store passwords and keys in configuration files, but there is a risk that these files may be included in [version control](version_control.md).

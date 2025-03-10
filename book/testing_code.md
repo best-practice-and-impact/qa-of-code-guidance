@@ -31,7 +31,7 @@ Tests come in many shapes and sizes, but usually follow the pattern:
 
 1. Arrange - set up any objects needed for your test, for example sample input data and expected output data.
 2. Act - run the code that you are testing (one or more functions or methods).
-3. Assert - verify that the code performed the expected action, for example that the output matched the expected output.
+3. Assert - verify that the code performed the expected action, for example, that the output matched the expected output.
 
 ```{admonition} Key Learning
 :class: admonition-learning
@@ -45,7 +45,7 @@ Other useful learning resources include:
 * Hadley Wickham's [testthat: getting started with testing](https://vita.had.co.nz/papers/testthat.pdf) and [testing design in R](https://r-pkgs.org/testing-design.html)
 ```
 
-In this section, we assume that you are using a testing framework to run your tests (for example `pytest` for python or `testthat` for R) and have your code in a package.
+In this section, we assume that you are using a testing framework to run your tests (for example, `pytest` for Python or `testthat` for R) and have your code in a package.
 It is more difficult to test code that is not in a package and therefore follow the testing good practices described here.
 
 ## Write reproducible tests
@@ -276,7 +276,7 @@ class TestSum:
 
 Using classes for unit tests has many additional benefits, allowing reuse of the same logic either by class inheritance, or through fixtures.
 Similar to fixtures,
-you can use the same pieces of logic through class inheritance in python.
+you can use the same pieces of logic through class inheritance in Python.
 Note that it is easier to mix up and link unit tests when using class inheritance.
 The following code block demonstrates an example of class inheritance which will inherit both the
 variable and the `test_var_positive` unit test, meaning three unit tests are run.
@@ -321,7 +321,7 @@ For R, you need to specify the name of your package within the `testthat.R` file
 
 ## Structuring tests
 
-To maintain a consistency across modules you develop, you should follow [PEP8](https://peps.python.org/pep-0008) (python)
+To maintain a consistency across modules you develop, you should follow [PEP8](https://peps.python.org/pep-0008) (Python)
 or [Google](https://google.github.io/styleguide/Rguide.html) / [tidyverse](https://style.tidyverse.org/) (R) standards when structuring unit tests.
 
 For python this involves importing all needed functions at the beginning of the test file.
@@ -862,7 +862,7 @@ Although testing SQL is outside the scope of this guidance, many of the concepts
 in this guidance are also applicable to SQL. In SQL,
 single queries often contain several parts. These can be more readily
 tested by breaking up these queries and taking a more step-by-step approach,
-similar to breaking up functions. Use [Integration testing](https://github.com/best-practice-and-impact/qa-of-code-guidance/blob/main/book/testing_code.md#test-that-different-parts-of-the-code-interact-correctly-using-integration-tests) to verify
+similar to breaking up functions. Use [Integration testing](#test-that-different-parts-of-the-code-interact-correctly-using-integration-tests) to verify
 that queries and functions behave as expected when combined.
 
 Test functions that interact with a database (DB) within a development
