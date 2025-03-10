@@ -101,6 +101,6 @@ Other courses below can be used to supplement this learning.
 ## Learning from mistakes
 
 Finally, it is often good to see what not to do and learn from the mistakes of others.
-The following is a compliation of bad code in Python, but worth a read whatever your language as most apply to R and Python, as well as other languages.
+The following is a compilation of bad code in Python, but worth a read whatever your language as most apply to R and Python, as well as other languages.
 
 * [The Little Book of Python Anti-Patterns](https://docs.quantifiedcode.com/python-anti-patterns/index.html)

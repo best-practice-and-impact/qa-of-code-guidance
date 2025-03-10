@@ -1,7 +1,6 @@
 # Project documentation
 
-Whether you're developing a package or collaborating on a piece of analysis,
-documenting your project will makes it much easier for others to understand your goal and ways of working.
+Documenting your project will makes it much easier for others to understand your goal and ways of working, whether you're developing a package or collaborating on a piece of analysis.
 
 
 ## README
@@ -13,22 +12,23 @@ This file can be any text type, including `.txt`, `.md`, and `.rst`, and can be 
 
 We suggest the following for a good README:
 
-- Short statement of intent
-- Longer description describing the problem that your project solves and how it solves it
-- Basic installation instructions or link to installation guide
-- Example usage
-- Screenshot if your project has a graphical user interface
-- Links to related projects
+- Short statement of intent.
+- Longer description describing the problem that your project solves and how it solves it.
+- Basic installation instructions or link to installation guide.
+- Example usage.
+- Screenshot if your project has a graphical user interface.
+- Links to other project guidance, for example methodological papers or document repositories.
+- Links to related projects.
 
 
 ## Contributing guidance
 
-When collaborating, it is also useful to outline the standards used within your project.
-This might include particular packages that should used for certain tasks and guidance on the [code style](code-style) used in the project.
-If you plan to have contributors from outside your organisation it is useful to include a code of conduct too.
+When collaborating, it is also useful to set out the standards used within your project.
+This might include particular packages required for certain tasks and guidance on the [code style](code-style) used in the project.
+Consider including a code of conduct if you plan to have contributors from outside your organisation.
 Please [see GitHub](https://docs.github.com/en/github/building-a-strong-community/adding-a-code-of-conduct-to-your-project) for advice on creating a code of conduct.
 
-For an example, see the CONTRIBUTING file from our [gptables package](https://github.com/best-practice-and-impact/gptables/blob/master/CONTRIBUTING.md):
+See the CONTRIBUTING file from our [gptables package](https://github.com/best-practice-and-impact/gptables/blob/master/CONTRIBUTING.md) for an example:
 
 `````{tabs}
 
@@ -70,7 +70,7 @@ format for documenting features using docstrings.
 non-minor changes.
 2. The review process follows a similar process to ROpenSci.
 3. Reviewers will be requested from associated communities.
-4. Only once reviewers are satisfied, will the `dev` branch be released.
+4. The `dev` branch will only be released once reviewers are satisfied.
 ```
 ````
 
@@ -124,17 +124,18 @@ which is formatted into HTML when viewed on our repository.
 
 ## User desk instructions
 
-If your project is very user focussed for one particular task,
-for example developing a statistic production pipeline for other analysts to execute,
+If your project is very user focused for one particular task,
+for example, developing a statistic production pipeline for other analysts to execute,
 it is very important that the code users understand how to appropriately run your code.
 
 These instructions should include:
 
-- How to set up an environment to run your code (including how to install dependencies)
-- How to run your code
-- What outputs (if any) your code or system produces and how these should be interpreted
-- What quality assurance has been carried out and what further quality assurance of outputs is required
-- How to maintain your project (including how to update data sources)
+- How to set up an environment to run your code (including how to install dependencies).
+- How to configure the project, for example how to set folders and environment variables if you use them.
+- How to run your code.
+- What outputs (if any) your code or system produces and how these should be interpreted.
+- What quality assurance has been carried out and what further quality assurance of outputs is required.
+- How to maintain your project (including how to update data sources).
 
 
 ## Dependencies
@@ -142,8 +143,8 @@ These instructions should include:
 The environment that your code runs in includes the machine, the operating system (Windows, Mac, Linux...), the programming language, and any external packages.
 It is important to record this information to ensure reproducibility.
 
-The simplest way to document which packages your code is dependent on, is to record them in a text file.
-This is typically called `requirements.txt`.
+The simplest way to document which packages your code is dependent on is to record them in a text file.
+We typically call this text file `requirements.txt`.
 
 Python packages record their dependencies within their `setup.py` file, via `setup(install_requires=...)`.
 You can get a list of your installed python packages using `pip freeze` in the command line.
@@ -152,15 +153,15 @@ You can get a list of your installed python packages using `pip freeze` in the c
 Packages are listed under the `Imports` key.
 You can get a list of your installed R packages using the `installed.packages()` function.
 
-Environment management tools, such as
+You will find environment management tools, such as
 [`renv`](https://rstudio.github.io/renv/articles/renv.html) for R or
-[`pyenv`](https://github.com/pyenv/pyenv) for python, are very useful for keeping track of software and package versions used in a project.
+[`pyenv`](https://github.com/pyenv/pyenv) for python useful for keeping track of software and package versions used in a project.
 
 
 ## Citation
 
-For research or analytical code that is likely to be referenced by others, it can be helpful to provide a citation template.
-This can be included in your code repository as a `CITATION` file or part of your `README`.
+It can be helpful to provide a citation template for research or analytical code that is likely to be referenced by others.
+You can include this in your code repository as a `CITATION` file or part of your `README`.
 For example, the R package `ggplot2` provides the following:
 
 ```none
@@ -181,8 +182,8 @@ A BibTeX entry for LaTeX users is
  }
 ```
 
-This might include multiple citations, if your project includes multiple datasets, pieces of code or outputs with their own
-[DOI's](https://en.wikipedia.org/wiki/Digital_object_identifier).
+If your project includes multiple datasets, pieces of code or outputs with their own
+[DOIs](https://en.wikipedia.org/wiki/Digital_object_identifier), this might include multiple citations.
 
 See this [GitHub guide for more information on making your public code citable](https://guides.github.com/activities/citable-code/).
 
@@ -191,34 +192,34 @@ See this [GitHub guide for more information on making your public code citable](
 
 Vignettes are a form of supplementary documentation, containing applied examples that demonstrate the intended use of the code in your project or package.
 Docstrings may contain examples applying individual functional units, while vignettes may show multiple units being used together.
-The term vignette is usually used with reference to R packages, for example this introduction to the
+We use the term vignette with reference to R packages, for example this introduction to the
 [`dplyr` package](https://cran.r-project.org/web/packages/dplyr/vignettes/dplyr.html) for data manipulation.
 However, the same long-form documentation is beneficial for projects in any programming language - for instance the
 [`pandas` basics guide](https://pandas.pydata.org/docs/user_guide/basics.html).
 
 We've seen that [docstrings](docstrings) can be used to describe individual functional code elements.
-Vignettes provide a demonstration of the intended use for these classes and functions, in a realistic context.
-This can help users to understand how different code elements interact, and how they might use your code in their own program.
+Vignettes demonstrate the intended use for these classes and functions in a realistic context.
+This shows users how different code elements interact and how they might use your code in their own program.
 
 Another good example is this vignette describing [how to design vignettes](http://r-pkgs.had.co.nz/vignettes.html) in Rmarkdown.
 You can produce this type of documentation in any format, though Rmarkdown is particularly effectively at combining sections of code,
-code outputs and descriptive text.
+code outputs, and descriptive text.
 
-You might also consider providing examples in an interactive notebook, that users can run for themselves.
+You might also consider providing examples in an interactive notebook that users can run for themselves.
 
 
 ## Versioning
 
 Documenting the version of your code provides distinct points of reference in the code's development.
 Recording the version of code used for analysis is important for reproducing your work.
-When used in combination with [](version_control.md), versioning allows you to recover the exact code used to run your analysis and thus reproduce the same results.
+Combining versioning with [](version_control.md) allows you to recover the exact code used to run your analysis, and thus reproduce the same results.
 
 [Semantic versioning](https://semver.org/) provides useful rules for versioning releases of your code.
-Following these rules also helps other users of your code to understand how changes in your code may affect their software.
+Follow these rules to help other users of your code  understand how changes in your code may affect their software.
 Each level of version number indicates the extent of changes to the application programming interface (API) of your code,
-i.e. the part of the code that a user interacts with directly.
+i.e., the part of the code that a user interacts with directly.
 Changes to the major version number indicate changes to the API that are not compatible with use of previous versions of the code.
-While changes is the minor and patch numbers indicate changes that are either compatible or have no effect on the use of the code, respectively.
+While changes to the minor and patch numbers indicate changes that are either compatible or have no effect on the use of the code, respectively.
 
 ```{figure} ./_static/semantic_versioning.png
 ---
@@ -239,7 +240,7 @@ As this guidance will change over time, this version number provides users with 
 
 ## Changelog
 
-A changelog records the major changes that have occurred to a project or package, between versioned releases of the code.
+A changelog records the major changes that have occurred to a project or package between versioned releases of the code.
 
 ```{code-block}
 # Changelog
@@ -264,8 +265,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - bug in `multiple_each_in_list()`, where output was not returned
 ```
 
-Similarly to versioning, a changelog is useful for users to determine whether an update to your code is compatible with their work, which may depend on your code.
-It can also document which parts of your code will no longer be supported in future version and which bugs in your code have been addressed.
+Like versioning, users find a changelog is useful to determine whether an update to your code is compatible with their work, which may depend on your code.
+It can also document which parts of your code will no longer be supported in future version and which bugs in your code you have addressed.
 Your changelog can be in any format and should be associated with your code documentation, so that it is easy for users and other contributors to find.
 
 [keep a changelog](https://keepachangelog.com/en/1.0.0/) provides a simple but effective template for recording changes to your code.
@@ -276,10 +277,10 @@ Your changelog can be in any format and should be associated with your code docu
 Copyright indicates ownership of work.
 All material created by civil servants, ministers, government departments and their agencies are covered by
 [Crown copyright](https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/).
-It is not essential to include a copyright notice on your work, but doing so can help to avoid confusion around ownership.
+It is not essential to include a copyright notice on your work, but doing so can help to avoid confusion around ownership. We recommend including one in government projects.
 
-Licences outline the conditions under which others may use, modify and/or redistribute your work.
-As such, including a licence with code is important for users and other developers alike.
+Licenses outline the conditions under which others may use, modify and/or redistribute your work.
+As such, including a license with code is important for users and other developers alike.
 This [online tool](https://choosealicense.com/) might help you to choose an appropriate license for your project.
 The Government Digital Service generally recommends using the
 [MIT license](https://opensource.org/licenses/MIT) for code and the
@@ -306,9 +307,9 @@ For example, an MIT LICENSE file might look like:
 
 In government, we [support and promote open source](https://www.gov.uk/service-manual/service-standard/point-12-make-new-source-code-open) whenever possible.
 [Open source](https://opensource.com/resources/what-open-source) software is software with source code that anyone can freely inspect, modify and enhance.
-As a government analyst, you should aim to make all new source code open, unless justification can be provided for withholding part of your source code.
+As a government analyst, you should aim to make all new source code open, unless you can justify witholding part of your source code.
 
-Open sourcing code benefits yourself, other government analysts and the public.
+Open sourcing code benefits you, other government analysts, and the public.
 
 Personal benefits from open sourcing include:
 
@@ -325,5 +326,5 @@ While the public benefit from:
 
 Please see the [Government Data Service (GDS) guidance](https://www.gov.uk/government/publications/open-source-guidance/when-code-should-be-open-or-closed)
 for help deciding when code should be open or closed.
-Security concerns for coding in the open are also addressed in further
-[GDS guidance](https://www.gov.uk/government/publications/open-source-guidance/security-considerations-when-coding-in-the-open). Additional guidance on deciding when and how to open source, the benefits, and good practice is available from the [Analysis Function](https://analysisfunction.civilservice.gov.uk/policy-store/open-sourcing-analytical-code/).
+Further
+[GDS guidance](https://www.gov.uk/government/publications/open-source-guidance/security-considerations-when-coding-in-the-open) addresses security concerns for coding in the open. Additional guidance on deciding when and how to open source, the benefits, and good practice is available from the [Analysis Function](https://analysisfunction.civilservice.gov.uk/policy-store/open-sourcing-analytical-code/).
