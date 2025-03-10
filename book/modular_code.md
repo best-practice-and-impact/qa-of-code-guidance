@@ -1,36 +1,36 @@
 # Modular code
 
-The principles outlined in this chapter represent good practices for general programming and software development.
-These have been tailored to a more analytical workflow.
+This chapter outlines principles that represent good practices for general programming and software development.
+We have tailored these to support analytical workflows.
 
 ```{admonition} Pre-requisites
 :class: admonition-learning
 
-To get the most benefit from this section, you should have an understanding of core programming concepts such as:
+You will get the most benefit from this section, if you understand and are comfortable with core programming concepts such as:
 
 * storing information in variables
-* using control flow, such as if-statements and for-loops
-* writing code as functions or classes
-* using functions or classes in your code
+* using control flow, such as if-statements and for-loops.
+* writing code as functions or classes.
+* using functions or classes in your code.
 
-You can find links to relevant training in the [](learning.md) section of the book.
+There are links in the [](learning.md) section of the book to relevant training.
 ```
 
 
 ## Motivation
 
-Code that is repetitive, disorganised or overly complex can be difficult to understand, even for experienced programmers.
-This makes assuring, testing or changing the code more burdersome.
-It also makes it harder to spot and fix mistakes.
+Even experienced programmers can find it difficult to understand code that is repetitive, disorganised, or overly complex.
+This makes assuring, testing or changing the code more burdensome.
+You may also find it harder to spot and fix mistakes.
 
 Code that isn't modular can cause a range of issues:
 
-- walls of repetitive code that is hard to absorb
-- long, complex scripts that are hard to follow
-- over-complicated code where a simpler solution could be used
-- a code base that makes it difficult to find what you're looking for
+- walls of repetitive code that are hard to absorb.
+- long, complex scripts that are hard to follow.
+- over-complicated code where a simpler solution could be used.
+- a code base that makes it difficult to find what you're looking for.
 
-This chapter highlights ways to write modular code that is easier to read, review and maintain.
+This chapter highlights ways to write modular code that is easy to read, review, and maintain.
 These practices will also help you implement the other good coding practices you will come across in this book, such as version control, review, testing and documentation.
 Because of this, modular code is fundamental to making analysis more reproducible, auditable and assured.
 
@@ -38,40 +38,40 @@ Because of this, modular code is fundamental to making analysis more reproducibl
 (modular)=
 ## Modular code
 
-Breaking your code down into smaller, more manageable chunks is a sensible way to improve readability.
-Regardless of the language, there are often techniques to containerise your code into self-contained parts such as modules, classes or functions.
+Improving readability often involves breaking your code down into smaller, more manageable chunks.
+Regardless of the language, you can containerise your code into self-contained parts such as modules, classes, or functions.
 
 
 (functions)=
 ### Write re-usable code as functions
 
-In the early stages of analysis we often copy and paste code to 'make it work'. As this work matures, it is worth taking repetitive code and turning it into functions.
-Functions allow us to make a  piece of logic reusable in a consistent and readable way, and also makes it easier for us to [test our logic](testing_code.md).
+In the early stages of analysis, we often copy and paste code to 'make it work'. As the code matures, it is worth taking repetitive code and turning it into functions.
+Functions allow us to make a piece of logic reusable in a consistent and readable way, and also makes it easier for us to [test our logic](testing_code.md).
 
 When starting to write functions, you should consider what is the right level of complexity for a single function.
-Namely, can the code containing my logic be turned into a concise and readable function as it is, without having to pass too many arguments to the resulting function?
-If not, it might be better to break the code into multiple smaller functions and
+A helpful starting point is to consider if the code containing the logic can be turned into a concise and readable function. Signs that the code is too complex to work as a single function are that the function is very long or you have to pass it lots of arguments to get it to work.
+If this is what you find, it is usually best to break the code into multiple smaller functions. You can 
 then use these smaller functions to build up a larger high-level function that performs the group of actions that you need.
-These smaller functions might also be used in other places in your code. For example, in other high-level functions that perform similar tasks.
+Smaller functions also have the advantage that you might also be able to re-use them in other places in your code. For example, in other high-level functions that perform similar tasks.
 
 This approach helps you break complex logic down into small, understandable chunks that can be documented and tested more easily.
 
-When writing functions, it's also important to consider how they interact with other parts of your code.
+When writing functions, it is also important to consider how they interact with other parts of your code.
 As a general rule of thumb, your code should run in the same way if a call to your function was replaced by the value that it would have returned.
 This is called 'referential transparency'.
 
 In practice, this means that your functions should not depend on or affect variables that have not been explicitly fed into them as arguments.
-For instance, a function should not add columns to a data table that has not been passed as an input to the function.
+For instance, a function should not add columns to a data table that has not been passed as an input to the function. It should not assume that data or other functionality exists if they have not been supplied as arguments or explicitly referenced from other libraries.
 Nor should the action of a function be affected by anything other than arguments that are passed to it.
 For example, running your function twice with the same inputs should always produce the same results.
 
 Avoiding such behaviours makes your code more transparent;
-it will be easier for users and developers to understand which functions affect which data without being concerned about hidden behaviours.
+it is easier for users and developers to understand which functions affect which data without being concerned about hidden behaviours.
 In turn, this makes it easier to locate bugs in the code and assure its function by peer review.
 
 When it is not possible or practical to follow these practices, you should ensure that any 'side-effects' are adequately documented for both users and developers.
 This may be the case where your code interacts with a file, database or an external service.
-Ultimately, if you do signal where these kind of things might happen, someone trying to debug issues will know where to look.
+Ultimately, signalling where these kind of things might happen, helps someone trying to debug issues know where to look.
 
 To summarise:
 
@@ -85,7 +85,7 @@ break down your code into smaller functions and build up your functionality with
 
 Classes are fundamental parts of [object-orientated programming (OOP)](https://en.wikipedia.org/wiki/Object-oriented_programming).
 They create an association between data (attributes of the class) and logic (methods of the class).
-As you will see in the examples below, classes can be useful when representing real objects in our code.
+Classes can be useful when representing real objects in our code, as the examples below demonstrate.
 
 Although classes exist in R, [writing custom classes](https://adv-r.hadley.nz/oo.html) is less common than it is in Python (and other OOP enabling languages).
 Because of this, the following sub-section will focus primarily on Python classes.
@@ -93,7 +93,7 @@ Because of this, the following sub-section will focus primarily on Python classe
 With a more complex system, OOP can help to reduce complexity by hiding low-level details from users, such as an internal state.
 
 ```{note}
-The 'state' of an object is usually a set of variables that are particular to a given instance of a class.
+An object's 'state' is usually a set of variables that are particular to a given instance of a class.
 To illustrate, imagine a bank account that is represented by an `Account` class.
 You can have many instances of this class (many unique bank accounts), each defined by the following internal state:
 
@@ -102,7 +102,7 @@ You can have many instances of this class (many unique bank accounts), each defi
 - balance
 ```
 
-Since the end user does not need to know all of the state associated with an object, when writing classes consider marking such state as 'private'.
+When writing classes consider marking such state as 'private', since the end user does not need to know all of the state associated with an object.
 This prevents users from accessing attributes directly, instead accessing them through class methods (functions defined with the class).
 
 ````{admonition} Method vs Function
@@ -197,15 +197,15 @@ They should extend their usefulness, but retain their original functionality.
 If our `BankAccount` class inherits from `Account` we should consider that 'a `BankAccount` is an `Account`'.
 Liskov substitution strengthens this statement to '`BankAccount` is interchangeable with an `Account`';
 we can replace any `Account` with `BankAccount` without changing how our code runs.
-This is because `BankAccount` provides all of the same methods that an `Account` does, no less.
+This is because `BankAccount` provides all of the same methods that an `Account` does.
 
-This can be similarly applied to functions.
+You can apply this similarly to functions.
 If you were to increase the domain and range of a function, to account for new cases, then this function should observe the same interface as the previous function.
 
 In short:
 
-- Objects should be replaceable with instances of their subclasses, without altering the correctness of that program.
-- Functions should be replaceable with similar functions that share the same interface.
+- You should be able to replace objects with instances of their subclasses, without altering the correctness of that program.
+- You should be able to replace functions with similar functions that share the same interface.
 ```
 
 However, we should be wary that inheritance locks our class in to the object that it inherits from.
@@ -271,8 +271,8 @@ class SqlHandler(FileHandler):
 When multiple classes have a similar application programming interface (API, i.e. the methods they supply for users), we can easily switch between them.
 A good real-world example of this can be seen in the `scikit-learn` package, where the different linear model types are represented by different classes.
 Each linear model class supports a common set of methods, e.g. `fit()` and `predict()`.
-As such, any model can then be used in a pipeline and swapped out with minimal effort.
-Therefore, when thinking about how to break you code up into classes consider the use of standardised methods across similar objects to make them interchangeable.
+As such, you can use any model in a pipeline and swap them out with minimal effort.
+Therefore, when thinking about how to break you code up into classes, consider the use of standardised methods across similar objects to make them interchangeable.
 
 
 (class-responsibilities)=
@@ -283,7 +283,7 @@ It is easy to start to mapping nouns in system descriptions to classes, and any 
 For example: 'the model loads the data', which implies that `Model` is a class that should have a `load_data` method.
 This works well for small systems, but as the complexity of your code grows you might find that one of your classes gains the majority of the underlying logic.
 This often leads to one class with many methods, while other classes just store data with very few methods.
-This can be described as 'Data Driven Design'.
+We describe this as 'Data Driven Design'.
 
 When most of your code resides in a single class, this can indicate that this class is responsible for too much of your code's logic.
 This class might become overly complex and hence difficult to maintain.
@@ -321,12 +321,12 @@ so we've added a method to `publisher` as well as `book`; we're trading maintain
 To summarise:
 
 - Classes hide implementation detail from users, enabling implementation to be changed without affecting users.
-- Look to use consistent methods in a group of related classes, so that you can switch between them without affecting the code using it.
-Consider Python 'duck typing' or abstract classes and methods.
-- Avoid storing all logic in a single class. Instead, distribute logic based on responsibilities.
+- You should look to use consistent methods in a group of related classes, so that you can switch between them without affecting the code using it.
+You should consider Python 'duck typing' or abstract classes and methods.
+- You should avoid storing all logic in a single class. Instead, distribute logic based on responsibilities.
 - Be aware of trading maintainability for complexity - one large class or too many classes can be hard to understand.
-- Design Patterns have solutions to many common problems and are a useful toolbox.
-- Prefer encapsulation over inheritance, especially with code reuse.
+- You will find Design Patterns a useful toolbox as they have solutions to many common problems.
+- You should opt for encapsulation over inheritance, especially with code reuse.
 
 
 ### Split complex code into multiple scripts
@@ -339,15 +339,13 @@ Scripts, if written well, are reproducible.
 In languages like R and Python, when executed from the command line using commands like `python main.py` or `Rscript main.R`
 they are read top to bottom and executed line by line.
 This is in contrast to running code in an interactive interpreter or notebook, where the human has control of the order of execution.
-Manually executing individual lines of code allows for a slew of errors when things are run in the wrong order.
+Manually executing individual lines of code risks creating errors when things are run in the wrong order. Rather, we recommend using end-to-end scripts.
 
-Ultimately for code pipelines you will need to have some way of running your code - the humble script is
+Ultimately for code pipelines you will need to have some way of running your code - the script is
 the primary way of orchestrating your functions and classes in a pipeline fashion.
 
-<!-- The first sentence of the note below doesn't make sense to me. -->
-
 ```{note}
-Using a script does not guarantee that your code will run reproducibly, but it does ensure that code is run in the same fashion across multiple runs.
+Using a script does not guarantee that your code will run reproducibly, but it does ensure that code is run in the same way across multiple runs.
 ```
 
 To summarise:
@@ -366,8 +364,8 @@ you might decide that you want these functions to sit outside of your main pipel
 This is where modules come in, to separate reusable code into logical groups.
 
 Consider a project where an analyst has created one large data analysis script.
-Upon reflection, they decide to split the logic from their pipeline into groups of functions relating to 'data processing', 'data modelling' and 'result presentation'.
-They then create a file to contain each of these groups of functions: `processing.py`, `modelling.py` and `reporting.py`.
+Upon reflection, they decide to split the logic from their pipeline into groups of functions relating to 'data processing', 'data modelling', and 'result presentation'.
+They then create a file to contain each of these groups of functions: `processing.py`, `modelling.py`, and `reporting.py`.
 They decide that they want to have a pipeline script called `main`, but they want to keep this script readable and simple.
 In R, it's best to also use an R project file.
 Working within a project allows you to use relative file paths and avoid the need to refer to specific script locations.
@@ -437,7 +435,7 @@ source("modelling.R")
 source("processing.R")
 source("reporting.R")
 
-data <- read.csv("data/path.csv")
+data <- utils::read.csv("data/path.csv")
 data <- preprocess(clean(data))
 results <- predict_results(data)
 report <- generate_report(results)
@@ -452,7 +450,7 @@ This requires users to manually alter file paths in the code, which is highly di
 ```
 
 ``````{admonition} A step further
-Another step that can be taken to improve clarity is to further wrap these modules into their own folder like so:
+Another step that you can take to improve clarity is to further wrap these modules into their own folder like so:
 
 `````{tabs}
 ````{tab} Python
@@ -495,9 +493,9 @@ In these cases, you may need to build functionality to address a given problem f
 If the solutions you build are useful and reusable, you can then wrap them up in a package to allow other users to install it.
 They can then reuse the work you have put in within their own code to solve similar problems.
 
-In short, packages are self-contained collections of code written by someone else to solve a particular problem.
+Packages are self-contained collections of code written by someone else to solve a particular problem.
 For example, packages like `dplyr` and `pandas` are essential when performing data wrangling in R and Python, respectively.
-They contain a myriad of functions that allows us to avoid rewriting this functionality from scratch every time.
+They contain a toolbox of predefined functions that allows us to avoid rewriting this functionality from scratch every time.
 Inside these packages is a set of [modules](modules) containing relevant functions, classes and other code that someone has written.
 These are wrapped up into a package structure so that the programming language you use can understand, install and make available the code for you to import.
 
@@ -527,14 +525,14 @@ This will make the final polishing and packaging much simpler, and will produce 
 ### Think carefully about whether notebooks are a suitable way to organise your code
 
 Jupyter and other code Notebooks allow you to include live code alongside text and visualisation.
-Although individual notebooks could seem like a good way to modularise your analysis for distribution, for larger projects this is not usually the best idea.
+Although individual notebooks can seem like a good way to modularise your analysis for distribution, for larger projects this is not usually the best idea.
 
 Notebooks are inherently difficult to review and audit through version control software like `git`.
 Simple text files like scripts can be version controlled easily as you can see which lines of text change from one version to another.
 Notebooks store their internal workings in a much more complicated format,
 so seeing the changes as differences line by line is not possible in common version control tools.
 
-Furthermore, defining and keeping functions within notebooks is prohibitive to testing.
+Furthermore, defining and keeping functions within notebooks makes testing them more difficult.
 It is not simple to test individual cells of a notebook with standard external tooling.
 
 Lastly, one of the key issues with notebooks when they are used as methods for running a pipeline is the ability to run cells out of order.
@@ -543,12 +541,12 @@ As such, notebook results may not always be reproducible.
 
 That said, great strengths of notebooks include their flexibility in displaying results while you are exploring data,
 and their ability to present final research code alongside a narrative.
-Therefore the top 2 reasons to use notebooks in the project lifecycle is to:
+Therefore two good places to use notebooks in the project lifecycle is to:
 
-- explore and 'play' with the data while developing your methods.
-- turn notebooks into HTML reports to present results to end users.
+- Explore and 'play' with the data while developing your methods.
+- Turn notebooks into HTML reports to present results to end users.
 
-In short, notebooks are not suitable for modularising analysis pipelines, however, they are a great way to do research analytics and to present results.
+In short, notebooks are not suitable for modularising analysis pipelines. However, they are a great way to do research analytics and to present results.
 Therefore, as the exploratory part of your analysis draws to a close, or there is a need to produce similar analysis more regularly, it is wise to refactor notebooks.
 Reusable functions and classes can be moved to modules and the main analysis pipeline might instead be reproducibly run from a script.
 Here are a few suggestions to consider when refactoring code from notebooks:
@@ -562,5 +560,5 @@ Here are a few suggestions to consider when refactoring code from notebooks:
 After this, you might turn existing notebooks into HTML to send them stakeholders, or save them as is so that analytical peers can re-run and review your notebooks.
 The steps that you've taken to simplify your notebook code will make your code much easier to understand by readers.
 
-Bear in mind that notebook files can still be run out of order by other analysts, and that they should not be used as the main method of actually generating outputs.
+Bear in mind that other analysts can still run notebook files out of order, so they should not be used as the main method of actually generating outputs.
 Output generation should instead be trusted to scripts, where human decisions do not alter the order that code is run.
