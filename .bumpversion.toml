@@ -1,5 +1,5 @@
 [tool.bumpversion]
-current_version = "2024.1"
+current_version = "2025.0"
 parse = "(?P<year>\\d+)\\.(?P<build>\\d+)"
 serialize = ["{year}.{build}"]
 tag = true
