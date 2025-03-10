@@ -26,6 +26,7 @@ sphinx:
     todo_include_todos: true
     language: en
     html_show_copyright: false
+    myst_heading_anchors: 3
 
 latex:
   latex_documents:
