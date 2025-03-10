@@ -28,17 +28,16 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="_static/tabs.css?v=a5c4661c" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/logo.css?v=1c56504a" />
     <link rel="stylesheet" type="text/css" href="_static/admonitions.css?v=1956eba1" />
     <link rel="stylesheet" type="text/css" href="_static/accessibility.css?v=6e02104c" />
-    <link rel="stylesheet" type="text/css" href="_static/logo.css?v=1c56504a" />
     <link rel="stylesheet" type="text/css" href="_static/markdown_within_tabs.css?v=d7e1104e" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -468,7 +467,8 @@ document.write(`
 <li><p>Names used in the code are informative and concise.</p></li>
 <li><p>Names used in the code are explicit, rather than implicit.</p></li>
 <li><p>Code logic is clear and avoids unnecessary complexity.</p></li>
-<li><p>Code follows a standard style, e.g. <a class="reference external" href="https://www.python.org/dev/peps/pep-0008/">PEP8 for Python</a> and <a class="reference external" href="https://google.github.io/styleguide/Rguide.html">Google</a> or <a class="reference external" href="https://style.tidyverse.org/">tidyverse</a> for R.</p></li>
+<li><p>Code follows a standard style, e.g. <a class="reference external" href="https://www.python.org/dev/peps/pep-0008/">PEP8 for Python</a> and
+<a class="reference external" href="https://google.github.io/styleguide/Rguide.html">Google</a> or <a class="reference external" href="https://style.tidyverse.org/">tidyverse</a> for R.</p></li>
 </ul>
 </section>
 <section id="project-structure">
@@ -513,7 +513,8 @@ document.write(`
 <li><p>Code is open-sourced. Any sensitive data are omitted or replaced with dummy data.</p></li>
 <li><p>Committing standards are followed such as appropriate commit summary and message supplied.</p></li>
 <li><p>Commits are tagged at significant stages. This is used to indicate the state of code for specific releases or model versions.</p></li>
-<li><p>Continuous integration is applied through tools such as <a class="reference external" href="https://github.com/features/actions">GitHub Actions</a>, to ensure that each change is integrated into the workflow smoothly.</p></li>
+<li><p>Continuous integration is applied through tools such as <a class="reference external" href="https://github.com/features/actions">GitHub Actions</a>,
+to ensure that each change is integrated into the workflow smoothly.</p></li>
 </ul>
 </section>
 <section id="configuration">
@@ -534,9 +535,11 @@ document.write(`
 <li><p>Input data are stored safely and are treated as read-only.</p></li>
 <li><p>Input data are versioned. All changes to the data result in new versions being created, or <a class="reference external" href="https://en.wikipedia.org/wiki/Slowly_changing_dimension">changes are recorded as new records</a>.</p></li>
 <li><p>All input data is documented in a data register, including where they come from and their importance to the analysis.</p></li>
-<li><p>Outputs from your analysis are disposable and are regularly deleted and regenerated while analysis develops. Your analysis code is able to reproduce them at any time.</p></li>
+<li><p>Outputs from your analysis are disposable and are regularly deleted and regenerated while analysis develops.
+Your analysis code is able to reproduce them at any time.</p></li>
 <li><p>Non-sensitive data are made available to users. If data are sensitive, dummy data is made available so that the code can be run by others.</p></li>
-<li><p>Data quality is monitored, as per <a class="reference external" href="https://www.gov.uk/government/publications/the-government-data-quality-framework/the-government-data-quality-framework">the government data quality framework</a>.</p></li>
+<li><p>Data quality is monitored, as per
+<a class="reference external" href="https://www.gov.uk/government/publications/the-government-data-quality-framework/the-government-data-quality-framework">the government data quality framework</a>.</p></li>
 <li><p>Fields within input and output datasets are documented in a data dictionary.</p></li>
 <li><p>Large or complex data are stored in a database.</p></li>
 </ul>
@@ -559,7 +562,7 @@ document.write(`
 <li><p>Stakeholder or user acceptance sign-offs are recorded near to the code.</p></li>
 <li><p>Test are automatically run and recorded using continuous integration or git hooks.</p></li>
 <li><p>The whole process is tested from start to finish using one or more realistic end-to-end tests.</p></li>
-<li><p>Test code is clean an readable. Tests make use of fixtures and parametrisation to reduce repetition.</p></li>
+<li><p>Test code is clean and readable. Tests make use of fixtures and parameterisation to reduce repetition.</p></li>
 </ul>
 </section>
 <section id="dependency-management">
@@ -572,7 +575,8 @@ document.write(`
 <li><p>Where appropriate, code runs independent of operating system (e.g. suitable management of file paths).</p></li>
 <li><p>Dependencies are managed separately for users, developers, and testers.</p></li>
 <li><p>There are as few dependencies as possible.</p></li>
-<li><p>Package dependencies are managed using an environment manager such as <a class="reference external" href="https://virtualenv.pypa.io/en/latest/">virtualenv for Python</a> or <a class="reference external" href="https://rstudio.github.io/renv/articles/renv.html">renv for R</a>.</p></li>
+<li><p>Package dependencies are managed using an environment manager such as <a class="reference external" href="https://virtualenv.pypa.io/en/latest/">virtualenv for Python</a>
+or <a class="reference external" href="https://rstudio.github.io/renv/articles/renv.html">renv for R</a>.</p></li>
 </ul>
 </section>
 <section id="logging">
@@ -591,7 +595,8 @@ document.write(`
 <li><p>New issues or tasks are guided by users’ needs and stories.</p></li>
 <li><p>Issues templates are used to ensure proper logging of the title, description, labels and comments.</p></li>
 <li><p>Acceptance criteria are noted for issues and tasks. Fulfilment of acceptance criteria is recorded.</p></li>
-<li><p>Quality assurance standards and processes for the project are defined. These are based around <a class="reference external" href="https://best-practice-and-impact.github.io/qa-of-code-guidance/intro.html">the quality assurance of code for analysis and research guidance document</a>.</p></li>
+<li><p>Quality assurance standards and processes for the project are defined. These are based around
+<a class="reference external" href="https://best-practice-and-impact.github.io/qa-of-code-guidance/intro.html">the quality assurance of code for analysis and research guidance document</a>.</p></li>
 </ul>
 </section>
 </section>
@@ -600,7 +605,8 @@ document.write(`
 <p>You can either refer to the checklist above, or use the Markdown template below to include the checklist in your project.</p>
 <div class="highlight-md notranslate"><div class="highlight"><pre><span></span><span class="gu">## Quality assurance checklist</span>
 
-Quality assurance checklist from [<span class="nt">the quality assurance of code for analysis and research guidance</span>](<span class="na">https://best-practice-and-impact.github.io/qa-of-code-guidance/intro.html</span>).
+Quality assurance checklist from
+ [<span class="nt">the quality assurance of code for analysis and research guidance</span>](<span class="na">https://best-practice-and-impact.github.io/qa-of-code-guidance/intro.html</span>).
 
 <span class="gu">### Modular code</span>
 
@@ -615,7 +621,8 @@ Quality assurance checklist from [<span class="nt">the quality assurance of code
 <span class="k">- [ ]</span> Names used in the code are informative and concise.
 <span class="k">- [ ]</span> Names used in the code are explicit, rather than implicit.
 <span class="k">- [ ]</span> Code logic is clear and avoids unnecessary complexity.
-<span class="k">- [ ]</span> Code follows a standard style, e.g. [<span class="nt">PEP8 for Python</span>](<span class="na">https://www.python.org/dev/peps/pep-0008/</span>) and [<span class="nt">Google</span>](<span class="na">https://google.github.io/styleguide/Rguide.html</span>) or [<span class="nt">tidyverse</span>](<span class="na">https://style.tidyverse.org/</span>) for R.
+<span class="k">- [ ]</span> Code follows a standard style, e.g. [<span class="nt">PEP8 for Python</span>](<span class="na">https://www.python.org/dev/peps/pep-0008/</span>)
+ and [<span class="nt">Google</span>](<span class="na">https://google.github.io/styleguide/Rguide.html</span>) or [<span class="nt">tidyverse</span>](<span class="na">https://style.tidyverse.org/</span>) for R.
 
 <span class="gu">### Project structure</span>
 
@@ -628,7 +635,8 @@ Quality assurance checklist from [<span class="nt">the quality assurance of code
 <span class="k">- [ ]</span> Comments are kept up to date, so they do not confuse the reader.
 <span class="k">- [ ]</span> Code is not commented out to adjust which lines of code run.
 <span class="k">- [ ]</span> All functions and classes are documented to describe what they do, what inputs they take and what they return.
-<span class="k">- [ ]</span> Python code is [<span class="nt">documented using docstrings</span>](<span class="na">https://www.python.org/dev/peps/pep-0257/</span>). R code is [<span class="nt">documented using `roxygen2` comments</span>](<span class="na">https://cran.r-project.org/web/packages/roxygen2/vignettes/roxygen2.html</span>).
+<span class="k">- [ ]</span> Python code is [<span class="nt">documented using docstrings</span>](<span class="na">https://www.python.org/dev/peps/pep-0257/</span>).
+ R code is [<span class="nt">documented using `roxygen2` comments</span>](<span class="na">https://cran.r-project.org/web/packages/roxygen2/vignettes/roxygen2.html</span>).
 <span class="k">- [ ]</span> Human-readable (preferably HTML) documentation is generated automatically from code documentation.
 
 <span class="gu">### Project documentation</span>
@@ -640,8 +648,10 @@ Quality assurance checklist from [<span class="nt">the quality assurance of code
 <span class="k">- [ ]</span> Assumptions in the analysis and their quality are documented next to the code that implements them. These are also made available to users.
 <span class="k">- [ ]</span> Copyright and licenses are specified for both documentation and code.
 <span class="k">- [ ]</span> Instructions for how to cite the project are given.
-<span class="k">- [ ]</span> Releases of the project used for reports, publications, or other outputs are versioned using a standard pattern such as [<span class="nt">semantic versioning</span>](<span class="na">https://semver.org/</span>).
-<span class="k">- [ ]</span> A summary of [<span class="nt">changes to functionality are documented in a changelog</span>](<span class="na">https://keepachangelog.com/en/1.0.0/</span>) following releases. The changelog is available to users.
+<span class="k">- [ ]</span> Releases of the project used for reports, publications, or other outputs are versioned using a standard pattern such as
+ [<span class="nt">semantic versioning</span>](<span class="na">https://semver.org/</span>).
+<span class="k">- [ ]</span> A summary of [<span class="nt">changes to functionality are documented in a changelog</span>](<span class="na">https://keepachangelog.com/en/1.0.0/</span>) following releases.
+ The changelog is available to users.
 <span class="k">- [ ]</span> Example usage of packages and underlying functionality is documented for developers and users.
 
 <span class="gu">### Version control</span>
@@ -652,7 +662,8 @@ Quality assurance checklist from [<span class="nt">the quality assurance of code
 <span class="k">- [ ]</span> Code is open-sourced. Any sensitive data are omitted or replaced with dummy data.
 <span class="k">- [ ]</span> Committing standards are followed such as appropriate commit summary and message supplied.
 <span class="k">- [ ]</span> Commits are tagged at significant stages. This is used to indicate the state of code for specific releases or model versions.
-<span class="k">- [ ]</span> Continuous integration is applied through tools such as [<span class="nt">GitHub Actions</span>](<span class="na">https://github.com/features/actions</span>), to ensure that each change is integrated into the workflow smoothly.
+<span class="k">- [ ]</span> Continuous integration is applied through tools such as [<span class="nt">GitHub Actions</span>](<span class="na">https://github.com/features/actions</span>),
+ to ensure that each change is integrated into the workflow smoothly.
 
 <span class="gu">### Configuration</span>
 
@@ -667,11 +678,14 @@ Quality assurance checklist from [<span class="nt">the quality assurance of code
 <span class="k">- [ ]</span> Published outputs meet [<span class="nt">accessibility regulations</span>](<span class="na">https://analysisfunction.civilservice.gov.uk/area_of_work/accessibility/</span>).
 <span class="k">- [ ]</span> All data for analysis are stored in an open format, so that specific software is not required to access them.
 <span class="k">- [ ]</span> Input data are stored safely and are treated as read-only.
-<span class="k">- [ ]</span> Input data are versioned. All changes to the data result in new versions being created, or [<span class="nt">changes are recorded as new records</span>](<span class="na">https://en.wikipedia.org/wiki/Slowly_changing_dimension</span>).
+<span class="k">- [ ]</span> Input data are versioned. All changes to the data result in new versions being created, or
+ [<span class="nt">changes are recorded as new records</span>](<span class="na">https://en.wikipedia.org/wiki/Slowly_changing_dimension</span>).
 <span class="k">- [ ]</span> All input data is documented in a data register, including where they come from and their importance to the analysis.
-<span class="k">- [ ]</span> Outputs from your analysis are disposable and are regularly deleted and regenerated while analysis develops. Your analysis code is able to reproduce them at any time.
+<span class="k">- [ ]</span> Outputs from your analysis are disposable and are regularly deleted and regenerated while analysis develops.
+ Your analysis code is able to reproduce them at any time.
 <span class="k">- [ ]</span> Non-sensitive data are made available to users. If data are sensitive, dummy data is made available so that the code can be run by others.
-<span class="k">- [ ]</span> Data quality is monitored, as per [<span class="nt">the government data quality framework</span>](<span class="na">https://www.gov.uk/government/publications/the-government-data-quality-framework/the-government-data-quality-framework</span>).
+<span class="k">- [ ]</span> Data quality is monitored, as per [the government data
+ quality framework](https://www.gov.uk/government/publications/the-government-data-quality-framework/the-government-data-quality-framework).
 <span class="k">- [ ]</span> Fields within input and output datasets are documented in a data dictionary.
 <span class="k">- [ ]</span> Large or complex data are stored in a database.
 
@@ -683,14 +697,15 @@ Quality assurance checklist from [<span class="nt">the quality assurance of code
 
 <span class="gu">### Testing</span>
 
-<span class="k">- [ ]</span> Core functionality is unit tested as code. See [<span class="sb">`pytest`</span> for Python](https://docs.pytest.org/en/stable/) and [<span class="sb">`testthat`</span> for R](https://testthat.r-lib.org/). 
+<span class="k">- [ ]</span> Core functionality is unit tested as code. See [<span class="sb">`pytest`</span> for Python](https://docs.pytest.org/en/stable/) and
+ [<span class="sb">`testthat`</span> for R](https://testthat.r-lib.org/). 
 <span class="k">- [ ]</span> Code based tests are run regularly.
 <span class="k">- [ ]</span> Bug fixes include implementing new unit tests to ensure that the same bug does not reoccur.
 <span class="k">- [ ]</span> Informal tests are recorded near to the code.
 <span class="k">- [ ]</span> Stakeholder or user acceptance sign-offs are recorded near to the code.
 <span class="k">- [ ]</span> Test are automatically run and recorded using continuous integration or git hooks.
 <span class="k">- [ ]</span> The whole process is tested from start to finish using one or more realistic end-to-end tests.
-<span class="k">- [ ]</span> Test code is clean an readable. Tests make use of fixtures and parametrisation to reduce repetition.
+<span class="k">- [ ]</span> Test code is clean an readable. Tests make use of fixtures and parameterisation to reduce repetition.
 
 <span class="gu">### Dependency management</span>
 
@@ -701,7 +716,8 @@ Quality assurance checklist from [<span class="nt">the quality assurance of code
 <span class="k">- [ ]</span> Where appropriate, code runs independent of operating system (e.g. suitable management of file paths).
 <span class="k">- [ ]</span> Dependencies are managed separately for users, developers, and testers.
 <span class="k">- [ ]</span> There are as few dependencies as possible.
-<span class="k">- [ ]</span> Package dependencies are managed using an environment manager such as [<span class="nt">virtualenv for Python</span>](<span class="na">https://virtualenv.pypa.io/en/latest/</span>) or [<span class="nt">renv for R</span>](<span class="na">https://rstudio.github.io/renv/articles/renv.html</span>).
+<span class="k">- [ ]</span> Package dependencies are managed using an environment manager such as [<span class="nt">virtualenv for Python</span>](<span class="na">https://virtualenv.pypa.io/en/latest/</span>)
+ or [<span class="nt">renv for R</span>](<span class="na">https://rstudio.github.io/renv/articles/renv.html</span>).
 
 <span class="gu">### Logging</span>
 
@@ -716,7 +732,8 @@ Quality assurance checklist from [<span class="nt">the quality assurance of code
 <span class="k">- [ ]</span> New issues or tasks are guided by users’ needs and stories.
 <span class="k">- [ ]</span> Issues templates are used to ensure proper logging of the title, description, labels and comments.
 <span class="k">- [ ]</span> Acceptance criteria are noted for issues and tasks. Fulfilment of acceptance criteria is recorded.
-<span class="k">- [ ]</span> Quality assurance standards and processes for the project are defined. These are based around [<span class="nt">the quality assurance of code for analysis and research guidance document</span>](<span class="na">https://best-practice-and-impact.github.io/qa-of-code-guidance/intro.html</span>).
+<span class="k">- [ ]</span> Quality assurance standards and processes for the project are defined. These are based around
+ [<span class="nt">the quality assurance of code for analysis and research guidance document</span>](<span class="na">https://best-practice-and-impact.github.io/qa-of-code-guidance/intro.html</span>).
 </pre></div>
 </div>
 </section>

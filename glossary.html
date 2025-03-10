@@ -28,17 +28,16 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="_static/tabs.css?v=a5c4661c" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/logo.css?v=1c56504a" />
     <link rel="stylesheet" type="text/css" href="_static/admonitions.css?v=1956eba1" />
     <link rel="stylesheet" type="text/css" href="_static/accessibility.css?v=6e02104c" />
-    <link rel="stylesheet" type="text/css" href="_static/logo.css?v=1c56504a" />
     <link rel="stylesheet" type="text/css" href="_static/markdown_within_tabs.css?v=d7e1104e" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -422,7 +421,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#terms">Terms</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#abstraction">Abstraction</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#application-programming-interface-api">Application Programming Interface (API)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#attributes">Attributes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#attribute">Attribute</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#automated-testing">Automated testing</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#code-interpreter">Code interpreter</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#class">Class</a></li>
@@ -478,7 +477,7 @@ document.write(`
 <h1>Glossary of terms<a class="headerlink" href="#glossary-of-terms" title="Link to this heading">#</a></h1>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>This section is a draft, while we ensure that it meets user needs.</p>
+<p>This section is a draft, while we make sure that it meets user needs.</p>
 <p>Please get in touch with feedback <a class="reference external" href="https://github.com/best-practice-and-impact/qa-of-code-guidance/issues">by creating a GitHub Issue</a> or <a class="reference external" href="mailto:ASAP&#37;&#52;&#48;ons&#46;gov&#46;uk">emailing us</a>.</p>
 </div>
 <section id="terms">
@@ -488,15 +487,15 @@ document.write(`
 <p>Treating a problem as an idea or concept, rather than a detailed individual example.</p>
 <p>Abstraction is used to manage the complexity of software, by describing our logic in a more generic way or by hiding complexity.
 When we use similar logic in multiple parts of our code, we can abstract this logic into a generic function or method to be reused.
-When part of our process is very complex but is self-contained we can hide this complexity it by putting it inside a function and referring to the function.</p>
+When part of our process is very complex, but is self-contained, we can hide this complexity it by putting it inside a function and referring to the function.</p>
 </section>
 <section id="application-programming-interface-api">
 <h3>Application Programming Interface (API)<a class="headerlink" href="#application-programming-interface-api" title="Link to this heading">#</a></h3>
 <p>An interface that defines how you can interact with software through code.
 For example, the functions or methods from a package that a typical user will interact with.</p>
 </section>
-<section id="attributes">
-<h3>Attributes<a class="headerlink" href="#attributes" title="Link to this heading">#</a></h3>
+<section id="attribute">
+<h3>Attribute<a class="headerlink" href="#attribute" title="Link to this heading">#</a></h3>
 <p>A variable associated with a class object.</p>
 </section>
 <section id="automated-testing">
@@ -510,7 +509,7 @@ Tests can check code multiple levels, for example, checking that an individual f
 <p>A computer program that runs code in a particular programming language.
 For example, the program that reads your Python or R analysis code and runs it.
 A non-interactive interpreter runs code in order, which is important for reproducibility.</p>
-<p>Interactive interpreters allow you to run individual lines of code, which means that code can be run out of order.
+<p>Interactive interpreters allow you to run individual lines of code, which means that you can run code  out of order.
 Notebooks use interactive interpreters.
 These are not suitable for running analysis pipelines, because they do not ensure that the code is run reproducibly.</p>
 </section>
@@ -522,7 +521,7 @@ These are not suitable for running analysis pipelines, because they do not ensur
 </section>
 <section id="cloud-computing">
 <h3>Cloud computing<a class="headerlink" href="#cloud-computing" title="Link to this heading">#</a></h3>
-<p>Cloud computing allows us to access computing power and data storage on-demand.
+<p>Cloud computing allows us to access scalable computing power and data storage on-demand.
 This means that we can access high-specification hardware or store large amounts of data, usually only paying for what we have used.</p>
 <p>The most common cloud platforms are Google Cloud Platform (GCP), Amazon Web Service (AWS) and Microsoft Azure.</p>
 </section>
@@ -639,14 +638,14 @@ Open-source code is openly available to anyone.
 Using open-source software and publishing our code with open-source licenses ensures that our users can easily understand and reproduce our analysis.</p>
 <p>Open-source programming languages are free to use.
 We recommend using Python and R, which support the good practices outlined in this guidance.</p>
-<p>Proprietary software, including SPSS, SAS and Stata are closed source.
+<p>Proprietary software, including SPSS, SAS, and Stata are closed source.
 These are expensive to use and do not support many of the good analysis practices outlined in this guidance.
-Not using open source analysis tools means that our users need to purchase software to reproduce our results.</p>
+Not using open source analysis tools means that your users need to purchase software to reproduce your results.</p>
 </section>
 <section id="packages">
 <h3>Packages<a class="headerlink" href="#packages" title="Link to this heading">#</a></h3>
 <p>Packages are file structures that contain code and documentation.
-These collections of code are designed to be installed and re-used with ease.
+These collections of code are designed for you to install and re-use them with ease.
 Packages in Python and R act as extensions, to allow us to reuse code that has already been written.</p>
 <p>“Library” is similarly used to describe a software collection, however, packages are more specifically for distribution of code.</p>
 </section>
@@ -670,11 +669,11 @@ It also helps to transfer understanding of the code between members of the team.
 </section>
 <section id="procedural-running">
 <h3>Procedural Running<a class="headerlink" href="#procedural-running" title="Link to this heading">#</a></h3>
-<p>Where a script is executed as statements run one after the other.</p>
+<p>Where a script is executed as statements that run one after the other.</p>
 </section>
 <section id="program">
 <h3>Program<a class="headerlink" href="#program" title="Link to this heading">#</a></h3>
-<p>A main script that can contain statements, functions and methods. The main script may import functions and methods from other scripts. This is the script that would be run by the user/orchestration tool.</p>
+<p>A main script that can contain statements, functions, and methods. The main script may import functions and methods from other scripts. This is the script that would be run by the user/orchestration tool.</p>
 </section>
 <section id="python-and-r">
 <h3>Python and R<a class="headerlink" href="#python-and-r" title="Link to this heading">#</a></h3>
@@ -688,7 +687,7 @@ They are both free to use and open source.</p>
 <section id="reproducible-analytical-pipelines-rap">
 <h3>Reproducible Analytical Pipelines (RAP)<a class="headerlink" href="#reproducible-analytical-pipelines-rap" title="Link to this heading">#</a></h3>
 <p>Reproducible Analytical Pipelines (RAP) are analyses that are carried out following good software engineering practices that are described by this guidance.
-They focus on the use of open-source analytical tools and a variety of techniques to deliver reproducible, auditable and assured data analyses.
+They focus on the use of open-source analytical tools and a variety of techniques to deliver reproducible, auditable, and assured data analyses.
 RAP is more generally a culture of wanting to improve the quality of our analysis, by improving the quality assurance of our analysis code.</p>
 </section>
 <section id="scripts">
@@ -788,7 +787,7 @@ This helps keep track of dependencies and avoid conflicts between different proj
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#terms">Terms</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#abstraction">Abstraction</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#application-programming-interface-api">Application Programming Interface (API)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#attributes">Attributes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#attribute">Attribute</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#automated-testing">Automated testing</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#code-interpreter">Code interpreter</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#class">Class</a></li>

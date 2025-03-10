@@ -28,17 +28,16 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="_static/tabs.css?v=a5c4661c" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/logo.css?v=1c56504a" />
     <link rel="stylesheet" type="text/css" href="_static/admonitions.css?v=1956eba1" />
     <link rel="stylesheet" type="text/css" href="_static/accessibility.css?v=6e02104c" />
-    <link rel="stylesheet" type="text/css" href="_static/logo.css?v=1c56504a" />
     <link rel="stylesheet" type="text/css" href="_static/markdown_within_tabs.css?v=d7e1104e" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -445,10 +444,10 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="data-management">
 <h1>Data management<a class="headerlink" href="#data-management" title="Link to this heading">#</a></h1>
 <p>Data management covers a broad range of disciplines, including organising, storing and maintaining data.
-This management is typically handled by dedicated data architects and engineers, however, we appreciate that analysts are often expected to manage their own data.
+Dedicated data architects and engineers typically handle data management. However, analysts are often expected to manage their own data or will work alongside other data professionals.
 This section aims to highlight good data management practices, so that you can either appreciate how your organisation handles its data
 or implement your own data management solutions.</p>
-<p>In order to reproduce a piece of analysis we need to be able to identify and access the same data that our analysis used.
+<p>We need to be able to identify and access the same data that our analysis used if we are to reproduce a piece of analysis .
 This requires suitable storage of data, with documentation and versioning of the data where it may change over time.</p>
 <div class="admonition-strategies admonition">
 <p class="admonition-title">Key strategies</p>
@@ -460,31 +459,32 @@ It should be a primary resource for all analysts working with data in the public
 </div>
 <section id="data-storage">
 <h2>Data storage<a class="headerlink" href="#data-storage" title="Link to this heading">#</a></h2>
-<p>It is assumed that most data are now stored digitally.</p>
+<p>We assume that most data are now stored digitally.</p>
 <p>Digital data risk becoming inaccessible as technology develops and commonly used software changes.
-Long term data storage should use open or standard file formats.
+Use open or standard file formats, not proprietary ones, for long term data storage.
 There are <a class="reference external" href="https://www.ukdataservice.ac.uk/manage-data/format/recommended-formats.aspx">recommended formats</a> for storing different data types,
-though we suggest avoiding formats that depend on proprietary software like SPSS, STATA and SAS.</p>
+though we suggest avoiding formats that depend on proprietary software like SPSS, STATA, and SAS.</p>
 <p>Short term storage, for use in analysis, might use any format that is suitable for the analysis task.
 However, most analysis tools should support reading data directly from safe long term storage, including databases.</p>
 <section id="spreadsheets">
 <h3>Spreadsheets<a class="headerlink" href="#spreadsheets" title="Link to this heading">#</a></h3>
-<p>Spreadsheets (e.g. Microsoft Excel formats and open equivalents) are a very general data analysis tool.
+<p>Spreadsheets (e.g., Microsoft Excel formats and open equivalents) are a very general data analysis tool.
 The cost of their easy to use interface and flexibility is increased difficulty of quality assurance.</p>
 <figure class="align-default" id="data-file-comic">
-<a class="reference internal image-reference" href="https://imgs.xkcd.com/comics/norm_normal_file_format.png"><img alt="A comic strip describing someone sending &quot;data&quot; in the form of a screenshot of a spreadsheet document." src="https://imgs.xkcd.com/comics/norm_normal_file_format.png" style="width: 50%;" /></a>
+<a class="reference internal image-reference" href="https://imgs.xkcd.com/comics/norm_normal_file_format.png"><img alt="A comic strip describing someone sending &quot;data&quot; in the form of a screenshot of a spreadsheet document." src="https://imgs.xkcd.com/comics/norm_normal_file_format.png" style="width: 50%;" />
+</a>
 <figcaption>
 <p><span class="caption-number">Fig. 13 </span><span class="caption-text">.NORM Normal File Format, from <a class="reference external" href="https://xkcd.com/2116/">xkcd</a></span><a class="headerlink" href="#data-file-comic" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
-<p>Spreadsheets are not suitable for storage of data (or statistics production and modelling processes).
-Issues when using spreadsheets for data storage include:</p>
+<p>Do not use spreadsheets for storage of data (or statistics production and modelling processes).
+Using spreadsheets to store data introduces problems like these:</p>
 <ul class="simple">
 <li><p>Lack of audibility - changes to data are not recorded.</p></li>
-<li><p>Multiple users can’t work with a single spreadsheet file at once.</p></li>
+<li><p>Multiple users can’t work with a single spreadsheet file at once, or risk complex versioning clashes which can be hard to resolve.</p></li>
 <li><p>They are error prone and have no built in quality assurance.</p></li>
-<li><p>Files become cumbersome when they are large.</p></li>
-<li><p>Automatic “correction” of grammar and data type, which silently corrupts your data.</p>
+<li><p>Large files become cumbersome.</p></li>
+<li><p>There is a risk of automatic “correction” of grammar and data type, which silently corrupts your data.</p>
 <ul>
 <li><p>Converting dates to a different datetime format.</p></li>
 <li><p>Converting numbers or text that resemble dates to dates.</p></li>
@@ -499,7 +499,7 @@ Issues when using spreadsheets for data storage include:</p>
 <p>Databases are collections of related data, which can be easily accessed and managed.
 Each database contains one or more tables, which hold data.
 Database creation and management is carried out using a database management system (DBMS).
-These usually support authorisation of access to the database and support multiple users accessing the database concurrently.
+DBMSs usually support authorisation of access to the database and support multiple users to concurrently access the database.
 Popular open source DBMS include:</p>
 <ul class="simple">
 <li><p>SQLite</p></li>
@@ -507,11 +507,11 @@ Popular open source DBMS include:</p>
 <li><p>PostgreSQL</p></li>
 <li><p>Redis</p></li>
 </ul>
-<p>The most common form of database is a relational database.
-Data in the tables of a relational database are linked by common keys (e.g. unique identifiers).
+<p>Relational databases are the most common form of database.
+Common keys (e.g., unique identifiers) link data in the tables of a relational database.
 This allows you to store data with minimal duplication within a table, but quickly collect related data when required.
 Relational DBMS are called RDBMS.</p>
-<p>Most DBMS use structured query language (SQL) to communicate with databases.</p>
+<p>Most DBMS communicate with databases using structured query language (SQL).</p>
 <div class="admonition-learning admonition">
 <p class="admonition-title">Key Learning</p>
 <p>You might find this <a class="reference external" href="https://learninghub.ons.gov.uk/enrol/index.php?id=1162">foundations of SQL (government analysts only course)</a>
@@ -548,7 +548,7 @@ may be a useful introduction to working with databases from Python.</p></li>
 </section>
 <section id="documenting-data">
 <h2>Documenting data<a class="headerlink" href="#documenting-data" title="Link to this heading">#</a></h2>
-<p>Without documentation, it is difficult to understand and work with a new dataset.</p>
+<p>It is difficult to understand and work with a new dataset without documentation.</p>
 <p>For our analysis, we should be able to quickly grasp:</p>
 <ul class="simple">
 <li><p>What data are available to us?</p></li>
@@ -557,21 +557,21 @@ may be a useful introduction to working with databases from Python.</p></li>
 <li><p>Have these data been validated or manipulated?</p></li>
 <li><p>How am I ethically and legally permitted to use the data?</p></li>
 </ul>
-<p>This information should be created by data providers and analysts, in the form of documentation.</p>
+<p>Data providers and analysts should create this information in the form of documentation.</p>
 <section id="data-dictionary">
 <h3>Data dictionary<a class="headerlink" href="#data-dictionary" title="Link to this heading">#</a></h3>
 <p>A data dictionary describes the contents and format of a dataset.</p>
 <p>For variables in tabular datasets, you might document:</p>
 <ul class="simple">
-<li><p>a short description of what each variable represents</p></li>
-<li><p>the frame of reference of the data</p></li>
-<li><p>variable labels, if categorical</p></li>
-<li><p>valid values or ranges, if numerical</p></li>
-<li><p>representation of missing data</p></li>
-<li><p>reference to the question, if survey data</p></li>
-<li><p>reference to any related variables in the dataset</p></li>
-<li><p>if derived, detail how variables were obtained or calculated</p></li>
-<li><p>any rules for use or processing of the data, set by the data owner</p></li>
+<li><p>A short description of what each variable represents.</p></li>
+<li><p>The frame of reference of the data.</p></li>
+<li><p>Variable labels, if categorical.</p></li>
+<li><p>Valid values or ranges, if numerical.</p></li>
+<li><p>Representation of missing data.</p></li>
+<li><p>Reference to the question, if survey data.</p></li>
+<li><p>Reference to any related variables in the dataset.</p></li>
+<li><p>If derived, detail how variables were obtained or calculated.</p></li>
+<li><p>Any rules for use or processing of the data, set by the data owner.</p></li>
 </ul>
 <p>See this detailed example -
 the <a class="reference external" href="https://www.datadictionary.nhs.uk/data_sets/administrative_data_sets/national_workforce_data_set.html#dataset_national_workforce_data_set">National Workforce Data Set</a>,
@@ -584,58 +584,56 @@ including qualitative data.</p>
 <p>An information asset register (IAR) documents the information assets within your organisation.
 Your department should have an IAR in place, to document its information assets.
 As an analyst, you might use the register to identify contacts for data required for your analyses.</p>
-<p>This form of documentation may not contain detailed information on how to use each data source (provided by data dictionaries),
-but an IAR does increase visibility of data flows.
+<p>Although this form of documentation may not contain detailed information on how to use each data source (provided by data dictionaries), an IAR does increase visibility of data flows.
 An IAR may include:</p>
 <ul class="simple">
-<li><p>the owner of each dataset</p></li>
-<li><p>a high level description of the dataset</p></li>
-<li><p>the reason that your organisation holds the dataset</p></li>
-<li><p>how the information is stored and secured</p></li>
-<li><p>the risk of information being lost or compromised</p></li>
+<li><p>The owner of each dataset.</p></li>
+<li><p>A high level description of the dataset.</p></li>
+<li><p>The reason that your organisation holds the dataset.</p></li>
+<li><p>How the information is stored and secured.</p></li>
+<li><p>The risk of information being lost or compromised.</p></li>
 </ul>
 <p><a class="reference external" href="http://GOV.UK">GOV.UK</a> provides <a class="reference external" href="https://www.gov.uk/government/publications/information-asset-register">IAR templates</a> that your department might use to structure their IAR.</p>
 </section>
 </section>
 <section id="version-control-data">
 <h2>Version control data<a class="headerlink" href="#version-control-data" title="Link to this heading">#</a></h2>
-<p>A key requirement for reproducing your analysis is the ability to identify the data that you used.
+<p>To reproduce your analysis, you need to be able to identify the data that you used.
 Data change over time;
 Open data and other secondary data may be revised over time or cease to be available with no notice.
-The owners of these data can’t always be relied on to provide historical versions of their data.</p>
-<p>As an analyst, it is your responsibility to ensure that the exact data that you have used can be identified.</p>
-<p>Whether using a primary or secondary data source, you should version and document all changes to the data that you use.
-Documentation for data versions should include the reason why the version has changed.
+You can’t rely on owners of data to provide historical versions of their data.</p>
+<p>As an analyst, it is your responsibility to ensure you identify the exact data that you have used.</p>
+<p>You should version and document all changes to the data that you use whether using a primary or secondary data source,.
+You should include the reason why the version has changed in documentation for data versions.
 For example, if an open data source has been recollected, revisions have been made to existing data, or part of the data has been removed.</p>
 <p>You should be able to generate your analytical outputs reproducibly and, as such, treat them as disposable.
-If this is not the case, you should also version outputs so that they can be easily linked to the versioned input data and analysis code.</p>
+If this is not the case, version outputs so that you can easily link them to the versioned input data and analysis code.</p>
 <p>To automate the versioning of data, you might use the Python package <a class="reference external" href="https://dvc.org/">DVC, which provides Git-like version control of data</a>.
 This tool can also relate the data version to the version of analysis code, further facilitating reproducibility.
-Git can be used to version data, but you should be mindful of where your remote repository stores this data.
+You can use Git to version data, but you should be mindful of where your remote repository stores this data.
 The <a class="reference external" href="https://github.com/paulfitz/daff"><code class="docutils literal notranslate"><span class="pre">daff</span></code> package summarises changes in tabular data files</a>, which can be integrated with Git to investigate changes to data.</p>
-<p>You might alternatively version your data manually.
-For example, by creating new database tables or files for each new version of the data.
+<p>You might alternatively version your data manually e.g., by creating new database tables or files for each new version of the data.
 It must be possible to recreated previous versions of the data, for reproducibility.
-As such, it is important that data file versions are named uniquely, for example, using incrementing numbers and/or date of collection.
-Additionally, file versions must not be modified after they have been used for analysis - they should be treated as read-only.
+As such, it is important that you name data file versions uniquely, for example, using incrementing numbers and/or date of collection.
+Additionally, do not modify file versions after they have been used for analysis - they should be treated as read-only.
 All modifications to the data should result in new versions.</p>
 <div class="admonition-todo admonition" id="id1">
 <p class="admonition-title">Todo</p>
 <p>Diagram of good manual data versioning workflow.</p>
 <p><a class="reference external" href="https://github.com/best-practice-and-impact/qa-of-code-guidance/issues/22">#22</a></p>
 </div>
-<p>Finally, for this to be effective, your analysis should record the version of data used to generate a specified set of outputs.
-This might be documented in analysis reports or automatically logged by your code.</p>
+<p>Finally, for this to be effective, your analysis should record the version of data you used to generate a specified set of outputs.
+You might document this in analysis reports or automatically logged by your code.</p>
 </section>
 <section id="use-these-standards-and-guidance-when-publishing-data">
 <h2>Use these standards and guidance when publishing data<a class="headerlink" href="#use-these-standards-and-guidance-when-publishing-data" title="Link to this heading">#</a></h2>
 <p>You should use the <a class="reference external" href="https://5stardata.info/en/">5-star open data standards</a> to understand and improve the current utility of your published data.
-The <a class="reference external" href="https://csvw.org/">CSV on the Web (CSVW) standard</a> is recommended for achieving the highest ratings of open data.</p>
+We recommend the <a class="reference external" href="https://csvw.org/">CSV on the Web (CSVW) standard</a> for achieving the highest ratings of open data.</p>
 <p>When publishing statistics you should follow government guidance for <a class="reference external" href="https://analysisfunction.civilservice.gov.uk/policy-store/releasing-statistics-in-spreadsheets/">releasing statistics in spreadsheets</a>.</p>
 <p>When publishing or sharing tabular data, you should follow the <a class="reference external" href="https://www.gov.uk/government/publications/recommended-open-standards-for-government/tabular-data-standard">GOV.UK Tabular data standard</a>.</p>
 <p>Analysts producing published statistics may also be interested in <a class="reference external" href="https://analysisfunction.civilservice.gov.uk/the-gss-data-project/">Connected Open Government Statistics (COGS)</a>
 and <a class="reference external" href="https://www.gov.uk/government/publications/joined-up-data-in-government-the-future-of-data-linking-methods">the review of government data linking methods</a>.</p>
-<p>Guidance from the UK Data Service describes <a class="reference external" href="https://www.ukdataservice.ac.uk/manage-data/store/security">data security considerations</a>.</p>
+<p>The UK Data Service provides guidance on <a class="reference external" href="https://www.ukdataservice.ac.uk/manage-data/store/security">data security considerations</a>.</p>
 </section>
 </section>
 

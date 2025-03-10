@@ -28,17 +28,17 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="_static/tabs.css?v=a5c4661c" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/tabs.css?v=a5c4661c" />
+    <link rel="stylesheet" type="text/css" href="_static/logo.css?v=1c56504a" />
     <link rel="stylesheet" type="text/css" href="_static/admonitions.css?v=1956eba1" />
     <link rel="stylesheet" type="text/css" href="_static/accessibility.css?v=6e02104c" />
-    <link rel="stylesheet" type="text/css" href="_static/logo.css?v=1c56504a" />
     <link rel="stylesheet" type="text/css" href="_static/markdown_within_tabs.css?v=d7e1104e" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -56,7 +56,6 @@
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="_static/togglebutton.js?v=4a39c7ea"></script>
-    <script src="_static/tabs.js?v=3030b3cb"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
@@ -65,6 +64,7 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="_static/tabs.js?v=3030b3cb"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'readable_code';</script>
     <link rel="icon" href="_static/favicon.ico"/>
     <link rel="index" title="Index" href="genindex.html" />
@@ -459,14 +459,14 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="readable-code">
 <h1>Readable code<a class="headerlink" href="#readable-code" title="Link to this heading">#</a></h1>
 <p>The principles outlined in this chapter represent good practices for general programming and software development.
-These have been tailored to a more analytical workflow.</p>
+These have been tailored to analytical workflows.</p>
 <div class="admonition-learning admonition">
 <p class="admonition-title">Pre-requisites</p>
-<p>To get the most benefit from this section, you should have an understanding modular code, which was covered in the <a class="reference internal" href="modular_code.html"><span class="std std-doc">previous chapter</span></a>.
-You should also have an understand of core programming concepts such as:</p>
+<p>To get the most benefit from this section, you should have an understanding of modular code, which was covered in the <a class="reference internal" href="modular_code.html"><span class="std std-doc">previous chapter</span></a>.
+You should also be familiar with core programming concepts such as:</p>
 <ul class="simple">
-<li><p>storing information in variables</p></li>
-<li><p>using control flow, such as if-statements and for-loops</p></li>
+<li><p>storing information in variables.</p></li>
+<li><p>using control flow, such as if-statements and for-loops.</p></li>
 </ul>
 <p>You can find links to relevant training in the <a class="reference internal" href="learning.html"><span class="std std-doc">Learning resources</span></a> section of the book.</p>
 </div>
@@ -476,9 +476,9 @@ You should also have an understand of core programming concepts such as:</p>
 <div><p>Code is read more often than it is written.</p>
 <p class="attribution">—Guido van Rossum (creator of Python)</p>
 </div></blockquote>
-<p>When writing code, we should expect that at some point someone else will need to understand, use and adapt it.
-This might be yourself in six months time.
-As such, it is important to empathise with these potential users and write code that is tidy, understandable and does not add unnecessary complexity.
+<p>When writing code, we should expect that at some point someone else will need to understand, use, and adapt it.
+That someone might be you in six months time!
+As such, it is important to empathise with these potential users and write code that is tidy, understandable, and does not add unnecessary complexity.
 Doing this will make for a ‘self-documenting’ codebase that does not need as much additional documentation.</p>
 <p>This chapter highlights good coding practices that will improve the readability and maintainability of your code.
 Here, readability refers to how easily another analyst can gain a decent understand of how your code works, within a reasonable amount of time.
@@ -492,26 +492,26 @@ Maintainability refers to how easily other analysts can understand your code wel
 </div></blockquote>
 <p>Code with high readability is often referred to as ‘clean code’.
 Clean code helps us understand a program faster, as it avoids points of confusion and ambiguity.</p>
-<p>The following sections will present some key aspects of writing clean code that are fairly widely applicable.
+<p>The following sections set out some key aspects of writing clean code that are fairly widely applicable.
 That said, each individual programming language has idiomatic ways of writing code that are specific to its features.
 Additionally, each language usually has some form of accepted style guide.</p>
 <p>Make sure to consult the style guides for your language as first point of call.
-This is an important point to stress, as these guides will capture the most up to date guidance for your language of choice,
+It is important to stress this point, as these guides will capture the most up to date guidance for your language of choice,
 which may not be available in this document.</p>
 <section id="use-informative-names">
 <span id="naming"></span><h3>Use informative names<a class="headerlink" href="#use-informative-names" title="Link to this heading">#</a></h3>
 <p>The most important aspect of clean code is the naming of identifiers within your code.
-This includes variables, functions, classes and any other objects that can be assigned a name.</p>
+This includes variables, functions, classes, constants and any other objects that can be assigned a name.</p>
 <p>Someone reading your code will benefit greatly if you use names that are:</p>
 <ul class="simple">
-<li><p>informative and not misleading</p></li>
-<li><p>concise but not cryptic</p></li>
+<li><p>informative and not misleading.</p></li>
+<li><p>concise but not cryptic.</p></li>
 </ul>
 <section id="give-variables-clear-and-concise-names">
 <span id="naming-variables"></span><h4>Give variables clear and concise names<a class="headerlink" href="#give-variables-clear-and-concise-names" title="Link to this heading">#</a></h4>
 <p>You may have previously come across code that contains variable names that are meaningless, or that imply an incorrect purpose:</p>
 <div class="sphinx-tabs docutils container">
-<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-0-UHl0aG9u" aria-selected="true" class="sphinx-tabs-tab code-tab group-tab" id="tab-0-UHl0aG9u" name="UHl0aG9u" role="tab" tabindex="0">Python</button><button aria-controls="panel-0-Ug==" aria-selected="false" class="sphinx-tabs-tab code-tab group-tab" id="tab-0-Ug==" name="Ug==" role="tab" tabindex="-1">R</button></div><div aria-labelledby="tab-0-UHl0aG9u" class="sphinx-tabs-panel code-tab group-tab" id="panel-0-UHl0aG9u" name="UHl0aG9u" role="tabpanel" tabindex="0"><div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-0-UHl0aG9u" aria-selected="true" class="sphinx-tabs-tab code-tab group-tab" id="tab-0-UHl0aG9u" name="UHl0aG9u" role="tab" tabindex="0">Python</button><button aria-controls="panel-0-Ug==" aria-selected="false" class="sphinx-tabs-tab code-tab group-tab" id="tab-0-Ug==" name="Ug==" role="tab" tabindex="-1">R</button></div><div aria-labelledby="tab-0-UHl0aG9u" class="sphinx-tabs-panel code-tab group-tab" id="panel-0-UHl0aG9u" name="UHl0aG9u" role="tabpanel" tabindex="0"><div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
 
 <span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;Sioban&quot;</span>
 
@@ -533,16 +533,16 @@ This includes variables, functions, classes and any other objects that can be as
 </div>
 </div></div>
 <p>Another developer, or even ‘future you’, would be unable to correctly interpret what these variable names to represent.
-Therefore, you should strive to avoid cryptic or single-letter identifiers.</p>
+Therefore, you should try very hard to avoid cryptic or single-letter identifiers.</p>
 <p>That said, there are situations where some seemingly cryptic identifiers make sense.
 Using single letters to name variables is suitable when implementing methodologies from mathematical notation.
 However, even in these cases you must make sure that the formulas being implemented are clear,
 readily available to the reader and are consistent throughout your code.
 Be sure to cite the source of the mathematical formula in these cases.</p>
 <p>In other cases, using variable names that contain a few (3 or so) informative words can drastically improve the readability of your code.
-How these words are separated (be it <code class="docutils literal notranslate"><span class="pre">CamelCase</span></code> or <code class="docutils literal notranslate"><span class="pre">snake_case</span></code>) will depend on your language of choice.</p>
+Your language of choice will impact how you separate words (be it <code class="docutils literal notranslate"><span class="pre">CamelCase</span></code> or <code class="docutils literal notranslate"><span class="pre">snake_case</span></code>).</p>
 <div class="sphinx-tabs docutils container">
-<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-1-UHl0aG9u" aria-selected="true" class="sphinx-tabs-tab code-tab group-tab" id="tab-1-UHl0aG9u" name="UHl0aG9u" role="tab" tabindex="0">Python</button><button aria-controls="panel-1-Ug==" aria-selected="false" class="sphinx-tabs-tab code-tab group-tab" id="tab-1-Ug==" name="Ug==" role="tab" tabindex="-1">R</button></div><div aria-labelledby="tab-1-UHl0aG9u" class="sphinx-tabs-panel code-tab group-tab" id="panel-1-UHl0aG9u" name="UHl0aG9u" role="tabpanel" tabindex="0"><div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-1-UHl0aG9u" aria-selected="true" class="sphinx-tabs-tab code-tab group-tab" id="tab-1-UHl0aG9u" name="UHl0aG9u" role="tab" tabindex="0">Python</button><button aria-controls="panel-1-Ug==" aria-selected="false" class="sphinx-tabs-tab code-tab group-tab" id="tab-1-Ug==" name="Ug==" role="tab" tabindex="-1">R</button></div><div aria-labelledby="tab-1-UHl0aG9u" class="sphinx-tabs-panel code-tab group-tab" id="panel-1-UHl0aG9u" name="UHl0aG9u" role="tabpanel" tabindex="0"><div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
 
 <span class="c1"># Defining variables</span>
 <span class="n">first_name</span> <span class="o">=</span> <span class="s2">&quot;Sioban&quot;</span>
@@ -619,27 +619,25 @@ It is also clear how the third, new list relates to the first list that was used
 You’ll need to use your best judgement to adapt variable names in order to keep them informative but reasonably concise.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>In languages like Python, where indentation is part of the syntax to denote code blocks, you will be much more aware of this trade-off.</p>
-<p>In practice, the PEP8 style guide for Python recommends line widths of 79 characters
-and having overly descriptive names might impact your compliance with a style guide like that.</p>
+<p>You will be more aware of this trade-off in languages like Python, where indentation is part of the syntax to denote code blocks.</p>
+<p>The PEP8 style guide for Python recommends line widths of 79 characters. Having overly descriptive names might impact your compliance with a style guide.</p>
 </div>
 </section>
 <section id="name-functions-after-the-task-that-they-perform">
 <span id="naming-functions"></span><h4>Name functions after the task that they perform<a class="headerlink" href="#name-functions-after-the-task-that-they-perform" title="Link to this heading">#</a></h4>
-<p>Naming functions should respect the best practices already covered in the <a class="reference internal" href="#naming-variables"><span class="std std-ref">Naming variables</span></a>,
-however, there are a few other points worth raising that are exclusive to function and method names.</p>
+<p>You should respect the best practices already covered in the <a class="reference internal" href="#naming-variables"><span class="std std-ref">Naming variables</span></a> when naming functions.
+However, there are a few other points worth raising that are exclusive to function and method names.</p>
 <p>Firstly, your user should be able to infer the purpose or action of a function from its name.
-If you can’t describe the overall task performed by the function in a few words,
-then it may be that your function is overly complex or it requires further detail in its documentation.</p>
-<p>Where a function performs a specific task, it can be effective to describe this task in the function name, starting with a verb:</p>
+A warning sign that your function may be overly complex or require further detail in its documentation is when you find that you can’t describe the overall task performed by the function in a few words.</p>
+<p>It can be effective to describe the specific task a function performs in its name, starting with a verb:</p>
 <div class="sphinx-tabs docutils container">
-<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-4-UHl0aG9u" aria-selected="true" class="sphinx-tabs-tab code-tab group-tab" id="tab-4-UHl0aG9u" name="UHl0aG9u" role="tab" tabindex="0">Python</button><button aria-controls="panel-4-Ug==" aria-selected="false" class="sphinx-tabs-tab code-tab group-tab" id="tab-4-Ug==" name="Ug==" role="tab" tabindex="-1">R</button></div><div aria-labelledby="tab-4-UHl0aG9u" class="sphinx-tabs-panel code-tab group-tab" id="panel-4-UHl0aG9u" name="UHl0aG9u" role="tabpanel" tabindex="0"><div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">process_text</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-4-UHl0aG9u" aria-selected="true" class="sphinx-tabs-tab code-tab group-tab" id="tab-4-UHl0aG9u" name="UHl0aG9u" role="tab" tabindex="0">Python</button><button aria-controls="panel-4-Ug==" aria-selected="false" class="sphinx-tabs-tab code-tab group-tab" id="tab-4-Ug==" name="Ug==" role="tab" tabindex="-1">R</button></div><div aria-labelledby="tab-4-UHl0aG9u" class="sphinx-tabs-panel code-tab group-tab" id="panel-4-UHl0aG9u" name="UHl0aG9u" role="tabpanel" tabindex="0"><div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">process_text</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
     <span class="o">...</span>
 
 <span class="n">processed_text</span> <span class="o">=</span> <span class="n">process_text</span><span class="p">(</span><span class="s2">&quot;The following document was handled using...&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-</div><div aria-labelledby="tab-4-Ug==" class="sphinx-tabs-panel code-tab group-tab" hidden="true" id="panel-4-Ug==" name="Ug==" role="tabpanel" tabindex="0"><div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">process_text</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">function</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</div><div aria-labelledby="tab-4-Ug==" class="sphinx-tabs-panel code-tab group-tab" hidden="true" id="panel-4-Ug==" name="Ug==" role="tabpanel" tabindex="0"><div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">process_text</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="kr">function</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="kc">...</span>
 <span class="p">}</span>
 
@@ -675,19 +673,19 @@ Well defined, verb-based names often lead to clear pipelines such as:</p>
 </pre></div>
 </div>
 </div></div>
-<p>In cases where a function responds with a Boolean (True or False) value, it is often useful to name this function in the form of a question.</p>
+<p>Naming a function in the form of a question is useful when in cases where a function responds with a Boolean (True or False) value.</p>
 <div class="sphinx-tabs docutils container">
-<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-6-UHl0aG9u" aria-selected="true" class="sphinx-tabs-tab code-tab group-tab" id="tab-6-UHl0aG9u" name="UHl0aG9u" role="tab" tabindex="0">Python</button><button aria-controls="panel-6-Ug==" aria-selected="false" class="sphinx-tabs-tab code-tab group-tab" id="tab-6-Ug==" name="Ug==" role="tab" tabindex="-1">R</button></div><div aria-labelledby="tab-6-UHl0aG9u" class="sphinx-tabs-panel code-tab group-tab" id="panel-6-UHl0aG9u" name="UHl0aG9u" role="tabpanel" tabindex="0"><div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">are_missing_values_present</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-6-UHl0aG9u" aria-selected="true" class="sphinx-tabs-tab code-tab group-tab" id="tab-6-UHl0aG9u" name="UHl0aG9u" role="tab" tabindex="0">Python</button><button aria-controls="panel-6-Ug==" aria-selected="false" class="sphinx-tabs-tab code-tab group-tab" id="tab-6-Ug==" name="Ug==" role="tab" tabindex="-1">R</button></div><div aria-labelledby="tab-6-UHl0aG9u" class="sphinx-tabs-panel code-tab group-tab" id="panel-6-UHl0aG9u" name="UHl0aG9u" role="tabpanel" tabindex="0"><div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">are_missing_values_present</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
     <span class="k">if</span> <span class="kc">None</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
         <span class="k">return</span> <span class="kc">True</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="k">return</span> <span class="kc">False</span>
 </pre></div>
 </div>
-</div><div aria-labelledby="tab-6-Ug==" class="sphinx-tabs-panel code-tab group-tab" hidden="true" id="panel-6-Ug==" name="Ug==" role="tabpanel" tabindex="0"><div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">are_missing_values_present</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">function</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="nf">if </span><span class="p">(</span><span class="kc">NA</span><span class="w"> </span><span class="o">%in%</span><span class="w"> </span><span class="n">data</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</div><div aria-labelledby="tab-6-Ug==" class="sphinx-tabs-panel code-tab group-tab" hidden="true" id="panel-6-Ug==" name="Ug==" role="tabpanel" tabindex="0"><div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">are_missing_values_present</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="kr">function</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kr">if</span><span class="w"> </span><span class="p">(</span><span class="kc">NA</span><span class="w"> </span><span class="o">%in%</span><span class="w"> </span><span class="n">data</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">      </span><span class="kc">TRUE</span>
-<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="n">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="kr">else</span><span class="w"> </span><span class="p">{</span>
 <span class="w">      </span><span class="kc">FALSE</span>
 <span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>
@@ -700,7 +698,7 @@ Well defined, verb-based names often lead to clear pipelines such as:</p>
    <span class="n">model</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
 </pre></div>
 </div>
-</div><div aria-labelledby="tab-7-Ug==" class="sphinx-tabs-panel code-tab group-tab" hidden="true" id="panel-7-Ug==" name="Ug==" role="tabpanel" tabindex="0"><div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">if </span><span class="p">(</span><span class="nf">is_clean</span><span class="p">(</span><span class="n">data</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+</div><div aria-labelledby="tab-7-Ug==" class="sphinx-tabs-panel code-tab group-tab" hidden="true" id="panel-7-Ug==" name="Ug==" role="tabpanel" tabindex="0"><div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="kr">if</span><span class="w"> </span><span class="p">(</span><span class="nf">is_clean</span><span class="p">(</span><span class="n">data</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nf">model</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
 <span class="p">}</span>
 </pre></div>
@@ -711,40 +709,41 @@ Well defined, verb-based names often lead to clear pipelines such as:</p>
 <h4>Make classes easy to identify<a class="headerlink" href="#make-classes-easy-to-identify" title="Link to this heading">#</a></h4>
 <p>Class names are usually started with a capital letter, and in <code class="docutils literal notranslate"><span class="pre">CamelCase</span></code>, as this differentiates them from <code class="docutils literal notranslate"><span class="pre">variableNames</span></code> and <code class="docutils literal notranslate"><span class="pre">variable_names</span></code>.
 Class names follow the same advice as for <a class="reference internal" href="#naming-functions"><span class="std std-ref">Name functions after the task that they perform</span></a> - namely, is it obvious from the class name what it does?
-If its too complex to name concisely, it is an indication of too many <a class="reference internal" href="modular_code.html#class-responsibilities"><span class="std std-ref">responsibilities</span></a>
+If it is too complex to name concisely, it is an indication of too many <a class="reference internal" href="modular_code.html#class-responsibilities"><span class="std std-ref">responsibilities</span></a>
 and you should refactor your code into more, smaller classes.</p>
 <p>Method names in a class closely follow the requirements for <a class="reference internal" href="#naming-functions"><span class="std std-ref">Name functions after the task that they perform</span></a>, as methods are just functions that are tied to a class.
 They should ideally read clearly when called from a class instance - such as <code class="docutils literal notranslate"><span class="pre">bookParser</span> <span class="pre">=</span> <span class="pre">TextParser(book_data)</span></code> followed with <code class="docutils literal notranslate"><span class="pre">bookParser.getNextWord()</span></code>.
 Compare this against <code class="docutils literal notranslate"><span class="pre">bp</span> <span class="pre">=</span> <span class="pre">Reader(book_data)</span></code> then <code class="docutils literal notranslate"><span class="pre">bp.fetch()</span></code>, where there is not enough context.</p>
 <div class="admonition note" id="code-style">
 <p class="admonition-title">Note</p>
-<p>As discussed in the <a class="reference internal" href="modular_code.html"><span class="std std-doc">Modular code</span></a> chapter, writing custom classes is more common in python than in R. As such, the examples above only apply to python.</p>
+<p>Writing custom classes is more common in Python than in R, as discussed in the <a class="reference internal" href="modular_code.html"><span class="std std-doc">Modular code</span></a> chapter. As such, the examples above only apply to Python.</p>
 </div>
 </section>
 </section>
 <section id="make-code-easier-to-read-by-following-a-consistent-style">
 <h3>Make code easier to read by following a consistent style<a class="headerlink" href="#make-code-easier-to-read-by-following-a-consistent-style" title="Link to this heading">#</a></h3>
-<p>Programming languages can differ in a myriad of ways.
+<p>Programming languages can differ in lots of ways.
 One way R and Python differ, for example, is their use of indentation.
-Indentation is part of the well defined syntax of Python while it is not for R.
+Indentation is part of the well defined syntax of Python but is not for R.
 This does not mean that you shouldn’t use indentation in R to make your code more readable.
-If in doubt it is often wise to consult how to use formatting to write more readable code by finding the style guidelines for your language.</p>
+If in doubt, you should consider consulting how to use formatting to write more readable code by finding the style guidelines for your language.</p>
 <p>Generally, code style guides provide a standard or convention for formatting and laying out your code.
 The purpose of these style guides is to increase consistency across the programming community for a given language.</p>
 <p>They might include how to appropriately:</p>
 <ul class="simple">
-<li><p>comment or document your code</p></li>
-<li><p>name your functions, variables or classes</p></li>
-<li><p>separate elements of your code with whitespace</p></li>
-<li><p>use indentation to make sure your code is readable</p></li>
-<li><p>provide other useful guidance regarding formatting</p></li>
+<li><p>comment or document your code.</p></li>
+<li><p>name your functions, variables or classes.</p></li>
+<li><p>separate elements of your code with whitespace.</p></li>
+<li><p>use indentation to make sure your code is readable.</p></li>
+<li><p>provide other useful guidance regarding formatting.</p></li>
 </ul>
 <p>The existence of such style guides does not necessarily mean that each individual or team will apply these conventions to the letter.
 Organisations and developer teams often have needs that might not be addressed in a general style guidance document.
 After all, these documents aim to capture the needs of a diverse group of developers.
 Therefore, these guides are more useful as starting points in a discussion on ‘how should our team be consistent internally in the way we write code?’.</p>
 <figure class="align-default" id="code-quality">
-<a class="reference internal image-reference" href="_images/code_quality.png"><img alt="Comic strip describing a brutal code review." src="_images/code_quality.png" style="width: 80%;" /></a>
+<a class="reference internal image-reference" href="_images/code_quality.png"><img alt="Comic strip describing a brutal code review." src="_images/code_quality.png" style="width: 80%;" />
+</a>
 <figcaption>
 <p><span class="caption-number">Fig. 2 </span><span class="caption-text">Code Quality, from <a class="reference external" href="https://xkcd.com/1513/">xkcd</a></span><a class="headerlink" href="#code-quality" title="Link to this image">#</a></p>
 </figcaption>
@@ -769,7 +768,7 @@ a part of being fluent in a programming language is being able to write ‘idiom
 Idiomatic stands for ‘using, containing, or denoting expressions that are natural to a native speaker’.
 In Python, idiomatic approaches to writing code are commonly referred to as ‘pythonic’.</p>
 <p>This might mean simplifying complex and perhaps hard to read patterns into a simpler, but well established alternative.
-In Python for example these two pieces of code are equivalent:</p>
+For example, the pieces of code below are equivalent:</p>
 <div class="sphinx-tabs docutils container">
 <div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-8-UHl0aG9u" aria-selected="true" class="sphinx-tabs-tab code-tab group-tab" id="tab-8-UHl0aG9u" name="UHl0aG9u" role="tab" tabindex="0">Python</button><button aria-controls="panel-8-Ug==" aria-selected="false" class="sphinx-tabs-tab code-tab group-tab" id="tab-8-Ug==" name="Ug==" role="tab" tabindex="-1">R</button></div><div aria-labelledby="tab-8-UHl0aG9u" class="sphinx-tabs-panel code-tab group-tab" id="panel-8-UHl0aG9u" name="UHl0aG9u" role="tabpanel" tabindex="0"><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 1 - very unpythonic</span>
 <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
@@ -790,14 +789,14 @@ In Python for example these two pieces of code are equivalent:</p>
 </div><div aria-labelledby="tab-8-Ug==" class="sphinx-tabs-panel code-tab group-tab" hidden="true" id="panel-8-Ug==" name="Ug==" role="tabpanel" tabindex="0"><div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 1 - not idiomatic</span>
 <span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span>
 <span class="n">my_data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">()</span>
-<span class="nf">while </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="m">100</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="kr">while</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="m">100</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="n">my_data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="n">my_data</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="m">356</span><span class="p">)</span>
 <span class="w">  </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">1</span>
 <span class="p">}</span>
 
 <span class="c1"># Example 2 - more use of R features, e.g. `append` and idiomatic assignment (&#39; &lt;- &#39;)</span>
 <span class="n">my_data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">()</span>
-<span class="nf">for </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="m">0</span><span class="o">:</span><span class="m">100</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="kr">for</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="kr">in</span><span class="w"> </span><span class="m">0</span><span class="o">:</span><span class="m">100</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="n">my_data</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">append</span><span class="p">(</span><span class="n">my_data</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="o">^</span><span class="m">2</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="m">365</span><span class="p">)</span>
 <span class="p">}</span>
 
@@ -813,11 +812,11 @@ For example, attempting to fit too much logic into a single line of code can mak
 </section>
 <section id="automate-style-checks">
 <span id="id1"></span><h4>Automate style checks<a class="headerlink" href="#automate-style-checks" title="Link to this heading">#</a></h4>
-<p>It is good practice to follow a style guide from the beginning of a project.
-However, it can be tedious to check that code continues to follow a particular style, or to fix code formatting when it doesn’t.
+<p>Following a style guide from the beginning of a project is good practice.
+However, checking that code continues to follow a particular style, or to fix code formatting when it doesn’t can be tedious.
 Hence, automated support can be sought to speed up this work,
 either by providing suggestions as the code is written or by reformatting your code to comply with some style.</p>
-<p>For further information on automating these checks see <a class="reference internal" href="continuous_integration.html#linters-formatters"><span class="std std-ref">Linters and formatters</span></a>.</p>
+<p>See <a class="reference internal" href="continuous_integration.html#linters-formatters"><span class="std std-ref">Linters and formatters</span></a> for further information on automating these checks.</p>
 </section>
 </section>
 </section>
@@ -825,23 +824,24 @@ either by providing suggestions as the code is written or by reformatting your c
 <span id="id2"></span><h2>Software ideas for analysts<a class="headerlink" href="#software-ideas-for-analysts" title="Link to this heading">#</a></h2>
 <p>It’s important to remember that when we write code for analysis, we are developing software.
 Over many years, software engineering teams have developed good practices for creating robust software.
-These practices help to make our code simple, readable and easier to maintain.
+These practices help to make our code simple, readable, and easier to maintain.
 Analysts using code as a means to perform analysis can benefit from at least partially applying such practices in their own codebases.</p>
 <p>This chapter will try to condense key messages and guidelines from these practices, for use by analysts who write code.
-That said, reading and learning more about these practices is likely to benefit the quality of your code and is highly encouraged.</p>
+Reading and learning more about these practices will likely to benefit the quality of your code and is highly encouraged.</p>
 <section id="keep-it-simple">
 <h3>Keep it simple<a class="headerlink" href="#keep-it-simple" title="Link to this heading">#</a></h3>
 <p>The ability to convey information in a simple and clear way matters.</p>
 <p>This is particularly true when explaining concepts that are already complex.
-When writing code you are often trying to solve problems that are complex in nature.
+You are often trying to solve problems that are complex in nature when writing code.
 You should avoid introducing extra complexity to these problems, wherever possible.</p>
 <p>Here are a few tips to make sure you keep your project nice and simple:</p>
 <ul class="simple">
 <li><p>Solve the problem - do not get distracted and make sure you have a clear outcome in mind.</p></li>
-<li><p>Try not to ‘reinvent the wheel’ - use existing packages when they solve the problem.
+<li><p>Try not to ‘reinvent the wheel’ - use existing packages when they already have functionality that solves the problem.
 They will most likely be better documented and won’t need extra maintenance.</p></li>
 <li><p>Split your code into understandable parts - consider how to <a class="reference internal" href="modular_code.html#modular"><span class="std std-ref">make your code modular</span></a>.</p></li>
 <li><p>Don’t over-engineer your solution - if it is understandable and works, refrain from over-complicating for the sake of small increases in efficiency.</p></li>
+<li><p>When you have a choice of alternative packages to do the same thing, use one and stick to it. For example, the R packages dplyr and sqldf both enable the use of selection and filtering operations. Stick to one unless there is a very good reason to use both. When choosing between alternatives, think about their familiarity for other coders, ease of use and efficiency.</p></li>
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -902,22 +902,22 @@ Moreover, anyone reviewing the code would need to check that the right logic is 
 <span class="n">third_ten_numbers</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">21</span><span class="o">:</span><span class="m">30</span>
 
 <span class="n">odd_first</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">()</span>
-<span class="nf">for </span><span class="p">(</span><span class="n">number</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">first_ten_numbers</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="nf">if </span><span class="p">(</span><span class="n">number</span><span class="w"> </span><span class="o">%%</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="kr">for</span><span class="w"> </span><span class="p">(</span><span class="n">number</span><span class="w"> </span><span class="kr">in</span><span class="w"> </span><span class="n">first_ten_numbers</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kr">if</span><span class="w"> </span><span class="p">(</span><span class="n">number</span><span class="w"> </span><span class="o">%%</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="n">odd_first</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="n">odd_first</span><span class="p">,</span><span class="w"> </span><span class="n">number</span><span class="p">)</span>
 <span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>
 
 <span class="n">odd_second</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">()</span>
-<span class="nf">for </span><span class="p">(</span><span class="n">number</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">second_ten_numbers</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="nf">if </span><span class="p">(</span><span class="n">number</span><span class="w"> </span><span class="o">%%</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="kr">for</span><span class="w"> </span><span class="p">(</span><span class="n">number</span><span class="w"> </span><span class="kr">in</span><span class="w"> </span><span class="n">second_ten_numbers</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kr">if</span><span class="w"> </span><span class="p">(</span><span class="n">number</span><span class="w"> </span><span class="o">%%</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="n">odd_second</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="n">odd_second</span><span class="p">,</span><span class="w"> </span><span class="n">number</span><span class="p">)</span>
 <span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>
 
 <span class="n">odd_third</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">()</span>
-<span class="nf">for </span><span class="p">(</span><span class="n">number</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">third_ten_numbers</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="nf">if </span><span class="p">(</span><span class="n">number</span><span class="w"> </span><span class="o">%%</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="kr">for</span><span class="w"> </span><span class="p">(</span><span class="n">number</span><span class="w"> </span><span class="kr">in</span><span class="w"> </span><span class="n">third_ten_numbers</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kr">if</span><span class="w"> </span><span class="p">(</span><span class="n">number</span><span class="w"> </span><span class="o">%%</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="n">odd_third</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="n">odd_third</span><span class="p">,</span><span class="w"> </span><span class="n">number</span><span class="p">)</span>
 <span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>
@@ -935,7 +935,7 @@ If you refactor repetitive code into functions or classes, then bug fixes or mod
 New, intended behaviour is then consistently given by each call of the function or method.</p>
 <p>The following presents how one could change the previous example for the better:</p>
 <div class="sphinx-tabs docutils container">
-<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-10-UHl0aG9u" aria-selected="true" class="sphinx-tabs-tab code-tab group-tab" id="tab-10-UHl0aG9u" name="UHl0aG9u" role="tab" tabindex="0">Python</button><button aria-controls="panel-10-Ug==" aria-selected="false" class="sphinx-tabs-tab code-tab group-tab" id="tab-10-Ug==" name="Ug==" role="tab" tabindex="-1">R</button></div><div aria-labelledby="tab-10-UHl0aG9u" class="sphinx-tabs-panel code-tab group-tab" id="panel-10-UHl0aG9u" name="UHl0aG9u" role="tabpanel" tabindex="0"><div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_odd</span><span class="p">(</span><span class="n">numbers</span><span class="p">):</span>
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-10-UHl0aG9u" aria-selected="true" class="sphinx-tabs-tab code-tab group-tab" id="tab-10-UHl0aG9u" name="UHl0aG9u" role="tab" tabindex="0">Python</button><button aria-controls="panel-10-Ug==" aria-selected="false" class="sphinx-tabs-tab code-tab group-tab" id="tab-10-Ug==" name="Ug==" role="tab" tabindex="-1">R</button></div><div aria-labelledby="tab-10-UHl0aG9u" class="sphinx-tabs-panel code-tab group-tab" id="panel-10-UHl0aG9u" name="UHl0aG9u" role="tabpanel" tabindex="0"><div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">get_odd</span><span class="p">(</span><span class="n">numbers</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Get only the odd numbers&quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="p">[</span><span class="n">number</span> <span class="k">for</span> <span class="n">number</span> <span class="ow">in</span> <span class="n">numbers</span> <span class="k">if</span> <span class="n">number</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">1</span><span class="p">]</span>
 
@@ -948,7 +948,7 @@ New, intended behaviour is then consistently given by each call of the function 
 <span class="n">odd_third</span> <span class="o">=</span> <span class="n">get_odd</span><span class="p">(</span><span class="n">third_ten_numbers</span><span class="p">)</span>
 </pre></div>
 </div>
-</div><div aria-labelledby="tab-10-Ug==" class="sphinx-tabs-panel code-tab group-tab" hidden="true" id="panel-10-Ug==" name="Ug==" role="tabpanel" tabindex="0"><div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">get_odd</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">function</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</div><div aria-labelledby="tab-10-Ug==" class="sphinx-tabs-panel code-tab group-tab" hidden="true" id="panel-10-Ug==" name="Ug==" role="tabpanel" tabindex="0"><div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">get_odd</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="kr">function</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="c1"># Get only the odd numbers</span>
 <span class="w">  </span><span class="n">numbers</span><span class="p">[</span><span class="n">numbers</span><span class="w"> </span><span class="o">%%</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">1</span><span class="p">]</span>
 <span class="p">}</span>
@@ -974,24 +974,24 @@ Additionally, this code is more concise and its purpose is easier to interpret.<
 </ul>
 <div class="sphinx-tabs docutils container">
 <div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-11-UHl0aG9u" aria-selected="true" class="sphinx-tabs-tab code-tab group-tab" id="tab-11-UHl0aG9u" name="UHl0aG9u" role="tab" tabindex="0">Python</button><button aria-controls="panel-11-Ug==" aria-selected="false" class="sphinx-tabs-tab code-tab group-tab" id="tab-11-Ug==" name="Ug==" role="tab" tabindex="-1">R</button></div><div aria-labelledby="tab-11-UHl0aG9u" class="sphinx-tabs-panel code-tab group-tab" id="panel-11-UHl0aG9u" name="UHl0aG9u" role="tabpanel" tabindex="0"><div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="c1"># Simple and modular</span>
-<span class="k">def</span> <span class="nf">is_odd</span><span class="p">(</span><span class="n">number</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">is_odd</span><span class="p">(</span><span class="n">number</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Check if a number is odd.&quot;&quot;&quot;</span>
     <span class="k">if</span> <span class="n">number</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
         <span class="k">return</span> <span class="kc">True</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="k">return</span> <span class="kc">False</span>
 
-<span class="k">def</span> <span class="nf">get_odd</span><span class="p">(</span><span class="n">numbers</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">get_odd</span><span class="p">(</span><span class="n">numbers</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Get only the odd numbers.&quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="p">[</span><span class="n">number</span> <span class="k">for</span> <span class="n">number</span> <span class="ow">in</span> <span class="n">numbers</span> <span class="k">if</span> <span class="n">is_odd</span><span class="p">(</span><span class="n">number</span><span class="p">)]</span>
 
-<span class="k">def</span> <span class="nf">get_even</span><span class="p">(</span><span class="n">numbers</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">get_even</span><span class="p">(</span><span class="n">numbers</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Get only the even numbers.&quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="p">[</span><span class="n">number</span> <span class="k">for</span> <span class="n">number</span> <span class="ow">in</span> <span class="n">numbers</span> <span class="k">if</span> <span class="n">is_odd</span><span class="p">(</span><span class="n">number</span><span class="p">)</span> <span class="o">==</span> <span class="kc">False</span><span class="p">]</span>
 
 
 <span class="c1"># More concise, but also more complex - not always best</span>
-<span class="k">def</span> <span class="nf">get_numbers_with_parity</span><span class="p">(</span><span class="n">numbers</span><span class="p">,</span> <span class="n">parity</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">get_numbers_with_parity</span><span class="p">(</span><span class="n">numbers</span><span class="p">,</span> <span class="n">parity</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Get numbers with a given parity (&#39;odd&#39; or &#39;even&#39;).&quot;&quot;&quot;</span>
     <span class="k">if</span> <span class="n">parity</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;odd&quot;</span><span class="p">,</span> <span class="s2">&quot;even&quot;</span><span class="p">]:</span>
         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;parity must be &#39;odd&#39; or &#39;even&#39;&quot;</span><span class="p">)</span>
@@ -1002,26 +1002,26 @@ Additionally, this code is more concise and its purpose is easier to interpret.<
 </pre></div>
 </div>
 </div><div aria-labelledby="tab-11-Ug==" class="sphinx-tabs-panel code-tab group-tab" hidden="true" id="panel-11-Ug==" name="Ug==" role="tabpanel" tabindex="0"><div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Simple and modular</span>
-<span class="n">is_odd</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">function</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="n">is_odd</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="kr">function</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="nf">ifelse</span><span class="p">(</span><span class="n">numbers</span><span class="w"> </span><span class="o">%%</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">,</span><span class="w"> </span><span class="kc">FALSE</span><span class="p">)</span><span class="w"> </span>
 <span class="p">}</span>
 
-<span class="n">get_odd</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">function</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="n">get_odd</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="kr">function</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="n">numbers</span><span class="p">[</span><span class="nf">is_odd</span><span class="p">(</span><span class="n">numbers</span><span class="p">)]</span>
 <span class="p">}</span>
 
-<span class="n">get_even</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">function</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="n">get_even</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="kr">function</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="n">numbers</span><span class="p">[</span><span class="o">!</span><span class="nf">is_odd</span><span class="p">(</span><span class="n">numbers</span><span class="p">)]</span>
 <span class="p">}</span>
 
 <span class="c1"># More concise, but also more complex - not always best</span>
-<span class="n">get_numbers_with_parity</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">function</span><span class="p">(</span><span class="n">numbers</span><span class="p">,</span><span class="w"> </span><span class="n">parity</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="n">get_numbers_with_parity</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="kr">function</span><span class="p">(</span><span class="n">numbers</span><span class="p">,</span><span class="w"> </span><span class="n">parity</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="n">numbers_with_parity</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">()</span>
-<span class="w">  </span><span class="nf">if </span><span class="p">(</span><span class="n">parity</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;odd&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kr">if</span><span class="w"> </span><span class="p">(</span><span class="n">parity</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;odd&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="n">remainder</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">1</span>
-<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="n">else</span><span class="w"> </span><span class="nf">if </span><span class="p">(</span><span class="n">parity</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;even&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="kr">else</span><span class="w"> </span><span class="kr">if</span><span class="w"> </span><span class="p">(</span><span class="n">parity</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;even&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="n">remainder</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">0</span>
-<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="n">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="kr">else</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nf">stop</span><span class="p">(</span><span class="s">&quot;parity must be &#39;odd&#39; or &#39;even&#39;&quot;</span><span class="p">)</span>
 <span class="w">  </span><span class="p">}</span>
 <span class="w">  </span>
@@ -1061,7 +1061,7 @@ For example, in Python <code class="docutils literal notranslate"><span class="p
 </div><div aria-labelledby="tab-12-Ug==" class="sphinx-tabs-panel code-tab group-tab" hidden="true" id="panel-12-Ug==" name="Ug==" role="tabpanel" tabindex="0"><div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">student_count</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="kc">FALSE</span>
 
 <span class="c1"># Relying on falseness of FALSE</span>
-<span class="nf">if </span><span class="p">(</span><span class="n">student_count</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="kr">if</span><span class="w"> </span><span class="p">(</span><span class="n">student_count</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="nf">paste</span><span class="p">(</span><span class="s">&quot;There are&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">student_count</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;students!&quot;</span><span class="p">)</span>
 <span class="p">}</span>
 </pre></div>
@@ -1083,7 +1083,7 @@ If a count of 0 should be printed, then this lack of specificity has created a b
 </div><div aria-labelledby="tab-13-Ug==" class="sphinx-tabs-panel code-tab group-tab" hidden="true" id="panel-13-Ug==" name="Ug==" role="tabpanel" tabindex="0"><div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">student_count</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">0</span>
 
 <span class="c1"># Explicitly only print if more than 0</span>
-<span class="nf">if </span><span class="p">(</span><span class="n">student_count</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="m">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="kr">if</span><span class="w"> </span><span class="p">(</span><span class="n">student_count</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="m">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="nf">paste</span><span class="p">(</span><span class="s">&quot;There are&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">student_count</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;students!&quot;</span><span class="p">)</span>
 <span class="p">}</span>
 </pre></div>
@@ -1142,11 +1142,12 @@ In this case, this part of your codebase will only revolve around running the ac
 which should follow the single responsibility concepts outlined earlier.</p>
 <p>For example, within the section of your code concerned with modelling data, you might have a set of functions to download data from an external data store.
 These functions should only be responsible for receiving the required data safely and providing it to the <code class="docutils literal notranslate"><span class="pre">Model</span></code> object.
-If you had the need to download data from different sources online (i.e. Database, CSV or other), you might create several download functions.
+If you had the need to download data from different sources online (i.e., Database, CSV or other), you might create several download functions.
 To pick the right function for each model you might create a <a class="reference external" href="https://en.wikipedia.org/wiki/Factory_(object-oriented_programming)">‘LoaderFactory’</a>
 who’s only responsibility is to provide the <code class="docutils literal notranslate"><span class="pre">Model</span></code> with the right loading function for the right data source.</p>
 <figure class="align-default" id="separation-of-concerns">
-<a class="reference internal image-reference" href="_images/separation_of_concerns.png"><img alt="Representation of concerns and responsibilities within a piece of software." src="_images/separation_of_concerns.png" style="width: 80%;" /></a>
+<a class="reference internal image-reference" href="_images/separation_of_concerns.png"><img alt="Representation of concerns and responsibilities within a piece of software." src="_images/separation_of_concerns.png" style="width: 80%;" />
+</a>
 <figcaption>
 <p><span class="caption-number">Fig. 3 </span><span class="caption-text">Representation of concerns and responsibilities within a piece of software</span><a class="headerlink" href="#separation-of-concerns" title="Link to this image">#</a></p>
 </figcaption>
@@ -1172,42 +1173,42 @@ Another function might then take these data for multiple countries and start mod
 <p>This means that it should be possible to extend the functionality of classes or functions, without modifying their source code or how they work.</p>
 <div class="sphinx-tabs docutils container">
 <div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-14-UHl0aG9u" aria-selected="true" class="sphinx-tabs-tab code-tab group-tab" id="tab-14-UHl0aG9u" name="UHl0aG9u" role="tab" tabindex="0">Python</button><button aria-controls="panel-14-Ug==" aria-selected="false" class="sphinx-tabs-tab code-tab group-tab" id="tab-14-Ug==" name="Ug==" role="tab" tabindex="-1">R</button></div><div aria-labelledby="tab-14-UHl0aG9u" class="sphinx-tabs-panel code-tab group-tab" id="panel-14-UHl0aG9u" name="UHl0aG9u" role="tabpanel" tabindex="0"><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># some function that we want to keep closed for modification</span>
-<span class="k">def</span> <span class="nf">core_method</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">core_method</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
     <span class="o">...</span>
     <span class="k">return</span> <span class="n">result</span>
 
 <span class="c1"># if we want to extend a function without modifying it, we can always do the following</span>
-<span class="k">def</span> <span class="nf">extended_functionality</span><span class="p">(</span><span class="n">results</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">extended_functionality</span><span class="p">(</span><span class="n">results</span><span class="p">):</span>
      <span class="o">...</span>
      <span class="k">return</span> <span class="n">extended_result</span>
 
-<span class="k">def</span> <span class="nf">extended_methodology</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">extended_methodology</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
      <span class="n">core_results</span> <span class="o">=</span> <span class="n">core_method</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
      <span class="k">return</span> <span class="n">extended_functionality</span><span class="p">(</span><span class="n">core_results</span><span class="p">)</span>
 </pre></div>
 </div>
 </div><div aria-labelledby="tab-14-Ug==" class="sphinx-tabs-panel code-tab group-tab" hidden="true" id="panel-14-Ug==" name="Ug==" role="tabpanel" tabindex="0"><div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># some function that we want to keep closed for modification</span>
-<span class="n">core_method</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">function</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="n">core_method</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="kr">function</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="kc">...</span>
-<span class="w">  </span><span class="nf">return</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+<span class="w">  </span><span class="kr">return</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
 <span class="p">}</span>
 
 <span class="c1"># if we want to extend a function without modifying it, we can always do the following</span>
-<span class="n">extended_functionality</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">function</span><span class="p">(</span><span class="n">result</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="n">extended_functionality</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="kr">function</span><span class="p">(</span><span class="n">result</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="kc">...</span>
-<span class="w">  </span><span class="nf">return</span><span class="p">(</span><span class="n">extended_result</span><span class="p">)</span>
+<span class="w">  </span><span class="kr">return</span><span class="p">(</span><span class="n">extended_result</span><span class="p">)</span>
 <span class="p">}</span>
 
-<span class="n">extended_methodology</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">function</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="n">extended_methodology</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="kr">function</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="n">core_results</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">core_method</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
-<span class="w">  </span><span class="nf">return</span><span class="p">(</span>
+<span class="w">  </span><span class="kr">return</span><span class="p">(</span>
 <span class="w">    </span><span class="nf">extended_functionality</span><span class="p">(</span><span class="n">core_results</span><span class="p">)</span>
 <span class="w">  </span><span class="p">)</span>
 <span class="p">}</span>
 </pre></div>
 </div>
 </div></div>
-<p>Same would apply with classes through ideas like inheritance.</p>
+<p>The same applies to classes through ideas like inheritance.</p>
 <p>When you think about the consequences of this, the open-closed principle gives you:</p>
 <ol class="arabic simple">
 <li><p>Confidence that essential behaviour of parts of your code should not be expected to change.</p></li>
@@ -1243,7 +1244,7 @@ However, we can extend the functionality of <code class="docutils literal notran
 <span class="n">report</span> <span class="o">=</span> <span class="n">report</span><span class="p">(</span><span class="n">model</span><span class="p">(</span><span class="n">clean</span><span class="p">(</span><span class="n">load</span><span class="p">(</span><span class="n">filepath</span><span class="p">))))</span>
 
 <span class="c1"># or we can first define a new load as follows</span>
-<span class="k">def</span> <span class="nf">new_load</span><span class="p">(</span><span class="n">filepath</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">new_load</span><span class="p">(</span><span class="n">filepath</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">clean</span><span class="p">(</span><span class="n">load</span><span class="p">(</span><span class="n">filepath</span><span class="p">))</span>
 
 <span class="n">report</span> <span class="o">=</span> <span class="n">report</span><span class="p">(</span><span class="n">model</span><span class="p">(</span><span class="n">new_load</span><span class="p">(</span><span class="n">filepath</span><span class="p">)))</span>
@@ -1261,12 +1262,12 @@ However, we can extend the functionality of <code class="docutils literal notran
 <span class="n">report</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">report</span><span class="p">(</span><span class="nf">model</span><span class="p">(</span><span class="nf">clean</span><span class="p">(</span><span class="nf">load</span><span class="p">(</span><span class="n">filepath</span><span class="p">))))</span>
 
 <span class="c1"># or we can first define a new load as follows</span>
-<span class="n">new_load</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">function</span><span class="p">(</span><span class="n">filepath</span><span class="p">)</span><span class="w"> </span><span class="nf">clean</span><span class="p">(</span><span class="nf">load</span><span class="p">(</span><span class="n">filepath</span><span class="p">))</span>
+<span class="n">new_load</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="kr">function</span><span class="p">(</span><span class="n">filepath</span><span class="p">)</span><span class="w"> </span><span class="nf">clean</span><span class="p">(</span><span class="nf">load</span><span class="p">(</span><span class="n">filepath</span><span class="p">))</span>
 
 <span class="n">report</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">report</span><span class="p">(</span><span class="nf">model</span><span class="p">(</span><span class="nf">new_load</span><span class="p">(</span><span class="n">filepath</span><span class="p">)))</span>
 
 <span class="c1"># We can even use this to create a single function to run our defined pipeline</span>
-<span class="n">pipeline</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">function</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="w"> </span><span class="nf">report</span><span class="p">(</span><span class="nf">model</span><span class="p">(</span><span class="nf">clean</span><span class="p">(</span><span class="nf">load</span><span class="p">(</span><span class="n">filepath</span><span class="p">))))</span>
+<span class="n">pipeline</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="kr">function</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="w"> </span><span class="nf">report</span><span class="p">(</span><span class="nf">model</span><span class="p">(</span><span class="nf">clean</span><span class="p">(</span><span class="nf">load</span><span class="p">(</span><span class="n">filepath</span><span class="p">))))</span>
 <span class="n">report</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">pipeline</span><span class="p">(</span><span class="n">filepath</span><span class="p">)</span>
 </pre></div>
 </div>

@@ -28,17 +28,17 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="_static/tabs.css?v=a5c4661c" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/tabs.css?v=a5c4661c" />
+    <link rel="stylesheet" type="text/css" href="_static/logo.css?v=1c56504a" />
     <link rel="stylesheet" type="text/css" href="_static/admonitions.css?v=1956eba1" />
     <link rel="stylesheet" type="text/css" href="_static/accessibility.css?v=6e02104c" />
-    <link rel="stylesheet" type="text/css" href="_static/logo.css?v=1c56504a" />
     <link rel="stylesheet" type="text/css" href="_static/markdown_within_tabs.css?v=d7e1104e" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -56,13 +56,13 @@
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="_static/togglebutton.js?v=4a39c7ea"></script>
-    <script src="_static/tabs.js?v=3030b3cb"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script src="_static/tabs.js?v=3030b3cb"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'project_structure';</script>
     <link rel="icon" href="_static/favicon.ico"/>
     <link rel="index" title="Index" href="genindex.html" />
@@ -444,9 +444,9 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="structuring-your-project">
 <h1>Structuring your project<a class="headerlink" href="#structuring-your-project" title="Link to this heading">#</a></h1>
-<p>When you’re designing your analysis it can be difficult to keep your thoughts tidy.
+<p>When you are designing your analysis it can be difficult to keep your thoughts tidy.
 Analysis is often exploratory and subject to change.
-This nature means that scripts and programs can become messy.
+This means that scripts and programs can become messy.
 The messier the programs, the harder they are to maintain and change in future.</p>
 <p>Good directory structure and file hygiene can go a long way to mitigate this.
 It will help others to read your code more easily, and you will write better code into the bargain.
@@ -456,7 +456,7 @@ Others are more specific, and - as with all guidelines - should not be taken as 
 <h2>Run scripts from end to end to ensure your code is executed reproducibly<a class="headerlink" href="#run-scripts-from-end-to-end-to-ensure-your-code-is-executed-reproducibly" title="Link to this heading">#</a></h2>
 <p>As you begin developing your project, it’s a good idea to save your working code in a script file.
 In R these are saved as <code class="docutils literal notranslate"><span class="pre">.R</span></code> files, and in Python as <code class="docutils literal notranslate"><span class="pre">.py</span></code>.
-Scripts can be used within an Integrated Development Environment (IDE) like
+You can use scripts within an Integrated Development Environment (IDE) like
 <a class="reference external" href="https://code.visualstudio.com/">Visual Studio Code</a>, <a class="reference external" href="https://rstudio.com/">RStudio</a>, or <a class="reference external" href="https://www.jetbrains.com/pycharm/">PyCharm</a>.
 Inside an IDE you can usually run through your script line-by-line, or run the whole file at once.
 This can be an easier workflow than running code in the Python or the R console and then rewriting the same code in a script later.</p>
@@ -465,10 +465,10 @@ Often, we like to define functions or reusable bits of code in one file and then
 For example we may write a few functions that help us to calculate <code class="docutils literal notranslate"><span class="pre">mean</span></code>, <code class="docutils literal notranslate"><span class="pre">mode</span></code>, and <code class="docutils literal notranslate"><span class="pre">median</span></code> of our dataset in the <code class="docutils literal notranslate"><span class="pre">functions.R</span></code> file.
 Then we can use those functions in our main script, saved in <code class="docutils literal notranslate"><span class="pre">main.R</span></code>.</p>
 <p>Outside of an IDE you can also run your scripts using the Python or R interpreters from the command line.
-This allows other programs to use your scripts.
+Other programs can then use your scripts because of this.
 For example you can use the <code class="docutils literal notranslate"><span class="pre">Rcmd</span> <span class="pre">&lt;script-path&gt;</span></code> command to run your R scripts or the <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">&lt;script-path&gt;</span></code> command to run your Python scripts.</p>
 <p>Running your analysis files from end to end ensures that your code is executed in the same order each time.
-It also runs the code with a clean environment, not containing variables or other objects from previous runs that can be a common source of errors.</p>
+It also runs the code with a clean environment, without variables or other objects from previous runs that can be a common source of errors.</p>
 </section>
 <section id="keep-your-project-structure-clean">
 <h2>Keep your project structure clean<a class="headerlink" href="#keep-your-project-structure-clean" title="Link to this heading">#</a></h2>
@@ -477,15 +477,15 @@ Every project is different and the right way to organise your project might diff
 However, there are some principles that are useful to consider.</p>
 <section id="use-good-filename-conventions">
 <h3>Use good filename conventions<a class="headerlink" href="#use-good-filename-conventions" title="Link to this heading">#</a></h3>
-<p>Much like names of elements in your code, good filenames inform you of the purpose of a file.
+<p>Much like the names of elements in your code, good filenames inform you of the purpose of a file.
 Within a project, you should follow a standard file naming convention.
 Good naming practices improve your ability to locate and identify the contents of files.</p>
 <p>Good naming conventions include:</p>
 <ul class="simple">
-<li><p>Consistency, above all else</p></li>
-<li><p>Short but descriptive and human readable names</p></li>
-<li><p>No spaces, for machine readability - underscores (<code class="docutils literal notranslate"><span class="pre">_</span></code>) or dashes (<code class="docutils literal notranslate"><span class="pre">-</span></code>) are preferred</p></li>
-<li><p>Use of consistent date formatting (e.g. <a class="reference external" href="https://en.wikipedia.org/wiki/ISO_8601">YYYY-MM-DD</a>)</p></li>
+<li><p>Consistency, above all else.</p></li>
+<li><p>Short but descriptive and human readable names.</p></li>
+<li><p>No spaces, for machine readability - underscores (<code class="docutils literal notranslate"><span class="pre">_</span></code>) or dashes (<code class="docutils literal notranslate"><span class="pre">-</span></code>) are preferred.</p></li>
+<li><p>Use of consistent date formatting (e.g. <a class="reference external" href="https://en.wikipedia.org/wiki/ISO_8601">YYYY-MM-DD</a>).</p></li>
 <li><p>Padding the left side of numbers with zeros to maintain order -  e.g. <code class="docutils literal notranslate"><span class="pre">001</span></code> instead of <code class="docutils literal notranslate"><span class="pre">1</span></code>. The number of zeros should reflect the expected number of files.</p></li>
 </ul>
 <p>When using dates or times to name files, start with the largest unit of time and work towards the smallest.
@@ -501,7 +501,8 @@ For example, where the <code class="docutils literal notranslate"><span class="p
 Don’t let the name scare you off!
 All we mean by this is that you start off with the input data, you finish with the output(s), and in between there are no lines that link backwards.</p>
 <figure class="align-default" id="dag">
-<a class="reference internal image-reference" href="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Tred-G.svg/800px-Tred-G.svg.png"><img alt="Analysis is a directed, acyclic graph that links the input data through a series of steps to the outputs." src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Tred-G.svg/800px-Tred-G.svg.png" style="width: 50%;" /></a>
+<a class="reference internal image-reference" href="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Tred-G.svg/800px-Tred-G.svg.png"><img alt="Analysis is a directed, acyclic graph that links the input data through a series of steps to the outputs." src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Tred-G.svg/800px-Tred-G.svg.png" style="width: 50%;" />
+</a>
 <figcaption>
 <p><span class="caption-number">Fig. 4 </span><span class="caption-text">Defining analysis as a DAG - linking the input data at (a) to the output at (e).</span><a class="headerlink" href="#dag" title="Link to this image">#</a></p>
 </figcaption>
@@ -510,7 +511,7 @@ All we mean by this is that you start off with the input data, you finish with t
 Each project should be kept in its own folder, with a descriptive name.
 Most analysis will have an ingest or input stage, a processing stage, and a reporting stage.
 You should use folders within each project to separate raw data, documentation, source code (or <code class="docutils literal notranslate"><span class="pre">src</span></code>) and results.</p>
-<p>A typical analytical project folder might look like:</p>
+<p>A typical analytical project folder in Python might look like:</p>
 <div class="sphinx-tabs docutils container">
 <div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-0-UHl0aG9u" aria-selected="true" class="sphinx-tabs-tab code-tab group-tab" id="tab-0-UHl0aG9u" name="UHl0aG9u" role="tab" tabindex="0">Python</button><button aria-controls="panel-0-Ug==" aria-selected="false" class="sphinx-tabs-tab code-tab group-tab" id="tab-0-Ug==" name="Ug==" role="tab" tabindex="-1">R</button></div><div aria-labelledby="tab-0-UHl0aG9u" class="sphinx-tabs-panel code-tab group-tab" id="panel-0-UHl0aG9u" name="UHl0aG9u" role="tabpanel" tabindex="0"><div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="o">|--</span> <span class="n">README</span><span class="o">.</span><span class="n">md</span>
 <span class="o">|--</span> <span class="n">requirements</span><span class="o">.</span><span class="n">txt</span>
@@ -553,21 +554,21 @@ This will allow you to record changes to your code independent of other dependen
 <section id="preserve-raw-data">
 <h3>Preserve raw data<a class="headerlink" href="#preserve-raw-data" title="Link to this heading">#</a></h3>
 <p>You should not alter raw data - treat it as read-only.
-Even data cleaning should take place on a copy of the raw data, so that you can document which cleaning decisions have been made.</p>
-<p>There must be an immutable store for raw data in your project structure.</p>
+You should conduct data cleaning on a copy of the raw data, so that you can document which cleaning decisions have been made.</p>
+<p>Your project structure should include an immutable store for raw data. This does not have to be inside the code repository and it is usually best to separate operational folders for inputs and outputs from the code base.</p>
 </section>
 <section id="check-that-outputs-are-disposable">
 <h3>Check that outputs are disposable<a class="headerlink" href="#check-that-outputs-are-disposable" title="Link to this heading">#</a></h3>
-<p>You should be able to dispose of your outputs, deleting them, without worrying.
-If you are worried about deleting your outputs (i.e. results) then it is unlikely you have confidence in being able to reproduce your results.</p>
-<p>It is good practice to delete and regenerate your outputs frequently when developing analysis.</p>
+<p>You should be able to dispose of your outputs, deleting them, without worrying, because you should be able to regenerate them easily by re-running your pipeline.
+If you are worried about deleting your outputs (i.e., results) then it is likely you lack confidence in reproducing your results.</p>
+<p>Frequently deleting and regenerating your outputs when developing analysis is good practice.</p>
 </section>
 </section>
 <section id="structure-code-as-modules-and-packages">
 <h2>Structure code as modules and packages<a class="headerlink" href="#structure-code-as-modules-and-packages" title="Link to this heading">#</a></h2>
-<p>Code that is more complex, high risk or reusable between projects can benefit from being structured into a package.
+<p>Code that is complex, high risk or reusable between projects can benefit from being structured into a package.
 Modules are single files that contain one or more reusable units of code.
-Multiple related modules are typically collected together within a package.</p>
+A package typically contains multiple related modules.</p>
 <p>It’s likely that you’ve already used a package written by somebody else as part of your analysis.
 For example, installing additional functionality for Python using <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">&lt;package&gt;</span></code> on the command line or
 running <code class="docutils literal notranslate"><span class="pre">install.packages(&quot;&lt;package&gt;&quot;)</span></code> in an R interpreter.</p>
@@ -581,13 +582,13 @@ While <a class="reference external" href="https://r-pkgs.org/">the R Packages bo
 </section>
 <section id="use-project-templates">
 <h2>Use project templates<a class="headerlink" href="#use-project-templates" title="Link to this heading">#</a></h2>
-<p>Although project structure is flexible, you might recognise that many analysts choose to use similar structures for multiple projects.
-Consistency in structure makes it easier to navigate unfamiliar projects.
+<p>Many analysts choose to use similar structures for multiple projects even though project structure can be flexible.
+Consistency in structure makes it easier to navigate unfamiliar projects, especially if they use the same coding style.
 It means that members of the team can quickly orient themselves when joining an existing project or starting a new one.</p>
 <p><a class="reference external" href="https://github.com/cookiecutter/cookiecutter">Cookiecutter</a> is a command-line tool that creates projects from templates (cookiecutters).
 Using an existing cookiecutter, or creating one to meet your needs, can be a useful way to increase consistency in structure between your projects.
-It can save time by creating common folder structures, laying out essential documentation or even starting off your code with a basic boilerplate.
-Laying out a structure to include documentation and code testing encourages these good practices.</p>
+Increase consistency and good practice by creating common folder structures, laying out essential documentation or even starting off your code with a basic boilerplate.
+This can also save you time. Laying out a structure to include documentation and code testing also encourages  good practices.</p>
 <p>Useful cookiecutters include:</p>
 <ul class="simple">
 <li><p>The government data science <a class="reference external" href="https://github.com/ukgovdatascience/govcookiecutter">govcookiecutter</a>, including data security features.</p></li>
@@ -597,7 +598,7 @@ Laying out a structure to include documentation and code testing encourages thes
 <p>Rstudio provides a standard template for R packages via <code class="docutils literal notranslate"><span class="pre">File</span> <span class="pre">&gt;</span> <span class="pre">New</span> <span class="pre">Project...</span> <span class="pre">&gt;</span> <span class="pre">New</span> <span class="pre">Directory</span> <span class="pre">&gt;</span> <span class="pre">R</span> <span class="pre">Package</span></code>.
 We have created some basic templates for an <a class="reference external" href="https://github.com/best-practice-and-impact/example-package-r">R package</a>
 and a <a class="reference external" href="https://github.com/best-practice-and-impact/example-package-python">Python package</a> that may be helpful.
-R project structures can also be set up or extended, one component at a time, using the <a class="reference external" href="https://usethis.r-lib.org/"><code class="docutils literal notranslate"><span class="pre">usethis</span></code> workflow package</a>.
+R project structures can also be set up or extended, one component at a time, using the <a class="reference external" href="https://usethis.r-lib.org/"><code class="docutils literal notranslate"><span class="pre">usethis</span></code> workflow package</a>. usethis() sets up packages that follow the structure in the R packages book.
 For example, <code class="docutils literal notranslate"><span class="pre">use_test()</span></code> will add the directories necessary for testing using <code class="docutils literal notranslate"><span class="pre">testthat</span></code> and generate basic test file templates for a given function name.</p>
 </section>
 <section id="use-version-controlled-repositories">

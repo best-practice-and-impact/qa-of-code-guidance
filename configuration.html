@@ -28,17 +28,17 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="_static/tabs.css?v=a5c4661c" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/tabs.css?v=a5c4661c" />
+    <link rel="stylesheet" type="text/css" href="_static/logo.css?v=1c56504a" />
     <link rel="stylesheet" type="text/css" href="_static/admonitions.css?v=1956eba1" />
     <link rel="stylesheet" type="text/css" href="_static/accessibility.css?v=6e02104c" />
-    <link rel="stylesheet" type="text/css" href="_static/logo.css?v=1c56504a" />
     <link rel="stylesheet" type="text/css" href="_static/markdown_within_tabs.css?v=d7e1104e" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -56,13 +56,13 @@
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="_static/togglebutton.js?v=4a39c7ea"></script>
-    <script src="_static/tabs.js?v=3030b3cb"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script src="_static/tabs.js?v=3030b3cb"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'configuration';</script>
     <link rel="icon" href="_static/favicon.ico"/>
     <link rel="index" title="Index" href="genindex.html" />
@@ -442,13 +442,13 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="configuration">
 <h1>Configuration<a class="headerlink" href="#configuration" title="Link to this heading">#</a></h1>
 <p>Configuration describes how your code runs when you execute it.</p>
-<p>In analysis, we may want to run our analysis code using different inputs or parameters.
+<p>In analysis, we often want to run our analysis code using different inputs or parameters.
 And we likely want other analysts to be able to run our code on different machines, for example, to reproduce our results.
 This section describes how we can define analysis configuration that is easy to update and can remain separate from the logic in our analysis.</p>
 <section id="basic-configuration">
 <h2>Basic configuration<a class="headerlink" href="#basic-configuration" title="Link to this heading">#</a></h2>
 <p>Configuration for your analysis code should include high level parameters (settings) that can be used to easily adjust how your analysis runs.
-This might include paths to input and output files, database connection settings and model parameters that are likely to be adjusted between runs.</p>
+This might include paths to input and output files, database connection settings, and model parameters that are likely to be adjusted between runs.</p>
 <p>In early development of our analysis, lets imagine that we have a script that looks something like this:</p>
 <div class="sphinx-tabs docutils container">
 <div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-0-UHl0aG9u" aria-selected="true" class="sphinx-tabs-tab code-tab group-tab" id="tab-0-UHl0aG9u" name="UHl0aG9u" role="tab" tabindex="0">Python</button><button aria-controls="panel-0-Ug==" aria-selected="false" class="sphinx-tabs-tab code-tab group-tab" id="tab-0-Ug==" name="Ug==" role="tab" tabindex="-1">R</button></div><div aria-labelledby="tab-0-UHl0aG9u" class="sphinx-tabs-panel code-tab group-tab" id="panel-0-UHl0aG9u" name="UHl0aG9u" role="tabpanel" tabindex="0"><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Note: this is not an example of good practice</span>
@@ -468,7 +468,7 @@ This might include paths to input and output files, database connection settings
 </div>
 </div><div aria-labelledby="tab-0-Ug==" class="sphinx-tabs-panel code-tab group-tab" hidden="true" id="panel-0-Ug==" name="Ug==" role="tabpanel" tabindex="0"><div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Note: this is not an example of good practice</span>
 <span class="c1"># This is intended as example of what early pipeline code might look like</span>
-<span class="n">data</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">read.csv</span><span class="p">(</span><span class="s">&quot;C:/a/very/specific/path/to/input_data.csv&quot;</span><span class="p">)</span><span class="w"> </span>
+<span class="n">data</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">utils</span><span class="o">::</span><span class="nf">read.csv</span><span class="p">(</span><span class="s">&quot;C:/a/very/specific/path/to/input_data.csv&quot;</span><span class="p">)</span><span class="w"> </span>
 
 <span class="nf">set.seed</span><span class="p">(</span><span class="m">42</span><span class="p">)</span>
 <span class="n">split</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">caTools</span><span class="o">::</span><span class="nf">sample.split</span><span class="p">(</span><span class="n">data</span><span class="p">,</span><span class="w"> </span><span class="n">SplitRatio</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">.</span><span class="m">3</span><span class="p">)</span>
@@ -479,31 +479,30 @@ This might include paths to input and output files, database connection settings
 <span class="n">model</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">glm</span><span class="p">(</span><span class="n">formula</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">outcome</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">c</span><span class="p">,</span><span class="w"> </span><span class="n">family</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">binomial</span><span class="p">(</span><span class="n">link</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;logit&quot;</span><span class="p">),</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">train_data</span><span class="p">,</span><span class="w"> </span><span class="n">method</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;model.frame&quot;</span><span class="p">)</span>
 <span class="c1"># model &lt;- glm(formula = outcome ~ a + b + c, family = binomial(link = &quot;logit&quot;), data = train_data, method = &quot;glm.fit&quot;)</span>
 
-
 <span class="n">prediction</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">predict</span><span class="p">(</span><span class="n">model</span><span class="p">,</span><span class="w"> </span><span class="n">test_data</span><span class="p">,</span><span class="w"> </span><span class="n">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;response&quot;</span><span class="p">)</span>
 
-<span class="nf">write.csv</span><span class="p">(</span><span class="n">prediction</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;outputs/predictions.csv&quot;</span><span class="p">)</span>
+<span class="n">utils</span><span class="o">::</span><span class="nf">write.csv</span><span class="p">(</span><span class="n">prediction</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;outputs/predictions.csv&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div></div>
 <p>Here we’re reading in some data and splitting it into subsets for training and testing a model.
 We use one subset of variables and outcomes to train our model and then use the subset to test the model.
 Finally, we write the model’s predictions to a <code class="docutils literal notranslate"><span class="pre">.csv</span></code> file.</p>
-<p>The file paths that are used to read and write data in our script are particular to our working environment.
-These files and paths may not exist on an other analyst’s machine.
-As such, other analysts would need to read through the script and replace these paths in order to run our code.
+<p>The file paths we use to read and write data in our script are particular to our working environment.
+These files and paths may not exist on another analyst’s machine.
+As such, to run our code, other analysts need to read through the script and replace these paths.
 As we’ll demonstrate below, collecting flexible parts of our code together makes it easier for others to update them.</p>
 <p>When splitting our data and using our model to make predictions, we’ve provided some parameters to the functions that we have used to perform these tasks.
-Eventually, we might reuse some of these parameters elsewhere in our script (e.g. the random seed)
+Eventually, we might reuse some of these parameters elsewhere in our script (e.g., the random seed)
 and we are likely to adjust these parameters between runs of our analysis.
-To make it easier to adjust these consistently throughout our script, we should store them in variables.
+We should store them in variables to make it easier to adjust these consistently throughout our script.
 We should also store these variables with any other parameters and options, so that it’s easy to identify where they should be adjusted.</p>
 <p>Note that in this example we’ve tried our model prediction twice, with different parameters.
 We’ve used comments to switch between which of these lines of code runs.
 This practice is common, especially when we want to make a number of changes when developing how our analysis should run.
 However, commenting sections of code in this way makes it difficult for others to understand our code and reproduce our results.
-Another analyst would not be sure which set of parameters was used to produce a given set of predictions, so we should avoid this form of ambiguity.
-Below, we’ll look at some better alternatives to storing and switching our analysis parameters.</p>
+We should avoid this form of ambiguity because another analyst would not be sure which set of parameters was used to produce a given set of predictions.
+Below, we’ll look at some better alternatives for storing and switching analysis parameters.</p>
 <div class="sphinx-tabs docutils container">
 <div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-1-UHl0aG9u" aria-selected="true" class="sphinx-tabs-tab code-tab group-tab" id="tab-1-UHl0aG9u" name="UHl0aG9u" role="tab" tabindex="0">Python</button><button aria-controls="panel-1-Ug==" aria-selected="false" class="sphinx-tabs-tab code-tab group-tab" id="tab-1-Ug==" name="Ug==" role="tab" tabindex="-1">R</button></div><div aria-labelledby="tab-1-UHl0aG9u" class="sphinx-tabs-panel code-tab group-tab" id="panel-1-UHl0aG9u" name="UHl0aG9u" role="tabpanel" tabindex="0"><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Note: this is not an example of good practice</span>
 <span class="c1"># This is intended as an example of basic in-code configuration. </span>
@@ -545,7 +544,7 @@ Below, we’ll look at some better alternatives to storing and switching our ana
 <span class="n">model_method</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;glm.fit&quot;</span>
 
 <span class="c1">#analysis</span>
-<span class="n">data</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">read.csv</span><span class="p">(</span><span class="n">input_path</span><span class="p">)</span><span class="w"> </span>
+<span class="n">data</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">utils</span><span class="o">::</span><span class="nf">read.csv</span><span class="p">(</span><span class="n">input_path</span><span class="p">)</span><span class="w"> </span>
 
 <span class="nf">set.seed</span><span class="p">(</span><span class="n">random_seed</span><span class="p">)</span>
 <span class="n">split</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">caTools</span><span class="o">::</span><span class="nf">sample.split</span><span class="p">(</span><span class="n">data</span><span class="p">,</span><span class="w"> </span><span class="n">SplitRatio</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">test_split_proportion</span><span class="p">)</span>
@@ -557,7 +556,7 @@ Below, we’ll look at some better alternatives to storing and switching our ana
 
 <span class="n">prediction</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">predict</span><span class="p">(</span><span class="n">model</span><span class="p">,</span><span class="w"> </span><span class="n">test_data</span><span class="p">,</span><span class="w"> </span><span class="n">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;response&quot;</span><span class="p">)</span>
 
-<span class="nf">write.csv</span><span class="p">(</span><span class="n">prediction</span><span class="p">,</span><span class="w"> </span><span class="n">output_path</span><span class="p">)</span>
+<span class="n">utils</span><span class="o">::</span><span class="nf">write.csv</span><span class="p">(</span><span class="n">prediction</span><span class="p">,</span><span class="w"> </span><span class="n">output_path</span><span class="p">)</span>
 </pre></div>
 </div>
 </div></div>
@@ -565,27 +564,25 @@ Below, we’ll look at some better alternatives to storing and switching our ana
 We’re able to use basic objects (like lists and dictionaries) to group related parameters.
 We then reference these objects in the analysis section of our script.</p>
 <p>Our configuration could be extended to include other parameters, including which variables we’re selecting to train our model.
-However, it is important that we keep the configuration simple and easy to maintain.
-Before moving aspects of code to the configuration it’s good to consider whether it improves your workflow.
-If it is something that is dependent on the computer that you are using (e.g. file paths) or is likely to change between runs of your analysis,
-then it’s a good candidate for including in your configuration.</p>
+However, we must keep the configuration simple and easy to maintain.
+Before moving aspects of code to the configuration, consider whether it improves your workflow.
+You should include things that are dependent on the computer that you are using (e.g., file paths) or are likely to change between runs of your analysis, in your configuration.</p>
 </section>
 <section id="use-separate-configuration-files">
 <h2>Use separate configuration files<a class="headerlink" href="#use-separate-configuration-files" title="Link to this heading">#</a></h2>
-<p>We can use independent configuration files to take our previous example one step further.
+<p>We can take our previous example one step further using independent configuration files.
 We simply take our collection of variables, containing parameters and options for our analysis, and move them to a separate file.
-As we’ll describe in the following subsections, these files can be written in the same language as your code or other simple languages.</p>
+These files can be written in the same language as your code or other simple languages, as we’ll describe in the following subsections.</p>
 <p>Storing our analysis configuration in a separate file to the analysis code is a useful separation.
 It means that we can version control our code based solely on changes to the overall logic - when we fix bugs or add new features.
 We can then keep a separate record of which configuration files were used with our code to generate specific results.
-We can easily switch between multiple configurations, by providing our analysis code with different configuration files.</p>
-<p>You may not want to version control your configuration file,
-for example if it includes file paths that are specific to your machine or references to sensitive data.
-In this case, you should include a sample or example configuration file, so that others can use this as a template to configure the analysis for their own environment.
-It is key that this template is kept up to date, so that it is compatible with your code.</p>
+We can easily switch between multiple configurations by providing our analysis code with different configuration files.</p>
+<p>You may not want to version control your configuration file if it includes file paths that are specific to your machine or references to sensitive data.
+In this case, include a sample or example configuration file, so others can use this as a template to configure the analysis for their own environment.
+It is key to keep this template up to date, so that it is compatible with your code.</p>
 <section id="use-code-files-for-configuration">
 <h3>Use code files for configuration<a class="headerlink" href="#use-code-files-for-configuration" title="Link to this heading">#</a></h3>
-<p>To use another code script as our configuration file, we can copy our parameter variables directly from our scripts.
+<p>We can copy our parameter variables directly from our scripts to use another code script as our configuration file.
 Because these variables are defined in the programming language that our analysis uses, it’s easy to access them in our analysis script.
 In Python, variables from these config files can be imported into your analysis script.
 In R, your script might <code class="docutils literal notranslate"><span class="pre">source()</span></code> the config file to read the variables into the R environment.</p>
@@ -594,7 +591,7 @@ In R, your script might <code class="docutils literal notranslate"><span class="
 <h3>Use dedicated configuration files<a class="headerlink" href="#use-dedicated-configuration-files" title="Link to this heading">#</a></h3>
 <p>Many other file formats can be used to store configuration parameters.
 You may have come across data-serialisation languages (including YAML, TOML, JSON and XML), which can be used independently of your programming language.</p>
-<p>If we were to represent our example configuration from above in YAML, this would look like:</p>
+<p>If we represent our example configuration from above in YAML, it would look like this:</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">input_path</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;C:/a/very/specific/path/to/input_data.csv&quot;</span>
 <span class="nt">output_path</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;outputs/predictions.csv&quot;</span>
 
@@ -606,10 +603,10 @@ You may have come across data-serialisation languages (including YAML, TOML, JSO
 <span class="w">    </span><span class="nt">max_v</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 </pre></div>
 </div>
-<p>Configuration files that are written in other languages may need to be read using relevant libraries.
-The YAML example above could be read into our analysis as follows:</p>
+<p>You can use relevant libraries to read configuration files that are written in other languages.
+For example, we could read the YAML example into our analysis like this:</p>
 <div class="sphinx-tabs docutils container">
-<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-2-UHl0aG9u" aria-selected="true" class="sphinx-tabs-tab code-tab group-tab" id="tab-2-UHl0aG9u" name="UHl0aG9u" role="tab" tabindex="0">Python</button><button aria-controls="panel-2-Ug==" aria-selected="false" class="sphinx-tabs-tab code-tab group-tab" id="tab-2-Ug==" name="Ug==" role="tab" tabindex="-1">R</button></div><div aria-labelledby="tab-2-UHl0aG9u" class="sphinx-tabs-panel code-tab group-tab" id="panel-2-UHl0aG9u" name="UHl0aG9u" role="tabpanel" tabindex="0"><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">yaml</span>
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-2-UHl0aG9u" aria-selected="true" class="sphinx-tabs-tab code-tab group-tab" id="tab-2-UHl0aG9u" name="UHl0aG9u" role="tab" tabindex="0">Python</button><button aria-controls="panel-2-Ug==" aria-selected="false" class="sphinx-tabs-tab code-tab group-tab" id="tab-2-Ug==" name="Ug==" role="tab" tabindex="-1">R</button></div><div aria-labelledby="tab-2-UHl0aG9u" class="sphinx-tabs-panel code-tab group-tab" id="panel-2-UHl0aG9u" name="UHl0aG9u" role="tabpanel" tabindex="0"><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">yaml</span>
 
 <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;./my_config.yaml&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
     <span class="n">config</span> <span class="o">=</span> <span class="n">yaml</span><span class="o">.</span><span class="n">safe_load</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
@@ -628,7 +625,7 @@ The YAML example above could be read into our analysis as follows:</p>
 <p>Configuration file formats like YAML and TOML are compact and human-readable.
 This makes them easy to interpret and update, even without knowledge of the underlying code used in the analysis.
 Reading these files in produces a single object containing all of the <code class="docutils literal notranslate"><span class="pre">key:value</span></code> pairs defined in our configuration file.
-In our analysis, we can then select our configuration parameters using their keys.</p>
+We can then select our configuration parameters using their keys in our analysis.</p>
 </section>
 </section>
 <section id="use-configuration-files-as-arguments">
@@ -637,11 +634,11 @@ In our analysis, we can then select our configuration parameters using their key
 Although this allows us to separate our configuration from the main codebase, we have used a hard-coded path to the configuration file.
 This is not ideal, as for the code to be run on another machine the configuration file must be saved on the same path.
 Furthermore, if we want to switch the configuration file that the analysis uses we must change this path or replace the configuration file at the specified path.</p>
-<p>To overcome this, we can adjust our analysis script to take the configuration file path as an argument when the analysis script is run.
-This can be achieved in a number of ways, but we’ll discuss a minimal example here:</p>
+<p>We can adjust our analysis script to take the configuration file path as an argument when the analysis script is run to overcome this.
+We can achieve this in a number of ways, but we’ll discuss a minimal example here:</p>
 <div class="sphinx-tabs docutils container">
-<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-3-UHl0aG9u" aria-selected="true" class="sphinx-tabs-tab code-tab group-tab" id="tab-3-UHl0aG9u" name="UHl0aG9u" role="tab" tabindex="0">Python</button><button aria-controls="panel-3-Ug==" aria-selected="false" class="sphinx-tabs-tab code-tab group-tab" id="tab-3-Ug==" name="Ug==" role="tab" tabindex="-1">R</button></div><div aria-labelledby="tab-3-UHl0aG9u" class="sphinx-tabs-panel code-tab group-tab" id="panel-3-UHl0aG9u" name="UHl0aG9u" role="tabpanel" tabindex="0"><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
-<span class="kn">import</span> <span class="nn">yaml</span>
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-3-UHl0aG9u" aria-selected="true" class="sphinx-tabs-tab code-tab group-tab" id="tab-3-UHl0aG9u" name="UHl0aG9u" role="tab" tabindex="0">Python</button><button aria-controls="panel-3-Ug==" aria-selected="false" class="sphinx-tabs-tab code-tab group-tab" id="tab-3-Ug==" name="Ug==" role="tab" tabindex="-1">R</button></div><div aria-labelledby="tab-3-UHl0aG9u" class="sphinx-tabs-panel code-tab group-tab" id="panel-3-UHl0aG9u" name="UHl0aG9u" role="tabpanel" tabindex="0"><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">yaml</span>
 
 <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
     <span class="c1"># The Python script name is counted as the first argument</span>
@@ -654,7 +651,7 @@ This can be achieved in a number of ways, but we’ll discuss a minimal example 
 </pre></div>
 </div>
 </div><div aria-labelledby="tab-3-Ug==" class="sphinx-tabs-panel code-tab group-tab" hidden="true" id="panel-3-Ug==" name="Ug==" role="tabpanel" tabindex="0"><div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">args</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">commandArgs</span><span class="p">()</span>
-<span class="nf">if </span><span class="p">(</span><span class="nf">length</span><span class="p">(</span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="m">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="kr">if</span><span class="w"> </span><span class="p">(</span><span class="nf">length</span><span class="p">(</span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="m">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="nf">stop</span><span class="p">(</span><span class="s">&quot;Configuration file must be passed as an argument.&quot;</span><span class="p">)</span>
 <span class="p">}</span>
 
@@ -679,7 +676,7 @@ This means that we don’t need to change our code to account for changes to the
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>It is possible to pass configuration options directly as arguments in this way, instead of referencing a configuration file.
-However, use of configuration files should be preferred as they allow us to document which configuration
+However, you should use configuration files as they allow us to document which configuration
 has been used to produce our analysis outputs, for reproducibility.</p>
 </div>
 </section>
@@ -687,14 +684,14 @@ has been used to produce our analysis outputs, for reproducibility.</p>
 <span id="environment-variables"></span><h2>Configure secrets as environment variables<a class="headerlink" href="#configure-secrets-as-environment-variables" title="Link to this heading">#</a></h2>
 <p>Environment variables are variables that are available in a particular environment.
 In most analysis contexts, our environment is the user environment that we are running our code from.
-This might be your local machine or dedicated analysis platform.</p>
-<p>If your code depends on credentials of some kind, these must not be written in your code.
-Passwords and keys could be stored in configuration files, but there is a risk that these files may be included in <a class="reference internal" href="version_control.html"><span class="std std-doc">version control</span></a>.
-To avoid this risk, it is best to store this information in local environment variables.</p>
+This might be your local machine or an analysis platform.</p>
+<p>If your code depends on credentials of some kind, do not write these in your code.
+You can store passwords and keys in configuration files, but there is a risk that these files may be included in <a class="reference internal" href="version_control.html"><span class="std std-doc">version control</span></a>.
+To avoid this risk, store this information in local environment variables.</p>
 <p>Environment variables can also be useful for storing other environment-dependent variables.
 For example, the location of a database or a software dependency.
-This might be preferred over a configuration file if very few other options are required by the code.</p>
-<p>In Unix systems (e.g. Linux and Mac), environment variables can be set in the terminal using <code class="docutils literal notranslate"><span class="pre">export</span></code> and deleted using <code class="docutils literal notranslate"><span class="pre">unset</span></code>:</p>
+We might prefer this over a configuration file the code requires very few other options.</p>
+<p>In Unix systems (e.g., Linux and Mac), you can set environment variables in the terminal using <code class="docutils literal notranslate"><span class="pre">export</span></code> and delete them using <code class="docutils literal notranslate"><span class="pre">unset</span></code>:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>export SECRET_KEY=&quot;mysupersecretpassword&quot;
 unset SECRET_KEY
 </pre></div>
@@ -704,11 +701,11 @@ unset SECRET_KEY
 reg delete HKCU\Environment /F /V SECRET_KEY
 </pre></div>
 </div>
-<p>These can alternatively be defined using a graphical interface under <code class="docutils literal notranslate"><span class="pre">Edit</span> <span class="pre">environment</span> <span class="pre">variables</span> <span class="pre">for</span> <span class="pre">your</span> <span class="pre">account</span></code> in your Windows settings.</p>
-<p>Once stored in environment variables, these variables will remain available in your environment until they are deleted.</p>
+<p>You can alternatively define them using a graphical interface under <code class="docutils literal notranslate"><span class="pre">Edit</span> <span class="pre">environment</span> <span class="pre">variables</span> <span class="pre">for</span> <span class="pre">your</span> <span class="pre">account</span></code> in your Windows settings.</p>
+<p>Once stored in environment variables, these variables will remain available in your environment until you delete them.</p>
 <p>You can access this variable in your code like so:</p>
 <div class="sphinx-tabs docutils container">
-<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-5-UHl0aG9u" aria-selected="true" class="sphinx-tabs-tab code-tab group-tab" id="tab-5-UHl0aG9u" name="UHl0aG9u" role="tab" tabindex="0">Python</button><button aria-controls="panel-5-Ug==" aria-selected="false" class="sphinx-tabs-tab code-tab group-tab" id="tab-5-Ug==" name="Ug==" role="tab" tabindex="-1">R</button></div><div aria-labelledby="tab-5-UHl0aG9u" class="sphinx-tabs-panel code-tab group-tab" id="panel-5-UHl0aG9u" name="UHl0aG9u" role="tabpanel" tabindex="0"><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-5-UHl0aG9u" aria-selected="true" class="sphinx-tabs-tab code-tab group-tab" id="tab-5-UHl0aG9u" name="UHl0aG9u" role="tab" tabindex="0">Python</button><button aria-controls="panel-5-Ug==" aria-selected="false" class="sphinx-tabs-tab code-tab group-tab" id="tab-5-Ug==" name="Ug==" role="tab" tabindex="-1">R</button></div><div aria-labelledby="tab-5-UHl0aG9u" class="sphinx-tabs-panel code-tab group-tab" id="panel-5-UHl0aG9u" name="UHl0aG9u" role="tabpanel" tabindex="0"><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
 
 <span class="n">my_key</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;SECRET_KEY&quot;</span><span class="p">)</span>
 </pre></div>
@@ -717,7 +714,7 @@ reg delete HKCU\Environment /F /V SECRET_KEY
 </pre></div>
 </div>
 </div></div>
-<p>It is then safer for this code to be shared with others, as it is not possible to acquire your credentials without access to your environment.</p>
+<p>It is then safer for this code to be shared with others, as they can’t acquire your credentials without access to your environment.</p>
 </section>
 </section>
 

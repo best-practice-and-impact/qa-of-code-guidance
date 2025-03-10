@@ -28,17 +28,17 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="_static/tabs.css?v=a5c4661c" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/tabs.css?v=a5c4661c" />
+    <link rel="stylesheet" type="text/css" href="_static/logo.css?v=1c56504a" />
     <link rel="stylesheet" type="text/css" href="_static/admonitions.css?v=1956eba1" />
     <link rel="stylesheet" type="text/css" href="_static/accessibility.css?v=6e02104c" />
-    <link rel="stylesheet" type="text/css" href="_static/logo.css?v=1c56504a" />
     <link rel="stylesheet" type="text/css" href="_static/markdown_within_tabs.css?v=d7e1104e" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -56,13 +56,13 @@
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="_static/togglebutton.js?v=4a39c7ea"></script>
-    <script src="_static/tabs.js?v=3030b3cb"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script src="_static/tabs.js?v=3030b3cb"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'project_documentation';</script>
     <link rel="icon" href="_static/favicon.ico"/>
     <link rel="index" title="Index" href="genindex.html" />
@@ -443,8 +443,7 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="project-documentation">
 <h1>Project documentation<a class="headerlink" href="#project-documentation" title="Link to this heading">#</a></h1>
-<p>Whether you’re developing a package or collaborating on a piece of analysis,
-documenting your project will makes it much easier for others to understand your goal and ways of working.</p>
+<p>Documenting your project will makes it much easier for others to understand your goal and ways of working, whether you’re developing a package or collaborating on a piece of analysis.</p>
 <section id="readme">
 <h2>README<a class="headerlink" href="#readme" title="Link to this heading">#</a></h2>
 <p>When working on a collaborative or open coding project, it’s good practice to describe an overview of your project in a README file.
@@ -453,21 +452,22 @@ As well as a description of the project, it might include examples using your co
 This file can be any text type, including <code class="docutils literal notranslate"><span class="pre">.txt</span></code>, <code class="docutils literal notranslate"><span class="pre">.md</span></code>, and <code class="docutils literal notranslate"><span class="pre">.rst</span></code>, and can be associated with your automated documentation.</p>
 <p>We suggest the following for a good README:</p>
 <ul class="simple">
-<li><p>Short statement of intent</p></li>
-<li><p>Longer description describing the problem that your project solves and how it solves it</p></li>
-<li><p>Basic installation instructions or link to installation guide</p></li>
-<li><p>Example usage</p></li>
-<li><p>Screenshot if your project has a graphical user interface</p></li>
-<li><p>Links to related projects</p></li>
+<li><p>Short statement of intent.</p></li>
+<li><p>Longer description describing the problem that your project solves and how it solves it.</p></li>
+<li><p>Basic installation instructions or link to installation guide.</p></li>
+<li><p>Example usage.</p></li>
+<li><p>Screenshot if your project has a graphical user interface.</p></li>
+<li><p>Links to other project guidance, for example methodological papers or document repositories.</p></li>
+<li><p>Links to related projects.</p></li>
 </ul>
 </section>
 <section id="contributing-guidance">
 <h2>Contributing guidance<a class="headerlink" href="#contributing-guidance" title="Link to this heading">#</a></h2>
-<p>When collaborating, it is also useful to outline the standards used within your project.
-This might include particular packages that should used for certain tasks and guidance on the <a class="reference internal" href="readable_code.html#code-style"><span class="std std-ref">code style</span></a> used in the project.
-If you plan to have contributors from outside your organisation it is useful to include a code of conduct too.
+<p>When collaborating, it is also useful to set out the standards used within your project.
+This might include particular packages required for certain tasks and guidance on the <a class="reference internal" href="readable_code.html#code-style"><span class="std std-ref">code style</span></a> used in the project.
+Consider including a code of conduct if you plan to have contributors from outside your organisation.
 Please <a class="reference external" href="https://docs.github.com/en/github/building-a-strong-community/adding-a-code-of-conduct-to-your-project">see GitHub</a> for advice on creating a code of conduct.</p>
-<p>For an example, see the CONTRIBUTING file from our <a class="reference external" href="https://github.com/best-practice-and-impact/gptables/blob/master/CONTRIBUTING.md">gptables package</a>:</p>
+<p>See the CONTRIBUTING file from our <a class="reference external" href="https://github.com/best-practice-and-impact/gptables/blob/master/CONTRIBUTING.md">gptables package</a> for an example:</p>
 <div class="sphinx-tabs docutils container">
 <div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-0-0-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-0-0-0" name="0-0" role="tab" tabindex="0">Markdown</button><button aria-controls="panel-0-0-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-0-0-1" name="0-1" role="tab" tabindex="-1">HTML</button></div><div aria-labelledby="tab-0-0-0" class="sphinx-tabs-panel" id="panel-0-0-0" name="0-0" role="tabpanel" tabindex="0"><div class="highlight-default notranslate"><div class="highlight"><pre><span></span># Contributing
 
@@ -505,7 +505,7 @@ format for documenting features using docstrings.
 non-minor changes.
 2. The review process follows a similar process to ROpenSci.
 3. Reviewers will be requested from associated communities.
-4. Only once reviewers are satisfied, will the `dev` branch be released.
+4. The `dev` branch will only be released once reviewers are satisfied.
 </pre></div>
 </div>
 </div><div aria-labelledby="tab-0-0-1" class="sphinx-tabs-panel" hidden="true" id="panel-0-0-1" name="0-1" role="tabpanel" tabindex="0"><h1>Contributing</h1>
@@ -553,37 +553,38 @@ which is formatted into HTML when viewed on our repository.</p>
 </section>
 <section id="user-desk-instructions">
 <h2>User desk instructions<a class="headerlink" href="#user-desk-instructions" title="Link to this heading">#</a></h2>
-<p>If your project is very user focussed for one particular task,
-for example developing a statistic production pipeline for other analysts to execute,
+<p>If your project is very user focused for one particular task,
+for example, developing a statistic production pipeline for other analysts to execute,
 it is very important that the code users understand how to appropriately run your code.</p>
 <p>These instructions should include:</p>
 <ul class="simple">
-<li><p>How to set up an environment to run your code (including how to install dependencies)</p></li>
-<li><p>How to run your code</p></li>
-<li><p>What outputs (if any) your code or system produces and how these should be interpreted</p></li>
-<li><p>What quality assurance has been carried out and what further quality assurance of outputs is required</p></li>
-<li><p>How to maintain your project (including how to update data sources)</p></li>
+<li><p>How to set up an environment to run your code (including how to install dependencies).</p></li>
+<li><p>How to configure the project, for example how to set folders and environment variables if you use them.</p></li>
+<li><p>How to run your code.</p></li>
+<li><p>What outputs (if any) your code or system produces and how these should be interpreted.</p></li>
+<li><p>What quality assurance has been carried out and what further quality assurance of outputs is required.</p></li>
+<li><p>How to maintain your project (including how to update data sources).</p></li>
 </ul>
 </section>
 <section id="dependencies">
 <h2>Dependencies<a class="headerlink" href="#dependencies" title="Link to this heading">#</a></h2>
 <p>The environment that your code runs in includes the machine, the operating system (Windows, Mac, Linux…), the programming language, and any external packages.
 It is important to record this information to ensure reproducibility.</p>
-<p>The simplest way to document which packages your code is dependent on, is to record them in a text file.
-This is typically called <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code>.</p>
+<p>The simplest way to document which packages your code is dependent on is to record them in a text file.
+We typically call this text file <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code>.</p>
 <p>Python packages record their dependencies within their <code class="docutils literal notranslate"><span class="pre">setup.py</span></code> file, via <code class="docutils literal notranslate"><span class="pre">setup(install_requires=...)</span></code>.
 You can get a list of your installed python packages using <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">freeze</span></code> in the command line.</p>
 <p><a class="reference external" href="https://r-pkgs.org/">R packages</a> and projects record their dependencies in a <a class="reference external" href="https://r-pkgs.org/description.html">DESCRIPTION</a> file.
 Packages are listed under the <code class="docutils literal notranslate"><span class="pre">Imports</span></code> key.
 You can get a list of your installed R packages using the <code class="docutils literal notranslate"><span class="pre">installed.packages()</span></code> function.</p>
-<p>Environment management tools, such as
+<p>You will find environment management tools, such as
 <a class="reference external" href="https://rstudio.github.io/renv/articles/renv.html"><code class="docutils literal notranslate"><span class="pre">renv</span></code></a> for R or
-<a class="reference external" href="https://github.com/pyenv/pyenv"><code class="docutils literal notranslate"><span class="pre">pyenv</span></code></a> for python, are very useful for keeping track of software and package versions used in a project.</p>
+<a class="reference external" href="https://github.com/pyenv/pyenv"><code class="docutils literal notranslate"><span class="pre">pyenv</span></code></a> for python useful for keeping track of software and package versions used in a project.</p>
 </section>
 <section id="citation">
 <h2>Citation<a class="headerlink" href="#citation" title="Link to this heading">#</a></h2>
-<p>For research or analytical code that is likely to be referenced by others, it can be helpful to provide a citation template.
-This can be included in your code repository as a <code class="docutils literal notranslate"><span class="pre">CITATION</span></code> file or part of your <code class="docutils literal notranslate"><span class="pre">README</span></code>.
+<p>It can be helpful to provide a citation template for research or analytical code that is likely to be referenced by others.
+You can include this in your code repository as a <code class="docutils literal notranslate"><span class="pre">CITATION</span></code> file or part of your <code class="docutils literal notranslate"><span class="pre">README</span></code>.
 For example, the R package <code class="docutils literal notranslate"><span class="pre">ggplot2</span></code> provides the following:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span> To cite ggplot2 in publications, please use:
 
@@ -602,39 +603,40 @@ A BibTeX entry for LaTeX users is
  }
 </pre></div>
 </div>
-<p>This might include multiple citations, if your project includes multiple datasets, pieces of code or outputs with their own
-<a class="reference external" href="https://en.wikipedia.org/wiki/Digital_object_identifier">DOI’s</a>.</p>
+<p>If your project includes multiple datasets, pieces of code or outputs with their own
+<a class="reference external" href="https://en.wikipedia.org/wiki/Digital_object_identifier">DOIs</a>, this might include multiple citations.</p>
 <p>See this <a class="reference external" href="https://guides.github.com/activities/citable-code/">GitHub guide for more information on making your public code citable</a>.</p>
 </section>
 <section id="vignettes">
 <h2>Vignettes<a class="headerlink" href="#vignettes" title="Link to this heading">#</a></h2>
 <p>Vignettes are a form of supplementary documentation, containing applied examples that demonstrate the intended use of the code in your project or package.
 Docstrings may contain examples applying individual functional units, while vignettes may show multiple units being used together.
-The term vignette is usually used with reference to R packages, for example this introduction to the
+We use the term vignette with reference to R packages, for example this introduction to the
 <a class="reference external" href="https://cran.r-project.org/web/packages/dplyr/vignettes/dplyr.html"><code class="docutils literal notranslate"><span class="pre">dplyr</span></code> package</a> for data manipulation.
 However, the same long-form documentation is beneficial for projects in any programming language - for instance the
 <a class="reference external" href="https://pandas.pydata.org/docs/user_guide/basics.html"><code class="docutils literal notranslate"><span class="pre">pandas</span></code> basics guide</a>.</p>
 <p>We’ve seen that <a class="reference internal" href="code_documentation.html#docstrings"><span class="std std-ref">docstrings</span></a> can be used to describe individual functional code elements.
-Vignettes provide a demonstration of the intended use for these classes and functions, in a realistic context.
-This can help users to understand how different code elements interact, and how they might use your code in their own program.</p>
+Vignettes demonstrate the intended use for these classes and functions in a realistic context.
+This shows users how different code elements interact and how they might use your code in their own program.</p>
 <p>Another good example is this vignette describing <a class="reference external" href="http://r-pkgs.had.co.nz/vignettes.html">how to design vignettes</a> in Rmarkdown.
 You can produce this type of documentation in any format, though Rmarkdown is particularly effectively at combining sections of code,
-code outputs and descriptive text.</p>
-<p>You might also consider providing examples in an interactive notebook, that users can run for themselves.</p>
+code outputs, and descriptive text.</p>
+<p>You might also consider providing examples in an interactive notebook that users can run for themselves.</p>
 </section>
 <section id="versioning">
 <h2>Versioning<a class="headerlink" href="#versioning" title="Link to this heading">#</a></h2>
 <p>Documenting the version of your code provides distinct points of reference in the code’s development.
 Recording the version of code used for analysis is important for reproducing your work.
-When used in combination with <a class="reference internal" href="version_control.html"><span class="std std-doc">Version control</span></a>, versioning allows you to recover the exact code used to run your analysis and thus reproduce the same results.</p>
+Combining versioning with <a class="reference internal" href="version_control.html"><span class="std std-doc">Version control</span></a> allows you to recover the exact code used to run your analysis, and thus reproduce the same results.</p>
 <p><a class="reference external" href="https://semver.org/">Semantic versioning</a> provides useful rules for versioning releases of your code.
-Following these rules also helps other users of your code to understand how changes in your code may affect their software.
+Follow these rules to help other users of your code  understand how changes in your code may affect their software.
 Each level of version number indicates the extent of changes to the application programming interface (API) of your code,
-i.e. the part of the code that a user interacts with directly.
+i.e., the part of the code that a user interacts with directly.
 Changes to the major version number indicate changes to the API that are not compatible with use of previous versions of the code.
-While changes is the minor and patch numbers indicate changes that are either compatible or have no effect on the use of the code, respectively.</p>
+While changes to the minor and patch numbers indicate changes that are either compatible or have no effect on the use of the code, respectively.</p>
 <figure class="align-default" id="semantic-versioning">
-<a class="reference internal image-reference" href="_images/semantic_versioning.png"><img alt="_images/semantic_versioning.png" src="_images/semantic_versioning.png" style="width: 70%;" /></a>
+<a class="reference internal image-reference" href="_images/semantic_versioning.png"><img alt="_images/semantic_versioning.png" src="_images/semantic_versioning.png" style="width: 70%;" />
+</a>
 <figcaption>
 <p><span class="caption-number">Fig. 5 </span><span class="caption-text"><a class="reference external" href="https://semver.org/">Semantic versioning</a></span><a class="headerlink" href="#semantic-versioning" title="Link to this image">#</a></p>
 </figcaption>
@@ -648,7 +650,7 @@ As this guidance will change over time, this version number provides users with 
 </section>
 <section id="changelog">
 <h2>Changelog<a class="headerlink" href="#changelog" title="Link to this heading">#</a></h2>
-<p>A changelog records the major changes that have occurred to a project or package, between versioned releases of the code.</p>
+<p>A changelog records the major changes that have occurred to a project or package between versioned releases of the code.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span># Changelog
 All notable changes to this project will be documented in this file.
 
@@ -671,8 +673,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - bug in `multiple_each_in_list()`, where output was not returned
 </pre></div>
 </div>
-<p>Similarly to versioning, a changelog is useful for users to determine whether an update to your code is compatible with their work, which may depend on your code.
-It can also document which parts of your code will no longer be supported in future version and which bugs in your code have been addressed.
+<p>Like versioning, users find a changelog is useful to determine whether an update to your code is compatible with their work, which may depend on your code.
+It can also document which parts of your code will no longer be supported in future version and which bugs in your code you have addressed.
 Your changelog can be in any format and should be associated with your code documentation, so that it is easy for users and other contributors to find.</p>
 <p><a class="reference external" href="https://keepachangelog.com/en/1.0.0/">keep a changelog</a> provides a simple but effective template for recording changes to your code.</p>
 </section>
@@ -681,9 +683,9 @@ Your changelog can be in any format and should be associated with your code docu
 <p>Copyright indicates ownership of work.
 All material created by civil servants, ministers, government departments and their agencies are covered by
 <a class="reference external" href="https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/">Crown copyright</a>.
-It is not essential to include a copyright notice on your work, but doing so can help to avoid confusion around ownership.</p>
-<p>Licences outline the conditions under which others may use, modify and/or redistribute your work.
-As such, including a licence with code is important for users and other developers alike.
+It is not essential to include a copyright notice on your work, but doing so can help to avoid confusion around ownership. We recommend including one in government projects.</p>
+<p>Licenses outline the conditions under which others may use, modify and/or redistribute your work.
+As such, including a license with code is important for users and other developers alike.
 This <a class="reference external" href="https://choosealicense.com/">online tool</a> might help you to choose an appropriate license for your project.
 The Government Digital Service generally recommends using the
 <a class="reference external" href="https://opensource.org/licenses/MIT">MIT license</a> for code and the
@@ -706,8 +708,8 @@ WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN 
 <h2>Open source your code<a class="headerlink" href="#open-source-your-code" title="Link to this heading">#</a></h2>
 <p>In government, we <a class="reference external" href="https://www.gov.uk/service-manual/service-standard/point-12-make-new-source-code-open">support and promote open source</a> whenever possible.
 <a class="reference external" href="https://opensource.com/resources/what-open-source">Open source</a> software is software with source code that anyone can freely inspect, modify and enhance.
-As a government analyst, you should aim to make all new source code open, unless justification can be provided for withholding part of your source code.</p>
-<p>Open sourcing code benefits yourself, other government analysts and the public.</p>
+As a government analyst, you should aim to make all new source code open, unless you can justify witholding part of your source code.</p>
+<p>Open sourcing code benefits you, other government analysts, and the public.</p>
 <p>Personal benefits from open sourcing include:</p>
 <ul class="simple">
 <li><p>Attribution - coding in the open creates a public record of your contributions to analysis and software.</p></li>
@@ -723,8 +725,8 @@ As a government analyst, you should aim to make all new source code open, unless
 </ul>
 <p>Please see the <a class="reference external" href="https://www.gov.uk/government/publications/open-source-guidance/when-code-should-be-open-or-closed">Government Data Service (GDS) guidance</a>
 for help deciding when code should be open or closed.
-Security concerns for coding in the open are also addressed in further
-<a class="reference external" href="https://www.gov.uk/government/publications/open-source-guidance/security-considerations-when-coding-in-the-open">GDS guidance</a>. Additional guidance on deciding when and how to open source, the benefits, and good practice is available from the <a class="reference external" href="https://analysisfunction.civilservice.gov.uk/policy-store/open-sourcing-analytical-code/">Analysis Function</a>.</p>
+Further
+<a class="reference external" href="https://www.gov.uk/government/publications/open-source-guidance/security-considerations-when-coding-in-the-open">GDS guidance</a> addresses security concerns for coding in the open. Additional guidance on deciding when and how to open source, the benefits, and good practice is available from the <a class="reference external" href="https://analysisfunction.civilservice.gov.uk/policy-store/open-sourcing-analytical-code/">Analysis Function</a>.</p>
 </section>
 </section>
 

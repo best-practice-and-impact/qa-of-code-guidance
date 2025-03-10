@@ -28,17 +28,16 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="_static/tabs.css?v=a5c4661c" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/logo.css?v=1c56504a" />
     <link rel="stylesheet" type="text/css" href="_static/admonitions.css?v=1956eba1" />
     <link rel="stylesheet" type="text/css" href="_static/accessibility.css?v=6e02104c" />
-    <link rel="stylesheet" type="text/css" href="_static/logo.css?v=1c56504a" />
     <link rel="stylesheet" type="text/css" href="_static/markdown_within_tabs.css?v=d7e1104e" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -454,17 +453,17 @@ document.write(`
 <h1>Managing analytical code development<a class="headerlink" href="#managing-analytical-code-development" title="Link to this heading">#</a></h1>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>This section is a draft, while we ensure that it meets user needs.</p>
+<p>This section is a draft, while we make sure that it meets user needs.</p>
 <p>It would benefit from case studies that demonstrate how to decide what level of quality assurance a piece of analysis requires.</p>
 <p>Please get in touch with feedback or case studies to support the guidance
 <a class="reference external" href="https://github.com/best-practice-and-impact/qa-of-code-guidance/issues">by creating a GitHub Issue</a>
 or emailing us at <a class="reference external" href="mailto:ASAP&#37;&#52;&#48;ons&#46;gov&#46;uk">emailing us</a>.</p>
 </div>
-<p>This section of the guidance is targeted at those who manage data analysis/science/engineering work in government
+<p>This section of the guidance targets those who manage data analysis, science and engineering work in government
 or those acting as product owners for analytical products.</p>
 <p>It aims to help you support your team to apply the good quality assurance practices described in the wider
 <a class="reference external" href="https://best-practice-and-impact.github.io/qa-of-code-guidance/intro.html">Quality assurance of code for analysis and research guidance</a>.
-Processes that apply these good practices are referred to as a reproducible analytical pipelines (RAP).</p>
+We refer to processes that apply these good practices as a reproducible analytical pipelines (RAP).</p>
 <p>Before applying this guidance, you should have a basic awareness of the tools and
 techniques used to do quality analysis as code - the <a class="reference external" href="https://learninghub.ons.gov.uk/course/view.php?id=1236">introduction to RAP course</a> outlines these.
 You should also be aware of any specific tools and platforms that are used in your department.</p>
@@ -472,12 +471,12 @@ You should also be aware of any specific tools and platforms that are used in yo
 You should use this when designing and managing the development of analysis as code.</p>
 <section id="apply-quality-assurance-proportional-to-risk">
 <h2>Apply quality assurance proportional to risk<a class="headerlink" href="#apply-quality-assurance-proportional-to-risk" title="Link to this heading">#</a></h2>
-<p>As described by <a class="reference external" href="https://www.gov.uk/government/publications/the-aqua-book-guidance-on-producing-quality-analysis-for-government">the Aqua book</a>,
-the quality assurance of our analysis should be proportional to the complexity and risk of the analysis.</p>
+<p>As the <a class="reference external" href="https://www.gov.uk/government/publications/the-aqua-book-guidance-on-producing-quality-analysis-for-government">the Aqua book</a> notes,
+the quality assurance we apply to our analysis should be proportionate to the complexity and risk that the analysis carries.</p>
 <p>When managing analytical work, you should not need an in-depth understanding of the analysis code to trust that it is working correctly.
-However, you should be confident that the approach the team has taken is appropriate given the user need,
+However, you should be confident that the team who built the analysis process has taken an appropriate approach given the user need,
 and that proportionate quality assurance is being applied to the development and running of the analysis.</p>
-<p>You should work with your team to decide on which quality assurance practices are necessary given each piece of analysis.
+<p>You should work with your team to decide which quality assurance practices are necessary given each piece of analysis.
 You might find our <a class="reference internal" href="checklists.html"><span class="std std-doc">Code quality assurance checklists</span></a> useful templates for defining the target level of assurance.
 When possible, you should define the target assurance level before starting the analysis.</p>
 <div class="admonition important">
@@ -485,21 +484,21 @@ When possible, you should define the target assurance level before starting the 
 <p>While quality assurance must be applied relative to the risk and complexity of the analysis, you must consider the skills of your team.
 It will take time to learn to apply the necessary good practices, so you should support their gradual development of these skills.</p>
 <p><a class="reference external" href="https://learninghub.ons.gov.uk/mod/page/view.php?id=8699">The RAP learning pathway</a> provides training in good practices.
-Then the wider <a class="reference external" href="https://best-practice-and-impact.github.io/qa-of-code-guidance/intro.html">Quality assurance of code for analysis and research guidance</a>
-can be used as a reference to apply these practices to analysis.
+You can use the wider <a class="reference external" href="https://best-practice-and-impact.github.io/qa-of-code-guidance/intro.html">Quality assurance of code for analysis and research guidance</a>
+as a reference to apply these practices to analysis.
 You should identify where each analyst is along the pathway - they should look to develop the next skill in the pathway and apply this,
 rather than attempting to adopt them all at once.</p>
-<p>Note that it is important to maintain technical skills in the analysis team for sustainability, to ensure that the analysis can be understood, updated and maintained.</p>
+<p>Note that it is important to maintain technical skills in the analysis team for sustainability, to ensure that the analysis can be understood, updated, and maintained.</p>
 </div>
 <p>Despite the initial cost of developing technical skills,
 <a class="reference external" href="https://www.devops-research.com/research.html">evidence shows that applying good practices increases the efficiency of code development and maintainability of the code</a>.
 There are number of case studies that describe how
 <a class="reference external" href="https://analysisfunction.civilservice.gov.uk/support/reproducible-analytical-pipelines/rap-case-studies/">good quality assurance practices have improved government analysis</a>.</p>
 <p>Not following good practices creates <a class="reference external" href="https://en.wikipedia.org/wiki/Technical_debt">technical debt</a>, which slows down further development of the analysis.
-This can be necessary for delivering to short deadlines, but time should be set aside to address this for continued development of the analysis.</p>
+This can be necessary for delivering to short deadlines, but you should set aside time to address this for continued development of the analysis.</p>
 <p>Where quality assurance of the code doesn’t meet your target level of assurance,
 for example where there is limited time or skill,
-then it is necessary to supplement this with more in-depth assurance of outputs.
+then you should supplement this with more in-depth assurance of outputs.
 This might include dual running the analysis with an independent system and consistency checks across the output data.</p>
 <p>The remaining parts of this section provide questions that aim to help you assess the quality assurance practices that your team are applying in their analysis.</p>
 </section>
@@ -510,10 +509,10 @@ This might include dual running the analysis with an independent system and cons
 <h3>Why have you chosen to do the analysis this way?<a class="headerlink" href="#why-have-you-chosen-to-do-the-analysis-this-way" title="Link to this heading">#</a></h3>
 <p>Understanding user needs ensures that the analysis is valuable.</p>
 <ul class="simple">
-<li><p>There should be a plan to consult users at the beginning and throughout the development process, to ensure that their needs are being met.</p></li>
+<li><p>You should have a plan to consult users at the beginning and throughout the development process, to ensure that you meet their needs.</p></li>
 <li><p>The methodology and data should be suitable for the question being asked.</p></li>
-<li><p>The analysis must be developed by more than one individual, to allow pair programming, peer review and mentoring. This increases the sustainability of analysis.</p></li>
-<li><p>The analysis should be carried out using open-source analysis tools, wherever possible.
+<li><p>More than one person should develop the analysis to allow pair programming, peer review, and mentoring. This increases the sustainability of analysis.</p></li>
+<li><p>You should use open-source analysis tools to carry out the analysis, wherever possible.
 Your team should be able to explain why they have chosen the analysis tools and why they are confident that they are fit for purpose.</p></li>
 </ul>
 </section>
@@ -521,9 +520,9 @@ Your team should be able to explain why they have chosen the analysis tools and 
 <h3>How are you storing input data?<a class="headerlink" href="#how-are-you-storing-input-data" title="Link to this heading">#</a></h3>
 <p>Versioning input data ensures that we can reproduce our analysis.</p>
 <ul class="simple">
-<li><p>Input data should be versioned, so that analysis outputs can be reproduced.</p></li>
-<li><p>Data should be stored in an open format (e.g. CSV or ODS), not formats that are restricted to proprietary software like SAS and Stata.</p></li>
-<li><p>Large or complex datasets should be stored in a database.</p></li>
+<li><p>You should version input data so that you can reproduce analysis outputs.</p></li>
+<li><p>You should store data in an open format (e.g. CSV or ODS), not formats that are restricted to proprietary software like SAS and Stata.</p></li>
+<li><p>You should store large or complex datasets in a database.</p></li>
 <li><p>You should monitor the quality of data, following <a class="reference external" href="https://www.gov.uk/government/publications/the-government-data-quality-framework/the-government-data-quality-framework">the government data quality framework</a>.</p></li>
 </ul>
 </section>
@@ -531,11 +530,11 @@ Your team should be able to explain why they have chosen the analysis tools and 
 <h3>How will you keep track of changes to the code and why they were made?<a class="headerlink" href="#how-will-you-keep-track-of-changes-to-the-code-and-why-they-were-made" title="Link to this heading">#</a></h3>
 <p><a class="reference internal" href="version_control.html"><span class="std std-doc">Version control</span></a> of changes provides an audit trail.</p>
 <ul class="simple">
-<li><p>The code, documentation, and peer reviews should all be version controlled. Git software is most commonly used for this.</p></li>
-<li><p>The code should be developed on an open source code platform, like GitHub. This transparency increases your users trust in the analysis.</p></li>
-<li><p>There should be a clear record of every change and who made it.</p></li>
+<li><p>You should version control the code, documentation, and peer reviews. Git software is most commonly used for this.</p></li>
+<li><p>You should develop the code on an open source code platform, like GitHub. This transparency increases your users trust in the analysis and promotes collaboration and re-use.</p></li>
+<li><p>You should have a clear record of every change and who made it.</p></li>
 <li><p>Each change should be linked to a reason, for example, a new requirement or an issue in the existing code.</p></li>
-<li><p>Reviews of changes should be stored with the version of the analysis that was reviewed.</p></li>
+<li><p>You should store reviews of changes with the version of the analysis that was reviewed.</p></li>
 </ul>
 </section>
 </section>
@@ -547,17 +546,17 @@ to assess how the team are progressing towards the target quality assurance prac
 <h3>How is your code structured?<a class="headerlink" href="#how-is-your-code-structured" title="Link to this heading">#</a></h3>
 <p><a class="reference internal" href="modular_code.html"><span class="std std-doc">Modular code</span></a> makes it easier to understand, update and reuse the code.</p>
 <ul class="simple">
-<li><p>Logic should be written as functions, so that it can be reused consistently and tested.</p></li>
-<li><p>Related functions should be grouped together in the same file, so that it is easy to find them.</p></li>
-<li><p>Logic with different responsibilities (e.g. reading data versus transforming data) should be clearly separated.</p></li>
-<li><p>When code can be reused for other analyses, it should be stored and shared as a package.</p></li>
+<li><p>You should write logic as functions, so that it can be reused consistently and tested.</p></li>
+<li><p>You should group related functions together in the same file, so that it is easy to find them.</p></li>
+<li><p>You should clearly separate logic with different responsibilities (e.g., reading data versus transforming data).</p></li>
+<li><p>When code can be reused for other analyses, you should store and share this as a package.</p></li>
 </ul>
 </section>
 <section id="how-easy-is-it-to-adjust-the-way-that-the-analysis-runs">
 <h3>How easy is it to adjust the way that the analysis runs?<a class="headerlink" href="#how-easy-is-it-to-adjust-the-way-that-the-analysis-runs" title="Link to this heading">#</a></h3>
-<p><a class="reference internal" href="configuration.html"><span class="std std-doc">Configuration files</span></a> allow you to change the way the code runs without editing the code.</p>
+<p><a class="reference internal" href="configuration.html"><span class="std std-doc">Configuration files</span></a> allow you to change the way the code runs without editing the code itself.</p>
 <ul class="simple">
-<li><p>Parts of the code that may change should be stored in separate configuration files.</p></li>
+<li><p>You should store parameters for the code that often change between runs in separate configuration files.</p></li>
 <li><p>Things that often change in analysis code include input and output file paths, reference dates and model parameters.</p></li>
 </ul>
 </section>
@@ -565,20 +564,20 @@ to assess how the team are progressing towards the target quality assurance prac
 <h3>How is the analysis documented?<a class="headerlink" href="#how-is-the-analysis-documented" title="Link to this heading">#</a></h3>
 <p><a class="reference internal" href="code_documentation.html"><span class="std std-doc">Code documentation</span></a> is essential for business continuity and sustainability.</p>
 <ul class="simple">
-<li><p>Every function should be documented in the code, so that it is clear what the function is supposed to do.</p></li>
+<li><p>You should document every function in the code, so it is clear what each function is supposed to do.</p></li>
 <li><p>Function documentation should include what goes in and what comes out of each function.</p></li>
-<li><p>Where code will be run or re-used by others, documentation should include usage examples and test data.</p></li>
+<li><p>Where others will run or re-used the code, documentation should include usage examples and test data.</p></li>
 </ul>
 </section>
 <section id="what-are-the-dependencies">
 <h3>What are the dependencies?<a class="headerlink" href="#what-are-the-dependencies" title="Link to this heading">#</a></h3>
 <p><a class="reference internal" href="project_documentation.html"><span class="std std-doc">Project documentation</span></a> ensures that others can reproduce our analysis.</p>
 <ul class="simple">
-<li><p>User instructions should be provided for running the analysis.</p></li>
-<li><p>Software and package versions should be documented with the code.
-Typically package versions are recorded using <code class="docutils literal notranslate"><span class="pre">setup.py</span></code> and <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> files (Python) or a <code class="docutils literal notranslate"><span class="pre">DESCRIPTION</span></code> file (R).</p></li>
+<li><p>You should provide user instructions for running the analysis.</p></li>
+<li><p>You should document software and package versions with the code.
+Typically, you record package versions using <code class="docutils literal notranslate"><span class="pre">setup.py</span></code> and <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> files (Python) or a <code class="docutils literal notranslate"><span class="pre">DESCRIPTION</span></code> file (R).</p></li>
 <li><p>Code should not be dependent on a specific computer to run. Running it on a colleague’s system can help to check this.</p></li>
-<li><p>When the same analysis is run multiple times or on different systems it should give reproducible outcomes.</p></li>
+<li><p>When you run the same analysis multiple times or on different systems, it should give reproducible outcomes.</p></li>
 <li><p>Container systems, like Docker, help to create reproducible environments to run code.</p></li>
 </ul>
 </section>
@@ -586,8 +585,8 @@ Typically package versions are recorded using <code class="docutils literal notr
 <h3>What assumptions does the analysis make?<a class="headerlink" href="#what-assumptions-does-the-analysis-make" title="Link to this heading">#</a></h3>
 <p>Transparency of our analysis increases trust.</p>
 <ul class="simple">
-<li><p>Assumptions and caveats of the analysis should be recorded close to the code.</p></li>
-<li><p>These must be communicated to users when releasing results from the analysis.</p></li>
+<li><p>You should record assumptions and caveats of the analysis close to the code.</p></li>
+<li><p>You must communicate these to users when releasing results from the analysis.</p></li>
 </ul>
 </section>
 <section id="how-has-peer-review-been-done">
@@ -597,8 +596,8 @@ Typically package versions are recorded using <code class="docutils literal notr
 <li><p>Technical colleagues should conduct internal peer reviews of each change to the code.
 This will identify issues early on and makes the review process more manageable than reviewing only the final analysis.</p></li>
 <li><p>Peer review should follow a standard procedure, so that reviews are consistent. Reviewers should check that each change follows the agreed good practices.</p></li>
-<li><p>There should be evidence that peer reviews are acted on. When issues or concerns are raised, they should be addressed before the analysis is used.</p></li>
-<li><p>If the product is high risk, external peer review should also be conducted.</p></li>
+<li><p>You should evidence that peer reviews are acted on and how. When issues or concerns are raised, they should be addressed before the analysis is used.</p></li>
+<li><p>If the product is high risk,  you should arrange and conduct external peer review.</p></li>
 </ul>
 </section>
 <section id="how-have-you-tested-the-code">
@@ -606,12 +605,12 @@ This will identify issues early on and makes the review process more manageable 
 <p><a class="reference internal" href="testing_code.html"><span class="std std-doc">Testing</span></a> assures us that the code is working correctly.</p>
 <ul class="simple">
 <li><p>Testing means making sure that the code produces the right outputs for realistic example input data.</p></li>
-<li><p>Automated ‘unit’ testing should be applied to each function, to ensure that code continues to work after future changes to the code.</p></li>
-<li><p>Each function and the end-to-end analysis should be tested using minimal, realistic data.</p></li>
-<li><p>Testing should be more extensive on the most important or complex parts of the code. However, ideally every single function should be tested.</p></li>
+<li><p>You should apply automated ‘unit’ testing to each function to ensure that code continues to work after future changes.</p></li>
+<li><p>You should test each function and the end-to-end analysis using minimal, realistic data.</p></li>
+<li><p>Your testing should be more extensive on the most important or complex parts of the code. However, ideally you would test every single function.</p></li>
 <li><p>Tests should account for realistic cases, which might include missing data, zeroes, infinities, negative numbers, wrong data types, and invalid inputs.</p></li>
 <li><p>Reviewers should sign-off that there is enough testing to assure that the code is working as expected.</p></li>
-<li><p>Each time an error is found in the code, a test should be added to assure that the error does not reoccur.</p></li>
+<li><p>Each time you identify an error in the code,you should add a test to assure that the error does not reoccur.</p></li>
 </ul>
 </section>
 <section id="what-happens-when-the-analysis-fails-to-run">
@@ -638,7 +637,7 @@ Large differences in the outcome of the results may indicate an issue with the a
 <p>Code quality improves over time, as your team learn more about good practices.</p>
 <ul class="simple">
 <li><p>The team should be aiming to meet the agreed assurance level, but should also consider which practices could be applied next to improve the code beyond this.</p></li>
-<li><p>You should review training needs in your team and allow time for continuos personal development of these practices.</p></li>
+<li><p>You should review training needs in your team and allow time for continuous personal development of these practices.</p></li>
 </ul>
 </section>
 </section>
