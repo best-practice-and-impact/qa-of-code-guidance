@@ -1,6 +1,6 @@
 # Quality Assurance of Code for Analysis and Research
 
-This document forms part of the Quality Guidance, published by the Quality and Improvement Division of Methods and Quality Directorate at the UK
+This document forms part of the Quality Guidance, published by the Quality and Improvement Division of the Methods and Quality Directorate at the UK
 [Office for National Statistics](https://www.ons.gov.uk).
 
 
