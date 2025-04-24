@@ -2,7 +2,13 @@
 This changelog will be updated with changes to the Duck Book including additions, changes, deletions, and fixes.
 
 ## Next release:
-### Last updated: 10th March 2025
+### Last updated: 
+### Adds:
+### Changes:
+### Fixes:
+### Removes:
+
+## 2025.0:
 ### Adds:
 - Guidance on SQL, mocking, end-to-end testing guidance
 - Sections on what to test, structuring tests, using classes, risks in skipping tests
