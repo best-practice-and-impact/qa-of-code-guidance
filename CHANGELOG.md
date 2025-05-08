@@ -8,6 +8,10 @@ This changelog will be updated with changes to the Duck Book including additions
 ### Fixes:
 ### Removes:
 
+## 2025.1
+### Changes:
+- Updated instructions and link for signing up to the Learning Hub
+
 ## 2025.0:
 ### Adds:
 - Guidance on SQL, mocking, end-to-end testing guidance
