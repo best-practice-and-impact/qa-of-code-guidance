@@ -3,7 +3,7 @@
 This section links to training and self-led learning resources, which relate to sections of the guidance.
 
 Many of these learning resources point to the UK Statistics Authority Learning Hub.
-All government analysts can [request an account for the hub](mailto:data.science.campus.faculty@ons.gov.uk).
+All government analysts can request an account for the hub via a [form](https://forms.office.com/pages/responsepage.aspx?id=vweIB4LOiEa84A2BFoTcRlPdx8djn4tCqrCyavGcBe9UNTY3RUpEQkkwVDhITDAxUk8wTUhBQ01MNS4u&route=shorturl&wdLOR=c0BA596B0-B641-4BF9-BCDB-8C188FCB872C).
 
 Please note that learning resources from non-government training providers (i.e. not accessed through the Hub) may not always follow best practice.
 However, exposure to a range of applied examples will still benefit your learning.
