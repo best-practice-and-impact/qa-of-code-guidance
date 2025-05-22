@@ -248,7 +248,7 @@ with open(config_path) as file:
 ```
 
 ```{code-tab} r R
-args <- commandArgs()
+args <- commandArgs(trailingOnly = TRUE)
 if (length(args) < 1) {
   stop("Configuration file must be passed as an argument.")
 }
