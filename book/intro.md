@@ -56,7 +56,7 @@ and the information here is provided 'as is' without warranty.
 
 The following structure can be used to reference the current version of the book:
 
-> UK Government Analytical Community. (2020). Quality assurance of code for analysis and research (version 2025.1).
+> UK Government Analytical Community. (2020). Quality assurance of code for analysis and research (version 2025.2).
 > Office for National Statistics, Analytical Standards and Pipelines hub:
 > [https://best-practice-and-impact.github.io/qa-of-code-guidance/](https://best-practice-and-impact.github.io/qa-of-code-guidance/)
 
