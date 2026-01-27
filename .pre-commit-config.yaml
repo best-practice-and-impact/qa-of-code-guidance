@@ -1,4 +1,4 @@
-default_stages: [commit, push]
+default_stages: [pre-commit, pre-push]
 
 repos:
     - repo: https://github.com/jackdewinter/pymarkdown
