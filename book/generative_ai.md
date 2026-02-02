@@ -1,4 +1,4 @@
-# Generative AI
+# Generative AI and Large Language Models
 
 ```{figure} ./_static/copilot_output.png
 ---
@@ -9,9 +9,9 @@ alt: What if Clippy was evil?
 What if Clippy was evil?
 ```
 
-## Introduction - Machine learning and Large Lanuage Models.
+## Introduction - Machine learning and Large Lanuage Models
 
-Generative AI (Artifical Intelligence) is a term that refers to a class of machine learning models. A machine learning model is a piece of software that is trained on a set of data to make predictions when given new data. Machine learning has been around for a long time and it used in almost every industry to solve a wide variety of problems. As a government analyst, you may be quite familiar with machine learning already.
+Generative AI (Artifical Intelligence) is a term that refers to a class of machine learning models. A machine learning model is a piece of software that is trained on a set of data to make predictions when given new data. Machine learning has been around for a long time and it is used in almost every industry to solve a wide variety of problems. As a government analyst, you may be quite familiar with machine learning already.
 
 ```{admonition} If you have never heard of machine learning before, click here
 :class: dropdown
@@ -33,7 +33,21 @@ Where:
 
 To predict $y'$ (price) from $x_1$ (land area), we need the values of $b$ and $m_1$. We can calculate these values using machine learning, by **training** a linear regression model on a dataset of price and land area. The data we will train the model on is our **training data**. Because this data contains both the label and feature, it is also called **labelled data**. Linear regression is a form of **supervised** machine learning, because it uses labelled data as training data.
 
-The act of training the linear regression model is an iterative process to minimise **loss** - the difference between the label predicted by the model and the real label in the training data for each observation in the training data. This happens algorithimically through a process called **gradient descent**: 
+We can attain the values of $b$ and $m_1$ through **gradient descent**. This is an iterative process used to minimise **loss** - the difference between the label predicted by the model and the real label in the training data for each observation in the training data.
+
+For a given $b$ and $m_1$, we calculate from the data:
+
+$$y' = b + m_1x_1$$
+
+Where $y'$ is our predicted value. We can then compare this to the real value, $y$, in our training dataset, to calculate loss:
+
+$$loss = (y - y')^2$$
+
+We can then calculate the average loss across $N$ examples in the training dataset:
+
+$$\frac{1}{N}\sum_{i=1}^{N}(y_i - y'_i)^2$$
+
+The goal of training a machine learning model is to minimise average loss. For a linear regression model we do this through the process of gradient descent:
 
 - The model begins with a randomised weight and bias close to zero, and then loss is calculated via the chosen loss function. This will in most cases result in high average loss, which is to say the model does not accurately predict the label with the given weight and bias.
 - The model then determines the gradient of the tangent to the loss function at the weight and the bias, by taking the derivative of the loss function with respect to the weight and the bias.
@@ -89,9 +103,29 @@ It's important to remember that the model that an LLM creates to predict human l
 
 Another important point of note about LLMs is that the neural network training is only half the story. The neural network training produces the 'foundation' of the LLM, but when LLMs are released as products, they have undergone a significant post-training (also known as 'fine-tuning') phase, on top of the foundational neural network training. It can be summarised as a kind of reinforcement learning that uses human feedback, but it is much harder to discuss, as different companies have developed different methods for what seems to work, and in many cases it is less about technology and more about [substantial human labour](https://time.com/6247678/openai-chatgpt-kenya-workers/). And even though we cannot offer a discussion about it in this guide, post-training is forming an increasingingly important role in the overall training of LLMs.
 
-Now that we have a rough handle on what LLMs are and how they work, we can discuss the benefits and risks of using them in the workplace.
+Now that we have a rough handle on what LLMs are and how they work, we can discuss their use in the workplace.
 
-## Using generative AI at work
+## Using LLMs to write code in the workplace
+
+LLMs have become particularly popular as automated coding assistants. Many programmers around the world have opted (or been instructed) to use LLMs to generate code as a way to increase productivity, the logic behind this being that it is faster to write prompts to generate code than it is to hand write code. The slang term for this working practice is 'vibe coding'.
+
+Before we go any further we need to cover **hallucinations**. LLMs, as a feature, can and regularly do generate **plausible but innacurate** statements. The production of hallucinations by LLMs is **mathematically inevitable**. This is not an example of the models 'failing' - as we discussed earlier, all LLMs do is model patterns in text and replicate them. Outputs that 'look right' are all that the models are trained to produce. This is something you must always keep in mind when using LLMs - they do not have an internal world-model of what is true and false, only a very long list of parameters that outputs next-word probabilities. It is from this that we get the first golden rule of vibe coding: 
+
+```{admonition} The first golden rule of vibe coding
+:class: important
+**You must never use or submit to peer review any code generated by an LLM without first reviewing it yourself.**
+```
+
+From this, we directly derive the second golden rule of vibe coding:
+
+```{admonition} The second golden rule of vibe coding
+:class: important
+**The only person responsible for the code you generated with an LLM is you.**
+```
+
+We can now discuss the benefits and risks of vibe coding, while bearing in mind that we must refer to the golden rules at all times.
+
+### Don't kill my vibe - The benefits of vibe coding
 
 
 
