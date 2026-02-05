@@ -404,7 +404,7 @@ def flag_outliers(
     return mask
 ```
 
-I asked for one function, but because I was vague, and I also asked for 'quality standards' to be adhered to, CoPilot has given me a verbose, defensively-coded response. I have in total:
+I asked for one function, but because I was vague, and I also asked for 'quality standards' to be adhered to (rather than verifying that by myself!), CoPilot has given me a verbose, defensively-coded response. I have in total:
 
 - 1 class (that contains only attributes)
 - 5 functions
