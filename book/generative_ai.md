@@ -4,10 +4,12 @@
 ---
 width: 90%
 name: copilot_output
-alt: What if Clippy was evil?
+alt: A conversation with an Artifical Intelligence?
 ---
-What if Clippy was evil?
+A conversation with an Artifical Intelligence?
 ```
+
+Generative AI (Artificial Intelligence) has become the most talked-about technological development in recent years. Chatbots and image generators are now widespread in workplaces. Most of us have heard the confident assertion that the use of generative AI as a coding assistant will revolutionise how coders work. Whether you are curious about using AI tools at work, or you have been encouraged to do so, this guide will explain some of the fundamental technology behind them so you can understand how they work, and offer suggestions for how to get the most out of them. This guide is intended to supplement the existing [Government Playbook on AI](https://www.gov.uk/government/publications/ai-playbook-for-the-uk-government) - all the principles laid out in the playbook still apply here.
 
 ## Introduction - Machine learning and Large Language Models
 
@@ -71,15 +73,17 @@ In a generative AI model, these predictions are novel instances of text, images,
 
 How do LLMs generate novel instances of text that so closely resemble something that was written by a human? The simplest way of putting it is that LLMs are next-word-predictor machines - they continuously predict the next word in a sequence over and over again, until they have a 'finished' output, whether that is a business email, an academic essay, or an entire Python package. But how does an LLM know what word to add to the end of a sequence of words? The only way they can know what word to put at the end of a sequence of words is by learning a mathematical pattern for human text. The technology used to do this is a neural network, a form of machine learning model architecture used to find non-linear patterns in data.
 
-Neural networks get their name because they consist of a network of model 'neurons' - computational units that take many inputs to deliver one output. Neural networks are layered constructions. They first consist of an input layer, which just takes the inputs to the model. The next set of layers in a neural network are the hidden layers, of which there can be one or more. Each hidden layer consists of one or more neurons. Each neuron of a hidden layer takes every input of the layer before it and computes a singular output. This is done by computing the linear product of the previous layer's outputs with a unique set of weights, plus a bias, and then putting this through an activation function that transforms the linear output into a non-linear output. An example of a commonly used activation function used is a rectified linear unit, which is defined as $f(x) = max(0, x)$. The activation function is a crucial component in neural networks, as without them they cannot learn to predict non-linearity.
+Neural networks get their name because they consist of a network of model 'neurons' - computational units that take many inputs to deliver one output. Neural networks are layered constructions. They first consist of an input layer, which just takes the inputs to the model. The next set of layers in a neural network are the hidden layers, of which there can be one or more. Each hidden layer consists of one or more neurons. Each neuron of a hidden layer takes every input of the layer before it and computes a singular output. This is done by computing the linear product of the previous layer's outputs with a unique set of weights, plus a bias, and then putting this through an activation function that transforms the linear output into a non-linear output. 
+
+An example of a commonly used activation function used is a rectified linear unit, which is defined as $f(x) = max(0, x)$. The activation function is a crucial component in neural networks, as without them they cannot learn to predict non-linearity. The activation function also models how real neurons function - they only fire after the electrical stimulus from their inputs reaches a certain threshold.
 
 ```{figure} ./_static/neural_net_layers.png
 ---
 width: 60%
 name: neural_net_layers
-alt: A diagram of neural network, showing two hidden layers consisting of four neurons each. The input layer takes two inputs, and the output layer produces four outputs, so this network could be trained for a classification task. If you are familiar with graph theory, the nodes of this graph represent the outputs of neurons derived from the activation function, and the edges represent the weights (and biases) that modify the inputs from the previous nodes. Credit: Wolfram Research
+alt: A diagram of neural network, showing two hidden layers consisting of four neurons each. The input layer takes two inputs, and the output layer produces four outputs. The outputs for the first hidden layer are calculated using the outputs of the input layer, weight vector $W_1$, bias vector $b_1$ and the activation function, the outputs of the second hidden layer are calculated using the outputs of the first hidden layer, weight vector $W_2$, bias vector $b_2$ and the activation function, and so on. Credit: Wolfram Research
 ---
-A diagram of neural network, showing two hidden layers consisting of four neurons each. The input layer takes two inputs, and the output layer produces four outputs, so this network could be trained for a classification task. If you are familiar with graph theory, the nodes of this graph represent the outputs of neurons derived from the activation function, and the edges represent the weights (and biases) that modify the inputs from the previous nodes. Credit: Wolfram Research
+A diagram of neural network, showing two hidden layers consisting of four neurons each. The input layer takes two inputs, and the output layer produces four outputs. The outputs for the first hidden layer are calculated using the outputs of the input layer, weight vector $W_1$, bias vector $b_1$ and the activation function, the outputs of the second hidden layer are calculated using the outputs of the first hidden layer, weight vector $W_2$, bias vector $b_2$ and the activation function, and so on. Credit: Wolfram Research
 ```
 
 While the individual components of a neural network are performing essentially quite trivial mathematical operations, when networks are scaled up to include many hidden layers of many neurons (this is where the term deep learning comes from - deep neural networks, meaning neural networks of many layers), they can predict exceptionally complex non-linear patterns. An even more surprising feature is they can decide by themselves what these patterns are, they do not need instructions. For example, a neural network trained as an image classifier can learn on its own what constitutes an image of a car and what constitutes an image of a bicycle, just by being given examples of each - it does not need a definition of what is 'car-like' or 'bicycle-like' in advance.
@@ -95,7 +99,7 @@ alt: A neural network learning to predict a non-linear function. Credit: Stephen
 A neural network learning to predict a non-linear function. Credit: Stephen Wolfram
 ```
 
-LLMs are essentially just very large neural networks. The underlying neural network of an LLM is trained on a vast set of text, and the neural network is able to learn patterns of words and then assign probabilities to individual words occurring within sequences of other words, allowing the model to produce long sequences of text that quite accurately mimic human language. However, it's important to remember that a trained LLM is a black box - it contains billions if not trillions of terms, so nobody can say for sure why it is capable of such accurate mimicry, we can only assess that it is capable.
+LLMs are essentially just very large neural networks. The underlying neural network of an LLM is trained on a vast set of text, and the neural network is able to learn patterns of words and then assign probabilities to individual words occurring within sequences of other words, allowing the model to produce long sequences of text that quite accurately mimic human language. However, it's important to remember that a trained LLM is a black box - it contains billions if not trillions of terms, so nobody can say for sure why it is capable of such accurate mimicry, we can only assess that it is.
 
 The explanation for why LLMs are so ubiquitous now (given previous language models got far less attention) is a specific type of neural network architecture called a 'transformer', that was [invented in 2017 at Google](https://research.google/pubs/attention-is-all-you-need/) for the purpose of machine translation. This architecture represented a breakthrough in language models, as it opened up the models to 'hyperscaling' - increasing the size of the neural network and increasing the size of the training data led to predictable increases in performance, so both have increased exponentially ever since.
 
@@ -121,6 +125,13 @@ We can then derive the second golden rule of vibe coding directly from the first
 **The only person responsible for the code you generated with an LLM is you.**
 ```
 
+We need one more golden rule to round everything out. Our first two golden rules concern **outputs**, but we must also set a rule for **inputs**:
+
+```{admonition} The third golden rule of vibe coding
+:class: important
+**Treat the input of an LLM chatbot as you would any other public online domain. Under no circumstances should you enter sensitive information or data in the input of an LLM chatbot.**
+```
+
 We can now discuss the benefits and risks of vibe coding, while bearing in mind that we must refer to our golden rules at all times.
 
 ### Don't kill my vibe - The benefits of vibe coding
@@ -139,7 +150,7 @@ Although vibe coding lets you write code faster, in practice you will inevitably
 - There is a high level of rejection of AI-generated outputs, and a significant amount of time is spent reviewing and editing AI-generated outputs.
 - AI tools lack a lot of the implicit context that exists in projects.
 
-There is also the pertinent question of how individuals and organisations build and retain skill in workplaces inundated with vibe coding. A [study by Anthropic](https://www.anthropic.com/research/AI-assistance-coding-skills) suggests that LLM adoption, especially if it is done quickly and aggressively, can have a negative impact on individuals' ability to learn on the job. This has potentially quite serious implications at the organisational level regarding internal career progression and technical debt within teams.
+There is also the pertinent question of how individuals and organisations build and retain skill in workplaces inundated with vibe coding. A [study by Anthropic](https://www.anthropic.com/research/AI-assistance-coding-skills) suggests that LLM adoption, especially if it is done quickly and aggressively, can have a negative impact on individuals' ability to learn on the job. This has potentially quite serious implications at the organisational level regarding internal career progression and technical debt within teams. [Negative impacts on psychological wellbeing](https://www.nature.com/articles/s41598-025-98385-2) have also been measured after the adoption of LLMs in the workplace, with increased boredom and decreased motivation associated with using LLMs.
 
 There is also a risk that LLM-generated code can contain [critical security vulnerabilities](https://www.databricks.com/blog/passing-security-vibe-check-dangers-vibe-coding). This is of particular importance to anybody working on web-based platforms and applications.
 
@@ -149,12 +160,12 @@ Finally, we should also quickly mention the environmental and ethical concerns r
 
 Author and journalist Cory Doctorow uses the idea of [centaurs and reverse-centaurs](https://www.theguardian.com/us-news/ng-interactive/2026/jan/18/tech-ai-bubble-burst-reverse-centaur) when discussing AI-assisted work. A centaur is a human that is assisted in their work by a machine. It's nice to be a centaur, as the machine takes some of the drudgery out of work by doing the menial time-consuming tasks at a fraction of the effort, allowing you to be more productive and creative. A reverse-centaur is a human that assists a machine in their work. It's much less nice to be a reverse-centaur, as you are stripped of agency in your work - the machine dictates what you do and when you do it. When we use AI tools at work, we want to be centaurs and we don't want to be reverse-centaurs.
 
-Let's look at the following example. Say I'm working on a data pipeline, and I need a function that flags outliers in my data. I'm going to use CoPilot as my LLM-powered chatbot assistant. I then give it the following prompt:
+Let's look at the following example. Say I'm working on a data pipeline, and I need a function that flags outliers in my data. I'm going to use CoPilot as my LLM-powered chatbot assistant. I give it the following prompt:
 
 ```{figure} ./_static/reverse-centaur-prompting.png
 ---
 width: 70%
-name: reverse-centaur-prompt
+name: reverse-centaur-prompting
 alt: A prompt offloading most of the thinking to CoPilot.
 ---
 A prompt offloading most of the thinking to CoPilot.
@@ -397,9 +408,80 @@ I asked for one function, but because I was vague, and I also asked for 'quality
 
 - 1 class (that contains only attributes)
 - 5 functions
-- 225 lines of code
+- 225 new lines
+- An import of `__future__` that suggests there could be compatibility issues in the code
 
-That I have to review before I can add some simple outlier flagging into my data pipeline. By being too vague in my prompting and offloading much of the cognitive work to CoPilot, I'm making myself into a reverse-centaur - CoPilot gets to design and write all the code, while I spend all my working time testing and reviewing it. Can we change this prompt so that we are being centaurs, not reverse-centaurs?
+I have to review all of this before I can add some simple outlier flagging into my data pipeline - practically the size of an entire pull request. By being too vague in my prompting and offloading too much of the cognitive work to CoPilot, I'm turning myself into a reverse-centaur - CoPilot gets to design and write all the code, while I spend all my working time testing and reviewing it. Can we change this prompt so that we are being centaurs, not reverse-centaurs?
 
-## Acknowledgements and further reading
+I try the following updated prompt:
 
+```{figure} ./_static/centaur-prompting.png
+---
+width: 70%
+name: centaur-prompting
+alt: An updated prompt where I am more precise with my requirements.
+---
+An updated prompt where I am more precise with my requirements.
+```
+
+And CoPilot produces the following output:
+
+```{admonition} Click here to view the CoPilot output
+:class: dropdown
+
+```python
+import pandas as pd
+import numpy as np
+
+def flag_upper_outliers(df: pd.DataFrame, cols=None, threshold: float = 3.0, ddof: int = 0):
+    """
+    Flag values that are more than `threshold` standard deviations ABOVE the mean
+    for each specified numeric column.
+
+    Parameters
+    ----------
+    df : pd.DataFrame
+        Input DataFrame.
+    cols : list or None, optional
+        List of columns to check. If None, all numeric columns are used.
+    threshold : float, optional
+        Number of standard deviations above the mean to define an outlier (default: 3.0).
+    ddof : int, optional
+        Delta degrees of freedom for std calculation (default: 0, i.e., population std).
+        Use ddof=1 for sample std.
+
+    Returns
+    -------
+    pd.DataFrame
+        Boolean DataFrame with True marking values > mean + threshold * std in each column.
+        Only includes the columns evaluated.
+    """
+    # Choose numeric columns by default
+    if cols is None:
+        cols = df.select_dtypes(include=[np.number]).columns.tolist()
+    else:
+        # Keep only those that exist and are numeric
+        cols = [c for c in cols if c in df.columns and pd.api.types.is_numeric_dtype(df[c])]
+
+    if not cols:
+        return pd.DataFrame(index=df.index)  # nothing to do
+
+    # Compute mean and std per column
+    means = df[cols].mean(axis=0, skipna=True)
+    stds  = df[cols].std(axis=0, ddof=ddof, skipna=True)
+
+    # Thresholds per column
+    cutoffs = means + threshold * stds
+
+    # Broadcast comparison; NaNs remain False by default after fillna(False)
+    outlier_mask = df[cols].gt(cutoffs)  # elementwise >
+    return outlier_mask.fillna(False)
+```
+
+I now have only 1 function and 46 new lines to review (we are also only importing numpy and pandas). By thinking for myself about what I actually needed in my data pipeline (i.e., specifying that I'm working with numerical data, that I'm working with pandas DataFrames, and deciding on my thresholding) rather than offloading the cognitive work to CoPilot, I've gotten a much more compact piece of code that will be easier for me to review and add into my data pipeline. In this example, I'm much more like a centaur - I get to design the code, and CoPilot is doing the menial work of typing it up for me.
+
+This outlines a general principle - LLM-powered chatbots are most useful when you direct them to work for you, rather than when you are picking up after them and trying to shape their outputs into something functional. Remember that they have no world-model of what is right and wrong, they don't have any innate understanding of the requirements for your work, and they can't be held responsible for shoddy work.
+
+## Acknowledgements
+
+Stephen Wolfram's article [What Is ChatGPT Doing ... and Why Does It Work](https://writings.stephenwolfram.com/2023/02/what-is-chatgpt-doing-and-why-does-it-work/) is an excellent primer on the underlying mechanics of LLMs and informed much of the first section in this guide. In addition, the [Google Machine Learning Crash Course](https://developers.google.com/machine-learning/crash-course/) was enormously helpful and is another starting point for anyone interested in machine learning and AI. The sections on [neural networks](https://developers.google.com/machine-learning/crash-course/neural-networks), [embeddings](https://developers.google.com/machine-learning/crash-course/embeddings), and [LLMs](https://developers.google.com/machine-learning/crash-course/llm) are particularly relevant.
