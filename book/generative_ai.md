@@ -141,12 +141,265 @@ Although vibe coding lets you write code faster, in practice you will inevitably
 
 There is also the pertinent question of how individuals and organisations build and retain skill in workplaces inundated with vibe coding. A [study by Anthropic](https://www.anthropic.com/research/AI-assistance-coding-skills) suggests that LLM adoption, especially if it is done quickly and aggressively, can have a negative impact on individuals' ability to learn on the job. This has potentially quite serious implications at the organisational level regarding internal career progression and technical debt within teams.
 
-### Come vibe with me - Some helpful pointers
+There is also a risk that LLM-generated code can contain [critical security vulnerabilities](https://www.databricks.com/blog/passing-security-vibe-check-dangers-vibe-coding). This is of particular importance to anybody working on web-based platforms and applications.
+
+Finally, we should also quickly mention the environmental and ethical concerns related to LLM-powered chatbots. These chatbots are not efficient machines. They consume vast quantities of electricity and fresh water (especially in the model training process), and the demand for both is only increasing. There are also ethical concerns around using LLMs, such as how LLMs use copyrighted works in their training data, the bias exhibited by LLMs as a result of them reproducing biases present in their training data, and the use of LLMs to produce offensive and harmful content.
+
+### Conclusion - Centaurs and reverse-centaurs
+
+Author and journalist Cory Doctorow uses the idea of [centaurs and reverse-centaurs](https://www.theguardian.com/us-news/ng-interactive/2026/jan/18/tech-ai-bubble-burst-reverse-centaur) when discussing AI-assisted work. A centaur is a human that is assisted in their work by a machine. It's nice to be a centaur, as the machine takes some of the drudgery out of work by doing the menial time-consuming tasks at a fraction of the effort, allowing you to be more productive and creative. A reverse-centaur is a human that assists a machine in their work. It's much less nice to be a reverse-centaur, as you are stripped of agency in your work - the machine dictates what you do and when you do it. When we use AI tools at work, we want to be centaurs and we don't want to be reverse-centaurs.
+
+Let's look at the following example. Say I'm working on a data pipeline, and I need a function that flags outliers in my data. I'm going to use CoPilot as my LLM-powered chatbot assistant. I then give it the following prompt:
+
+```{figure} ./_static/reverse-centaur-prompting.png
+---
+width: 70%
+name: reverse-centaur-prompt
+alt: A prompt offloading most of the thinking to CoPilot.
+---
+A prompt offloading most of the thinking to CoPilot.
+```
+
+I then get the following Python code from CoPilot:
+
+```{admonition} Click here to view the CoPilot output
+:class: dropdown
+
+```python
+from __future__ import annotations
+
+from dataclasses import dataclass
+from typing import Literal, Optional, Tuple, Union
+
+import numpy as np
+import pandas as pd
 
 
-
-## Conclusion
-
+Method = Literal["iqr", "zscore", "mad"]
 
 
-## Further reading
+@dataclass(frozen=True)
+class OutlierConfig:
+    """
+    Configuration for outlier detection.
+
+    Attributes
+    ----------
+    method : Literal["iqr", "zscore", "mad"]
+        The statistical method used for outlier detection.
+    iqr_mult : float
+        Multiplier for IQR fences (used when method="iqr"). Default is 1.5 (Tukey).
+        Use 3.0 for extreme outliers.
+    z_thresh : float
+        Absolute Z-score threshold (used when method="zscore"). Common values: 3.0, 3.5.
+    mad_thresh : float
+        Threshold for modified Z-score using MAD (used when method="mad"). Common default: 3.5.
+    """
+    method: Method = "iqr"
+    iqr_mult: float = 1.5
+    z_thresh: float = 3.0
+    mad_thresh: float = 3.5
+
+
+def _validate_array_like(x: Union[pd.Series, np.ndarray, list]) -> np.ndarray:
+    """
+    Validate and convert input to a 1D float NumPy array. NaNs are preserved.
+    """
+    if isinstance(x, pd.Series):
+        arr = x.to_numpy(dtype=float)
+    else:
+        arr = np.asarray(x, dtype=float)
+
+    if arr.ndim != 1:
+        raise ValueError("Input must be a 1D array-like (pandas Series, 1D numpy array, or list).")
+    return arr
+
+
+def _iqr_outliers(arr: np.ndarray, iqr_mult: float) -> Tuple[np.ndarray, dict]:
+    """
+    IQR-based outlier mask and diagnostics.
+    """
+    q1 = np.nanpercentile(arr, 25)
+    q3 = np.nanpercentile(arr, 75)
+    iqr = q3 - q1
+    # Handle zero-IQR edge case gracefully
+    if not np.isfinite(iqr) or iqr == 0:
+        mask = np.zeros_like(arr, dtype=bool)
+        return mask, {
+            "q1": q1, "q3": q3, "iqr": iqr,
+            "lower_fence": np.nan, "upper_fence": np.nan,
+            "note": "IQR is zero or non-finite; no outliers flagged."
+        }
+
+    lower = q1 - iqr_mult * iqr
+    upper = q3 + iqr_mult * iqr
+    mask = (arr < lower) | (arr > upper)
+    # NaNs are not flagged by default (only finite comparisons above are True/False); keep them False
+    mask = np.where(np.isnan(arr), False, mask)
+
+    return mask, {"q1": q1, "q3": q3, "iqr": iqr, "lower_fence": lower, "upper_fence": upper}
+
+
+def _zscore_outliers(arr: np.ndarray, z_thresh: float) -> Tuple[np.ndarray, dict]:
+    """
+    Z-score outlier mask and diagnostics (uses mean and std, ignoring NaNs).
+    """
+    mean = np.nanmean(arr)
+    std = np.nanstd(arr, ddof=0)  # population std; change to ddof=1 for sample std if desired
+
+    if not np.isfinite(std) or std == 0:
+        mask = np.zeros_like(arr, dtype=bool)
+        return mask, {
+            "mean": mean, "std": std,
+            "note": "Standard deviation is zero or non-finite; no outliers flagged."
+        }
+
+    z = (arr - mean) / std
+    mask = np.abs(z) > z_thresh
+    mask = np.where(np.isnan(arr), False, mask)
+
+    return mask, {"mean": mean, "std": std, "z_scores": z}
+
+
+def _mad_outliers(arr: np.ndarray, mad_thresh: float) -> Tuple[np.ndarray, dict]:
+    """
+    MAD-based outlier mask and diagnostics using the 'modified Z-score' approach.
+    Formula: modified_z = 0.6745 * (x - median) / MAD
+    Where MAD = median(|x - median|)
+    """
+    med = np.nanmedian(arr)
+    abs_dev = np.abs(arr - med)
+    mad = np.nanmedian(abs_dev)
+
+    if not np.isfinite(mad) or mad == 0:
+        mask = np.zeros_like(arr, dtype=bool)
+        return mask, {
+            "median": med, "mad": mad,
+            "note": "MAD is zero or non-finite; no outliers flagged."
+        }
+
+    # 0.6745 approximates the scaling to make MAD consistent with std for normal data
+    modified_z = 0.6745 * (arr - med) / mad
+    mask = np.abs(modified_z) > mad_thresh
+    mask = np.where(np.isnan(arr), False, mask)
+
+    return mask, {"median": med, "mad": mad, "modified_z": modified_z}
+
+
+def flag_outliers(
+    x: Union[pd.Series, np.ndarray, list],
+    *,
+    method: Method = "iqr",
+    iqr_mult: float = 1.5,
+    z_thresh: float = 3.0,
+    mad_thresh: float = 3.5,
+    return_details: bool = False,
+    return_frame: bool = False,
+    column_name: Optional[str] = None,
+) -> Union[np.ndarray, Tuple[np.ndarray, dict], pd.DataFrame]:
+    """
+    Flag outliers in a 1D numeric array/Series using IQR, Z-score, or MAD.
+
+    Parameters
+    ----------
+    x : Union[pd.Series, np.ndarray, list]
+        Input data (1D). NaNs are allowed and ignored for statistics.
+    method : {"iqr", "zscore", "mad"}, default "iqr"
+        Outlier detection method.
+    iqr_mult : float, default 1.5
+        IQR multiplier for Tukey fences (method="iqr").
+    z_thresh : float, default 3.0
+        Absolute Z-score threshold (method="zscore").
+    mad_thresh : float, default 3.5
+        Modified Z-score threshold (method="mad").
+    return_details : bool, default False
+        If True, returns (mask, details_dict) with diagnostics.
+    return_frame : bool, default False
+        If True, returns a DataFrame with columns: ["value", "is_outlier", "score", ...]
+        Note: `return_frame` takes precedence over `return_details`.
+    column_name : Optional[str], default None
+        Column name to use for the "value" column in the returned DataFrame.
+
+    Returns
+    -------
+    Union[np.ndarray, Tuple[np.ndarray, dict], pd.DataFrame]
+        - If return_frame is False and return_details is False:
+            returns boolean mask (np.ndarray).
+        - If return_frame is False and return_details is True:
+            returns (mask, details_dict).
+        - If return_frame is True:
+            returns a pandas DataFrame with the original values, outlier flags,
+            and a method-specific score (z-score, modified_z, or distance from fence).
+
+    Notes
+    -----
+    - IQR fences: [Q1 - iqr_mult * IQR, Q3 + iqr_mult * IQR].
+    - Z-score uses mean and std that ignore NaNs.
+    - MAD uses the modified Z-score scaled by 0.6745.
+    - NaN values are never flagged as outliers; they have `is_outlier=False` and score NaN.
+    """
+    arr = _validate_array_like(x)
+    method = method.lower()
+    if method not in ("iqr", "zscore", "mad"):
+        raise ValueError("method must be one of: 'iqr', 'zscore', 'mad'.")
+
+    if method == "iqr":
+        mask, details = _iqr_outliers(arr, iqr_mult=iqr_mult)
+        # Score: distance beyond nearest fence; NaNs for in-range
+        q1, q3, iqr = details.get("q1"), details.get("q3"), details.get("iqr")
+        lower, upper = details.get("lower_fence"), details.get("upper_fence")
+        # Compute a signed distance to the nearest fence; positive outside, negative inside
+        score = np.full_like(arr, np.nan, dtype=float)
+        with np.errstate(invalid="ignore"):
+            below = arr < lower
+            above = arr > upper
+            score[below] = lower - arr[below]
+            score[above] = arr[above] - upper
+
+    elif method == "zscore":
+        mask, details = _zscore_outliers(arr, z_thresh=z_thresh)
+        z = details.get("z_scores")
+        score = np.where(np.isnan(arr), np.nan, z)
+
+    else:  # method == "mad"
+        mask, details = _mad_outliers(arr, mad_thresh=mad_thresh)
+        mz = details.get("modified_z")
+        score = np.where(np.isnan(arr), np.nan, mz)
+
+    if return_frame:
+        name = column_name or (x.name if isinstance(x, pd.Series) and x.name is not None else "value")
+        df = pd.DataFrame({name: arr, "is_outlier": mask, "score": score})
+        # Attach diagnostics as attributes for downstream inspection
+        df.attrs["outlier_details"] = {
+            "method": method,
+            "iqr_mult": iqr_mult,
+            "z_thresh": z_thresh,
+            "mad_thresh": mad_thresh,
+            **details,
+        }
+        return df
+
+    if return_details:
+        # Attach method and thresholds for clarity
+        details = {
+            "method": method,
+            "iqr_mult": iqr_mult,
+            "z_thresh": z_thresh,
+            "mad_thresh": mad_thresh,
+            **details,
+        }
+        return mask, details
+
+    return mask
+```
+
+I asked for one function, but because I was vague, and I also asked for 'quality standards' to be adhered to, CoPilot has given me a verbose, defensively-coded response. I have in total:
+
+- 1 class (that contains only attributes)
+- 5 functions
+- 225 lines of code
+
+That I have to review before I can add some simple outlier flagging into my data pipeline. By being too vague in my prompting and offloading much of the cognitive work to CoPilot, I'm making myself into a reverse-centaur - CoPilot gets to design and write all the code, while I spend all my working time testing and reviewing it. Can we change this prompt so that we are being centaurs, not reverse-centaurs?
+
+## Acknowledgements and further reading
+
