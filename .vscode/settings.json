@@ -1,0 +1,6 @@
+{
+    "python.defaultInterpreterPath": "D:\\db_310\\Scripts\\python.exe",
+    "python.terminal.activateEnvironment": false,
+    "python-envs.pythonProjects": [],
+    "python-envs.defaultEnvManager": "ms-python.python:venv"
+}

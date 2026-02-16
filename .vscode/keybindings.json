@@ -1,0 +1,7 @@
+[
+  {
+    "key": "shift+enter",
+    "command": "python.execSelectionInTerminal",
+    "when": "editorTextFocus && editorLangId == 'python' && !notebookEditorFocused"
+  }
+]
