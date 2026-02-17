@@ -88,7 +88,7 @@ A diagram of neural network, showing two hidden layers consisting of four neuron
 
 While the individual components of a neural network are performing essentially quite trivial mathematical operations, when networks are scaled up to include many hidden layers of many neurons (this is where the term deep learning comes from - deep neural networks, meaning neural networks of many layers), they can predict exceptionally complex non-linear patterns. An even more surprising feature is they can decide by themselves what these patterns are, they do not need instructions. For example, a neural network trained as an image classifier can learn on its own what constitutes an image of a car and what constitutes an image of a bicycle, just by being given examples of each - it does not need a definition of what is 'car-like' or 'bicycle-like' in advance.
 
-Training a neural network to recognise a pattern or reproduce a non-linear function requires supplying it with enough examples that consist of an input and the desired output. From this point onwards, the neural network is trained to find the weights and biases that are needed to reproduce the desired outputs, which is done by gradient descent - loss is calculated, the weights and biases are modified in the direction that reduces loss, and the process repeats until the model converges (see [the drop down section above](#ml-primer) for a primer on loss and gradient descent). Gradient descent is implemented differently in the case of neural networks using an algorithm called backpropagation - this is because neural networks can contain a vast quantity of weights, so modifying weights needs to be done as efficiently as possible.
+Training a neural network to recognise a pattern or reproduce a non-linear function requires supplying it with enough examples that consist of an input and the desired output. From this point onwards, the neural network is trained to find the weights and biases that are needed to reproduce the desired outputs, which is done by gradient descent - loss is calculated, the weights and biases are modified in the direction that reduces loss, and the process repeats until the model converges (see [the drop down section above](#ml-primer) for a primer on loss and gradient descent). Gradient descent is implemented differently in the case of neural networks using an algorithm called [backpropagation](https://developers.google.com/machine-learning/glossary#backpropagation).
 
 ```{figure} ./_static/neural_net_training.png
 ---
@@ -101,7 +101,7 @@ A neural network learning to predict a non-linear function. Credit: Stephen Wolf
 
 LLMs are essentially just very large neural networks. The underlying neural network of an LLM is trained on a vast set of text, and the neural network is able to learn patterns of words and then assign probabilities to individual words occurring within sequences of other words, allowing the model to produce long sequences of text that quite accurately mimic human language. However, it's important to remember that a trained LLM is a black box - it contains billions if not trillions of terms, so nobody can say for sure why it is capable of such accurate mimicry, we can only assess that it is.
 
-The explanation for why LLMs are so ubiquitous now (given previous language models got far less attention) is a specific type of neural network architecture called a 'transformer', that was [invented in 2017 at Google](https://research.google/pubs/attention-is-all-you-need/) for the purpose of machine translation. This architecture represented a breakthrough in language models, as it opened up the models to 'hyperscaling' - increasing the size of the neural network and increasing the size of the training data led to predictable increases in performance, so both have increased exponentially ever since.
+The explanation for why LLMs are so ubiquitous now (given previous language models got far less attention) is a specific type of neural network architecture called a 'transformer', that was [invented in 2017 at Google](https://research.google/pubs/attention-is-all-you-need/) for the purpose of machine translation. This architecture represented a breakthrough in language models, as it opened up the models to 'hyperscaling' - increasing the size of the neural network and increasing the size of the training data led to predictable increases in performance, so both have increased exponentially ever since. Further discussion of the transformer architecture is beyond the scope of this guide, but an excellent introduction from the Financial Times' Visual Storytelling Team can be found [here](https://ig.ft.com/generative-ai/).
 
 An important point of note about LLMs is that from a user perspective the neural network training is only half the story. The neural network training produces the 'foundation' model (e.g., a GPT-5 series model), but a finished chatbot product (such as ChatGPT) has also gone through an enormous post-training (also known as 'fine-tuning') phase. It can be summarised as a kind of reinforcement learning that uses human feedback, but it is much harder to discuss, as different companies have developed different methods for what seems to work, and in many cases it is less about technology and more about [substantial human labour](https://time.com/6247678/openai-chatgpt-kenya-workers/). Even though we cannot offer a discussion about it in this guide, post-training is increasingly important in the field of LLMs.
 
@@ -111,7 +111,7 @@ Now that we have a rough handle on what LLMs are and how they work, we can discu
 
 LLM-powered chatbots have become particularly popular as automated coding assistants. Many programmers around the world have opted (or been instructed) to use LLMs to generate code as a way to increase productivity, the logic behind this being that it is faster to write prompts to generate code than it is to hand write code. The slang term for this working practice is 'vibe coding'.
 
-Before we go any further we need to cover **hallucinations**. LLMs can and regularly do generate **plausible but inaccurate** statements. The production of hallucinations by LLMs is [**mathematically inevitable**](https://arxiv.org/pdf/2401.11817). This is not an example of the models 'failing', it is a feature - as we discussed earlier, all LLMs do is model patterns in text and replicate them. Outputs that 'look right' are all that the models are trained to produce. This is something you must always keep in mind when using LLMs - they do not have an internal world-model of what is true and false, only a very long list of parameters that outputs next-word probabilities. It is from this that we get the first golden rule of vibe coding: 
+Before we go any further we need to cover **hallucinations**. LLMs can and regularly do generate **plausible but inaccurate** statements. The production of hallucinations is [**mathematically inevitable**](https://arxiv.org/pdf/2401.11817). This is not an example of the models 'failing', it is a feature - as we discussed earlier, all LLMs do is model patterns in text and replicate them. Outputs that 'look right' are all that the models are trained to produce. This is something you must always keep in mind when using LLMs - they do not have an internal world-model of what is true and false, only a very long list of parameters that outputs next-word probabilities. It is from this that we get the first golden rule of vibe coding: 
 
 ```{admonition} The first golden rule of vibe coding
 :class: important
@@ -160,7 +160,7 @@ Finally, we should also quickly mention the environmental and ethical concerns r
 
 Author and journalist Cory Doctorow uses the idea of [centaurs and reverse-centaurs](https://www.theguardian.com/us-news/ng-interactive/2026/jan/18/tech-ai-bubble-burst-reverse-centaur) when discussing AI-assisted work. A centaur is a human that is assisted in their work by a machine. It's nice to be a centaur, as the machine takes some of the drudgery out of work by doing the menial time-consuming tasks at a fraction of the effort, allowing you to be more productive and creative. A reverse-centaur is a human that assists a machine in their work. It's much less nice to be a reverse-centaur, as you are stripped of agency in your work - the machine dictates what you do and when you do it. When we use AI tools at work, we want to be centaurs and we don't want to be reverse-centaurs.
 
-Let's look at the following example. Say I'm working on a data pipeline, and I need a function that flags outliers in my data. I'm going to use CoPilot as my LLM-powered chatbot assistant. I give it the following prompt:
+Let's look at the following example. Say you're working on a data pipeline, and you need a function that flags outliers in your data. You could use CoPilot as an LLM-powered chatbot assistant, and give it the following prompt:
 
 ```{figure} ./_static/reverse-centaur-prompting.png
 ---
@@ -404,16 +404,16 @@ def flag_outliers(
     return mask
 ```
 
-I asked for one function, but because I was vague, and I also asked for 'quality standards' to be adhered to (rather than verifying that by myself!), CoPilot has given me a verbose, defensively-coded response. I have in total:
+You asked for one function, but because the prompt was vague, and also asked for 'quality standards' to be adhered to (rather than verifying that by yourself!), CoPilot has given a verbose, defensively-coded response. The output has in total:
 
 - 1 class (that contains only attributes)
 - 5 functions
 - 225 new lines
 - An import of `__future__` that suggests there could be compatibility issues in the code
 
-I have to review all of this before I can add some simple outlier flagging into my data pipeline - practically the size of an entire pull request. By being too vague in my prompting and offloading too much of the cognitive work to CoPilot, I'm turning myself into a reverse-centaur - CoPilot gets to design and write all the code, while I spend all my working time testing and reviewing it. Can we change this prompt so that we are being centaurs, not reverse-centaurs?
+You have to review all of this before you can add some simple outlier flagging into the data pipeline - practically the size of an entire pull request. By being too vague in prompting and offloading too much of the cognitive work to CoPilot, you may find yourself turning into a reverse-centaur - CoPilot gets to design and write all the code, while you must test and review it. Can we change this prompt so that we are being centaurs, not reverse-centaurs?
 
-I try the following updated prompt:
+Try the following updated prompt:
 
 ```{figure} ./_static/centaur-prompting.png
 ---
@@ -478,7 +478,7 @@ def flag_upper_outliers(df: pd.DataFrame, cols=None, threshold: float = 3.0, ddo
     return outlier_mask.fillna(False)
 ```
 
-I now have only 1 function and 46 new lines to review (we are also only importing numpy and pandas). By thinking for myself about what I actually needed in my data pipeline (i.e., specifying that I'm working with numerical data, that I'm working with pandas DataFrames, and deciding on my thresholding) rather than offloading the cognitive work to CoPilot, I've gotten a much more compact piece of code that will be easier for me to review and add into my data pipeline. In this example, I'm much more like a centaur - I get to design the code, and CoPilot is doing the menial work of typing it up for me.
+You now have only 1 function and 46 new lines to review (we are also only importing numpy and pandas). By thinking about what you actually needed in the data pipeline (i.e., specifying that you're working with numerical data and pandas DataFrames, and deciding on the thresholding) rather than offloading the cognitive work to CoPilot, CoPilot has output a much more compact piece of code that will be easier to review and add into the data pipeline. In this example, you're much more like a centaur - You get to design the code, while CoPilot is doing the menial work of typing it up.
 
 This outlines a general principle - LLM-powered chatbots are most useful when you direct them to work for you, rather than when you are picking up after them and trying to shape their outputs into something functional. Remember that they have no world-model of what is right and wrong, they don't have any innate understanding of the requirements for your work, and they can't be held responsible for shoddy work.
 
