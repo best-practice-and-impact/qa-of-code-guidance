@@ -9,6 +9,10 @@ alt: A conversation with an Artifical Intelligence?
 A conversation with an Artifical Intelligence?
 ```
 
+```{note}
+This guide is a work in progress. For corrections and suggested changes, please raise an [issue](https://github.com/best-practice-and-impact/qa-of-code-guidance/issues) or contact the [Analysis Standards and Pipelines hub](mailto:ASAP@ons.gov.uk).
+```
+
 Generative AI (Artificial Intelligence) has become the most talked-about technological development in recent years. Chatbots and image generators are now widespread in workplaces. Most of us have heard the confident assertion that the use of generative AI as a coding assistant will revolutionise how coders work. Whether you are curious about using AI tools at work, or you have been encouraged to do so, this guide will explain some of the fundamental technology behind them so you can understand how they work, and offer suggestions for how to get the most out of them. This guide is intended to supplement the existing [Government Playbook on AI](https://www.gov.uk/government/publications/ai-playbook-for-the-uk-government) - all the principles laid out in the playbook still apply here.
 
 ## Introduction - Machine learning and Large Language Models
