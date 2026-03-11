@@ -32,3 +32,4 @@ parts:
   chapters:
   - file: learning
   - file: tools
+  - file: generative_ai
