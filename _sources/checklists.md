@@ -1,18 +1,5 @@
 # Code quality assurance checklists
 
-This sections aims to provide a checklist for quality assurance of analytical projects in government.
+The code checklists have been removed whilst we work to update them.
 
-As per the [Aqua book](https://www.gov.uk/government/publications/the-aqua-book-guidance-on-producing-quality-analysis-for-government),
-quality assurance should be proportionate to the complexity and risk of your analysis.
-With this in mind, we have provided checklists for three levels of quality assurance.
-
-We recommend that you consider the risk and complexity associated with your project.
-Given this assessment, you should select and tailor the checklists that we have provided.
-Risk tolerance varies between government departments, so it is important that you consider the operational context for the code when deciding what quality assurance is adequate.
-You may choose to select elements from each level of quality assurance to address the specific risks associated with your work.
-
-
-## Checklists
-
-```{tableofcontents}
-```
+If you need the checklists for your work or have any questions about the updates, please email the [Analysis Standards and Pipelines hub](mailto:ASAP@ons.gov.uk).
