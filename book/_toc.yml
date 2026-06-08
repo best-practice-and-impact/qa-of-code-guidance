@@ -6,10 +6,6 @@ parts:
   - file: glossary
   - file: managers_guide
   - file: checklists
-    sections:
-    - file: checklist_lower
-    - file: checklist_moderate
-    - file: checklist_higher
 
 
 - caption: Guidance
