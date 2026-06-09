@@ -1,12 +1,17 @@
 # Changelog
 This changelog will be updated with changes to the Duck Book including additions, changes, deletions, and fixes.
 
-## Next release: 2026.1
+## Next release: 2026.2
 ### Last updated: 
 ### Adds:
 ### Changes:
 ### Fixes:
 ### Removes:
+
+## 2026.1
+### Last updated: 8th June 2026
+### Removes:
+- Code quality assurance checklists whilst updates and improvements are being made
 
 ## 2026.0
 ### Last updated: 11th March 2026
