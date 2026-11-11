@@ -121,8 +121,15 @@ the code style that we are using in the project and the review process that we f
 We have used the [Markdown](https://daringfireball.net/projects/markdown/syntax) (`.md`) markup language for this document,
 which is formatted into HTML when viewed on our repository.
 
+## Verification and Validation
 
-## User desk instructions
+As we showed in the previous section it is useful to explain what your verification process is. It 
+makes it easier for any new contributors on what to expect with the changes they recommend and 
+keep everyone working within a consistent framework. Having a quick section in your README file 
+explaining the process where new updates are reviewed, and what criteria it will be reviewed 
+against, will help ensure consistency and helps maintain a clear project objective.
+
+## User desk instructions and User guide
 
 If your project is very user focused for one particular task,
 for example, developing a statistic production pipeline for other analysts to execute,
@@ -136,6 +143,20 @@ These instructions should include:
 - What outputs (if any) your code or system produces and how these should be interpreted.
 - What quality assurance has been carried out and what further quality assurance of outputs is required.
 - How to maintain your project (including how to update data sources).
+
+A good example is a user guide with step by step instructions from, installing the repo all the
+way to running the full code base on the users local machine.
+Further instructions could also be used to help users alter the code, or new users into the team.
+These instructions should be thought of as a way a new user could install and work on the project,
+without the need for supervision from the original team. Useful details to include can be:
+
+-	A project structure diagram to show where features are located.
+-	Project data flow, making it easier to identify where the data is changed and formed and
+understand where new features should appropriately added.
+-	Design principles and methodologies. While this information can also be part of documentation
+within the code, having a quick overview ensures a central area the user can find to get a basic
+high level of the process used.
+
 
 
 ## Dependencies
@@ -271,6 +292,13 @@ Your changelog can be in any format and should be associated with your code docu
 
 [keep a changelog](https://keepachangelog.com/en/1.0.0/) provides a simple but effective template for recording changes to your code.
 
+## Succession plan
+
+If you are expecting to hand over the project to a new team you should include a section with your
+documentation discussing the handover and objectives. In the short term it ensures any user 
+understand who is currently working (and has the most current understanding) of the project. It 
+also provides context to new changes within the project, objectives might be refined or changed
+explaining why new functionality has been added and why.
 
 ## Copyright and Licenses
 
