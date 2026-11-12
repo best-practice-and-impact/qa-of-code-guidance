@@ -274,7 +274,9 @@ If using an [issue tracker](issues) (e.g. GitHub Issues or Jira), it can be usef
 This makes it easy to trace the branch back to the associated issue or task.
 Otherwise, aim to use meaningful names that describe the feature or bug that the changes will be ed on. 
 ```
-
+Another way of ensuring appropriate branching is occurring we can also set up branch protection rules.
+This can be used as a way to ensure branches are reviewed before they get merged onto main (helping to ensure only reviewed code is used in production) or even stopping users from making new branches from of main that are too old (keeping code up to date). 
+These are simple tools which help ensure branches are of a high quality at the start and end of a task.
 
 ### Resolve merge conflicts
 
@@ -331,48 +333,6 @@ You can achieve this separation using a tool like [DVC](https://dvc.org/), which
 Alternative, third party storage (e.g., cloud-based 'buckets' or databases) can provide easy data storage with varying levels of version control capability.
 
 
-### Tag new releases
-
-Regularly `commit`ing changes using Git helps us to create a thorough audit trail of changes to our project.
-However, there may be discrete points in the history of the project that we want to mark for easier future reference.
-This is incredibly useful, as commit hashes like `121b5b4` serve as really poor identifiers for human users.
-
-Git allows us to create "tags" to reference specific points in project's history.
-These tags essentially act as an alias for a particular commit hash, so we can refer to it by an informative label.
-We might use tags to mark a particular model version in an analytical project or an important stage of our analysis.
-For example, we might tag code that has been used to generate a particular output so that it can easily be accessed to reproduce that output in future.
-If developing a package as part of your analysis, these tags are also commonly used to indicate new package versions.
-
-By default, tags will reference the current position in history (i.e., the latest commit or `HEAD`).
-An annotated tag might be created for a new model version like so:
-
-```{code-block}
-git tag -a v0.2.7 -m "Model version 0.2.7"
-git push origin v0.2.7
-```
-
-You can also retrospectively tag an older commit by providing that `commit`'s hash:
-
-```{code-block}
-git tag -a v0.1.0 -m "Model version 0.1.0" 9fceb02
-git push origin v0.1.0
-```
-
-Once tags have been created, these locations in the projects history can be easily recovered by either checking out:
-
-```{code-block}
-git fetch --all
-git checkout tags/v0.1.0 -b new_branch_name
-```
-
-or cloning the tag:
-
-```{code-block}
-git clone https://github.com/<user>/<repo>.git --branch=v0.1.0
-```
-
-
-(excluding-from-git)=
 ## Avoid committing sensitive information to Git repositories
 
 Code itself is very rarely sensitive, so we should be open to sharing it.
@@ -568,7 +528,6 @@ GitHub provides additional tools for better management of collaborative work. Ma
 but we will describe how they may be applied in analytical workflows here.
 
 
-(issues)=
 ### Use Git issues to plan and discuss development of your project
 
 Issues offer a method for requesting or recording tasks, including enhancements and bug fixes in a project.
@@ -602,7 +561,6 @@ For example, a bug issue should include simple instructions to help maintainers 
 Feature requests might include information on how the user expects the new feature to work and details what problem it will help them to overcome.
 
 
-(pull-requests)=
 ### Use pull requests for reviewing changes
 
 Once changes have been implemented, perhaps to meet the requirements of an issue,
@@ -654,7 +612,6 @@ to ensure that a standard peer review process is followed for all changes.
 ```
 
 
-(forking)=
 ### Fork a repository to maintain an independent copy
 
 Forking a repository takes a complete copy of a third-party project's current state, including its history and all existing branches and tags.
@@ -702,5 +659,91 @@ Linking tasks to specific issues and pull requests aids the use of boards.
 
 [GitHub Pages](https://pages.github.com/) offers hosting of static web content, which can be useful for code documentation.
 You can use GitHub Actions to generate this documentation from the code and deploy directly to the Pages site.
+
+# Advanced Techniques
+
+### Using Branch Tags
+
+Regularly `commit`ing changes using Git helps us to create a thorough audit trail of changes to our project.
+However, there may be discrete points in the history of the project that we want to mark for easier future reference.
+This is incredibly useful, as commit hashes like `121b5b4` serve as really poor identifiers for human users.
+
+Git allows us to create "tags" to reference specific points in project's history.
+These tags essentially act as an alias for a particular commit hash, so we can refer to it by an informative label.
+We might use tags to mark a particular model version in an analytical project or an important stage of our analysis.
+For example, we might tag code that has been used to generate a particular output so that it can easily be accessed to reproduce that output in future.
+If developing a package as part of your analysis, these tags are also commonly used to indicate new package versions.
+
+By default, tags will reference the current position in history (i.e., the latest commit or `HEAD`).
+An annotated tag might be created for a new model version like so:
+
+```{code-block}
+git tag -a v0.2.7 -m "Model version 0.2.7"
+git push origin v0.2.7
+```
+
+You can also retrospectively tag an older commit by providing that `commit`'s hash:
+
+```{code-block}
+git tag -a v0.1.0 -m "Model version 0.1.0" 9fceb02
+
+git push origin v0.1.0
+```
+
+Once tags have been created, these locations in the projects history can be easily recovered by either checking out:
+
+```{code-block}
+git fetch --all
+git checkout tags/v0.1.0 -b new_branch_name
+```
+
+or cloning the tag:
+
+```{code-block}
+git clone https://github.com/<user>/<repo>.git --branch=v0.1.0
+```
+
+
 Alternatively, [project Wikis](https://docs.github.com/en/free-pro-team@latest/github/building-a-strong-community/about-wikis)
 can be used to manually document your project using [Markdown](https://www.markdownguide.org/basic-syntax/).
+
+### Pre commit hooks
+
+At the most basic level, a pre-commit hook is a file or script that is ran automatically before executing the commit command. 
+These are usesful as it can stop a problematic commit from being pushed to the repo and being accidently added to the production 
+branch. There are other uses we can utilise this for, including help to format the code and keeping everything with the same 
+coding style and formats. Below is an example found in a pre-commit config:
+
+```none
+repos: 
+- repo: https://github.com/astral-sh/ruff-pre-commit 
+# Ruff version. 
+rev: v0.16.6 
+hooks: # Run the linter. 
+- id: ruff-check 
+args: [ --fix ] 
+# Run the formatter. 
+- id: ruff-format
+```
+
+Typically pre-commits will not be part of the github repo, instead you would install these hooks like you would using a requirements 
+file (as  security precaution, it stops users downloading executables files). The config above installs a package called Ruff, which 
+will remove unused packages as well so basic style formatting (such as removing trailing whitespace, creates consistent spacing between 
+lines). If a pre-commit hook is triggered, the commit will be cancelled, what changes will occur and then you will be given the option 
+to commit again. 
+
+
+### Continuous Integration and Continuous Delivery (CI/CD)
+
+CI/CD are  set of tools that can help automate with the running and development of a repo, in fact the last two techniques are examples
+of CI/CD. The idea is with automatic checks and formatting can help limit the amount of user work. Reducing the amount of this basic and 
+repetitive work helps reduce user error and issues, limiting potential issues. Some other examples can include updating the version number 
+of the code when updated, or packaging it when ready to deployed. CI/CD is not a single tool, but rather a selection of different techniques 
+and features, as such you can utilise the ones that are most useful for the size of your project, some common features are:
+
+* Github Actions
+* Workflows
+* Caching
+* Branch protection
+
+
