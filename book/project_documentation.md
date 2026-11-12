@@ -1,7 +1,8 @@
 # Project documentation
 
-Documenting your project will makes it much easier for others to understand your goal and ways of working, whether you're developing a package or collaborating on a piece of analysis.
+Documenting your project will makes it much easier for others to understand your goal and ways of working, whether you're developing a package or collaborating on a piece of analysis. Like with the other pages this will be split between Minimium Standards and Advanced Techniques.
 
+# Minimum Standards
 
 ## README
 
@@ -20,109 +21,15 @@ We suggest the following for a good README:
 - Links to other project guidance, for example methodological papers or document repositories.
 - Links to related projects.
 
+## Verification and Validation
 
-## Contributing guidance
+As we showed in the previous section it is useful to explain what your verification process is. It 
+makes it easier for any new contributors on what to expect with the changes they recommend and 
+keep everyone working within a consistent framework. Having a quick section in your README file 
+explaining the process where new updates are reviewed, and what criteria it will be reviewed 
+against, will help ensure consistency and helps maintain a clear project objective.
 
-When collaborating, it is also useful to set out the standards used within your project.
-This might include particular packages required for certain tasks and guidance on the [code style](code-style) used in the project.
-Consider including a code of conduct if you plan to have contributors from outside your organisation.
-Please [see GitHub](https://docs.github.com/en/github/building-a-strong-community/adding-a-code-of-conduct-to-your-project) for advice on creating a code of conduct.
-
-See the CONTRIBUTING file from our [gptables package](https://github.com/best-practice-and-impact/gptables/blob/master/CONTRIBUTING.md) for an example:
-
-`````{tabs}
-
-````{tab} Markdown
-```{code-block}
-# Contributing
-
-When contributing to this repository, please first discuss the change you wish
-to make via issue, email, or any other method with the owners before making a change.
-
-## Pull/merge request process
-
-1. Branch from the `dev` branch. If you are implementing a feature name it
-`feature/name_of_feature`, if you are implementing a bugfix name it
-`bug/issue_name`.
-2. Update the README.md and other documentation with details of major changes
-to the interface, this includes new environment variables, useful file
-locations and container parameters.
-3. Once you are ready for review please open a pull/merge request to the
-`dev` branch.
-4. You may merge the Pull/Merge Request in once you have the sign-off of two
-maintainers.
-5. If you are merging `dev` to `master`, you must increment the version number
-in the VERSION file to the new version that this Pull/Merge Request would
-represent. The versioning scheme we use is [SemVer](http://semver.org/).
-
-## Code style
-
-- We name variables using few nouns in lowercase, e.g. `mapping_names`
-or `increment`.
-- We name functions using verbs in lowercase, e.g. `map_variables_to_names` or
-`change_values`.
-- We use the [numpydoc](https://numpydoc.readthedocs.io/en/latest/format.html)
-format for documenting features using docstrings.
-
-## Review process
-
-1. When we want to release the package we will request a formal review for any
-non-minor changes.
-2. The review process follows a similar process to ROpenSci.
-3. Reviewers will be requested from associated communities.
-4. The `dev` branch will only be released once reviewers are satisfied.
-```
-````
-
-````{tab} HTML
-<h1>Contributing</h1>
-
-When contributing to this repository, please first discuss the change you wish
-to make via issue, email, or any other method with the owners of this
-repository before making a change.
-
-<h2>Pull/merge request process</h2>
-
-1. Branch from the `dev` branch. If you are implementing a feature name it
-`feature/name_of_feature`, if you are implementing a bugfix name it
-`bug/issue_name`.
-2. Update the README.md and other documentation with details of major changes
-to the interface, this includes new environment variables, useful file
-locations and container parameters.
-3. Once you are ready for review please open a pull/merge request to the
-`dev` branch.
-4. You may merge the Pull/Merge Request in once you have the sign-off of two
-maintainers.
-5. If you are merging `dev` to `master`, you must increment the version number
-in the VERSION file to the new version that this Pull/Merge Request would
-represent. The versioning scheme we use is [SemVer](http://semver.org/).
-
-<h2>Code style</h2>
-
-- We name variables using few nouns in lowercase, e.g. `mapping_names`
-or `increment`.
-- We name functions using verbs in lowercase, e.g. `map_variables_to_names` or
-`change_values`.
-- We use the [numpydoc](https://numpydoc.readthedocs.io/en/latest/format.html)
-format for documenting features using docstrings.
-
-<h2>Review process</h2>
-
-1. When we want to release the package we will request a formal review for any
-non-minor changes.
-2. The review process follows a similar process to ROpenSci.
-3. Reviewers will be requested from associated communities.
-4. Only once reviewers are satisfied, will the `dev` branch be released.
-````
-`````
-
-In this case we have outlined our standard practices for using version control on GitHub,
-the code style that we are using in the project and the review process that we follow.
-We have used the [Markdown](https://daringfireball.net/projects/markdown/syntax) (`.md`) markup language for this document,
-which is formatted into HTML when viewed on our repository.
-
-
-## User desk instructions
+## User desk instructions and User guide
 
 If your project is very user focused for one particular task,
 for example, developing a statistic production pipeline for other analysts to execute,
@@ -136,6 +43,20 @@ These instructions should include:
 - What outputs (if any) your code or system produces and how these should be interpreted.
 - What quality assurance has been carried out and what further quality assurance of outputs is required.
 - How to maintain your project (including how to update data sources).
+
+A good example is a user guide with step by step instructions from, installing the repo all the
+way to running the full code base on the users local machine.
+Further instructions could also be used to help users alter the code, or new users into the team.
+These instructions should be thought of as a way a new user could install and work on the project,
+without the need for supervision from the original team. Useful details to include can be:
+
+-	A project structure diagram to show where features are located.
+-	Project data flow, making it easier to identify where the data is changed and formed and
+understand where new features should appropriately added.
+-	Design principles and methodologies. While this information can also be part of documentation
+within the code, having a quick overview ensures a central area the user can find to get a basic
+high level of the process used.
+
 
 
 ## Dependencies
@@ -271,6 +192,13 @@ Your changelog can be in any format and should be associated with your code docu
 
 [keep a changelog](https://keepachangelog.com/en/1.0.0/) provides a simple but effective template for recording changes to your code.
 
+## Succession plan
+
+If you are expecting to hand over the project to a new team you should include a section with your
+documentation discussing the handover and objectives. In the short term it ensures any user 
+understand who is currently working (and has the most current understanding) of the project. It 
+also provides context to new changes within the project, objectives might be refined or changed
+explaining why new functionality has been added and why.
 
 ## Copyright and Licenses
 
@@ -328,3 +256,108 @@ Please see the [Government Data Service (GDS) guidance](https://www.gov.uk/gover
 for help deciding when code should be open or closed.
 Further
 [GDS guidance](https://www.gov.uk/government/publications/open-source-guidance/security-considerations-when-coding-in-the-open) addresses security concerns for coding in the open. Additional guidance on deciding when and how to open source, the benefits, and good practice is available from the [Analysis Function](https://analysisfunction.civilservice.gov.uk/policy-store/open-sourcing-analytical-code/).
+
+# Advanced Techniques
+
+## Contributing guidance
+
+When collaborating, it is also useful to set out the standards used within your project.
+This might include particular packages required for certain tasks and guidance on the [code style](code-style) used in the project.
+Consider including a code of conduct if you plan to have contributors from outside your organisation.
+Please [see GitHub](https://docs.github.com/en/github/building-a-strong-community/adding-a-code-of-conduct-to-your-project) for advice on creating a code of conduct.
+
+See the CONTRIBUTING file from our [gptables package](https://github.com/best-practice-and-impact/gptables/blob/master/CONTRIBUTING.md) for an example:
+
+`````{tabs}
+
+````{tab} Markdown
+```{code-block}
+# Contributing
+
+When contributing to this repository, please first discuss the change you wish
+to make via issue, email, or any other method with the owners before making a change.
+
+## Pull/merge request process
+
+1. Branch from the `dev` branch. If you are implementing a feature name it
+`feature/name_of_feature`, if you are implementing a bugfix name it
+`bug/issue_name`.
+2. Update the README.md and other documentation with details of major changes
+to the interface, this includes new environment variables, useful file
+locations and container parameters.
+3. Once you are ready for review please open a pull/merge request to the
+`dev` branch.
+4. You may merge the Pull/Merge Request in once you have the sign-off of two
+maintainers.
+5. If you are merging `dev` to `master`, you must increment the version number
+in the VERSION file to the new version that this Pull/Merge Request would
+represent. The versioning scheme we use is [SemVer](http://semver.org/).
+
+## Code style
+
+- We name variables using few nouns in lowercase, e.g. `mapping_names`
+or `increment`.
+- We name functions using verbs in lowercase, e.g. `map_variables_to_names` or
+`change_values`.
+- We use the [numpydoc](https://numpydoc.readthedocs.io/en/latest/format.html)
+format for documenting features using docstrings.
+
+## Review process
+
+1. When we want to release the package we will request a formal review for any
+non-minor changes.
+2. The review process follows a similar process to ROpenSci.
+3. Reviewers will be requested from associated communities.
+4. The `dev` branch will only be released once reviewers are satisfied.
+```
+````
+
+````{tab} HTML
+<h1>Contributing</h1>
+
+When contributing to this repository, please first discuss the change you wish
+to make via issue, email, or any other method with the owners of this
+repository before making a change.
+
+<h2>Pull/merge request process</h2>
+
+1. Branch from the `dev` branch. If you are implementing a feature name it
+`feature/name_of_feature`, if you are implementing a bugfix name it
+`bug/issue_name`.
+2. Update the README.md and other documentation with details of major changes
+to the interface, this includes new environment variables, useful file
+locations and container parameters.
+3. Once you are ready for review please open a pull/merge request to the
+`dev` branch.
+4. You may merge the Pull/Merge Request in once you have the sign-off of two
+maintainers.
+5. If you are merging `dev` to `master`, you must increment the version number
+in the VERSION file to the new version that this Pull/Merge Request would
+represent. The versioning scheme we use is [SemVer](http://semver.org/).
+
+<h2>Code style</h2>
+
+- We name variables using few nouns in lowercase, e.g. `mapping_names`
+or `increment`.
+- We name functions using verbs in lowercase, e.g. `map_variables_to_names` or
+`change_values`.
+- We use the [numpydoc](https://numpydoc.readthedocs.io/en/latest/format.html)
+format for documenting features using docstrings.
+
+<h2>Review process</h2>
+
+1. When we want to release the package we will request a formal review for any
+non-minor changes.
+2. The review process follows a similar process to ROpenSci.
+3. Reviewers will be requested from associated communities.
+4. Only once reviewers are satisfied, will the `dev` branch be released.
+````
+`````
+
+In this case we have outlined our standard practices for using version control on GitHub,
+the code style that we are using in the project and the review process that we follow.
+We have used the [Markdown](https://daringfireball.net/projects/markdown/syntax) (`.md`) markup language for this document,
+which is formatted into HTML when viewed on our repository.
+
+
+
