@@ -6,6 +6,8 @@ parts:
   - file: glossary
   - file: managers_guide
   - file: checklists
+    sections:
+    - file: logging
 
 
 - caption: Guidance
