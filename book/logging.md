@@ -14,7 +14,9 @@ Not everything needs to be logged, you must understand the users and the downstr
 
 Logging standards should be proportional to project complexity. As the complexity of a project increases the minimum logging standards may no longer be sufficient, you might need to add more depth and structure in the logs. Even if the code in a pipeline is not complex, if other factors (such as automation and big data) are affecting project complexity, higher logging standards should be considered for code observability.
 
-- severity level (`INFO`, `WARN`, `CRITICAL`,`DEBUG`)
+## Logging standards/practices for more complex pipelines
+
+- severity level (`INFO`, `ERROR`, `WARN`, `CRITICAL`,`DEBUG`)
 - timestamp and time zone
 - pipeline, module and stage
 - unique run or identifier
@@ -40,3 +42,10 @@ For more complex projects doesn't mean you must implement all the above, don't c
 
 > [!WARNING]  
 > Do not log any sensitive information, if it is necessary then you must ensure access controls are appropriate to the sensitivity of the information.
+
+## Useful recourses
+
+Both Python and R have comprehensive logging framework which you can find here:
+
+- [Python logging](https://docs.python.org/3/library/logging.html)
+- [R logging](https://cran.r-project.org/web/packages/logger/vignettes/Intro.html)
