@@ -36,4 +36,3 @@ More advanced techniques can also be used such as:
   This makes documentation automatic and simpler but does require some set up at the beginning of a project.
 
 
-- Using continuous integration (CI) pipelines to automatically run tests when creating a merge request  
