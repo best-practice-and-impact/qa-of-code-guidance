@@ -1,0 +1,33 @@
+# Project Documentation
+
+Documentation for your project helps create a resource that will help future users navigate and understand the project in front of them.
+While the project might make sense to you and easy to navigate and run, a person without your experience and knowledge might have a very different experience. 
+The documentation left behind is a way to share that knowledge and experience.
+
+Not every project is the same and as such you shouldn’t expect to have every single document recommended created for it. 
+As long as you can provide the necessary information for a person to set up, run, and update the coding project you have left them, 
+then it can be in as many or few documents you want.
+
+Below are some the standards to help guide your decision (both advanced and basic).
+
+More details are [here][]
+
+
+## Minimum Standards
+
+To meet the minimum standard for unit testing, we expect:
+
+-Basic how to's "pipeline setup/ "how to run"
+-developer guidance
+-README
+-verification and validation
+-roles and succession plan
+
+## Advanced Techniques  
+
+-how to contribute guide
+-bulding and publishing documentation. choose build type (sphynx jupyter-notebook). Choose publish method (readthedocs/github_pages)
+
+More advanced users may also consider:
+
+- Using continuous integration (CI) pipelines to automatically run tests when creating a merge request  
