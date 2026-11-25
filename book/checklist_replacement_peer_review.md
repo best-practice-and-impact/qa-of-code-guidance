@@ -1,17 +1,12 @@
 # Peer Review
 
-Peer review involves someone other than the code's author reviewing and testing the code.
-It helps identify errors, improve code quality and assess whether the analysis is fit for purpose.
+Peer review involves someone other than the code's author reviewing and testing the code. It helps identify errors, improve code quality and assess whether the analysis is fit for purpose.
 
-Review code throughout development, rather than waiting until the project is complete.
-Keep changes small so that reviewers can give useful feedback and issues can be addressed early.
-Make sure the scope of review is proportionate to the risks and complexity of the analysis.
-
-Further details can be viewed in the [peer review chapter of this book][peer-review-chapter].
+Review code throughout development, rather than waiting until the project is complete. Keep changes small so that reviewers can give useful feedback and issues can be addressed early. Make sure the scope of review is proportionate to the risks and complexity of the analysis. Further details can be viewed in the [peer review chapter of this book][peer-review-chapter].
 
 ## Minimum Standards
 
-To meet the minimum standard for peer review, we expect:
+To meet the minimum standard for peer review, you should:
 
 - Pull requests (called merge requests on some platforms) are used to review proposed code changes and record feedback.
   See [Google's guide to code review][google-code-review] for advice on reviewing changes and giving useful feedback.
