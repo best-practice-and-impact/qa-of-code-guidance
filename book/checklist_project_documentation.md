@@ -19,9 +19,11 @@ By ensuring these steps you are ensuring you are hitting the standard requiremen
 
 - Create a README document (within the project repo), as this is industry standard makes it easy people to find the correct information about the project
 - The README should contain a basic 'How to...' guide, leading a new user on what to do run the code include set up and any installation advice (such as installing .venv)
-- You should also include guidance to users who might want to make their own changes, this could be design philosophy or even areas that be problematic to update.
+- You should also include guidance to users who might want to make their own changes.
+  This could include details about design philosophy or even areas that be problematic to update.
 - Explaining the validation and verification steps you use. This helps reassure the user (and reader) what you are doing to keep the results accurate and reproducable.
-- Finally explaining who does/did what in the project means if there are any questions, they can be sent to the right person, same reason why you should include succession plans.
+- Finally explaining who does/did what in the project makes it easier for questions to go to the right person.
+  This is also why you should include a succession plan.
 
 ## Advanced Techniques 
 
@@ -31,7 +33,7 @@ More advanced techniques can also be used such as:
   This will help any contributors understand what to expect and ensure the correct process is followed.
 - Some features and packages can even be set up to help with documenting your project.
   It’s important to decide at the beginning of the project to use these so that correct process are kept.
-  For example, you could use a package called sphinx, which can pull doc strings from functions and then publishes to a live document,
+  For example, you could use a package such as sphinx, which can pull doc strings from functions and then publishes to a live document,
   as a sort of dictionary for your code base. This file could hosted on either GitHub using GitHub Pages or using readthedocs service.
   This makes documentation automatic and simpler but does require some set up at the beginning of a project.
 
